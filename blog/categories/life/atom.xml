@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Life | My Octopress Blog]]></title>
+  <title><![CDATA[Category: Life | 80/20]]></title>
   <link href="http://shem8.github.io/blog/categories/life/atom.xml" rel="self"/>
   <link href="http://shem8.github.io/"/>
-  <updated>2016-05-20T10:36:16+03:00</updated>
+  <updated>2016-05-20T13:47:34+03:00</updated>
   <id>http://shem8.github.io/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Shem Magnezi]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
