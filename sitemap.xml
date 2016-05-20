@@ -90,6 +90,9 @@
 <loc>http://shem8.github.io/posts/</loc>
 </url>
 <url>
+<loc>http://shem8.github.io/blog/categories/</loc>
+</url>
+<url>
 <loc>http://shem8.github.io/blog/categories/posts/</loc>
 </url>
 <url>
@@ -100,8 +103,5 @@
 </url>
 <url>
 <loc>http://shem8.github.io/blog/categories/humor/</loc>
-</url>
-<url>
-<loc>http://shem8.github.io/blog/posts/2/</loc>
 </url>
 </urlset>

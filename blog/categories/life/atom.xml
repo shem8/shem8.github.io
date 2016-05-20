@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Life | 80/20]]></title>
+  <title><![CDATA[Category: life | 80/20]]></title>
   <link href="http://shem8.github.io/blog/categories/life/atom.xml" rel="self"/>
   <link href="http://shem8.github.io/"/>
-  <updated>2016-05-20T13:57:10+03:00</updated>
+  <updated>2016-05-20T14:07:03+03:00</updated>
   <id>http://shem8.github.io/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Why All Your Engineers Should Get a Laptop]]></title>
+    <title type="html"><![CDATA[Why all your engineers should get a laptop]]></title>
     <link href="http://shem8.github.io/blog/2016/01/17/why-all-your-engineers-should-get-a-laptop/"/>
     <updated>2016-01-17T19:20:12+02:00</updated>
     <id>http://shem8.github.io/blog/2016/01/17/why-all-your-engineers-should-get-a-laptop</id>
@@ -70,7 +70,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Run Fast, Fall Frequently, Get Up Faster and Go Drink Beer at the Beach: What It's Like to Work at a StartUp]]></title>
+    <title type="html"><![CDATA[Run fast, fall frequently, get up faster and go drink beer at the beach: What it's like to work at a StartUp]]></title>
     <link href="http://shem8.github.io/blog/2015/11/15/run-fast-fall-frequently-get-up-faster-and-go-drink-beer-at-the-beach-what-its-like-to-work-at-a-startup/"/>
     <updated>2015-11-15T12:24:22+02:00</updated>
     <id>http://shem8.github.io/blog/2015/11/15/run-fast-fall-frequently-get-up-faster-and-go-drink-beer-at-the-beach-what-its-like-to-work-at-a-startup</id>
@@ -168,7 +168,7 @@ _- Eloise Ristad_</blockquote>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Effectively Reading]]></title>
+    <title type="html"><![CDATA[Effectively reading]]></title>
     <link href="http://shem8.github.io/blog/2015/09/11/affectively-reading/"/>
     <updated>2015-09-11T18:16:35+03:00</updated>
     <id>http://shem8.github.io/blog/2015/09/11/affectively-reading</id>

@@ -4,7 +4,7 @@
   <title><![CDATA[80/20]]></title>
   <link href="http://shem8.github.io/atom.xml" rel="self"/>
   <link href="http://shem8.github.io/"/>
-  <updated>2016-05-20T13:57:10+03:00</updated>
+  <updated>2016-05-20T14:07:03+03:00</updated>
   <id>http://shem8.github.io/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[10 Good Rules for Bad App, Part 3- Product]]></title>
+    <title type="html"><![CDATA[10 good rules for bad App, Part 3- Product]]></title>
     <link href="http://shem8.github.io/blog/2016/05/06/10-good-rules-for-bad-app-part-3-product/"/>
     <updated>2016-05-06T15:37:07+03:00</updated>
     <id>http://shem8.github.io/blog/2016/05/06/10-good-rules-for-bad-app-part-3-product</id>
@@ -80,7 +80,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[10 Good Rules for Bad App, Part 2- UX\UI]]></title>
+    <title type="html"><![CDATA[10 good rules for bad App, Part 2- UX\UI]]></title>
     <link href="http://shem8.github.io/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui/"/>
     <updated>2016-04-17T19:04:28+03:00</updated>
     <id>http://shem8.github.io/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui</id>
@@ -148,7 +148,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[10 Good Rules for Bad App, Part 1- Technical]]></title>
+    <title type="html"><![CDATA[10 good rules for bad App, Part 1- Technical]]></title>
     <link href="http://shem8.github.io/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical/"/>
     <updated>2016-03-31T21:00:52+03:00</updated>
     <id>http://shem8.github.io/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical</id>
@@ -322,7 +322,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[My First Open Source Lib]]></title>
+    <title type="html"><![CDATA[My first open source lib]]></title>
     <link href="http://shem8.github.io/blog/2016/02/12/my-first-open-source-lib/"/>
     <updated>2016-02-12T09:30:38+02:00</updated>
     <id>http://shem8.github.io/blog/2016/02/12/my-first-open-source-lib</id>
@@ -386,7 +386,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Andriod Dev Toolbox Part 2]]></title>
+    <title type="html"><![CDATA[Andriod dev toolbox part 2]]></title>
     <link href="http://shem8.github.io/blog/2016/01/21/andriod-dev-toolbox-part-2/"/>
     <updated>2016-01-21T10:48:23+02:00</updated>
     <id>http://shem8.github.io/blog/2016/01/21/andriod-dev-toolbox-part-2</id>
@@ -403,7 +403,7 @@ This time we’ll focus on collection of tools and resources that help you build
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Why All Your Engineers Should Get a Laptop]]></title>
+    <title type="html"><![CDATA[Why all your engineers should get a laptop]]></title>
     <link href="http://shem8.github.io/blog/2016/01/17/why-all-your-engineers-should-get-a-laptop/"/>
     <updated>2016-01-17T19:20:12+02:00</updated>
     <id>http://shem8.github.io/blog/2016/01/17/why-all-your-engineers-should-get-a-laptop</id>
@@ -459,7 +459,7 @@ This time we’ll focus on collection of tools and resources that help you build
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Kotlin- a Better Java for Android?]]></title>
+    <title type="html"><![CDATA[Kotlin- a better Java for Android?]]></title>
     <link href="http://shem8.github.io/blog/2016/01/01/kotlin-a-better-java-for-android/"/>
     <updated>2016-01-01T15:52:32+02:00</updated>
     <id>http://shem8.github.io/blog/2016/01/01/kotlin-a-better-java-for-android</id>
@@ -597,7 +597,7 @@ fun AppCompatActivity.navigate(frag: Fragment) {
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Android Dev Toolbox]]></title>
+    <title type="html"><![CDATA[Android dev toolbox]]></title>
     <link href="http://shem8.github.io/blog/2015/12/31/android-dev-toolbox/"/>
     <updated>2015-12-31T10:43:15+02:00</updated>
     <id>http://shem8.github.io/blog/2015/12/31/android-dev-toolbox</id>
@@ -709,7 +709,7 @@ fun AppCompatActivity.navigate(frag: Fragment) {
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Run Fast, Fall Frequently, Get Up Faster and Go Drink Beer at the Beach: What It's Like to Work at a StartUp]]></title>
+    <title type="html"><![CDATA[Run fast, fall frequently, get up faster and go drink beer at the beach: What it's like to work at a StartUp]]></title>
     <link href="http://shem8.github.io/blog/2015/11/15/run-fast-fall-frequently-get-up-faster-and-go-drink-beer-at-the-beach-what-its-like-to-work-at-a-startup/"/>
     <updated>2015-11-15T12:24:22+02:00</updated>
     <id>http://shem8.github.io/blog/2015/11/15/run-fast-fall-frequently-get-up-faster-and-go-drink-beer-at-the-beach-what-its-like-to-work-at-a-startup</id>
@@ -807,7 +807,7 @@ _- Eloise Ristad_</blockquote>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Pimp-up Your Splash Screen]]></title>
+    <title type="html"><![CDATA[Pimp-up your splash screen]]></title>
     <link href="http://shem8.github.io/blog/2015/10/02/pimp-up-your-splash-screen/"/>
     <updated>2015-10-02T12:03:17+03:00</updated>
     <id>http://shem8.github.io/blog/2015/10/02/pimp-up-your-splash-screen</id>
@@ -910,7 +910,7 @@ private void init() {
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Effectively Reading]]></title>
+    <title type="html"><![CDATA[Effectively reading]]></title>
     <link href="http://shem8.github.io/blog/2015/09/11/affectively-reading/"/>
     <updated>2015-09-11T18:16:35+03:00</updated>
     <id>http://shem8.github.io/blog/2015/09/11/affectively-reading</id>
@@ -1179,7 +1179,7 @@ Ok ok, please calm down, take a glass of bear and sit down. Actually the drag ha
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Know What (Not) to Build (Droidcon 2015)]]></title>
+    <title type="html"><![CDATA[Know what (not) to build (Droidcon 2015)]]></title>
     <link href="http://shem8.github.io/blog/2015/08/24/know-what-not-to-build-droidcon-2015/"/>
     <updated>2015-08-24T15:18:40+03:00</updated>
     <id>http://shem8.github.io/blog/2015/08/24/know-what-not-to-build-droidcon-2015</id>
@@ -1193,7 +1193,7 @@ Ok ok, please calm down, take a glass of bear and sit down. Actually the drag ha
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Android Ui Tips & Tricks (Droidcon 2014)]]></title>
+    <title type="html"><![CDATA[Android ui tips & tricks (Droidcon 2014)]]></title>
     <link href="http://shem8.github.io/blog/2015/08/24/android-ui-tips-tricks-droidcon-2014/"/>
     <updated>2015-08-24T15:04:46+03:00</updated>
     <id>http://shem8.github.io/blog/2015/08/24/android-ui-tips-tricks-droidcon-2014</id>
@@ -1207,7 +1207,7 @@ Ok ok, please calm down, take a glass of bear and sit down. Actually the drag ha
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Custom View- Part 2]]></title>
+    <title type="html"><![CDATA[Custom view- Part 2]]></title>
     <link href="http://shem8.github.io/blog/2015/08/06/custom-view-part-2/"/>
     <updated>2015-08-06T15:15:11+03:00</updated>
     <id>http://shem8.github.io/blog/2015/08/06/custom-view-part-2</id>
@@ -1343,7 +1343,7 @@ protected void onDraw(Canvas canvas) {
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Custom View- Part 1]]></title>
+    <title type="html"><![CDATA[Custom view- Part 1]]></title>
     <link href="http://shem8.github.io/blog/2015/07/31/custom-view-part-1/"/>
     <updated>2015-07-31T15:40:17+03:00</updated>
     <id>http://shem8.github.io/blog/2015/07/31/custom-view-part-1</id>
@@ -1595,7 +1595,7 @@ public static int evaluateColor(float fraction, int startInt, int endInt) {
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[The Basic Android Stuff That Nobody Talks About]]></title>
+    <title type="html"><![CDATA[The basic Android stuff that nobody talks about]]></title>
     <link href="http://shem8.github.io/blog/2015/07/17/the-basic-android-stuff-that-no-one-tells-you/"/>
     <updated>2015-07-17T16:30:52+03:00</updated>
     <id>http://shem8.github.io/blog/2015/07/17/the-basic-android-stuff-that-no-one-tells-you</id>
@@ -1735,7 +1735,7 @@ buildTypes {
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Don't Touch My Child (View)!]]></title>
+    <title type="html"><![CDATA[Don't touch my child (view)!]]></title>
     <link href="http://shem8.github.io/blog/2015/07/10/dont-touch-my-child-view/"/>
     <updated>2015-07-10T14:47:10+03:00</updated>
     <id>http://shem8.github.io/blog/2015/07/10/dont-touch-my-child-view</id>

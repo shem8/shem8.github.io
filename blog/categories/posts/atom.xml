@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Posts | 80/20]]></title>
+  <title><![CDATA[Category: posts | 80/20]]></title>
   <link href="http://shem8.github.io/blog/categories/posts/atom.xml" rel="self"/>
   <link href="http://shem8.github.io/"/>
-  <updated>2016-05-20T13:57:10+03:00</updated>
+  <updated>2016-05-20T14:07:03+03:00</updated>
   <id>http://shem8.github.io/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[10 Good Rules for Bad App, Part 3- Product]]></title>
+    <title type="html"><![CDATA[10 good rules for bad App, Part 3- Product]]></title>
     <link href="http://shem8.github.io/blog/2016/05/06/10-good-rules-for-bad-app-part-3-product/"/>
     <updated>2016-05-06T15:37:07+03:00</updated>
     <id>http://shem8.github.io/blog/2016/05/06/10-good-rules-for-bad-app-part-3-product</id>
@@ -80,7 +80,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[10 Good Rules for Bad App, Part 2- UX\UI]]></title>
+    <title type="html"><![CDATA[10 good rules for bad App, Part 2- UX\UI]]></title>
     <link href="http://shem8.github.io/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui/"/>
     <updated>2016-04-17T19:04:28+03:00</updated>
     <id>http://shem8.github.io/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui</id>
@@ -148,7 +148,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[10 Good Rules for Bad App, Part 1- Technical]]></title>
+    <title type="html"><![CDATA[10 good rules for bad App, Part 1- Technical]]></title>
     <link href="http://shem8.github.io/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical/"/>
     <updated>2016-03-31T21:00:52+03:00</updated>
     <id>http://shem8.github.io/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical</id>
@@ -322,7 +322,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[My First Open Source Lib]]></title>
+    <title type="html"><![CDATA[My first open source lib]]></title>
     <link href="http://shem8.github.io/blog/2016/02/12/my-first-open-source-lib/"/>
     <updated>2016-02-12T09:30:38+02:00</updated>
     <id>http://shem8.github.io/blog/2016/02/12/my-first-open-source-lib</id>
