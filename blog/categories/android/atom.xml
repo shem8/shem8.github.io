@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Android | 80/20]]></title>
   <link href="http://shem8.github.io/blog/categories/android/atom.xml" rel="self"/>
   <link href="http://shem8.github.io/"/>
-  <updated>2016-05-20T13:54:04+03:00</updated>
+  <updated>2016-05-20T13:57:10+03:00</updated>
   <id>http://shem8.github.io/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
@@ -86,6 +86,9 @@
     <id>http://shem8.github.io/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui</id>
     <content type="html"><![CDATA[<p>Welcome to my second part of the tutorial of how building a bad app. After we&rsquo;ve building a bad app in the <a href="https://shem8.wordpress.com/2016/03/31/10-good-rules-for-bad-app-part-1-technical/">first part</a>, it&rsquo;s the time to call our designer to fuck it a bit more:</p>
 
+<!--more-->
+
+
 <h2>#1: Ignore material design guidelines</h2>
 
 <p>Google, one of the greatest companies in the world, put lots of efforts creating material design, they probably do a long user research and gather feedback from many expert, but hey- you are the one with the bachelor of industrial design, so you probably know better.</p>
@@ -150,6 +153,9 @@
     <updated>2016-03-31T21:00:52+03:00</updated>
     <id>http://shem8.github.io/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical</id>
     <content type="html"><![CDATA[<p>We were all been there, you got a great idea for an app, you gather some feedback and even managed to build a team and you going full power to conquer the app store. So a second before starting working on your genius <a href="https://play.google.com/store/apps/details?id=com.mobication.EggTimerPro&amp;hl=en">egg timer app</a>, it is worth taking a moment and think about how you&rsquo;re going to do it.</p>
+
+<!--more-->
+
 
 <p>Following the hilarious post by Chet Haase about <a href="https://medium.com/pointer-io/this-article-is-exclusive-to-pointer-a-reading-club-for-developers-9b03f3df060c">10 good rules for bad API</a>, I decided to put together my list about how to build a bad app. but a few notes first:</p>
 
@@ -232,6 +238,9 @@
     <updated>2016-02-25T21:43:46+02:00</updated>
     <id>http://shem8.github.io/blog/2016/02/25/animated-vector-drawable</id>
     <content type="html"><![CDATA[<p>In API 21 the Android team released bunch of very cool things for material design, most of the things focus around the design specs like colors or transition animation, other were for the new widgets like FAB, card view or recycle view, but within all those things there were also two things that barely discussed- <a href="http://developer.android.com/reference/android/graphics/drawable/VectorDrawable.html">VectorDrawable</a> and <a href="http://developer.android.com/reference/android/graphics/drawable/AnimatedVectorDrawable.html">AnimatedVectorDrawable</a>.</p>
+
+<!--more-->
+
 
 <p><em>Edit: looks like those classes became so popular that the Android team decided to add them to the <a href="http://android-developers.blogspot.co.il/2016/02/android-support-library-232.html">latest support library</a>, yay!</em></p>
 
@@ -318,6 +327,9 @@
     <updated>2016-02-12T09:30:38+02:00</updated>
     <id>http://shem8.github.io/blog/2016/02/12/my-first-open-source-lib</id>
     <content type="html"><![CDATA[<p>As part of my last <a href="https://medium.com/life-learning/the-one-side-project-per-year-challenge-fa3c64a48da6#.3vp2es9hh">Friday project</a> I created a new Android app (releasing it soon!). In this project I decided to focus on 2 new things I want to learn:</p>
+
+<!--more-->
+
 
 <ol>
 <li><p>How to write Android apps with <a href="https://shem8.wordpress.com/2016/01/01/kotlin-a-better-java-for-android/">Kotlin</a></p></li>

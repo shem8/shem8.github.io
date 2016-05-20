@@ -4,7 +4,7 @@
   <title><![CDATA[80/20]]></title>
   <link href="http://shem8.github.io/atom.xml" rel="self"/>
   <link href="http://shem8.github.io/"/>
-  <updated>2016-05-20T13:54:04+03:00</updated>
+  <updated>2016-05-20T13:57:10+03:00</updated>
   <id>http://shem8.github.io/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
@@ -86,6 +86,9 @@
     <id>http://shem8.github.io/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui</id>
     <content type="html"><![CDATA[<p>Welcome to my second part of the tutorial of how building a bad app. After we&rsquo;ve building a bad app in the <a href="https://shem8.wordpress.com/2016/03/31/10-good-rules-for-bad-app-part-1-technical/">first part</a>, it&rsquo;s the time to call our designer to fuck it a bit more:</p>
 
+<!--more-->
+
+
 <h2>#1: Ignore material design guidelines</h2>
 
 <p>Google, one of the greatest companies in the world, put lots of efforts creating material design, they probably do a long user research and gather feedback from many expert, but hey- you are the one with the bachelor of industrial design, so you probably know better.</p>
@@ -150,6 +153,9 @@
     <updated>2016-03-31T21:00:52+03:00</updated>
     <id>http://shem8.github.io/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical</id>
     <content type="html"><![CDATA[<p>We were all been there, you got a great idea for an app, you gather some feedback and even managed to build a team and you going full power to conquer the app store. So a second before starting working on your genius <a href="https://play.google.com/store/apps/details?id=com.mobication.EggTimerPro&amp;hl=en">egg timer app</a>, it is worth taking a moment and think about how you&rsquo;re going to do it.</p>
+
+<!--more-->
+
 
 <p>Following the hilarious post by Chet Haase about <a href="https://medium.com/pointer-io/this-article-is-exclusive-to-pointer-a-reading-club-for-developers-9b03f3df060c">10 good rules for bad API</a>, I decided to put together my list about how to build a bad app. but a few notes first:</p>
 
@@ -232,6 +238,9 @@
     <updated>2016-02-25T21:43:46+02:00</updated>
     <id>http://shem8.github.io/blog/2016/02/25/animated-vector-drawable</id>
     <content type="html"><![CDATA[<p>In API 21 the Android team released bunch of very cool things for material design, most of the things focus around the design specs like colors or transition animation, other were for the new widgets like FAB, card view or recycle view, but within all those things there were also two things that barely discussed- <a href="http://developer.android.com/reference/android/graphics/drawable/VectorDrawable.html">VectorDrawable</a> and <a href="http://developer.android.com/reference/android/graphics/drawable/AnimatedVectorDrawable.html">AnimatedVectorDrawable</a>.</p>
+
+<!--more-->
+
 
 <p><em>Edit: looks like those classes became so popular that the Android team decided to add them to the <a href="http://android-developers.blogspot.co.il/2016/02/android-support-library-232.html">latest support library</a>, yay!</em></p>
 
@@ -319,6 +328,9 @@
     <id>http://shem8.github.io/blog/2016/02/12/my-first-open-source-lib</id>
     <content type="html"><![CDATA[<p>As part of my last <a href="https://medium.com/life-learning/the-one-side-project-per-year-challenge-fa3c64a48da6#.3vp2es9hh">Friday project</a> I created a new Android app (releasing it soon!). In this project I decided to focus on 2 new things I want to learn:</p>
 
+<!--more-->
+
+
 <ol>
 <li><p>How to write Android apps with <a href="https://shem8.wordpress.com/2016/01/01/kotlin-a-better-java-for-android/">Kotlin</a></p></li>
 <li><p>Create an awesome UI and animations</p></li>
@@ -381,6 +393,9 @@
     <content type="html"><![CDATA[<p>The second part of the Android dev toolbox lecture,
 This time we’ll focus on collection of tools and resources that help you build better apps in less time.</p>
 
+<!--more-->
+
+
 <p>Slides are also available <a href="https://docs.google.com/presentation/d/1GtJH_mBY6TM0yk2cQEYWW6yCntyi-6HfjuzTzt9nuhQ/pub?start=false&amp;loop=false&amp;delayms=30000">here</a></p>
 
 <p><a href="http://www.slideshare.net/shemMag/andriod-dev-toolbox-part-2">http://www.slideshare.net/shemMag/andriod-dev-toolbox-part-2</a></p>
@@ -393,6 +408,9 @@ This time we’ll focus on collection of tools and resources that help you build
     <updated>2016-01-17T19:20:12+02:00</updated>
     <id>http://shem8.github.io/blog/2016/01/17/why-all-your-engineers-should-get-a-laptop</id>
     <content type="html"><![CDATA[<p>At the first day in <a href="http://www.myroll.com/about">MyRoll</a> I was exiting- it was my first day in a startup, I was the first employee in the company and we all were thrilled to get started the new adventure.</p>
+
+<!--more-->
+
 
 <p>[caption id=&ldquo;attachment_630&rdquo; align=&ldquo;alignright&rdquo; width=&ldquo;357&rdquo;]<img src="https://shem8.files.wordpress.com/2016/01/291404_493445824002481_472952276_o.jpg?w=559" alt="291404_493445824002481_472952276_o" /> Me and my new best friend.[/caption]</p>
 
@@ -446,6 +464,9 @@ This time we’ll focus on collection of tools and resources that help you build
     <updated>2016-01-01T15:52:32+02:00</updated>
     <id>http://shem8.github.io/blog/2016/01/01/kotlin-a-better-java-for-android</id>
     <content type="html"><![CDATA[<p>A couple of weeks ago, when going over some Android DevSummit videos, I encountered in some question about alternative language for Android during one of the <a href="https://youtu.be/-VNfWh5UkfY?list=PLWz5rJ2EKKc_Tt7q77qwyKRgytF1RzRx8&amp;t=1461">fireside chats</a> session with the Android team. It was really interesting that there was another way to develop an Android apps but unfortunately I didn&rsquo;t fully catch the name of the language (&ldquo;What what? was it Kotin? Tolkin? What he was saying???&rdquo;) so I give up.</p>
+
+<!--more-->
+
 
 <p>Next, I stumble upon <a href="https://twitter.com/donnfelker/status/675020357158477825">this twitter conversation</a> and finally found Kotlin.</p>
 
@@ -582,6 +603,9 @@ fun AppCompatActivity.navigate(frag: Fragment) {
     <id>http://shem8.github.io/blog/2015/12/31/android-dev-toolbox</id>
     <content type="html"><![CDATA[<h3>Talk I had given on AVGeeks on Dec 2015</h3>
 
+<!--more-->
+
+
 <p>[slideshare id=56571722&amp;doc=ywkq4qkcquknibuy5m3z-signature-2aa1ca40ff95bae825c5e98e9729691dc3307919cae0747b22cec4906e70d2df-poli-151231083934]</p>
 ]]></content>
   </entry>
@@ -592,6 +616,9 @@ fun AppCompatActivity.navigate(frag: Fragment) {
     <updated>2015-12-04T12:49:30+02:00</updated>
     <id>http://shem8.github.io/blog/2015/12/04/android-studio-for-experts-cheat-sheet</id>
     <content type="html"><![CDATA[<p>So last week there was the great Android Dev Summit, that in my opinion was one the greatest summit by Google, because unlike Goolge I/O or others Google big events- these event was very technical and was especially for devs, so if you didn&rsquo;t <a href="https://www.youtube.com/playlist?list=PLWz5rJ2EKKc_Tt7q77qwyKRgytF1RzRx8">watched the videos</a> already I very recommend to go over it and pick the ones interested you the most.</p>
+
+<!--more-->
+
 
 <p>One of the useful talks there was about some tricks and new cool things that you can do with Android studio (some of them old and some of them new and experimental), It&rsquo;s a bit long and cover a lot of things- so I decided to summarize it so I can go over it from time to time, I also add so time indication to each subject covered so you can just skip to this specific part.</p>
 
@@ -686,8 +713,12 @@ fun AppCompatActivity.navigate(frag: Fragment) {
     <link href="http://shem8.github.io/blog/2015/11/15/run-fast-fall-frequently-get-up-faster-and-go-drink-beer-at-the-beach-what-its-like-to-work-at-a-startup/"/>
     <updated>2015-11-15T12:24:22+02:00</updated>
     <id>http://shem8.github.io/blog/2015/11/15/run-fast-fall-frequently-get-up-faster-and-go-drink-beer-at-the-beach-what-its-like-to-work-at-a-startup</id>
-    <content type="html"><![CDATA[<p><em>Over the past 3 years I&rsquo;ve been working at </em><a href="http://myroll.com/"><em>MyRoll</em></a><em> (previously called Flayvr, the startup that loves you photos as much as you do</em>).<em> I joined right after the seed stage and I was the first employee ofthe company. This was my first time working at a startup and it&rsquo;s hands-down one of the best experiences I&rsquo;ve had in my not-so-long life. Lately, more and more of my friends have asked me: &ldquo;Should I join a startup, or just go corporate - something that&rsquo;s financially stable?&rdquo;. <strong>
-</strong>First- I want to clear the water and say that I don&rsquo;t really have an answer for that.  It really depends on the type of person you are. However, these is my 2 cents about all the </em><strong><em>GOOD</em></strong><em> of working in a small startup (Don&rsquo;t worry, there&rsquo;s plenty of bad as well - coming soon):</em></p>
+    <content type="html"><![CDATA[<p><em>Over the past 3 years I&rsquo;ve been working at </em><a href="http://myroll.com/"><em>MyRoll</em></a><em> (previously called Flayvr, the startup that loves you photos as much as you do</em>)._ I joined right after the seed stage and I was the first employee of the company. This was my first time working at a startup and it&rsquo;s hands-down one of the best experiences I&rsquo;ve had in my not-so-long life. Lately, more and more of my friends have asked me: &ldquo;Should I join a startup, or just go corporate - something that&rsquo;s financially stable?&rdquo;. __</p>
+
+<!--more-->
+
+
+<p><em><em>First- I want to clear the water and say that I don&rsquo;t really have an answer for that.  It really depends on the type of person you are. However, these is my 2 cents about all the </em>**</em>GOOD<em>**</em> of working in a small startup (Don&rsquo;t worry, there&rsquo;s plenty of bad as well - coming soon):_</p>
 
 <h2>1. You learn fast (because you don&rsquo;t have a choice)</h2>
 
@@ -781,6 +812,9 @@ _- Eloise Ristad_</blockquote>
     <updated>2015-10-02T12:03:17+03:00</updated>
     <id>http://shem8.github.io/blog/2015/10/02/pimp-up-your-splash-screen</id>
     <content type="html"><![CDATA[<p>In the past, splash screen in Android was a dirty word, It was usually a bad sign to an app that was converted from iPhone. But lately- Google added <a href="https://www.google.com/design/spec/patterns/launch-screens.html">launch screens</a> to the design guidelines, and maybe they changed the name, <a href="http://www.androiduipatterns.com/2015/08/splash-screen-with-any-other-name-is.html?m=1">but the concept is still the same</a>.</p>
+
+<!--more-->
+
 
 <p>Splash screen- Good or Bad debate aside, in <a href="https://play.google.com/store/apps/details?id=shem.getit&amp;hl=en">Ripples</a> I decided to go with the Google guidelines and do my own splash screen, but no just a simple one with the app logo, I wanted to do something different.</p>
 
@@ -882,6 +916,9 @@ private void init() {
     <id>http://shem8.github.io/blog/2015/09/11/affectively-reading</id>
     <content type="html"><![CDATA[<p><em>The internet is full of great pieces of knowledge. Starting from <a href="http://www.wired.com/2014/10/cheating-video-poker">amazing stories</a> and ending with some <a href="http://www.marcandangel.com/2014/07/06/12-quiet-rituals-of-enormously-successful-humans/">tips from the pros</a>. But because now days <a href="https://shem8.wordpress.com">every shitty twitter user that have a keyboard can open a blog</a> the internet is also full of garbage and texts that not worth your time, and on the other hand you always feel that you missing something, So what can we do?</em></p>
 
+<!--more-->
+
+
 <p>In this post I&rsquo;ll share with you my experience and my reading habits that I&rsquo;ve developed recently to maximize my reading time by reading exactly what I need and without afraid I&rsquo;m loosing something out there.</p>
 
 <p><strong><em>When I refer to &ldquo;reading&rdquo; on this post I refer to texts on the internet, especially blog posts or interesting articles. I&rsquo;m not talking about books (I hope I&rsquo;ll get to it on another post) or some news content that are not relevant if you read it a month later</em></strong></p>
@@ -955,6 +992,9 @@ private void init() {
     <updated>2015-09-04T15:10:43+03:00</updated>
     <id>http://shem8.github.io/blog/2015/09/04/android-drag-and-drop</id>
     <content type="html"><![CDATA[<p><em>Although Android system has a very good <a href="http://developer.android.com/guide/topics/ui/drag-drop.html">built-in drag &amp; drop mechanism</a>, I seeing lots of libraries that just duplicate this behaviour, or users that hack they way for building drag &amp; drop on their apps. In this blog post I will explain how to implement a simple drag &amp; drop functionality between different views with a very small amount of code.</em></p>
+
+<!--more-->
+
 
 <h1>0. Setup</h1>
 
@@ -1145,6 +1185,9 @@ Ok ok, please calm down, take a glass of bear and sit down. Actually the drag ha
     <id>http://shem8.github.io/blog/2015/08/24/know-what-not-to-build-droidcon-2015</id>
     <content type="html"><![CDATA[<h3>Talk I had given on <a href="https://events.bizzabo.com/droidcontlv2015/agenda/session/106642">Droidcon 2015</a></h3>
 
+<!--more-->
+
+
 <p>[slideshare id=49175997&amp;doc=knowwhatnottobuild2-150609142509-lva1-app6892]</p>
 ]]></content>
   </entry>
@@ -1156,6 +1199,9 @@ Ok ok, please calm down, take a glass of bear and sit down. Actually the drag ha
     <id>http://shem8.github.io/blog/2015/08/24/android-ui-tips-tricks-droidcon-2014</id>
     <content type="html"><![CDATA[<h3>Talk I had given on <a href="http://il.droidcon.com/2014/agenda/">Droidcon 2014</a></h3>
 
+<!--more-->
+
+
 <p>[slideshare id=35795002&amp;doc=androiduitipstricks-140612090259-phpapp02]</p>
 ]]></content>
   </entry>
@@ -1166,6 +1212,9 @@ Ok ok, please calm down, take a glass of bear and sit down. Actually the drag ha
     <updated>2015-08-06T15:15:11+03:00</updated>
     <id>http://shem8.github.io/blog/2015/08/06/custom-view-part-2</id>
     <content type="html"><![CDATA[<h5><em>In <a href="https://shem8.wordpress.com/2015/07/31/custom-view-part-1/">part 1</a> we learned how to build a simple custom view that&rsquo;s integrate nicely with our pager view and show some indication about the current page, in this post we&rsquo;ll take the view to the next level and add some subviews for page headers</em></h5>
+
+<!--more-->
+
 
 <hr />
 
@@ -1299,6 +1348,9 @@ protected void onDraw(Canvas canvas) {
     <updated>2015-07-31T15:40:17+03:00</updated>
     <id>http://shem8.github.io/blog/2015/07/31/custom-view-part-1</id>
     <content type="html"><![CDATA[<p>Until couple of months ago I&rsquo;ve been a bit afraid writing custom views. I thought it&rsquo;s too complicated and had a lot of overhead with handling all layouting and interactions, I felt there is not enough documentation out there, not mention the edge cases and performance. I had my default Android view component in my toolbox and thought that everything I needed can be composed from those.</p>
+
+<!--more-->
+
 
 <p>The last part is true for most cases. Most of Android apps can be built only with the basic layouts and views out there, so why do we still need to build custom views sometimes?</p>
 
@@ -1549,6 +1601,9 @@ public static int evaluateColor(float fraction, int startInt, int endInt) {
     <id>http://shem8.github.io/blog/2015/07/17/the-basic-android-stuff-that-no-one-tells-you</id>
     <content type="html"><![CDATA[<p>I started developing for Android 3 years ago. I was never really formally taught - no ‘real’ classes, no online courses. I did what I usually doing when I’m trying to learn a new thing - figure things out through trial and error. I downloaded the SDK and started tweaking and playing with things around while reading the Android developer guide.</p>
 
+<!--more-->
+
+
 <p>It seemed pretty straight forward and I was able to publish a real app after couple of days of playing with things. The app, <a href="https://play.google.com/store/apps/details?id=org.bill.splitter">Bill Splitter</a>, was super simple - it helped you split your bill while you were out dining with friends at a restaurant. Looked terrible, but hey, it worked! That was 3 years ago and since then I’ve gotten much better in Android and learnt tons of new of things (but I definitely still have a lot more to learn).</p>
 
 <p>A couple of weeks ago I got a mail from someone about Bill Splitter. He wanted to request a new feature and report some bugs that he experienced. I was a little surprised that someone still uses the app, but I was so happy that he actually contacted me that I wanted to solve the issues right away. I figured that that given how far I’ve come in my Android skillz, this should be quick.</p>
@@ -1684,9 +1739,10 @@ buildTypes {
     <link href="http://shem8.github.io/blog/2015/07/10/dont-touch-my-child-view/"/>
     <updated>2015-07-10T14:47:10+03:00</updated>
     <id>http://shem8.github.io/blog/2015/07/10/dont-touch-my-child-view</id>
-    <content type="html"><![CDATA[<hr />
+    <content type="html"><![CDATA[<p>A few days ago I’ve struggling with some bug someone reported about one my apps- <a href="https://play.google.com/store/apps/details?id=shem.getit">ripples</a>.</p>
 
-<p>A few days ago I’ve struggling with some bug someone reported about one my apps- <a href="https://play.google.com/store/apps/details?id=shem.getit">ripples</a>.</p>
+<!--more-->
+
 
 <p>A little background about the app- it’s an interactive game where ripples appear randomly on the screen and the user need to pop them out by touching them for couple of seconds.</p>
 
