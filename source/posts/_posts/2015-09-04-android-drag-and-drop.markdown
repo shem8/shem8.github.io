@@ -18,6 +18,7 @@ tags:
 ---
 
 _Although Android system has a very good [built-in drag & drop mechanism](http://developer.android.com/guide/topics/ui/drag-drop.html), I seeing lots of libraries that just duplicate this behaviour, or users that hack they way for building drag & drop on their apps. In this blog post I will explain how to implement a simple drag & drop functionality between different views with a very small amount of code._
+<!--more-->
 
 
 # 0. Setup
@@ -132,13 +133,13 @@ Couple of things to pay attention:
 
 
 
-	
+
   * We should pass the data of the view value to the drag and drop event for later use (to calculate the multiplication), we're doing it by using [ClipData](http://developer.android.com/reference/android/content/ClipData.html).
 
-	
+
   * We should show some indication about the dragging- that's what the [DragShadowBuilder](http://developer.android.com/reference/android/view/View.DragShadowBuilder.html) for, by default he's drawing the view image on dragging position. You can use it for drawing another image or some other indication.
 
-	
+
   * When we're ready we call startDrag. Yap, that's simple.
 
 
@@ -194,22 +195,22 @@ Lets's go over all the actions in the drag event we should handle **(remember, t
 
 
 
-	
+
   * ACTION_DRAG_STARTED- that's mean that there is some other view in the screen that is start dragging. If we want this other view will be able to be dropped on our view we should return "true", if we'll return "false" all the dragging and dropping flow won't be relevant (and the related events won't be delivered).
 
-	
+
   * ACTION_DRAG_ENTERED- the dragged view was entered to our view area, usually we should show some indication here (like changing the background color on our case)
 
-	
+
   * ACTION_DRAG_LOCATION- that's mean that the dragging view is changing his location within our view area, not much to do here, so just ignore.
 
-	
+
   * ACTION_DRAG_EXITED- the dragged view was exited from our view area, again- indication should be show here.
 
-	
+
   * ACTION_DROP- an actual drop was committed on our view! Now's the time to do your logic (for our case putting the right value in the text box). Don't forget to reset your indication from the ACTION_DRAG_ENTERED event!
 
-	
+
   * ACTION_DRAG_ENDED- the drag and drop flow was ended, but not on our view ( =( ). Again, not relevant on our case so we just ignore.
 
 

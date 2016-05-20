@@ -20,6 +20,7 @@ tags:
 ---
 
 In API 21 the Android team released bunch of very cool things for material design, most of the things focus around the design specs like colors or transition animation, other were for the new widgets like FAB, card view or recycle view, but within all those things there were also two things that barely discussed- [VectorDrawable](http://developer.android.com/reference/android/graphics/drawable/VectorDrawable.html) and [AnimatedVectorDrawable](http://developer.android.com/reference/android/graphics/drawable/AnimatedVectorDrawable.html).
+<!--more-->
 
 _Edit: looks like those classes became so popular that the Android team decided to add them to the [latest support library](http://android-developers.blogspot.co.il/2016/02/android-support-library-232.html), yay!_
 
@@ -43,13 +44,13 @@ Animations were a pain too. You basically had 3 options:
 
 
 
-	
+
   1. For a simple animations (like scaling, fading or moving) using the build-in view property animation, that was the case for 90% of the time.
 
-	
+
   2. If you had more complex animation on complex view you could create a custom animation, but for this you had to write lots of code
 
-	
+
   3. Use AnimationDrawable and put drawable for each frame.
 
 
@@ -99,16 +100,16 @@ A few notes regarding to this process:
 
 
 
-	
+
   1. Without [Nick Butcher](//twitter.com/crafty) and his great resources (like the [plaid](https://github.com/nickbutcher/plaid) app) I wouldn't know anything about AnimatedVectorDrawable, so a lot of credit from this blog post should go to him.
 
-	
+
   2. Most of the paths are not that easy to build and you'll need to play with this pretty much, you can use tools like Photoshop to export SVG data, but still, some manually work be will here.
 
-	
+
   3. The preview in Android Studio for the drawables is a bit buggy (especially around trimmed paths) so you need to test some things on device sometimes.
 
-	
+
   4. From what I saw- on the first times the animation can stuck, so it better to set the final asset state after some delay to make sure the icon looks good in the end of the animation.
 
 

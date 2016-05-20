@@ -19,15 +19,16 @@ tags:
 ---
 
 Until couple of months ago I've been a bit afraid writing custom views. I thought it's too complicated and had a lot of overhead with handling all layouting and interactions, I felt there is not enough documentation out there, not mention the edge cases and performance. I had my default Android view component in my toolbox and thought that everything I needed can be composed from those.
+<!--more-->
 
 The last part is true for most cases. Most of Android apps can be built only with the basic layouts and views out there, so why do we still need to build custom views sometimes?
 
 
 
-	
+
   1. Performance- especially for very complicated views in a list. For this I would recommend you to read the great post by the legendary Lucas Rocha: [Custom Layouts on Android](http://lucasr.org/2014/05/12/custom-layouts-on-android/)
 
-	
+
   2. Unique looking views with some specific ui, drawing, interactions or animation.
 
 

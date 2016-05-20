@@ -19,6 +19,7 @@ tags:
 ---
 
 _The internet is full of great pieces of knowledge. Starting from [amazing stories](http://www.wired.com/2014/10/cheating-video-poker) and ending with some [tips from the pros](http://www.marcandangel.com/2014/07/06/12-quiet-rituals-of-enormously-successful-humans/). But because now days [every shitty twitter user that have a keyboard can open a blog](https://shem8.wordpress.com) the internet is also full of garbage and texts that not worth your time, and on the other hand you always feel that you missing something, So what can we do?_
+<!--more-->
 
 In this post I'll share with you my experience and my reading habits that I've developed recently to maximize my reading time by reading exactly what I need and without afraid I'm loosing something out there.
 
@@ -52,13 +53,13 @@ Now you need to build some mechanism for saving your reading queue. I'm using [
 
 
 
-	
+
   1. Easy to insert (add to the queue)
 
-	
+
   2. Easy to pull (get the next for reading)
 
-	
+
   3. It is also nice to have some tagging, sharing and search functionality.
 
 
@@ -74,25 +75,25 @@ So now we have all the infrastructure ready, how do we put something in? I will 
 
 
 
-	
+
   1. Your direct channels- Those are the posts that you know that you don't wanna miss, like important blogs or interesting medium users. You want all those posts will be added automaticity to your platform.
 
-	
+
   2. Specific aggregator/ digested list- This one is tricky. In "The Tipping Point" Malcolm Gladwell says that on most of the times, it's better to ask a maven instead of learning things on yourself. If you, like me, can't handle all the blogs out there, not knowing all the bloggers and sites- find your maven that will send you the most important things out there.
 
-	
+
   3. Recommendation engine- This one is the best for exploring some new stuff that not necessary fit to your main interest. This can be some algorithm that based on the crowd source or you personal taste (or better- both). That's why it's important to manage all your reading thought the same platform to give it as much information as possible for future learning.
 
 
 Those 3 aspects should fill some nice and variety reading list. Here is my reading list:
 
-	
+
   1. As Android developer- the [Android blog](http://android-developers.blogspot.co.il/) is really important to me and I want to know on any additional API or new features there is. I'm also interested on every thing [Chet Haase](https://medium.com/@chethaase) is publishing. And with [IFTTT](https://ifttt.com/) it easily added to my pocket every time new item is publish.
 
-	
+
   2. 3 years ago I discover the wonderful [software lead weekly](http://softwareleadweekly.com/) project, I'm getting 1 weekly mail with the most interesting stuff out there about startup culture and leadership. And thanks to the awesome [Oren Ellenbogen](https://twitter.com/orenellenbogen) there is a simple 'Add to pocket' option.
 
-	
+
   3. Pocket is doing amazing work here, and send me every week couple of articles that might interesting me (I say amazing because it's pretty accurate). Lately I also started using medium, and it's recommendation emails are nice too.
 
 

@@ -19,7 +19,7 @@ tags:
 ---
 
 Welcome to the third (and last) part of the tutorial of how building a bad app. After we've building a bad app in the [first part](https://shem8.wordpress.com/2016/03/31/10-good-rules-for-bad-app-part-1-technical/), and remarkably ruin its look and feel in the [second part](https://shem8.wordpress.com/2016/04/17/10-good-rules-for-bad-app-part-2-uxui/), we're now going to go over on 10 steps to easily how to kill your product:
-
+<!--more-->
 
 ## #1: Add as many features as possible
 

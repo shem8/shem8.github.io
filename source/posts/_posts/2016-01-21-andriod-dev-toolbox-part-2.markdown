@@ -22,6 +22,7 @@ tags:
 
 The second part of the Android dev toolbox lecture,
 This time we’ll focus on collection of tools and resources that help you build better apps in less time.
+<!--more-->
 
 Slides are also available [here](https://docs.google.com/presentation/d/1GtJH_mBY6TM0yk2cQEYWW6yCntyi-6HfjuzTzt9nuhQ/pub?start=false&loop=false&delayms=30000)
 

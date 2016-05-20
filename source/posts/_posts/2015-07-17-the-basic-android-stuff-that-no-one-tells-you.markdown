@@ -17,6 +17,7 @@ tags:
 ---
 
 I started developing for Android 3 years ago. I was never really formally taught - no ‘real’ classes, no online courses. I did what I usually doing when I’m trying to learn a new thing - figure things out through trial and error. I downloaded the SDK and started tweaking and playing with things around while reading the Android developer guide.
+<!--more-->
 
 It seemed pretty straight forward and I was able to publish a real app after couple of days of playing with things. The app, [Bill Splitter](https://play.google.com/store/apps/details?id=org.bill.splitter), was super simple - it helped you split your bill while you were out dining with friends at a restaurant. Looked terrible, but hey, it worked! That was 3 years ago and since then I’ve gotten much better in Android and learnt tons of new of things (but I definitely still have a lot more to learn).
 
@@ -60,10 +61,10 @@ Dave Smith publish a great [post](https://possiblemobile.com/2013/06/context/) a
 
 
 
-	
+
   * If you need to save the reference for a latter use, probably for some background not-ui-related task (for example, update the shared preference)- you should use the **App** context.
 
-	
+
   * For all other cases- use the **Activity** context.
 
 
@@ -129,10 +130,10 @@ When developing your app you want to work on a separate version of your app. Off
 
 
 
-	
+
   1. You don't want to dirty your real app data.
 
-	
+
   2. If you're like me, most of your apps are independent, small, utilities or games, that probably won't be a big hit at first. Thats means that your analytics will contain a lot of session from your side and few from real users, what make it very hard to measure.
 
 

@@ -19,28 +19,22 @@ tags:
 ---
 
 ##### _In [part 1](https://shem8.wordpress.com/2015/07/31/custom-view-part-1/) we learned how to build a simple custom view that's integrate nicely with our pager view and show some indication about the current page, in this post we'll take the view to the next level and add some subviews for page headers_
-
-
-
+<!--more-->
 
 * * *
-
-
-
-
 
 So we have simple nice looking pager indicator that animate smoothly when moving between tabs, but it's still missing some info about the tabs- something like the pages titles. So we'll add some subviews as the page titles and make them a bit interactive to show the selected page.
 Why I plan to use subviews instead of just drawing the text straight on the canvas?
 
 
 
-	
+
   * When drawing text you need to handle the text position, text size line breaking etc... Lets focus on building the view and let Android save us time by using TextView.
 
-	
+
   * When using subview we also save code on handling click events.
 
-	
+
   * By adding subviews we make ourselves use ViewGroup and learn how to handle layout and measure parent and child views, and we're all here to learn right? =)
 
 
@@ -171,6 +165,3 @@ And wallah:
 
 
 ### You can find the whole code in my [git repository](https://github.com/shem8/customviewpager), have fun!
-
-
-

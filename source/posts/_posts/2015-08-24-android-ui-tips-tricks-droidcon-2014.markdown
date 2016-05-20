@@ -19,6 +19,7 @@ tags:
 ---
 
 ### Talk I had given on [Droidcon 2014](http://il.droidcon.com/2014/agenda/)
+<!--more-->
 
 
 [slideshare id=35795002&doc=androiduitipstricks-140612090259-phpapp02]

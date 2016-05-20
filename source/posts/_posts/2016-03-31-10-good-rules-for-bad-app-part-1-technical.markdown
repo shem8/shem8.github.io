@@ -20,30 +20,31 @@ tags:
 ---
 
 We were all been there, you got a great idea for an app, you gather some feedback and even managed to build a team and you going full power to conquer the app store. So a second before starting working on your genius [egg timer app](https://play.google.com/store/apps/details?id=com.mobication.EggTimerPro&hl=en), it is worth taking a moment and think about how you're going to do it.
+<!--more-->
 
 Following the hilarious post by Chet Haase about [10 good rules for bad API](https://medium.com/pointer-io/this-article-is-exclusive-to-pointer-a-reading-club-for-developers-9b03f3df060c), I decided to put together my list about how to build a bad app. but a few notes first:
 
 
 
-	
+
   * There are so many bad apps out there, each one is bad in it own way so it's really hard to set only 10. I tried to do my best for taking the top bad patterns, but I trust you to keep fucking it up much more than what I'm talking about here.
 
-	
+
   * The beauty of the apps world that you can go wrong in many aspects of the product, that makes enough room for each team member to ruin your business, that is why I divided this blog post into 3 parts- technically, UI/UX and product.
 
-	
+
   * Even good apps can adopt one or two bad things to their app, so it's not all or nothing.
 
-	
+
   * Those bad habits are bad habits right now, because Google already proved that they can change that any time (like [bottom navigation](https://www.google.com/design/spec/components/bottom-navigation.html) is a thing now? WTF?!)
 
-	
+
   * Who am I to say about apps if they are doing a bad things or not? That's because I've done most of the things here and then realised how bad it is, that's why.
 
-	
+
   * The list not sorted by priority, because it's hard to compare what buried your app in the store listing.
 
-	
+
   * I'm not [Chet Haase](https://medium.com/@chethaase) so this post can't be half good or funny as his, so sorry for that.
 
 

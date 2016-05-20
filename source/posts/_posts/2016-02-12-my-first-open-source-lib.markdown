@@ -20,13 +20,13 @@ tags:
 ---
 
 As part of my last [Friday project](https://medium.com/life-learning/the-one-side-project-per-year-challenge-fa3c64a48da6#.3vp2es9hh) I created a new Android app (releasing it soon!). In this project I decided to focus on 2 new things I want to learn:
+<!--more-->
 
 
 
-	
   1. How to write Android apps with [Kotlin](https://shem8.wordpress.com/2016/01/01/kotlin-a-better-java-for-android/)
 
-	
+
   2. Create an awesome UI and animations
 
 
@@ -46,10 +46,10 @@ Now I had two options:
 
 
 
-	
+
   1. Copy the code, working with him in house and customise the hell out of the view for him.
 
-	
+
   2. Create a real library with a real API for customise everything in the view and get away from endless features requests.
 
 
@@ -80,13 +80,13 @@ Then I was comment to the author of the original design that his design was so e
 
 
 
-	
+
   * If you have some cool piece of code that you feel that others will want to use it- release it to an open source library.
 
-	
+
   * Do the simple things first- the first version can be very basic, wait to see what the users want.
 
-	
+
   * Spread the word and let others know you build a great thing.
 
 

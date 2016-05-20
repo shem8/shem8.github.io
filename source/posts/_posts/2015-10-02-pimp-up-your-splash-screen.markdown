@@ -21,6 +21,7 @@ tags:
 ---
 
 In the past, splash screen in Android was a dirty word, It was usually a bad sign to an app that was converted from iPhone. But lately- Google added [launch screens](https://www.google.com/design/spec/patterns/launch-screens.html) to the design guidelines, and maybe they changed the name, [but the concept is still the same](http://www.androiduipatterns.com/2015/08/splash-screen-with-any-other-name-is.html?m=1).
+<!--more-->
 
 Splash screen- Good or Bad debate aside, in [Ripples](https://play.google.com/store/apps/details?id=shem.getit&hl=en) I decided to go with the Google guidelines and do my own splash screen, but no just a simple one with the app logo, I wanted to do something different.
 
@@ -30,13 +31,13 @@ A couple of words about Ripples to the ones who don't know- It's a very simple a
 
 
 
-	
+
   1. It'll make this blog post to a pretty short and pointless
 
-	
+
   2. It will add a lot of resources to the app and make it bigger with no reason
 
-	
+
   3. We won't learn anything new
 
 

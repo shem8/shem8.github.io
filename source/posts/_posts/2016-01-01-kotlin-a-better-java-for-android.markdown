@@ -19,6 +19,7 @@ tags:
 ---
 
 A couple of weeks ago, when going over some Android DevSummit videos, I encountered in some question about alternative language for Android during one of the [fireside chats](https://youtu.be/-VNfWh5UkfY?list=PLWz5rJ2EKKc_Tt7q77qwyKRgytF1RzRx8&t=1461) session with the Android team. It was really interesting that there was another way to develop an Android apps but unfortunately I didn't fully catch the name of the language ("What what? was it Kotin? Tolkin? What he was saying???") so I give up.
+<!--more-->
 
 Next, I stumble upon [this twitter conversation](https://twitter.com/donnfelker/status/675020357158477825) and finally found Kotlin.
 
@@ -40,16 +41,16 @@ Second- Android considered as front end platform and as frond end developer I wo
 
 
 
-	
+
   * Easily add helper methods to all kinds of types (and not using static utils classes everywhere).
 
-	
+
   * Lambda/ function pointers/ on the fly code execution.
 
-	
+
   * Easily run things in background and async task, without the [callback hell.](http://stackoverflow.com/questions/29341582/how-to-avoid-callback-hell-in-java)
 
-	
+
   * I would be glad to extends from my own classes by most of the time I must extends from Android classes (or other 3rd libraries) what make the code reuse and abstraction a bit hard.
 
 
@@ -173,5 +174,3 @@ Java in general, and Android in particular, has not so few problems, and althoug
 Kotlin is some experiment from JetBrains to bring the latest design patterns paradigms to Java, Android and JS platforms that was quickly take Android community attention (and even inside Google).
 
 As you can see it look pretty good for start, it can save much redundant code and speed up development, and it will be interesting what will be next moves from Google and JetBrains and if it gonna get to the mainstream.
-
-

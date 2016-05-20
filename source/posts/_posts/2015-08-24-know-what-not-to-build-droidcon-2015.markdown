@@ -19,6 +19,7 @@ tags:
 ---
 
 ### Talk I had given on [Droidcon 2015](https://events.bizzabo.com/droidcontlv2015/agenda/session/106642)
+<!--more-->
 
 
 [slideshare id=49175997&doc=knowwhatnottobuild2-150609142509-lva1-app6892]

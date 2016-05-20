@@ -16,34 +16,10 @@ tags:
 - androiddev
 - ripples
 ---
-
-
-
-
-
-
-
-
-* * *
-
-
-
-
-
-
-
-
-
-
-
-
-
 A few days ago I’ve struggling with some bug someone reported about one my apps- [ripples](https://play.google.com/store/apps/details?id=shem.getit).
-
+<!--more-->
 
 A little background about the app- it’s an interactive game where ripples appear randomly on the screen and the user need to pop them out by touching them for couple of seconds.
-
-
 
 
 ![](https://d262ilb51hltx0.cloudfront.net/max/800/1*jxjAMG3FfKvvnb4KY5r14w.gif)The bug was happen when we touch first the parent view and then the ripple view. As you can see in the example above, the user touch the background and then when the ripple appear and the user try to touch it- touch events on the ripple view are disabled.
@@ -103,7 +79,7 @@ The parent view is just simple RelativeLayout that wasn’t changed in any way:
 
 
 
-    
+
     public class <strong class="markup--strong markup--pre-strong">MyRelativeLayout</strong> extends <strong class="markup--strong markup--pre-strong">RelativeLayout</strong> {<em class="markup--em markup--pre-em">
       //Nothing here for now.
     </em>}
@@ -116,7 +92,7 @@ The ripple view is a little more complicated but for simplicity I stripped out a
 
 
 
-    
+
     public class <strong class="markup--strong markup--pre-strong">RippleGameView</strong> extends <strong class="markup--strong markup--pre-strong">FrameLayout</strong> {
       @Override
       public boolean <strong class="markup--strong markup--pre-strong">onTouchEvent</strong>(MotionEvent event) {
@@ -148,14 +124,14 @@ That’s why we can implement our own version that’s gonna act like we wanted,
 
 
 
-    
+
     @Override
     public boolean <strong class="markup--strong markup--pre-strong">dispatchTouchEvent</strong>(MotionEvent ev) {
     <em class="markup--em markup--pre-em">    //Get the touch position</em>
         int actionIndex = ev.getActionIndex();
         final float x = ev.getX(actionIndex);
         final float y = ev.getY(actionIndex);
-    
+
     <em class="markup--em markup--pre-em">    //Iterate over child view and search for the right child that should handle this touch event</em>
         for (int i = getChildCount() - 1; i >= 0; i--) {
             View child = getChildAt(i);
@@ -187,14 +163,3 @@ And the result:
 
 
 ![](https://d262ilb51hltx0.cloudfront.net/max/800/1*hkSUnobyZD3cC01mGTzh7w.gif)
-
-
-
-
-
-
-
-
-
-
-

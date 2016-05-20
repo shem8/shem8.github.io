@@ -17,7 +17,8 @@ tags:
 - startup
 ---
 
-_Over the past 3 years I've been working at _[_MyRoll_](http://myroll.com/)_ (previously called Flayvr, the startup that loves you photos as much as you do_)._ I joined right after the seed stage and I was the first employee ofthe company. This was my first time working at a startup and it's hands-down one of the best experiences I've had in my not-so-long life. Lately, more and more of my friends have asked me: "Should I join a startup, or just go corporate - something that's financially stable?". __
+_Over the past 3 years I've been working at _[_MyRoll_](http://myroll.com/)_ (previously called Flayvr, the startup that loves you photos as much as you do_)._ I joined right after the seed stage and I was the first employee of the company. This was my first time working at a startup and it's hands-down one of the best experiences I've had in my not-so-long life. Lately, more and more of my friends have asked me: "Should I join a startup, or just go corporate - something that's financially stable?". __
+<!--more-->
 __First- I want to clear the water and say that I don't really have an answer for that.  It really depends on the type of person you are. However, these is my 2 cents about all the _**_GOOD_**_ of working in a small startup (Don't worry, there's plenty of bad as well - coming soon):_
 
 
@@ -100,25 +101,25 @@ Here is some very small taste of the things that I had the privilege to do over 
 
 
 
-	
+
   * I gave 2 talks on 2 different DroidCon conferences (The biggest Android conference around)
 
-	
+
   * I delivered tens of pitches in English as part of our startup booth in conferences
 
-	
+
   * I went over couple to absolute strangers in the middle of the street and asked them to play with our app, just to gather some feedback
 
-	
+
   * I emailed hundreds of users, closed support tickets and solved their issues
 
-	
+
   * I went over to the home of one of our investors and worked with her on fixing an issue she had with the app
 
-	
+
   * I interviewed candidates applying for the company
 
-	
+
   * I started writing my blog :)
 
 
