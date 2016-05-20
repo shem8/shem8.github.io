@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Pimp-up Your Splash Screen - My Octopress Blog</title>
+  <meta name="author" content="Your Name">
+
+  
+  <meta name="description" content="Pimp-up Your Splash Screen written in android, posts In the past, splash screen in Android was a dirty word, It was usually a bad sign to an app &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://shem8.github.io/blog/2015/10/02/pimp-up-your-splash-screen">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  
+
+</head>
+
+  <body>
+    <a href="/" class="home-icon">
+      <img src="/images/home.png"/>
+    </a>
+
+    <article role="article" class="full-single-article">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h1>Pimp-up Your Splash Screen</h1>
+        <div class="meta">
+          written 
+
+
+
+
+
+
+
+
+  
+
+
+
+<time datetime="2015-10-02T12:03:17+03:00" pubdate data-updated="true"></time>
+          
+
+in
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/android/'>android</a>, <a class='category' href='/blog/categories/posts/'>posts</a>
+  
+</span>
+
+
+        </div>
+        <p>In the past, splash screen in Android was a dirty word, It was usually a bad sign to an app that was converted from iPhone. But lately- Google added <a href="https://www.google.com/design/spec/patterns/launch-screens.html">launch screens</a> to the design guidelines, and maybe they changed the name, <a href="http://www.androiduipatterns.com/2015/08/splash-screen-with-any-other-name-is.html?m=1">but the concept is still the same</a>.</p>
+
+<p>Splash screen- Good or Bad debate aside, in <a href="https://play.google.com/store/apps/details?id=shem.getit&amp;hl=en">Ripples</a> I decided to go with the Google guidelines and do my own splash screen, but no just a simple one with the app logo, I wanted to do something different.</p>
+
+<p>A couple of words about Ripples to the ones who don&rsquo;t know- It&rsquo;s a very simple app that all about little circles that slowly reveals and getting bigger. So what I thought is revealing the Ripples logo in the splash screen with some ripples animations in some masking-like way:</p>
+
+<p><a href="https://shem8.files.wordpress.com/2015/09/crop.gif"><img src="https://shem8.files.wordpress.com/2015/09/crop.gif" alt="crop" /></a>The easiest way to do it is just taking this gif and put it in the splash screen, but I&rsquo;m not gonna do it because:</p>
+
+<ol>
+<li><p>It&rsquo;ll make this blog post to a pretty short and pointless</p></li>
+<li><p>It will add a lot of resources to the app and make it bigger with no reason</p></li>
+<li><p>We won&rsquo;t learn anything new</p></li>
+</ol>
+
+
+<p>So how we gonna do it? With some basic and easy Android drawing methods!</p>
+
+<p>First lets build the splash view with the image, It&rsquo;s a simple view that just load the bitmap and give the view the same size as the bitmap, pay attention that we not displaying anything yet:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+public class SplashView extends View {
+    private Bitmap bitmap;</p>
+
+<pre><code>public SplashView(Context context) {
+    super(context);
+    init();
+}
+
+private void init() {
+    bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.logo);
+}
+
+@Override
+protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+    int w = MeasureSpec.makeMeasureSpec(bitmap.getWidth(), MeasureSpec.EXACTLY);
+    int h = MeasureSpec.makeMeasureSpec(bitmap.getHeight(), MeasureSpec.EXACTLY);
+    super.onMeasure(w, h);
+}
+</code></pre>
+
+<p>}
+[/code]</p>
+
+<p>Now lets start drawing our graphic- We'll draw some masking over the logo bitmap:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+@Override
+protected void onDraw(Canvas canvas) {
+    float d = 1 / 0.4f;
+    float v = sizeAnimator.getAnimatedFraction();</p>
+
+<pre><code>Path path = new Path();
+float rad = 0.56f * bitmap.getHeight();
+path.addCircle((int)(0.08 * bitmap.getWidth()), (int)(0.32 * bitmap.getHeight()), rad * Math.min(d * v, 1), Path.Direction.CW);
+path.addCircle((int)(0.2 * bitmap.getWidth()), (int)(0.47 * bitmap.getHeight()), rad * Math.min(d * (v - 0.1f), 1), Path.Direction.CW);
+path.addCircle((int)(0.33 * bitmap.getWidth()), (int)(0.49 * bitmap.getHeight()), rad * Math.min(d * (v - 0.2f), 1), Path.Direction.CW);
+path.addCircle((int)(0.5 * bitmap.getWidth()), (int)(0.49 * bitmap.getHeight()), rad * Math.min(d * (v - 0.3f), 1), Path.Direction.CW);
+path.addCircle((int)(0.63 * bitmap.getWidth()), (int)(0.35 * bitmap.getHeight()), rad * Math.min(d * (v - 0.4f), 1), Path.Direction.CW);
+path.addCircle((int)(0.76 * bitmap.getWidth()), (int)(0.49 * bitmap.getHeight()), rad * Math.min(d * (v - 0.5f), 1), Path.Direction.CW);
+path.addCircle((int)(0.93 * bitmap.getWidth()), (int)(0.49 * bitmap.getHeight()), rad * Math.min(d * (v - 0.6f), 1), Path.Direction.CW);
+canvas.clipPath(path);
+canvas.drawBitmap(bitmap, 0, 0, null);
+</code></pre>
+
+<p>}
+[/code]</p>
+
+<p>Please ignore the constants value all over the place, those are parameter that I&rsquo;ve played with (things that you can&rsquo;t do if you chose to implement it with gif!) while making the animation. The important things are how we creating a new path (that built from circles) and clipping the canvas to this path so this what will gonna be visible eventually. After setting to mask for the canvas we just need to draw the bitmap.</p>
+
+<p>Now we just need to put the animation:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+private void init() {
+    &hellip;
+    sizeAnimator = ValueAnimator.ofFloat(0, 0.8f);
+    sizeAnimator.setDuration(2500);
+    sizeAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+        @Override
+        public void onAnimationUpdate(ValueAnimator animation) {
+            invalidate();
+        }
+    });
+}</p>
+
+<p>public void start() {
+    sizeAnimator.start();
+}
+[/code]</p>
+
+<p>And that&rsquo;s it:</p>
+
+<p><a href="https://shem8.files.wordpress.com/2015/09/output.gif"><img src="https://shem8.files.wordpress.com/2015/09/output.gif" alt="output" /></a></p>
+
+
+        <hr class="divider-short"/>
+
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+<hr class="divider-short"/>
+
+<div class="archive-link">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        
+          <a class="pull-left" href="/blog/2015/09/11/affectively-reading/" title="Previous Post: Effectively reading">&laquo; Previous: Effectively reading</a>
+        
+
+        
+          <a class="pull-right" href="/blog/2015/11/15/run-fast-fall-frequently-get-up-faster-and-go-drink-beer-at-the-beach-what-its-like-to-work-at-a-startup/" title="Next Post: Run fast, fall frequently, get up faster and go drink beer at the beach: What it's like to work at a StartUp">Next: Run fast, fall frequently, get up faster and go drink beer at the beach: What it's like to work at a StartUp &raquo;</a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="her-row">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1">
+  <a href="/"><h4>Home</h4></a>
+</div>
+
+<div class="col-md-2">
+  <div class="social-icon-list">
+    
+
+    
+
+    
+
+    
+  </div>
+</div>
+
+<div class="pull-right">
+  <h4>Powered by <a href="http://octopress.org/">Octopress</a>. Designed by <a href="http://AdrianArtiles.com">Adrian Artiles</a>.</h4>
+</div>
+
+
+    </div>
+  </div>
+</footer>
+
+    
+  </body>
+</html>

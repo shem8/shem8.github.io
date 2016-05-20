@@ -1,0 +1,372 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Custom View- Part 1 - My Octopress Blog</title>
+  <meta name="author" content="Your Name">
+
+  
+  <meta name="description" content="Custom View- Part 1 written in android, posts Until couple of months ago I&rsquo;ve been a bit afraid writing custom views. I thought it&rsquo;s too &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://shem8.github.io/blog/2015/07/31/custom-view-part-1">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  
+
+</head>
+
+  <body>
+    <a href="/" class="home-icon">
+      <img src="/images/home.png"/>
+    </a>
+
+    <article role="article" class="full-single-article">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h1>Custom View- Part 1</h1>
+        <div class="meta">
+          written 
+
+
+
+
+
+
+
+
+  
+
+
+
+<time datetime="2015-07-31T15:40:17+03:00" pubdate data-updated="true"></time>
+          
+
+in
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/android/'>android</a>, <a class='category' href='/blog/categories/posts/'>posts</a>
+  
+</span>
+
+
+        </div>
+        <p>Until couple of months ago I&rsquo;ve been a bit afraid writing custom views. I thought it&rsquo;s too complicated and had a lot of overhead with handling all layouting and interactions, I felt there is not enough documentation out there, not mention the edge cases and performance. I had my default Android view component in my toolbox and thought that everything I needed can be composed from those.</p>
+
+<p>The last part is true for most cases. Most of Android apps can be built only with the basic layouts and views out there, so why do we still need to build custom views sometimes?</p>
+
+<ol>
+<li><p>Performance- especially for very complicated views in a list. For this I would recommend you to read the great post by the legendary Lucas Rocha: <a href="http://lucasr.org/2014/05/12/custom-layouts-on-android/">Custom Layouts on Android</a></p></li>
+<li><p>Unique looking views with some specific ui, drawing, interactions or animation.</p></li>
+</ol>
+
+
+<p>This post (and the later one) will focus on the 2nd point, we&rsquo;ll try to build some custom tab indicator that eventually look will like this:<img src="https://shem8.files.wordpress.com/2015/07/step35.gif" alt="step3" /></p>
+
+<p>So ennough talking, lets get into code</p>
+
+<h1>0. Setup</h1>
+
+<p>We&rsquo;ll create a simple application with pager and our pager indicator (that for now just will be an empty view):</p>
+
+<p>activity_main.xml:</p>
+
+<p>[code language=&ldquo;xml&rdquo;]
+&lt;LinearLayout xmlns:android=&ldquo;<a href="http://schemas.android.com/apk/res/android">http://schemas.android.com/apk/res/android</a>&rdquo;
+    android:layout_width=&ldquo;match_parent&rdquo;
+    android:layout_height=&ldquo;match_parent&rdquo;
+    android:orientation=&ldquo;vertical&rdquo;&gt;</p>
+
+<pre><code>&amp;lt;android.support.v4.view.ViewPager
+    android:id="@+id/pager"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"/&amp;gt;
+
+&amp;lt;shem.customviewpager.PagerIndicatorView
+    android:id="@+id/indicator"
+    android:layout_width="match_parent"
+    android:layout_height="50dp" /&amp;gt;
+</code></pre>
+
+<p>&lt;/LinearLayout&gt;
+[/code]</p>
+
+<p>MainActivity.java:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+public class MainActivity extends AppCompatActivity {</p>
+
+<pre><code>private ViewPager mPager;
+private PagerAdapter mPagerAdapter;
+
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+
+    final PagerIndicatorView indicator = (PagerIndicatorView) findViewById(R.id.indicator);
+    mPager = (ViewPager) findViewById(R.id.pager);
+    mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
+    mPager.setAdapter(mPagerAdapter);
+}
+
+private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
+    public ScreenSlidePagerAdapter(FragmentManager fm) {
+        super(fm);
+    }
+
+    @Override
+    public Fragment getItem(int position) {
+        return TextFragment.newInstance(position + "");
+    }
+
+    @Override
+    public int getCount() {
+        return 4;
+    }
+}
+</code></pre>
+
+<p>}
+[/code]</p>
+
+<p>TextFragment.java:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+public class TextFragment extends Fragment {
+        private static final String TEXT_KEY = &ldquo;TEXT&rdquo;;</p>
+
+<pre><code>public static TextFragment newInstance(String text) {
+    TextFragment f = new TextFragment();
+    Bundle arg = new Bundle();
+    arg.putString(TEXT_KEY, text);
+    f.setArguments(arg);
+    return f;
+}
+
+@Override
+public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                         Bundle savedInstanceState) {
+    View view = inflater.inflate(R.layout.text_fragment, container, false);
+    String text = getArguments().getString(TEXT_KEY);
+    ((TextView)view.findViewById(R.id.textView)).setText(text);
+    return view;
+}
+</code></pre>
+
+<p>}
+[/code]</p>
+
+<p>PagerIndicatorView.java:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+public class PagerIndicatorView extends View {</p>
+
+<pre><code>public PagerIndicatorView(Context context, AttributeSet attrs) {
+    super(context, attrs);
+    init();
+}
+
+public void init() {
+    //Gonna init things for view here soon
+}
+</code></pre>
+
+<p>}
+[/code]</p>
+
+<h1>1. Simple indicator</h1>
+
+<p>Lets start with putting some indication in the view about where we are in the pager.</p>
+
+<p>So first we gonna create the Paint object that gonna be used for drawing, we&rsquo;ll use a simple solid color for now. We pre create it in the init method because it prefer no to allocate object in the onDraw method, because it gonna be called a lot.</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+    public void init() {
+        paint = new Paint();
+        paint.setColor(Color.LTGRAY);
+    }
+[/code]</p>
+
+<p>Now we about to draw the indicator in the right place in the view, remember that we&rsquo;re using a 4 items in the pager- so the width should be &frac14; of the canvas width:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        canvas.drawRect((index) * canvas.getWidth() / 4, 0, (1 + index) * canvas.getWidth() / 4, canvas.getHeight(), paint);
+    }
+[/code]</p>
+
+<p>Now we just need to update the view index and redraw it every time pager is changing:</p>
+
+<p>In PagerIndicatorView:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+    public void setProgress(int index) {
+        this.index = index;
+        invalidate();
+    }
+[/code]</p>
+
+<p>In MainActivity:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+    mPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                indicator.setProgress(position);
+            }
+        });
+[/code]</p>
+
+<p><img src="https://shem8.files.wordpress.com/2015/07/step15.gif" alt="step1" /></p>
+
+<h1>2. Make it smooth</h1>
+
+<p>So the indication works great but it just jump when we move from page to page, we would like it to be more smooth and indicate the real position when we move.
+For this we need to pass the position offset when the page scrolled and change a bit the calculation when drawing:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        canvas.drawRect((index + prec) * canvas.getWidth() / 4, 0, (1 + index + prec) * canvas.getWidth() / 4, canvas.getHeight(), paint);
+    }</p>
+
+<pre><code>public void setProgress(int index, float prec) {
+    this.index = index;
+    this.prec = prec;
+    invalidate();
+}
+</code></pre>
+
+<p>[/code]</p>
+
+<h1><img src="https://shem8.files.wordpress.com/2015/07/step25.gif" alt="step2" /></h1>
+
+<h1>3. Bring it to life</h1>
+
+<p>So now the view works well but it looks a bit boring, how about making it a bit more colorful?
+Let start by setting 4 colors- one for each tab:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+        colors = new int[] {Color.parseColor(&ldquo;#FFD600&rdquo;),
+                Color.parseColor(&ldquo;#FF6D00&rdquo;),
+                Color.parseColor(&ldquo;#0091EA&rdquo;),
+                Color.parseColor(&ldquo;#64DD17&rdquo;)};
+[/code]</p>
+
+<p>Now we need to get the right color to set when moving from color to color, for this we have a utiliy method that can calculate the right color while moving:</p>
+
+<p>[code language=&ldquo;java&rdquo;]</p>
+
+<pre><code>@Override
+protected void onDraw(Canvas canvas) {
+    super.onDraw(canvas);
+    paint.setColor(evaluateColor(prec, colors[index], colors[Math.min(index + 1, colors.length - 1)]));
+    canvas.drawRect((index + prec) * canvas.getWidth() / 4, 0, (1 + index + prec) * canvas.getWidth() / 4, canvas.getHeight(), paint);
+}
+
+public static int evaluateColor(float fraction, int startInt, int endInt) {
+    int startA = (startInt &amp;gt;&amp;gt; 24) &amp; 0xff;
+    int startR = (startInt &amp;gt;&amp;gt; 16) &amp; 0xff;
+    int startG = (startInt &amp;gt;&amp;gt; 8) &amp; 0xff;
+    int startB = startInt &amp; 0xff;
+
+    int endA = (endInt &amp;gt;&amp;gt; 24) &amp; 0xff;
+    int endR = (endInt &amp;gt;&amp;gt; 16) &amp; 0xff;
+    int endG = (endInt &amp;gt;&amp;gt; 8) &amp; 0xff;
+    int endB = endInt &amp; 0xff;
+
+    return (int)((startA + (int)(fraction * (endA - startA))) &amp;&amp; 24) |
+            (int)((startR + (int)(fraction * (endR - startR))) &amp;&amp; 16) |
+            (int)((startG + (int)(fraction * (endG - startG))) &amp;&amp; 8) |
+            (int)((startB + (int)(fraction * (endB - startB))));
+}
+</code></pre>
+
+<p>[/code]</p>
+
+<p><img src="https://shem8.files.wordpress.com/2015/07/step35.gif" alt="step3" /></p>
+
+<p>That&rsquo;s it, look like we have some nice looking indicator, in the <a href="https://shem8.wordpress.com/2015/08/06/custom-view-part-2/">next post</a> we&rsquo;ll add some sub views with tab titles, so stay tuned =)</p>
+
+
+        <hr class="divider-short"/>
+
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+<hr class="divider-short"/>
+
+<div class="archive-link">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        
+          <a class="pull-left" href="/blog/2015/07/17/the-basic-android-stuff-that-no-one-tells-you/" title="Previous Post: The basic Android stuff that nobody talks about">&laquo; Previous: The basic Android stuff that nobody talks about</a>
+        
+
+        
+          <a class="pull-right" href="/blog/2015/08/06/custom-view-part-2/" title="Next Post: Custom view- Part 2">Next: Custom view- Part 2 &raquo;</a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="her-row">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1">
+  <a href="/"><h4>Home</h4></a>
+</div>
+
+<div class="col-md-2">
+  <div class="social-icon-list">
+    
+
+    
+
+    
+
+    
+  </div>
+</div>
+
+<div class="pull-right">
+  <h4>Powered by <a href="http://octopress.org/">Octopress</a>. Designed by <a href="http://AdrianArtiles.com">Adrian Artiles</a>.</h4>
+</div>
+
+
+    </div>
+  </div>
+</footer>
+
+    
+  </body>
+</html>

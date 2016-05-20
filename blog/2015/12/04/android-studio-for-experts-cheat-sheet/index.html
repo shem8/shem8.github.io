@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Android Studio for Experts- Cheat Sheet - My Octopress Blog</title>
+  <meta name="author" content="Your Name">
+
+  
+  <meta name="description" content="Android Studio for Experts- Cheat Sheet written in android, posts So last week there was the great Android Dev Summit, that in my opinion was one &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://shem8.github.io/blog/2015/12/04/android-studio-for-experts-cheat-sheet">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  
+
+</head>
+
+  <body>
+    <a href="/" class="home-icon">
+      <img src="/images/home.png"/>
+    </a>
+
+    <article role="article" class="full-single-article">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h1>Android Studio for Experts- Cheat Sheet</h1>
+        <div class="meta">
+          written 
+
+
+
+
+
+
+
+
+  
+
+
+
+<time datetime="2015-12-04T12:49:30+02:00" pubdate data-updated="true"></time>
+          
+
+in
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/android/'>android</a>, <a class='category' href='/blog/categories/posts/'>posts</a>
+  
+</span>
+
+
+        </div>
+        <p>So last week there was the great Android Dev Summit, that in my opinion was one the greatest summit by Google, because unlike Goolge I/O or others Google big events- these event was very technical and was especially for devs, so if you didn&rsquo;t <a href="https://www.youtube.com/playlist?list=PLWz5rJ2EKKc_Tt7q77qwyKRgytF1RzRx8">watched the videos</a> already I very recommend to go over it and pick the ones interested you the most.</p>
+
+<p>One of the useful talks there was about some tricks and new cool things that you can do with Android studio (some of them old and some of them new and experimental), It&rsquo;s a bit long and cover a lot of things- so I decided to summarize it so I can go over it from time to time, I also add so time indication to each subject covered so you can just skip to this specific part.</p>
+
+<p><a href="https://www.youtube.com/watch?v=Y2GC6P5hPeA">https://www.youtube.com/watch?v=Y2GC6P5hPeA</a></p>
+
+<h2>Editor tricks by Tor Norbye [0:30-19:50]:</h2>
+
+<ul>
+<li><p>Use Tab (instead of Enter) to auto complete</p></li>
+<li><p>Ctrl+Shift+Space for smarted auto complete (or twice to even smarter)</p></li>
+<li><p>Intention actions (Alt+Enter) for context actions like: creating constructor, add fields, auto cast etc&hellip;</p></li>
+<li><p>Builtin templates:</p>
+
+<ul>
+<li><p>lists- &ldquo;fori&rdquo; or &ldquo;list.fori&rdquo;</p></li>
+<li><p>Log- logi, logm (for logging method), logr (for log return), logt (for tag)</p></li>
+</ul>
+</li>
+<li><p>Auto filter when start typing in every actions list</p></li>
+<li><p>tools:showIn for show you layout preview withing the parent layout</p></li>
+<li><p>tools namespace are ignored while build, so use them for preview (like src for ImageView or listItem for GridView)</p></li>
+<li><p>Add shrinkResources=true with MinifyEnabled to strip out unused resources.</p>
+
+<ul>
+<li>tools:strictMode, tools:keep, tools:discrad for customize it.</li>
+</ul>
+</li>
+<li><p>Ctrl+Shift+A for finding action by name</p></li>
+</ul>
+
+
+<h2>Debugger tricks by Siva Velusamy [20:00-29:30]:</h2>
+
+<ul>
+<li><p>&ldquo;Analyze stacktrace&rdquo; command for analyzing traces that came out of android studio (even scramble traces with Proguard)</p></li>
+<li><p>&ldquo;View as&rdquo; for resources references while debugging.</p></li>
+<li><p>An option for debug printing in each break point, even without stopping in this breakpoint (click on the break point -> more -> log evaluate expression).</p></li>
+</ul>
+
+
+<h2>Gradle integration by Alex Ruiz [29:35-37:20]:</h2>
+
+<ul>
+<li><p>Android studio has an option to create a module from jar/ aar library</p></li>
+<li><p>Switch build variant while working with the &ldquo;Build Variants&rdquo; view.</p></li>
+<li><p>On Android Studio 2.0- Enable all artifcats together (so things like refactoring will work also for you Android tests and your unit tests) from settings: Build, Execution, Deployment -> Experimental -> Enable all test artifacts.</p></li>
+</ul>
+
+
+<h2>Test code by Michal Bendwoski [37:20-41:40]:</h2>
+
+<ul>
+<li><p>Alt+Enter on your class-> create Android Test on this class.</p></li>
+<li><p>Ctrl+N (Generate command) to create test method.</p></li>
+<li><p>Intention action for moving some code to setUp method.</p></li>
+<li><p>Ctrl+Shift+T to navigate between Test and Test Subject (+ you can add new test case from there).</p></li>
+</ul>
+
+
+<h2>C++ Support by Kathryn Shih [41:40-51:20]:</h2>
+
+<ul>
+<li><p>Doxygen is now supported so F1 is working also for C++ code.</p></li>
+<li><p>Enable native debugging (from Run->Edit configurations) so you will be able to debug your native code too.</p>
+
+<ul>
+<li>But that make the compilation / linking time longer, so be aware.</li>
+</ul>
+</li>
+<li><p>On Android Studio 2.0- Awesome <a href="https://sites.google.com/a/android.com/tools/tech-docs/gpu-profiler">GPU debugging</a> option.</p></li>
+</ul>
+
+
+<h2>Performance tools by Esteban de la Canal [51:20-1:08:55]:</h2>
+
+<ul>
+<li><p>New network monitor- x axis is the request time, y is the request speed, the area of the graph is the request size.</p></li>
+<li><p>In the allocator tracker- you can switch to &ldquo;Group by allocator&rdquo; view so the allocation will be grouped by package name, that way you can easily find your classes that response to allocations.</p></li>
+<li><p>When opening a heap dump you have some builtin tasks for memory leak analyzing, one of them is Leaked activities- very useful!</p></li>
+<li><p>GPU monitor (Experimental) is disabled by default because it might affect other monitors. It's much like the on device GPU monitor.</p></li>
+</ul>
+
+
+<hr />
+
+<p>That&rsquo;s it, the talk covers some more things that not included here, I tried to put the ones I think I would use the most, feel free to comment and add if you thing I forgot something.</p>
+
+
+        <hr class="divider-short"/>
+
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+<hr class="divider-short"/>
+
+<div class="archive-link">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        
+          <a class="pull-left" href="/blog/2015/11/15/run-fast-fall-frequently-get-up-faster-and-go-drink-beer-at-the-beach-what-its-like-to-work-at-a-startup/" title="Previous Post: Run fast, fall frequently, get up faster and go drink beer at the beach: What it's like to work at a StartUp">&laquo; Previous: Run fast, fall frequently, get up faster and go drink beer at the beach: What it's like to work at a StartUp</a>
+        
+
+        
+          <a class="pull-right" href="/blog/2015/12/31/android-dev-toolbox/" title="Next Post: Android dev toolbox">Next: Android dev toolbox &raquo;</a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="her-row">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1">
+  <a href="/"><h4>Home</h4></a>
+</div>
+
+<div class="col-md-2">
+  <div class="social-icon-list">
+    
+
+    
+
+    
+
+    
+  </div>
+</div>
+
+<div class="pull-right">
+  <h4>Powered by <a href="http://octopress.org/">Octopress</a>. Designed by <a href="http://AdrianArtiles.com">Adrian Artiles</a>.</h4>
+</div>
+
+
+    </div>
+  </div>
+</footer>
+
+    
+  </body>
+</html>

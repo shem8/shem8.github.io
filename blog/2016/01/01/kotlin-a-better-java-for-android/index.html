@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Kotlin- a Better Java for Android? - My Octopress Blog</title>
+  <meta name="author" content="Your Name">
+
+  
+  <meta name="description" content="Kotlin- a Better Java for Android? written in android, posts A couple of weeks ago, when going over some Android DevSummit videos, I encountered in &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://shem8.github.io/blog/2016/01/01/kotlin-a-better-java-for-android">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  
+
+</head>
+
+  <body>
+    <a href="/" class="home-icon">
+      <img src="/images/home.png"/>
+    </a>
+
+    <article role="article" class="full-single-article">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h1>Kotlin- a Better Java for Android?</h1>
+        <div class="meta">
+          written 
+
+
+
+
+
+
+
+
+  
+
+
+
+<time datetime="2016-01-01T15:52:32+02:00" pubdate data-updated="true"></time>
+          
+
+in
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/android/'>android</a>, <a class='category' href='/blog/categories/posts/'>posts</a>
+  
+</span>
+
+
+        </div>
+        <p>A couple of weeks ago, when going over some Android DevSummit videos, I encountered in some question about alternative language for Android during one of the <a href="https://youtu.be/-VNfWh5UkfY?list=PLWz5rJ2EKKc_Tt7q77qwyKRgytF1RzRx8&amp;t=1461">fireside chats</a> session with the Android team. It was really interesting that there was another way to develop an Android apps but unfortunately I didn&rsquo;t fully catch the name of the language (&ldquo;What what? was it Kotin? Tolkin? What he was saying???&rdquo;) so I give up.</p>
+
+<p>Next, I stumble upon <a href="https://twitter.com/donnfelker/status/675020357158477825">this twitter conversation</a> and finally found Kotlin.</p>
+
+<h2>What&rsquo;s wrong with Java?</h2>
+
+<p>Nothing special, really. Yes, ruby python and JS are really sexy with all those duck typing and lambdas and much less boilerplate code, but Java has really good IDE&rsquo;s that saves you a lot of time and don&rsquo;t bother you with all those declarations.</p>
+
+<p>Moreover, Oracle is trying to keeping up the pace and add some cool things like lambda expressions, but still- Java is a bit &ldquo;heavy&rdquo; and fall in the small things (like arrays and lists, NPE, iterations, Generics and more&hellip;).</p>
+
+<h2>So what&rsquo;s wrong with Java on Android?</h2>
+
+<p>OK, that&rsquo;s a different question. First- Java 8 (and even some things from Java 7) <a href="https://www.reddit.com/r/androiddev/comments/22mh0r/does_android_have_any_plans_for_java_8/">not supported on Android platform</a> (yet, there was some changes in the last week and <a href="http://venturebeat.com/2015/12/29/google-confirms-next-android-version-wont-use-oracles-proprietary-java-apis/">Google announce that the next version of Android will be targeting OpnJDK</a>). So it still sucks to handle with stream, dates and we can&rsquo;t use things like lambdas or switch on strings.</p>
+
+<p>Second- Android considered as front end platform and as frond end developer I would like the code will be as lightweight as possible. That&rsquo;s mean things like:</p>
+
+<ul>
+<li><p>Easily add helper methods to all kinds of types (and not using static utils classes everywhere).</p></li>
+<li><p>Lambda/ function pointers/ on the fly code execution.</p></li>
+<li><p>Easily run things in background and async task, without the <a href="http://stackoverflow.com/questions/29341582/how-to-avoid-callback-hell-in-java">callback hell.</a></p></li>
+<li><p>I would be glad to extends from my own classes by most of the time I must extends from Android classes (or other 3rd libraries) what make the code reuse and abstraction a bit hard.</p></li>
+</ul>
+
+
+<h2>Kotlin to the rescue</h2>
+
+<blockquote>Statically typed programming language for the JVM, **Android** and the browser
+
+[kotlinlang.org](http://kotlinlang.org)</blockquote>
+
+
+<p>JetBrains, the company behind Kotlin, understand the potential of Android build system and integrated the language compiled byte code straight into the Android gradle mechanism.</p>
+
+<p>Unlike other JVM languages, like Clojure or Scala, JetBrains understand the power of JVM-like platforms and made some specific adaptation for those. That&rsquo;s mean that Kotlin can be compile even to JavaScript!</p>
+
+<h2>Language basics</h2>
+
+<p>I won&rsquo;t go over the language syntax, there is a very good documentation in the <a href="https://kotlinlang.org/docs/reference/">Kotlin site</a>. I would just say that for Java devs among you it suppose to be pretty straight forward, and for you who familiar with C# it should be even easier.</p>
+
+<h2>Starting with android</h2>
+
+<p>So lets start by creating an Android project. JetBrains are also the creator of InteliJ, the editor Android Studio based on, so it easily integrated for working also with Kotlin, you just need to install the <a href="http://blog.jetbrains.com/kotlin/2013/08/working-with-kotlin-in-android-studio/">Kotlin plugin</a>.</p>
+
+<p>Creating a new Android app with Kotlin it just like a regular app, follow <a href="https://kotlinlang.org/docs/tutorials/kotlin-android.html">this instructions</a> and make the first &ldquo;Hello World&rdquo; app. You might still gonna need to do some changes in code (like changing from <em>savedInstanceState: Bundle</em> to <em>savedInstanceState: Bundle?</em> for null safety) but it suppose to compile quickly.</p>
+
+<p>Now we&rsquo;re able to see how we can use the language for faster development:</p>
+
+<h3>Kotlin Android Extensions</h3>
+
+<p><a href="https://kotlinlang.org/docs/tutorials/android-plugin.html">The Android Extensions plugin</a> allows us to get rid from all the <em>findViewById </em>boilerplate code without having to add any extra code or shipping any additional runtime:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+// Using R.layout.activity_main from the main source set
+import kotlinx.android.synthetic.main.activity_main.*</p>
+
+<p>public class MyActivity : Activity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        textView.setText(&quot;Hello, world!&quot;) // Instead of findView(R.id.textView) as TextView
+    }
+}
+[/code]</p>
+
+<h3>Code shrinking</h3>
+
+<p>Code in Java:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+view.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        //click handling
+    }
+});
+[/code]</p>
+
+<p>Comes to:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+view.setOnClickListener({//click handling})
+[/code]
+And:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+if (s != null) ? s.length() : 0
+[/code]
+Comes to:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+s?.length ?: -1
+[/code]
+Isn&rsquo;t it wonderful?</p>
+
+<h3>Extensions methods</h3>
+
+<p>Here is the real power of the language in my opinion, we can easily add utility function to our components from outside and use them seamlessly in our classes, here are some examples that I&rsquo;ve used in my extension class:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+fun AppCompatActivity.navigate(frag: Fragment) {
+    val fragmentTransaction =  supportFragmentManager.beginTransaction()
+    fragmentTransaction.replace(content.id, frag);
+    fragmentTransaction.commit();
+}</p>
+
+<p>fun Fragment.userError(msg: String?) {
+    Snackbar.make(view, msg, Snackbar.LENGTH_LONG).show()
+}</p>
+
+<p>fun SharedPreferences.edit(func:SharedPreferences.Editor. () -&amp;amp;amp;gt; Unit) {
+    val editor = edit()
+    editor.func()
+    editor.apply()
+}</p>
+
+<p>fun SharedPreferences.Editor.set(pair: Pair&lt;String, String>)  = putString(pair.first, pair.second)
+[/code]</p>
+
+<p>There are also some libraries out there that add you many more extentions like: <a href="https://github.com/pawegio/KAndroid">KAndroid</a> and <a href="https://github.com/yoavst/androidKotlin">androidKotlin</a>, or even examples from others Android devs like <a href="https://speakerdeck.com/jakewharton/android-development-with-kotlin-androidkw-number-001">Jake Wharton</a>.</p>
+
+<h2>Last words</h2>
+
+<p>Java in general, and Android in particular, has not so few problems, and although Oracle and Google adding features and trying to keep up the pace- it&rsquo;s too slow and too heavy handed.</p>
+
+<p>Kotlin is some experiment from JetBrains to bring the latest design patterns paradigms to Java, Android and JS platforms that was quickly take Android community attention (and even inside Google).</p>
+
+<p>As you can see it look pretty good for start, it can save much redundant code and speed up development, and it will be interesting what will be next moves from Google and JetBrains and if it gonna get to the mainstream.</p>
+
+
+        <hr class="divider-short"/>
+
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+<hr class="divider-short"/>
+
+<div class="archive-link">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        
+          <a class="pull-left" href="/blog/2015/12/31/android-dev-toolbox/" title="Previous Post: Android dev toolbox">&laquo; Previous: Android dev toolbox</a>
+        
+
+        
+          <a class="pull-right" href="/blog/2016/01/17/why-all-your-engineers-should-get-a-laptop/" title="Next Post: Why all your engineers should get a laptop">Next: Why all your engineers should get a laptop &raquo;</a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="her-row">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1">
+  <a href="/"><h4>Home</h4></a>
+</div>
+
+<div class="col-md-2">
+  <div class="social-icon-list">
+    
+
+    
+
+    
+
+    
+  </div>
+</div>
+
+<div class="pull-right">
+  <h4>Powered by <a href="http://octopress.org/">Octopress</a>. Designed by <a href="http://AdrianArtiles.com">Adrian Artiles</a>.</h4>
+</div>
+
+
+    </div>
+  </div>
+</footer>
+
+    
+  </body>
+</html>

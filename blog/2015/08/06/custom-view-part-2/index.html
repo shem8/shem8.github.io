@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Custom View- Part 2 - My Octopress Blog</title>
+  <meta name="author" content="Your Name">
+
+  
+  <meta name="description" content="Custom View- Part 2 written in android, posts In part 1 we learned how to build a simple custom view that&rsquo;s integrate nicely with our pager &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://shem8.github.io/blog/2015/08/06/custom-view-part-2">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  
+
+</head>
+
+  <body>
+    <a href="/" class="home-icon">
+      <img src="/images/home.png"/>
+    </a>
+
+    <article role="article" class="full-single-article">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h1>Custom View- Part 2</h1>
+        <div class="meta">
+          written 
+
+
+
+
+
+
+
+
+  
+
+
+
+<time datetime="2015-08-06T15:15:11+03:00" pubdate data-updated="true"></time>
+          
+
+in
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/android/'>android</a>, <a class='category' href='/blog/categories/posts/'>posts</a>
+  
+</span>
+
+
+        </div>
+        <h5><em>In <a href="https://shem8.wordpress.com/2015/07/31/custom-view-part-1/">part 1</a> we learned how to build a simple custom view that&rsquo;s integrate nicely with our pager view and show some indication about the current page, in this post we&rsquo;ll take the view to the next level and add some subviews for page headers</em></h5>
+
+<hr />
+
+<p>So we have simple nice looking pager indicator that animate smoothly when moving between tabs, but it&rsquo;s still missing some info about the tabs- something like the pages titles. So we&rsquo;ll add some subviews as the page titles and make them a bit interactive to show the selected page.
+Why I plan to use subviews instead of just drawing the text straight on the canvas?</p>
+
+<ul>
+<li><p>When drawing text you need to handle the text position, text size line breaking etc&hellip; Lets focus on building the view and let Android save us time by using TextView.</p></li>
+<li><p>When using subview we also save code on handling click events.</p></li>
+<li><p>By adding subviews we make ourselves use ViewGroup and learn how to handle layout and measure parent and child views, and we&rsquo;re all here to learn right? =)</p></li>
+</ul>
+
+
+<h1>0. Setup</h1>
+
+<p>Let make our PagerIndicatorView to extends ViewGroup so we&rsquo;ll be able to add sub views:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+public class PagerIndicatorView extends ViewGroup {
+[/code]</p>
+
+<p>Here is some tricky part that first I&rsquo;ve been waste couple of good hours debugging: view groups are usually not showing real UI, it just contains sub views and responsible to arrange them in the right order and layout, So by default the onDraw is skipped for ViewGroup. That&rsquo;s not the case for our view, so we need to disable it:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+public void init() {
+    &hellip;
+    setWillNotDraw(false);
+}
+[/code]</p>
+
+<p>That&rsquo;s it, our view is now officially became a ViewGroup and we&rsquo;re able to add it child views</p>
+
+<h1>1. Add the child views</h1>
+
+<p>Lets add the page titles, it will be a simple TextViews with the numbers:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+public void init() {
+    &hellip;
+    addView(getTextView(&ldquo;1&rdquo;));
+    addView(getTextView(&ldquo;2&rdquo;));
+    addView(getTextView(&ldquo;3&rdquo;));
+    addView(getTextView(&ldquo;4&rdquo;));
+}</p>
+
+<p>private TextView getTextView(String text) {
+    TextView v = new TextView(getContext());
+    v.setText(text);
+    v.setTextSize(30);
+    v.setGravity(Gravity.CENTER);
+    return v;
+}
+[/code]</p>
+
+<p>Now it&rsquo;s the time for putting the text views in the right position and size inside the view.</p>
+
+<p>First lets start by setting them the right size- each text view should be &frac14; from the view width and the same as the view height. The measurement mechanism in view is done in the <a href="http://developer.android.com/reference/android/view/View.html#onMeasure(int,%20int">onMeasure</a>) method and it is a bit tricky- uses something called <a href="http://developer.android.com/reference/android/view/View.MeasureSpec.html">measure spec</a>. I would recommend you to read about it, but it basically define the size and the mode of the view. For easy handling it- the framework supply the developers couple of helper methods for reading and creating specs:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+@Override
+protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+    final int width = getDefaultSize(getSuggestedMinimumWidth(), widthMeasureSpec);
+    final int childWidth = width / 4;
+    final int height = getDefaultSize(getSuggestedMinimumHeight(), heightMeasureSpec);
+    for (int i = 0; i &amp;lt; getChildCount(); i++) {
+        getChildAt(i).measure(View.MeasureSpec.makeMeasureSpec(childWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(height, View.MeasureSpec.EXACTLY));
+    }
+    setMeasuredDimension(width, height);
+}
+[/code]</p>
+
+<p>Now for positioning the child views in the right places, this is done in the <a href="http://developer.android.com/reference/android/view/View.html#onLayout(boolean,%20int,%20int,%20int,%20int">onLayout</a>) method, we&rsquo;ll just go over the child views and position each child in the right offset:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+@Override
+protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
+    final int childW = (right - left) / 4;
+    final int childH = (bottom - top);
+    for (int i = 0; i &amp;lt; getChildCount(); i++) {
+        getChildAt(i).layout(i * childW, 0, (i + 1) * childW, childH);
+    }
+}
+[/code]</p>
+
+<p>Now you should get something like this:</p>
+
+<p><a href="https://shem8.files.wordpress.com/2015/08/screen.png"><img src="https://shem8.files.wordpress.com/2015/08/screen-e1438861347399.png" alt="screen" /></a></p>
+
+<h1>2. Interactive</h1>
+
+<p>So we have titles for all pages, but how about make it clear which page is selected (beside the background color I mean)? Lets make out view a little bit more interactive, cause you now what the say- god is in the details.</p>
+
+<p>We want to make the texts enlarge and be for strong when scrolling to the page:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+@Override
+protected void onDraw(Canvas canvas) {
+    &hellip;
+    for (int i = 0; i &amp;lt; getChildCount(); i++) {
+        final View view = getChildAt(i);
+        if (i == index) {
+            view.setScaleX(1 - Math.abs(prec) * 0.3f);
+            view.setScaleY(1 - Math.abs(prec) * 0.3f);
+            view.setAlpha(1 - Math.abs(prec) * 0.5f);
+        } else if (i == index + 1) {
+            view.setScaleX(0.7f + Math.abs(prec) * 0.3f);
+            view.setScaleY(0.7f + Math.abs(prec) * 0.3f);
+            view.setAlpha(0.5f + Math.abs(prec) * 0.5f);
+        } else {
+            view.setScaleX(0.7f);
+            view.setScaleY(0.7f);
+            view.setAlpha(0.5f);
+        }
+    }
+}
+[/code]</p>
+
+<p>And wallah:</p>
+
+<p><a href="https://shem8.files.wordpress.com/2015/08/final.gif"><img src="https://shem8.files.wordpress.com/2015/08/final.gif" alt="final" /></a></p>
+
+<hr />
+
+<h3>You can find the whole code in my <a href="https://github.com/shem8/customviewpager">git repository</a>, have fun!</h3>
+
+
+        <hr class="divider-short"/>
+
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+<hr class="divider-short"/>
+
+<div class="archive-link">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        
+          <a class="pull-left" href="/blog/2015/07/31/custom-view-part-1/" title="Previous Post: Custom view- Part 1">&laquo; Previous: Custom view- Part 1</a>
+        
+
+        
+          <a class="pull-right" href="/blog/2015/08/24/android-ui-tips-tricks-droidcon-2014/" title="Next Post: Android ui tips & tricks (Droidcon 2014)">Next: Android ui tips & tricks (Droidcon 2014) &raquo;</a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="her-row">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1">
+  <a href="/"><h4>Home</h4></a>
+</div>
+
+<div class="col-md-2">
+  <div class="social-icon-list">
+    
+
+    
+
+    
+
+    
+  </div>
+</div>
+
+<div class="pull-right">
+  <h4>Powered by <a href="http://octopress.org/">Octopress</a>. Designed by <a href="http://AdrianArtiles.com">Adrian Artiles</a>.</h4>
+</div>
+
+
+    </div>
+  </div>
+</footer>
+
+    
+  </body>
+</html>

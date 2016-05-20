@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Don't Touch My Child (View)! - My Octopress Blog</title>
+  <meta name="author" content="Your Name">
+
+  
+  <meta name="description" content="Don't Touch My Child (View)! written in android, posts A few days ago I’ve struggling with some bug someone reported about one my apps- ripples. A &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://shem8.github.io/blog/2015/07/10/dont-touch-my-child-view">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  
+
+</head>
+
+  <body>
+    <a href="/" class="home-icon">
+      <img src="/images/home.png"/>
+    </a>
+
+    <article role="article" class="full-single-article">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h1>Don't Touch My Child (View)!</h1>
+        <div class="meta">
+          written 
+
+
+
+
+
+
+
+
+  
+
+
+
+<time datetime="2015-07-10T14:47:10+03:00" pubdate data-updated="true"></time>
+          
+
+in
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/android/'>android</a>, <a class='category' href='/blog/categories/posts/'>posts</a>
+  
+</span>
+
+
+        </div>
+        <hr />
+
+<p>A few days ago I’ve struggling with some bug someone reported about one my apps- <a href="https://play.google.com/store/apps/details?id=shem.getit">ripples</a>.</p>
+
+<p>A little background about the app- it’s an interactive game where ripples appear randomly on the screen and the user need to pop them out by touching them for couple of seconds.</p>
+
+<p><img src="https://d262ilb51hltx0.cloudfront.net/max/800/1*jxjAMG3FfKvvnb4KY5r14w.gif" alt="" />The bug was happen when we touch first the parent view and then the ripple view. As you can see in the example above, the user touch the background and then when the ripple appear and the user try to touch it- touch events on the ripple view are disabled.</p>
+
+<p>In a game like this, where interactions are critical part of the game, it’s a must-fix bug.</p>
+
+<p>BTW- multi-touch is supported in the game, if you touch in the same view or touch 2 ripples views, it works fine. Problem start happen only when the parent view is getting on the touches.</p>
+
+<hr />
+
+<h4>So let’s start diving into the problem</h4>
+
+<p>First- let’s get to know the views we’re handling with and the key methods we need to know when handling with touch events.</p>
+
+<p>The parent view is just simple RelativeLayout that wasn’t changed in any way:</p>
+
+<pre><code>public class &lt;strong class="markup--strong markup--pre-strong"&gt;MyRelativeLayout&lt;/strong&gt; extends &lt;strong class="markup--strong markup--pre-strong"&gt;RelativeLayout&lt;/strong&gt; {&lt;em class="markup--em markup--pre-em"&gt;
+  //Nothing here for now.
+&lt;/em&gt;}
+</code></pre>
+
+<p>The ripple view is a little more complicated but for simplicity I stripped out all the unrelated code:</p>
+
+<pre><code>public class &lt;strong class="markup--strong markup--pre-strong"&gt;RippleGameView&lt;/strong&gt; extends &lt;strong class="markup--strong markup--pre-strong"&gt;FrameLayout&lt;/strong&gt; {
+  @Override
+  public boolean &lt;strong class="markup--strong markup--pre-strong"&gt;onTouchEvent&lt;/strong&gt;(MotionEvent event) {
+&lt;em class="markup--em markup--pre-em"&gt;    //Handle the user touches according to the game state&lt;/em&gt;
+  }
+}
+</code></pre>
+
+<p>The problem is that the <strong>onTouchEvent </strong>in the child view not called when touches happen in the parent view, the one that responsible for calling <strong>onTouchEvent </strong>is <strong>dispatchTouchEvent </strong>in the parent view.</p>
+
+<p>A quick look on the dispatchTouchEvent method in the RelativeLayout source code (the implementation is actually in the GroupView) gonna show us a really-terrifying-long-and-generic-code-for-all-states (But we can still learn from it a lot, and I recommend you to read as much code of the android platform as possible). The code actually contains handling touch in sub-views and check their states and visibility, it contains some listeners and handling sequences of touches, it checking again list of touches it has and update them.</p>
+
+<h4>Bottom line- this code doing a lots of things that we <strong><em>know</em></strong> that is unnecessary in our case.</h4>
+
+<p>That’s why we can implement our own version that’s gonna act like we wanted, it’s suppose to be something like this:</p>
+
+<pre><code>@Override
+public boolean &lt;strong class="markup--strong markup--pre-strong"&gt;dispatchTouchEvent&lt;/strong&gt;(MotionEvent ev) {
+&lt;em class="markup--em markup--pre-em"&gt;    //Get the touch position&lt;/em&gt;
+    int actionIndex = ev.getActionIndex();
+    final float x = ev.getX(actionIndex);
+    final float y = ev.getY(actionIndex);
+
+&lt;em class="markup--em markup--pre-em"&gt;    //Iterate over child view and search for the right child that should handle this touch event&lt;/em&gt;
+    for (int i = getChildCount() - 1; i &gt;= 0; i--) {
+        View child = getChildAt(i);
+        if (!&lt;em class="markup--em markup--pre-em"&gt;canViewReceivePointerEvents&lt;/em&gt;(child) ||
+            !isTransformedTouchPointInView(x, y, child, null)) {
+            continue;
+        }&lt;em class="markup--em markup--pre-em"&gt;        
+        //Set the right position for the touch, related to child position, and let it handle the touch event.&lt;/em&gt;
+        dispatchTransformedTouchEvent(ev, false, child);
+    }
+    return true;
+}
+</code></pre>
+
+<p>As you can guess, this code and the helper methods are brutally copied, with some simplifications, from ViewGroup source code (WHY doesn’t it protected dear android devs?!).</p>
+
+<p>And the result:</p>
+
+<p><img src="https://d262ilb51hltx0.cloudfront.net/max/800/1*hkSUnobyZD3cC01mGTzh7w.gif" alt="" /></p>
+
+
+        <hr class="divider-short"/>
+
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+<hr class="divider-short"/>
+
+<div class="archive-link">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        
+
+        
+          <a class="pull-right" href="/blog/2015/07/17/the-basic-android-stuff-that-no-one-tells-you/" title="Next Post: The basic Android stuff that nobody talks about">Next: The basic Android stuff that nobody talks about &raquo;</a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="her-row">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1">
+  <a href="/"><h4>Home</h4></a>
+</div>
+
+<div class="col-md-2">
+  <div class="social-icon-list">
+    
+
+    
+
+    
+
+    
+  </div>
+</div>
+
+<div class="pull-right">
+  <h4>Powered by <a href="http://octopress.org/">Octopress</a>. Designed by <a href="http://AdrianArtiles.com">Adrian Artiles</a>.</h4>
+</div>
+
+
+    </div>
+  </div>
+</footer>
+
+    
+  </body>
+</html>

@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>10 Good Rules for Bad App, Part 1- Technical - My Octopress Blog</title>
+  <meta name="author" content="Your Name">
+
+  
+  <meta name="description" content="10 Good Rules for Bad App, Part 1- Technical written in android, humor, posts We were all been there, you got a great idea for an app, you gather &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://shem8.github.io/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  
+
+</head>
+
+  <body>
+    <a href="/" class="home-icon">
+      <img src="/images/home.png"/>
+    </a>
+
+    <article role="article" class="full-single-article">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h1>10 Good Rules for Bad App, Part 1- Technical</h1>
+        <div class="meta">
+          written 
+
+
+
+
+
+
+
+
+  
+
+
+
+<time datetime="2016-03-31T21:00:52+03:00" pubdate data-updated="true"></time>
+          
+
+in
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/android/'>android</a>, <a class='category' href='/blog/categories/humor/'>humor</a>, <a class='category' href='/blog/categories/posts/'>posts</a>
+  
+</span>
+
+
+        </div>
+        <p>We were all been there, you got a great idea for an app, you gather some feedback and even managed to build a team and you going full power to conquer the app store. So a second before starting working on your genius <a href="https://play.google.com/store/apps/details?id=com.mobication.EggTimerPro&amp;hl=en">egg timer app</a>, it is worth taking a moment and think about how you&rsquo;re going to do it.</p>
+
+<p>Following the hilarious post by Chet Haase about <a href="https://medium.com/pointer-io/this-article-is-exclusive-to-pointer-a-reading-club-for-developers-9b03f3df060c">10 good rules for bad API</a>, I decided to put together my list about how to build a bad app. but a few notes first:</p>
+
+<ul>
+<li><p>There are so many bad apps out there, each one is bad in it own way so it&rsquo;s really hard to set only 10. I tried to do my best for taking the top bad patterns, but I trust you to keep fucking it up much more than what I&rsquo;m talking about here.</p></li>
+<li><p>The beauty of the apps world that you can go wrong in many aspects of the product, that makes enough room for each team member to ruin your business, that is why I divided this blog post into 3 parts- technically, UI/UX and product.</p></li>
+<li><p>Even good apps can adopt one or two bad things to their app, so it&rsquo;s not all or nothing.</p></li>
+<li><p>Those bad habits are bad habits right now, because Google already proved that they can change that any time (like <a href="https://www.google.com/design/spec/components/bottom-navigation.html">bottom navigation</a> is a thing now? WTF?!)</p></li>
+<li><p>Who am I to say about apps if they are doing a bad things or not? That&rsquo;s because I&rsquo;ve done most of the things here and then realised how bad it is, that&rsquo;s why.</p></li>
+<li><p>The list not sorted by priority, because it&rsquo;s hard to compare what buried your app in the store listing.</p></li>
+<li><p>I&rsquo;m not <a href="https://medium.com/@chethaase">Chet Haase</a> so this post can&rsquo;t be half good or funny as his, so sorry for that.</p></li>
+</ul>
+
+
+<hr />
+
+<p>Enough said, lets start with the list:</p>
+
+<h2>#1: Ask as many permission as possible</h2>
+
+<p>You know what your app worth, don&rsquo;t let minor things like user privacy get down your way. The user is begging for this crucial analytics sending on boot, so go and ask that BOOT_COMPLETED permission! If you need to share this wonderful url to your user&rsquo;s friends- pull the fucking contact list from his phone, and while you doing so why not sending it to your server and spam them all? Remember- data is power, and other&rsquo;s data is money!</p>
+
+<p><strong>Bonus point:</strong> when implement Android M permissions, don&rsquo;t let the user do anything until he or she accept your permission, even if he accepted some, don&rsquo;t let him win!</p>
+
+<h2>#2: Lock UI thread while loading</h2>
+
+<p>Hey dude, we&rsquo;re loading, we&rsquo;ll really appreciate if you let us do our thing and don&rsquo;t interrupt us with some stupid ui events, just sit quietly and wait us to finish processing all this 3.4M config xml file ok?!</p>
+
+<p>[caption id=&ldquo;attachment_1364&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;400&rdquo;]<img src="https://shem8.files.wordpress.com/2016/03/loading_time.jpg" alt="loading_time" /> Source: <a href="http://flo.livezon.com/2012/10/speed-matters">http://flo.livezon.com/2012/10/speed-matters</a>[/caption]</p>
+
+<h2>#3: Retry endlessly</h2>
+
+<p>Yes we&rsquo;re still waiting for this config file, it&rsquo;s your fault for living in this shitty connectivity area, don&rsquo;t blame us for sucking all you data plan and battery alright?!</p>
+
+<h2>#4: Don&rsquo;t save activity or fragment state</h2>
+
+<p>You snooze you lose, you rotated the screen? Boom- your form was lost. This is the best way to teach your users never leave your app, even if them just got a phone call.</p>
+
+<h2>#5: Use setExact + RTC_WAKEUP for for your AlarmManager</h2>
+
+<p>Alarm manager is get tool by Android to execute code in some time in the future. The thing is timing is everything and the Alarm Manager has some options for firing the code smartly and rescheduling it depending on phone state, battery, network or other tasks that can piggy bag. But you probably don&rsquo;t need those fancy features, there&rsquo;s nothing like putting your &ldquo;Please update our app&rdquo; notification waking you app 6AM.</p>
+
+<p><strong>Bonus points:</strong> combine setExact + RTC_WAKEUP to the same time for all your users for your network request to your servers for taking your load balancer to the edge.</p>
+
+<h2>#6: Use Application context everywhere</h2>
+
+<p>Because why not? Save your application context as a static member in your Application class on <em>onStart</em> and use it everywhere- so easy, so simple, so not modular, make it horribly when you want to debug theming errors and make your tests a nightmare. Win Win!</p>
+
+<h2>#7: Put errors strings technical as possible</h2>
+
+<p>That&rsquo;s make it much easier when something goes wrong on the users side, so they&rsquo;ll just forward you the message. That&rsquo;s also make your app a developer-friendly so people like me can easily understand that they missing a certificate to the https connection and that&rsquo;s why the app keep crashing when sharing a photo.</p>
+
+<h2>#8: Implement all by yourself</h2>
+
+<p>Android has a very strict limit of 65k methods limit, after importing google play and support libraries that&rsquo;s barely leaves you with room for 3rd libraries. Anyway, how hard is it to handle Json parsing? you don&rsquo;t really need this Gson library. It&rsquo;s also a great opportunity for your junior dev to practice his poor implementation of string pattern matching from his <a href="https://twitter.com/holman/status/681922317958524928">job interview</a>.</p>
+
+<h2>#9: Premature optimization</h2>
+
+<p>Great, you just implemented the sorting by yourself, probably with bucket sort, because you know the data going to be evenly distributed, probably, you think so&hellip; You also saw <a href="https://www.parleys.com/tutorial/part-1-android-performance-workshop">the talk by Romain Guy and Chet Haase</a> (him again?) and switched all you enums with constants ints and use objects pull everywhere even if this just one time function because who know what can happen.</p>
+
+<p>You know what they say- Premature optimization is the root of all evil, but a greater <a href="http://www.goodreads.com/quotes/30725-there-is-no-good-and-evil-there-is-only-power">women also said</a>: &ldquo;There is no good and evil, there is only power and those too weak to seek it.&rdquo; and I hope you see the power on N when implementing those graph algorithms.</p>
+
+<p>[caption id=&ldquo;attachment_1373&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;550&rdquo;]<img src="https://shem8.files.wordpress.com/2016/03/the_general_problem.png" alt="the_general_problem" /> Source: <a href="https://xkcd.com/974/">xkcd</a>[/caption]</p>
+
+<h2>#10: Extract everything to static Util class</h2>
+
+<p>Move it all- Android specific functionality, networking calls, permissions checks, input checking, not-object-oriented-never-going-to-be-able-to-test code it all goes here.</p>
+
+<p><strong>Bonus points:</strong> have a Util and Utils classes, because one is not enough and confusing is a plus!</p>
+
+<hr />
+
+<p>That&rsquo;s all until the next time when we&rsquo;re going to talk a bit about UI and UX, Got some more suggestions for ways to make your code worse? Would love to hear your thoughts in the comments!</p>
+
+
+        <hr class="divider-short"/>
+
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+<hr class="divider-short"/>
+
+<div class="archive-link">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        
+          <a class="pull-left" href="/blog/2016/02/25/animated-vector-drawable/" title="Previous Post: Animated Vector Drawable">&laquo; Previous: Animated Vector Drawable</a>
+        
+
+        
+          <a class="pull-right" href="/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui/" title="Next Post: 10 good rules for bad App, Part 2- UX\UI">Next: 10 good rules for bad App, Part 2- UX\UI &raquo;</a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="her-row">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1">
+  <a href="/"><h4>Home</h4></a>
+</div>
+
+<div class="col-md-2">
+  <div class="social-icon-list">
+    
+
+    
+
+    
+
+    
+  </div>
+</div>
+
+<div class="pull-right">
+  <h4>Powered by <a href="http://octopress.org/">Octopress</a>. Designed by <a href="http://AdrianArtiles.com">Adrian Artiles</a>.</h4>
+</div>
+
+
+    </div>
+  </div>
+</footer>
+
+    
+  </body>
+</html>

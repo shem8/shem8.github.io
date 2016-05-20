@@ -1,0 +1,312 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Android Drag and Drop - My Octopress Blog</title>
+  <meta name="author" content="Your Name">
+
+  
+  <meta name="description" content="Android Drag and Drop written in android, posts Although Android system has a very good built-in drag &amp; drop mechanism, I seeing lots of &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://shem8.github.io/blog/2015/09/04/android-drag-and-drop">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  
+
+</head>
+
+  <body>
+    <a href="/" class="home-icon">
+      <img src="/images/home.png"/>
+    </a>
+
+    <article role="article" class="full-single-article">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h1>Android Drag and Drop</h1>
+        <div class="meta">
+          written 
+
+
+
+
+
+
+
+
+  
+
+
+
+<time datetime="2015-09-04T15:10:43+03:00" pubdate data-updated="true"></time>
+          
+
+in
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/android/'>android</a>, <a class='category' href='/blog/categories/posts/'>posts</a>
+  
+</span>
+
+
+        </div>
+        <p><em>Although Android system has a very good <a href="http://developer.android.com/guide/topics/ui/drag-drop.html">built-in drag &amp; drop mechanism</a>, I seeing lots of libraries that just duplicate this behaviour, or users that hack they way for building drag &amp; drop on their apps. In this blog post I will explain how to implement a simple drag &amp; drop functionality between different views with a very small amount of code.</em></p>
+
+<h1>0. Setup</h1>
+
+<p>For our example we gonna build a simple 3x3 grid with a numbers from 1 to 9. Than the user will be able to drag and drop between those numbers and the result will be the multiplication of this 2 values on the dropped view.</p>
+
+<p>So first, let build our view with the numbers:</p>
+
+<p>[code language=&ldquo;xml&rdquo;]
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".MainActivityFragment"></p>
+
+<pre><code>&lt;TextView
+    android:id="@+id/text1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="1"
+    android:textSize="40sp"
+    android:layout_gravity="left|top" /&gt;
+
+&lt;TextView
+    android:id="@+id/text2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="2"
+    android:textSize="40sp"
+    android:layout_gravity="center_horizontal|top" /&gt;
+
+&lt;TextView
+    android:id="@+id/text3"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="3"
+    android:textSize="40sp"
+    android:layout_gravity="right|top" /&gt;
+
+&lt;TextView
+    android:id="@+id/text4"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="4"
+    android:textSize="40sp"
+    android:layout_gravity="left|center_vertical" /&gt;
+
+&lt;TextView
+    android:id="@+id/text5"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="5"
+    android:textSize="40sp"
+    android:layout_gravity="center" /&gt;
+
+&lt;TextView
+    android:id="@+id/text6"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="6"
+    android:textSize="40sp"
+    android:layout_gravity="right|center_vertical" /&gt;
+
+&lt;TextView
+    android:id="@+id/text7"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="7"
+    android:textSize="40sp"
+    android:layout_gravity="left|bottom" /&gt;
+
+&lt;TextView
+    android:id="@+id/text8"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="8"
+    android:textSize="40sp"
+    android:layout_gravity="center_horizontal|bottom" /&gt;
+
+&lt;TextView
+    android:id="@+id/text9"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="9"
+    android:textSize="40sp"
+    android:layout_gravity="right|bottom" /&gt;
+</code></pre>
+
+<p></FrameLayout>
+[/code]</p>
+
+<h1>1. Dragging</h1>
+
+<p>We&rsquo;ll setup each view to be draggable on long click:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+view.setOnLongClickListener(new View.OnLongClickListener() {
+    @Override
+        public boolean onLongClick(View v) {
+            ClipData data = ClipData.newPlainText(&ldquo;value&rdquo;, view.getText());
+            view.startDrag(data, new View.DragShadowBuilder(v), null, 0);
+            return true;
+        }
+    });
+}
+[/code]</p>
+
+<p>Couple of things to pay attention:</p>
+
+<ul>
+<li><p>We should pass the data of the view value to the drag and drop event for later use (to calculate the multiplication), we&rsquo;re doing it by using <a href="http://developer.android.com/reference/android/content/ClipData.html">ClipData</a>.</p></li>
+<li><p>We should show some indication about the dragging- that&rsquo;s what the <a href="http://developer.android.com/reference/android/view/View.DragShadowBuilder.html">DragShadowBuilder</a> for, by default he&rsquo;s drawing the view image on dragging position. You can use it for drawing another image or some other indication.</p></li>
+<li><p>When we&rsquo;re ready we call startDrag. Yap, that&rsquo;s simple.</p></li>
+</ul>
+
+
+<h1>2. Dropping</h1>
+
+<p>Now for the other side of the Drag&amp;Drop- the drop. Again, we&rsquo;ll setup each view with a drag listener:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+        view.setOnDragListener(new View.OnDragListener() {
+            @Override
+            public boolean onDrag(View v, DragEvent event) {
+                switch(event.getAction()) {
+                    case DragEvent.ACTION_DRAG_STARTED:
+                        return true;</p>
+
+<pre><code>                case DragEvent.ACTION_DRAG_ENTERED:
+                    v.setBackgroundColor(Color.LTGRAY);
+                    return true;
+
+                case DragEvent.ACTION_DRAG_LOCATION:
+                    return true;
+
+                case DragEvent.ACTION_DRAG_EXITED:
+                    v.setBackgroundColor(Color.TRANSPARENT);
+                    return true;
+
+                case DragEvent.ACTION_DROP:
+                    v.setBackgroundColor(Color.TRANSPARENT);
+                    int dragVal = Integer.parseInt(event.getClipData().getItemAt(0).getText().toString());
+                    int viewVal = Integer.parseInt(((TextView) v).getText().toString());
+                    ((TextView) v).setText("" + (dragVal + viewVal));
+                    return true;
+
+                case DragEvent.ACTION_DRAG_ENDED:
+                    return true;
+
+                default:
+                    break;
+            }
+            return false;
+        }
+    });
+</code></pre>
+
+<p>[/code]</p>
+
+<p>OMG THAT&rsquo;S SO MUCH CODE! AND WITH A SWITCH CASE!! YOU PROMISE IT SHOULD BE SIMPLE!!!
+Ok ok, please calm down, take a glass of bear and sit down. Actually the drag handling is pretty simple there just a bit of boilerplate code (cause you know, java&hellip;)</p>
+
+<p>Lets&rsquo;s go over all the actions in the drag event we should handle <strong>(remember, this listener is on the dropped view and all those actions related to this view, please don&rsquo;t confused between the dragged view and the dropped view):</strong></p>
+
+<ul>
+<li><p>ACTION_DRAG_STARTED- that&rsquo;s mean that there is some other view in the screen that is start dragging. If we want this other view will be able to be dropped on our view we should return &ldquo;true&rdquo;, if we&rsquo;ll return &ldquo;false&rdquo; all the dragging and dropping flow won&rsquo;t be relevant (and the related events won&rsquo;t be delivered).</p></li>
+<li><p>ACTION_DRAG_ENTERED- the dragged view was entered to our view area, usually we should show some indication here (like changing the background color on our case)</p></li>
+<li><p>ACTION_DRAG_LOCATION- that&rsquo;s mean that the dragging view is changing his location within our view area, not much to do here, so just ignore.</p></li>
+<li><p>ACTION_DRAG_EXITED- the dragged view was exited from our view area, again- indication should be show here.</p></li>
+<li><p>ACTION_DROP- an actual drop was committed on our view! Now&rsquo;s the time to do your logic (for our case putting the right value in the text box). Don&rsquo;t forget to reset your indication from the ACTION_DRAG_ENTERED event!</p></li>
+<li><p>ACTION_DRAG_ENDED- the drag and drop flow was ended, but not on our view ( =( ). Again, not relevant on our case so we just ignore.</p></li>
+</ul>
+
+
+<p>Pretty simple right? This is how this should look like:</p>
+
+<p><a href="https://shem8.files.wordpress.com/2015/09/draganddrop.gif"><img src="https://shem8.files.wordpress.com/2015/09/draganddrop.gif?w=180" alt="draganddrop" /></a></p>
+
+<p>You can also find the full project source code in <a href="https://github.com/shem8/AndroidDragAndDrop">my github</a></p>
+
+<p>_Credit for cover image: <a href="http://genius.com/1699408/Major-lazer-bubble-butt/I-aint-snoop-dogg-but-imma-drop-it-like-its-hot_">http://genius.com/1699408/Major-lazer-bubble-butt/I-aint-snoop-dogg-but-imma-drop-it-like-its-hot_</a></p>
+
+
+        <hr class="divider-short"/>
+
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+<hr class="divider-short"/>
+
+<div class="archive-link">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        
+          <a class="pull-left" href="/blog/2015/08/24/know-what-not-to-build-droidcon-2015/" title="Previous Post: Know what (not) to build (Droidcon 2015)">&laquo; Previous: Know what (not) to build (Droidcon 2015)</a>
+        
+
+        
+          <a class="pull-right" href="/blog/2015/09/11/affectively-reading/" title="Next Post: Effectively reading">Next: Effectively reading &raquo;</a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="her-row">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1">
+  <a href="/"><h4>Home</h4></a>
+</div>
+
+<div class="col-md-2">
+  <div class="social-icon-list">
+    
+
+    
+
+    
+
+    
+  </div>
+</div>
+
+<div class="pull-right">
+  <h4>Powered by <a href="http://octopress.org/">Octopress</a>. Designed by <a href="http://AdrianArtiles.com">Adrian Artiles</a>.</h4>
+</div>
+
+
+    </div>
+  </div>
+</footer>
+
+    
+  </body>
+</html>
