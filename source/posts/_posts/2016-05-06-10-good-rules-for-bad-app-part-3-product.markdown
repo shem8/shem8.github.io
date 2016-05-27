@@ -32,7 +32,8 @@ The first and my favorite- fill your backlog with everything you can think of th
 
 Worrying that you implemented all your 492 items from your backlog and the ideas are about to run out? Go over all the store reviews, search some feedbacks in twitter and check all the posts in your beta group. Users are very demanding creatures and probably will keep whining about all those features that your app absolutely garbage without, yes even if it isn't the core of the app or they can do it easily with other apps.
 
-[caption id="attachment_1755" align="aligncenter" width="504"]![13oxx4](https://shem8.files.wordpress.com/2016/05/13oxx4.jpg) True story[/caption]
+
+{% img center https://shem8.files.wordpress.com/2016/05/13oxx4.jpg 504 * 'True story' 'True story' %}
 
 
 ## #3: Trust you instincts, no A/B testing or data analysing
@@ -81,18 +82,14 @@ Reviews are crucial to your app listing and you **MUST** make your users leave 
 Users drive more users, before app start to be viral it should start with some core users, so what if those are not a real users and they actually do nothing, the numbers are growing and eventually this will catch.
 
 
-## #1o: Put lots of ads
+## #10: Put lots of ads
 
 
 Last but not least, your app should make some money (I think), you can think of adding a value that users will find it useful and will want to pay for it, but it's too complicate. Ads is the easiest way to make money in the apps world (and to piss of your users).
 
-[caption id="attachment_1760" align="alignnone" width="800"]![19285pti64teljpg](https://shem8.files.wordpress.com/2016/05/19285pti64teljpg.jpg) Source: [Gizmodo](http://gizmodo.com/how-much-do-you-care-when-things-start-getting-ads-1441441678)[/caption]
+{% img center https://shem8.files.wordpress.com/2016/05/19285pti64teljpg.jpg 800 * 'Source: gizmodo.com 'Source: gizmodo.com %}
 
-
-
-* * *
-
-
+***
 
 That's it, by now you should be ably to easily assemble a one hell of an App that will quickly burry in the big cemetery of the apps.
 

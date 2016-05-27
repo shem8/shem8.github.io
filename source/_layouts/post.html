@@ -7,6 +7,7 @@ single: true
 {% unless page.sharing == false %}
 	{% include post/sharing.html %}
 {% endunless %}
+{% include post/advertisements.html %}
 {% if site.disqus_short_name and page.comments == true %}
 <section id="comment">
     <h1 class="title">Comments</h1>
