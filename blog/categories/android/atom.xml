@@ -4,7 +4,7 @@
   <title><![CDATA[Category: android | 80/20]]></title>
   <link href="http://shem8.github.io/blog/categories/android/atom.xml" rel="self"/>
   <link href="http://shem8.github.io/"/>
-  <updated>2016-05-24T11:28:42+03:00</updated>
+  <updated>2016-05-27T15:54:58+03:00</updated>
   <id>http://shem8.github.io/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
@@ -12,6 +12,187 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Playing with Coordinator Layout]]></title>
+    <link href="http://shem8.github.io/blog/2016/05/27/playing-with-coordinator-layout/"/>
+    <updated>2016-05-27T15:02:52+03:00</updated>
+    <id>http://shem8.github.io/blog/2016/05/27/playing-with-coordinator-layout</id>
+    <content type="html"><![CDATA[<p>Lately I needed to build some kind of overlay screen that looks like the one that shows when you open the phone when you don&rsquo;t have a lock screen. This is a simple overlay screen that should be dismissable when the user swipe it out from the lower part of the screen<!-- more -->, something like this:</p>
+
+<p><img class="center" src="/images/posts/get-feature-packed-iphone-like-lock-screen-for-your-galaxy-s6-other-android-device-w654.jpg" width="211" title="*" ></p>
+
+<p>When coming to implement it, I thought about building a <em>LinearLayout</em> with 2 views- the content view and the swipe view, than put some touch listener on the swipe view and implement swiping mechanism, than syncing both view to act the same. But when I thought about it more and more I decided that it&rsquo;s too much work. Searching this kind of code or library out there always bring me to <em>RecycleView</em> swipe to dismiss items, and in one of those search results I saw how to implement this swipe to dismiss item in <em>RecycleView</em> with <em>CoordinatorLayout</em>, so I decided to give it a chance.</p>
+
+<p><em><a href="http://developer.android.com/reference/android/support/design/widget/CoordinatorLayout.html">CoordinatorLayout</a></em> is a really great addition in the design support library. Most of you probably already used it with a <a href="https://guides.codepath.com/android/floating-action-buttons">floating action buttons</a> or <a href="http://www.androidhive.info/2015/09/android-material-design-snackbar-example/">snackbars</a> but if you like me- you just put it there, assuming views will move properly, without really diving into how the layout is syncing between them.</p>
+
+<p>So it turns out that <em>CordinatorLayout</em> is pretty powerful, it let you easily define interactions on child views and even between them, those interactions are called <a href="http://developer.android.com/reference/android/support/design/widget/CoordinatorLayout.Behavior.html">behaviors</a> so that each child can behave differently according to things that are happening in the layout. You can do a really cool things with those behaviors, here is one example for a <a href="http://saulmm.github.io/mastering-coordinator">great blog post</a> that I stumble upon my searches about coordinate layout usages.</p>
+
+<p>In our case it suppose to be pretty easy, there is already a <a href="http://developer.android.com/reference/android/support/design/widget/SwipeDismissBehavior.html">swipe to dismiss behavior</a> ready to be used on the lower view, so we just need to attach it to the relevant view. First lets build our layout:</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="ni">&amp;lt;</span>android.support.design.widget.CoordinatorLayout
+</span><span class='line'>    xmlns:android=<span class="ni">&amp;ldquo;</span><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span><span class="nt">&gt;</span>http://schemas.android.com/apk/res/android<span class="nt">&lt;/a&gt;</span><span class="ni">&amp;rdquo;</span>
+</span><span class='line'>    android:layout_width=<span class="ni">&amp;ldquo;</span>match_parent<span class="ni">&amp;rdquo;</span>
+</span><span class='line'>    android:layout_height=<span class="ni">&amp;ldquo;</span>match_parent<span class="ni">&amp;rdquo;</span>&gt;<span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>FrameLayout android:layout_width=&quot;match_parent&quot;
+</span><span class='line'>     android:layout_height=&quot;match_parent&quot;
+</span><span class='line'>     android:id=&quot;@+id/container&quot;
+</span><span class='line'>     android:background=&quot;#06ff87&quot;/<span class="ni">&amp;gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="ni">&amp;lt;</span>TextView
+</span><span class='line'>    android:id=&quot;@+id/dismiss&quot;
+</span><span class='line'>    android:layout_width=&quot;match_parent&quot;
+</span><span class='line'>    android:layout_height=&quot;wrap_content&quot;
+</span><span class='line'>    android:text=&quot;<span class="ni">&amp;gt;</span> Swipe to dismiss <span class="ni">&amp;gt;</span> <span class="ni">&amp;gt;</span> <span class="ni">&amp;gt;</span>&quot;
+</span><span class='line'>    android:padding=&quot;30dp&quot;
+</span><span class='line'>    android:gravity=&quot;center&quot;
+</span><span class='line'>    android:layout_gravity=&quot;center_horizontal|bottom&quot;
+</span><span class='line'>    android:background=&quot;#3bb0ff&quot;/<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;</span><span class="ni">&amp;lt;</span>/android.support.design.widget.CoordinatorLayout&gt;
+</span></code></pre></td></tr></table></div></figure></p>
+
+<p>As said, it’s a simple layout with 2 view- one for the content (the green one) and one for the swiping (the blue one).</p>
+
+<p>Now, lets attach the relevant behavior to the relevant view:</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">View</span> <span class="n">dismiss</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">dismiss</span><span class="o">);</span>
+</span><span class='line'><span class="n">CoordinatorLayout</span><span class="o">.</span><span class="na">LayoutParams</span> <span class="n">params</span> <span class="o">=</span> <span class="o">(</span><span class="n">CoordinatorLayout</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">)</span> <span class="n">dismiss</span><span class="o">.</span><span class="na">getLayoutParams</span><span class="o">();</span>
+</span><span class='line'><span class="n">SwipeDismissBehavior</span><span class="o">&lt;</span><span class="n">View</span><span class="o">&gt;</span> <span class="n">behavior</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SwipeDismissBehavior</span><span class="o">&amp;</span><span class="n">lt</span><span class="o">;&gt;();</span>
+</span><span class='line'><span class="n">behavior</span><span class="o">.</span><span class="na">setSwipeDirection</span><span class="o">(</span><span class="n">SwipeDismissBehavior</span><span class="o">.</span><span class="na">SWIPE_DIRECTION_START_TO_END</span><span class="o">);</span>
+</span><span class='line'><span class="n">behavior</span><span class="o">.</span><span class="na">setListener</span><span class="o">(</span><span class="k">new</span> <span class="n">SwipeDismissBehavior</span><span class="o">.</span><span class="na">OnDismissListener</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>    <span class="nd">@Override</span>
+</span><span class='line'>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDismiss</span><span class="o">(</span><span class="kd">final</span> <span class="n">View</span> <span class="n">view</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>        <span class="n">finish</span><span class="o">();</span>
+</span><span class='line'>    <span class="o">}&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="nd">@Override</span>
+</span><span class='line'><span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDragStateChanged</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">)</span> <span class="o">{}</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;});</span>
+</span><span class='line'><span class="n">params</span><span class="o">.</span><span class="na">setBehavior</span><span class="o">(</span><span class="n">behavior</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<p>That&rsquo;s pretty self explained- we declare a new swipe to dismiss behavior, set it&rsquo;s direction only to right, and finish the activity on dismiss. But there&rsquo;s on problem- somehow, although we declare this behavior only on the dismiss view, it working on all the view, so also the content view is swipeable as you can see here:</p>
+
+<p><img class="center" src="/images/posts/ezgif-4244700794.gif" width="280" height="498"></p>
+
+<p>I&rsquo;m not sure if this is by design or just a bug (after digging in the code I&rsquo;m afraid this behavior is not intended) but we can easily fix this by creating our own behavior. Of course that we not going to write this whole code from beginning, we&rsquo;ll use the <em>SwipeDismissBehavior</em> class and just fix the relevant code. I really recommend doing a little investigation and reading the Android code, that&rsquo;s way you&rsquo;re fully understand how things really works and get to read an high quality code written by the Android developers, in that case the fix is pretty easy to spot- the <em>SwipeDismissBehavior</em> handle touch events also if those touches not in the view (although there is a check in the <em>onInterceptTouchEvent</em> method and those events should be ignore) so I created a new behavior class just for this fix:</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="o">/&lt;</span><span class="n">em</span><span class="o">&gt;*</span>
+</span><span class='line'> <span class="o">*</span> <span class="n">Handle</span> <span class="n">only</span> <span class="n">touches</span> <span class="n">on</span> <span class="k">this</span> <span class="n">current</span> <span class="n">view</span>
+</span><span class='line'> <span class="o">&lt;/</span><span class="n">em</span><span class="o">&gt;/</span>
+</span><span class='line'><span class="nd">@Override</span>
+</span><span class='line'><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onTouchEvent</span><span class="o">(</span><span class="n">CoordinatorLayout</span> <span class="n">parent</span><span class="o">,</span> <span class="n">V</span> <span class="n">child</span><span class="o">,</span> <span class="n">MotionEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>    <span class="k">if</span> <span class="o">(</span><span class="n">parent</span><span class="o">.</span><span class="na">isPointInChildBounds</span><span class="o">(</span><span class="n">child</span><span class="o">,</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="n">event</span><span class="o">.</span><span class="na">getX</span><span class="o">(),</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="n">event</span><span class="o">.</span><span class="na">getY</span><span class="o">()))</span> <span class="o">{</span>
+</span><span class='line'>        <span class="k">return</span> <span class="kd">super</span><span class="o">.</span><span class="na">onTouchEvent</span><span class="o">(</span><span class="n">parent</span><span class="o">,</span> <span class="n">child</span><span class="o">,</span> <span class="n">event</span><span class="o">);</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>    <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<p>Changing the activity to use <em>SwipeDismissOnlyOnViewBehavior</em> instead of <em>SwipeDismissBehavior</em> is doing the work:</p>
+
+<p><img class="center" src="/images/posts/ezgif-2527994552.gif" width="280" height="498"></p>
+
+<p>Now we need to sync between the content view to the dismiss view when swiping, so we creating a new behavior just for this. Because this is really simple behavior all we need to implement are 2 functions, in which view this content view depended (<em>layoutDependsOn</em>) and what to do when the dependent view changed (<em>onDependentViewChanged</em>):</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="o">=</span>
+</span><span class='line'><span class="n">CoordinatorLayout</span><span class="o">.</span><span class="na">LayoutParams</span> <span class="n">params</span> <span class="o">=</span> <span class="o">(</span><span class="n">CoordinatorLayout</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">)</span> <span class="n">container</span><span class="o">.</span><span class="na">getLayoutParams</span><span class="o">();</span>
+</span><span class='line'><span class="kd">final</span> <span class="n">CoordinatorLayout</span><span class="o">.</span><span class="na">Behavior</span><span class="o">&lt;</span><span class="n">View</span><span class="o">&gt;</span> <span class="n">behavior</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CoordinatorLayout</span><span class="o">.</span><span class="na">Behavior</span><span class="o">&lt;</span><span class="n">View</span><span class="o">&gt;()</span> <span class="o">{</span>
+</span><span class='line'>    <span class="nd">@Override</span>
+</span><span class='line'>    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">layoutDependsOn</span><span class="o">(</span><span class="n">CoordinatorLayout</span> <span class="n">parent</span><span class="o">,</span> <span class="n">View</span> <span class="n">child</span><span class="o">,</span> <span class="n">View</span> <span class="n">dependency</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>        <span class="k">return</span> <span class="n">dependency</span><span class="o">.</span><span class="na">getId</span><span class="o">()</span> <span class="o">==</span> <span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">dismiss</span><span class="o">;</span>
+</span><span class='line'>    <span class="o">}&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="nd">@Override</span>
+</span><span class='line'><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onDependentViewChanged</span><span class="o">(</span><span class="n">CoordinatorLayout</span> <span class="n">parent</span><span class="o">,</span> <span class="n">View</span> <span class="n">child</span><span class="o">,</span> <span class="n">View</span> <span class="n">dependency</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>    <span class="n">child</span><span class="o">.</span><span class="na">setX</span><span class="o">(</span><span class="n">dependency</span><span class="o">.</span><span class="na">getX</span><span class="o">());</span>
+</span><span class='line'>    <span class="n">child</span><span class="o">.</span><span class="na">setAlpha</span><span class="o">(</span><span class="n">dependency</span><span class="o">.</span><span class="na">getAlpha</span><span class="o">());</span>
+</span><span class='line'>    <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;};</span>
+</span><span class='line'><span class="n">params</span><span class="o">.</span><span class="na">setBehavior</span><span class="o">(</span><span class="n">behavior</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<p>And voila:</p>
+
+<p><img class="center" src="/images/posts/ezgif-2484339332.gif" width="280" height="498"></p>
+
+<p><a href="http://giphy.com/gifs/honda-honda-valueofx-civicx-xT77XRp55yPwHkd5Nm"><img class="center" src="https://media.giphy.com/media/xT77XRp55yPwHkd5Nm/giphy.gif" width="480" height="270"></a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[10 good rules for bad App, Part 3- Product]]></title>
@@ -318,70 +499,6 @@
 <hr />
 
 <p>Liked this post? Please share it with your friends!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[My first open source lib]]></title>
-    <link href="http://shem8.github.io/blog/2016/02/12/my-first-open-source-lib/"/>
-    <updated>2016-02-12T09:30:38+02:00</updated>
-    <id>http://shem8.github.io/blog/2016/02/12/my-first-open-source-lib</id>
-    <content type="html"><![CDATA[<p>As part of my last <a href="https://medium.com/life-learning/the-one-side-project-per-year-challenge-fa3c64a48da6#.3vp2es9hh">Friday project</a> I created a new Android app (releasing it soon!). In this project I decided to focus on 2 new things I want to learn:</p>
-
-<!--more-->
-
-
-<ol>
-<li><p>How to write Android apps with <a href="https://shem8.wordpress.com/2016/01/01/kotlin-a-better-java-for-android/">Kotlin</a></p></li>
-<li><p>Create an awesome UI and animations</p></li>
-</ol>
-
-
-<p>The first one was pretty straight forward, because I am a technical guy- learning (another) programming language wasn&rsquo;t so difficult, and sure enough, I quickly pulled a simple Kotlin app that worked.</p>
-
-<p>The second part was a littler trickier, I&rsquo;m lucky enough to work with a <a href="https://medium.com/@etgalim">great designer</a> so I&rsquo;m not used to create an amazing UI (although I have a pretty solid background with photoshop). That&rsquo;s when <a href="http://www.materialup.com/">MaterialUp</a>, the home for a great material designs inspirations, came to the rescue.</p>
-
-<p>My first screen was a login screen, so I searched for this kind of view and found a <a href="http://www.materialup.com/posts/compact-login">great one</a> that I wanted to use. After couple of hours of hacking I manage to implement it in code. I was so satisfy from the result so in the following week I showed many of my colleges in my work place what I was doing, this thing spread out quickly and couple of days later one of the product guys from another team was asking me if he can use it in their app.</p>
-
-<blockquote>I was happy! The best thing that can happen to you when building something is that someone, on his own will, want to use what you created.</blockquote>
-
-
-<p>&ldquo;But&rdquo; and if you know product guys, you surely know there is always a but &ldquo;We need you to change some of the fields names, and we probably going to use another icon&rdquo;. I was familiar with the code, those things was pretty easy to handle and I agreed.</p>
-
-<p>Now I had two options:</p>
-
-<ol>
-<li><p>Copy the code, working with him in house and customise the hell out of the view for him.</p></li>
-<li><p>Create a real library with a real API for customise everything in the view and get away from endless features requests.</p></li>
-</ol>
-
-
-<p>So library it is.</p>
-
-<h2>Creating the library</h2>
-
-<p>First I decided to rewrite the view in Java for it to be more Android-developers-friendly, that was a great (great, great) showcase of how Kotlin is much quicker to hack and how much boilerplate Java has.</p>
-
-<p>Next I extracted all relevant code to external library and then to external project for exporting.</p>
-
-<p>I decided to push the view as is (without any option to change anything) just to check how&rsquo;s all the uploading thing is going. Lucky enough I found <a href="http://inthecheesefactory.com/blog/how-to-upload-library-to-jcenter-maven-central-as-dependency/en">this article</a> that helped me with this mess (not that trivial at all) and unlucky enough I didn&rsquo;t see <a href="https://www.youtube.com/watch?v=NFfNiO3CR6w">this video</a> at the time.</p>
-
-<p>After couple of hours of struggling with gradle and jcenter I manage to create <a href="https://github.com/shem8/MaterialLogin">my own real library</a> and pull it from gradle.</p>
-
-<h2>What happened next</h2>
-
-<p>Then I was comment to the author of the original design that his design was so elegant that I had to implement it in Android with a link to the my library. Shortly after, one of the site founders submit <a href="http://www.materialup.com/posts/materiallogin">my lib to the site as a new resource</a> and that's when I started to get a lot of traction, couple of days later and the library was trending on Github, pull requests and issues were opened and I suddenly had a real users to support, and even better, some users were contribute and helped me adding some features!</p>
-
-<h2>Conclusions</h2>
-
-<ul>
-<li><p>If you have some cool piece of code that you feel that others will want to use it- release it to an open source library.</p></li>
-<li><p>Do the simple things first- the first version can be very basic, wait to see what the users want.</p></li>
-<li><p>Spread the word and let others know you build a great thing.</p></li>
-</ul>
-
-
-<p>My code came from running only on my testing app to be viewing by hundreds of people! And what about those product guy you ask? He might use it or no, but I got my users already =)</p>
 ]]></content>
   </entry>
   

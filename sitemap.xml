@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://shem8.github.io/blog/2016/05/27/playing-with-coordinator-layout/</loc>
+<lastmod>2016-05-27T15:02:52+03:00</lastmod>
+</url>
+<url>
 <loc>http://shem8.github.io/blog/2016/05/06/10-good-rules-for-bad-app-part-3-product/</loc>
 <lastmod>2016-05-06T15:37:07+03:00</lastmod>
 </url>
@@ -106,5 +110,11 @@
 </url>
 <url>
 <loc>http://shem8.github.io/blog/categories/humor/</loc>
+</url>
+<url>
+<loc>http://shem8.github.io/blog/posts/2/</loc>
+</url>
+<url>
+<loc>http://shem8.github.io/blog/posts/3/</loc>
 </url>
 </urlset>

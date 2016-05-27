@@ -4,7 +4,7 @@
   <title><![CDATA[80/20]]></title>
   <link href="http://shem8.github.io/atom.xml" rel="self"/>
   <link href="http://shem8.github.io/"/>
-  <updated>2016-05-24T11:28:42+03:00</updated>
+  <updated>2016-05-27T15:54:58+03:00</updated>
   <id>http://shem8.github.io/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
@@ -12,6 +12,181 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Playing with Coordinator Layout]]></title>
+    <link href="http://shem8.github.io/blog/2016/05/27/playing-with-coordinator-layout/"/>
+    <updated>2016-05-27T15:02:52+03:00</updated>
+    <id>http://shem8.github.io/blog/2016/05/27/playing-with-coordinator-layout</id>
+    <content type="html"><![CDATA[<p>Lately I needed to build some kind of overlay screen that looks like the one that shows when you open the phone when you don&rsquo;t have a lock screen. This is a simple overlay screen that should be dismissable when the user swipe it out from the lower part of the screen<!-- more -->, something like this:</p>
+
+<p><img class="center" src="http://shem8.github.io/images/posts/get-feature-packed-iphone-like-lock-screen-for-your-galaxy-s6-other-android-device-w654.jpg" width="211" title="*" ></p>
+
+<p>When coming to implement it, I thought about building a <em>LinearLayout</em> with 2 views- the content view and the swipe view, than put some touch listener on the swipe view and implement swiping mechanism, than syncing both view to act the same. But when I thought about it more and more I decided that it&rsquo;s too much work. Searching this kind of code or library out there always bring me to <em>RecycleView</em> swipe to dismiss items, and in one of those search results I saw how to implement this swipe to dismiss item in <em>RecycleView</em> with <em>CoordinatorLayout</em>, so I decided to give it a chance.</p>
+
+<p><em><a href="http://developer.android.com/reference/android/support/design/widget/CoordinatorLayout.html">CoordinatorLayout</a></em> is a really great addition in the design support library. Most of you probably already used it with a <a href="https://guides.codepath.com/android/floating-action-buttons">floating action buttons</a> or <a href="http://www.androidhive.info/2015/09/android-material-design-snackbar-example/">snackbars</a> but if you like me- you just put it there, assuming views will move properly, without really diving into how the layout is syncing between them.</p>
+
+<p>So it turns out that <em>CordinatorLayout</em> is pretty powerful, it let you easily define interactions on child views and even between them, those interactions are called <a href="http://developer.android.com/reference/android/support/design/widget/CoordinatorLayout.Behavior.html">behaviors</a> so that each child can behave differently according to things that are happening in the layout. You can do a really cool things with those behaviors, here is one example for a <a href="http://saulmm.github.io/mastering-coordinator">great blog post</a> that I stumble upon my searches about coordinate layout usages.</p>
+
+<p>In our case it suppose to be pretty easy, there is already a <a href="http://developer.android.com/reference/android/support/design/widget/SwipeDismissBehavior.html">swipe to dismiss behavior</a> ready to be used on the lower view, so we just need to attach it to the relevant view. First lets build our layout:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;android.support.design.widget.CoordinatorLayout</span>
+</span><span class='line'>    <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+</span><span class='line'>    <span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
+</span><span class='line'>    <span class="na">android:layout_height=</span><span class="s">&quot;match_parent&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;FrameLayout</span> <span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
+</span><span class='line'>         <span class="na">android:layout_height=</span><span class="s">&quot;match_parent&quot;</span>
+</span><span class='line'>         <span class="na">android:id=</span><span class="s">&quot;@+id/container&quot;</span>
+</span><span class='line'>         <span class="na">android:background=</span><span class="s">&quot;#06ff87&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;TextView</span>
+</span><span class='line'>        <span class="na">android:id=</span><span class="s">&quot;@+id/dismiss&quot;</span>
+</span><span class='line'>        <span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
+</span><span class='line'>        <span class="na">android:layout_height=</span><span class="s">&quot;wrap_content&quot;</span>
+</span><span class='line'>        <span class="na">android:text=</span><span class="s">&quot;&gt; Swipe to dismiss &gt; &gt; &gt;&quot;</span>
+</span><span class='line'>        <span class="na">android:padding=</span><span class="s">&quot;30dp&quot;</span>
+</span><span class='line'>        <span class="na">android:gravity=</span><span class="s">&quot;center&quot;</span>
+</span><span class='line'>        <span class="na">android:layout_gravity=</span><span class="s">&quot;center_horizontal|bottom&quot;</span>
+</span><span class='line'>        <span class="na">android:background=</span><span class="s">&quot;#3bb0ff&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;/android.support.design.widget.CoordinatorLayout&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>As said, it’s a simple layout with 2 view- one for the content (the green one) and one for the swiping (the blue one).</p>
+
+<p>Now, lets attach the relevant behavior to the relevant view:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">View</span> <span class="n">dismiss</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">dismiss</span><span class="o">);</span>
+</span><span class='line'><span class="n">CoordinatorLayout</span><span class="o">.</span><span class="na">LayoutParams</span> <span class="n">params</span> <span class="o">=</span> <span class="o">(</span><span class="n">CoordinatorLayout</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">)</span> <span class="n">dismiss</span><span class="o">.</span><span class="na">getLayoutParams</span><span class="o">();</span>
+</span><span class='line'><span class="n">SwipeDismissBehavior</span><span class="o">&lt;</span><span class="n">View</span><span class="o">&gt;</span> <span class="n">behavior</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SwipeDismissBehavior</span><span class="o">&lt;&gt;();</span>
+</span><span class='line'><span class="n">behavior</span><span class="o">.</span><span class="na">setSwipeDirection</span><span class="o">(</span><span class="n">SwipeDismissBehavior</span><span class="o">.</span><span class="na">SWIPE_DIRECTION_START_TO_END</span><span class="o">);</span>
+</span><span class='line'><span class="n">behavior</span><span class="o">.</span><span class="na">setListener</span><span class="o">(</span><span class="k">new</span> <span class="n">SwipeDismissBehavior</span><span class="o">.</span><span class="na">OnDismissListener</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>    <span class="nd">@Override</span>
+</span><span class='line'>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDismiss</span><span class="o">(</span><span class="kd">final</span> <span class="n">View</span> <span class="n">view</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>        <span class="n">finish</span><span class="o">();</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nd">@Override</span>
+</span><span class='line'>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDragStateChanged</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">)</span> <span class="o">{}</span>
+</span><span class='line'><span class="o">});</span>
+</span><span class='line'><span class="n">params</span><span class="o">.</span><span class="na">setBehavior</span><span class="o">(</span><span class="n">behavior</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>That&rsquo;s pretty self explained- we declare a new swipe to dismiss behavior, set it&rsquo;s direction only to right, and finish the activity on dismiss. But there&rsquo;s on problem- somehow, although we declare this behavior only on the dismiss view, it working on all the view, so also the content view is swipeable as you can see here:</p>
+
+<p><img class="center" src="http://shem8.github.io/images/posts/ezgif-4244700794.gif" width="280" height="498"></p>
+
+<p>I&rsquo;m not sure if this is by design or just a bug (after digging in the code I&rsquo;m afraid this behavior is not intended) but we can easily fix this by creating our own behavior. Of course that we not going to write this whole code from beginning, we&rsquo;ll use the <em>SwipeDismissBehavior</em> class and just fix the relevant code. I really recommend doing a little investigation and reading the Android code, that&rsquo;s way you&rsquo;re fully understand how things really works and get to read an high quality code written by the Android developers, in that case the fix is pretty easy to spot- the <em>SwipeDismissBehavior</em> handle touch events also if those touches not in the view (although there is a check in the <em>onInterceptTouchEvent</em> method and those events should be ignore) so I created a new behavior class just for this fix:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="cm">/**</span>
+</span><span class='line'><span class="cm"> * Handle only touches on this current view</span>
+</span><span class='line'><span class="cm"> */</span>
+</span><span class='line'><span class="nd">@Override</span>
+</span><span class='line'><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onTouchEvent</span><span class="o">(</span><span class="n">CoordinatorLayout</span> <span class="n">parent</span><span class="o">,</span> <span class="n">V</span> <span class="n">child</span><span class="o">,</span> <span class="n">MotionEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>    <span class="k">if</span> <span class="o">(</span><span class="n">parent</span><span class="o">.</span><span class="na">isPointInChildBounds</span><span class="o">(</span><span class="n">child</span><span class="o">,</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="n">event</span><span class="o">.</span><span class="na">getX</span><span class="o">(),</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="n">event</span><span class="o">.</span><span class="na">getY</span><span class="o">()))</span> <span class="o">{</span>
+</span><span class='line'>        <span class="k">return</span> <span class="kd">super</span><span class="o">.</span><span class="na">onTouchEvent</span><span class="o">(</span><span class="n">parent</span><span class="o">,</span> <span class="n">child</span><span class="o">,</span> <span class="n">event</span><span class="o">);</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>    <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Changing the activity to use <em>SwipeDismissOnlyOnViewBehavior</em> instead of <em>SwipeDismissBehavior</em> is doing the work:</p>
+
+<p><img class="center" src="http://shem8.github.io/images/posts/ezgif-2527994552.gif" width="280" height="498"></p>
+
+<p>Now we need to sync between the content view to the dismiss view when swiping, so we creating a new behavior just for this. Because this is really simple behavior all we need to implement are 2 functions, in which view this content view depended (<em>layoutDependsOn</em>) and what to do when the dependent view changed (<em>onDependentViewChanged</em>):</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="o">=</span>
+</span><span class='line'><span class="n">CoordinatorLayout</span><span class="o">.</span><span class="na">LayoutParams</span> <span class="n">params</span> <span class="o">=</span> <span class="o">(</span><span class="n">CoordinatorLayout</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">)</span> <span class="n">container</span><span class="o">.</span><span class="na">getLayoutParams</span><span class="o">();</span>
+</span><span class='line'><span class="kd">final</span> <span class="n">CoordinatorLayout</span><span class="o">.</span><span class="na">Behavior</span><span class="o">&lt;</span><span class="n">View</span><span class="o">&gt;</span> <span class="n">behavior</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CoordinatorLayout</span><span class="o">.</span><span class="na">Behavior</span><span class="o">&lt;</span><span class="n">View</span><span class="o">&gt;()</span> <span class="o">{</span>
+</span><span class='line'>    <span class="nd">@Override</span>
+</span><span class='line'>    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">layoutDependsOn</span><span class="o">(</span><span class="n">CoordinatorLayout</span> <span class="n">parent</span><span class="o">,</span> <span class="n">View</span> <span class="n">child</span><span class="o">,</span> <span class="n">View</span> <span class="n">dependency</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>        <span class="k">return</span> <span class="n">dependency</span><span class="o">.</span><span class="na">getId</span><span class="o">()</span> <span class="o">==</span> <span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">dismiss</span><span class="o">;</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nd">@Override</span>
+</span><span class='line'>    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onDependentViewChanged</span><span class="o">(</span><span class="n">CoordinatorLayout</span> <span class="n">parent</span><span class="o">,</span> <span class="n">View</span> <span class="n">child</span><span class="o">,</span> <span class="n">View</span> <span class="n">dependency</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>        <span class="n">child</span><span class="o">.</span><span class="na">setX</span><span class="o">(</span><span class="n">dependency</span><span class="o">.</span><span class="na">getX</span><span class="o">());</span>
+</span><span class='line'>        <span class="n">child</span><span class="o">.</span><span class="na">setAlpha</span><span class="o">(</span><span class="n">dependency</span><span class="o">.</span><span class="na">getAlpha</span><span class="o">());</span>
+</span><span class='line'>        <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'><span class="o">};</span>
+</span><span class='line'><span class="n">params</span><span class="o">.</span><span class="na">setBehavior</span><span class="o">(</span><span class="n">behavior</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And voila:</p>
+
+<p><img class="center" src="http://shem8.github.io/images/posts/ezgif-2484339332.gif" width="280" height="498"></p>
+
+<p><a href="http://giphy.com/gifs/honda-honda-valueofx-civicx-xT77XRp55yPwHkd5Nm"><img class="center" src="https://media.giphy.com/media/xT77XRp55yPwHkd5Nm/giphy.gif" width="480" height="270"></a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[10 good rules for bad App, Part 3- Product]]></title>
@@ -1731,84 +1906,6 @@ buildTypes {
 <p>That’s it. Hope the past-me (aka youngin’ Shem) was able to learn some good tricks. Hopefully I was able to save you some time as well with some of these tricks.</p>
 
 <p>Question to you: Do you have other design patterns or tricks that are worth mentioning here? I would love to read them in comments. Let me know!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Don't touch my child (view)!]]></title>
-    <link href="http://shem8.github.io/blog/2015/07/10/dont-touch-my-child-view/"/>
-    <updated>2015-07-10T14:47:10+03:00</updated>
-    <id>http://shem8.github.io/blog/2015/07/10/dont-touch-my-child-view</id>
-    <content type="html"><![CDATA[<p>A few days ago I’ve struggling with some bug someone reported about one my apps- <a href="https://play.google.com/store/apps/details?id=shem.getit">ripples</a>.</p>
-
-<!--more-->
-
-
-<p>A little background about the app- it’s an interactive game where ripples appear randomly on the screen and the user need to pop them out by touching them for couple of seconds.</p>
-
-<p><img src="https://d262ilb51hltx0.cloudfront.net/max/800/1*jxjAMG3FfKvvnb4KY5r14w.gif" alt="" />The bug was happen when we touch first the parent view and then the ripple view. As you can see in the example above, the user touch the background and then when the ripple appear and the user try to touch it- touch events on the ripple view are disabled.</p>
-
-<p>In a game like this, where interactions are critical part of the game, it’s a must-fix bug.</p>
-
-<p>BTW- multi-touch is supported in the game, if you touch in the same view or touch 2 ripples views, it works fine. Problem start happen only when the parent view is getting on the touches.</p>
-
-<hr />
-
-<h4>So let’s start diving into the problem</h4>
-
-<p>First- let’s get to know the views we’re handling with and the key methods we need to know when handling with touch events.</p>
-
-<p>The parent view is just simple RelativeLayout that wasn’t changed in any way:</p>
-
-<pre><code>public class &lt;strong class="markup--strong markup--pre-strong"&gt;MyRelativeLayout&lt;/strong&gt; extends &lt;strong class="markup--strong markup--pre-strong"&gt;RelativeLayout&lt;/strong&gt; {&lt;em class="markup--em markup--pre-em"&gt;
-  //Nothing here for now.
-&lt;/em&gt;}
-</code></pre>
-
-<p>The ripple view is a little more complicated but for simplicity I stripped out all the unrelated code:</p>
-
-<pre><code>public class &lt;strong class="markup--strong markup--pre-strong"&gt;RippleGameView&lt;/strong&gt; extends &lt;strong class="markup--strong markup--pre-strong"&gt;FrameLayout&lt;/strong&gt; {
-  @Override
-  public boolean &lt;strong class="markup--strong markup--pre-strong"&gt;onTouchEvent&lt;/strong&gt;(MotionEvent event) {
-&lt;em class="markup--em markup--pre-em"&gt;    //Handle the user touches according to the game state&lt;/em&gt;
-  }
-}
-</code></pre>
-
-<p>The problem is that the <strong>onTouchEvent </strong>in the child view not called when touches happen in the parent view, the one that responsible for calling <strong>onTouchEvent </strong>is <strong>dispatchTouchEvent </strong>in the parent view.</p>
-
-<p>A quick look on the dispatchTouchEvent method in the RelativeLayout source code (the implementation is actually in the GroupView) gonna show us a really-terrifying-long-and-generic-code-for-all-states (But we can still learn from it a lot, and I recommend you to read as much code of the android platform as possible). The code actually contains handling touch in sub-views and check their states and visibility, it contains some listeners and handling sequences of touches, it checking again list of touches it has and update them.</p>
-
-<h4>Bottom line- this code doing a lots of things that we <strong><em>know</em></strong> that is unnecessary in our case.</h4>
-
-<p>That’s why we can implement our own version that’s gonna act like we wanted, it’s suppose to be something like this:</p>
-
-<pre><code>@Override
-public boolean &lt;strong class="markup--strong markup--pre-strong"&gt;dispatchTouchEvent&lt;/strong&gt;(MotionEvent ev) {
-&lt;em class="markup--em markup--pre-em"&gt;    //Get the touch position&lt;/em&gt;
-    int actionIndex = ev.getActionIndex();
-    final float x = ev.getX(actionIndex);
-    final float y = ev.getY(actionIndex);
-
-&lt;em class="markup--em markup--pre-em"&gt;    //Iterate over child view and search for the right child that should handle this touch event&lt;/em&gt;
-    for (int i = getChildCount() - 1; i &gt;= 0; i--) {
-        View child = getChildAt(i);
-        if (!&lt;em class="markup--em markup--pre-em"&gt;canViewReceivePointerEvents&lt;/em&gt;(child) ||
-            !isTransformedTouchPointInView(x, y, child, null)) {
-            continue;
-        }&lt;em class="markup--em markup--pre-em"&gt;        
-        //Set the right position for the touch, related to child position, and let it handle the touch event.&lt;/em&gt;
-        dispatchTransformedTouchEvent(ev, false, child);
-    }
-    return true;
-}
-</code></pre>
-
-<p>As you can guess, this code and the helper methods are brutally copied, with some simplifications, from ViewGroup source code (WHY doesn’t it protected dear android devs?!).</p>
-
-<p>And the result:</p>
-
-<p><img src="https://d262ilb51hltx0.cloudfront.net/max/800/1*hkSUnobyZD3cC01mGTzh7w.gif" alt="" /></p>
 ]]></content>
   </entry>
   
