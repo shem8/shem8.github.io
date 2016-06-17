@@ -4,7 +4,7 @@
   <title><![CDATA[Category: life | 80/20]]></title>
   <link href="http://shem8.github.io/blog/categories/life/atom.xml" rel="self"/>
   <link href="http://shem8.github.io/"/>
-  <updated>2016-05-27T16:08:55+03:00</updated>
+  <updated>2016-06-17T11:28:01+03:00</updated>
   <id>http://shem8.github.io/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
@@ -12,6 +12,77 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Tech Life as graphs]]></title>
+    <link href="http://shem8.github.io/blog/2016/06/03/life-as-graphs/"/>
+    <updated>2016-06-03T12:08:42+03:00</updated>
+    <id>http://shem8.github.io/blog/2016/06/03/life-as-graphs</id>
+    <content type="html"><![CDATA[<p>As a geek I often imagine situations in life as a math equations and graphs (don&rsquo;t you all do it too? What&rsquo;s wrong with you people?!). In this post I&rsquo;ll try to describe some situations is the tech life as graphs:</p>
+
+<!-- more -->
+
+
+<h2>How excited are you when working in corporate:</h2>
+
+<p><br>
+<img src="/images/posts/graphs/corporate_eq.png"></p>
+
+<p><img class="center" src="/images/posts/graphs/corporate.png"></p>
+
+<h2>How excited are you when working in startup:</h2>
+
+<p><br>
+<img src="/images/posts/graphs/startup_eq.png"></p>
+
+<p><img class="center" src="/images/posts/graphs/startup.png"></p>
+
+<h2>Lines of code you write during the day:</h2>
+
+<p><br>
+<img src="/images/posts/graphs/code_eq.png"></p>
+
+<p><img class="center" src="/images/posts/graphs/code.png"></p>
+
+<h2>Startup burn rate:</h2>
+
+<p><br>
+<img src="/images/posts/graphs/burnrate_eq.png"></p>
+
+<p><img class="center" src="/images/posts/graphs/burnrate.png"></p>
+
+<h2>Does your css rules are working:</h2>
+
+<p><br>
+<img src="/images/posts/graphs/css_eq.png"></p>
+
+<p><img class="center" src="/images/posts/graphs/css.png"></p>
+
+<h2>Number of messages you get from girls- LinkedIn vs Tinder</h2>
+
+<p><br>
+<img src="/images/posts/graphs/burnrate_eq.png"></p>
+
+<p><img class="center" src="/images/posts/graphs/linkedin.png"></p>
+
+<h2>How much you think you know android:</h2>
+
+<p><br>
+<img src="/images/posts/graphs/android_eq.png"></p>
+
+<p><img class="center" src="/images/posts/graphs/android.png"></p>
+
+<h2>How much you like your PM:</h2>
+
+<p><a href="https://en.wikipedia.org/wiki/Nowhere_continuous_function#Dirichlet_function">Dirichlet function</a></p>
+
+<p><img class="center" src="/images/posts/graphs/PM.png"></p>
+
+<hr />
+
+<p><em>If you enjoyed this post, please hit the “recommend” button below and share this story. I also love reading all comments. Thanks!</em></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Why all your engineers should get a laptop]]></title>

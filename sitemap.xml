@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://shem8.github.io/blog/2016/06/03/life-as-graphs/</loc>
+<lastmod>2016-06-03T12:08:42+03:00</lastmod>
+</url>
+<url>
 <loc>http://shem8.github.io/blog/2016/05/27/playing-with-coordinator-layout/</loc>
 <lastmod>2016-05-27T15:02:52+03:00</lastmod>
 </url>

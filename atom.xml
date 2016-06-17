@@ -4,7 +4,7 @@
   <title><![CDATA[80/20]]></title>
   <link href="http://shem8.github.io/atom.xml" rel="self"/>
   <link href="http://shem8.github.io/"/>
-  <updated>2016-05-27T16:08:55+03:00</updated>
+  <updated>2016-06-17T11:28:01+03:00</updated>
   <id>http://shem8.github.io/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
@@ -12,6 +12,77 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Tech Life as graphs]]></title>
+    <link href="http://shem8.github.io/blog/2016/06/03/life-as-graphs/"/>
+    <updated>2016-06-03T12:08:42+03:00</updated>
+    <id>http://shem8.github.io/blog/2016/06/03/life-as-graphs</id>
+    <content type="html"><![CDATA[<p>As a geek I often imagine situations in life as a math equations and graphs (don&rsquo;t you all do it too? What&rsquo;s wrong with you people?!). In this post I&rsquo;ll try to describe some situations is the tech life as graphs:</p>
+
+<!-- more -->
+
+
+<h2>How excited are you when working in corporate:</h2>
+
+<p><br>
+<img src="http://shem8.github.io/images/posts/graphs/corporate_eq.png"></p>
+
+<p><img class="center" src="http://shem8.github.io/images/posts/graphs/corporate.png"></p>
+
+<h2>How excited are you when working in startup:</h2>
+
+<p><br>
+<img src="http://shem8.github.io/images/posts/graphs/startup_eq.png"></p>
+
+<p><img class="center" src="http://shem8.github.io/images/posts/graphs/startup.png"></p>
+
+<h2>Lines of code you write during the day:</h2>
+
+<p><br>
+<img src="http://shem8.github.io/images/posts/graphs/code_eq.png"></p>
+
+<p><img class="center" src="http://shem8.github.io/images/posts/graphs/code.png"></p>
+
+<h2>Startup burn rate:</h2>
+
+<p><br>
+<img src="http://shem8.github.io/images/posts/graphs/burnrate_eq.png"></p>
+
+<p><img class="center" src="http://shem8.github.io/images/posts/graphs/burnrate.png"></p>
+
+<h2>Does your css rules are working:</h2>
+
+<p><br>
+<img src="http://shem8.github.io/images/posts/graphs/css_eq.png"></p>
+
+<p><img class="center" src="http://shem8.github.io/images/posts/graphs/css.png"></p>
+
+<h2>Number of messages you get from girls- LinkedIn vs Tinder</h2>
+
+<p><br>
+<img src="http://shem8.github.io/images/posts/graphs/burnrate_eq.png"></p>
+
+<p><img class="center" src="http://shem8.github.io/images/posts/graphs/linkedin.png"></p>
+
+<h2>How much you think you know android:</h2>
+
+<p><br>
+<img src="http://shem8.github.io/images/posts/graphs/android_eq.png"></p>
+
+<p><img class="center" src="http://shem8.github.io/images/posts/graphs/android.png"></p>
+
+<h2>How much you like your PM:</h2>
+
+<p><a href="https://en.wikipedia.org/wiki/Nowhere_continuous_function#Dirichlet_function">Dirichlet function</a></p>
+
+<p><img class="center" src="http://shem8.github.io/images/posts/graphs/PM.png"></p>
+
+<hr />
+
+<p><em>If you enjoyed this post, please hit the “recommend” button below and share this story. I also love reading all comments. Thanks!</em></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Playing with Coordinator Layout]]></title>
@@ -1766,146 +1837,6 @@ public static int evaluateColor(float fraction, int startInt, int endInt) {
 <p><img src="https://shem8.files.wordpress.com/2015/07/step35.gif" alt="step3" /></p>
 
 <p>That&rsquo;s it, look like we have some nice looking indicator, in the <a href="https://shem8.wordpress.com/2015/08/06/custom-view-part-2/">next post</a> we&rsquo;ll add some sub views with tab titles, so stay tuned =)</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[The basic Android stuff that nobody talks about]]></title>
-    <link href="http://shem8.github.io/blog/2015/07/17/the-basic-android-stuff-that-no-one-tells-you/"/>
-    <updated>2015-07-17T16:30:52+03:00</updated>
-    <id>http://shem8.github.io/blog/2015/07/17/the-basic-android-stuff-that-no-one-tells-you</id>
-    <content type="html"><![CDATA[<p>I started developing for Android 3 years ago. I was never really formally taught - no ‘real’ classes, no online courses. I did what I usually doing when I’m trying to learn a new thing - figure things out through trial and error. I downloaded the SDK and started tweaking and playing with things around while reading the Android developer guide.</p>
-
-<!--more-->
-
-
-<p>It seemed pretty straight forward and I was able to publish a real app after couple of days of playing with things. The app, <a href="https://play.google.com/store/apps/details?id=org.bill.splitter">Bill Splitter</a>, was super simple - it helped you split your bill while you were out dining with friends at a restaurant. Looked terrible, but hey, it worked! That was 3 years ago and since then I’ve gotten much better in Android and learnt tons of new of things (but I definitely still have a lot more to learn).</p>
-
-<p>A couple of weeks ago I got a mail from someone about Bill Splitter. He wanted to request a new feature and report some bugs that he experienced. I was a little surprised that someone still uses the app, but I was so happy that he actually contacted me that I wanted to solve the issues right away. I figured that that given how far I’ve come in my Android skillz, this should be quick.</p>
-
-<p>So, I pulled the code and I immediately gasped in horror when I saw the atrocity of a code the lay out in front of me. It wasn’t your classic n00b mistakes, it seemed even worse, I was severly lacking in the understanding and implementation of some basic Android concepts. Not the usual things like activity, fragment, or how to write basic layouts - all of these are covered in the API guide. It’s more like how to write smart code and design patterns that I needed to discover myself (and looks like many others, like me, needed to discover on by their own).</p>
-
-<p>So, this blog post is dedicated to me, but 5 years ago. We’ll talk about patterns from the Android platform that nobody talks about:</p>
-
-<h1>1. API from the fragment to the activity</h1>
-
-<p>The API from the activity to the fragment is pretty easy because the activity can hold the fragment reference (after adding it within transaction or getting it from layout). But what about the  exact opposite? Here is how every fragment I create looks like:</p>
-
-<p>[code language=&ldquo;java&rdquo;]
-public class MyFragment extends Fragment {</p>
-
-<pre><code>public interface MyFragmentListener {
-    //your api here
-}
-
-private MyFragmentListener listener;
-
-@Override
-public void onAttach(Activity activity) {
-    super.onAttach(activity);
-    listener = (MyFragmentListener) activity;
-}
-</code></pre>
-
-<p>}
-[/code]</p>
-
-<h1>2. Context</h1>
-
-<p>Context can be described as the app environment or state.The context is needed quite often to do all kinds of things in your code, starting from creating views or getting system services. Context is also the easiest way to leak memory, so you should really be careful with it! Now, If we have a couple of different contexts - which one should I use?</p>
-
-<p>Dave Smith publish a great <a href="https://possiblemobile.com/2013/06/context/">post</a> about it, but let me summarize it for you:</p>
-
-<ul>
-<li><p>If you need to save the reference for a latter use, probably for some background not-ui-related task (for example, update the shared preference)- you should use the <strong>App</strong> context.</p></li>
-<li><p>For all other cases- use the <strong>Activity</strong> context.</p></li>
-</ul>
-
-
-<p>That&rsquo;s it.</p>
-
-<h1>3. Creating new fragment</h1>
-
-<p>If I want to create a new fragment, how should I pass argument to it? Create helper method to create an instance:</p>
-
-<p>[code language=&ldquo;java&rdquo;]
-public class MyFragment extends Fragment {
-    private static final String INT_KEY = &ldquo;INT&rdquo;;
-    private static final String STRING_KEY = &ldquo;STRING&rdquo;;</p>
-
-<pre><code>public static MyFragment newInstance(int intArg, String stringArg) {
-    MyFragment f = new MyFragment();
-    Bundle arg = new Bundle();
-    arg.putInt(INT_KEY, intArg);
-    arg.putString(STRING_KEY, stringArg);
-    f.setArguments(arg);
-    return f;
-}
-
-@Override
-public void onViewCreated(View view, Bundle savedInstanceState) {
-    super.onViewCreated(view, savedInstanceState);
-    int arg1 = getArguments().getInt(INT_KEY);
-    String arg2 = getArguments().getString(STRING_KEY);
-}
-</code></pre>
-
-<p>}
-[/code]</p>
-
-<h1>4. Saved instance</h1>
-
-<p>Lots of Android developers ignore the saved instance on the activity (or fragment). Saved instance is super important to the user experience (How bad would it be if all of your form was reset just because you checked your Whatsapp message?).</p>
-
-<p>First, lets start with the good news- Android would do most of the work for you. If you want to save the view state, just put <strong>android:id</strong> attribute to the view. Other than that, your activity (or fragment) should be look something like that:</p>
-
-<p>[code language=&ldquo;java&rdquo;]
-@Override
-public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-    super.onViewCreated(view, savedInstanceState);</p>
-
-<pre><code>if (savedInstanceState == null) {
-    //first time this showing, do your animation/ default values here
-} else {
-    //restore state
-}
-</code></pre>
-
-<p>}
-[/code]</p>
-
-<h1>5. Debug mode</h1>
-
-<p>When developing your app you want to work on a separate version of your app. Off the top of my head I can quickly think of 2 reasons why:</p>
-
-<ol>
-<li><p>You don&rsquo;t want to dirty your real app data.</p></li>
-<li><p>If you&rsquo;re like me, most of your apps are independent, small, utilities or games, that probably won&rsquo;t be a big hit at first. Thats means that your analytics will contain a lot of session from your side and few from real users, what make it very hard to measure.</p></li>
-</ol>
-
-
-<p>Android and gradle make it really easy to create a new app when developing, using <em>buildTypes, </em>so just put a suffix to your debug build type and it won&rsquo;t override the real app:</p>
-
-<p>[code]
-buildTypes {
-    release {
-    }</p>
-
-<pre><code>debug {
-    applicationIdSuffix ".debug"
-}
-</code></pre>
-
-<p>}
-[/code]</p>
-
-<p>Please note that it will create 2 instances of your app that you won&rsquo;t able to detect which on is the debug in which one is the real (the latter one in the applications list is the debug btw), so you can create a separate strings.xml file in debug with app_name for debug.</p>
-
-<hr />
-
-<p>That’s it. Hope the past-me (aka youngin’ Shem) was able to learn some good tricks. Hopefully I was able to save you some time as well with some of these tricks.</p>
-
-<p>Question to you: Do you have other design patterns or tricks that are worth mentioning here? I would love to read them in comments. Let me know!</p>
 ]]></content>
   </entry>
   
