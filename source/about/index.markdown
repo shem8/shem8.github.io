@@ -12,6 +12,4 @@ I’m a software engineer and love to code, no matter if it’s low level highly
 
 You can find me in the beach with a beer in my hand, or in Maccabi Tel-Aviv football game.
 
-You can contact me by e-mail, twitter, linked-in, or medium.
-
 27, Israel.
