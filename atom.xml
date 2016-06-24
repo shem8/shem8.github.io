@@ -4,7 +4,7 @@
   <title><![CDATA[80/20]]></title>
   <link href="http://shem8.github.io/atom.xml" rel="self"/>
   <link href="http://shem8.github.io/"/>
-  <updated>2016-06-17T11:28:01+03:00</updated>
+  <updated>2016-06-24T14:57:16+03:00</updated>
   <id>http://shem8.github.io/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
@@ -345,21 +345,21 @@
 
 <h2>#3: Create a mysterious app icon</h2>
 
-<p>[caption id=&ldquo;attachment_1435&rdquo; align=&ldquo;alignright&rdquo; width=&ldquo;131&rdquo;]<img src="https://shem8.files.wordpress.com/2016/04/yo-app-icon.png" alt="yo-app-icon" /> App that let you send &ldquo;Yo&rdquo;, of course.[/caption]</p>
-
 <p>That&rsquo;s really helpful when users need to quickly find your app from 40 apps icons grid.</p>
+
+<p><img class="center" src="https://shem8.files.wordpress.com/2016/04/yo-app-icon.png" width="131" title=", of course." alt="App that let you send "></p>
 
 <h2>#4: Use your own ideas for icons</h2>
 
 <p>Now I&rsquo;m talking about in app icons. I understand- you don&rsquo;t fully pleased with the Android default share icon, you&rsquo;re also didn&rsquo;t find anything suits to your needs between hundreds of <a href="https://design.google.com/icons/">material design icons</a> so why not creating a full icon pack from your own?</p>
 
-<p><strong>Bonus points: </strong>don&rsquo;t even bother to add title to your menu items, so that users will able to get a textual hint.</p>
+<p><strong>Bonus points:</strong> don&rsquo;t even bother to add title to your menu items, so that users will able to get a textual hint.</p>
 
 <h2>#5: Create intro, overlay explanations AND hints</h2>
 
 <p>Because users are stupid (mostly true) and they always read your explanation (no chance ever)</p>
 
-<p><strong>Bonus points: </strong>do a step-by-step tutorial with no option to skip.</p>
+<p><strong>Bonus points:</strong> do a step-by-step tutorial with no option to skip.</p>
 
 <h2>#6: Don&rsquo;t support integration with other apps within your app</h2>
 
@@ -375,7 +375,7 @@
 
 <p>A <a href="https://shem8.wordpress.com/2015/10/02/pimp-up-your-splash-screen/">splash screen animation</a> is nice, even <a href="https://www.google.com/design/spec/animation/meaningful-transitions.html">Google</a> recommend adding animation while moving between screens, and the more the merrier</p>
 
-<p>[caption id=&ldquo;attachment_1494&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;448&rdquo;]<img src="https://shem8.files.wordpress.com/2016/04/giphy.gif" alt="giphy" /> Is it too much?[/caption]</p>
+<p><img class="center" src="https://shem8.files.wordpress.com/2016/04/giphy.gif" width="448" title="Is it too much" alt="Is it too much"></p>
 
 <h2>#9: Use gifs instead of drawing things in code or animation drawable</h2>
 
@@ -385,11 +385,13 @@
 
 <p>Because you just saves time, so lets waste it.</p>
 
+<p><br><br></p>
+
 <hr />
 
-<p>Next time we going to talk about how to make things a little bit worse by the product guys so stay tuned.</p>
+<p><em>Next time we going to talk about how to make things a little bit worse by the product guys so stay tuned.</em></p>
 
-<p>Got some more suggestions for ways to make your look and feel worse? Would love to hear your thoughts in the comments!</p>
+<p><strong>Got some more suggestions for ways to make your look and feel worse? Would love to hear your thoughts in the comments!</strong></p>
 ]]></content>
   </entry>
   
@@ -416,9 +418,9 @@
 </ul>
 
 
-<hr />
+<p><br></p>
 
-<p>Enough said, lets start with the list:</p>
+<p><em>Enough said, lets start with the list:</em></p>
 
 <h2>#1: Ask as many permission as possible</h2>
 
@@ -430,7 +432,7 @@
 
 <p>Hey dude, we&rsquo;re loading, we&rsquo;ll really appreciate if you let us do our thing and don&rsquo;t interrupt us with some stupid ui events, just sit quietly and wait us to finish processing all this 3.4M config xml file ok?!</p>
 
-<p>[caption id=&ldquo;attachment_1364&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;400&rdquo;]<img src="https://shem8.files.wordpress.com/2016/03/loading_time.jpg" alt="loading_time" /> Source: <a href="http://flo.livezon.com/2012/10/speed-matters">http://flo.livezon.com/2012/10/speed-matters</a>[/caption]</p>
+<p><img class="center" src="https://shem8.files.wordpress.com/2016/03/loading_time.jpg" width="400" title="*" ></p>
 
 <h2>#3: Retry endlessly</h2>
 
@@ -464,7 +466,7 @@
 
 <p>You know what they say- Premature optimization is the root of all evil, but a greater <a href="http://www.goodreads.com/quotes/30725-there-is-no-good-and-evil-there-is-only-power">women also said</a>: &ldquo;There is no good and evil, there is only power and those too weak to seek it.&rdquo; and I hope you see the power on N when implementing those graph algorithms.</p>
 
-<p>[caption id=&ldquo;attachment_1373&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;550&rdquo;]<img src="https://shem8.files.wordpress.com/2016/03/the_general_problem.png" alt="the_general_problem" /> Source: <a href="https://xkcd.com/974/">xkcd</a>[/caption]</p>
+<p><img class="center" src="https://shem8.files.wordpress.com/2016/03/the_general_problem.png" width="550" title="*" ></p>
 
 <h2>#10: Extract everything to static Util class</h2>
 
@@ -472,9 +474,11 @@
 
 <p><strong>Bonus points:</strong> have a Util and Utils classes, because one is not enough and confusing is a plus!</p>
 
+<p><br><br></p>
+
 <hr />
 
-<p>That&rsquo;s all until the next time when we&rsquo;re going to talk a bit about UI and UX, Got some more suggestions for ways to make your code worse? Would love to hear your thoughts in the comments!</p>
+<p><em>That&rsquo;s all until the next time when we&rsquo;re going to talk a bit about UI and UX, Got some more suggestions for ways to make your code worse? Would love to hear your thoughts in the comments!</em></p>
 ]]></content>
   </entry>
   
@@ -519,35 +523,251 @@
 
 <p>Let&rsquo;s start- assume we have some search component and we want to move to and from search state. So we need to animate between search icon and cancel icon:</p>
 
-<p>[gallery ids=&ldquo;1025,1024&rdquo; columns=&ldquo;2&rdquo; link=&ldquo;none&rdquo;]</p>
+<p><img src="https://shem8.files.wordpress.com/2016/02/search_icon.png" width="150" height="150">
+<img src="https://shem8.files.wordpress.com/2016/02/cancel_icon.png" width="150" height="150"></p>
 
 <p>And the animation between those 2 icons (Added guides and slow motion to better understand the transition):</p>
 
-<p><img src="https://shem8.files.wordpress.com/2016/02/gif.gif" alt="gif" /></p>
+<p><img class="center" src="https://shem8.files.wordpress.com/2016/02/gif.gif"></p>
 
 <p>As you can see we actually have 3 shapes that moves: 2 half circles that moves to lines (green and blue) and the line of the magnifying glass that just getting bigger and reaching to the end.</p>
 
 <p>First we need to create the shapes for the search icon:</p>
 
-<p><a href="https://gist.github.com/shem8/b2e237d74a3d1dabbf5f">https://gist.github.com/shem8/b2e237d74a3d1dabbf5f</a></p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+</span><span class='line'><span class="nt">&lt;vector</span> <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+</span><span class='line'>    <span class="na">android:width=</span><span class="s">&quot;24dp&quot;</span>
+</span><span class='line'>    <span class="na">android:height=</span><span class="s">&quot;24dp&quot;</span>
+</span><span class='line'>    <span class="na">android:viewportWidth=</span><span class="s">&quot;24&quot;</span>
+</span><span class='line'>    <span class="na">android:viewportHeight=</span><span class="s">&quot;24&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;path</span>
+</span><span class='line'>        <span class="na">android:name=</span><span class="s">&quot;line&quot;</span>
+</span><span class='line'>        <span class="na">android:pathData=</span><span class="s">&quot;M5.705,5.705 L18.295,18.295&quot;</span>
+</span><span class='line'>        <span class="na">android:strokeWidth=</span><span class="s">&quot;2&quot;</span>
+</span><span class='line'>        <span class="na">android:strokeColor=</span><span class="s">&quot;#000000&quot;</span>
+</span><span class='line'>        <span class="na">android:trimPathStart=</span><span class="s">&quot;0.45&quot;</span>
+</span><span class='line'>        <span class="na">android:trimPathEnd=</span><span class="s">&quot;1&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;path</span>
+</span><span class='line'>        <span class="na">android:name=</span><span class="s">&quot;circle1&quot;</span>
+</span><span class='line'>        <span class="na">android:pathData=</span><span class="s">&quot;M5.705,5.705 A 4 4 0 1 1 12,12 L5.705,18.295&quot;</span>
+</span><span class='line'>        <span class="na">android:strokeWidth=</span><span class="s">&quot;2&quot;</span>
+</span><span class='line'>        <span class="na">android:strokeColor=</span><span class="s">&quot;#000000&quot;</span>
+</span><span class='line'>        <span class="na">android:trimPathStart=</span><span class="s">&quot;0&quot;</span>
+</span><span class='line'>        <span class="na">android:trimPathEnd=</span><span class="s">&quot;0.6&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;path</span>
+</span><span class='line'>        <span class="na">android:name=</span><span class="s">&quot;circle2&quot;</span>
+</span><span class='line'>        <span class="na">android:pathData=</span><span class="s">&quot;M18.295,5.705 L12,12 A 4 4 0 1 1 5.705,5.705&quot;</span>
+</span><span class='line'>        <span class="na">android:strokeWidth=</span><span class="s">&quot;2&quot;</span>
+</span><span class='line'>        <span class="na">android:strokeColor=</span><span class="s">&quot;#000000&quot;</span>
+</span><span class='line'>        <span class="na">android:trimPathStart=</span><span class="s">&quot;0.4&quot;</span>
+</span><span class='line'>        <span class="na">android:trimPathEnd=</span><span class="s">&quot;1&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'><span class="nt">&lt;/vector&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>The syntax for creating SVG paths is not that complicated and you can learn about it <a href="https://www.w3.org/TR/SVG/paths.html">here</a>, Android Studio is also very handy here because you can see a preview and also import existent material app icons and see their paths as described <a href="http://developer.android.com/tools/help/vector-asset-studio.html">here</a>.</p>
 
 <p>Now lets create the animation, we&rsquo;ll focus on the animation from the search icon to cancel, the opposite is pretty the same just with reverse values. We going to create 3 different animations:</p>
 
-<p><a href="https://gist.github.com/shem8/4898f047caa80151bca8">https://gist.github.com/shem8/4898f047caa80151bca8</a></p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;set</span>
+</span><span class='line'><span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+</span><span class='line'><span class="na">android:ordering=</span><span class="s">&quot;sequentially&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c">&lt;!-- first we need to immediately reset state --&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;objectAnimator</span>
+</span><span class='line'>        <span class="na">android:duration=</span><span class="s">&quot;0&quot;</span>
+</span><span class='line'>        <span class="na">android:propertyName=</span><span class="s">&quot;trimPathStart&quot;</span>
+</span><span class='line'>        <span class="na">android:valueFrom=</span><span class="s">&quot;0.45&quot;</span>
+</span><span class='line'>        <span class="na">android:valueTo=</span><span class="s">&quot;0.45&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c">&lt;!-- then run the animation after a delay --&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;objectAnimator</span>
+</span><span class='line'>        <span class="na">android:propertyName=</span><span class="s">&quot;trimPathStart&quot;</span>
+</span><span class='line'>        <span class="na">android:duration=</span><span class="s">&quot;300&quot;</span>
+</span><span class='line'>        <span class="na">android:startOffset=</span><span class="s">&quot;250&quot;</span>
+</span><span class='line'>        <span class="na">android:interpolator=</span><span class="s">&quot;@android:interpolator/fast_out_slow_in&quot;</span>
+</span><span class='line'>        <span class="na">android:valueFrom=</span><span class="s">&quot;0.45&quot;</span>
+</span><span class='line'>        <span class="na">android:valueTo=</span><span class="s">&quot;0&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;/set&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<p><a href="https://gist.github.com/shem8/e78f674a02796e8ebca8">https://gist.github.com/shem8/e78f674a02796e8ebca8</a></p>
 
-<p><a href="https://gist.github.com/shem8/9183be2e0759cff9d7a7">https://gist.github.com/shem8/9183be2e0759cff9d7a7</a></p>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;set</span>
+</span><span class='line'>    <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+</span><span class='line'>    <span class="na">android:ordering=</span><span class="s">&quot;together&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;objectAnimator</span>
+</span><span class='line'>        <span class="na">android:propertyName=</span><span class="s">&quot;trimPathStart&quot;</span>
+</span><span class='line'>        <span class="na">android:valueFrom=</span><span class="s">&quot;0&quot;</span>
+</span><span class='line'>        <span class="na">android:valueTo=</span><span class="s">&quot;0.6&quot;</span>
+</span><span class='line'>        <span class="na">android:duration=</span><span class="s">&quot;450&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;objectAnimator</span>
+</span><span class='line'>        <span class="na">android:propertyName=</span><span class="s">&quot;trimPathEnd&quot;</span>
+</span><span class='line'>        <span class="na">android:valueFrom=</span><span class="s">&quot;0.6&quot;</span>
+</span><span class='line'>        <span class="na">android:valueTo=</span><span class="s">&quot;1&quot;</span>
+</span><span class='line'>        <span class="na">android:duration=</span><span class="s">&quot;600&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;/set&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;set</span>
+</span><span class='line'>    <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+</span><span class='line'>    <span class="na">android:ordering=</span><span class="s">&quot;together&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;objectAnimator</span>
+</span><span class='line'>        <span class="na">android:propertyName=</span><span class="s">&quot;trimPathStart&quot;</span>
+</span><span class='line'>        <span class="na">android:valueFrom=</span><span class="s">&quot;0.4&quot;</span>
+</span><span class='line'>        <span class="na">android:valueTo=</span><span class="s">&quot;0&quot;</span>
+</span><span class='line'>        <span class="na">android:duration=</span><span class="s">&quot;600&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;objectAnimator</span>
+</span><span class='line'>        <span class="na">android:propertyName=</span><span class="s">&quot;trimPathEnd&quot;</span>
+</span><span class='line'>        <span class="na">android:valueFrom=</span><span class="s">&quot;1&quot;</span>
+</span><span class='line'>        <span class="na">android:valueTo=</span><span class="s">&quot;0.4&quot;</span>
+</span><span class='line'>        <span class="na">android:duration=</span><span class="s">&quot;450&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;/set&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>The animations are pretty basics and what we&rsquo;re doing here is just changing the start or the end of the path. Now we need to bring all animation together:</p>
 
-<p><a href="https://gist.github.com/shem8/b6c4709617bb20394627">https://gist.github.com/shem8/b6c4709617bb20394627</a></p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;animated-vector</span>
+</span><span class='line'>    <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+</span><span class='line'>    <span class="na">android:drawable=</span><span class="s">&quot;@drawable/searchback_search&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;target</span>
+</span><span class='line'>        <span class="na">android:name=</span><span class="s">&quot;line&quot;</span>
+</span><span class='line'>        <span class="na">android:animation=</span><span class="s">&quot;@animator/line_to_cancel&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;target</span>
+</span><span class='line'>        <span class="na">android:name=</span><span class="s">&quot;circle1&quot;</span>
+</span><span class='line'>        <span class="na">android:animation=</span><span class="s">&quot;@animator/circle1_to_cancel&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;target</span>
+</span><span class='line'>        <span class="na">android:name=</span><span class="s">&quot;circle2&quot;</span>
+</span><span class='line'>        <span class="na">android:animation=</span><span class="s">&quot;@animator/circle2_to_cancel&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;/animated-vector&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>And now you can easily use the  search_to_cancel drawable in code, just don&rsquo;t forget to call <strong>start()</strong>:</p>
 
-<p><img src="https://shem8.files.wordpress.com/2016/02/final.gif" alt="final" /></p>
+<p><img class="center" src="https://shem8.files.wordpress.com/2016/02/final.gif"></p>
 
 <p>A few notes regarding to this process:</p>
 
@@ -559,11 +779,13 @@
 </ol>
 
 
-<p>That&rsquo;s for this time, hopes this will help you in the next time you want to build a great UX. =)</p>
+<p>That&rsquo;s for this time, hopes this will help you in the next time you want to build a great UX. =)
+<br>
+<br></p>
 
 <hr />
 
-<p>Liked this post? Please share it with your friends!</p>
+<p><strong>Liked this post? Please share it with your friends!</strong></p>
 ]]></content>
   </entry>
   
