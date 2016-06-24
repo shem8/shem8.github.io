@@ -38,10 +38,9 @@ If Facebook can do it so can you, also- if your app will be so good Google might
 
 ## #3: Create a mysterious app icon
 
-
-[caption id="attachment_1435" align="alignright" width="131"]![yo-app-icon](https://shem8.files.wordpress.com/2016/04/yo-app-icon.png) App that let you send "Yo", of course.[/caption]
-
 That's really helpful when users need to quickly find your app from 40 apps icons grid.
+
+{% img center https://shem8.files.wordpress.com/2016/04/yo-app-icon.png 131 * 'App that let you send "Yo", of course.' 'App that let you send "Yo", of course.' %}
 
 
 ## #4: Use your own ideas for icons
@@ -49,7 +48,7 @@ That's really helpful when users need to quickly find your app from 40 apps icon
 
 Now I'm talking about in app icons. I understand- you don't fully pleased with the Android default share icon, you're also didn't find anything suits to your needs between hundreds of [material design icons](https://design.google.com/icons/) so why not creating a full icon pack from your own?
 
-**Bonus points: **don't even bother to add title to your menu items, so that users will able to get a textual hint.
+**Bonus points:** don't even bother to add title to your menu items, so that users will able to get a textual hint.
 
 
 ## #5: Create intro, overlay explanations AND hints
@@ -57,7 +56,7 @@ Now I'm talking about in app icons. I understand- you don't fully pleased with t
 
 Because users are stupid (mostly true) and they always read your explanation (no chance ever)
 
-**Bonus points: **do a step-by-step tutorial with no option to skip.
+**Bonus points:** do a step-by-step tutorial with no option to skip.
 
 
 ## #6: Don't support integration with other apps within your app
@@ -76,31 +75,24 @@ In addition to previous point- respect other apps and don't still they users ple
 
 ## #8: Put animations everywhere
 
-
 A [splash screen animation](https://shem8.wordpress.com/2015/10/02/pimp-up-your-splash-screen/) is nice, even [Google](https://www.google.com/design/spec/animation/meaningful-transitions.html) recommend adding animation while moving between screens, and the more the merrier
 
-[caption id="attachment_1494" align="aligncenter" width="448"]![giphy](https://shem8.files.wordpress.com/2016/04/giphy.gif) Is it too much?[/caption]
-
-
+{% img center https://shem8.files.wordpress.com/2016/04/giphy.gif 448 * 'Is it too much' 'Is it too much' %}
 
 
 ## #9: Use gifs instead of drawing things in code or animation drawable
-
 
 Yes, I know, [animation drawable](https://shem8.wordpress.com/2016/02/25/animated-vector-drawable/) might saves you a couple of MB, but your time is much more important!
 
 
 ## #10: Create resources for all resolutions
 
-
 Because you just saves time, so lets waste it.
 
+<br><br>
 
+***
 
-* * *
+*Next time we going to talk about how to make things a little bit worse by the product guys so stay tuned.*
 
-
-
-Next time we going to talk about how to make things a little bit worse by the product guys so stay tuned.
-
-Got some more suggestions for ways to make your look and feel worse? Would love to hear your thoughts in the comments!
+**Got some more suggestions for ways to make your look and feel worse? Would love to hear your thoughts in the comments!**

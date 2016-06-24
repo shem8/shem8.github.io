@@ -64,42 +64,146 @@ That's when AnimatedVectorDrawable introduced and let developers use basic anima
 
 Let's start- assume we have some search component and we want to move to and from search state. So we need to animate between search icon and cancel icon:
 
-
-
-[gallery ids="1025,1024" columns="2" link="none"]
+{% img https://shem8.files.wordpress.com/2016/02/search_icon.png 150 150 %}
+{% img https://shem8.files.wordpress.com/2016/02/cancel_icon.png 150 150 %}
 
 And the animation between those 2 icons (Added guides and slow motion to better understand the transition):
 
-![gif](https://shem8.files.wordpress.com/2016/02/gif.gif)
+{% img center https://shem8.files.wordpress.com/2016/02/gif.gif %}
 
 As you can see we actually have 3 shapes that moves: 2 half circles that moves to lines (green and blue) and the line of the magnifying glass that just getting bigger and reaching to the end.
 
 First we need to create the shapes for the search icon:
 
-https://gist.github.com/shem8/b2e237d74a3d1dabbf5f
+{% codeblock lang:xml %}
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <path
+        android:name="line"
+        android:pathData="M5.705,5.705 L18.295,18.295"
+        android:strokeWidth="2"
+        android:strokeColor="#000000"
+        android:trimPathStart="0.45"
+        android:trimPathEnd="1" />
+
+    <path
+        android:name="circle1"
+        android:pathData="M5.705,5.705 A 4 4 0 1 1 12,12 L5.705,18.295"
+        android:strokeWidth="2"
+        android:strokeColor="#000000"
+        android:trimPathStart="0"
+        android:trimPathEnd="0.6" />
+
+    <path
+        android:name="circle2"
+        android:pathData="M18.295,5.705 L12,12 A 4 4 0 1 1 5.705,5.705"
+        android:strokeWidth="2"
+        android:strokeColor="#000000"
+        android:trimPathStart="0.4"
+        android:trimPathEnd="1" />
+</vector>
+{% endcodeblock %}
 
 The syntax for creating SVG paths is not that complicated and you can learn about it [here](https://www.w3.org/TR/SVG/paths.html), Android Studio is also very handy here because you can see a preview and also import existent material app icons and see their paths as described [here](http://developer.android.com/tools/help/vector-asset-studio.html).
 
 Now lets create the animation, we'll focus on the animation from the search icon to cancel, the opposite is pretty the same just with reverse values. We going to create 3 different animations:
 
-https://gist.github.com/shem8/4898f047caa80151bca8
+{% codeblock lang:xml %}
+<set
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:ordering="sequentially">
 
-https://gist.github.com/shem8/e78f674a02796e8ebca8
+    <!-- first we need to immediately reset state -->
+    <objectAnimator
+        android:duration="0"
+        android:propertyName="trimPathStart"
+        android:valueFrom="0.45"
+        android:valueTo="0.45"/>
 
-https://gist.github.com/shem8/9183be2e0759cff9d7a7
+    <!-- then run the animation after a delay -->
+    <objectAnimator
+        android:propertyName="trimPathStart"
+        android:duration="300"
+        android:startOffset="250"
+        android:interpolator="@android:interpolator/fast_out_slow_in"
+        android:valueFrom="0.45"
+        android:valueTo="0" />
+
+</set>
+{% endcodeblock %}
+
+{% codeblock lang:xml %}
+<set
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:ordering="together">
+
+    <objectAnimator
+        android:propertyName="trimPathStart"
+        android:valueFrom="0"
+        android:valueTo="0.6"
+        android:duration="450" />
+
+    <objectAnimator
+        android:propertyName="trimPathEnd"
+        android:valueFrom="0.6"
+        android:valueTo="1"
+        android:duration="600" />
+
+</set>
+{% endcodeblock %}
+
+{% codeblock lang:xml %}
+<set
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:ordering="together">
+
+    <objectAnimator
+        android:propertyName="trimPathStart"
+        android:valueFrom="0.4"
+        android:valueTo="0"
+        android:duration="600" />
+
+    <objectAnimator
+        android:propertyName="trimPathEnd"
+        android:valueFrom="1"
+        android:valueTo="0.4"
+        android:duration="450" />
+
+</set>
+{% endcodeblock %}
 
 The animations are pretty basics and what we're doing here is just changing the start or the end of the path. Now we need to bring all animation together:
 
-https://gist.github.com/shem8/b6c4709617bb20394627
+{% codeblock lang:xml %}
+<animated-vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/searchback_search">
+
+    <target
+        android:name="line"
+        android:animation="@animator/line_to_cancel" />
+
+    <target
+        android:name="circle1"
+        android:animation="@animator/circle1_to_cancel" />
+
+    <target
+        android:name="circle2"
+        android:animation="@animator/circle2_to_cancel" />
+
+</animated-vector>
+{% endcodeblock %}
 
 And now you can easily use the  search_to_cancel drawable in code, just don't forget to call **start()**:
 
-![final](https://shem8.files.wordpress.com/2016/02/final.gif)
+{% img center https://shem8.files.wordpress.com/2016/02/final.gif %}
 
 A few notes regarding to this process:
-
-
-
 
   1. Without [Nick Butcher](//twitter.com/crafty) and his great resources (like the [plaid](https://github.com/nickbutcher/plaid) app) I wouldn't know anything about AnimatedVectorDrawable, so a lot of credit from this blog post should go to him.
 
@@ -114,11 +218,8 @@ A few notes regarding to this process:
 
 
 That's for this time, hopes this will help you in the next time you want to build a great UX. =)
+<br>
+<br>
+***
 
-
-
-* * *
-
-
-
-Liked this post? Please share it with your friends!
+**Liked this post? Please share it with your friends!**

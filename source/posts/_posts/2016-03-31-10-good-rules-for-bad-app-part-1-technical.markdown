@@ -24,9 +24,6 @@ We were all been there, you got a great idea for an app, you gather some feedbac
 
 Following the hilarious post by Chet Haase about [10 good rules for bad API](https://medium.com/pointer-io/this-article-is-exclusive-to-pointer-a-reading-club-for-developers-9b03f3df060c), I decided to put together my list about how to build a bad app. but a few notes first:
 
-
-
-
   * There are so many bad apps out there, each one is bad in it own way so it's really hard to set only 10. I tried to do my best for taking the top bad patterns, but I trust you to keep fucking it up much more than what I'm talking about here.
 
 
@@ -47,15 +44,9 @@ Following the hilarious post by Chet Haase about [10 good rules for bad API](ht
 
   * I'm not [Chet Haase](https://medium.com/@chethaase) so this post can't be half good or funny as his, so sorry for that.
 
+<br>
 
-
-
-
-* * *
-
-
-
-Enough said, lets start with the list:
+*Enough said, lets start with the list:*
 
 
 ## #1: Ask as many permission as possible
@@ -71,7 +62,7 @@ You know what your app worth, don't let minor things like user privacy get down 
 
 Hey dude, we're loading, we'll really appreciate if you let us do our thing and don't interrupt us with some stupid ui events, just sit quietly and wait us to finish processing all this 3.4M config xml file ok?!
 
-[caption id="attachment_1364" align="aligncenter" width="400"]![loading_time](https://shem8.files.wordpress.com/2016/03/loading_time.jpg) Source: http://flo.livezon.com/2012/10/speed-matters[/caption]
+{% img center https://shem8.files.wordpress.com/2016/03/loading_time.jpg 400 * %}
 
 
 ## #3: Retry endlessly
@@ -119,7 +110,7 @@ Great, you just implemented the sorting by yourself, probably with bucket sort, 
 
 You know what they say- Premature optimization is the root of all evil, but a greater [women also said](http://www.goodreads.com/quotes/30725-there-is-no-good-and-evil-there-is-only-power): "There is no good and evil, there is only power and those too weak to seek it." and I hope you see the power on N when implementing those graph algorithms.
 
-[caption id="attachment_1373" align="aligncenter" width="550"]![the_general_problem](https://shem8.files.wordpress.com/2016/03/the_general_problem.png) Source: [xkcd](https://xkcd.com/974/)[/caption]
+{% img center https://shem8.files.wordpress.com/2016/03/the_general_problem.png 550 * %}
 
 
 ## #10: Extract everything to static Util class
@@ -129,10 +120,7 @@ Move it all- Android specific functionality, networking calls, permissions check
 
 **Bonus points:** have a Util and Utils classes, because one is not enough and confusing is a plus!
 
+<br><br>
+***
 
-
-* * *
-
-
-
-That's all until the next time when we're going to talk a bit about UI and UX, Got some more suggestions for ways to make your code worse? Would love to hear your thoughts in the comments!
+*That's all until the next time when we're going to talk a bit about UI and UX, Got some more suggestions for ways to make your code worse? Would love to hear your thoughts in the comments!*
