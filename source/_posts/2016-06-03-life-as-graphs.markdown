@@ -29,7 +29,7 @@ As a geek I often imagine situations in life as a math equations and graphs (don
 {% img center /images/posts/graphs/startup.png %}
 
 
-## Lines of code you write during the day:
+## #Lines of code you write:
 <br>
 {% img /images/posts/graphs/code_eq.png %}
 
@@ -43,14 +43,14 @@ As a geek I often imagine situations in life as a math equations and graphs (don
 {% img center /images/posts/graphs/burnrate.png %}
 
 
-## Does your css rules are working:
+## Do your css rules are working:
 <br>
 {% img /images/posts/graphs/css_eq.png %}
 
 {% img center /images/posts/graphs/css.png %}
 
 
-## Number of messages you get from girls- LinkedIn vs Tinder
+## Number of messages you get from girls- LinkedIn / Tinder
 <br>
 {% img /images/posts/graphs/burnrate_eq.png %}
 
