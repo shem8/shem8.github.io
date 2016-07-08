@@ -17,9 +17,10 @@ tags:
 - startup
 ---
 
-_Over the past 3 years I've been working at _[_MyRoll_](http://myroll.com/)_ (previously called Flayvr, the startup that loves you photos as much as you do_)._ I joined right after the seed stage and I was the first employee of the company. This was my first time working at a startup and it's hands-down one of the best experiences I've had in my not-so-long life. Lately, more and more of my friends have asked me: "Should I join a startup, or just go corporate - something that's financially stable?". __
+_Over the past 3 years I've been working at [MyRoll](http://myroll.com/) (previously called Flayvr, the startup that loves you photos as much as you do). I joined right after the seed stage and I was the first employee of the company. This was my first time working at a startup and it's hands-down one of the best experiences I've had in my not-so-long life. Lately, more and more of my friends have asked me: "Should I join a startup, or just go corporate - something that's financially stable?"._
 <!--more-->
-__First- I want to clear the water and say that I don't really have an answer for that.  It really depends on the type of person you are. However, these is my 2 cents about all the _**_GOOD_**_ of working in a small startup (Don't worry, there's plenty of bad as well - coming soon):_
+
+__First- I want to clear the water and say that I don't really have an answer for that.  It really depends on the type of person you are. However, these is my 2 cents about all the _*_GOOD_*_ of working in a small startup (Don't worry, there's plenty of bad as well - coming soon):__
 
 
 ## 1. You learn fast (because you don't have a choice)
@@ -41,7 +42,7 @@ Back to the drawing board - we categorized our main users. We understood that we
 
 We then tweaked our algorithm (and are still making it better and better, there is no magic solution here) and actually arrived at some pretty solid results.
 
-**Why? Because he had no alternatives **- it was either about delivering a good damn product or giving back our investors their money.
+**Why? Because he had no alternatives** - it was either about delivering a good damn product or giving back our investors their money.
 
 
 ## 3. You break things. A lot!
@@ -49,7 +50,7 @@ We then tweaked our algorithm (and are still making it better and better, there 
 
 When moving fast you sometimes fall, just like a new baby born child. In the beginning you are going to  fall a lot, but slowly you learn how to put one leg in front of the other, you learn to keep your balance and in the end you are running smoothly.
 
-[caption id="" align="alignright" width="352"]![](http://c2.thejournal.ie/media/2013/04/falling-off-catwalk.gif) Pushing to production on 1AM on Friday.[/caption]
+{% img center http://c2.thejournal.ie/media/2013/04/falling-off-catwalk.gif 352 * 'Pushing to production on 1AM on Friday.' 'Pushing to production on 1AM on Friday.' %}
 
 At first, releasing a new version was a big deal. We had a release doc with a couple of stages that you had to be checked: making sure you're working with the production env, testing it on a couple of devices, checking for updates and fresh install, etc... That took some time, and as we gained confidence the release cycle got shorter and we started  pushing a new version to our users 2-3 times a week (and sometimes even more).
 
@@ -62,9 +63,9 @@ But even the adults fall sometimes, and we did have some bad deploys. Shit happe
 Further to my last point - because of the uncertainty and the risk- taking nature of startups, you will fail often. From time to time, you learn to live with all those failures and instead of being upset after each one you learn to embrace it. You understand that each failure makes you a bit smarter: your estimation should be done more carefully, you now know your users don't like the red color, etc...
 
 
-<blockquote>_“When we give ourselves permission to fail, we, at the same time, give ourselves permission to excel.”_
-
-_- Eloise Ristad_</blockquote>
+<blockquote>“When we give ourselves permission to fail, we, at the same time, give ourselves permission to excel.”
+<br>
+<i>- Eloise Ristad</i></blockquote>
 
 
 With that in mind - you think more about the process and less about the results.
@@ -88,7 +89,7 @@ On the day iOS 7 was released we got many messages from friends. They were all l
 Same happened when Dropbox Carousel launched and with Google photos. When the big companies enter the arena you should start to worry, but you should also be flattered, because that means that there is something worth fighting about, and in today’s world - there is plenty of room for you too there.
 
 
-<blockquote>**Remember: if the Gorilla is blowing down your neck - that means you're on the right track, just run faster =)**</blockquote>
+<blockquote>Remember: if the Gorilla is blowing down your neck - that means you're on the right track, just run faster =)</blockquote>
 
 
 
@@ -97,7 +98,7 @@ Same happened when Dropbox Carousel launched and with Google photos. When the bi
 
 
 Here is some very small taste of the things that I had the privilege to do over the last 3 years. All are things  that I've never done before:
-![](http://cosmic-fitness.com/wp-content/uploads/2015/03/comfort-zone-300x206.jpg)
+
 
 
 
@@ -124,13 +125,17 @@ Here is some very small taste of the things that I had the privilege to do over 
 
 
 
+  {% img center http://cosmic-fitness.com/wp-content/uploads/2015/03/comfort-zone-300x206.jpg %}
 
 ## 8. Nobody is going tell you not to come with flip flops or that the CEO is coming tomorrow so you have to look like you’re working at 8AM
 
+<br>
+{% img center https://shem8.files.wordpress.com/2015/10/edit.jpg?w=660 %}
 
-![edit](https://shem8.files.wordpress.com/2015/10/edit.jpg?w=660)
-
+<br>
 Yup, you're able to start every Thursday with yoga on the beach and swimming in the sea, and we actually did it.
+
+<br>
 
 
 
