@@ -1,0 +1,730 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: android | 80/20]]></title>
+  <link href="http://shem8.github.io/blog/categories/android/atom.xml" rel="self"/>
+  <link href="http://shem8.github.io/"/>
+  <updated>2016-07-15T16:33:59+03:00</updated>
+  <id>http://shem8.github.io/</id>
+  <author>
+    <name><![CDATA[Shem Magnezi]]></name>
+    <email><![CDATA[smagnezi8@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Playing with Coordinator Layout]]></title>
+    <link href="http://shem8.github.io/blog/2016/05/27/playing-with-coordinator-layout/"/>
+    <updated>2016-05-27T15:02:52+03:00</updated>
+    <id>http://shem8.github.io/blog/2016/05/27/playing-with-coordinator-layout</id>
+    <content type="html"><![CDATA[<p>Lately I needed to build some kind of overlay screen that looks like the one that shows when you open the phone when you don&rsquo;t have a lock screen. This is a simple overlay screen that should be dismissable when the user swipe it out from the lower part of the screen<!-- more -->, something like this:</p>
+
+<p><img class="center" src="/images/posts/get-feature-packed-iphone-like-lock-screen-for-your-galaxy-s6-other-android-device-w654.jpg" width="211" title="*" ></p>
+
+<p>When coming to implement it, I thought about building a <em>LinearLayout</em> with 2 views- the content view and the swipe view, than put some touch listener on the swipe view and implement swiping mechanism, than syncing both view to act the same. But when I thought about it more and more I decided that it&rsquo;s too much work. Searching this kind of code or library out there always bring me to <em>RecycleView</em> swipe to dismiss items, and in one of those search results I saw how to implement this swipe to dismiss item in <em>RecycleView</em> with <em>CoordinatorLayout</em>, so I decided to give it a chance.</p>
+
+<p><em><a href="http://developer.android.com/reference/android/support/design/widget/CoordinatorLayout.html">CoordinatorLayout</a></em> is a really great addition in the design support library. Most of you probably already used it with a <a href="https://guides.codepath.com/android/floating-action-buttons">floating action buttons</a> or <a href="http://www.androidhive.info/2015/09/android-material-design-snackbar-example/">snackbars</a> but if you like me- you just put it there, assuming views will move properly, without really diving into how the layout is syncing between them.</p>
+
+<p>So it turns out that <em>CordinatorLayout</em> is pretty powerful, it let you easily define interactions on child views and even between them, those interactions are called <a href="http://developer.android.com/reference/android/support/design/widget/CoordinatorLayout.Behavior.html">behaviors</a> so that each child can behave differently according to things that are happening in the layout. You can do a really cool things with those behaviors, here is one example for a <a href="http://saulmm.github.io/mastering-coordinator">great blog post</a> that I stumble upon my searches about coordinate layout usages.</p>
+
+<p>In our case it suppose to be pretty easy, there is already a <a href="http://developer.android.com/reference/android/support/design/widget/SwipeDismissBehavior.html">swipe to dismiss behavior</a> ready to be used on the lower view, so we just need to attach it to the relevant view. First lets build our layout:</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="ni">&amp;lt;</span>android.support.design.widget.CoordinatorLayout
+</span><span class='line'>    xmlns:android=<span class="ni">&amp;ldquo;</span><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span><span class="nt">&gt;</span>http://schemas.android.com/apk/res/android<span class="nt">&lt;/a&gt;</span><span class="ni">&amp;rdquo;</span>
+</span><span class='line'>    android:layout_width=<span class="ni">&amp;ldquo;</span>match_parent<span class="ni">&amp;rdquo;</span>
+</span><span class='line'>    android:layout_height=<span class="ni">&amp;ldquo;</span>match_parent<span class="ni">&amp;rdquo;</span>&gt;<span class="nt">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>FrameLayout android:layout_width=&quot;match_parent&quot;
+</span><span class='line'>     android:layout_height=&quot;match_parent&quot;
+</span><span class='line'>     android:id=&quot;@+id/container&quot;
+</span><span class='line'>     android:background=&quot;#06ff87&quot;/<span class="ni">&amp;gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="ni">&amp;lt;</span>TextView
+</span><span class='line'>    android:id=&quot;@+id/dismiss&quot;
+</span><span class='line'>    android:layout_width=&quot;match_parent&quot;
+</span><span class='line'>    android:layout_height=&quot;wrap_content&quot;
+</span><span class='line'>    android:text=&quot;<span class="ni">&amp;gt;</span> Swipe to dismiss <span class="ni">&amp;gt;</span> <span class="ni">&amp;gt;</span> <span class="ni">&amp;gt;</span>&quot;
+</span><span class='line'>    android:padding=&quot;30dp&quot;
+</span><span class='line'>    android:gravity=&quot;center&quot;
+</span><span class='line'>    android:layout_gravity=&quot;center_horizontal|bottom&quot;
+</span><span class='line'>    android:background=&quot;#3bb0ff&quot;/<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;</span><span class="ni">&amp;lt;</span>/android.support.design.widget.CoordinatorLayout&gt;
+</span></code></pre></td></tr></table></div></figure></p>
+
+<p>As said, it’s a simple layout with 2 view- one for the content (the green one) and one for the swiping (the blue one).</p>
+
+<p>Now, lets attach the relevant behavior to the relevant view:</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">View</span> <span class="n">dismiss</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">dismiss</span><span class="o">);</span>
+</span><span class='line'><span class="n">CoordinatorLayout</span><span class="o">.</span><span class="na">LayoutParams</span> <span class="n">params</span> <span class="o">=</span> <span class="o">(</span><span class="n">CoordinatorLayout</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">)</span> <span class="n">dismiss</span><span class="o">.</span><span class="na">getLayoutParams</span><span class="o">();</span>
+</span><span class='line'><span class="n">SwipeDismissBehavior</span><span class="o">&lt;</span><span class="n">View</span><span class="o">&gt;</span> <span class="n">behavior</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SwipeDismissBehavior</span><span class="o">&amp;</span><span class="n">lt</span><span class="o">;&gt;();</span>
+</span><span class='line'><span class="n">behavior</span><span class="o">.</span><span class="na">setSwipeDirection</span><span class="o">(</span><span class="n">SwipeDismissBehavior</span><span class="o">.</span><span class="na">SWIPE_DIRECTION_START_TO_END</span><span class="o">);</span>
+</span><span class='line'><span class="n">behavior</span><span class="o">.</span><span class="na">setListener</span><span class="o">(</span><span class="k">new</span> <span class="n">SwipeDismissBehavior</span><span class="o">.</span><span class="na">OnDismissListener</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>    <span class="nd">@Override</span>
+</span><span class='line'>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDismiss</span><span class="o">(</span><span class="kd">final</span> <span class="n">View</span> <span class="n">view</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>        <span class="n">finish</span><span class="o">();</span>
+</span><span class='line'>    <span class="o">}&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="nd">@Override</span>
+</span><span class='line'><span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDragStateChanged</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">)</span> <span class="o">{}</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;});</span>
+</span><span class='line'><span class="n">params</span><span class="o">.</span><span class="na">setBehavior</span><span class="o">(</span><span class="n">behavior</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<p>That&rsquo;s pretty self explained- we declare a new swipe to dismiss behavior, set it&rsquo;s direction only to right, and finish the activity on dismiss. But there&rsquo;s on problem- somehow, although we declare this behavior only on the dismiss view, it working on all the view, so also the content view is swipeable as you can see here:</p>
+
+<p><img class="center" src="/images/posts/ezgif-4244700794.gif" width="280" height="498"></p>
+
+<p>I&rsquo;m not sure if this is by design or just a bug (after digging in the code I&rsquo;m afraid this behavior is not intended) but we can easily fix this by creating our own behavior. Of course that we not going to write this whole code from beginning, we&rsquo;ll use the <em>SwipeDismissBehavior</em> class and just fix the relevant code. I really recommend doing a little investigation and reading the Android code, that&rsquo;s way you&rsquo;re fully understand how things really works and get to read an high quality code written by the Android developers, in that case the fix is pretty easy to spot- the <em>SwipeDismissBehavior</em> handle touch events also if those touches not in the view (although there is a check in the <em>onInterceptTouchEvent</em> method and those events should be ignore) so I created a new behavior class just for this fix:</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="o">/&lt;</span><span class="n">em</span><span class="o">&gt;*</span>
+</span><span class='line'> <span class="o">*</span> <span class="n">Handle</span> <span class="n">only</span> <span class="n">touches</span> <span class="n">on</span> <span class="k">this</span> <span class="n">current</span> <span class="n">view</span>
+</span><span class='line'> <span class="o">&lt;/</span><span class="n">em</span><span class="o">&gt;/</span>
+</span><span class='line'><span class="nd">@Override</span>
+</span><span class='line'><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onTouchEvent</span><span class="o">(</span><span class="n">CoordinatorLayout</span> <span class="n">parent</span><span class="o">,</span> <span class="n">V</span> <span class="n">child</span><span class="o">,</span> <span class="n">MotionEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>    <span class="k">if</span> <span class="o">(</span><span class="n">parent</span><span class="o">.</span><span class="na">isPointInChildBounds</span><span class="o">(</span><span class="n">child</span><span class="o">,</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="n">event</span><span class="o">.</span><span class="na">getX</span><span class="o">(),</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="n">event</span><span class="o">.</span><span class="na">getY</span><span class="o">()))</span> <span class="o">{</span>
+</span><span class='line'>        <span class="k">return</span> <span class="kd">super</span><span class="o">.</span><span class="na">onTouchEvent</span><span class="o">(</span><span class="n">parent</span><span class="o">,</span> <span class="n">child</span><span class="o">,</span> <span class="n">event</span><span class="o">);</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>    <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<p>Changing the activity to use <em>SwipeDismissOnlyOnViewBehavior</em> instead of <em>SwipeDismissBehavior</em> is doing the work:</p>
+
+<p><img class="center" src="/images/posts/ezgif-2527994552.gif" width="280" height="498"></p>
+
+<p>Now we need to sync between the content view to the dismiss view when swiping, so we creating a new behavior just for this. Because this is really simple behavior all we need to implement are 2 functions, in which view this content view depended (<em>layoutDependsOn</em>) and what to do when the dependent view changed (<em>onDependentViewChanged</em>):</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="o">=</span>
+</span><span class='line'><span class="n">CoordinatorLayout</span><span class="o">.</span><span class="na">LayoutParams</span> <span class="n">params</span> <span class="o">=</span> <span class="o">(</span><span class="n">CoordinatorLayout</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">)</span> <span class="n">container</span><span class="o">.</span><span class="na">getLayoutParams</span><span class="o">();</span>
+</span><span class='line'><span class="kd">final</span> <span class="n">CoordinatorLayout</span><span class="o">.</span><span class="na">Behavior</span><span class="o">&lt;</span><span class="n">View</span><span class="o">&gt;</span> <span class="n">behavior</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CoordinatorLayout</span><span class="o">.</span><span class="na">Behavior</span><span class="o">&lt;</span><span class="n">View</span><span class="o">&gt;()</span> <span class="o">{</span>
+</span><span class='line'>    <span class="nd">@Override</span>
+</span><span class='line'>    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">layoutDependsOn</span><span class="o">(</span><span class="n">CoordinatorLayout</span> <span class="n">parent</span><span class="o">,</span> <span class="n">View</span> <span class="n">child</span><span class="o">,</span> <span class="n">View</span> <span class="n">dependency</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>        <span class="k">return</span> <span class="n">dependency</span><span class="o">.</span><span class="na">getId</span><span class="o">()</span> <span class="o">==</span> <span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">dismiss</span><span class="o">;</span>
+</span><span class='line'>    <span class="o">}&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="nd">@Override</span>
+</span><span class='line'><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onDependentViewChanged</span><span class="o">(</span><span class="n">CoordinatorLayout</span> <span class="n">parent</span><span class="o">,</span> <span class="n">View</span> <span class="n">child</span><span class="o">,</span> <span class="n">View</span> <span class="n">dependency</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>    <span class="n">child</span><span class="o">.</span><span class="na">setX</span><span class="o">(</span><span class="n">dependency</span><span class="o">.</span><span class="na">getX</span><span class="o">());</span>
+</span><span class='line'>    <span class="n">child</span><span class="o">.</span><span class="na">setAlpha</span><span class="o">(</span><span class="n">dependency</span><span class="o">.</span><span class="na">getAlpha</span><span class="o">());</span>
+</span><span class='line'>    <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;};</span>
+</span><span class='line'><span class="n">params</span><span class="o">.</span><span class="na">setBehavior</span><span class="o">(</span><span class="n">behavior</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<p>And voila:</p>
+
+<p><img class="center" src="/images/posts/ezgif-2484339332.gif" width="280" height="498"></p>
+
+<p><a href="http://giphy.com/gifs/honda-honda-valueofx-civicx-xT77XRp55yPwHkd5Nm"><img class="center" src="https://media.giphy.com/media/xT77XRp55yPwHkd5Nm/giphy.gif" width="480" height="270"></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[10 good rules for bad App, Part 3- Product]]></title>
+    <link href="http://shem8.github.io/blog/2016/05/06/10-good-rules-for-bad-app-part-3-product/"/>
+    <updated>2016-05-06T15:37:07+03:00</updated>
+    <id>http://shem8.github.io/blog/2016/05/06/10-good-rules-for-bad-app-part-3-product</id>
+    <content type="html"><![CDATA[<p>Welcome to the third (and last) part of the tutorial of how building a bad app. After we&rsquo;ve building a bad app in the <a href="https://shem8.wordpress.com/2016/03/31/10-good-rules-for-bad-app-part-1-technical/">first part</a>, and remarkably ruin its look and feel in the <a href="https://shem8.wordpress.com/2016/04/17/10-good-rules-for-bad-app-part-2-uxui/">second part</a>, we&rsquo;re now going to go over on 10 steps to easily how to kill your product:</p>
+
+<!--more-->
+
+
+<h2>#1: Add as many features as possible</h2>
+
+<p>The first and my favorite- fill your backlog with everything you can think of that every one of your users might use in any time of the future. Fill your app with tons of functionalities (and let the poor designer figure it out how to squeeze it all to a single screen), because as we all know- the more options your users will have, the more freedom they will have to do things with your app (<a href="https://www.ted.com/talks/barry_schwartz_on_the_paradox_of_choice?language=en">not</a>).</p>
+
+<h2>#2: Listen to every single feedback and implement it</h2>
+
+<p>Worrying that you implemented all your 492 items from your backlog and the ideas are about to run out? Go over all the store reviews, search some feedbacks in twitter and check all the posts in your beta group. Users are very demanding creatures and probably will keep whining about all those features that your app absolutely garbage without, yes even if it isn&rsquo;t the core of the app or they can do it easily with other apps.</p>
+
+<p><img class="center <a" src="href="https://shem8.files.wordpress.com/2016/05/13oxx4.jpg">https://shem8.files.wordpress.com/2016/05/13oxx4.jpg</a>" width="504" title="* &lsquo;True story&rsquo; &lsquo;True story&rsquo;" ></p>
+
+<h2>#3: Trust you instincts, no A/B testing or data analysing</h2>
+
+<p>Because you are the PM and you know what your users want, and this should CTA button should absolutely be green. Or red. Whatever.</p>
+
+<p><strong>Bonus points: </strong>change your opinion regularly and randomly.</p>
+
+<h2>#4: Add all possible login platforms</h2>
+
+<p>Everyone using Facebook, so it kind of a must, also adding Twitter and Instagram- to make thinks more viral, and Google of course, and Flicker and Yahoo just in case, and you must also put the plain email and password for those who live in Mars or something.</p>
+
+<h2>#5: Support the oldest android version</h2>
+
+<p>Because why not? you&rsquo;re not the one the writing the code. And every user count! also those 0.8% of the users that still using 2.2, although those devices are so weak that your 42MB app probably can&rsquo;t even run on them.</p>
+
+<h2>#6: Don&rsquo;t translate your app</h2>
+
+<p>Because you targeting only for US and you&rsquo;re ok of not growing, and no one else will use it.</p>
+
+<p><strong>Bonus points: </strong>if you do decide to translate your app- use a low pricing translate service so your translation will look really funny for non English users.</p>
+
+<h2>#7: Treat all your users the same</h2>
+
+<p>In addition to the previous one- all my users understand English and prefer paying with PayPal, and they love to take a lot of pictures and they have Gmail account and they understand that green is positive and red in negative. Basically all your users are you.</p>
+
+<h2>#8: Keep asking your users to rate your app</h2>
+
+<p>Reviews are crucial to your app listing and you <strong>MUST</strong> make your users leave a good ratings and review for your app in the store. Try to do anything to make them do so- prompting a &ldquo;rate us&rdquo; widget in the app every time they are doing something (also after failed actions), send them a weekly email with a rating request, hell- even put it after intro, before they even used the app, everything goes.</p>
+
+<h2>#9: Use cheap campaigns to buy users</h2>
+
+<p>Users drive more users, before app start to be viral it should start with some core users, so what if those are not a real users and they actually do nothing, the numbers are growing and eventually this will catch.</p>
+
+<h2>#10: Put lots of ads</h2>
+
+<p>Last but not least, your app should make some money (I think), you can think of adding a value that users will find it useful and will want to pay for it, but it&rsquo;s too complicate. Ads is the easiest way to make money in the apps world (and to piss of your users).</p>
+
+<p><img class="center <a" src="href="https://shem8.files.wordpress.com/2016/05/19285pti64teljpg.jpg">https://shem8.files.wordpress.com/2016/05/19285pti64teljpg.jpg</a>" width="800" title="* &lsquo;Source: gizmodo.com 'Source: gizmodo.com" ></p>
+
+<hr />
+
+<p>That&rsquo;s it, by now you should be ably to easily assemble a one hell of an App that will quickly burry in the big cemetery of the apps.</p>
+
+<p>As always- got some more suggestions for ways to make your app worse? Would love to hear your thoughts in the comments!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[10 good rules for bad App, Part 2- UX\UI]]></title>
+    <link href="http://shem8.github.io/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui/"/>
+    <updated>2016-04-17T19:04:28+03:00</updated>
+    <id>http://shem8.github.io/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui</id>
+    <content type="html"><![CDATA[<p>Welcome to my second part of the tutorial of how building a bad app. After we&rsquo;ve building a bad app in the <a href="https://shem8.wordpress.com/2016/03/31/10-good-rules-for-bad-app-part-1-technical/">first part</a>, it&rsquo;s the time to call our designer to fuck it a bit more:</p>
+
+<!--more-->
+
+
+<h2>#1: Ignore material design guidelines</h2>
+
+<p>Google, one of the greatest companies in the world, put lots of efforts creating material design, they probably do a long user research and gather feedback from many expert, but hey- you are the one with the bachelor of industrial design, so you probably know better.</p>
+
+<h2>#2: Invent your own navigation pattern</h2>
+
+<p>If Facebook can do it so can you, also- if your app will be so good Google might <a href="http://www.theverge.com/2016/3/15/11236152/material-design-update-bottom-navigation-bar">give up</a> and adapt it.</p>
+
+<h2>#3: Create a mysterious app icon</h2>
+
+<p>That&rsquo;s really helpful when users need to quickly find your app from 40 apps icons grid.</p>
+
+<p><img class="center <a" src="href="https://shem8.files.wordpress.com/2016/04/yo-app-icon.png">https://shem8.files.wordpress.com/2016/04/yo-app-icon.png</a>" width="131" title="* &lsquo;App that let you send &ldquo;Yo&rdquo;, of course.&rsquo; &lsquo;App that let you send &ldquo;Yo&rdquo;, of course.&rsquo;" ></p>
+
+<h2>#4: Use your own ideas for icons</h2>
+
+<p>Now I&rsquo;m talking about in app icons. I understand- you don&rsquo;t fully pleased with the Android default share icon, you&rsquo;re also didn&rsquo;t find anything suits to your needs between hundreds of <a href="https://design.google.com/icons/">material design icons</a> so why not creating a full icon pack from your own?</p>
+
+<p><strong>Bonus points:</strong> don&rsquo;t even bother to add title to your menu items, so that users will able to get a textual hint.</p>
+
+<h2>#5: Create intro, overlay explanations AND hints</h2>
+
+<p>Because users are stupid (mostly true) and they always read your explanation (no chance ever)</p>
+
+<p><strong>Bonus points:</strong> do a step-by-step tutorial with no option to skip.</p>
+
+<h2>#6: Don&rsquo;t support integration with other apps within your app</h2>
+
+<p><a href="http://developer.android.com/training/basics/intents/index.html">Android has a great mechanism</a> to interact actions between apps, but that&rsquo;s not too good for your app because that means users are going to leave your app. When users leave your app, that means less cash from ads. Less cash means you MIGHT have to find a real job.</p>
+
+<h2>#7: Don&rsquo;t support integration with other apps into your app</h2>
+
+<p>In addition to previous point- respect other apps and don&rsquo;t still they users please.</p>
+
+<p><strong>Bonus points:</strong> If you ended up supporting your app to filter intents from other apps- ignore context and just open the main screen and not the relevant page.</p>
+
+<h2>#8: Put animations everywhere</h2>
+
+<p>A <a href="https://shem8.wordpress.com/2015/10/02/pimp-up-your-splash-screen/">splash screen animation</a> is nice, even <a href="https://www.google.com/design/spec/animation/meaningful-transitions.html">Google</a> recommend adding animation while moving between screens, and the more the merrier</p>
+
+<p><img class="center <a" src="href="https://shem8.files.wordpress.com/2016/04/giphy.gif">https://shem8.files.wordpress.com/2016/04/giphy.gif</a>" width="448" title="* &lsquo;Is it too much&rsquo; &lsquo;Is it too much&rsquo;" ></p>
+
+<h2>#9: Use gifs instead of drawing things in code or animation drawable</h2>
+
+<p>Yes, I know, <a href="https://shem8.wordpress.com/2016/02/25/animated-vector-drawable/">animation drawable</a> might saves you a couple of MB, but your time is much more important!</p>
+
+<h2>#10: Create resources for all resolutions</h2>
+
+<p>Because you just saves time, so lets waste it.</p>
+
+<p><br><br></p>
+
+<hr />
+
+<p><em>Next time we going to talk about how to make things a little bit worse by the product guys so stay tuned.</em></p>
+
+<p><strong>Got some more suggestions for ways to make your look and feel worse? Would love to hear your thoughts in the comments!</strong></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[10 good rules for bad App, Part 1- Technical]]></title>
+    <link href="http://shem8.github.io/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical/"/>
+    <updated>2016-03-31T21:00:52+03:00</updated>
+    <id>http://shem8.github.io/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical</id>
+    <content type="html"><![CDATA[<p>We were all been there, you got a great idea for an app, you gather some feedback and even managed to build a team and you going full power to conquer the app store. So a second before starting working on your genius <a href="https://play.google.com/store/apps/details?id=com.mobication.EggTimerPro&amp;hl=en">egg timer app</a>, it is worth taking a moment and think about how you&rsquo;re going to do it.</p>
+
+<!--more-->
+
+
+<p>Following the hilarious post by Chet Haase about <a href="https://medium.com/pointer-io/this-article-is-exclusive-to-pointer-a-reading-club-for-developers-9b03f3df060c">10 good rules for bad API</a>, I decided to put together my list about how to build a bad app. but a few notes first:</p>
+
+<ul>
+<li><p>There are so many bad apps out there, each one is bad in it own way so it&rsquo;s really hard to set only 10. I tried to do my best for taking the top bad patterns, but I trust you to keep fucking it up much more than what I&rsquo;m talking about here.</p></li>
+<li><p>The beauty of the apps world that you can go wrong in many aspects of the product, that makes enough room for each team member to ruin your business, that is why I divided this blog post into 3 parts- technically, UI/UX and product.</p></li>
+<li><p>Even good apps can adopt one or two bad things to their app, so it&rsquo;s not all or nothing.</p></li>
+<li><p>Those bad habits are bad habits right now, because Google already proved that they can change that any time (like <a href="https://www.google.com/design/spec/components/bottom-navigation.html">bottom navigation</a> is a thing now? WTF?!)</p></li>
+<li><p>Who am I to say about apps if they are doing a bad things or not? That&rsquo;s because I&rsquo;ve done most of the things here and then realised how bad it is, that&rsquo;s why.</p></li>
+<li><p>The list not sorted by priority, because it&rsquo;s hard to compare what buried your app in the store listing.</p></li>
+<li><p>I&rsquo;m not <a href="https://medium.com/@chethaase">Chet Haase</a> so this post can&rsquo;t be half good or funny as his, so sorry for that.</p></li>
+</ul>
+
+
+<p><br></p>
+
+<p><em>Enough said, lets start with the list:</em></p>
+
+<h2>#1: Ask as many permission as possible</h2>
+
+<p>You know what your app worth, don&rsquo;t let minor things like user privacy get down your way. The user is begging for this crucial analytics sending on boot, so go and ask that BOOT_COMPLETED permission! If you need to share this wonderful url to your user&rsquo;s friends- pull the fucking contact list from his phone, and while you doing so why not sending it to your server and spam them all? Remember- data is power, and other&rsquo;s data is money!</p>
+
+<p><strong>Bonus point:</strong> when implement Android M permissions, don&rsquo;t let the user do anything until he or she accept your permission, even if he accepted some, don&rsquo;t let him win!</p>
+
+<h2>#2: Lock UI thread while loading</h2>
+
+<p>Hey dude, we&rsquo;re loading, we&rsquo;ll really appreciate if you let us do our thing and don&rsquo;t interrupt us with some stupid ui events, just sit quietly and wait us to finish processing all this 3.4M config xml file ok?!</p>
+
+<p><img class="center <a" src="href="https://shem8.files.wordpress.com/2016/03/loading_time.jpg">https://shem8.files.wordpress.com/2016/03/loading_time.jpg</a>" width="400" title="*" ></p>
+
+<h2>#3: Retry endlessly</h2>
+
+<p>Yes we&rsquo;re still waiting for this config file, it&rsquo;s your fault for living in this shitty connectivity area, don&rsquo;t blame us for sucking all you data plan and battery alright?!</p>
+
+<h2>#4: Don&rsquo;t save activity or fragment state</h2>
+
+<p>You snooze you lose, you rotated the screen? Boom- your form was lost. This is the best way to teach your users never leave your app, even if them just got a phone call.</p>
+
+<h2>#5: Use setExact + RTC_WAKEUP for for your AlarmManager</h2>
+
+<p>Alarm manager is get tool by Android to execute code in some time in the future. The thing is timing is everything and the Alarm Manager has some options for firing the code smartly and rescheduling it depending on phone state, battery, network or other tasks that can piggy bag. But you probably don&rsquo;t need those fancy features, there&rsquo;s nothing like putting your &ldquo;Please update our app&rdquo; notification waking you app 6AM.</p>
+
+<p><strong>Bonus points:</strong> combine setExact + RTC_WAKEUP to the same time for all your users for your network request to your servers for taking your load balancer to the edge.</p>
+
+<h2>#6: Use Application context everywhere</h2>
+
+<p>Because why not? Save your application context as a static member in your Application class on <em>onStart</em> and use it everywhere- so easy, so simple, so not modular, make it horribly when you want to debug theming errors and make your tests a nightmare. Win Win!</p>
+
+<h2>#7: Put errors strings technical as possible</h2>
+
+<p>That&rsquo;s make it much easier when something goes wrong on the users side, so they&rsquo;ll just forward you the message. That&rsquo;s also make your app a developer-friendly so people like me can easily understand that they missing a certificate to the https connection and that&rsquo;s why the app keep crashing when sharing a photo.</p>
+
+<h2>#8: Implement all by yourself</h2>
+
+<p>Android has a very strict limit of 65k methods limit, after importing google play and support libraries that&rsquo;s barely leaves you with room for 3rd libraries. Anyway, how hard is it to handle Json parsing? you don&rsquo;t really need this Gson library. It&rsquo;s also a great opportunity for your junior dev to practice his poor implementation of string pattern matching from his <a href="https://twitter.com/holman/status/681922317958524928">job interview</a>.</p>
+
+<h2>#9: Premature optimization</h2>
+
+<p>Great, you just implemented the sorting by yourself, probably with bucket sort, because you know the data going to be evenly distributed, probably, you think so&hellip; You also saw <a href="https://www.parleys.com/tutorial/part-1-android-performance-workshop">the talk by Romain Guy and Chet Haase</a> (him again?) and switched all you enums with constants ints and use objects pull everywhere even if this just one time function because who know what can happen.</p>
+
+<p>You know what they say- Premature optimization is the root of all evil, but a greater <a href="http://www.goodreads.com/quotes/30725-there-is-no-good-and-evil-there-is-only-power">women also said</a>: &ldquo;There is no good and evil, there is only power and those too weak to seek it.&rdquo; and I hope you see the power on N when implementing those graph algorithms.</p>
+
+<p><img class="center <a" src="href="https://shem8.files.wordpress.com/2016/03/the_general_problem.png">https://shem8.files.wordpress.com/2016/03/the_general_problem.png</a>" width="550" title="*" ></p>
+
+<h2>#10: Extract everything to static Util class</h2>
+
+<p>Move it all- Android specific functionality, networking calls, permissions checks, input checking, not-object-oriented-never-going-to-be-able-to-test code it all goes here.</p>
+
+<p><strong>Bonus points:</strong> have a Util and Utils classes, because one is not enough and confusing is a plus!</p>
+
+<p><br><br></p>
+
+<hr />
+
+<p><em>That&rsquo;s all until the next time when we&rsquo;re going to talk a bit about UI and UX, Got some more suggestions for ways to make your code worse? Would love to hear your thoughts in the comments!</em></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Animated Vector Drawable]]></title>
+    <link href="http://shem8.github.io/blog/2016/02/25/animated-vector-drawable/"/>
+    <updated>2016-02-25T21:43:46+02:00</updated>
+    <id>http://shem8.github.io/blog/2016/02/25/animated-vector-drawable</id>
+    <content type="html"><![CDATA[<p>In API 21 the Android team released bunch of very cool things for material design, most of the things focus around the design specs like colors or transition animation, other were for the new widgets like FAB, card view or recycle view, but within all those things there were also two things that barely discussed- <a href="http://developer.android.com/reference/android/graphics/drawable/VectorDrawable.html">VectorDrawable</a> and <a href="http://developer.android.com/reference/android/graphics/drawable/AnimatedVectorDrawable.html">AnimatedVectorDrawable</a>.</p>
+
+<!--more-->
+
+
+<p><em>Edit: looks like those classes became so popular that the Android team decided to add them to the <a href="http://android-developers.blogspot.co.il/2016/02/android-support-library-232.html">latest support library</a>, yay!</em></p>
+
+<h2>Android resources</h2>
+
+<p>In Android, recourses took lots of space in the final APK, tools like Proguard or loading modules dynamically helped the developers very much decreasing their app size, but when it came to assets, we were very limited. You had to choose between create asset for each density or paying with cpu time and let android doing the resizing and risk by not perfect asset.</p>
+
+<p>I saw couple of apps that choose to download their assets from the internet but that&rsquo;s might be problematic for first run (intro) or cases you don&rsquo;t have a connection.</p>
+
+<p>That&rsquo;s why I was so happy hearing about the new VectorDrawable introduced in API 21, that was let us the ability to create vector shapes and scale them easily for all screen sizes. This was really great for icons or small buttons.</p>
+
+<p>Of course, developers were able to do it before with a custom view and just draw the icon them self with Path, but the VectorDrawable save us the unnecessary view and it also use the SVG Path syntax that it much easier and much more popular. Moreover- Android Studio were able to show you a vector drawable preview, what that make it much more connivance!</p>
+
+<h2>Animations</h2>
+
+<p>Animations were a pain too. You basically had 3 options:</p>
+
+<ol>
+<li><p>For a simple animations (like scaling, fading or moving) using the build-in view property animation, that was the case for 90% of the time.</p></li>
+<li><p>If you had more complex animation on complex view you could create a custom animation, but for this you had to write lots of code</p></li>
+<li><p>Use AnimationDrawable and put drawable for each frame.</p></li>
+</ol>
+
+
+<p>So again- for not trivial cases, you had to choose between writing lots of code or putting lots of assets.</p>
+
+<p>That&rsquo;s when AnimatedVectorDrawable introduced and let developers use basic animations with their VectorDrawables with few lines of code and much lower space.</p>
+
+<h2>Live example</h2>
+
+<p>Let&rsquo;s start- assume we have some search component and we want to move to and from search state. So we need to animate between search icon and cancel icon:</p>
+
+<p><img class="<a" src="href="https://shem8.files.wordpress.com/2016/02/search_icon.png">https://shem8.files.wordpress.com/2016/02/search_icon.png</a>" width="150" height="150">
+<img class="<a" src="href="https://shem8.files.wordpress.com/2016/02/cancel_icon.png">https://shem8.files.wordpress.com/2016/02/cancel_icon.png</a>" width="150" height="150"></p>
+
+<p>And the animation between those 2 icons (Added guides and slow motion to better understand the transition):</p>
+
+<p><img class="center <a" src="href="https://shem8.files.wordpress.com/2016/02/gif.gif">https://shem8.files.wordpress.com/2016/02/gif.gif</a>"></p>
+
+<p>As you can see we actually have 3 shapes that moves: 2 half circles that moves to lines (green and blue) and the line of the magnifying glass that just getting bigger and reaching to the end.</p>
+
+<p>First we need to create the shapes for the search icon:</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="ni">&amp;lt;</span>?xml version=<span class="ni">&amp;ldquo;</span>1.0<span class="ni">&amp;rdquo;</span> encoding=<span class="ni">&amp;ldquo;</span>utf-8<span class="ni">&amp;rdquo;</span>?&gt;
+</span><span class='line'><span class="nt">&lt;vector</span> <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+</span><span class='line'>    <span class="na">android:width=</span><span class="s">&quot;24dp&quot;</span>
+</span><span class='line'>    <span class="na">android:height=</span><span class="s">&quot;24dp&quot;</span>
+</span><span class='line'>    <span class="na">android:viewportWidth=</span><span class="s">&quot;24&quot;</span>
+</span><span class='line'>    <span class="na">android:viewportHeight=</span><span class="s">&quot;24&quot;</span><span class="nt">&gt;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>path
+</span><span class='line'>    android:name=&quot;line&quot;
+</span><span class='line'>    android:pathData=&quot;M5.705,5.705 L18.295,18.295&quot;
+</span><span class='line'>    android:strokeWidth=&quot;2&quot;
+</span><span class='line'>    android:strokeColor=&quot;#000000&quot;
+</span><span class='line'>    android:trimPathStart=&quot;0.45&quot;
+</span><span class='line'>    android:trimPathEnd=&quot;1&quot; /<span class="ni">&amp;gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="ni">&amp;lt;</span>path
+</span><span class='line'>    android:name=&quot;circle1&quot;
+</span><span class='line'>    android:pathData=&quot;M5.705,5.705 A 4 4 0 1 1 12,12 L5.705,18.295&quot;
+</span><span class='line'>    android:strokeWidth=&quot;2&quot;
+</span><span class='line'>    android:strokeColor=&quot;#000000&quot;
+</span><span class='line'>    android:trimPathStart=&quot;0&quot;
+</span><span class='line'>    android:trimPathEnd=&quot;0.6&quot; /<span class="ni">&amp;gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="ni">&amp;lt;</span>path
+</span><span class='line'>    android:name=&quot;circle2&quot;
+</span><span class='line'>    android:pathData=&quot;M18.295,5.705 L12,12 A 4 4 0 1 1 5.705,5.705&quot;
+</span><span class='line'>    android:strokeWidth=&quot;2&quot;
+</span><span class='line'>    android:strokeColor=&quot;#000000&quot;
+</span><span class='line'>    android:trimPathStart=&quot;0.4&quot;
+</span><span class='line'>    android:trimPathEnd=&quot;1&quot; /<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;&lt;/vector&gt;</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<p>The syntax for creating SVG paths is not that complicated and you can learn about it <a href="https://www.w3.org/TR/SVG/paths.html">here</a>, Android Studio is also very handy here because you can see a preview and also import existent material app icons and see their paths as described <a href="http://developer.android.com/tools/help/vector-asset-studio.html">here</a>.</p>
+
+<p>Now lets create the animation, we&rsquo;ll focus on the animation from the search icon to cancel, the opposite is pretty the same just with reverse values. We going to create 3 different animations:</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;set</span>
+</span><span class='line'><span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+</span><span class='line'><span class="na">android:ordering=</span><span class="s">&quot;sequentially&quot;</span><span class="nt">&gt;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>!-- first we need to immediately reset state --<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>objectAnimator
+</span><span class='line'>    android:duration=&quot;0&quot;
+</span><span class='line'>    android:propertyName=&quot;trimPathStart&quot;
+</span><span class='line'>    android:valueFrom=&quot;0.45&quot;
+</span><span class='line'>    android:valueTo=&quot;0.45&quot;/<span class="ni">&amp;gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="ni">&amp;lt;</span>!-- then run the animation after a delay --<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="ni">&amp;lt;</span>objectAnimator
+</span><span class='line'>    android:propertyName=&quot;trimPathStart&quot;
+</span><span class='line'>    android:duration=&quot;300&quot;
+</span><span class='line'>    android:startOffset=&quot;250&quot;
+</span><span class='line'>    android:interpolator=&quot;@android:interpolator/fast_out_slow_in&quot;
+</span><span class='line'>    android:valueFrom=&quot;0.45&quot;
+</span><span class='line'>    android:valueTo=&quot;0&quot; /<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;&lt;/set&gt;</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;set</span>
+</span><span class='line'>    <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+</span><span class='line'>    <span class="na">android:ordering=</span><span class="s">&quot;together&quot;</span><span class="nt">&gt;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>objectAnimator
+</span><span class='line'>    android:propertyName=&quot;trimPathStart&quot;
+</span><span class='line'>    android:valueFrom=&quot;0&quot;
+</span><span class='line'>    android:valueTo=&quot;0.6&quot;
+</span><span class='line'>    android:duration=&quot;450&quot; /<span class="ni">&amp;gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="ni">&amp;lt;</span>objectAnimator
+</span><span class='line'>    android:propertyName=&quot;trimPathEnd&quot;
+</span><span class='line'>    android:valueFrom=&quot;0.6&quot;
+</span><span class='line'>    android:valueTo=&quot;1&quot;
+</span><span class='line'>    android:duration=&quot;600&quot; /<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;&lt;/set&gt;</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;set</span>
+</span><span class='line'>    <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+</span><span class='line'>    <span class="na">android:ordering=</span><span class="s">&quot;together&quot;</span><span class="nt">&gt;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>objectAnimator
+</span><span class='line'>    android:propertyName=&quot;trimPathStart&quot;
+</span><span class='line'>    android:valueFrom=&quot;0.4&quot;
+</span><span class='line'>    android:valueTo=&quot;0&quot;
+</span><span class='line'>    android:duration=&quot;600&quot; /<span class="ni">&amp;gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="ni">&amp;lt;</span>objectAnimator
+</span><span class='line'>    android:propertyName=&quot;trimPathEnd&quot;
+</span><span class='line'>    android:valueFrom=&quot;1&quot;
+</span><span class='line'>    android:valueTo=&quot;0.4&quot;
+</span><span class='line'>    android:duration=&quot;450&quot; /<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;&lt;/set&gt;</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<p>The animations are pretty basics and what we&rsquo;re doing here is just changing the start or the end of the path. Now we need to bring all animation together:</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;animated-vector</span>
+</span><span class='line'>    <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+</span><span class='line'>    <span class="na">android:drawable=</span><span class="s">&quot;@drawable/searchback_search&quot;</span><span class="nt">&gt;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>target
+</span><span class='line'>    android:name=&quot;line&quot;
+</span><span class='line'>    android:animation=&quot;@animator/line_to_cancel&quot; /<span class="ni">&amp;gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="ni">&amp;lt;</span>target
+</span><span class='line'>    android:name=&quot;circle1&quot;
+</span><span class='line'>    android:animation=&quot;@animator/circle1_to_cancel&quot; /<span class="ni">&amp;gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="ni">&amp;lt;</span>target
+</span><span class='line'>    android:name=&quot;circle2&quot;
+</span><span class='line'>    android:animation=&quot;@animator/circle2_to_cancel&quot; /<span class="ni">&amp;gt;</span>
+</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;p&gt;&lt;/animated-vector&gt;</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<p>And now you can easily use the  search_to_cancel drawable in code, just don&rsquo;t forget to call <strong>start()</strong>:</p>
+
+<p><img class="center <a" src="href="https://shem8.files.wordpress.com/2016/02/final.gif">https://shem8.files.wordpress.com/2016/02/final.gif</a>"></p>
+
+<p>A few notes regarding to this process:</p>
+
+<ol>
+<li><p>Without <a href="//twitter.com/crafty">Nick Butcher</a> and his great resources (like the <a href="https://github.com/nickbutcher/plaid">plaid</a> app) I wouldn&rsquo;t know anything about AnimatedVectorDrawable, so a lot of credit from this blog post should go to him.</p></li>
+<li><p>Most of the paths are not that easy to build and you&rsquo;ll need to play with this pretty much, you can use tools like Photoshop to export SVG data, but still, some manually work be will here.</p></li>
+<li><p>The preview in Android Studio for the drawables is a bit buggy (especially around trimmed paths) so you need to test some things on device sometimes.</p></li>
+<li><p>From what I saw- on the first times the animation can stuck, so it better to set the final asset state after some delay to make sure the icon looks good in the end of the animation.</p></li>
+</ol>
+
+
+<p>That&rsquo;s for this time, hopes this will help you in the next time you want to build a great UX. =)
+<br>
+<br></p>
+
+<hr />
+
+<p><strong>Liked this post? Please share it with your friends!</strong></p>
+]]></content>
+  </entry>
+  
+</feed>

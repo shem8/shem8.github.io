@@ -1,0 +1,296 @@
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Pimp-up your splash screen - 80/20</title>
+	<meta name="author" content="Shem Magnezi">
+
+	
+	<meta name="description" content="Pimp-up Your Splash Screen In the past, splash screen in Android was a dirty word, It was usually a bad sign to an app that was converted from &hellip;">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="80/20" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://shem8.github.io/blog/2015/10/02/pimp-up-your-splash-screen/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
+  
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-78073130-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("smagnezi8@gmail.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+		});
+	</script>
+	
+</div>
+
+<nav id="main-nav"><ul class="main">
+    <li><a href="/">Blog</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+			<a class="email" href="mailto:smagnezi8@gmail.com" title="Email">Email</a>
+		
+		
+		
+		
+			<a class="twitter" href="http://twitter.com/shemag8" title="Twitter">Twitter</a>
+		
+		
+			<a class="github" href="https://github.com/shem8" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+    	
+    	
+			<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">Pimp-up Your Splash Screen</h1>
+	<div class="entry-content" itemprop="articleBody"><p>In the past, splash screen in Android was a dirty word, It was usually a bad sign to an app that was converted from iPhone. But lately- Google added <a href="https://www.google.com/design/spec/patterns/launch-screens.html">launch screens</a> to the design guidelines, and maybe they changed the name, <a href="http://www.androiduipatterns.com/2015/08/splash-screen-with-any-other-name-is.html?m=1">but the concept is still the same</a>.</p>
+
+<!--more-->
+
+
+<p>Splash screen- Good or Bad debate aside, in <a href="https://play.google.com/store/apps/details?id=shem.getit&amp;hl=en">Ripples</a> I decided to go with the Google guidelines and do my own splash screen, but no just a simple one with the app logo, I wanted to do something different.</p>
+
+<p>A couple of words about Ripples to the ones who don&rsquo;t know- It&rsquo;s a very simple app that all about little circles that slowly reveals and getting bigger. So what I thought is revealing the Ripples logo in the splash screen with some ripples animations in some masking-like way:</p>
+
+<p><a href="https://shem8.files.wordpress.com/2015/09/crop.gif"><img src="https://shem8.files.wordpress.com/2015/09/crop.gif" alt="crop" /></a>The easiest way to do it is just taking this gif and put it in the splash screen, but I&rsquo;m not gonna do it because:</p>
+
+<ol>
+<li><p>It&rsquo;ll make this blog post to a pretty short and pointless</p></li>
+<li><p>It will add a lot of resources to the app and make it bigger with no reason</p></li>
+<li><p>We won&rsquo;t learn anything new</p></li>
+</ol>
+
+
+<p>So how we gonna do it? With some basic and easy Android drawing methods!</p>
+
+<p>First lets build the splash view with the image, It&rsquo;s a simple view that just load the bitmap and give the view the same size as the bitmap, pay attention that we not displaying anything yet:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+public class SplashView extends View {
+    private Bitmap bitmap;</p>
+
+<pre><code>public SplashView(Context context) {
+    super(context);
+    init();
+}
+
+private void init() {
+    bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.logo);
+}
+
+@Override
+protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+    int w = MeasureSpec.makeMeasureSpec(bitmap.getWidth(), MeasureSpec.EXACTLY);
+    int h = MeasureSpec.makeMeasureSpec(bitmap.getHeight(), MeasureSpec.EXACTLY);
+    super.onMeasure(w, h);
+}
+</code></pre>
+
+<p>}
+[/code]</p>
+
+<p>Now lets start drawing our graphic- We'll draw some masking over the logo bitmap:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+@Override
+protected void onDraw(Canvas canvas) {
+    float d = 1 / 0.4f;
+    float v = sizeAnimator.getAnimatedFraction();</p>
+
+<pre><code>Path path = new Path();
+float rad = 0.56f * bitmap.getHeight();
+path.addCircle((int)(0.08 * bitmap.getWidth()), (int)(0.32 * bitmap.getHeight()), rad * Math.min(d * v, 1), Path.Direction.CW);
+path.addCircle((int)(0.2 * bitmap.getWidth()), (int)(0.47 * bitmap.getHeight()), rad * Math.min(d * (v - 0.1f), 1), Path.Direction.CW);
+path.addCircle((int)(0.33 * bitmap.getWidth()), (int)(0.49 * bitmap.getHeight()), rad * Math.min(d * (v - 0.2f), 1), Path.Direction.CW);
+path.addCircle((int)(0.5 * bitmap.getWidth()), (int)(0.49 * bitmap.getHeight()), rad * Math.min(d * (v - 0.3f), 1), Path.Direction.CW);
+path.addCircle((int)(0.63 * bitmap.getWidth()), (int)(0.35 * bitmap.getHeight()), rad * Math.min(d * (v - 0.4f), 1), Path.Direction.CW);
+path.addCircle((int)(0.76 * bitmap.getWidth()), (int)(0.49 * bitmap.getHeight()), rad * Math.min(d * (v - 0.5f), 1), Path.Direction.CW);
+path.addCircle((int)(0.93 * bitmap.getWidth()), (int)(0.49 * bitmap.getHeight()), rad * Math.min(d * (v - 0.6f), 1), Path.Direction.CW);
+canvas.clipPath(path);
+canvas.drawBitmap(bitmap, 0, 0, null);
+</code></pre>
+
+<p>}
+[/code]</p>
+
+<p>Please ignore the constants value all over the place, those are parameter that I&rsquo;ve played with (things that you can&rsquo;t do if you chose to implement it with gif!) while making the animation. The important things are how we creating a new path (that built from circles) and clipping the canvas to this path so this what will gonna be visible eventually. After setting to mask for the canvas we just need to draw the bitmap.</p>
+
+<p>Now we just need to put the animation:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+private void init() {
+    &hellip;
+    sizeAnimator = ValueAnimator.ofFloat(0, 0.8f);
+    sizeAnimator.setDuration(2500);
+    sizeAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+        @Override
+        public void onAnimationUpdate(ValueAnimator animation) {
+            invalidate();
+        }
+    });
+}</p>
+
+<p>public void start() {
+    sizeAnimator.start();
+}
+[/code]</p>
+
+<p>And that&rsquo;s it:</p>
+
+<p><a href="https://shem8.files.wordpress.com/2015/09/output.gif"><img src="https://shem8.files.wordpress.com/2015/09/output.gif" alt="output" /></a></p>
+</div>
+
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Post ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5508892730714185"
+     data-ad-slot="8917228557"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+<section id="comment">
+    <h1 class="title">Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+</div>
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2016
+
+    Shem Magnezi
+
+
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
+		</div>
+	</div>
+	
+
+<script type="text/javascript">
+      var disqus_shortname = 'shemblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://shem8.github.io/blog/2015/10/02/pimp-up-your-splash-screen/';
+        var disqus_url = 'http://shem8.github.io/blog/2015/10/02/pimp-up-your-splash-screen/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+</body>
+</html>

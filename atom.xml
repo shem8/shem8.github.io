@@ -1,0 +1,2078 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[80/20]]></title>
+  <link href="http://shem8.github.io/atom.xml" rel="self"/>
+  <link href="http://shem8.github.io/"/>
+  <updated>2016-07-15T16:33:59+03:00</updated>
+  <id>http://shem8.github.io/</id>
+  <author>
+    <name><![CDATA[Shem Magnezi]]></name>
+    <email><![CDATA[smagnezi8@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Tech Life as graphs]]></title>
+    <link href="http://shem8.github.io/blog/2016/06/03/life-as-graphs/"/>
+    <updated>2016-06-03T12:08:42+03:00</updated>
+    <id>http://shem8.github.io/blog/2016/06/03/life-as-graphs</id>
+    <content type="html"><![CDATA[<p>As a geek I often imagine situations in life as a math equations and graphs (don&rsquo;t you all do it too? What&rsquo;s wrong with you people?!). In this post I&rsquo;ll try to describe some situations is the tech life as graphs:</p>
+
+<!-- more -->
+
+
+<h2>How excited are you when working in corporate:</h2>
+
+<p><br>
+<img src="http://shem8.github.io/images/posts/graphs/corporate_eq.png"></p>
+
+<p><img class="center" src="http://shem8.github.io/images/posts/graphs/corporate.png"></p>
+
+<h2>How excited are you when working in startup:</h2>
+
+<p><br>
+<img src="http://shem8.github.io/images/posts/graphs/startup_eq.png"></p>
+
+<p><img class="center" src="http://shem8.github.io/images/posts/graphs/startup.png"></p>
+
+<h2>#Lines of code you write:</h2>
+
+<p><br>
+<img src="http://shem8.github.io/images/posts/graphs/code_eq.png"></p>
+
+<p><img class="center" src="http://shem8.github.io/images/posts/graphs/code.png"></p>
+
+<h2>Startup burn rate:</h2>
+
+<p><br>
+<img src="http://shem8.github.io/images/posts/graphs/burnrate_eq.png"></p>
+
+<p><img class="center" src="http://shem8.github.io/images/posts/graphs/burnrate.png"></p>
+
+<h2>Do your css rules are working:</h2>
+
+<p><br>
+<img src="http://shem8.github.io/images/posts/graphs/css_eq.png"></p>
+
+<p><img class="center" src="http://shem8.github.io/images/posts/graphs/css.png"></p>
+
+<h2>Number of messages you get from girls- LinkedIn / Tinder</h2>
+
+<p><br>
+<img src="http://shem8.github.io/images/posts/graphs/burnrate_eq.png"></p>
+
+<p><img class="center" src="http://shem8.github.io/images/posts/graphs/linkedin.png"></p>
+
+<h2>How much you think you know android:</h2>
+
+<p><br>
+<img src="http://shem8.github.io/images/posts/graphs/android_eq.png"></p>
+
+<p><img class="center" src="http://shem8.github.io/images/posts/graphs/android.png"></p>
+
+<h2>How much you like your PM:</h2>
+
+<p><a href="https://en.wikipedia.org/wiki/Nowhere_continuous_function#Dirichlet_function">Dirichlet function</a></p>
+
+<p><img class="center" src="http://shem8.github.io/images/posts/graphs/PM.png"></p>
+
+<hr />
+
+<p><br>
+<em>Update: looks like people loving some of those graphs, so following couple of requests- you can now get it on shirts or stickers <a href="https://teespring.com/stores/geeksshirts">here</a>.</em>
+<br><br></p>
+
+<hr />
+
+<p><br></p>
+
+<p><em>If you enjoyed this post, please hit the “recommend” button below and share this story. I also love reading all comments. Thanks!</em></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Playing with Coordinator Layout]]></title>
+    <link href="http://shem8.github.io/blog/2016/05/27/playing-with-coordinator-layout/"/>
+    <updated>2016-05-27T15:02:52+03:00</updated>
+    <id>http://shem8.github.io/blog/2016/05/27/playing-with-coordinator-layout</id>
+    <content type="html"><![CDATA[<p>Lately I needed to build some kind of overlay screen that looks like the one that shows when you open the phone when you don&rsquo;t have a lock screen. This is a simple overlay screen that should be dismissable when the user swipe it out from the lower part of the screen<!-- more -->, something like this:</p>
+
+<p><img class="center" src="http://shem8.github.io/images/posts/get-feature-packed-iphone-like-lock-screen-for-your-galaxy-s6-other-android-device-w654.jpg" width="211" title="*" ></p>
+
+<p>When coming to implement it, I thought about building a <em>LinearLayout</em> with 2 views- the content view and the swipe view, than put some touch listener on the swipe view and implement swiping mechanism, than syncing both view to act the same. But when I thought about it more and more I decided that it&rsquo;s too much work. Searching this kind of code or library out there always bring me to <em>RecycleView</em> swipe to dismiss items, and in one of those search results I saw how to implement this swipe to dismiss item in <em>RecycleView</em> with <em>CoordinatorLayout</em>, so I decided to give it a chance.</p>
+
+<p><em><a href="http://developer.android.com/reference/android/support/design/widget/CoordinatorLayout.html">CoordinatorLayout</a></em> is a really great addition in the design support library. Most of you probably already used it with a <a href="https://guides.codepath.com/android/floating-action-buttons">floating action buttons</a> or <a href="http://www.androidhive.info/2015/09/android-material-design-snackbar-example/">snackbars</a> but if you like me- you just put it there, assuming views will move properly, without really diving into how the layout is syncing between them.</p>
+
+<p>So it turns out that <em>CordinatorLayout</em> is pretty powerful, it let you easily define interactions on child views and even between them, those interactions are called <a href="http://developer.android.com/reference/android/support/design/widget/CoordinatorLayout.Behavior.html">behaviors</a> so that each child can behave differently according to things that are happening in the layout. You can do a really cool things with those behaviors, here is one example for a <a href="http://saulmm.github.io/mastering-coordinator">great blog post</a> that I stumble upon my searches about coordinate layout usages.</p>
+
+<p>In our case it suppose to be pretty easy, there is already a <a href="http://developer.android.com/reference/android/support/design/widget/SwipeDismissBehavior.html">swipe to dismiss behavior</a> ready to be used on the lower view, so we just need to attach it to the relevant view. First lets build our layout:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;android.support.design.widget.CoordinatorLayout</span>
+</span><span class='line'>    <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+</span><span class='line'>    <span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
+</span><span class='line'>    <span class="na">android:layout_height=</span><span class="s">&quot;match_parent&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;FrameLayout</span> <span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
+</span><span class='line'>         <span class="na">android:layout_height=</span><span class="s">&quot;match_parent&quot;</span>
+</span><span class='line'>         <span class="na">android:id=</span><span class="s">&quot;@+id/container&quot;</span>
+</span><span class='line'>         <span class="na">android:background=</span><span class="s">&quot;#06ff87&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;TextView</span>
+</span><span class='line'>        <span class="na">android:id=</span><span class="s">&quot;@+id/dismiss&quot;</span>
+</span><span class='line'>        <span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
+</span><span class='line'>        <span class="na">android:layout_height=</span><span class="s">&quot;wrap_content&quot;</span>
+</span><span class='line'>        <span class="na">android:text=</span><span class="s">&quot;&gt; Swipe to dismiss &gt; &gt; &gt;&quot;</span>
+</span><span class='line'>        <span class="na">android:padding=</span><span class="s">&quot;30dp&quot;</span>
+</span><span class='line'>        <span class="na">android:gravity=</span><span class="s">&quot;center&quot;</span>
+</span><span class='line'>        <span class="na">android:layout_gravity=</span><span class="s">&quot;center_horizontal|bottom&quot;</span>
+</span><span class='line'>        <span class="na">android:background=</span><span class="s">&quot;#3bb0ff&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;/android.support.design.widget.CoordinatorLayout&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>As said, it’s a simple layout with 2 view- one for the content (the green one) and one for the swiping (the blue one).</p>
+
+<p>Now, lets attach the relevant behavior to the relevant view:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">View</span> <span class="n">dismiss</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">dismiss</span><span class="o">);</span>
+</span><span class='line'><span class="n">CoordinatorLayout</span><span class="o">.</span><span class="na">LayoutParams</span> <span class="n">params</span> <span class="o">=</span> <span class="o">(</span><span class="n">CoordinatorLayout</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">)</span> <span class="n">dismiss</span><span class="o">.</span><span class="na">getLayoutParams</span><span class="o">();</span>
+</span><span class='line'><span class="n">SwipeDismissBehavior</span><span class="o">&lt;</span><span class="n">View</span><span class="o">&gt;</span> <span class="n">behavior</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SwipeDismissBehavior</span><span class="o">&lt;&gt;();</span>
+</span><span class='line'><span class="n">behavior</span><span class="o">.</span><span class="na">setSwipeDirection</span><span class="o">(</span><span class="n">SwipeDismissBehavior</span><span class="o">.</span><span class="na">SWIPE_DIRECTION_START_TO_END</span><span class="o">);</span>
+</span><span class='line'><span class="n">behavior</span><span class="o">.</span><span class="na">setListener</span><span class="o">(</span><span class="k">new</span> <span class="n">SwipeDismissBehavior</span><span class="o">.</span><span class="na">OnDismissListener</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>    <span class="nd">@Override</span>
+</span><span class='line'>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDismiss</span><span class="o">(</span><span class="kd">final</span> <span class="n">View</span> <span class="n">view</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>        <span class="n">finish</span><span class="o">();</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nd">@Override</span>
+</span><span class='line'>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDragStateChanged</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">)</span> <span class="o">{}</span>
+</span><span class='line'><span class="o">});</span>
+</span><span class='line'><span class="n">params</span><span class="o">.</span><span class="na">setBehavior</span><span class="o">(</span><span class="n">behavior</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>That&rsquo;s pretty self explained- we declare a new swipe to dismiss behavior, set it&rsquo;s direction only to right, and finish the activity on dismiss. But there&rsquo;s on problem- somehow, although we declare this behavior only on the dismiss view, it working on all the view, so also the content view is swipeable as you can see here:</p>
+
+<p><img class="center" src="http://shem8.github.io/images/posts/ezgif-4244700794.gif" width="280" height="498"></p>
+
+<p>I&rsquo;m not sure if this is by design or just a bug (after digging in the code I&rsquo;m afraid this behavior is not intended) but we can easily fix this by creating our own behavior. Of course that we not going to write this whole code from beginning, we&rsquo;ll use the <em>SwipeDismissBehavior</em> class and just fix the relevant code. I really recommend doing a little investigation and reading the Android code, that&rsquo;s way you&rsquo;re fully understand how things really works and get to read an high quality code written by the Android developers, in that case the fix is pretty easy to spot- the <em>SwipeDismissBehavior</em> handle touch events also if those touches not in the view (although there is a check in the <em>onInterceptTouchEvent</em> method and those events should be ignore) so I created a new behavior class just for this fix:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="cm">/**</span>
+</span><span class='line'><span class="cm"> * Handle only touches on this current view</span>
+</span><span class='line'><span class="cm"> */</span>
+</span><span class='line'><span class="nd">@Override</span>
+</span><span class='line'><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onTouchEvent</span><span class="o">(</span><span class="n">CoordinatorLayout</span> <span class="n">parent</span><span class="o">,</span> <span class="n">V</span> <span class="n">child</span><span class="o">,</span> <span class="n">MotionEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>    <span class="k">if</span> <span class="o">(</span><span class="n">parent</span><span class="o">.</span><span class="na">isPointInChildBounds</span><span class="o">(</span><span class="n">child</span><span class="o">,</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="n">event</span><span class="o">.</span><span class="na">getX</span><span class="o">(),</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="n">event</span><span class="o">.</span><span class="na">getY</span><span class="o">()))</span> <span class="o">{</span>
+</span><span class='line'>        <span class="k">return</span> <span class="kd">super</span><span class="o">.</span><span class="na">onTouchEvent</span><span class="o">(</span><span class="n">parent</span><span class="o">,</span> <span class="n">child</span><span class="o">,</span> <span class="n">event</span><span class="o">);</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>    <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Changing the activity to use <em>SwipeDismissOnlyOnViewBehavior</em> instead of <em>SwipeDismissBehavior</em> is doing the work:</p>
+
+<p><img class="center" src="http://shem8.github.io/images/posts/ezgif-2527994552.gif" width="280" height="498"></p>
+
+<p>Now we need to sync between the content view to the dismiss view when swiping, so we creating a new behavior just for this. Because this is really simple behavior all we need to implement are 2 functions, in which view this content view depended (<em>layoutDependsOn</em>) and what to do when the dependent view changed (<em>onDependentViewChanged</em>):</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="o">=</span>
+</span><span class='line'><span class="n">CoordinatorLayout</span><span class="o">.</span><span class="na">LayoutParams</span> <span class="n">params</span> <span class="o">=</span> <span class="o">(</span><span class="n">CoordinatorLayout</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">)</span> <span class="n">container</span><span class="o">.</span><span class="na">getLayoutParams</span><span class="o">();</span>
+</span><span class='line'><span class="kd">final</span> <span class="n">CoordinatorLayout</span><span class="o">.</span><span class="na">Behavior</span><span class="o">&lt;</span><span class="n">View</span><span class="o">&gt;</span> <span class="n">behavior</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CoordinatorLayout</span><span class="o">.</span><span class="na">Behavior</span><span class="o">&lt;</span><span class="n">View</span><span class="o">&gt;()</span> <span class="o">{</span>
+</span><span class='line'>    <span class="nd">@Override</span>
+</span><span class='line'>    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">layoutDependsOn</span><span class="o">(</span><span class="n">CoordinatorLayout</span> <span class="n">parent</span><span class="o">,</span> <span class="n">View</span> <span class="n">child</span><span class="o">,</span> <span class="n">View</span> <span class="n">dependency</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>        <span class="k">return</span> <span class="n">dependency</span><span class="o">.</span><span class="na">getId</span><span class="o">()</span> <span class="o">==</span> <span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">dismiss</span><span class="o">;</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nd">@Override</span>
+</span><span class='line'>    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onDependentViewChanged</span><span class="o">(</span><span class="n">CoordinatorLayout</span> <span class="n">parent</span><span class="o">,</span> <span class="n">View</span> <span class="n">child</span><span class="o">,</span> <span class="n">View</span> <span class="n">dependency</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>        <span class="n">child</span><span class="o">.</span><span class="na">setX</span><span class="o">(</span><span class="n">dependency</span><span class="o">.</span><span class="na">getX</span><span class="o">());</span>
+</span><span class='line'>        <span class="n">child</span><span class="o">.</span><span class="na">setAlpha</span><span class="o">(</span><span class="n">dependency</span><span class="o">.</span><span class="na">getAlpha</span><span class="o">());</span>
+</span><span class='line'>        <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'><span class="o">};</span>
+</span><span class='line'><span class="n">params</span><span class="o">.</span><span class="na">setBehavior</span><span class="o">(</span><span class="n">behavior</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And voila:</p>
+
+<p><img class="center" src="http://shem8.github.io/images/posts/ezgif-2484339332.gif" width="280" height="498"></p>
+
+<p><a href="http://giphy.com/gifs/honda-honda-valueofx-civicx-xT77XRp55yPwHkd5Nm"><img class="center" src="https://media.giphy.com/media/xT77XRp55yPwHkd5Nm/giphy.gif" width="480" height="270"></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[10 good rules for bad App, Part 3- Product]]></title>
+    <link href="http://shem8.github.io/blog/2016/05/06/10-good-rules-for-bad-app-part-3-product/"/>
+    <updated>2016-05-06T15:37:07+03:00</updated>
+    <id>http://shem8.github.io/blog/2016/05/06/10-good-rules-for-bad-app-part-3-product</id>
+    <content type="html"><![CDATA[<p>Welcome to the third (and last) part of the tutorial of how building a bad app. After we&rsquo;ve building a bad app in the <a href="https://shem8.wordpress.com/2016/03/31/10-good-rules-for-bad-app-part-1-technical/">first part</a>, and remarkably ruin its look and feel in the <a href="https://shem8.wordpress.com/2016/04/17/10-good-rules-for-bad-app-part-2-uxui/">second part</a>, we&rsquo;re now going to go over on 10 steps to easily how to kill your product:</p>
+
+<!--more-->
+
+
+<h2>#1: Add as many features as possible</h2>
+
+<p>The first and my favorite- fill your backlog with everything you can think of that every one of your users might use in any time of the future. Fill your app with tons of functionalities (and let the poor designer figure it out how to squeeze it all to a single screen), because as we all know- the more options your users will have, the more freedom they will have to do things with your app (<a href="https://www.ted.com/talks/barry_schwartz_on_the_paradox_of_choice?language=en">not</a>).</p>
+
+<h2>#2: Listen to every single feedback and implement it</h2>
+
+<p>Worrying that you implemented all your 492 items from your backlog and the ideas are about to run out? Go over all the store reviews, search some feedbacks in twitter and check all the posts in your beta group. Users are very demanding creatures and probably will keep whining about all those features that your app absolutely garbage without, yes even if it isn&rsquo;t the core of the app or they can do it easily with other apps.</p>
+
+<p><img class="center" src="https://shem8.files.wordpress.com/2016/05/13oxx4.jpg" width="504" title="True story" alt="True story"></p>
+
+<h2>#3: Trust you instincts, no A/B testing or data analysing</h2>
+
+<p>Because you are the PM and you know what your users want, and this should CTA button should absolutely be green. Or red. Whatever.</p>
+
+<p><strong>Bonus points: </strong>change your opinion regularly and randomly.</p>
+
+<h2>#4: Add all possible login platforms</h2>
+
+<p>Everyone using Facebook, so it kind of a must, also adding Twitter and Instagram- to make thinks more viral, and Google of course, and Flicker and Yahoo just in case, and you must also put the plain email and password for those who live in Mars or something.</p>
+
+<h2>#5: Support the oldest android version</h2>
+
+<p>Because why not? you&rsquo;re not the one the writing the code. And every user count! also those 0.8% of the users that still using 2.2, although those devices are so weak that your 42MB app probably can&rsquo;t even run on them.</p>
+
+<h2>#6: Don&rsquo;t translate your app</h2>
+
+<p>Because you targeting only for US and you&rsquo;re ok of not growing, and no one else will use it.</p>
+
+<p><strong>Bonus points: </strong>if you do decide to translate your app- use a low pricing translate service so your translation will look really funny for non English users.</p>
+
+<h2>#7: Treat all your users the same</h2>
+
+<p>In addition to the previous one- all my users understand English and prefer paying with PayPal, and they love to take a lot of pictures and they have Gmail account and they understand that green is positive and red in negative. Basically all your users are you.</p>
+
+<h2>#8: Keep asking your users to rate your app</h2>
+
+<p>Reviews are crucial to your app listing and you <strong>MUST</strong> make your users leave a good ratings and review for your app in the store. Try to do anything to make them do so- prompting a &ldquo;rate us&rdquo; widget in the app every time they are doing something (also after failed actions), send them a weekly email with a rating request, hell- even put it after intro, before they even used the app, everything goes.</p>
+
+<h2>#9: Use cheap campaigns to buy users</h2>
+
+<p>Users drive more users, before app start to be viral it should start with some core users, so what if those are not a real users and they actually do nothing, the numbers are growing and eventually this will catch.</p>
+
+<h2>#10: Put lots of ads</h2>
+
+<p>Last but not least, your app should make some money (I think), you can think of adding a value that users will find it useful and will want to pay for it, but it&rsquo;s too complicate. Ads is the easiest way to make money in the apps world (and to piss of your users).</p>
+
+<p><img class="center" src="https://shem8.files.wordpress.com/2016/05/19285pti64teljpg.jpg" width="800" title="* 'Source: gizmodo.com 'Source: gizmodo.com" ></p>
+
+<hr />
+
+<p>That&rsquo;s it, by now you should be ably to easily assemble a one hell of an App that will quickly burry in the big cemetery of the apps.</p>
+
+<p>As always- got some more suggestions for ways to make your app worse? Would love to hear your thoughts in the comments!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[10 good rules for bad App, Part 2- UX\UI]]></title>
+    <link href="http://shem8.github.io/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui/"/>
+    <updated>2016-04-17T19:04:28+03:00</updated>
+    <id>http://shem8.github.io/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui</id>
+    <content type="html"><![CDATA[<p>Welcome to my second part of the tutorial of how building a bad app. After we&rsquo;ve building a bad app in the <a href="https://shem8.wordpress.com/2016/03/31/10-good-rules-for-bad-app-part-1-technical/">first part</a>, it&rsquo;s the time to call our designer to fuck it a bit more:</p>
+
+<!--more-->
+
+
+<h2>#1: Ignore material design guidelines</h2>
+
+<p>Google, one of the greatest companies in the world, put lots of efforts creating material design, they probably do a long user research and gather feedback from many expert, but hey- you are the one with the bachelor of industrial design, so you probably know better.</p>
+
+<h2>#2: Invent your own navigation pattern</h2>
+
+<p>If Facebook can do it so can you, also- if your app will be so good Google might <a href="http://www.theverge.com/2016/3/15/11236152/material-design-update-bottom-navigation-bar">give up</a> and adapt it.</p>
+
+<h2>#3: Create a mysterious app icon</h2>
+
+<p>That&rsquo;s really helpful when users need to quickly find your app from 40 apps icons grid.</p>
+
+<p><img class="center" src="https://shem8.files.wordpress.com/2016/04/yo-app-icon.png" width="131" title=", of course." alt="App that let you send "></p>
+
+<h2>#4: Use your own ideas for icons</h2>
+
+<p>Now I&rsquo;m talking about in app icons. I understand- you don&rsquo;t fully pleased with the Android default share icon, you&rsquo;re also didn&rsquo;t find anything suits to your needs between hundreds of <a href="https://design.google.com/icons/">material design icons</a> so why not creating a full icon pack from your own?</p>
+
+<p><strong>Bonus points:</strong> don&rsquo;t even bother to add title to your menu items, so that users will able to get a textual hint.</p>
+
+<h2>#5: Create intro, overlay explanations AND hints</h2>
+
+<p>Because users are stupid (mostly true) and they always read your explanation (no chance ever)</p>
+
+<p><strong>Bonus points:</strong> do a step-by-step tutorial with no option to skip.</p>
+
+<h2>#6: Don&rsquo;t support integration with other apps within your app</h2>
+
+<p><a href="http://developer.android.com/training/basics/intents/index.html">Android has a great mechanism</a> to interact actions between apps, but that&rsquo;s not too good for your app because that means users are going to leave your app. When users leave your app, that means less cash from ads. Less cash means you MIGHT have to find a real job.</p>
+
+<h2>#7: Don&rsquo;t support integration with other apps into your app</h2>
+
+<p>In addition to previous point- respect other apps and don&rsquo;t still they users please.</p>
+
+<p><strong>Bonus points:</strong> If you ended up supporting your app to filter intents from other apps- ignore context and just open the main screen and not the relevant page.</p>
+
+<h2>#8: Put animations everywhere</h2>
+
+<p>A <a href="https://shem8.wordpress.com/2015/10/02/pimp-up-your-splash-screen/">splash screen animation</a> is nice, even <a href="https://www.google.com/design/spec/animation/meaningful-transitions.html">Google</a> recommend adding animation while moving between screens, and the more the merrier</p>
+
+<p><img class="center" src="https://shem8.files.wordpress.com/2016/04/giphy.gif" width="448" title="Is it too much" alt="Is it too much"></p>
+
+<h2>#9: Use gifs instead of drawing things in code or animation drawable</h2>
+
+<p>Yes, I know, <a href="https://shem8.wordpress.com/2016/02/25/animated-vector-drawable/">animation drawable</a> might saves you a couple of MB, but your time is much more important!</p>
+
+<h2>#10: Create resources for all resolutions</h2>
+
+<p>Because you just saves time, so lets waste it.</p>
+
+<p><br><br></p>
+
+<hr />
+
+<p><em>Next time we going to talk about how to make things a little bit worse by the product guys so stay tuned.</em></p>
+
+<p><strong>Got some more suggestions for ways to make your look and feel worse? Would love to hear your thoughts in the comments!</strong></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[10 good rules for bad App, Part 1- Technical]]></title>
+    <link href="http://shem8.github.io/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical/"/>
+    <updated>2016-03-31T21:00:52+03:00</updated>
+    <id>http://shem8.github.io/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical</id>
+    <content type="html"><![CDATA[<p>We were all been there, you got a great idea for an app, you gather some feedback and even managed to build a team and you going full power to conquer the app store. So a second before starting working on your genius <a href="https://play.google.com/store/apps/details?id=com.mobication.EggTimerPro&amp;hl=en">egg timer app</a>, it is worth taking a moment and think about how you&rsquo;re going to do it.</p>
+
+<!--more-->
+
+
+<p>Following the hilarious post by Chet Haase about <a href="https://medium.com/pointer-io/this-article-is-exclusive-to-pointer-a-reading-club-for-developers-9b03f3df060c">10 good rules for bad API</a>, I decided to put together my list about how to build a bad app. but a few notes first:</p>
+
+<ul>
+<li><p>There are so many bad apps out there, each one is bad in it own way so it&rsquo;s really hard to set only 10. I tried to do my best for taking the top bad patterns, but I trust you to keep fucking it up much more than what I&rsquo;m talking about here.</p></li>
+<li><p>The beauty of the apps world that you can go wrong in many aspects of the product, that makes enough room for each team member to ruin your business, that is why I divided this blog post into 3 parts- technically, UI/UX and product.</p></li>
+<li><p>Even good apps can adopt one or two bad things to their app, so it&rsquo;s not all or nothing.</p></li>
+<li><p>Those bad habits are bad habits right now, because Google already proved that they can change that any time (like <a href="https://www.google.com/design/spec/components/bottom-navigation.html">bottom navigation</a> is a thing now? WTF?!)</p></li>
+<li><p>Who am I to say about apps if they are doing a bad things or not? That&rsquo;s because I&rsquo;ve done most of the things here and then realised how bad it is, that&rsquo;s why.</p></li>
+<li><p>The list not sorted by priority, because it&rsquo;s hard to compare what buried your app in the store listing.</p></li>
+<li><p>I&rsquo;m not <a href="https://medium.com/@chethaase">Chet Haase</a> so this post can&rsquo;t be half good or funny as his, so sorry for that.</p></li>
+</ul>
+
+
+<p><br></p>
+
+<p><em>Enough said, lets start with the list:</em></p>
+
+<h2>#1: Ask as many permission as possible</h2>
+
+<p>You know what your app worth, don&rsquo;t let minor things like user privacy get down your way. The user is begging for this crucial analytics sending on boot, so go and ask that BOOT_COMPLETED permission! If you need to share this wonderful url to your user&rsquo;s friends- pull the fucking contact list from his phone, and while you doing so why not sending it to your server and spam them all? Remember- data is power, and other&rsquo;s data is money!</p>
+
+<p><strong>Bonus point:</strong> when implement Android M permissions, don&rsquo;t let the user do anything until he or she accept your permission, even if he accepted some, don&rsquo;t let him win!</p>
+
+<h2>#2: Lock UI thread while loading</h2>
+
+<p>Hey dude, we&rsquo;re loading, we&rsquo;ll really appreciate if you let us do our thing and don&rsquo;t interrupt us with some stupid ui events, just sit quietly and wait us to finish processing all this 3.4M config xml file ok?!</p>
+
+<p><img class="center" src="https://shem8.files.wordpress.com/2016/03/loading_time.jpg" width="400" title="*" ></p>
+
+<h2>#3: Retry endlessly</h2>
+
+<p>Yes we&rsquo;re still waiting for this config file, it&rsquo;s your fault for living in this shitty connectivity area, don&rsquo;t blame us for sucking all you data plan and battery alright?!</p>
+
+<h2>#4: Don&rsquo;t save activity or fragment state</h2>
+
+<p>You snooze you lose, you rotated the screen? Boom- your form was lost. This is the best way to teach your users never leave your app, even if them just got a phone call.</p>
+
+<h2>#5: Use setExact + RTC_WAKEUP for for your AlarmManager</h2>
+
+<p>Alarm manager is get tool by Android to execute code in some time in the future. The thing is timing is everything and the Alarm Manager has some options for firing the code smartly and rescheduling it depending on phone state, battery, network or other tasks that can piggy bag. But you probably don&rsquo;t need those fancy features, there&rsquo;s nothing like putting your &ldquo;Please update our app&rdquo; notification waking you app 6AM.</p>
+
+<p><strong>Bonus points:</strong> combine setExact + RTC_WAKEUP to the same time for all your users for your network request to your servers for taking your load balancer to the edge.</p>
+
+<h2>#6: Use Application context everywhere</h2>
+
+<p>Because why not? Save your application context as a static member in your Application class on <em>onStart</em> and use it everywhere- so easy, so simple, so not modular, make it horribly when you want to debug theming errors and make your tests a nightmare. Win Win!</p>
+
+<h2>#7: Put errors strings technical as possible</h2>
+
+<p>That&rsquo;s make it much easier when something goes wrong on the users side, so they&rsquo;ll just forward you the message. That&rsquo;s also make your app a developer-friendly so people like me can easily understand that they missing a certificate to the https connection and that&rsquo;s why the app keep crashing when sharing a photo.</p>
+
+<h2>#8: Implement all by yourself</h2>
+
+<p>Android has a very strict limit of 65k methods limit, after importing google play and support libraries that&rsquo;s barely leaves you with room for 3rd libraries. Anyway, how hard is it to handle Json parsing? you don&rsquo;t really need this Gson library. It&rsquo;s also a great opportunity for your junior dev to practice his poor implementation of string pattern matching from his <a href="https://twitter.com/holman/status/681922317958524928">job interview</a>.</p>
+
+<h2>#9: Premature optimization</h2>
+
+<p>Great, you just implemented the sorting by yourself, probably with bucket sort, because you know the data going to be evenly distributed, probably, you think so&hellip; You also saw <a href="https://www.parleys.com/tutorial/part-1-android-performance-workshop">the talk by Romain Guy and Chet Haase</a> (him again?) and switched all you enums with constants ints and use objects pull everywhere even if this just one time function because who know what can happen.</p>
+
+<p>You know what they say- Premature optimization is the root of all evil, but a greater <a href="http://www.goodreads.com/quotes/30725-there-is-no-good-and-evil-there-is-only-power">women also said</a>: &ldquo;There is no good and evil, there is only power and those too weak to seek it.&rdquo; and I hope you see the power on N when implementing those graph algorithms.</p>
+
+<p><img class="center" src="https://shem8.files.wordpress.com/2016/03/the_general_problem.png" width="550" title="*" ></p>
+
+<h2>#10: Extract everything to static Util class</h2>
+
+<p>Move it all- Android specific functionality, networking calls, permissions checks, input checking, not-object-oriented-never-going-to-be-able-to-test code it all goes here.</p>
+
+<p><strong>Bonus points:</strong> have a Util and Utils classes, because one is not enough and confusing is a plus!</p>
+
+<p><br><br></p>
+
+<hr />
+
+<p><em>That&rsquo;s all until the next time when we&rsquo;re going to talk a bit about UI and UX, Got some more suggestions for ways to make your code worse? Would love to hear your thoughts in the comments!</em></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Animated Vector Drawable]]></title>
+    <link href="http://shem8.github.io/blog/2016/02/25/animated-vector-drawable/"/>
+    <updated>2016-02-25T21:43:46+02:00</updated>
+    <id>http://shem8.github.io/blog/2016/02/25/animated-vector-drawable</id>
+    <content type="html"><![CDATA[<p>In API 21 the Android team released bunch of very cool things for material design, most of the things focus around the design specs like colors or transition animation, other were for the new widgets like FAB, card view or recycle view, but within all those things there were also two things that barely discussed- <a href="http://developer.android.com/reference/android/graphics/drawable/VectorDrawable.html">VectorDrawable</a> and <a href="http://developer.android.com/reference/android/graphics/drawable/AnimatedVectorDrawable.html">AnimatedVectorDrawable</a>.</p>
+
+<!--more-->
+
+
+<p><em>Edit: looks like those classes became so popular that the Android team decided to add them to the <a href="http://android-developers.blogspot.co.il/2016/02/android-support-library-232.html">latest support library</a>, yay!</em></p>
+
+<h2>Android resources</h2>
+
+<p>In Android, recourses took lots of space in the final APK, tools like Proguard or loading modules dynamically helped the developers very much decreasing their app size, but when it came to assets, we were very limited. You had to choose between create asset for each density or paying with cpu time and let android doing the resizing and risk by not perfect asset.</p>
+
+<p>I saw couple of apps that choose to download their assets from the internet but that&rsquo;s might be problematic for first run (intro) or cases you don&rsquo;t have a connection.</p>
+
+<p>That&rsquo;s why I was so happy hearing about the new VectorDrawable introduced in API 21, that was let us the ability to create vector shapes and scale them easily for all screen sizes. This was really great for icons or small buttons.</p>
+
+<p>Of course, developers were able to do it before with a custom view and just draw the icon them self with Path, but the VectorDrawable save us the unnecessary view and it also use the SVG Path syntax that it much easier and much more popular. Moreover- Android Studio were able to show you a vector drawable preview, what that make it much more connivance!</p>
+
+<h2>Animations</h2>
+
+<p>Animations were a pain too. You basically had 3 options:</p>
+
+<ol>
+<li><p>For a simple animations (like scaling, fading or moving) using the build-in view property animation, that was the case for 90% of the time.</p></li>
+<li><p>If you had more complex animation on complex view you could create a custom animation, but for this you had to write lots of code</p></li>
+<li><p>Use AnimationDrawable and put drawable for each frame.</p></li>
+</ol>
+
+
+<p>So again- for not trivial cases, you had to choose between writing lots of code or putting lots of assets.</p>
+
+<p>That&rsquo;s when AnimatedVectorDrawable introduced and let developers use basic animations with their VectorDrawables with few lines of code and much lower space.</p>
+
+<h2>Live example</h2>
+
+<p>Let&rsquo;s start- assume we have some search component and we want to move to and from search state. So we need to animate between search icon and cancel icon:</p>
+
+<p><img src="https://shem8.files.wordpress.com/2016/02/search_icon.png" width="150" height="150">
+<img src="https://shem8.files.wordpress.com/2016/02/cancel_icon.png" width="150" height="150"></p>
+
+<p>And the animation between those 2 icons (Added guides and slow motion to better understand the transition):</p>
+
+<p><img class="center" src="https://shem8.files.wordpress.com/2016/02/gif.gif"></p>
+
+<p>As you can see we actually have 3 shapes that moves: 2 half circles that moves to lines (green and blue) and the line of the magnifying glass that just getting bigger and reaching to the end.</p>
+
+<p>First we need to create the shapes for the search icon:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+</span><span class='line'><span class="nt">&lt;vector</span> <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+</span><span class='line'>    <span class="na">android:width=</span><span class="s">&quot;24dp&quot;</span>
+</span><span class='line'>    <span class="na">android:height=</span><span class="s">&quot;24dp&quot;</span>
+</span><span class='line'>    <span class="na">android:viewportWidth=</span><span class="s">&quot;24&quot;</span>
+</span><span class='line'>    <span class="na">android:viewportHeight=</span><span class="s">&quot;24&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;path</span>
+</span><span class='line'>        <span class="na">android:name=</span><span class="s">&quot;line&quot;</span>
+</span><span class='line'>        <span class="na">android:pathData=</span><span class="s">&quot;M5.705,5.705 L18.295,18.295&quot;</span>
+</span><span class='line'>        <span class="na">android:strokeWidth=</span><span class="s">&quot;2&quot;</span>
+</span><span class='line'>        <span class="na">android:strokeColor=</span><span class="s">&quot;#000000&quot;</span>
+</span><span class='line'>        <span class="na">android:trimPathStart=</span><span class="s">&quot;0.45&quot;</span>
+</span><span class='line'>        <span class="na">android:trimPathEnd=</span><span class="s">&quot;1&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;path</span>
+</span><span class='line'>        <span class="na">android:name=</span><span class="s">&quot;circle1&quot;</span>
+</span><span class='line'>        <span class="na">android:pathData=</span><span class="s">&quot;M5.705,5.705 A 4 4 0 1 1 12,12 L5.705,18.295&quot;</span>
+</span><span class='line'>        <span class="na">android:strokeWidth=</span><span class="s">&quot;2&quot;</span>
+</span><span class='line'>        <span class="na">android:strokeColor=</span><span class="s">&quot;#000000&quot;</span>
+</span><span class='line'>        <span class="na">android:trimPathStart=</span><span class="s">&quot;0&quot;</span>
+</span><span class='line'>        <span class="na">android:trimPathEnd=</span><span class="s">&quot;0.6&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;path</span>
+</span><span class='line'>        <span class="na">android:name=</span><span class="s">&quot;circle2&quot;</span>
+</span><span class='line'>        <span class="na">android:pathData=</span><span class="s">&quot;M18.295,5.705 L12,12 A 4 4 0 1 1 5.705,5.705&quot;</span>
+</span><span class='line'>        <span class="na">android:strokeWidth=</span><span class="s">&quot;2&quot;</span>
+</span><span class='line'>        <span class="na">android:strokeColor=</span><span class="s">&quot;#000000&quot;</span>
+</span><span class='line'>        <span class="na">android:trimPathStart=</span><span class="s">&quot;0.4&quot;</span>
+</span><span class='line'>        <span class="na">android:trimPathEnd=</span><span class="s">&quot;1&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'><span class="nt">&lt;/vector&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The syntax for creating SVG paths is not that complicated and you can learn about it <a href="https://www.w3.org/TR/SVG/paths.html">here</a>, Android Studio is also very handy here because you can see a preview and also import existent material app icons and see their paths as described <a href="http://developer.android.com/tools/help/vector-asset-studio.html">here</a>.</p>
+
+<p>Now lets create the animation, we&rsquo;ll focus on the animation from the search icon to cancel, the opposite is pretty the same just with reverse values. We going to create 3 different animations:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;set</span>
+</span><span class='line'><span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+</span><span class='line'><span class="na">android:ordering=</span><span class="s">&quot;sequentially&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c">&lt;!-- first we need to immediately reset state --&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;objectAnimator</span>
+</span><span class='line'>        <span class="na">android:duration=</span><span class="s">&quot;0&quot;</span>
+</span><span class='line'>        <span class="na">android:propertyName=</span><span class="s">&quot;trimPathStart&quot;</span>
+</span><span class='line'>        <span class="na">android:valueFrom=</span><span class="s">&quot;0.45&quot;</span>
+</span><span class='line'>        <span class="na">android:valueTo=</span><span class="s">&quot;0.45&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c">&lt;!-- then run the animation after a delay --&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;objectAnimator</span>
+</span><span class='line'>        <span class="na">android:propertyName=</span><span class="s">&quot;trimPathStart&quot;</span>
+</span><span class='line'>        <span class="na">android:duration=</span><span class="s">&quot;300&quot;</span>
+</span><span class='line'>        <span class="na">android:startOffset=</span><span class="s">&quot;250&quot;</span>
+</span><span class='line'>        <span class="na">android:interpolator=</span><span class="s">&quot;@android:interpolator/fast_out_slow_in&quot;</span>
+</span><span class='line'>        <span class="na">android:valueFrom=</span><span class="s">&quot;0.45&quot;</span>
+</span><span class='line'>        <span class="na">android:valueTo=</span><span class="s">&quot;0&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;/set&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;set</span>
+</span><span class='line'>    <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+</span><span class='line'>    <span class="na">android:ordering=</span><span class="s">&quot;together&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;objectAnimator</span>
+</span><span class='line'>        <span class="na">android:propertyName=</span><span class="s">&quot;trimPathStart&quot;</span>
+</span><span class='line'>        <span class="na">android:valueFrom=</span><span class="s">&quot;0&quot;</span>
+</span><span class='line'>        <span class="na">android:valueTo=</span><span class="s">&quot;0.6&quot;</span>
+</span><span class='line'>        <span class="na">android:duration=</span><span class="s">&quot;450&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;objectAnimator</span>
+</span><span class='line'>        <span class="na">android:propertyName=</span><span class="s">&quot;trimPathEnd&quot;</span>
+</span><span class='line'>        <span class="na">android:valueFrom=</span><span class="s">&quot;0.6&quot;</span>
+</span><span class='line'>        <span class="na">android:valueTo=</span><span class="s">&quot;1&quot;</span>
+</span><span class='line'>        <span class="na">android:duration=</span><span class="s">&quot;600&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;/set&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;set</span>
+</span><span class='line'>    <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+</span><span class='line'>    <span class="na">android:ordering=</span><span class="s">&quot;together&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;objectAnimator</span>
+</span><span class='line'>        <span class="na">android:propertyName=</span><span class="s">&quot;trimPathStart&quot;</span>
+</span><span class='line'>        <span class="na">android:valueFrom=</span><span class="s">&quot;0.4&quot;</span>
+</span><span class='line'>        <span class="na">android:valueTo=</span><span class="s">&quot;0&quot;</span>
+</span><span class='line'>        <span class="na">android:duration=</span><span class="s">&quot;600&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;objectAnimator</span>
+</span><span class='line'>        <span class="na">android:propertyName=</span><span class="s">&quot;trimPathEnd&quot;</span>
+</span><span class='line'>        <span class="na">android:valueFrom=</span><span class="s">&quot;1&quot;</span>
+</span><span class='line'>        <span class="na">android:valueTo=</span><span class="s">&quot;0.4&quot;</span>
+</span><span class='line'>        <span class="na">android:duration=</span><span class="s">&quot;450&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;/set&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The animations are pretty basics and what we&rsquo;re doing here is just changing the start or the end of the path. Now we need to bring all animation together:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;animated-vector</span>
+</span><span class='line'>    <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+</span><span class='line'>    <span class="na">android:drawable=</span><span class="s">&quot;@drawable/searchback_search&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;target</span>
+</span><span class='line'>        <span class="na">android:name=</span><span class="s">&quot;line&quot;</span>
+</span><span class='line'>        <span class="na">android:animation=</span><span class="s">&quot;@animator/line_to_cancel&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;target</span>
+</span><span class='line'>        <span class="na">android:name=</span><span class="s">&quot;circle1&quot;</span>
+</span><span class='line'>        <span class="na">android:animation=</span><span class="s">&quot;@animator/circle1_to_cancel&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;target</span>
+</span><span class='line'>        <span class="na">android:name=</span><span class="s">&quot;circle2&quot;</span>
+</span><span class='line'>        <span class="na">android:animation=</span><span class="s">&quot;@animator/circle2_to_cancel&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;/animated-vector&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And now you can easily use the  search_to_cancel drawable in code, just don&rsquo;t forget to call <strong>start()</strong>:</p>
+
+<p><img class="center" src="https://shem8.files.wordpress.com/2016/02/final.gif"></p>
+
+<p>A few notes regarding to this process:</p>
+
+<ol>
+<li><p>Without <a href="//twitter.com/crafty">Nick Butcher</a> and his great resources (like the <a href="https://github.com/nickbutcher/plaid">plaid</a> app) I wouldn&rsquo;t know anything about AnimatedVectorDrawable, so a lot of credit from this blog post should go to him.</p></li>
+<li><p>Most of the paths are not that easy to build and you&rsquo;ll need to play with this pretty much, you can use tools like Photoshop to export SVG data, but still, some manually work be will here.</p></li>
+<li><p>The preview in Android Studio for the drawables is a bit buggy (especially around trimmed paths) so you need to test some things on device sometimes.</p></li>
+<li><p>From what I saw- on the first times the animation can stuck, so it better to set the final asset state after some delay to make sure the icon looks good in the end of the animation.</p></li>
+</ol>
+
+
+<p>That&rsquo;s for this time, hopes this will help you in the next time you want to build a great UX. =)
+<br>
+<br></p>
+
+<hr />
+
+<p><strong>Liked this post? Please share it with your friends!</strong></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[My first open source lib]]></title>
+    <link href="http://shem8.github.io/blog/2016/02/12/my-first-open-source-lib/"/>
+    <updated>2016-02-12T09:30:38+02:00</updated>
+    <id>http://shem8.github.io/blog/2016/02/12/my-first-open-source-lib</id>
+    <content type="html"><![CDATA[<p>As part of my last <a href="https://medium.com/life-learning/the-one-side-project-per-year-challenge-fa3c64a48da6#.3vp2es9hh">Friday project</a> I created a new Android app (releasing it soon!). In this project I decided to focus on 2 new things I want to learn:</p>
+
+<!--more-->
+
+
+<ol>
+<li><p>How to write Android apps with <a href="https://shem8.wordpress.com/2016/01/01/kotlin-a-better-java-for-android/">Kotlin</a></p></li>
+<li><p>Create an awesome UI and animations</p></li>
+</ol>
+
+
+<p>The first one was pretty straight forward, because I am a technical guy- learning (another) programming language wasn&rsquo;t so difficult, and sure enough, I quickly pulled a simple Kotlin app that worked.</p>
+
+<p>The second part was a littler trickier, I&rsquo;m lucky enough to work with a <a href="https://medium.com/@etgalim">great designer</a> so I&rsquo;m not used to create an amazing UI (although I have a pretty solid background with photoshop). That&rsquo;s when <a href="http://www.materialup.com/">MaterialUp</a>, the home for a great material designs inspirations, came to the rescue.</p>
+
+<p>My first screen was a login screen, so I searched for this kind of view and found a <a href="http://www.materialup.com/posts/compact-login">great one</a> that I wanted to use. After couple of hours of hacking I manage to implement it in code. I was so satisfy from the result so in the following week I showed many of my colleges in my work place what I was doing, this thing spread out quickly and couple of days later one of the product guys from another team was asking me if he can use it in their app.</p>
+
+<blockquote>I was happy! The best thing that can happen to you when building something is that someone, on his own will, want to use what you created.</blockquote>
+
+
+<p>&ldquo;But&rdquo; and if you know product guys, you surely know there is always a but &ldquo;We need you to change some of the fields names, and we probably going to use another icon&rdquo;. I was familiar with the code, those things was pretty easy to handle and I agreed.</p>
+
+<p>Now I had two options:</p>
+
+<ol>
+<li><p>Copy the code, working with him in house and customise the hell out of the view for him.</p></li>
+<li><p>Create a real library with a real API for customise everything in the view and get away from endless features requests.</p></li>
+</ol>
+
+
+<p>So library it is.</p>
+
+<h2>Creating the library</h2>
+
+<p>First I decided to rewrite the view in Java for it to be more Android-developers-friendly, that was a great (great, great) showcase of how Kotlin is much quicker to hack and how much boilerplate Java has.</p>
+
+<p>Next I extracted all relevant code to external library and then to external project for exporting.</p>
+
+<p>I decided to push the view as is (without any option to change anything) just to check how&rsquo;s all the uploading thing is going. Lucky enough I found <a href="http://inthecheesefactory.com/blog/how-to-upload-library-to-jcenter-maven-central-as-dependency/en">this article</a> that helped me with this mess (not that trivial at all) and unlucky enough I didn&rsquo;t see <a href="https://www.youtube.com/watch?v=NFfNiO3CR6w">this video</a> at the time.</p>
+
+<p>After couple of hours of struggling with gradle and jcenter I manage to create <a href="https://github.com/shem8/MaterialLogin">my own real library</a> and pull it from gradle.</p>
+
+<h2>What happened next</h2>
+
+<p>Then I was comment to the author of the original design that his design was so elegant that I had to implement it in Android with a link to the my library. Shortly after, one of the site founders submit <a href="http://www.materialup.com/posts/materiallogin">my lib to the site as a new resource</a> and that's when I started to get a lot of traction, couple of days later and the library was trending on Github, pull requests and issues were opened and I suddenly had a real users to support, and even better, some users were contribute and helped me adding some features!</p>
+
+<h2>Conclusions</h2>
+
+<ul>
+<li><p>If you have some cool piece of code that you feel that others will want to use it- release it to an open source library.</p></li>
+<li><p>Do the simple things first- the first version can be very basic, wait to see what the users want.</p></li>
+<li><p>Spread the word and let others know you build a great thing.</p></li>
+</ul>
+
+
+<p>My code came from running only on my testing app to be viewing by hundreds of people! And what about those product guy you ask? He might use it or no, but I got my users already =)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Andriod dev toolbox part 2]]></title>
+    <link href="http://shem8.github.io/blog/2016/01/21/andriod-dev-toolbox-part-2/"/>
+    <updated>2016-01-21T10:48:23+02:00</updated>
+    <id>http://shem8.github.io/blog/2016/01/21/andriod-dev-toolbox-part-2</id>
+    <content type="html"><![CDATA[<p>The second part of the Android dev toolbox lecture,
+This time we’ll focus on collection of tools and resources that help you build better apps in less time.</p>
+
+<!--more-->
+
+
+<p>Slides are also available <a href="https://docs.google.com/presentation/d/1GtJH_mBY6TM0yk2cQEYWW6yCntyi-6HfjuzTzt9nuhQ/pub?start=false&amp;loop=false&amp;delayms=30000">here</a></p>
+
+<p><a href="http://www.slideshare.net/shemMag/andriod-dev-toolbox-part-2">http://www.slideshare.net/shemMag/andriod-dev-toolbox-part-2</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Why all your engineers should get a laptop]]></title>
+    <link href="http://shem8.github.io/blog/2016/01/17/why-all-your-engineers-should-get-a-laptop/"/>
+    <updated>2016-01-17T19:20:12+02:00</updated>
+    <id>http://shem8.github.io/blog/2016/01/17/why-all-your-engineers-should-get-a-laptop</id>
+    <content type="html"><![CDATA[<p>At the first day in <a href="http://www.myroll.com/about">MyRoll</a> I was exiting- it was my first day in a startup, I was the first employee in the company and we all were thrilled to get started the new adventure.</p>
+
+<!--more-->
+
+
+<p>[caption id=&ldquo;attachment_630&rdquo; align=&ldquo;alignright&rdquo; width=&ldquo;357&rdquo;]<img src="https://shem8.files.wordpress.com/2016/01/291404_493445824002481_472952276_o.jpg?w=559" alt="291404_493445824002481_472952276_o" /> Me and my new best friend.[/caption]</p>
+
+<p>But you know you don&rsquo;t really on board until you get your new MacBook Pro.</p>
+
+<p>In the past 3 years I&rsquo;m pretty sure I&rsquo;ve been seeing my Mac more than my wife. It was there when we hacked all night, on conferences and talks I gave and more.</p>
+
+<p>A few months ago, the startup I was working for <a href="http://venturebeat.com/2015/11/12/avg-acquires-israeli-photo-management-startup-myroll-plans-to-integrate-the-technologies/">got acquired</a> and I began my corporate life, as part of the move we left our old Macs behind and got the new super fast PCs. I&rsquo;m really far from being a Windows fan, and I really liked the concept of working wherever you want, so I immediately raised my voice about this (some are getting laptops, but the default is PC).</p>
+
+<p>I was told that I can get a laptop, but they asked me one single question- &ldquo;Why? Why do you really <strong>need </strong>a laptop?&rdquo;. I didn't actually had an answer, this is just the way it is, developers are working on Mac, this is how it goes, just go to the next DroidCon close to you home and look at the audience.</p>
+
+<p>The only reason I had is that I might want working from home and their answer was &ldquo;We don&rsquo;t want you to work from home- we want you to be with your family when you&rsquo;re home, leave work at work&rdquo;, they were right, my work-life balance is much better since I got here.</p>
+
+<p>So do I really need a Mac? Is it possible that this is just a useless trend that everyone following seamlessly? I thought about that in the following 3 months since I got here and came up with few points points:</p>
+
+<ul>
+<li><p>Hands down the most important thing here (in my opinion) is the ability to easily go and seat with your college- if it&rsquo;s for one helping each other with bug in code, or easy integration for your APIs or even show a demo for your designers. Because this is a big company and you probably working with people that are in a different room (or floor), it is sometimes reduce the feedback loop dramatic and solve a lot miscommunication.</p></li>
+<li><p>Work remotely- or at least give the option for people sometimes work from remote, read the <a href="https://blog.stackoverflow.com/2013/02/why-we-still-believe-in-working-remotely/">great post from stack overflow team</a> on why they believe its so good, in short- it helps to increase productivity, and more hiring options.</p></li>
+<li><p>You need to encourage your employees to go out there and participate in conferences, if as a member for leaning new things, or even better- show and talk about their work as a speaker. You also want it to be as easier as possible, if someone talk about new library- it&rsquo;s better try it on the project right now. If it some cool tool he or she developed- you want to show it easily, without setup it in a new computer.</p></li>
+<li><p>Hackatons are great, I really enjoy the sense of responsibility of deliver a product in 24 hours, even if it&rsquo;s just an app that block your smartphone outgoing communication when  you&rsquo;re drunk (I&rsquo;ll call it &ldquo;XGuard&rdquo;). Bringing a PC to an hackaton will just waste you an hour for setup and will make you look as noob.</p></li>
+</ul>
+
+
+<p>[caption id=&ldquo;attachment_696&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;394&rdquo;]<img src="https://shem8.files.wordpress.com/2016/01/1621854_10201968909759284_1984374607_n.jpg?w=559" alt="1621854_10201968909759284_1984374607_n" /> BattleHack Tel-Aviv 2014[/caption]</p>
+
+<ul>
+<li><p>Healthier and refreshing work environment- sitting next to a desk is <a href="http://www.diygenius.com/your-desk-job-is-killing-you-the-truth-about-sitting-down-infographic/">killing you</a>, go and stand in front of the window, see the amazing world outside, go work in the sun and refresh your head.</p></li>
+<li><p>As a boss, you want you workers will be familiar with the bleeding edge technologies out there, that kind of people usually will be the ones that will drive your team for a better and newer tools, so why not encourage them and give them a laptop so they will be able to learn <a href="https://shem8.wordpress.com/2016/01/01/kotlin-a-better-java-for-android/">Kotlin </a>in the late night?</p></li>
+</ul>
+
+
+<p>So that it, I now about to share this post with our VP of R&amp;D and hope for good =)</p>
+
+<hr />
+
+<p>Disclaimers:</p>
+
+<ol>
+<li><p>In a lot of places there isn&rsquo;t really a problem to get a laptop, but the problem is the default- because 90% of the people will go with the default.</p></li>
+<li><p>When referring to Mac I intend to unix based operation system laptop, because I think that developers should be familiar with terminal and shell scripting for couple of reason (that&rsquo;s for another post). I just think that Mac is best out there&hellip;</p></li>
+</ol>
+
+
+<p>*<em>feature image by <a href="https://hivizme.files.wordpress.com/2012/06/cable-mess.jpg">hivizme</a></em></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Kotlin- a better Java for Android?]]></title>
+    <link href="http://shem8.github.io/blog/2016/01/01/kotlin-a-better-java-for-android/"/>
+    <updated>2016-01-01T15:52:32+02:00</updated>
+    <id>http://shem8.github.io/blog/2016/01/01/kotlin-a-better-java-for-android</id>
+    <content type="html"><![CDATA[<p>A couple of weeks ago, when going over some Android DevSummit videos, I encountered in some question about alternative language for Android during one of the <a href="https://youtu.be/-VNfWh5UkfY?list=PLWz5rJ2EKKc_Tt7q77qwyKRgytF1RzRx8&amp;t=1461">fireside chats</a> session with the Android team. It was really interesting that there was another way to develop an Android apps but unfortunately I didn&rsquo;t fully catch the name of the language (&ldquo;What what? was it Kotin? Tolkin? What he was saying???&rdquo;) so I give up.</p>
+
+<!--more-->
+
+
+<p>Next, I stumble upon <a href="https://twitter.com/donnfelker/status/675020357158477825">this twitter conversation</a> and finally found Kotlin.</p>
+
+<h2>What&rsquo;s wrong with Java?</h2>
+
+<p>Nothing special, really. Yes, ruby python and JS are really sexy with all those duck typing and lambdas and much less boilerplate code, but Java has really good IDE&rsquo;s that saves you a lot of time and don&rsquo;t bother you with all those declarations.</p>
+
+<p>Moreover, Oracle is trying to keeping up the pace and add some cool things like lambda expressions, but still- Java is a bit &ldquo;heavy&rdquo; and fall in the small things (like arrays and lists, NPE, iterations, Generics and more&hellip;).</p>
+
+<h2>So what&rsquo;s wrong with Java on Android?</h2>
+
+<p>OK, that&rsquo;s a different question. First- Java 8 (and even some things from Java 7) <a href="https://www.reddit.com/r/androiddev/comments/22mh0r/does_android_have_any_plans_for_java_8/">not supported on Android platform</a> (yet, there was some changes in the last week and <a href="http://venturebeat.com/2015/12/29/google-confirms-next-android-version-wont-use-oracles-proprietary-java-apis/">Google announce that the next version of Android will be targeting OpnJDK</a>). So it still sucks to handle with stream, dates and we can&rsquo;t use things like lambdas or switch on strings.</p>
+
+<p>Second- Android considered as front end platform and as frond end developer I would like the code will be as lightweight as possible. That&rsquo;s mean things like:</p>
+
+<ul>
+<li><p>Easily add helper methods to all kinds of types (and not using static utils classes everywhere).</p></li>
+<li><p>Lambda/ function pointers/ on the fly code execution.</p></li>
+<li><p>Easily run things in background and async task, without the <a href="http://stackoverflow.com/questions/29341582/how-to-avoid-callback-hell-in-java">callback hell.</a></p></li>
+<li><p>I would be glad to extends from my own classes by most of the time I must extends from Android classes (or other 3rd libraries) what make the code reuse and abstraction a bit hard.</p></li>
+</ul>
+
+
+<h2>Kotlin to the rescue</h2>
+
+<blockquote>Statically typed programming language for the JVM, **Android** and the browser
+
+[kotlinlang.org](http://kotlinlang.org)</blockquote>
+
+
+<p>JetBrains, the company behind Kotlin, understand the potential of Android build system and integrated the language compiled byte code straight into the Android gradle mechanism.</p>
+
+<p>Unlike other JVM languages, like Clojure or Scala, JetBrains understand the power of JVM-like platforms and made some specific adaptation for those. That&rsquo;s mean that Kotlin can be compile even to JavaScript!</p>
+
+<h2>Language basics</h2>
+
+<p>I won&rsquo;t go over the language syntax, there is a very good documentation in the <a href="https://kotlinlang.org/docs/reference/">Kotlin site</a>. I would just say that for Java devs among you it suppose to be pretty straight forward, and for you who familiar with C# it should be even easier.</p>
+
+<h2>Starting with android</h2>
+
+<p>So lets start by creating an Android project. JetBrains are also the creator of InteliJ, the editor Android Studio based on, so it easily integrated for working also with Kotlin, you just need to install the <a href="http://blog.jetbrains.com/kotlin/2013/08/working-with-kotlin-in-android-studio/">Kotlin plugin</a>.</p>
+
+<p>Creating a new Android app with Kotlin it just like a regular app, follow <a href="https://kotlinlang.org/docs/tutorials/kotlin-android.html">this instructions</a> and make the first &ldquo;Hello World&rdquo; app. You might still gonna need to do some changes in code (like changing from <em>savedInstanceState: Bundle</em> to <em>savedInstanceState: Bundle?</em> for null safety) but it suppose to compile quickly.</p>
+
+<p>Now we&rsquo;re able to see how we can use the language for faster development:</p>
+
+<h3>Kotlin Android Extensions</h3>
+
+<p><a href="https://kotlinlang.org/docs/tutorials/android-plugin.html">The Android Extensions plugin</a> allows us to get rid from all the <em>findViewById </em>boilerplate code without having to add any extra code or shipping any additional runtime:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+// Using R.layout.activity_main from the main source set
+import kotlinx.android.synthetic.main.activity_main.*</p>
+
+<p>public class MyActivity : Activity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        textView.setText(&quot;Hello, world!&quot;) // Instead of findView(R.id.textView) as TextView
+    }
+}
+[/code]</p>
+
+<h3>Code shrinking</h3>
+
+<p>Code in Java:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+view.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        //click handling
+    }
+});
+[/code]</p>
+
+<p>Comes to:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+view.setOnClickListener({//click handling})
+[/code]
+And:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+if (s != null) ? s.length() : 0
+[/code]
+Comes to:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+s?.length ?: -1
+[/code]
+Isn&rsquo;t it wonderful?</p>
+
+<h3>Extensions methods</h3>
+
+<p>Here is the real power of the language in my opinion, we can easily add utility function to our components from outside and use them seamlessly in our classes, here are some examples that I&rsquo;ve used in my extension class:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+fun AppCompatActivity.navigate(frag: Fragment) {
+    val fragmentTransaction =  supportFragmentManager.beginTransaction()
+    fragmentTransaction.replace(content.id, frag);
+    fragmentTransaction.commit();
+}</p>
+
+<p>fun Fragment.userError(msg: String?) {
+    Snackbar.make(view, msg, Snackbar.LENGTH_LONG).show()
+}</p>
+
+<p>fun SharedPreferences.edit(func:SharedPreferences.Editor. () -&amp;amp;amp;gt; Unit) {
+    val editor = edit()
+    editor.func()
+    editor.apply()
+}</p>
+
+<p>fun SharedPreferences.Editor.set(pair: Pair&lt;String, String>)  = putString(pair.first, pair.second)
+[/code]</p>
+
+<p>There are also some libraries out there that add you many more extentions like: <a href="https://github.com/pawegio/KAndroid">KAndroid</a> and <a href="https://github.com/yoavst/androidKotlin">androidKotlin</a>, or even examples from others Android devs like <a href="https://speakerdeck.com/jakewharton/android-development-with-kotlin-androidkw-number-001">Jake Wharton</a>.</p>
+
+<h2>Last words</h2>
+
+<p>Java in general, and Android in particular, has not so few problems, and although Oracle and Google adding features and trying to keep up the pace- it&rsquo;s too slow and too heavy handed.</p>
+
+<p>Kotlin is some experiment from JetBrains to bring the latest design patterns paradigms to Java, Android and JS platforms that was quickly take Android community attention (and even inside Google).</p>
+
+<p>As you can see it look pretty good for start, it can save much redundant code and speed up development, and it will be interesting what will be next moves from Google and JetBrains and if it gonna get to the mainstream.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Android dev toolbox]]></title>
+    <link href="http://shem8.github.io/blog/2015/12/31/android-dev-toolbox/"/>
+    <updated>2015-12-31T10:43:15+02:00</updated>
+    <id>http://shem8.github.io/blog/2015/12/31/android-dev-toolbox</id>
+    <content type="html"><![CDATA[<h3>Talk I had given on AVGeeks on Dec 2015</h3>
+
+<!--more-->
+
+
+<p>[slideshare id=56571722&amp;doc=ywkq4qkcquknibuy5m3z-signature-2aa1ca40ff95bae825c5e98e9729691dc3307919cae0747b22cec4906e70d2df-poli-151231083934]</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Android Studio for Experts- Cheat Sheet]]></title>
+    <link href="http://shem8.github.io/blog/2015/12/04/android-studio-for-experts-cheat-sheet/"/>
+    <updated>2015-12-04T12:49:30+02:00</updated>
+    <id>http://shem8.github.io/blog/2015/12/04/android-studio-for-experts-cheat-sheet</id>
+    <content type="html"><![CDATA[<p>So last week there was the great Android Dev Summit, that in my opinion was one the greatest summit by Google, because unlike Goolge I/O or others Google big events- these event was very technical and was especially for devs, so if you didn&rsquo;t <a href="https://www.youtube.com/playlist?list=PLWz5rJ2EKKc_Tt7q77qwyKRgytF1RzRx8">watched the videos</a> already I very recommend to go over it and pick the ones interested you the most.</p>
+
+<!--more-->
+
+
+<p>One of the useful talks there was about some tricks and new cool things that you can do with Android studio (some of them old and some of them new and experimental), It&rsquo;s a bit long and cover a lot of things- so I decided to summarize it so I can go over it from time to time, I also add so time indication to each subject covered so you can just skip to this specific part.</p>
+
+<p><a href="https://www.youtube.com/watch?v=Y2GC6P5hPeA">https://www.youtube.com/watch?v=Y2GC6P5hPeA</a></p>
+
+<h2>Editor tricks by Tor Norbye [0:30-19:50]:</h2>
+
+<ul>
+<li><p>Use Tab (instead of Enter) to auto complete</p></li>
+<li><p>Ctrl+Shift+Space for smarted auto complete (or twice to even smarter)</p></li>
+<li><p>Intention actions (Alt+Enter) for context actions like: creating constructor, add fields, auto cast etc&hellip;</p></li>
+<li><p>Builtin templates:</p>
+
+<ul>
+<li><p>lists- &ldquo;fori&rdquo; or &ldquo;list.fori&rdquo;</p></li>
+<li><p>Log- logi, logm (for logging method), logr (for log return), logt (for tag)</p></li>
+</ul>
+</li>
+<li><p>Auto filter when start typing in every actions list</p></li>
+<li><p>tools:showIn for show you layout preview withing the parent layout</p></li>
+<li><p>tools namespace are ignored while build, so use them for preview (like src for ImageView or listItem for GridView)</p></li>
+<li><p>Add shrinkResources=true with MinifyEnabled to strip out unused resources.</p>
+
+<ul>
+<li>tools:strictMode, tools:keep, tools:discrad for customize it.</li>
+</ul>
+</li>
+<li><p>Ctrl+Shift+A for finding action by name</p></li>
+</ul>
+
+
+<h2>Debugger tricks by Siva Velusamy [20:00-29:30]:</h2>
+
+<ul>
+<li><p>&ldquo;Analyze stacktrace&rdquo; command for analyzing traces that came out of android studio (even scramble traces with Proguard)</p></li>
+<li><p>&ldquo;View as&rdquo; for resources references while debugging.</p></li>
+<li><p>An option for debug printing in each break point, even without stopping in this breakpoint (click on the break point -> more -> log evaluate expression).</p></li>
+</ul>
+
+
+<h2>Gradle integration by Alex Ruiz [29:35-37:20]:</h2>
+
+<ul>
+<li><p>Android studio has an option to create a module from jar/ aar library</p></li>
+<li><p>Switch build variant while working with the &ldquo;Build Variants&rdquo; view.</p></li>
+<li><p>On Android Studio 2.0- Enable all artifcats together (so things like refactoring will work also for you Android tests and your unit tests) from settings: Build, Execution, Deployment -> Experimental -> Enable all test artifacts.</p></li>
+</ul>
+
+
+<h2>Test code by Michal Bendwoski [37:20-41:40]:</h2>
+
+<ul>
+<li><p>Alt+Enter on your class-> create Android Test on this class.</p></li>
+<li><p>Ctrl+N (Generate command) to create test method.</p></li>
+<li><p>Intention action for moving some code to setUp method.</p></li>
+<li><p>Ctrl+Shift+T to navigate between Test and Test Subject (+ you can add new test case from there).</p></li>
+</ul>
+
+
+<h2>C++ Support by Kathryn Shih [41:40-51:20]:</h2>
+
+<ul>
+<li><p>Doxygen is now supported so F1 is working also for C++ code.</p></li>
+<li><p>Enable native debugging (from Run->Edit configurations) so you will be able to debug your native code too.</p>
+
+<ul>
+<li>But that make the compilation / linking time longer, so be aware.</li>
+</ul>
+</li>
+<li><p>On Android Studio 2.0- Awesome <a href="https://sites.google.com/a/android.com/tools/tech-docs/gpu-profiler">GPU debugging</a> option.</p></li>
+</ul>
+
+
+<h2>Performance tools by Esteban de la Canal [51:20-1:08:55]:</h2>
+
+<ul>
+<li><p>New network monitor- x axis is the request time, y is the request speed, the area of the graph is the request size.</p></li>
+<li><p>In the allocator tracker- you can switch to &ldquo;Group by allocator&rdquo; view so the allocation will be grouped by package name, that way you can easily find your classes that response to allocations.</p></li>
+<li><p>When opening a heap dump you have some builtin tasks for memory leak analyzing, one of them is Leaked activities- very useful!</p></li>
+<li><p>GPU monitor (Experimental) is disabled by default because it might affect other monitors. It's much like the on device GPU monitor.</p></li>
+</ul>
+
+
+<hr />
+
+<p>That&rsquo;s it, the talk covers some more things that not included here, I tried to put the ones I think I would use the most, feel free to comment and add if you thing I forgot something.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Run fast, fall frequently, get up faster and go drink beer at the beach: What it's like to work at a StartUp]]></title>
+    <link href="http://shem8.github.io/blog/2015/11/15/run-fast-fall-frequently-get-up-faster-and-go-drink-beer-at-the-beach-what-its-like-to-work-at-a-startup/"/>
+    <updated>2015-11-15T12:24:22+02:00</updated>
+    <id>http://shem8.github.io/blog/2015/11/15/run-fast-fall-frequently-get-up-faster-and-go-drink-beer-at-the-beach-what-its-like-to-work-at-a-startup</id>
+    <content type="html"><![CDATA[<p><em>Over the past 3 years I&rsquo;ve been working at <a href="http://myroll.com/">MyRoll</a> (previously called Flayvr, the startup that loves you photos as much as you do). I joined right after the seed stage and I was the first employee of the company. This was my first time working at a startup and it&rsquo;s hands-down one of the best experiences I&rsquo;ve had in my not-so-long life. Lately, more and more of my friends have asked me: &ldquo;Should I join a startup, or just go corporate - something that&rsquo;s financially stable?&rdquo;.</em></p>
+
+<!--more-->
+
+
+<p><strong>First- I want to clear the water and say that I don&rsquo;t really have an answer for that.  It really depends on the type of person you are. However, these is my 2 cents about all the <em>*</em>GOOD<em>*</em> of working in a small startup (Don&rsquo;t worry, there&rsquo;s plenty of bad as well - coming soon):</strong></p>
+
+<h2>1. You learn fast (because you don&rsquo;t have a choice)</h2>
+
+<p>On my very first day at MyRoll I was given the task of writing a feature in our iOS app. It was my first time writing code for Mobile, first time working on objectiveC, first time working on a Mac, first time working with git, AND first time reading our code. There was no one-month boot camp, no onboarding powerpoints, no tutorials, and ZERO team members to pair program or review my code. Just the internet and the CTO that wrote the MVP for demo. A week later I had to add some app analytics to write to the DB so I had, in turn, to learn rails (from zero). A year later I was the one that started developing our Android app.</p>
+
+<p>Jumping on the horse and learning how to ride, time after time, over and over again, each time with a different type of horse (or ride? I lost myself in the analogy), makes you develop a real capability for learning new things (no matter what they are). You learn to predict the pitfalls, you know where things are going be more tricky and you develop some sense about what’s right and wrong in what you&rsquo;re doing.</p>
+
+<h2>2. You go for the impossible, because the possible things are already there</h2>
+
+<p>Before we started working on Flayvr, people treated photos as isolated items. Our first goal was therefore  to find the context of the user&rsquo;s media and create a full meaningful story from it. So we took Ron’s, our CEO, endless photos stream and started to analyze it (I know this guy for 3 years but through his photos I also know how his trip to Barcelona in 2005 was&hellip;). We analyzed it manually and understood how 2 photos are connected to the same scene or event, we went over on different end cases and built some pretty solid algorithms to cluster his photos and videos.</p>
+
+<p>Than we asked some friends to test our algorithm on their stream. It was pretty bad&hellip; Ron had 2 kids and he literally records every second in their life - my friends, on the other hand, are party people that have tons of Whatsapp photos that are unrelated to one another. It looked like every person has his own unique stream, and it felt too complicated for a computer to just magically understand it.</p>
+
+<p>Back to the drawing board - we categorized our main users. We understood that we have different kinds of people and they are all different, but that we can easily adapt our algorithm to each one: Android or iPhone users? Are they taking a lot of photos or just getting sent 4-5 photos in Whatsapp? is she a professional photographer or a 13 years old selfie taker? etc..</p>
+
+<p>We then tweaked our algorithm (and are still making it better and better, there is no magic solution here) and actually arrived at some pretty solid results.</p>
+
+<p><strong>Why? Because he had no alternatives</strong> - it was either about delivering a good damn product or giving back our investors their money.</p>
+
+<h2>3. You break things. A lot!</h2>
+
+<p>When moving fast you sometimes fall, just like a new baby born child. In the beginning you are going to  fall a lot, but slowly you learn how to put one leg in front of the other, you learn to keep your balance and in the end you are running smoothly.</p>
+
+<p><img class="center" src="http://c2.thejournal.ie/media/2013/04/falling-off-catwalk.gif" width="352" title="Pushing to production on 1AM on Friday." alt="Pushing to production on 1AM on Friday."></p>
+
+<p>At first, releasing a new version was a big deal. We had a release doc with a couple of stages that you had to be checked: making sure you&rsquo;re working with the production env, testing it on a couple of devices, checking for updates and fresh install, etc&hellip; That took some time, and as we gained confidence the release cycle got shorter and we started  pushing a new version to our users 2-3 times a week (and sometimes even more).</p>
+
+<p>But even the adults fall sometimes, and we did have some bad deploys. Shit happens, you must accept that. If Facebook is uploads a new version of the app that crashes for 10% of the users right on start,  the result will be a twitter storm. Or if <a href="http://mashable.com/2015/07/01/google-photos-black-people-gorillas/">google computer vision miserably fails </a>- you will see it all over the net. But in our case we realized we have the time to fix, and users are more tolerant towards our mistake.</p>
+
+<h2>4. You aren’t afraid from failures</h2>
+
+<p>Further to my last point - because of the uncertainty and the risk- taking nature of startups, you will fail often. From time to time, you learn to live with all those failures and instead of being upset after each one you learn to embrace it. You understand that each failure makes you a bit smarter: your estimation should be done more carefully, you now know your users don&rsquo;t like the red color, etc&hellip;</p>
+
+<blockquote>“When we give ourselves permission to fail, we, at the same time, give ourselves permission to excel.”
+<br>
+<i>- Eloise Ristad</i></blockquote>
+
+
+<p>With that in mind - you think more about the process and less about the results.</p>
+
+<h2>5. You understand the power of UX, marketing, etc&hellip;</h2>
+
+<p>In my previous job I was one of 6 developers in 3 dev teams in our department. There were two outsourced designers that I never talked with, 3 product managers that I saw only during planning sessions, and a sales team, somewhere, maybe in the US or maybe one floor above, I&rsquo;m not really sure.</p>
+
+<p>As a server side programmer I never took UX too seriously. I was sure that if the feature is important enough, users are going to use it. I was sure that if we, the devs guys, are going to kick a hell good full product - users will love it. I was sure that there was some secret way that they are going to find it and magically understand how to use all features right off the bat.</p>
+
+<p>I was stupid. UX guys made our users understand our flows, product guys taught us <a href="https://shem8.wordpress.com/2015/08/24/know-what-not-to-build-droidcon-2015/">what not to build</a> and saved us tons of time, our super hero marketing guy brought us to the first place on <a href="http://www.producthunt.com/tech/gallery-doctor-2-0">producthunt</a> and let a huge crowd discover our app right on the first day on launch. A tech product is just like other product, the tech part is just a small piece of the puzzle, so don&rsquo;t feel too special.</p>
+
+<h2>6. You embrace competition</h2>
+
+<p>On the day iOS 7 was released we got many messages from friends. They were all like  "oh not cool, apple just implemented your app in the default photos app, sorry for you guys". We were a bit afraid, and at first we thought &ldquo;ok, we have no chance here&rdquo;. But it turned out to be a good move for us. First - we got some nice free <a href="http://m.blog.laptopmag.com/obsolete-ios-apps?slide=2">PR</a> during the first few days. Second, users started to understand how much this feature was important when browsing their photos and started to look for a dedicated app for that, and we indeed got more downloads over the following months.</p>
+
+<p>Same happened when Dropbox Carousel launched and with Google photos. When the big companies enter the arena you should start to worry, but you should also be flattered, because that means that there is something worth fighting about, and in today’s world - there is plenty of room for you too there.</p>
+
+<blockquote>Remember: if the Gorilla is blowing down your neck - that means you're on the right track, just run faster =)</blockquote>
+
+
+<h2>7. You forget about your comfort zone</h2>
+
+<p>Here is some very small taste of the things that I had the privilege to do over the last 3 years. All are things  that I&rsquo;ve never done before:</p>
+
+<ul>
+<li><p>I gave 2 talks on 2 different DroidCon conferences (The biggest Android conference around)</p></li>
+<li><p>I delivered tens of pitches in English as part of our startup booth in conferences</p></li>
+<li><p>I went over couple to absolute strangers in the middle of the street and asked them to play with our app, just to gather some feedback</p></li>
+<li><p>I emailed hundreds of users, closed support tickets and solved their issues</p></li>
+<li><p>I went over to the home of one of our investors and worked with her on fixing an issue she had with the app</p></li>
+<li><p>I interviewed candidates applying for the company</p></li>
+<li><p>I started writing my blog :)</p></li>
+</ul>
+
+
+<p>  <img class="center" src="http://cosmic-fitness.com/wp-content/uploads/2015/03/comfort-zone-300x206.jpg"></p>
+
+<h2>8. Nobody is going tell you not to come with flip flops or that the CEO is coming tomorrow so you have to look like you’re working at 8AM</h2>
+
+<p><br>
+<img class="center" src="https://shem8.files.wordpress.com/2015/10/edit.jpg?w=660"></p>
+
+<p><br>
+Yup, you&rsquo;re able to start every Thursday with yoga on the beach and swimming in the sea, and we actually did it.</p>
+
+<p><br></p>
+
+<hr />
+
+<p>Looks like start-up life is all fun and games , but it&rsquo;s not. It&rsquo;s more like a roller coaster. The ride will take you to some new heights but you are also going to get lots of downs and falls (and I hope I&rsquo;ll write a blog post about it soon). But for all those who want my advice about which one is better - it&rsquo;s more about what kind of person you are and what do you want to achieve. Those small companies that are moving fast are great for learning new things and gaining experience on stuff you probably wouldn&rsquo;t do in a bigger company, but it&rsquo;s also very stressful and chaotic, and you have to be ready for this ride.</p>
+
+<p>As said, I’ve been in these ride over the past 3 years, I can’t say I’ve enjoy every second of it but when looking back, I can’t imagine how far I got and how much I gained from this adventure.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Pimp-up your splash screen]]></title>
+    <link href="http://shem8.github.io/blog/2015/10/02/pimp-up-your-splash-screen/"/>
+    <updated>2015-10-02T12:03:17+03:00</updated>
+    <id>http://shem8.github.io/blog/2015/10/02/pimp-up-your-splash-screen</id>
+    <content type="html"><![CDATA[<p>In the past, splash screen in Android was a dirty word, It was usually a bad sign to an app that was converted from iPhone. But lately- Google added <a href="https://www.google.com/design/spec/patterns/launch-screens.html">launch screens</a> to the design guidelines, and maybe they changed the name, <a href="http://www.androiduipatterns.com/2015/08/splash-screen-with-any-other-name-is.html?m=1">but the concept is still the same</a>.</p>
+
+<!--more-->
+
+
+<p>Splash screen- Good or Bad debate aside, in <a href="https://play.google.com/store/apps/details?id=shem.getit&amp;hl=en">Ripples</a> I decided to go with the Google guidelines and do my own splash screen, but no just a simple one with the app logo, I wanted to do something different.</p>
+
+<p>A couple of words about Ripples to the ones who don&rsquo;t know- It&rsquo;s a very simple app that all about little circles that slowly reveals and getting bigger. So what I thought is revealing the Ripples logo in the splash screen with some ripples animations in some masking-like way:</p>
+
+<p><a href="https://shem8.files.wordpress.com/2015/09/crop.gif"><img src="https://shem8.files.wordpress.com/2015/09/crop.gif" alt="crop" /></a>The easiest way to do it is just taking this gif and put it in the splash screen, but I&rsquo;m not gonna do it because:</p>
+
+<ol>
+<li><p>It&rsquo;ll make this blog post to a pretty short and pointless</p></li>
+<li><p>It will add a lot of resources to the app and make it bigger with no reason</p></li>
+<li><p>We won&rsquo;t learn anything new</p></li>
+</ol>
+
+
+<p>So how we gonna do it? With some basic and easy Android drawing methods!</p>
+
+<p>First lets build the splash view with the image, It&rsquo;s a simple view that just load the bitmap and give the view the same size as the bitmap, pay attention that we not displaying anything yet:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+public class SplashView extends View {
+    private Bitmap bitmap;</p>
+
+<pre><code>public SplashView(Context context) {
+    super(context);
+    init();
+}
+
+private void init() {
+    bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.logo);
+}
+
+@Override
+protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+    int w = MeasureSpec.makeMeasureSpec(bitmap.getWidth(), MeasureSpec.EXACTLY);
+    int h = MeasureSpec.makeMeasureSpec(bitmap.getHeight(), MeasureSpec.EXACTLY);
+    super.onMeasure(w, h);
+}
+</code></pre>
+
+<p>}
+[/code]</p>
+
+<p>Now lets start drawing our graphic- We'll draw some masking over the logo bitmap:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+@Override
+protected void onDraw(Canvas canvas) {
+    float d = 1 / 0.4f;
+    float v = sizeAnimator.getAnimatedFraction();</p>
+
+<pre><code>Path path = new Path();
+float rad = 0.56f * bitmap.getHeight();
+path.addCircle((int)(0.08 * bitmap.getWidth()), (int)(0.32 * bitmap.getHeight()), rad * Math.min(d * v, 1), Path.Direction.CW);
+path.addCircle((int)(0.2 * bitmap.getWidth()), (int)(0.47 * bitmap.getHeight()), rad * Math.min(d * (v - 0.1f), 1), Path.Direction.CW);
+path.addCircle((int)(0.33 * bitmap.getWidth()), (int)(0.49 * bitmap.getHeight()), rad * Math.min(d * (v - 0.2f), 1), Path.Direction.CW);
+path.addCircle((int)(0.5 * bitmap.getWidth()), (int)(0.49 * bitmap.getHeight()), rad * Math.min(d * (v - 0.3f), 1), Path.Direction.CW);
+path.addCircle((int)(0.63 * bitmap.getWidth()), (int)(0.35 * bitmap.getHeight()), rad * Math.min(d * (v - 0.4f), 1), Path.Direction.CW);
+path.addCircle((int)(0.76 * bitmap.getWidth()), (int)(0.49 * bitmap.getHeight()), rad * Math.min(d * (v - 0.5f), 1), Path.Direction.CW);
+path.addCircle((int)(0.93 * bitmap.getWidth()), (int)(0.49 * bitmap.getHeight()), rad * Math.min(d * (v - 0.6f), 1), Path.Direction.CW);
+canvas.clipPath(path);
+canvas.drawBitmap(bitmap, 0, 0, null);
+</code></pre>
+
+<p>}
+[/code]</p>
+
+<p>Please ignore the constants value all over the place, those are parameter that I&rsquo;ve played with (things that you can&rsquo;t do if you chose to implement it with gif!) while making the animation. The important things are how we creating a new path (that built from circles) and clipping the canvas to this path so this what will gonna be visible eventually. After setting to mask for the canvas we just need to draw the bitmap.</p>
+
+<p>Now we just need to put the animation:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+private void init() {
+    &hellip;
+    sizeAnimator = ValueAnimator.ofFloat(0, 0.8f);
+    sizeAnimator.setDuration(2500);
+    sizeAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+        @Override
+        public void onAnimationUpdate(ValueAnimator animation) {
+            invalidate();
+        }
+    });
+}</p>
+
+<p>public void start() {
+    sizeAnimator.start();
+}
+[/code]</p>
+
+<p>And that&rsquo;s it:</p>
+
+<p><a href="https://shem8.files.wordpress.com/2015/09/output.gif"><img src="https://shem8.files.wordpress.com/2015/09/output.gif" alt="output" /></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Effectively reading]]></title>
+    <link href="http://shem8.github.io/blog/2015/09/11/affectively-reading/"/>
+    <updated>2015-09-11T18:16:35+03:00</updated>
+    <id>http://shem8.github.io/blog/2015/09/11/affectively-reading</id>
+    <content type="html"><![CDATA[<p><em>The internet is full of great pieces of knowledge. Starting from <a href="http://www.wired.com/2014/10/cheating-video-poker">amazing stories</a> and ending with some <a href="http://www.marcandangel.com/2014/07/06/12-quiet-rituals-of-enormously-successful-humans/">tips from the pros</a>. But because now days <a href="https://shem8.wordpress.com">every shitty twitter user that have a keyboard can open a blog</a> the internet is also full of garbage and texts that not worth your time, and on the other hand you always feel that you missing something, So what can we do?</em></p>
+
+<!--more-->
+
+
+<p>In this post I&rsquo;ll share with you my experience and my reading habits that I&rsquo;ve developed recently to maximize my reading time by reading exactly what I need and without afraid I&rsquo;m loosing something out there.</p>
+
+<p><strong><em>When I refer to &ldquo;reading&rdquo; on this post I refer to texts on the internet, especially blog posts or interesting articles. I&rsquo;m not talking about books (I hope I&rsquo;ll get to it on another post) or some news content that are not relevant if you read it a month later</em></strong></p>
+
+<hr />
+
+<p>Once upon a time I&rsquo;ve consume all my content via my social networks. First- it was Facebook, my friends were sharing some interesting links and I read them immediately (If I had a minute or two). Fast enough, Facebook algorithm started prioritize media over content, and my Facebook became mix of babies, dogs and oh-look-at-me-I-am-in-a-pool-party feed.</p>
+
+<p>[caption id=&ldquo;&rdquo; align=&ldquo;alignright&rdquo; width=&ldquo;356&rdquo;]<img src="http://i2.wp.com/www.ladycarcar.vn/wp-content/uploads/internet1.jpg?resize=356%2C193" alt="" /> Source: <a href="http://www.ladycarcar.vn/mat-tu-vi-su-dung-cong-nghe/">http://www.ladycarcar.vn/mat-tu-vi-su-dung-cong-nghe/</a>[/caption]</p>
+
+<p>That&rsquo;s when I decided to move to Twitter, and that sure was a mistake. Don&rsquo;t get me wrong, Twitter is the best way out there to know what going out right NOW (I barely visiting news sites any more), it is a great platform to meet new people or to get help. But it not that good for discovering some good content, mainly because the users there prefer to keep things short and light.</p>
+
+<p>In that point I went back to the drawing board, things was not worked for me. I had hard time following blogs that was importing for me (instead of reading the last post when it was released via RSS, I visited the blog once in a while and read all the posts I&rsquo;ve missed). I didn&rsquo;t have time to read those links on Facebook and finding them later was impossible. And when I finally had time I didn&rsquo;t had any way to explore new cool content.</p>
+
+<h2>Step 1: Create your reading ritual</h2>
+
+<p>Reading demand some certain state of mind. For me, for example, reading on my smartphone didn't worked so well, because it&rsquo;s too small and also because there are so many notifications and I lost my focus easily. After trying all kinds of things it look like my (wife&rsquo;s) iPad works the best. It also works great for me because I&rsquo;m doing my reading as part of my <a href="http://stevecorona.com/morning-rituals-1-10-1000/">morning ritual</a> so I don&rsquo;t have to grab it with me elsewhere. So my reading ritual is on the morning with a cup a tea, looking at the sea from my living room window with an iPad to read.</p>
+
+<h2>Step 2: Find your platform</h2>
+
+<p>Now you need to build some mechanism for saving your reading queue. I&rsquo;m using <a href="https://getpocket.com">Pocket</a> and I really think it is the best one out there. What&rsquo;s important from this platform is:</p>
+
+<ol>
+<li><p>Easy to insert (add to the queue)</p></li>
+<li><p>Easy to pull (get the next for reading)</p></li>
+<li><p>It is also nice to have some tagging, sharing and search functionality.</p></li>
+</ol>
+
+
+<p>Pocket surly served the first 2 items: there is a <a href="https://chrome.google.com/webstore/detail/save-to-pocket/niloccemoadcdkdjlinkgdfekeahmflj?hl=en">chrome extension</a>, and android app that let you add articles quickly, and an app for almost all platforms for reading.</p>
+
+<p>Make sure that you have one and only platform and all the content you consume should be from there. Even if you saw something on Facebook, or a friend send some link on mail- add it to your reading list and read it from there, I&rsquo;ll explain why in the next step:</p>
+
+<h2>Step 3: Fill some content</h2>
+
+<p>So now we have all the infrastructure ready, how do we put something in? I will divide it to 3:</p>
+
+<ol>
+<li><p>Your direct channels- Those are the posts that you know that you don&rsquo;t wanna miss, like important blogs or interesting medium users. You want all those posts will be added automaticity to your platform.</p></li>
+<li><p>Specific aggregator/ digested list- This one is tricky. In &ldquo;The Tipping Point" Malcolm Gladwell says that on most of the times, it&rsquo;s better to ask a maven instead of learning things on yourself. If you, like me, can&rsquo;t handle all the blogs out there, not knowing all the bloggers and sites- find your maven that will send you the most important things out there.</p></li>
+<li><p>Recommendation engine- This one is the best for exploring some new stuff that not necessary fit to your main interest. This can be some algorithm that based on the crowd source or you personal taste (or better- both). That&rsquo;s why it&rsquo;s important to manage all your reading thought the same platform to give it as much information as possible for future learning.</p></li>
+</ol>
+
+
+<p>Those 3 aspects should fill some nice and variety reading list. Here is my reading list:</p>
+
+<ol>
+<li><p>As Android developer- the <a href="http://android-developers.blogspot.co.il/">Android blog</a> is really important to me and I want to know on any additional API or new features there is. I&rsquo;m also interested on every thing <a href="https://medium.com/@chethaase">Chet Haase</a> is publishing. And with <a href="https://ifttt.com/">IFTTT</a> it easily added to my pocket every time new item is publish.</p></li>
+<li><p>3 years ago I discover the wonderful <a href="http://softwareleadweekly.com/">software lead weekly</a> project, I&rsquo;m getting 1 weekly mail with the most interesting stuff out there about startup culture and leadership. And thanks to the awesome <a href="https://twitter.com/orenellenbogen">Oren Ellenbogen</a> there is a simple &lsquo;Add to pocket&rsquo; option.</p></li>
+<li><p>Pocket is doing amazing work here, and send me every week couple of articles that might interesting me (I say amazing because it&rsquo;s pretty accurate). Lately I also started using medium, and it&rsquo;s recommendation emails are nice too.</p></li>
+</ol>
+
+
+<h2>Step 4: Find your pace</h2>
+
+<p>I know lots of people that did it all but their Pocket app is just an endless list. They keep adding some stuff and never got to read half of them, soon enough they give up because they know there is no chance they gonna keep the pace. Start with small amount of articles, it&rsquo;s better to have an empty list and not a too long one that will make you give up. After you will make it an habit it will be easier to add more stuff, so you always need to iterate between step 3 and 4.</p>
+
+<p>For me- I started with reading around a few articles in the end of the week. That was build by 2 or 3 from the &ldquo;software lead weekly&rdquo; mail and maybe 2 more from the pocket mail. Step by step I increase my reading capacity and now I&rsquo;m reading 3 articles a day = 15 a week. And adding around the same amount (Android= 3, software lead weekly= 4-5, Pocket= 4-5, medium= 3-4).</p>
+
+<hr />
+
+<p>It took me couple of years but I really feel like my reading ritual helped me learn a lot of new things (about Android, tech and also on some other things that I&rsquo;ve never read about). Yes- of course, I still sometimes facing some &ldquo;What the hell I&rsquo;ve just read in the last 4 minutes&rdquo; moments, or skipping some important announcements because I don&rsquo;t have time. But you know- you can&rsquo;t always win the internet, winning 80% of the time is fine with me =)</p>
+
+<p><em>Cover photos by: <a href="http://20px.com/blog/2013/03/31/how-i-feel-when-i-put-stuff-on-the-internet/#.VfLQrZ2qqko">twenty pixels</a></em></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Android Drag and Drop]]></title>
+    <link href="http://shem8.github.io/blog/2015/09/04/android-drag-and-drop/"/>
+    <updated>2015-09-04T15:10:43+03:00</updated>
+    <id>http://shem8.github.io/blog/2015/09/04/android-drag-and-drop</id>
+    <content type="html"><![CDATA[<p><em>Although Android system has a very good <a href="http://developer.android.com/guide/topics/ui/drag-drop.html">built-in drag &amp; drop mechanism</a>, I seeing lots of libraries that just duplicate this behaviour, or users that hack they way for building drag &amp; drop on their apps. In this blog post I will explain how to implement a simple drag &amp; drop functionality between different views with a very small amount of code.</em></p>
+
+<!--more-->
+
+
+<h1>0. Setup</h1>
+
+<p>For our example we gonna build a simple 3x3 grid with a numbers from 1 to 9. Than the user will be able to drag and drop between those numbers and the result will be the multiplication of this 2 values on the dropped view.</p>
+
+<p>So first, let build our view with the numbers:</p>
+
+<p>[code language=&ldquo;xml&rdquo;]
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".MainActivityFragment"></p>
+
+<pre><code>&lt;TextView
+    android:id="@+id/text1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="1"
+    android:textSize="40sp"
+    android:layout_gravity="left|top" /&gt;
+
+&lt;TextView
+    android:id="@+id/text2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="2"
+    android:textSize="40sp"
+    android:layout_gravity="center_horizontal|top" /&gt;
+
+&lt;TextView
+    android:id="@+id/text3"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="3"
+    android:textSize="40sp"
+    android:layout_gravity="right|top" /&gt;
+
+&lt;TextView
+    android:id="@+id/text4"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="4"
+    android:textSize="40sp"
+    android:layout_gravity="left|center_vertical" /&gt;
+
+&lt;TextView
+    android:id="@+id/text5"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="5"
+    android:textSize="40sp"
+    android:layout_gravity="center" /&gt;
+
+&lt;TextView
+    android:id="@+id/text6"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="6"
+    android:textSize="40sp"
+    android:layout_gravity="right|center_vertical" /&gt;
+
+&lt;TextView
+    android:id="@+id/text7"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="7"
+    android:textSize="40sp"
+    android:layout_gravity="left|bottom" /&gt;
+
+&lt;TextView
+    android:id="@+id/text8"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="8"
+    android:textSize="40sp"
+    android:layout_gravity="center_horizontal|bottom" /&gt;
+
+&lt;TextView
+    android:id="@+id/text9"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="9"
+    android:textSize="40sp"
+    android:layout_gravity="right|bottom" /&gt;
+</code></pre>
+
+<p></FrameLayout>
+[/code]</p>
+
+<h1>1. Dragging</h1>
+
+<p>We&rsquo;ll setup each view to be draggable on long click:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+view.setOnLongClickListener(new View.OnLongClickListener() {
+    @Override
+        public boolean onLongClick(View v) {
+            ClipData data = ClipData.newPlainText(&ldquo;value&rdquo;, view.getText());
+            view.startDrag(data, new View.DragShadowBuilder(v), null, 0);
+            return true;
+        }
+    });
+}
+[/code]</p>
+
+<p>Couple of things to pay attention:</p>
+
+<ul>
+<li><p>We should pass the data of the view value to the drag and drop event for later use (to calculate the multiplication), we&rsquo;re doing it by using <a href="http://developer.android.com/reference/android/content/ClipData.html">ClipData</a>.</p></li>
+<li><p>We should show some indication about the dragging- that&rsquo;s what the <a href="http://developer.android.com/reference/android/view/View.DragShadowBuilder.html">DragShadowBuilder</a> for, by default he&rsquo;s drawing the view image on dragging position. You can use it for drawing another image or some other indication.</p></li>
+<li><p>When we&rsquo;re ready we call startDrag. Yap, that&rsquo;s simple.</p></li>
+</ul>
+
+
+<h1>2. Dropping</h1>
+
+<p>Now for the other side of the Drag&amp;Drop- the drop. Again, we&rsquo;ll setup each view with a drag listener:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+        view.setOnDragListener(new View.OnDragListener() {
+            @Override
+            public boolean onDrag(View v, DragEvent event) {
+                switch(event.getAction()) {
+                    case DragEvent.ACTION_DRAG_STARTED:
+                        return true;</p>
+
+<pre><code>                case DragEvent.ACTION_DRAG_ENTERED:
+                    v.setBackgroundColor(Color.LTGRAY);
+                    return true;
+
+                case DragEvent.ACTION_DRAG_LOCATION:
+                    return true;
+
+                case DragEvent.ACTION_DRAG_EXITED:
+                    v.setBackgroundColor(Color.TRANSPARENT);
+                    return true;
+
+                case DragEvent.ACTION_DROP:
+                    v.setBackgroundColor(Color.TRANSPARENT);
+                    int dragVal = Integer.parseInt(event.getClipData().getItemAt(0).getText().toString());
+                    int viewVal = Integer.parseInt(((TextView) v).getText().toString());
+                    ((TextView) v).setText("" + (dragVal + viewVal));
+                    return true;
+
+                case DragEvent.ACTION_DRAG_ENDED:
+                    return true;
+
+                default:
+                    break;
+            }
+            return false;
+        }
+    });
+</code></pre>
+
+<p>[/code]</p>
+
+<p>OMG THAT&rsquo;S SO MUCH CODE! AND WITH A SWITCH CASE!! YOU PROMISE IT SHOULD BE SIMPLE!!!
+Ok ok, please calm down, take a glass of bear and sit down. Actually the drag handling is pretty simple there just a bit of boilerplate code (cause you know, java&hellip;)</p>
+
+<p>Lets&rsquo;s go over all the actions in the drag event we should handle <strong>(remember, this listener is on the dropped view and all those actions related to this view, please don&rsquo;t confused between the dragged view and the dropped view):</strong></p>
+
+<ul>
+<li><p>ACTION_DRAG_STARTED- that&rsquo;s mean that there is some other view in the screen that is start dragging. If we want this other view will be able to be dropped on our view we should return &ldquo;true&rdquo;, if we&rsquo;ll return &ldquo;false&rdquo; all the dragging and dropping flow won&rsquo;t be relevant (and the related events won&rsquo;t be delivered).</p></li>
+<li><p>ACTION_DRAG_ENTERED- the dragged view was entered to our view area, usually we should show some indication here (like changing the background color on our case)</p></li>
+<li><p>ACTION_DRAG_LOCATION- that&rsquo;s mean that the dragging view is changing his location within our view area, not much to do here, so just ignore.</p></li>
+<li><p>ACTION_DRAG_EXITED- the dragged view was exited from our view area, again- indication should be show here.</p></li>
+<li><p>ACTION_DROP- an actual drop was committed on our view! Now&rsquo;s the time to do your logic (for our case putting the right value in the text box). Don&rsquo;t forget to reset your indication from the ACTION_DRAG_ENTERED event!</p></li>
+<li><p>ACTION_DRAG_ENDED- the drag and drop flow was ended, but not on our view ( =( ). Again, not relevant on our case so we just ignore.</p></li>
+</ul>
+
+
+<p>Pretty simple right? This is how this should look like:</p>
+
+<p><a href="https://shem8.files.wordpress.com/2015/09/draganddrop.gif"><img src="https://shem8.files.wordpress.com/2015/09/draganddrop.gif?w=180" alt="draganddrop" /></a></p>
+
+<p>You can also find the full project source code in <a href="https://github.com/shem8/AndroidDragAndDrop">my github</a></p>
+
+<p>_Credit for cover image: <a href="http://genius.com/1699408/Major-lazer-bubble-butt/I-aint-snoop-dogg-but-imma-drop-it-like-its-hot_">http://genius.com/1699408/Major-lazer-bubble-butt/I-aint-snoop-dogg-but-imma-drop-it-like-its-hot_</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Know what (not) to build (Droidcon 2015)]]></title>
+    <link href="http://shem8.github.io/blog/2015/08/24/know-what-not-to-build-droidcon-2015/"/>
+    <updated>2015-08-24T15:18:40+03:00</updated>
+    <id>http://shem8.github.io/blog/2015/08/24/know-what-not-to-build-droidcon-2015</id>
+    <content type="html"><![CDATA[<h3>Talk I had given on <a href="https://events.bizzabo.com/droidcontlv2015/agenda/session/106642">Droidcon 2015</a></h3>
+
+<!--more-->
+
+
+<p>[slideshare id=49175997&amp;doc=knowwhatnottobuild2-150609142509-lva1-app6892]</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Android ui tips & tricks (Droidcon 2014)]]></title>
+    <link href="http://shem8.github.io/blog/2015/08/24/android-ui-tips-tricks-droidcon-2014/"/>
+    <updated>2015-08-24T15:04:46+03:00</updated>
+    <id>http://shem8.github.io/blog/2015/08/24/android-ui-tips-tricks-droidcon-2014</id>
+    <content type="html"><![CDATA[<h3>Talk I had given on <a href="http://il.droidcon.com/2014/agenda/">Droidcon 2014</a></h3>
+
+<!--more-->
+
+
+<p>[slideshare id=35795002&amp;doc=androiduitipstricks-140612090259-phpapp02]</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Custom view- Part 2]]></title>
+    <link href="http://shem8.github.io/blog/2015/08/06/custom-view-part-2/"/>
+    <updated>2015-08-06T15:15:11+03:00</updated>
+    <id>http://shem8.github.io/blog/2015/08/06/custom-view-part-2</id>
+    <content type="html"><![CDATA[<h5><em>In <a href="https://shem8.wordpress.com/2015/07/31/custom-view-part-1/">part 1</a> we learned how to build a simple custom view that&rsquo;s integrate nicely with our pager view and show some indication about the current page, in this post we&rsquo;ll take the view to the next level and add some subviews for page headers</em></h5>
+
+<!--more-->
+
+
+<hr />
+
+<p>So we have simple nice looking pager indicator that animate smoothly when moving between tabs, but it&rsquo;s still missing some info about the tabs- something like the pages titles. So we&rsquo;ll add some subviews as the page titles and make them a bit interactive to show the selected page.
+Why I plan to use subviews instead of just drawing the text straight on the canvas?</p>
+
+<ul>
+<li><p>When drawing text you need to handle the text position, text size line breaking etc&hellip; Lets focus on building the view and let Android save us time by using TextView.</p></li>
+<li><p>When using subview we also save code on handling click events.</p></li>
+<li><p>By adding subviews we make ourselves use ViewGroup and learn how to handle layout and measure parent and child views, and we&rsquo;re all here to learn right? =)</p></li>
+</ul>
+
+
+<h1>0. Setup</h1>
+
+<p>Let make our PagerIndicatorView to extends ViewGroup so we&rsquo;ll be able to add sub views:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+public class PagerIndicatorView extends ViewGroup {
+[/code]</p>
+
+<p>Here is some tricky part that first I&rsquo;ve been waste couple of good hours debugging: view groups are usually not showing real UI, it just contains sub views and responsible to arrange them in the right order and layout, So by default the onDraw is skipped for ViewGroup. That&rsquo;s not the case for our view, so we need to disable it:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+public void init() {
+    &hellip;
+    setWillNotDraw(false);
+}
+[/code]</p>
+
+<p>That&rsquo;s it, our view is now officially became a ViewGroup and we&rsquo;re able to add it child views</p>
+
+<h1>1. Add the child views</h1>
+
+<p>Lets add the page titles, it will be a simple TextViews with the numbers:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+public void init() {
+    &hellip;
+    addView(getTextView(&ldquo;1&rdquo;));
+    addView(getTextView(&ldquo;2&rdquo;));
+    addView(getTextView(&ldquo;3&rdquo;));
+    addView(getTextView(&ldquo;4&rdquo;));
+}</p>
+
+<p>private TextView getTextView(String text) {
+    TextView v = new TextView(getContext());
+    v.setText(text);
+    v.setTextSize(30);
+    v.setGravity(Gravity.CENTER);
+    return v;
+}
+[/code]</p>
+
+<p>Now it&rsquo;s the time for putting the text views in the right position and size inside the view.</p>
+
+<p>First lets start by setting them the right size- each text view should be &frac14; from the view width and the same as the view height. The measurement mechanism in view is done in the <a href="http://developer.android.com/reference/android/view/View.html#onMeasure(int,%20int">onMeasure</a>) method and it is a bit tricky- uses something called <a href="http://developer.android.com/reference/android/view/View.MeasureSpec.html">measure spec</a>. I would recommend you to read about it, but it basically define the size and the mode of the view. For easy handling it- the framework supply the developers couple of helper methods for reading and creating specs:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+@Override
+protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+    final int width = getDefaultSize(getSuggestedMinimumWidth(), widthMeasureSpec);
+    final int childWidth = width / 4;
+    final int height = getDefaultSize(getSuggestedMinimumHeight(), heightMeasureSpec);
+    for (int i = 0; i &amp;lt; getChildCount(); i++) {
+        getChildAt(i).measure(View.MeasureSpec.makeMeasureSpec(childWidth, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(height, View.MeasureSpec.EXACTLY));
+    }
+    setMeasuredDimension(width, height);
+}
+[/code]</p>
+
+<p>Now for positioning the child views in the right places, this is done in the <a href="http://developer.android.com/reference/android/view/View.html#onLayout(boolean,%20int,%20int,%20int,%20int">onLayout</a>) method, we&rsquo;ll just go over the child views and position each child in the right offset:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+@Override
+protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
+    final int childW = (right - left) / 4;
+    final int childH = (bottom - top);
+    for (int i = 0; i &amp;lt; getChildCount(); i++) {
+        getChildAt(i).layout(i * childW, 0, (i + 1) * childW, childH);
+    }
+}
+[/code]</p>
+
+<p>Now you should get something like this:</p>
+
+<p><a href="https://shem8.files.wordpress.com/2015/08/screen.png"><img src="https://shem8.files.wordpress.com/2015/08/screen-e1438861347399.png" alt="screen" /></a></p>
+
+<h1>2. Interactive</h1>
+
+<p>So we have titles for all pages, but how about make it clear which page is selected (beside the background color I mean)? Lets make out view a little bit more interactive, cause you now what the say- god is in the details.</p>
+
+<p>We want to make the texts enlarge and be for strong when scrolling to the page:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+@Override
+protected void onDraw(Canvas canvas) {
+    &hellip;
+    for (int i = 0; i &amp;lt; getChildCount(); i++) {
+        final View view = getChildAt(i);
+        if (i == index) {
+            view.setScaleX(1 - Math.abs(prec) * 0.3f);
+            view.setScaleY(1 - Math.abs(prec) * 0.3f);
+            view.setAlpha(1 - Math.abs(prec) * 0.5f);
+        } else if (i == index + 1) {
+            view.setScaleX(0.7f + Math.abs(prec) * 0.3f);
+            view.setScaleY(0.7f + Math.abs(prec) * 0.3f);
+            view.setAlpha(0.5f + Math.abs(prec) * 0.5f);
+        } else {
+            view.setScaleX(0.7f);
+            view.setScaleY(0.7f);
+            view.setAlpha(0.5f);
+        }
+    }
+}
+[/code]</p>
+
+<p>And wallah:</p>
+
+<p><a href="https://shem8.files.wordpress.com/2015/08/final.gif"><img src="https://shem8.files.wordpress.com/2015/08/final.gif" alt="final" /></a></p>
+
+<hr />
+
+<h3>You can find the whole code in my <a href="https://github.com/shem8/customviewpager">git repository</a>, have fun!</h3>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Custom view- Part 1]]></title>
+    <link href="http://shem8.github.io/blog/2015/07/31/custom-view-part-1/"/>
+    <updated>2015-07-31T15:40:17+03:00</updated>
+    <id>http://shem8.github.io/blog/2015/07/31/custom-view-part-1</id>
+    <content type="html"><![CDATA[<p>Until couple of months ago I&rsquo;ve been a bit afraid writing custom views. I thought it&rsquo;s too complicated and had a lot of overhead with handling all layouting and interactions, I felt there is not enough documentation out there, not mention the edge cases and performance. I had my default Android view component in my toolbox and thought that everything I needed can be composed from those.</p>
+
+<!--more-->
+
+
+<p>The last part is true for most cases. Most of Android apps can be built only with the basic layouts and views out there, so why do we still need to build custom views sometimes?</p>
+
+<ol>
+<li><p>Performance- especially for very complicated views in a list. For this I would recommend you to read the great post by the legendary Lucas Rocha: <a href="http://lucasr.org/2014/05/12/custom-layouts-on-android/">Custom Layouts on Android</a></p></li>
+<li><p>Unique looking views with some specific ui, drawing, interactions or animation.</p></li>
+</ol>
+
+
+<p>This post (and the later one) will focus on the 2nd point, we&rsquo;ll try to build some custom tab indicator that eventually look will like this:<img src="https://shem8.files.wordpress.com/2015/07/step35.gif" alt="step3" /></p>
+
+<p>So ennough talking, lets get into code</p>
+
+<h1>0. Setup</h1>
+
+<p>We&rsquo;ll create a simple application with pager and our pager indicator (that for now just will be an empty view):</p>
+
+<p>activity_main.xml:</p>
+
+<p>[code language=&ldquo;xml&rdquo;]
+&lt;LinearLayout xmlns:android=&ldquo;<a href="http://schemas.android.com/apk/res/android">http://schemas.android.com/apk/res/android</a>&rdquo;
+    android:layout_width=&ldquo;match_parent&rdquo;
+    android:layout_height=&ldquo;match_parent&rdquo;
+    android:orientation=&ldquo;vertical&rdquo;&gt;</p>
+
+<pre><code>&amp;lt;android.support.v4.view.ViewPager
+    android:id="@+id/pager"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"/&amp;gt;
+
+&amp;lt;shem.customviewpager.PagerIndicatorView
+    android:id="@+id/indicator"
+    android:layout_width="match_parent"
+    android:layout_height="50dp" /&amp;gt;
+</code></pre>
+
+<p>&lt;/LinearLayout&gt;
+[/code]</p>
+
+<p>MainActivity.java:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+public class MainActivity extends AppCompatActivity {</p>
+
+<pre><code>private ViewPager mPager;
+private PagerAdapter mPagerAdapter;
+
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+
+    final PagerIndicatorView indicator = (PagerIndicatorView) findViewById(R.id.indicator);
+    mPager = (ViewPager) findViewById(R.id.pager);
+    mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
+    mPager.setAdapter(mPagerAdapter);
+}
+
+private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
+    public ScreenSlidePagerAdapter(FragmentManager fm) {
+        super(fm);
+    }
+
+    @Override
+    public Fragment getItem(int position) {
+        return TextFragment.newInstance(position + "");
+    }
+
+    @Override
+    public int getCount() {
+        return 4;
+    }
+}
+</code></pre>
+
+<p>}
+[/code]</p>
+
+<p>TextFragment.java:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+public class TextFragment extends Fragment {
+        private static final String TEXT_KEY = &ldquo;TEXT&rdquo;;</p>
+
+<pre><code>public static TextFragment newInstance(String text) {
+    TextFragment f = new TextFragment();
+    Bundle arg = new Bundle();
+    arg.putString(TEXT_KEY, text);
+    f.setArguments(arg);
+    return f;
+}
+
+@Override
+public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                         Bundle savedInstanceState) {
+    View view = inflater.inflate(R.layout.text_fragment, container, false);
+    String text = getArguments().getString(TEXT_KEY);
+    ((TextView)view.findViewById(R.id.textView)).setText(text);
+    return view;
+}
+</code></pre>
+
+<p>}
+[/code]</p>
+
+<p>PagerIndicatorView.java:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+public class PagerIndicatorView extends View {</p>
+
+<pre><code>public PagerIndicatorView(Context context, AttributeSet attrs) {
+    super(context, attrs);
+    init();
+}
+
+public void init() {
+    //Gonna init things for view here soon
+}
+</code></pre>
+
+<p>}
+[/code]</p>
+
+<h1>1. Simple indicator</h1>
+
+<p>Lets start with putting some indication in the view about where we are in the pager.</p>
+
+<p>So first we gonna create the Paint object that gonna be used for drawing, we&rsquo;ll use a simple solid color for now. We pre create it in the init method because it prefer no to allocate object in the onDraw method, because it gonna be called a lot.</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+    public void init() {
+        paint = new Paint();
+        paint.setColor(Color.LTGRAY);
+    }
+[/code]</p>
+
+<p>Now we about to draw the indicator in the right place in the view, remember that we&rsquo;re using a 4 items in the pager- so the width should be &frac14; of the canvas width:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        canvas.drawRect((index) * canvas.getWidth() / 4, 0, (1 + index) * canvas.getWidth() / 4, canvas.getHeight(), paint);
+    }
+[/code]</p>
+
+<p>Now we just need to update the view index and redraw it every time pager is changing:</p>
+
+<p>In PagerIndicatorView:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+    public void setProgress(int index) {
+        this.index = index;
+        invalidate();
+    }
+[/code]</p>
+
+<p>In MainActivity:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+    mPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                indicator.setProgress(position);
+            }
+        });
+[/code]</p>
+
+<p><img src="https://shem8.files.wordpress.com/2015/07/step15.gif" alt="step1" /></p>
+
+<h1>2. Make it smooth</h1>
+
+<p>So the indication works great but it just jump when we move from page to page, we would like it to be more smooth and indicate the real position when we move.
+For this we need to pass the position offset when the page scrolled and change a bit the calculation when drawing:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        canvas.drawRect((index + prec) * canvas.getWidth() / 4, 0, (1 + index + prec) * canvas.getWidth() / 4, canvas.getHeight(), paint);
+    }</p>
+
+<pre><code>public void setProgress(int index, float prec) {
+    this.index = index;
+    this.prec = prec;
+    invalidate();
+}
+</code></pre>
+
+<p>[/code]</p>
+
+<h1><img src="https://shem8.files.wordpress.com/2015/07/step25.gif" alt="step2" /></h1>
+
+<h1>3. Bring it to life</h1>
+
+<p>So now the view works well but it looks a bit boring, how about making it a bit more colorful?
+Let start by setting 4 colors- one for each tab:</p>
+
+<p>[code language=&ldquo;java&rdquo;]
+        colors = new int[] {Color.parseColor(&ldquo;#FFD600&rdquo;),
+                Color.parseColor(&ldquo;#FF6D00&rdquo;),
+                Color.parseColor(&ldquo;#0091EA&rdquo;),
+                Color.parseColor(&ldquo;#64DD17&rdquo;)};
+[/code]</p>
+
+<p>Now we need to get the right color to set when moving from color to color, for this we have a utiliy method that can calculate the right color while moving:</p>
+
+<p>[code language=&ldquo;java&rdquo;]</p>
+
+<pre><code>@Override
+protected void onDraw(Canvas canvas) {
+    super.onDraw(canvas);
+    paint.setColor(evaluateColor(prec, colors[index], colors[Math.min(index + 1, colors.length - 1)]));
+    canvas.drawRect((index + prec) * canvas.getWidth() / 4, 0, (1 + index + prec) * canvas.getWidth() / 4, canvas.getHeight(), paint);
+}
+
+public static int evaluateColor(float fraction, int startInt, int endInt) {
+    int startA = (startInt &amp;gt;&amp;gt; 24) &amp; 0xff;
+    int startR = (startInt &amp;gt;&amp;gt; 16) &amp; 0xff;
+    int startG = (startInt &amp;gt;&amp;gt; 8) &amp; 0xff;
+    int startB = startInt &amp; 0xff;
+
+    int endA = (endInt &amp;gt;&amp;gt; 24) &amp; 0xff;
+    int endR = (endInt &amp;gt;&amp;gt; 16) &amp; 0xff;
+    int endG = (endInt &amp;gt;&amp;gt; 8) &amp; 0xff;
+    int endB = endInt &amp; 0xff;
+
+    return (int)((startA + (int)(fraction * (endA - startA))) &amp;&amp; 24) |
+            (int)((startR + (int)(fraction * (endR - startR))) &amp;&amp; 16) |
+            (int)((startG + (int)(fraction * (endG - startG))) &amp;&amp; 8) |
+            (int)((startB + (int)(fraction * (endB - startB))));
+}
+</code></pre>
+
+<p>[/code]</p>
+
+<p><img src="https://shem8.files.wordpress.com/2015/07/step35.gif" alt="step3" /></p>
+
+<p>That&rsquo;s it, look like we have some nice looking indicator, in the <a href="https://shem8.wordpress.com/2015/08/06/custom-view-part-2/">next post</a> we&rsquo;ll add some sub views with tab titles, so stay tuned =)</p>
+]]></content>
+  </entry>
+  
+</feed>
