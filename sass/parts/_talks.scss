@@ -1,0 +1,15 @@
+.talk {
+   .media {
+     float: left;
+   }
+   .info {
+     margin-left:400px;
+     font-size: 1.5em;
+   }
+ }
+
+ .talk:after {
+    clear: both;
+    content: "";
+    display: block;
+ }

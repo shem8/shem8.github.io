@@ -70,5 +70,10 @@ As a geek I often imagine situations in life as a math equations and graphs (don
 {% img center /images/posts/graphs/PM.png %}
 
 ***
+<br>
+_Update: looks like people loving some of those graphs, so following couple of requests- you can now get it on shirts or stickers [here](https://teespring.com/stores/geeksshirts)._
+<br><br>
+***
+<br>
 
 *If you enjoyed this post, please hit the “recommend” button below and share this story. I also love reading all comments. Thanks!*

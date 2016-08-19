@@ -4,9 +4,11 @@
 
 $sans: "Optima", sans-serif, "Microsoft YaHei", "STHeiti" ;
 $serif: "Baskerville", serif;
-$mono: "Bitstream Vera Sans Mono", "Consolas", "Courier", monospace;
+//$mono: "Bitstream Vera Sans Mono", "Consolas", "Courier", monospace;
 $heading-font-family: "Verdana", $sans, sans-serif;
-$header-title-font-family: "Futura", $sans,  sans-serif;
+//$header-title-font-family: "Futura", $sans,  sans-serif;
 $header-subtitle-font-family: "Futura", $sans, sans-serif;
+$classic: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-$font: $font-default;
+//$font: $font-default;
+$font: $classic;
