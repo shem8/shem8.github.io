@@ -1,10 +1,22 @@
 .talk {
+   .title {
+     margin-bottom: 20px;
+   }
+    .date {
+      position: relative;
+      float: right;
+      top: 20px;
+			color: $color-gray02;
+      text-align: right;
+      width: auto;
+      font-size: 1.2em;
+    }
    .media {
      float: left;
    }
    .info {
      margin-left:400px;
-     font-size: 1.5em;
+     font-size: 1.4em;
    }
  }
 
