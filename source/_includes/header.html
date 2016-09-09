@@ -23,11 +23,14 @@
 		{% if site.googleplus_user and site.googleplus_hidden == false %}
 			<a class="google" href="https://plus.google.com/{{ site.googleplus_user }}" rel="author" title="Google+">Google+</a>
 		{% endif %}
-		{% if site.twitter_user %}
-			<a class="twitter" href="http://twitter.com/{{ site.twitter_user }}" title="Twitter">Twitter</a>
+    	{% if site.medium_user %}
+			<a class="medium" href="https://medium.com/@{{site.medium_user}}" title="Medium">Medium</a>
 		{% endif %}
 		{% if site.github_user %}
 			<a class="github" href="https://github.com/{{ site.github_user }}" title="GitHub">GitHub</a>
+		{% endif %}
+		{% if site.twitter_user %}
+			<a class="twitter" href="http://twitter.com/{{ site.twitter_user }}" title="Twitter">Twitter</a>
 		{% endif %}
 		{% if site.coderwall_user %}
 			<a class="coderwall" href="https://coderwall.com/{{ site.coderwall_user }}" title="Coderwall">Coderwall</a>

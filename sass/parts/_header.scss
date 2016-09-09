@@ -429,6 +429,13 @@ $header-height: 30px;
 					border: 1px solid darken(#EF7522, 10%);
 				}
 			}
+			&.medium{
+				background: image-url('social/medium.png') center no-repeat #00AB6C;
+				border: 1px solid #00AB6C;
+				&:hover{
+					border: 1px solid darken(#00AB6C, 10%);
+				}
+			}
 		}
 	}
 }
