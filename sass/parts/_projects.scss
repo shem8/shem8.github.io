@@ -11,17 +11,43 @@
      margin-top: 20px;
      margin-left: 250px;
      font-size: 1.5em;
-     height: 100px;
+     min-height: 100px;
      font-weight: bold;
    }
    .download {
      height: 80px;
      img {
-      display: block;
-      float: left;
-      height: 100%;
-      margin-left: 50px;
-    }
+        display: block;
+        float: left;
+        height: 100%;
+        margin-left: 50px;
+      }
+   	}
+
+
+   	@media screen and (max-width: 600px) {
+     .icon {
+       display: block;
+       margin: auto;
+       float: none;
+     }
+     .info {
+       min-height: 0px;
+       width: 100%;
+       margin-left: 5px;
+       margin-top: 10px;
+       font-size: 1.5em;
+     }
+     .download {
+       margin-top: 10px;
+       width: 100%;
+       img {
+         display: block;
+         margin: auto;
+         float: none;
+       }
+     }
+
    }
  }
 
