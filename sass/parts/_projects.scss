@@ -1,0 +1,32 @@
+.project {
+   .title {
+     margin-bottom: 20px;
+   }
+   .icon {
+     float: left;
+     width: 200px;
+     height: 200px;
+   }
+   .info {
+     margin-top: 20px;
+     margin-left: 250px;
+     font-size: 1.5em;
+     height: 100px;
+     font-weight: bold;
+   }
+   .download {
+     height: 80px;
+     img {
+      display: block;
+      float: left;
+      height: 100%;
+      margin-left: 50px;
+    }
+   }
+ }
+
+ .talk:after {
+    clear: both;
+    content: "";
+    display: block;
+ }
