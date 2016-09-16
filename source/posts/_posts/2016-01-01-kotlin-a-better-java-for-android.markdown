@@ -56,14 +56,14 @@ Second- Android considered as front end platform and as frond end developer I wo
 
 
 
-## Kotlin to the rescue
+# Kotlin to the rescue
 
 
+{% blockquote Kotlin official site http://kotlinlang.org %}
+Statically typed programming language for the JVM, Android and the browser
 
 
-<blockquote>Statically typed programming language for the JVM, **Android** and the browser
-
-[kotlinlang.org](http://kotlinlang.org)</blockquote>
+{% endblockquote %}
 
 
 JetBrains, the company behind Kotlin, understand the potential of Android build system and integrated the language compiled byte code straight into the Android gradle mechanism.
@@ -90,9 +90,9 @@ Now we're able to see how we can use the language for faster development:
 ### Kotlin Android Extensions
 
 
-[The Android Extensions plugin](https://kotlinlang.org/docs/tutorials/android-plugin.html) allows us to get rid from all the _findViewById _boilerplate code without having to add any extra code or shipping any additional runtime:
+[The Android Extensions plugin](https://kotlinlang.org/docs/tutorials/android-plugin.html) allows us to get rid from all the _findViewById_ boilerplate code without having to add any extra code or shipping any additional runtime:
 
-[code language="java"]
+``` kotlin
 // Using R.layout.activity_main from the main source set
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -100,10 +100,10 @@ public class MyActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        textView.setText(&quot;Hello, world!&quot;) // Instead of findView(R.id.textView) as TextView
+        textView.setText("Hello, world!") // Instead of findView(R.id.textView) as TextView
     }
 }
-[/code]
+```
 
 
 ### Code shrinking
@@ -111,30 +111,31 @@ public class MyActivity : Activity() {
 
 Code in Java:
 
-[code language="java"]
+``` java
 view.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
         //click handling
     }
 });
-[/code]
+```
 
 Comes to:
 
-[code language="java"]
+``` kotlin
 view.setOnClickListener({//click handling})
-[/code]
+```
 And:
 
-[code language="java"]
+``` java
 if (s != null) ? s.length() : 0
-[/code]
+```
 Comes to:
 
-[code language="java"]
+``` kotlin
 s?.length ?: -1
-[/code]
+```
+
 Isn't it wonderful?
 
 
@@ -143,7 +144,7 @@ Isn't it wonderful?
 
 Here is the real power of the language in my opinion, we can easily add utility function to our components from outside and use them seamlessly in our classes, here are some examples that I've used in my extension class:
 
-[code language="java"]
+``` kotlin
 fun AppCompatActivity.navigate(frag: Fragment) {
     val fragmentTransaction =  supportFragmentManager.beginTransaction()
     fragmentTransaction.replace(content.id, frag);
@@ -161,7 +162,7 @@ fun SharedPreferences.edit(func:SharedPreferences.Editor. () -&amp;amp;amp;gt; U
 }
 
 fun SharedPreferences.Editor.set(pair: Pair<String, String>)  = putString(pair.first, pair.second)
-[/code]
+```
 
 There are also some libraries out there that add you many more extentions like: [KAndroid](https://github.com/pawegio/KAndroid) and [androidKotlin](https://github.com/yoavst/androidKotlin), or even examples from others Android devs like [Jake Wharton](https://speakerdeck.com/jakewharton/android-development-with-kotlin-androidkw-number-001).
 

@@ -22,7 +22,7 @@ tags:
 At the first day in [MyRoll](http://www.myroll.com/about) I was exiting- it was my first day in a startup, I was the first employee in the company and we all were thrilled to get started the new adventure.
 <!--more-->
 
-[caption id="attachment_630" align="alignright" width="357"]![291404_493445824002481_472952276_o](https://shem8.files.wordpress.com/2016/01/291404_493445824002481_472952276_o.jpg?w=559) Me and my new best friend.[/caption]
+{% img right https://shem8.files.wordpress.com/2016/01/291404_493445824002481_472952276_o.jpg?w=559 357 * 'Me and my new best friend.' %}
 
 But you know you don't really on board until you get your new MacBook Pro.
 
@@ -30,12 +30,11 @@ In the past 3 years I'm pretty sure I've been seeing my Mac more than my wife. I
 
 A few months ago, the startup I was working for [got acquired](http://venturebeat.com/2015/11/12/avg-acquires-israeli-photo-management-startup-myroll-plans-to-integrate-the-technologies/) and I began my corporate life, as part of the move we left our old Macs behind and got the new super fast PCs. I'm really far from being a Windows fan, and I really liked the concept of working wherever you want, so I immediately raised my voice about this (some are getting laptops, but the default is PC).
 
-I was told that I can get a laptop, but they asked me one single question- "Why? Why do you really **need **a laptop?". I didn't actually had an answer, this is just the way it is, developers are working on Mac, this is how it goes, just go to the next DroidCon close to you home and look at the audience.
+I was told that I can get a laptop, but they asked me one single question- "Why? Why do you really **need** a laptop?". I didn't actually had an answer, this is just the way it is, developers are working on Mac, this is how it goes, just go to the next DroidCon close to you home and look at the audience.
 
 The only reason I had is that I might want working from home and their answer was "We don't want you to work from home- we want you to be with your family when you're home, leave work at work", they were right, my work-life balance is much better since I got here.
 
 So do I really need a Mac? Is it possible that this is just a useless trend that everyone following seamlessly? I thought about that in the following 3 months since I got here and came up with few points points:
-
 
 
 
@@ -51,9 +50,8 @@ So do I really need a Mac? Is it possible that this is just a useless trend that
   * Hackatons are great, I really enjoy the sense of responsibility of deliver a product in 24 hours, even if it's just an app that block your smartphone outgoing communication when  you're drunk (I'll call it "XGuard"). Bringing a PC to an hackaton will just waste you an hour for setup and will make you look as noob.
 
 
-[caption id="attachment_696" align="aligncenter" width="394"]![1621854_10201968909759284_1984374607_n](https://shem8.files.wordpress.com/2016/01/1621854_10201968909759284_1984374607_n.jpg?w=559) BattleHack Tel-Aviv 2014[/caption]
 
-
+{% img center https://shem8.files.wordpress.com/2016/01/1621854_10201968909759284_1984374607_n.jpg?w=559 394 * 'BattleHack Tel-Aviv 2014' %}
 
 
   * Healthier and refreshing work environment- sitting next to a desk is [killing you](http://www.diygenius.com/your-desk-job-is-killing-you-the-truth-about-sitting-down-infographic/), go and stand in front of the window, see the amazing world outside, go work in the sun and refresh your head.
@@ -67,24 +65,9 @@ So do I really need a Mac? Is it possible that this is just a useless trend that
 So that it, I now about to share this post with our VP of R&D and hope for good =)
 
 
-
-* * *
-
-
-
-
-
-Disclaimers:
-
-
-
+### Disclaimers:
 
   1. In a lot of places there isn't really a problem to get a laptop, but the problem is the default- because 90% of the people will go with the default.
 
 
   2. When referring to Mac I intend to unix based operation system laptop, because I think that developers should be familiar with terminal and shell scripting for couple of reason (that's for another post). I just think that Mac is best out there...
-
-
-
-
-*_feature image by [hivizme](https://hivizme.files.wordpress.com/2012/06/cable-mess.jpg)_
