@@ -4,7 +4,7 @@
   <title><![CDATA[80/20]]></title>
   <link href="http://shem8.github.io/atom.xml" rel="self"/>
   <link href="http://shem8.github.io/"/>
-  <updated>2016-09-16T17:25:31+03:00</updated>
+  <updated>2016-09-16T18:02:38+03:00</updated>
   <id>http://shem8.github.io/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
@@ -962,11 +962,9 @@ This time we’ll focus on collection of tools and resources that help you build
 </ul>
 
 
-<h2>Kotlin to the rescue</h2>
+<h1>Kotlin to the rescue</h1>
 
-<blockquote>Statically typed programming language for the JVM, **Android** and the browser
-
-[kotlinlang.org](http://kotlinlang.org)</blockquote>
+<blockquote><p>Statically typed programming language for the JVM, Android and the browser</p><footer><strong>Kotlin official site</strong> <cite><a href='http://kotlinlang.org'>kotlinlang.org/&hellip;</a></cite></footer></blockquote>
 
 
 <p>JetBrains, the company behind Kotlin, understand the potential of Android build system and integrated the language compiled byte code straight into the Android gradle mechanism.</p>
@@ -987,74 +985,113 @@ This time we’ll focus on collection of tools and resources that help you build
 
 <h3>Kotlin Android Extensions</h3>
 
-<p><a href="https://kotlinlang.org/docs/tutorials/android-plugin.html">The Android Extensions plugin</a> allows us to get rid from all the <em>findViewById </em>boilerplate code without having to add any extra code or shipping any additional runtime:</p>
+<p><a href="https://kotlinlang.org/docs/tutorials/android-plugin.html">The Android Extensions plugin</a> allows us to get rid from all the <em>findViewById</em> boilerplate code without having to add any extra code or shipping any additional runtime:</p>
 
-<p>[code language=&ldquo;java&rdquo;]
-// Using R.layout.activity_main from the main source set
-import kotlinx.android.synthetic.main.activity_main.*</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='kotlin'><span class='line'><span class="c1">// Using R.layout.activity_main from the main source set</span>
+</span><span class='line'><span class="k">import</span> <span class="nn">kotlinx.android.synthetic.main.activity_main.*</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">public</span> <span class="k">class</span> <span class="nc">MyActivity</span> <span class="p">:</span> <span class="n">Activity</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="n">Bundle</span><span class="p">?)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="k">super</span><span class="p">.</span><span class="n">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
+</span><span class='line'>        <span class="n">setContentView</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">activity_main</span><span class="p">)</span>
+</span><span class='line'>        <span class="n">textView</span><span class="p">.</span><span class="n">setText</span><span class="p">(</span><span class="s">&quot;Hello, world!&quot;</span><span class="p">)</span> <span class="c1">// Instead of findView(R.id.textView) as TextView</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<p>public class MyActivity : Activity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        textView.setText(&quot;Hello, world!&quot;) // Instead of findView(R.id.textView) as TextView
-    }
-}
-[/code]</p>
 
 <h3>Code shrinking</h3>
 
 <p>Code in Java:</p>
 
-<p>[code language=&ldquo;java&rdquo;]
-view.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        //click handling
-    }
-});
-[/code]</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">view</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>    <span class="nd">@Override</span>
+</span><span class='line'>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>        <span class="c1">//click handling</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'><span class="o">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>Comes to:</p>
 
-<p>[code language=&ldquo;java&rdquo;]
-view.setOnClickListener({//click handling})
-[/code]
-And:</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='kotlin'><span class='line'><span class="n">view</span><span class="p">.</span><span class="n">setOnClickListener</span><span class="p">({</span><span class="c1">//click handling})</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<p>[code language=&ldquo;java&rdquo;]
-if (s != null) ? s.length() : 0
-[/code]
-Comes to:</p>
 
-<p>[code language=&ldquo;java&rdquo;]
-s?.length ?: -1
-[/code]
-Isn&rsquo;t it wonderful?</p>
+<p>And:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="k">if</span> <span class="o">(</span><span class="n">s</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">?</span> <span class="n">s</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">:</span> <span class="mi">0</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Comes to:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='kotlin'><span class='line'><span class="n">s</span><span class="o">?.</span><span class="n">length</span> <span class="o">?:</span> <span class="p">-</span><span class="m">1</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Isn&rsquo;t it wonderful?</p>
 
 <h3>Extensions methods</h3>
 
 <p>Here is the real power of the language in my opinion, we can easily add utility function to our components from outside and use them seamlessly in our classes, here are some examples that I&rsquo;ve used in my extension class:</p>
 
-<p>[code language=&ldquo;java&rdquo;]
-fun AppCompatActivity.navigate(frag: Fragment) {
-    val fragmentTransaction =  supportFragmentManager.beginTransaction()
-    fragmentTransaction.replace(content.id, frag);
-    fragmentTransaction.commit();
-}</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='kotlin'><span class='line'><span class="k">fun</span> <span class="nf">AppCompatActivity</span><span class="p">.</span><span class="n">navigate</span><span class="p">(</span><span class="n">frag</span><span class="p">:</span> <span class="n">Fragment</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">val</span> <span class="py">fragmentTransaction</span> <span class="p">=</span>  <span class="n">supportFragmentManager</span><span class="p">.</span><span class="n">beginTransaction</span><span class="p">()</span>
+</span><span class='line'>    <span class="n">fragmentTransaction</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="n">content</span><span class="p">.</span><span class="n">id</span><span class="p">,</span> <span class="n">frag</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">fragmentTransaction</span><span class="p">.</span><span class="n">commit</span><span class="p">();</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">fun</span> <span class="nf">Fragment</span><span class="p">.</span><span class="n">userError</span><span class="p">(</span><span class="n">msg</span><span class="p">:</span> <span class="n">String</span><span class="p">?)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="n">Snackbar</span><span class="p">.</span><span class="n">make</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">Snackbar</span><span class="p">.</span><span class="n">LENGTH_LONG</span><span class="p">).</span><span class="n">show</span><span class="p">()</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">fun</span> <span class="nf">SharedPreferences</span><span class="p">.</span><span class="n">edit</span><span class="p">(</span><span class="n">func</span><span class="p">:</span><span class="n">SharedPreferences</span><span class="p">.</span><span class="n">Editor</span><span class="p">.</span> <span class="p">()</span> <span class="p">-&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">amp</span><span class="p">;</span><span class="n">amp</span><span class="p">;</span><span class="n">gt</span><span class="p">;</span> <span class="n">Unit</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">val</span> <span class="py">editor</span> <span class="p">=</span> <span class="n">edit</span><span class="p">()</span>
+</span><span class='line'>    <span class="n">editor</span><span class="p">.</span><span class="n">func</span><span class="p">()</span>
+</span><span class='line'>    <span class="n">editor</span><span class="p">.</span><span class="n">apply</span><span class="p">()</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">fun</span> <span class="nf">SharedPreferences</span><span class="p">.</span><span class="n">Editor</span><span class="p">.</span><span class="k">set</span><span class="p">(</span><span class="n">pair</span><span class="p">:</span> <span class="n">Pair</span><span class="p">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">String</span><span class="p">&gt;)</span>  <span class="p">=</span> <span class="n">putString</span><span class="p">(</span><span class="n">pair</span><span class="p">.</span><span class="n">first</span><span class="p">,</span> <span class="n">pair</span><span class="p">.</span><span class="n">second</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<p>fun Fragment.userError(msg: String?) {
-    Snackbar.make(view, msg, Snackbar.LENGTH_LONG).show()
-}</p>
-
-<p>fun SharedPreferences.edit(func:SharedPreferences.Editor. () -&amp;amp;amp;gt; Unit) {
-    val editor = edit()
-    editor.func()
-    editor.apply()
-}</p>
-
-<p>fun SharedPreferences.Editor.set(pair: Pair&lt;String, String>)  = putString(pair.first, pair.second)
-[/code]</p>
 
 <p>There are also some libraries out there that add you many more extentions like: <a href="https://github.com/pawegio/KAndroid">KAndroid</a> and <a href="https://github.com/yoavst/androidKotlin">androidKotlin</a>, or even examples from others Android devs like <a href="https://speakerdeck.com/jakewharton/android-development-with-kotlin-androidkw-number-001">Jake Wharton</a>.</p>
 
