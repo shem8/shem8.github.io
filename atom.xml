@@ -4,7 +4,7 @@
   <title><![CDATA[80/20]]></title>
   <link href="http://shem8.github.io/atom.xml" rel="self"/>
   <link href="http://shem8.github.io/"/>
-  <updated>2016-10-03T19:43:53+03:00</updated>
+  <updated>2016-10-04T10:10:35+03:00</updated>
   <id>http://shem8.github.io/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
@@ -18,12 +18,12 @@
     <link href="http://shem8.github.io/blog/2016/09/23/my-way-to-reversim/"/>
     <updated>2016-09-23T17:32:27+03:00</updated>
     <id>http://shem8.github.io/blog/2016/09/23/my-way-to-reversim</id>
-    <content type="html"><![CDATA[<p><em>On 20.9 I’ve been given a talk in <a href="http://summit2016.reversim.com/">Reversim Summit</a> (one of the biggest conference for developers in Israel) about building Android apps. This was my first time talking in a conference in this scale. It wasn’t easy but I survived and I’m here to talk about my journey.</em></p>
+    <content type="html"><![CDATA[<p><em>On 20.9 I presented at <a href="http://summit2016.reversim.com/">Reversim Summit</a> (one of the biggest conference for developers in Israel) about building Android apps. This was my first time talking in a conference at this scale. It wasn’t easy but I survived and I’m here to talk about my journey.</em></p>
 
 <!-- more -->
 
 
-<p>One day, something like 3 months ago, I stumble upon a post in one of my Facebook groups about a new conference for developers going to take place in September:</p>
+<p>One day, something like 3 months ago, I stumble upon a post in one of my Facebook groups about a conference for developers going to take place in September:</p>
 
 <blockquote><p>Hi all,</p><p>The Reversim Summit is probably one of the best (if not the best) independent software engineering (at large) conference in Israel, and it will be held this year at Sep. 19–20 at the Weizmann institute.</p><p>As an event 100% based on community generated content, the conference is as good as the quality of the submissions.</p><p>The call for papers is *now* open...</p></blockquote>
 
@@ -36,14 +36,14 @@
 
 <p>Luckily I wrote couple of technical posts, but most of them were some kind of tutorials on how to do all kind of things in Android. Also- most of them not gained too much tractions, what made me think that people won’t be too interested.</p>
 
-<p>Moreover, knowing that this conference going to get lots of submissions, I knew that my talk should be different. Because I don’t have enough reputation, and because people are interested more on technical problems in larger scale than mobile- If I will go head to head with other technical talks I’ll loose.</p>
+<p>Moreover, knowing that this conference going to get lots of submissions, I knew that my talk should be different. Given that I don’t have enough reputation, and because people are interested more on technical problems in larger scale than mobile- If I will go head to head with other technical talks I’ll loose.</p>
 
-<p>So I decided to choose my series blog posts about How to build a bad apps (<a href="http://shem8.github.io/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical/">part 1</a>, <a href="http://shem8.github.io/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui/">part 2</a>, <a href="http://shem8.github.io/blog/2016/05/06/10-good-rules-for-bad-app-part-3-product/">part 3</a>), this is great because:</p>
+<p>So, I decided to choose my series blog posts about How to build a bad app (<a href="http://shem8.github.io/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical/">part 1</a>, <a href="http://shem8.github.io/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui/">part 2</a>, <a href="http://shem8.github.io/blog/2016/05/06/10-good-rules-for-bad-app-part-3-product/">part 3</a>). This is great because:</p>
 
 <ol>
 <li>This will cover also other aspects of mobile developing, like design and product.</li>
 <li>The talk will be about my experience and things that I’ve done. I think those are the best talks.</li>
-<li>I don’t like too technical talks, I don’t believe that we can read too much code from slides or understand deep technical concept without actually playing with it. So this will be great for high level review with lots of small things that everyone can get.</li>
+<li>I don&rsquo;t like talks which are too technical- I don’t believe that we can read too much code from slides or understand deep technical concept without actually playing with it. So this will be great for high level review with lots of small things that everyone can get.</li>
 <li>It’s light, it’s funny, it’s a lecture that is fun to deliver.</li>
 </ol>
 
@@ -52,7 +52,7 @@
 
 <p>This is always a tricky part (although there’s couple of good resources about <a href="http://speaking.io/plan/writing-a-cfp/">how to write a good abstract for CFP</a> that can help).</p>
 
-<p>How do I make my abstract highlight my talk and make it unique? How do I describe what I’m talking about (how to build a bad app) without confusing the audience? How to say that it’s a bit technical but not much? How to let others know that it’s for developers, designers and products managers just with 1 paragraph?</p>
+<p>How do I make my abstract highlight my talk and make it unique? How do I describe what I’m talking about (how to build a bad app) without confusing the audience? How to say that it’s a bit technical but not too much? How to let others know that it’s for developers, designers and products managers just in a single paragraph?</p>
 
 <p>Tried my best and got this:</p>
 
