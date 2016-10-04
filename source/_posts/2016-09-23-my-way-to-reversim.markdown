@@ -1,0 +1,111 @@
+---
+layout: post
+title: "How I survived my first big conference talk"
+date: 2016-09-23 17:32:27 +0300
+comments: true
+categories:
+---
+
+*On 20.9 I presented at [Reversim Summit](http://summit2016.reversim.com/) (one of the biggest conference for developers in Israel) about building Android apps. This was my first time talking in a conference at this scale. It wasn’t easy but I survived and I’m here to talk about my journey.*
+<!-- more -->
+
+One day, something like 3 months ago, I stumble upon a post in one of my Facebook groups about a conference for developers going to take place in September:
+{% blockquote %}
+Hi all,
+
+The Reversim Summit is probably one of the best (if not the best) independent software engineering (at large) conference in Israel, and it will be held this year at Sep. 19–20 at the Weizmann institute.
+
+As an event 100% based on community generated content, the conference is as good as the quality of the submissions.
+
+The call for papers is *now* open...
+{% endblockquote %}
+This was the first time I heard about the Reversim Summit. I was familiar with the [podcast](http://www.reversim.com/) and knew it was good, so I knew the conference should worth something. So I decided to give it a try.
+
+## Picking the right content
+Ok, so I decided that I want to talk in the conference, but about what? One of the great tips that I’ve got (from the great [Chiu-Ki Chan](https://twitter.com/chiuki) about [how to be an Android expert](https://www.youtube.com/watch?v=PeKKzeAte30)) is to take one of your blog posts and create a talk. That’s, I thought, is a great way to give the reviewers a more compelling way instead of just 1–2 paragraphs when trying to describe what I’m going to talk about.
+
+Luckily I wrote couple of technical posts, but most of them were some kind of tutorials on how to do all kind of things in Android. Also- most of them not gained too much tractions, what made me think that people won’t be too interested.
+
+Moreover, knowing that this conference going to get lots of submissions, I knew that my talk should be different. Given that I don’t have enough reputation, and because people are interested more on technical problems in larger scale than mobile- If I will go head to head with other technical talks I’ll loose.
+
+So, I decided to choose my series blog posts about How to build a bad app ([part 1]({% post_url 2016-03-31-10-good-rules-for-bad-app-part-1-technical %}), [part 2]({% post_url 2016-04-17-10-good-rules-for-bad-app-part-2-uxui %}), [part 3]({% post_url 2016-05-06-10-good-rules-for-bad-app-part-3-product %})). This is great because:
+
+1. This will cover also other aspects of mobile developing, like design and product.
+2. The talk will be about my experience and things that I’ve done. I think those are the best talks.
+3. I don't like talks which are too technical- I don’t believe that we can read too much code from slides or understand deep technical concept without actually playing with it. So this will be great for high level review with lots of small things that everyone can get.
+4. It’s light, it’s funny, it’s a lecture that is fun to deliver.
+
+## Call for Papers
+This is always a tricky part (although there’s couple of good resources about [how to write a good abstract for CFP](http://speaking.io/plan/writing-a-cfp/) that can help).
+
+How do I make my abstract highlight my talk and make it unique? How do I describe what I’m talking about (how to build a bad app) without confusing the audience? How to say that it’s a bit technical but not too much? How to let others know that it’s for developers, designers and products managers just in a single paragraph?
+
+Tried my best and got this:
+{% blockquote %}
+Building a decent app is easy this days, there are plenty of tutorials, videos and blog post about it. In this session I’ll try to go over some of the top mistakes that everyone of us is doing while building his app. This will cover all the aspects of building bad app- technical, UI & UX, and product. So each one of you will be able to adapt his own favorite bad pattern and ruin his app.
+{% endblockquote %}
+
+I think it’s great because it’s clear, but still leave the reader curious. People might afraid that it’s not technical enough but they know they can get out with action items from the talk.
+
+The review started a week after, it was combined from crowd voting and team of moderators that process all requests and choose the best ones.
+
+There were around 300 propose sessions and only 30 will be approved, I was in the mobile track, were there 30 submissions and only 3 will be chosen. 10% chance, not so high as you can understand.
+
+After couple of mails and phone calls with my moderator (thanks [Adir Amsalem](https://twitter.com/amsalemadir)!), I got this email:
+
+{% img /images/posts/reversim/screenshot.png %}
+
+-> ***Shit just got real.*** <-
+
+## Warming up
+Now it’s time to do the actual work. I immediately schedule a talk in my work place as part of our bi-weekly company talking program.
+
+I decided to chose 5 rules for each list: technical, UI/UX and product. I wanted find for most of the 15 rules an  example from a real world app, aiming for big apps that everyone knows. Building a minimal slides, with the rules and a picture or two for visualisation (screenshots when possible, gifs for others) and couple of more slides for intro and background.
+
+{% img /images/posts/reversim/slide.png %}
+
+It was great for first run, but there were some problems:
+
+1. It was too long, it took me around 50 minutes and I only have 35 (plus 5 minutes for questions). **Solution- cut the rules list to 11.**
+2. The audience was able to see the rule in the slide’s title when I moved to the slide and before I started to talk about. That killed the surprise affect. **Solution- Change the order of the fade in animation, so the text will shown in the end.**
+3. Gifs were keep playing and steel the audience (and my) attention. **Solution- put a static image of the gif on top of the gif to “stop” the gif, and show in on click (great tip that I’m going to apply on all my presentation from now on).**
+
+After some tweaks, one of the mentors from the summit schedules another dry run on Wix offices. Kind of an intimate rehearsal (presenting it to him and another college) to gather final feedbacks.
+
+Again, we found things that can be improved:
+1. The intro is too long and not very clear. Solution- instead of talking about why I’m giving this lecture on 4 different slides, I’m going to tell my story on the first slide, tell about motivation on another slide, and remove the other 2.
+2. Videos on Google slides not working without internet connection. Solution- keeping a local copy of the video, and use it.
+3. The talk is finished kind of out of nowhere. Solution- add a summary slide with the list of all rules that we talked about.
+
+I also changed the theme to more cleaner one and came out with this final slides:
+
+## Show time
+September 19- the first day of the summit, register and gathering into the keynote (by the amazing Iris Shoor), entering a huge auditorium with around 500 people. Luckily (and actually with some disappointment) my session was scheduled to a much smaller room, so I didn’t need to freak out from having to talk in front of so many people.
+
+During the summit I got into some great talks (by Eyal Yavor, Lior Bar-On, Yuval Samet, Boaz Gaon and Oren Ellenbogen) and a amazing lighting talks (especially the ones by Hagai Levin and Michal Tirosh) and even a song! (by Yoni Tsafir). This is another nice benefit when you talk in a conference- you get a free ticket =)
+
+My talk was on the morning of the second day, I was a bit nervous but not too much. The Reversim team was great and everything was taken care for me. I just needed to memorize the order of the rules (because as you remember, I changed it and I don’t have the text in slide when I start talking about it) but beside of this I felt really confident.
+
+{% img /images/posts/reversim/IDOR3385.jpg %}
+
+Everything went very well, the hall wasn’t big so I didn’t need a microphone, what made it more natural. I also get some friends in the audience, what made me less stressed. I even nailed some jokes that I thought about right before I started.
+
+It’s all finished very quickly. It’s funny how you prepare yourself for very long time just to build a 40 minute talk. On the stage it even feel shorter.
+
+I got very good feedbacks, they said that the talk was very good and they learn one thing or two about mistakes that they didn’t thought about before.
+
+## What’s next
+Since then I gave the talk on another conference- [Droidcon Tel-Aviv](http://il.droidcon.com/2015/) and I plan to do it one or maybe two more times.
+
+I feel very comfortable talking in Hebrew, even in front of a big audience. My next milestone is to bring this kind confident to when I’m talking in English, and to give a talk in a conference abroad. I might need to prepare more than what I’m used to, but I think that I will able to do it very soon.
+
+## Conclusions
+1. Pick your talk wisely. Think what is your relative advantage and how your talk can stand out from all the others.
+2. Don’t be shy. Don’t think that you’re not interesting enough and you have nothing that others can learn from.
+4. With any rehearsal you will get you more feedback, doing it more- the better your talk and slides will be. BUT:
+3. Don’t overthink it. You’ll never get perfect. Learn where it’s good enough and stop you feel confident with what you got.
+
+<br/>
+===
+
+*Photos by: [Reversim Summit 2016 photo album](https://photos.google.com/share/AF1QipPORYX7nOWI1AsG8wE8SDrKCi3llj81FxRS1aXKfVrt1oauBI_KIZKWaAb79JoJ1w?key=OFJXdVJyZHUzckRjbUY3UXgyWmNSWHQ3R1lIR2F3)*
