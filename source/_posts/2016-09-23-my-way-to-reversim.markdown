@@ -86,7 +86,7 @@ During the summit I got into some great talks (by Eyal Yavor, Lior Bar-On, Yuval
 
 My talk was on the morning of the second day, I was a bit nervous but not too much. The Reversim team was great and everything was taken care for me. I just needed to memorize the order of the rules (because as you remember, I changed it and I don’t have the text in slide when I start talking about it) but beside of this I felt really confident.
 
-{% img /images/posts/reversim/IDOR3385.jpg %}
+{% img /images/posts/reversim/IDOR3385.png %}
 
 Everything went very well, the hall wasn’t big so I didn’t need a microphone, what made it more natural. I also get some friends in the audience, what made me less stressed. I even nailed some jokes that I thought about right before I started.
 
