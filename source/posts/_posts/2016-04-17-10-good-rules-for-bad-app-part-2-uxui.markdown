@@ -20,7 +20,7 @@ tags:
 - ux
 ---
 
-Welcome to my second part of the tutorial of how building a bad app. After we've building a bad app in the [first part](https://shem8.wordpress.com/2016/03/31/10-good-rules-for-bad-app-part-1-technical/), it's the time to call our designer to fuck it a bit more:
+Welcome to my second part of the tutorial of how building a bad app. After we've building a bad app in the [first part](http://shem8.github.com/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical/), it's the time to call our designer to fuck it a bit more:
 <!--more-->
 
 
