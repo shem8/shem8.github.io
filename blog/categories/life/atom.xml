@@ -4,7 +4,7 @@
   <title><![CDATA[Category: life | 80/20]]></title>
   <link href="http://shem8.github.io/blog/categories/life/atom.xml" rel="self"/>
   <link href="http://shem8.github.io/"/>
-  <updated>2017-03-31T16:49:42+03:00</updated>
+  <updated>2017-05-19T17:46:05+03:00</updated>
   <id>http://shem8.github.io/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
@@ -12,6 +12,82 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Tech life as graphs II]]></title>
+    <link href="http://shem8.github.io/blog/2017/05/19/tech-life-as-graphs-2/"/>
+    <updated>2017-05-19T13:02:04+03:00</updated>
+    <id>http://shem8.github.io/blog/2017/05/19/tech-life-as-graphs-2</id>
+    <content type="html"><![CDATA[<p><a href="http://shem8.github.com/blog/2016/06/03/life-as-graphs/">Another part</a> of me trying to visualize situations of my tech life as graphs</p>
+
+<!-- more -->
+
+
+<h2>Native apps</h2>
+
+<p><br>
+<img src="/images/posts/graphs2/native_apps-eq.png">
+<img src="/images/posts/graphs2/native_apps-eq2.png"></p>
+
+<p><img class="center" src="/images/posts/graphs2/native_apps.png"></p>
+
+<h2>Pair programing</h2>
+
+<p><br>
+<img src="/images/posts/graphs2/pairing.png"></p>
+
+<h2>Ruby on Rails magic</h2>
+
+<p><br>
+<img src="/images/posts/graphs2/rails_magic-eq.png"></p>
+
+<p><img class="center" src="/images/posts/graphs2/rails_magic.png"></p>
+
+<h2>Public speaking</h2>
+
+<p><br>
+<img src="/images/posts/graphs2/public_speaking-eq.png"></p>
+
+<p><img class="center" src="/images/posts/graphs2/public_speaking.png"></p>
+
+<h2>JS hype</h2>
+
+<p><br>
+<img src="/images/posts/graphs2/js-eq.png"></p>
+
+<p><img class="center" src="/images/posts/graphs2/js.png"></p>
+
+<h2>Working hours</h2>
+
+<p><br>
+<img class="center" src="/images/posts/graphs2/working.png"></p>
+
+<h2>Pull requests</h2>
+
+<p><br>
+<img src="/images/posts/graphs2/commits-eq.png"></p>
+
+<p><img class="center" src="/images/posts/graphs2/commits.png"></p>
+
+<h2>When watching <a href="http://wesbos.com/">Wes Bos</a> JS tutorials</h2>
+
+<p><br>
+<img src="/images/posts/graphs2/web.png"></p>
+
+<h2>Emails</h2>
+
+<p><br>
+<img src="/images/posts/graphs2/email-eq.png"></p>
+
+<p><img class="center" src="/images/posts/graphs2/email.png"></p>
+
+<hr />
+
+<p><br></p>
+
+<p><em>If you liked this post click the ♡ bellow and share this story. As a writer it means the world.</em></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Tech Life as graphs]]></title>

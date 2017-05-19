@@ -4,7 +4,7 @@
   <title><![CDATA[80/20]]></title>
   <link href="http://shem8.github.io/atom.xml" rel="self"/>
   <link href="http://shem8.github.io/"/>
-  <updated>2017-03-31T16:49:42+03:00</updated>
+  <updated>2017-05-19T17:46:05+03:00</updated>
   <id>http://shem8.github.io/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
@@ -12,6 +12,82 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Tech life as graphs II]]></title>
+    <link href="http://shem8.github.io/blog/2017/05/19/tech-life-as-graphs-2/"/>
+    <updated>2017-05-19T13:02:04+03:00</updated>
+    <id>http://shem8.github.io/blog/2017/05/19/tech-life-as-graphs-2</id>
+    <content type="html"><![CDATA[<p><a href="http://shem8.github.com/blog/2016/06/03/life-as-graphs/">Another part</a> of me trying to visualize situations of my tech life as graphs</p>
+
+<!-- more -->
+
+
+<h2>Native apps</h2>
+
+<p><br>
+<img src="http://shem8.github.io/images/posts/graphs2/native_apps-eq.png">
+<img src="http://shem8.github.io/images/posts/graphs2/native_apps-eq2.png"></p>
+
+<p><img class="center" src="http://shem8.github.io/images/posts/graphs2/native_apps.png"></p>
+
+<h2>Pair programing</h2>
+
+<p><br>
+<img src="http://shem8.github.io/images/posts/graphs2/pairing.png"></p>
+
+<h2>Ruby on Rails magic</h2>
+
+<p><br>
+<img src="http://shem8.github.io/images/posts/graphs2/rails_magic-eq.png"></p>
+
+<p><img class="center" src="http://shem8.github.io/images/posts/graphs2/rails_magic.png"></p>
+
+<h2>Public speaking</h2>
+
+<p><br>
+<img src="http://shem8.github.io/images/posts/graphs2/public_speaking-eq.png"></p>
+
+<p><img class="center" src="http://shem8.github.io/images/posts/graphs2/public_speaking.png"></p>
+
+<h2>JS hype</h2>
+
+<p><br>
+<img src="http://shem8.github.io/images/posts/graphs2/js-eq.png"></p>
+
+<p><img class="center" src="http://shem8.github.io/images/posts/graphs2/js.png"></p>
+
+<h2>Working hours</h2>
+
+<p><br>
+<img class="center" src="http://shem8.github.io/images/posts/graphs2/working.png"></p>
+
+<h2>Pull requests</h2>
+
+<p><br>
+<img src="http://shem8.github.io/images/posts/graphs2/commits-eq.png"></p>
+
+<p><img class="center" src="http://shem8.github.io/images/posts/graphs2/commits.png"></p>
+
+<h2>When watching <a href="http://wesbos.com/">Wes Bos</a> JS tutorials</h2>
+
+<p><br>
+<img src="http://shem8.github.io/images/posts/graphs2/web.png"></p>
+
+<h2>Emails</h2>
+
+<p><br>
+<img src="http://shem8.github.io/images/posts/graphs2/email-eq.png"></p>
+
+<p><img class="center" src="http://shem8.github.io/images/posts/graphs2/email.png"></p>
+
+<hr />
+
+<p><br></p>
+
+<p><em>If you liked this post click the ♡ bellow and share this story. As a writer it means the world.</em></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[5 things I learned as an Android developer after doing some Web development]]></title>
@@ -563,7 +639,7 @@ Do you remember trying to figure out what is going on with your database so you 
     <link href="http://shem8.github.io/blog/2016/05/06/10-good-rules-for-bad-app-part-3-product/"/>
     <updated>2016-05-06T15:37:07+03:00</updated>
     <id>http://shem8.github.io/blog/2016/05/06/10-good-rules-for-bad-app-part-3-product</id>
-    <content type="html"><![CDATA[<p>Welcome to the third (and last) part of the tutorial of how building a bad app. After we&rsquo;ve building a bad app in the <a href="https://shem8.wordpress.com/2016/03/31/10-good-rules-for-bad-app-part-1-technical/">first part</a>, and remarkably ruin its look and feel in the <a href="https://shem8.wordpress.com/2016/04/17/10-good-rules-for-bad-app-part-2-uxui/">second part</a>, we&rsquo;re now going to go over on 10 steps to easily how to kill your product:</p>
+    <content type="html"><![CDATA[<p>Welcome to the third (and last) part of the tutorial of how building a bad app. After we&rsquo;ve building a bad app in the <a href="http://shem8.github.com/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical/">first part</a>, and remarkably ruin its look and feel in the <a href="http://shem8.github.com/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui/">second part</a>, we&rsquo;re now going to go over on 10 steps to easily how to kill your product:</p>
 
 <!--more-->
 
@@ -629,7 +705,7 @@ Do you remember trying to figure out what is going on with your database so you 
     <link href="http://shem8.github.io/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui/"/>
     <updated>2016-04-17T19:04:28+03:00</updated>
     <id>http://shem8.github.io/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui</id>
-    <content type="html"><![CDATA[<p>Welcome to my second part of the tutorial of how building a bad app. After we&rsquo;ve building a bad app in the <a href="https://shem8.wordpress.com/2016/03/31/10-good-rules-for-bad-app-part-1-technical/">first part</a>, it&rsquo;s the time to call our designer to fuck it a bit more:</p>
+    <content type="html"><![CDATA[<p>Welcome to my second part of the tutorial of how building a bad app. After we&rsquo;ve building a bad app in the <a href="http://shem8.github.com/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical/">first part</a>, it&rsquo;s the time to call our designer to fuck it a bit more:</p>
 
 <!--more-->
 
@@ -1994,20 +2070,6 @@ Ok ok, please calm down, take a glass of bear and sit down. Actually the drag ha
 
 
 <p>[slideshare id=49175997&amp;doc=knowwhatnottobuild2-150609142509-lva1-app6892]</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Android ui tips & tricks (Droidcon 2014)]]></title>
-    <link href="http://shem8.github.io/blog/2015/08/24/android-ui-tips-tricks-droidcon-2014/"/>
-    <updated>2015-08-24T15:04:46+03:00</updated>
-    <id>http://shem8.github.io/blog/2015/08/24/android-ui-tips-tricks-droidcon-2014</id>
-    <content type="html"><![CDATA[<h3>Talk I had given on <a href="http://il.droidcon.com/2014/agenda/">Droidcon 2014</a></h3>
-
-<!--more-->
-
-
-<p>[slideshare id=35795002&amp;doc=androiduitipstricks-140612090259-phpapp02]</p>
 ]]></content>
   </entry>
   
