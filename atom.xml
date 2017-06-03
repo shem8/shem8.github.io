@@ -4,7 +4,7 @@
   <title><![CDATA[80/20]]></title>
   <link href="http://shem8.github.io/atom.xml" rel="self"/>
   <link href="http://shem8.github.io/"/>
-  <updated>2017-05-30T19:10:47+03:00</updated>
+  <updated>2017-06-03T16:14:53+03:00</updated>
   <id>http://shem8.github.io/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
@@ -12,6 +12,167 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Is there Room for one more?]]></title>
+    <link href="http://shem8.github.io/blog/2017/06/02/room-performance/"/>
+    <updated>2017-06-02T15:26:09+03:00</updated>
+    <id>http://shem8.github.io/blog/2017/06/02/room-performance</id>
+    <content type="html"><![CDATA[<p>In the last Google I/O, Google announced a new <a href="https://developer.android.com/topic/libraries/architecture/index.html">architecture components</a>. One of them is Room.
+Room is an (another) ORM solution for the Android developers. Combining with some other elements Google released (like LiveData, ViewModel, and Lifecycle Listeners)- basic app flows should be much simpler.</p>
+
+<!-- more -->
+
+
+<p>Indeed- Google did some nice work here. Straightforward tasks like displaying items from DB and update them was a pain, and you had to write a lot of code over and over. Now you can just use those out-of-the-box components. This will save time for developers: you will write less code, and you will have fewer bugs.</p>
+
+<p>But let&rsquo;s get back to the subject- if we examine the rest of the components, I feel most of them bringing new things to the table. But about Room- if there a need for another ORM library?</p>
+
+<h2>ORM?</h2>
+
+<p>Let&rsquo;s start from the beginning. For the ones that not familiar with, ORM stands for &ldquo;Object Relational Mapping&rdquo;. That&rsquo;s a prettier way to let the developers works with persistent objects instead or tables rows.</p>
+
+<p>That&rsquo;s mean that if I want to save all my users data in a database- I will work with the User object and the ORM layer will handle all the persistency stuff for me. Fun.</p>
+
+<h2>Current solutions</h2>
+
+<p>This concept is not new, developers used that technique for a long time, and it was natural that Android developers will need this kind of thing too.</p>
+
+<p>Soon enough we got a couple of 3rd libraries to handle it, just look on <a href="https://android-arsenal.com/tag/69">AndroidArsenal page</a> and understand we&rsquo;re getting into crowded space here. The most popular ones are probably <a href="http://ormlite.com/">ORMLite</a>, <a href="http://greenrobot.org/greendao/">GreenDAO</a> and <a href="https://github.com/Raizlabs/DBFlow">DbFlow</a>.</p>
+
+<h2>Creating a Model</h2>
+
+<p>There are two main ways to define the mapping between your objects and the tables in Java: some DSL + code generator (like what GreenDAO is using), or using annotation (like ORMLite, DBFlow and most of the libraries). Although I&rsquo;m not a big fan of annotations, I must say the later is an easier solution.</p>
+
+<p>These why it&rsquo;s no surprise that the Android team chose to go with this approach, so simple data model looks like this:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="nd">@Entity</span>
+</span><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">User</span> <span class="o">{</span>
+</span><span class='line'>    <span class="nd">@PrimaryKey</span>
+</span><span class='line'>    <span class="kd">private</span> <span class="kt">int</span> <span class="n">uid</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nd">@ColumnInfo</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;first_name&quot;</span><span class="o">)</span>
+</span><span class='line'>    <span class="kd">private</span> <span class="n">String</span> <span class="n">firstName</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nd">@ColumnInfo</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;last_name&quot;</span><span class="o">)</span>
+</span><span class='line'>    <span class="kd">private</span> <span class="n">String</span> <span class="n">lastName</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// Getters and setters are ignored for brevity,</span>
+</span><span class='line'>    <span class="c1">// but they&#39;re required for Room to work.</span>
+</span><span class='line'>    <span class="c1">// (So please go and switch to Kotlin)</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>As in any other library- you can set a custom name for the table or the columns, you can choose to index some stuff and specify relationships between models.</p>
+
+<h2>The API</h2>
+
+<p>To interact with the data models, we use DAO- data access object. So nothing new from Google here also. For each model, we need to declare a DAO with CRUD operations. Every library covers the main functionality and offers kind of the same sets of features.</p>
+
+<p>BUT while most of the ORM libraries using some in-code query builder, Room doing something nice and let you declare your queries in slick SQL formatting.</p>
+
+<p>For example, here is how you&rsquo;ll do a simple query for specific users in each one of the platforms:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="c1">//Room:</span>
+</span><span class='line'><span class="nd">@Query</span><span class="o">(</span><span class="s">&quot;SELECT * FROM user WHERE age &gt; :minAge&quot;</span><span class="o">)</span>
+</span><span class='line'><span class="kd">public</span> <span class="n">User</span><span class="o">[]</span> <span class="nf">loadAllUsersOlderThan</span><span class="o">(</span><span class="kt">int</span> <span class="n">minAge</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">//DbFlow:</span>
+</span><span class='line'><span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span> <span class="n">users</span> <span class="o">=</span> <span class="n">SQLite</span><span class="o">.</span><span class="na">select</span><span class="o">()</span>
+</span><span class='line'>                         <span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="n">User</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+</span><span class='line'>                         <span class="o">.</span><span class="na">where</span><span class="o">(</span><span class="n">User_Table</span><span class="o">.</span><span class="na">age</span><span class="o">.</span><span class="na">greaterThan</span><span class="o">(</span><span class="n">minAge</span><span class="o">)</span>
+</span><span class='line'>                         <span class="o">.</span><span class="na">queryList</span><span class="o">();</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">//ORMLite:</span>
+</span><span class='line'><span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span> <span class="n">users</span> <span class="o">=</span> <span class="n">userDao</span><span class="o">.</span><span class="na">queryBuilder</span><span class="o">()</span>
+</span><span class='line'>                          <span class="o">.</span><span class="na">where</span><span class="o">()</span>
+</span><span class='line'>                          <span class="o">.</span><span class="na">gt</span><span class="o">(</span><span class="s">&quot;age&quot;</span><span class="o">,</span> <span class="n">minAge</span><span class="o">)</span>
+</span><span class='line'>                          <span class="o">.</span><span class="na">query</span><span class="o">();</span>
+</span><span class='line'><span class="c1">//GreenDAO:</span>
+</span><span class='line'><span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span> <span class="n">users</span> <span class="o">=</span> <span class="n">userDao</span><span class="o">.</span><span class="na">queryBuilder</span><span class="o">()</span>
+</span><span class='line'>                          <span class="o">.</span><span class="na">where</span><span class="o">(</span><span class="n">Properties</span><span class="o">.</span><span class="na">Age</span><span class="o">.</span><span class="na">gt</span><span class="o">(</span><span class="n">minAge</span><span class="o">))</span>
+</span><span class='line'>                          <span class="o">.</span><span class="na">list</span><span class="o">();</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>On the one hand- it&rsquo;s cleaner and most of us familiar with SQL syntax, but on the contrary, you&rsquo;re losing some of the power of your object mapping (no autocomplete, and you need to remember the object&rsquo;s table).</p>
+
+<h2>Performance</h2>
+
+<p>Reading and writing to the database is an expensive IO operation. If you&rsquo;re working with lots of entities in your app, it might be a bottleneck.
+That&rsquo;s why GreenDAO and DbFlow are heavily investing in performance (<a href="https://github.com/Raizlabs/AndroidDatabaseLibraryComparison/issues/16">it might even get ugly some times</a>).</p>
+
+<p>I decided to check how Room performs in relation to the others, so I take the GreenDAO benchmark (I looked on <a href="https://github.com/Raizlabs/AndroidDatabaseLibraryComparison">Raizlabs benchmark</a> too, but I felt it&rsquo;s too biased), and added Room. You can see the source code <a href="https://github.com/greenrobot/android-database-performance/pull/19">here</a>.</p>
+
+<p>I compared the results to the libraries discussed in the post. I ran all tests on an emulator and took the average of each library results (I&rsquo;ll attach the full results of each library, so you&rsquo;ll able to take a closer look).</p>
+
+<p><img class="center" src="http://shem8.github.io/images/posts/room/chart_1.png">
+<img class="center" src="http://shem8.github.io/images/posts/room/chart_2.png">
+<img class="center" src="http://shem8.github.io/images/posts/room/chart_3.png">
+<img class="center" src="http://shem8.github.io/images/posts/room/chart_4.png"></p>
+
+<p>It is a simple, fast setup benchmark, and I didn&rsquo;t analyze the results too much. From first looking at the results- you can see that Room has no advantage in any aspect of performance over the other libs. While making small operations one by one- ORMLite has it&rsquo;s own advantages, when moving the bigger scales- DBFlow and GreenDAO obviously win (because the caching they use).</p>
+
+<h2>Summary</h2>
+
+<p>Google did a fantastic job by taking a step forward to help developers architect their apps better. The last components that Google introduced are right in place and should help each one of us write better code in less time.</p>
+
+<p>BUT, choosing to deliver <em>another</em> ORM solution, with no added value (unless I&rsquo;m missing something here), is something that I do not understand. I would expect that the team will take an existing solution that works, or even just recommend one (<a href="https://developer.android.com/topic/libraries/architecture/guide.html#fetching_data">like what they are doing with Retrofit</a>).</p>
+
+<hr />
+
+<hr />
+
+<p><em>If you liked this post click the ♡ bellow and share this story. As a writer it means the world.</em></p>
+
+<hr />
+
+<p><em>Full reports:</em><br>
+<em><a href="http://shem8.github.io/files/posts/room/PerfTestDbFlow-1by1.tsv">PerfTestDbFlow-1by1.tsv</a></em><br>
+<em><a href="http://shem8.github.io/files/posts/room/PerfTestDbFlow-batch.tsv">PerfTestDbFlow-batch.tsv</a></em><br>
+<em><a href="http://shem8.github.io/files/posts/room/PerfTestNotNull-1by1.tsv">PerfTestNotNull-1by1.tsv (GreenDAO)</a></em><br>
+<em><a href="http://shem8.github.io/files/posts/room/PerfTestNotNull-batch.tsv">PerfTestNotNull-batch.tsv (GreenDAO)</a></em><br>
+<em><a href="http://shem8.github.io/files/posts/room/PerfTestOrmLite-1by1.tsv">PerfTestOrmLite-1by1.tsv</a></em><br>
+<em><a href="http://shem8.github.io/files/posts/room/PerfTestOrmLite-batch.tsv">PerfTestOrmLite-batch.tsv</a></em><br>
+<em><a href="http://shem8.github.io/files/posts/room/PerfTestRoom-1by1.tsv">PerfTestRoom-1by1.tsv</a></em><br>
+<em><a href="http://shem8.github.io/files/posts/room/PerfTestRoom-batch.tsv">PerfTestRoom-batch.tsv</a></em><br></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Tech life as graphs II]]></title>
@@ -2056,20 +2217,6 @@ Ok ok, please calm down, take a glass of bear and sit down. Actually the drag ha
 <p>You can also find the full project source code in <a href="https://github.com/shem8/AndroidDragAndDrop">my github</a></p>
 
 <p>_Credit for cover image: <a href="http://genius.com/1699408/Major-lazer-bubble-butt/I-aint-snoop-dogg-but-imma-drop-it-like-its-hot_">http://genius.com/1699408/Major-lazer-bubble-butt/I-aint-snoop-dogg-but-imma-drop-it-like-its-hot_</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Know what (not) to build (Droidcon 2015)]]></title>
-    <link href="http://shem8.github.io/blog/2015/08/24/know-what-not-to-build-droidcon-2015/"/>
-    <updated>2015-08-24T15:18:40+03:00</updated>
-    <id>http://shem8.github.io/blog/2015/08/24/know-what-not-to-build-droidcon-2015</id>
-    <content type="html"><![CDATA[<h3>Talk I had given on <a href="https://events.bizzabo.com/droidcontlv2015/agenda/session/106642">Droidcon 2015</a></h3>
-
-<!--more-->
-
-
-<p>[slideshare id=49175997&amp;doc=knowwhatnottobuild2-150609142509-lva1-app6892]</p>
 ]]></content>
   </entry>
   

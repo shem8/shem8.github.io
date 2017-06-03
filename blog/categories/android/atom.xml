@@ -4,7 +4,7 @@
   <title><![CDATA[Category: android | 80/20]]></title>
   <link href="http://shem8.github.io/blog/categories/android/atom.xml" rel="self"/>
   <link href="http://shem8.github.io/"/>
-  <updated>2017-05-30T19:10:47+03:00</updated>
+  <updated>2017-06-03T16:14:53+03:00</updated>
   <id>http://shem8.github.io/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
@@ -12,6 +12,149 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Is there Room for one more?]]></title>
+    <link href="http://shem8.github.io/blog/2017/06/02/room-performance/"/>
+    <updated>2017-06-02T15:26:09+03:00</updated>
+    <id>http://shem8.github.io/blog/2017/06/02/room-performance</id>
+    <content type="html"><![CDATA[<p>In the last Google I/O, Google announced a new <a href="https://developer.android.com/topic/libraries/architecture/index.html">architecture components</a>. One of them is Room.
+Room is an (another) ORM solution for the Android developers. Combining with some other elements Google released (like LiveData, ViewModel, and Lifecycle Listeners)- basic app flows should be much simpler.</p>
+
+<!-- more -->
+
+
+<p>Indeed- Google did some nice work here. Straightforward tasks like displaying items from DB and update them was a pain, and you had to write a lot of code over and over. Now you can just use those out-of-the-box components. This will save time for developers: you will write less code, and you will have fewer bugs.</p>
+
+<p>But let&rsquo;s get back to the subject- if we examine the rest of the components, I feel most of them bringing new things to the table. But about Room- if there a need for another ORM library?</p>
+
+<h2>ORM?</h2>
+
+<p>Let&rsquo;s start from the beginning. For the ones that not familiar with, ORM stands for &ldquo;Object Relational Mapping&rdquo;. That&rsquo;s a prettier way to let the developers works with persistent objects instead or tables rows.</p>
+
+<p>That&rsquo;s mean that if I want to save all my users data in a database- I will work with the User object and the ORM layer will handle all the persistency stuff for me. Fun.</p>
+
+<h2>Current solutions</h2>
+
+<p>This concept is not new, developers used that technique for a long time, and it was natural that Android developers will need this kind of thing too.</p>
+
+<p>Soon enough we got a couple of 3rd libraries to handle it, just look on <a href="https://android-arsenal.com/tag/69">AndroidArsenal page</a> and understand we&rsquo;re getting into crowded space here. The most popular ones are probably <a href="http://ormlite.com/">ORMLite</a>, <a href="http://greenrobot.org/greendao/">GreenDAO</a> and <a href="https://github.com/Raizlabs/DBFlow">DbFlow</a>.</p>
+
+<h2>Creating a Model</h2>
+
+<p>There are two main ways to define the mapping between your objects and the tables in Java: some DSL + code generator (like what GreenDAO is using), or using annotation (like ORMLite, DBFlow and most of the libraries). Although I&rsquo;m not a big fan of annotations, I must say the later is an easier solution.</p>
+
+<p>These why it&rsquo;s no surprise that the Android team chose to go with this approach, so simple data model looks like this:
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="nd">@Entity</span>
+</span><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">User</span> <span class="o">{</span>
+</span><span class='line'>    <span class="nd">@PrimaryKey</span>
+</span><span class='line'>    <span class="kd">private</span> <span class="kt">int</span> <span class="n">uid</span><span class="o">;&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="nd">@ColumnInfo</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;first_name&quot;</span><span class="o">)</span>
+</span><span class='line'><span class="kd">private</span> <span class="n">String</span> <span class="n">firstName</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nd">@ColumnInfo</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;last_name&quot;</span><span class="o">)</span>
+</span><span class='line'><span class="kd">private</span> <span class="n">String</span> <span class="n">lastName</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Getters and setters are ignored for brevity,</span>
+</span><span class='line'><span class="c1">// but they&#39;re required for Room to work.</span>
+</span><span class='line'><span class="c1">// (So please go and switch to Kotlin)</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;}</span>
+</span></code></pre></td></tr></table></div></figure>
+As in any other library- you can set a custom name for the table or the columns, you can choose to index some stuff and specify relationships between models.</p>
+
+<h2>The API</h2>
+
+<p>To interact with the data models, we use DAO- data access object. So nothing new from Google here also. For each model, we need to declare a DAO with CRUD operations. Every library covers the main functionality and offers kind of the same sets of features.</p>
+
+<p>BUT while most of the ORM libraries using some in-code query builder, Room doing something nice and let you declare your queries in slick SQL formatting.</p>
+
+<p>For example, here is how you&rsquo;ll do a simple query for specific users in each one of the platforms:
+```java
+    //Room:
+    @Query(&ldquo;SELECT * FROM user WHERE age > :minAge&rdquo;)
+    public User[] loadAllUsersOlderThan(int minAge);</p>
+
+<pre><code>//DbFlow:
+List&lt;User&gt; users = SQLite.select()
+                         .from(User.class)
+                         .where(User_Table.age.greaterThan(minAge)
+                         .queryList();
+
+//ORMLite:
+List&lt;User&gt; users = userDao.queryBuilder()
+                          .where()
+                          .gt("age", minAge)
+                          .query();
+//GreenDAO:
+List&lt;User&gt; users = userDao.queryBuilder()
+                          .where(Properties.Age.gt(minAge))
+                          .list();
+</code></pre>
+
+<p>```
+On the one hand- it&rsquo;s cleaner and most of us familiar with SQL syntax, but on the contrary, you&rsquo;re losing some of the power of your object mapping (no autocomplete, and you need to remember the object&rsquo;s table).</p>
+
+<h2>Performance</h2>
+
+<p>Reading and writing to the database is an expensive IO operation. If you&rsquo;re working with lots of entities in your app, it might be a bottleneck.
+That&rsquo;s why GreenDAO and DbFlow are heavily investing in performance (<a href="https://github.com/Raizlabs/AndroidDatabaseLibraryComparison/issues/16">it might even get ugly some times</a>).</p>
+
+<p>I decided to check how Room performs in relation to the others, so I take the GreenDAO benchmark (I looked on <a href="https://github.com/Raizlabs/AndroidDatabaseLibraryComparison">Raizlabs benchmark</a> too, but I felt it&rsquo;s too biased), and added Room. You can see the source code <a href="https://github.com/greenrobot/android-database-performance/pull/19">here</a>.</p>
+
+<p>I compared the results to the libraries discussed in the post. I ran all tests on an emulator and took the average of each library results (I&rsquo;ll attach the full results of each library, so you&rsquo;ll able to take a closer look).</p>
+
+<p><img class="center" src="/images/posts/room/chart_1.png">
+<img class="center" src="/images/posts/room/chart_2.png">
+<img class="center" src="/images/posts/room/chart_3.png">
+<img class="center" src="/images/posts/room/chart_4.png"></p>
+
+<p>It is a simple, fast setup benchmark, and I didn&rsquo;t analyze the results too much. From first looking at the results- you can see that Room has no advantage in any aspect of performance over the other libs. While making small operations one by one- ORMLite has it&rsquo;s own advantages, when moving the bigger scales- DBFlow and GreenDAO obviously win (because the caching they use).</p>
+
+<h2>Summary</h2>
+
+<p>Google did a fantastic job by taking a step forward to help developers architect their apps better. The last components that Google introduced are right in place and should help each one of us write better code in less time.</p>
+
+<p>BUT, choosing to deliver <em>another</em> ORM solution, with no added value (unless I&rsquo;m missing something here), is something that I do not understand. I would expect that the team will take an existing solution that works, or even just recommend one (<a href="https://developer.android.com/topic/libraries/architecture/guide.html#fetching_data">like what they are doing with Retrofit</a>).</p>
+
+<hr />
+
+<hr />
+
+<p><em>If you liked this post click the ♡ bellow and share this story. As a writer it means the world.</em></p>
+
+<hr />
+
+<p><em>Full reports:</em><br>
+<em><a href="/files/posts/room/PerfTestDbFlow-1by1.tsv">PerfTestDbFlow-1by1.tsv</a></em><br>
+<em><a href="/files/posts/room/PerfTestDbFlow-batch.tsv">PerfTestDbFlow-batch.tsv</a></em><br>
+<em><a href="/files/posts/room/PerfTestNotNull-1by1.tsv">PerfTestNotNull-1by1.tsv (GreenDAO)</a></em><br>
+<em><a href="/files/posts/room/PerfTestNotNull-batch.tsv">PerfTestNotNull-batch.tsv (GreenDAO)</a></em><br>
+<em><a href="/files/posts/room/PerfTestOrmLite-1by1.tsv">PerfTestOrmLite-1by1.tsv</a></em><br>
+<em><a href="/files/posts/room/PerfTestOrmLite-batch.tsv">PerfTestOrmLite-batch.tsv</a></em><br>
+<em><a href="/files/posts/room/PerfTestRoom-1by1.tsv">PerfTestRoom-1by1.tsv</a></em><br>
+<em><a href="/files/posts/room/PerfTestRoom-batch.tsv">PerfTestRoom-batch.tsv</a></em><br></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Playing with Coordinator Layout]]></title>
@@ -414,316 +557,6 @@
 <hr />
 
 <p><em>That&rsquo;s all until the next time when we&rsquo;re going to talk a bit about UI and UX, Got some more suggestions for ways to make your code worse? Would love to hear your thoughts in the comments!</em></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Animated Vector Drawable]]></title>
-    <link href="http://shem8.github.io/blog/2016/02/25/animated-vector-drawable/"/>
-    <updated>2016-02-25T21:43:46+02:00</updated>
-    <id>http://shem8.github.io/blog/2016/02/25/animated-vector-drawable</id>
-    <content type="html"><![CDATA[<p>In API 21 the Android team released bunch of very cool things for material design, most of the things focus around the design specs like colors or transition animation, other were for the new widgets like FAB, card view or recycle view, but within all those things there were also two things that barely discussed- <a href="http://developer.android.com/reference/android/graphics/drawable/VectorDrawable.html">VectorDrawable</a> and <a href="http://developer.android.com/reference/android/graphics/drawable/AnimatedVectorDrawable.html">AnimatedVectorDrawable</a>.</p>
-
-<!--more-->
-
-
-<p><em>Edit: looks like those classes became so popular that the Android team decided to add them to the <a href="http://android-developers.blogspot.co.il/2016/02/android-support-library-232.html">latest support library</a>, yay!</em></p>
-
-<h2>Android resources</h2>
-
-<p>In Android, recourses took lots of space in the final APK, tools like Proguard or loading modules dynamically helped the developers very much decreasing their app size, but when it came to assets, we were very limited. You had to choose between create asset for each density or paying with cpu time and let android doing the resizing and risk by not perfect asset.</p>
-
-<p>I saw couple of apps that choose to download their assets from the internet but that&rsquo;s might be problematic for first run (intro) or cases you don&rsquo;t have a connection.</p>
-
-<p>That&rsquo;s why I was so happy hearing about the new VectorDrawable introduced in API 21, that was let us the ability to create vector shapes and scale them easily for all screen sizes. This was really great for icons or small buttons.</p>
-
-<p>Of course, developers were able to do it before with a custom view and just draw the icon them self with Path, but the VectorDrawable save us the unnecessary view and it also use the SVG Path syntax that it much easier and much more popular. Moreover- Android Studio were able to show you a vector drawable preview, what that make it much more connivance!</p>
-
-<h2>Animations</h2>
-
-<p>Animations were a pain too. You basically had 3 options:</p>
-
-<ol>
-<li><p>For a simple animations (like scaling, fading or moving) using the build-in view property animation, that was the case for 90% of the time.</p></li>
-<li><p>If you had more complex animation on complex view you could create a custom animation, but for this you had to write lots of code</p></li>
-<li><p>Use AnimationDrawable and put drawable for each frame.</p></li>
-</ol>
-
-
-<p>So again- for not trivial cases, you had to choose between writing lots of code or putting lots of assets.</p>
-
-<p>That&rsquo;s when AnimatedVectorDrawable introduced and let developers use basic animations with their VectorDrawables with few lines of code and much lower space.</p>
-
-<h2>Live example</h2>
-
-<p>Let&rsquo;s start- assume we have some search component and we want to move to and from search state. So we need to animate between search icon and cancel icon:</p>
-
-<p><img class="<a" src="href="https://shem8.files.wordpress.com/2016/02/search_icon.png">https://shem8.files.wordpress.com/2016/02/search_icon.png</a>" width="150" height="150">
-<img class="<a" src="href="https://shem8.files.wordpress.com/2016/02/cancel_icon.png">https://shem8.files.wordpress.com/2016/02/cancel_icon.png</a>" width="150" height="150"></p>
-
-<p>And the animation between those 2 icons (Added guides and slow motion to better understand the transition):</p>
-
-<p><img class="center <a" src="href="https://shem8.files.wordpress.com/2016/02/gif.gif">https://shem8.files.wordpress.com/2016/02/gif.gif</a>"></p>
-
-<p>As you can see we actually have 3 shapes that moves: 2 half circles that moves to lines (green and blue) and the line of the magnifying glass that just getting bigger and reaching to the end.</p>
-
-<p>First we need to create the shapes for the search icon:</p>
-
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="ni">&amp;lt;</span>?xml version=<span class="ni">&amp;ldquo;</span>1.0<span class="ni">&amp;rdquo;</span> encoding=<span class="ni">&amp;ldquo;</span>utf-8<span class="ni">&amp;rdquo;</span>?&gt;
-</span><span class='line'><span class="nt">&lt;vector</span> <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
-</span><span class='line'>    <span class="na">android:width=</span><span class="s">&quot;24dp&quot;</span>
-</span><span class='line'>    <span class="na">android:height=</span><span class="s">&quot;24dp&quot;</span>
-</span><span class='line'>    <span class="na">android:viewportWidth=</span><span class="s">&quot;24&quot;</span>
-</span><span class='line'>    <span class="na">android:viewportHeight=</span><span class="s">&quot;24&quot;</span><span class="nt">&gt;&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>path
-</span><span class='line'>    android:name=&quot;line&quot;
-</span><span class='line'>    android:pathData=&quot;M5.705,5.705 L18.295,18.295&quot;
-</span><span class='line'>    android:strokeWidth=&quot;2&quot;
-</span><span class='line'>    android:strokeColor=&quot;#000000&quot;
-</span><span class='line'>    android:trimPathStart=&quot;0.45&quot;
-</span><span class='line'>    android:trimPathEnd=&quot;1&quot; /<span class="ni">&amp;gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="ni">&amp;lt;</span>path
-</span><span class='line'>    android:name=&quot;circle1&quot;
-</span><span class='line'>    android:pathData=&quot;M5.705,5.705 A 4 4 0 1 1 12,12 L5.705,18.295&quot;
-</span><span class='line'>    android:strokeWidth=&quot;2&quot;
-</span><span class='line'>    android:strokeColor=&quot;#000000&quot;
-</span><span class='line'>    android:trimPathStart=&quot;0&quot;
-</span><span class='line'>    android:trimPathEnd=&quot;0.6&quot; /<span class="ni">&amp;gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="ni">&amp;lt;</span>path
-</span><span class='line'>    android:name=&quot;circle2&quot;
-</span><span class='line'>    android:pathData=&quot;M18.295,5.705 L12,12 A 4 4 0 1 1 5.705,5.705&quot;
-</span><span class='line'>    android:strokeWidth=&quot;2&quot;
-</span><span class='line'>    android:strokeColor=&quot;#000000&quot;
-</span><span class='line'>    android:trimPathStart=&quot;0.4&quot;
-</span><span class='line'>    android:trimPathEnd=&quot;1&quot; /<span class="ni">&amp;gt;</span>
-</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;&lt;/vector&gt;</span>
-</span></code></pre></td></tr></table></div></figure></p>
-
-<p>The syntax for creating SVG paths is not that complicated and you can learn about it <a href="https://www.w3.org/TR/SVG/paths.html">here</a>, Android Studio is also very handy here because you can see a preview and also import existent material app icons and see their paths as described <a href="http://developer.android.com/tools/help/vector-asset-studio.html">here</a>.</p>
-
-<p>Now lets create the animation, we&rsquo;ll focus on the animation from the search icon to cancel, the opposite is pretty the same just with reverse values. We going to create 3 different animations:</p>
-
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;set</span>
-</span><span class='line'><span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
-</span><span class='line'><span class="na">android:ordering=</span><span class="s">&quot;sequentially&quot;</span><span class="nt">&gt;&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>!-- first we need to immediately reset state --<span class="ni">&amp;gt;</span>
-</span><span class='line'><span class="ni">&amp;lt;</span>objectAnimator
-</span><span class='line'>    android:duration=&quot;0&quot;
-</span><span class='line'>    android:propertyName=&quot;trimPathStart&quot;
-</span><span class='line'>    android:valueFrom=&quot;0.45&quot;
-</span><span class='line'>    android:valueTo=&quot;0.45&quot;/<span class="ni">&amp;gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="ni">&amp;lt;</span>!-- then run the animation after a delay --<span class="ni">&amp;gt;</span>
-</span><span class='line'><span class="ni">&amp;lt;</span>objectAnimator
-</span><span class='line'>    android:propertyName=&quot;trimPathStart&quot;
-</span><span class='line'>    android:duration=&quot;300&quot;
-</span><span class='line'>    android:startOffset=&quot;250&quot;
-</span><span class='line'>    android:interpolator=&quot;@android:interpolator/fast_out_slow_in&quot;
-</span><span class='line'>    android:valueFrom=&quot;0.45&quot;
-</span><span class='line'>    android:valueTo=&quot;0&quot; /<span class="ni">&amp;gt;</span>
-</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;&lt;/set&gt;</span>
-</span></code></pre></td></tr></table></div></figure></p>
-
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;set</span>
-</span><span class='line'>    <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
-</span><span class='line'>    <span class="na">android:ordering=</span><span class="s">&quot;together&quot;</span><span class="nt">&gt;&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>objectAnimator
-</span><span class='line'>    android:propertyName=&quot;trimPathStart&quot;
-</span><span class='line'>    android:valueFrom=&quot;0&quot;
-</span><span class='line'>    android:valueTo=&quot;0.6&quot;
-</span><span class='line'>    android:duration=&quot;450&quot; /<span class="ni">&amp;gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="ni">&amp;lt;</span>objectAnimator
-</span><span class='line'>    android:propertyName=&quot;trimPathEnd&quot;
-</span><span class='line'>    android:valueFrom=&quot;0.6&quot;
-</span><span class='line'>    android:valueTo=&quot;1&quot;
-</span><span class='line'>    android:duration=&quot;600&quot; /<span class="ni">&amp;gt;</span>
-</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;&lt;/set&gt;</span>
-</span></code></pre></td></tr></table></div></figure></p>
-
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;set</span>
-</span><span class='line'>    <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
-</span><span class='line'>    <span class="na">android:ordering=</span><span class="s">&quot;together&quot;</span><span class="nt">&gt;&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>objectAnimator
-</span><span class='line'>    android:propertyName=&quot;trimPathStart&quot;
-</span><span class='line'>    android:valueFrom=&quot;0.4&quot;
-</span><span class='line'>    android:valueTo=&quot;0&quot;
-</span><span class='line'>    android:duration=&quot;600&quot; /<span class="ni">&amp;gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="ni">&amp;lt;</span>objectAnimator
-</span><span class='line'>    android:propertyName=&quot;trimPathEnd&quot;
-</span><span class='line'>    android:valueFrom=&quot;1&quot;
-</span><span class='line'>    android:valueTo=&quot;0.4&quot;
-</span><span class='line'>    android:duration=&quot;450&quot; /<span class="ni">&amp;gt;</span>
-</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;&lt;/set&gt;</span>
-</span></code></pre></td></tr></table></div></figure></p>
-
-<p>The animations are pretty basics and what we&rsquo;re doing here is just changing the start or the end of the path. Now we need to bring all animation together:</p>
-
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;animated-vector</span>
-</span><span class='line'>    <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
-</span><span class='line'>    <span class="na">android:drawable=</span><span class="s">&quot;@drawable/searchback_search&quot;</span><span class="nt">&gt;&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;pre&gt;&lt;code&gt;</span><span class="ni">&amp;lt;</span>target
-</span><span class='line'>    android:name=&quot;line&quot;
-</span><span class='line'>    android:animation=&quot;@animator/line_to_cancel&quot; /<span class="ni">&amp;gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="ni">&amp;lt;</span>target
-</span><span class='line'>    android:name=&quot;circle1&quot;
-</span><span class='line'>    android:animation=&quot;@animator/circle1_to_cancel&quot; /<span class="ni">&amp;gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="ni">&amp;lt;</span>target
-</span><span class='line'>    android:name=&quot;circle2&quot;
-</span><span class='line'>    android:animation=&quot;@animator/circle2_to_cancel&quot; /<span class="ni">&amp;gt;</span>
-</span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;p&gt;&lt;/animated-vector&gt;</span>
-</span></code></pre></td></tr></table></div></figure></p>
-
-<p>And now you can easily use the  search_to_cancel drawable in code, just don&rsquo;t forget to call <strong>start()</strong>:</p>
-
-<p><img class="center <a" src="href="https://shem8.files.wordpress.com/2016/02/final.gif">https://shem8.files.wordpress.com/2016/02/final.gif</a>"></p>
-
-<p>A few notes regarding to this process:</p>
-
-<ol>
-<li><p>Without <a href="//twitter.com/crafty">Nick Butcher</a> and his great resources (like the <a href="https://github.com/nickbutcher/plaid">plaid</a> app) I wouldn&rsquo;t know anything about AnimatedVectorDrawable, so a lot of credit from this blog post should go to him.</p></li>
-<li><p>Most of the paths are not that easy to build and you&rsquo;ll need to play with this pretty much, you can use tools like Photoshop to export SVG data, but still, some manually work be will here.</p></li>
-<li><p>The preview in Android Studio for the drawables is a bit buggy (especially around trimmed paths) so you need to test some things on device sometimes.</p></li>
-<li><p>From what I saw- on the first times the animation can stuck, so it better to set the final asset state after some delay to make sure the icon looks good in the end of the animation.</p></li>
-</ol>
-
-
-<p>That&rsquo;s for this time, hopes this will help you in the next time you want to build a great UX. =)
-<br>
-<br></p>
-
-<hr />
-
-<p><strong>Liked this post? Please share it with your friends!</strong></p>
 ]]></content>
   </entry>
   
