@@ -4,7 +4,7 @@
   <title><![CDATA[Category: android | 80/20]]></title>
   <link href="http://shem8.github.io/blog/categories/android/atom.xml" rel="self"/>
   <link href="http://shem8.github.io/"/>
-  <updated>2017-06-03T16:14:53+03:00</updated>
+  <updated>2017-06-03T20:21:53+03:00</updated>
   <id>http://shem8.github.io/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
@@ -24,9 +24,9 @@ Room is an (another) ORM solution for the Android developers. Combining with som
 <!-- more -->
 
 
-<p>Indeed- Google did some nice work here. Straightforward tasks like displaying items from DB and update them was a pain, and you had to write a lot of code over and over. Now you can just use those out-of-the-box components. This will save time for developers: you will write less code, and you will have fewer bugs.</p>
+<p>Indeed- Google did some nice work here. Straightforward tasks like displaying items from DB and update them was a pain, and you had to write a lot of code over and over. <a href="https://medium.com/proandroiddev/clean-easy-new-how-to-architect-your-app-part-1-e439668a523d">Now you can just use those out-of-the-box components</a>. This will save time for developers: you will write less code, and you will have fewer bugs.</p>
 
-<p>But let&rsquo;s get back to the subject- if we examine the rest of the components, I feel most of them bringing new things to the table. But about Room- if there a need for another ORM library?</p>
+<p>When examine those components, I feel most of them bringing new things to the table. But about <a href="https://developer.android.com/topic/libraries/architecture/room.html">Room</a>- is there a need for another ORM library?</p>
 
 <h2>ORM?</h2>
 
@@ -135,8 +135,6 @@ That&rsquo;s why GreenDAO and DbFlow are heavily investing in performance (<a hr
 <p>Google did a fantastic job by taking a step forward to help developers architect their apps better. The last components that Google introduced are right in place and should help each one of us write better code in less time.</p>
 
 <p>BUT, choosing to deliver <em>another</em> ORM solution, with no added value (unless I&rsquo;m missing something here), is something that I do not understand. I would expect that the team will take an existing solution that works, or even just recommend one (<a href="https://developer.android.com/topic/libraries/architecture/guide.html#fetching_data">like what they are doing with Retrofit</a>).</p>
-
-<hr />
 
 <hr />
 
