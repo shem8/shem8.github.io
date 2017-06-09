@@ -8,9 +8,9 @@ categories: android
 In the last Google I/O, Google announced a new [architecture components](https://developer.android.com/topic/libraries/architecture/index.html). One of them is Room.
 Room is an (another) ORM solution for the Android developers. Combining with some other elements Google released (like LiveData, ViewModel, and Lifecycle Listeners)- basic app flows should be much simpler.
 <!-- more -->
-Indeed- Google did some nice work here. Straightforward tasks like displaying items from DB and update them was a pain, and you had to write a lot of code over and over. Now you can just use those out-of-the-box components. This will save time for developers: you will write less code, and you will have fewer bugs.
+Indeed- Google did some nice work here. Straightforward tasks like displaying items from DB and update them was a pain, and you had to write a lot of code over and over. [Now you can just use those out-of-the-box components](https://medium.com/proandroiddev/clean-easy-new-how-to-architect-your-app-part-1-e439668a523d). This will save time for developers: you will write less code, and you will have fewer bugs.
 
-But let's get back to the subject- if we examine the rest of the components, I feel most of them bringing new things to the table. But about Room- if there a need for another ORM library?
+When examine those components, I feel most of them bringing new things to the table. But about [Room](https://developer.android.com/topic/libraries/architecture/room.html)- is there a need for another ORM library?
 
 ## ORM?
 Let's start from the beginning. For the ones that not familiar with, ORM stands for "Object Relational Mapping". That's a prettier way to let the developers works with persistent objects instead or tables rows.
@@ -95,8 +95,6 @@ Google did a fantastic job by taking a step forward to help developers architect
 BUT, choosing to deliver _another_ ORM solution, with no added value (unless I'm missing something here), is something that I do not understand. I would expect that the team will take an existing solution that works, or even just recommend one ([like what they are doing with Retrofit](https://developer.android.com/topic/libraries/architecture/guide.html#fetching_data)).
 
 ---
-
-***
 
 *If you liked this post click the ♡ bellow and share this story. As a writer it means the world.*
 
