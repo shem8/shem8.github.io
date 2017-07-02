@@ -4,7 +4,7 @@
   <title><![CDATA[80/20]]></title>
   <link href="http://shem8.github.io/atom.xml" rel="self"/>
   <link href="http://shem8.github.io/"/>
-  <updated>2017-06-03T20:21:53+03:00</updated>
+  <updated>2017-07-02T22:02:31+03:00</updated>
   <id>http://shem8.github.io/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
@@ -12,6 +12,88 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[5 things React world can learn from Android]]></title>
+    <link href="http://shem8.github.io/blog/2017/07/02/5-things-react-world-can-learn-from-android/"/>
+    <updated>2017-07-02T21:52:47+03:00</updated>
+    <id>http://shem8.github.io/blog/2017/07/02/5-things-react-world-can-learn-from-android</id>
+    <content type="html"><![CDATA[<p>In my <a href="http://shem8.github.io/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/">previous post</a>, I talked about a couple of things I notice after moving from my usual gig as an Android developer and doing some web development (especially React).</p>
+
+<p>As promised, after naming some things that Android can learn from the web development world, I will now focus on the other side- what can web developers can borrow from the Android world.</p>
+
+<!-- more -->
+
+
+<p>So lets start <em>(Putting my helmet on)</em>:</p>
+
+<h2>1. A decent IDE</h2>
+
+<p>Oh yes, I&rsquo;m touching a nerve right off the bat. But sorry, there is no way around it.</p>
+
+<p><strong>Web developers have no decent IDE, and they should use one.</strong></p>
+
+<p>We have excellent text editors, but it&rsquo;s not the same.</p>
+
+<p>Why the hell should I write my imports manually? How can I refactor my code peacefully when I&rsquo;m not sure I renamed ALL the instances of my method? Why can&rsquo;t I navigate easily in my source code?</p>
+
+<p>As a one that came from a world with a great IDEs (Java with Eclipse and IntlliJ), this is the thing that bothers me the most when I develop.</p>
+
+<p>Google took it to the next level, and they have a team that is working just on the developer tools for Android. I do not say we have to use a dedicated IDE like Android Studio, but at least give me something decent to work with.</p>
+
+<h2>2. Stop with those fucking to-do list apps</h2>
+
+<p>No really, WTF!? How many to-do list apps a man needs? Why is everyone writing the same thing over and over?</p>
+
+<p>Yeah, we got it- you write your tasks, and it saves on Redux, and you can finish some tasks and then can see the ongoing ones and the ones that you finish. I swear I saw things kind of apps like 5 different times while learning React.</p>
+
+<p>What about going to the next level- see how to sync data with the server, putting more than one type of data, handling user input, loading or any other edge case.</p>
+
+<p>Google builds real apps and releases the source code. For example- <a href="https://github.com/nickbutcher/plaid">Plaid app</a> that focus on design and animation, or <a href="https://github.com/nickbutcher/plaid">Muzei app</a> for working with images, or even the <a href="https://github.com/google/iosched">official Google I/O app</a>.</p>
+
+<p>Those are real apps with real users and real use cases. It is interesting how experienced developers handle apps with more than a couple of hundreds of lines of code.</p>
+
+<h2>3. Community Experts</h2>
+
+<p><a href="https://developers.google.com/experts/about">Google Developers Experts (GDEs)</a> are a global network of experienced developers (and others) actively supporting developers, startups and companies changing the world through web and mobile applications.</p>
+
+<p>That&rsquo;s mean that Google is encouraging (and also compensating) individuals to help and educate the community about Android.</p>
+
+<p>Think about yourself- what if you have a question, or something don&rsquo;t work, or need some kind of advice. Whom do you ask (or where)?</p>
+
+<p>Helping the community working with the platform is an integral part of developing a new platform, and I feel that Facebook can do better here.</p>
+
+<h2>4. Talk about more than just code.</h2>
+
+<p>React is relatively straightforward. You can easily get an app up and running in a few hours. However, a real app is more than just a couple of screens and components- it is much more than that. It is deal with bizarre user inputs and handling connections errors. It is making the user understand the flow and making actions easy and intuitive.</p>
+
+<p>I would love some bits of advice from the Facebook team about lessons learned after building React apps for such a long time and for so many users and use cases.</p>
+
+<p>Just like Google sharing things like <a href="https://developer.android.com/design/index.html">material design</a> guidelines, I would love to hear more about best practices when coming to build my single page app.</p>
+
+<h2>5. Work on architecture components (or adapt community solutions as best practices)</h2>
+
+<p>So we have the basic stuff, the bare bones of the app and soon enough we&rsquo;re going to write to high order components to handle the more high-level stuff.</p>
+
+<p>And those components will probably move with us (as a shared lib or worse- as a copy &amp; paste) to our next project.</p>
+
+<p>And we&rsquo;re not alone- so I assume others are written this code on their own projects.</p>
+
+<p>Because I&rsquo;m not the only one that needs to write a component that handles the state when my component&rsquo;s data is currently loading. And I&rsquo;m probably not the only one that sometimes wants to sync some values between the store and the local storage. Or animate components.</p>
+
+<p>In Android, it&rsquo;s known that Retrofit is the library for HTTP calls, Google even uses it in their <a href="https://developer.android.com/topic/libraries/architecture/guide.html#fetching_data">official examples</a>. For other things, they came up with their own solutions like <a href="https://developer.android.com/topic/libraries/architecture/index.html">architecture compoennts</a>.</p>
+
+<p>In react there is <a href="https://github.com/reacttraining/react-router">React router</a>, that is widely used. But beside of this- I&rsquo;m not really aware of this kind of things.</p>
+
+<hr />
+
+<p>I really like the web development world, and I feel that the community is much more involved (and bigger to be honest). But I feel this is the place where one should get up and lead the developers to more organized and structured environment.</p>
+
+<hr />
+
+<p>If you enjoyed this post, please hit the “recommend” button below and share this story. I’ll also love hearing your comments. Thanks!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Is there Room for one more?]]></title>
@@ -2023,198 +2105,6 @@ private void init() {
 <p>It took me couple of years but I really feel like my reading ritual helped me learn a lot of new things (about Android, tech and also on some other things that I&rsquo;ve never read about). Yes- of course, I still sometimes facing some &ldquo;What the hell I&rsquo;ve just read in the last 4 minutes&rdquo; moments, or skipping some important announcements because I don&rsquo;t have time. But you know- you can&rsquo;t always win the internet, winning 80% of the time is fine with me =)</p>
 
 <p><em>Cover photos by: <a href="http://20px.com/blog/2013/03/31/how-i-feel-when-i-put-stuff-on-the-internet/#.VfLQrZ2qqko">twenty pixels</a></em></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Android Drag and Drop]]></title>
-    <link href="http://shem8.github.io/blog/2015/09/04/android-drag-and-drop/"/>
-    <updated>2015-09-04T15:10:43+03:00</updated>
-    <id>http://shem8.github.io/blog/2015/09/04/android-drag-and-drop</id>
-    <content type="html"><![CDATA[<p><em>Although Android system has a very good <a href="http://developer.android.com/guide/topics/ui/drag-drop.html">built-in drag &amp; drop mechanism</a>, I seeing lots of libraries that just duplicate this behaviour, or users that hack they way for building drag &amp; drop on their apps. In this blog post I will explain how to implement a simple drag &amp; drop functionality between different views with a very small amount of code.</em></p>
-
-<!--more-->
-
-
-<h1>0. Setup</h1>
-
-<p>For our example we gonna build a simple 3x3 grid with a numbers from 1 to 9. Than the user will be able to drag and drop between those numbers and the result will be the multiplication of this 2 values on the dropped view.</p>
-
-<p>So first, let build our view with the numbers:</p>
-
-<p>[code language=&ldquo;xml&rdquo;]
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="20dp"
-    tools:context=".MainActivityFragment"></p>
-
-<pre><code>&lt;TextView
-    android:id="@+id/text1"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="1"
-    android:textSize="40sp"
-    android:layout_gravity="left|top" /&gt;
-
-&lt;TextView
-    android:id="@+id/text2"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="2"
-    android:textSize="40sp"
-    android:layout_gravity="center_horizontal|top" /&gt;
-
-&lt;TextView
-    android:id="@+id/text3"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="3"
-    android:textSize="40sp"
-    android:layout_gravity="right|top" /&gt;
-
-&lt;TextView
-    android:id="@+id/text4"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="4"
-    android:textSize="40sp"
-    android:layout_gravity="left|center_vertical" /&gt;
-
-&lt;TextView
-    android:id="@+id/text5"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="5"
-    android:textSize="40sp"
-    android:layout_gravity="center" /&gt;
-
-&lt;TextView
-    android:id="@+id/text6"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="6"
-    android:textSize="40sp"
-    android:layout_gravity="right|center_vertical" /&gt;
-
-&lt;TextView
-    android:id="@+id/text7"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="7"
-    android:textSize="40sp"
-    android:layout_gravity="left|bottom" /&gt;
-
-&lt;TextView
-    android:id="@+id/text8"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="8"
-    android:textSize="40sp"
-    android:layout_gravity="center_horizontal|bottom" /&gt;
-
-&lt;TextView
-    android:id="@+id/text9"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="9"
-    android:textSize="40sp"
-    android:layout_gravity="right|bottom" /&gt;
-</code></pre>
-
-<p></FrameLayout>
-[/code]</p>
-
-<h1>1. Dragging</h1>
-
-<p>We&rsquo;ll setup each view to be draggable on long click:</p>
-
-<p>[code language=&ldquo;java&rdquo;]
-view.setOnLongClickListener(new View.OnLongClickListener() {
-    @Override
-        public boolean onLongClick(View v) {
-            ClipData data = ClipData.newPlainText(&ldquo;value&rdquo;, view.getText());
-            view.startDrag(data, new View.DragShadowBuilder(v), null, 0);
-            return true;
-        }
-    });
-}
-[/code]</p>
-
-<p>Couple of things to pay attention:</p>
-
-<ul>
-<li><p>We should pass the data of the view value to the drag and drop event for later use (to calculate the multiplication), we&rsquo;re doing it by using <a href="http://developer.android.com/reference/android/content/ClipData.html">ClipData</a>.</p></li>
-<li><p>We should show some indication about the dragging- that&rsquo;s what the <a href="http://developer.android.com/reference/android/view/View.DragShadowBuilder.html">DragShadowBuilder</a> for, by default he&rsquo;s drawing the view image on dragging position. You can use it for drawing another image or some other indication.</p></li>
-<li><p>When we&rsquo;re ready we call startDrag. Yap, that&rsquo;s simple.</p></li>
-</ul>
-
-
-<h1>2. Dropping</h1>
-
-<p>Now for the other side of the Drag&amp;Drop- the drop. Again, we&rsquo;ll setup each view with a drag listener:</p>
-
-<p>[code language=&ldquo;java&rdquo;]
-        view.setOnDragListener(new View.OnDragListener() {
-            @Override
-            public boolean onDrag(View v, DragEvent event) {
-                switch(event.getAction()) {
-                    case DragEvent.ACTION_DRAG_STARTED:
-                        return true;</p>
-
-<pre><code>                case DragEvent.ACTION_DRAG_ENTERED:
-                    v.setBackgroundColor(Color.LTGRAY);
-                    return true;
-
-                case DragEvent.ACTION_DRAG_LOCATION:
-                    return true;
-
-                case DragEvent.ACTION_DRAG_EXITED:
-                    v.setBackgroundColor(Color.TRANSPARENT);
-                    return true;
-
-                case DragEvent.ACTION_DROP:
-                    v.setBackgroundColor(Color.TRANSPARENT);
-                    int dragVal = Integer.parseInt(event.getClipData().getItemAt(0).getText().toString());
-                    int viewVal = Integer.parseInt(((TextView) v).getText().toString());
-                    ((TextView) v).setText("" + (dragVal + viewVal));
-                    return true;
-
-                case DragEvent.ACTION_DRAG_ENDED:
-                    return true;
-
-                default:
-                    break;
-            }
-            return false;
-        }
-    });
-</code></pre>
-
-<p>[/code]</p>
-
-<p>OMG THAT&rsquo;S SO MUCH CODE! AND WITH A SWITCH CASE!! YOU PROMISE IT SHOULD BE SIMPLE!!!
-Ok ok, please calm down, take a glass of bear and sit down. Actually the drag handling is pretty simple there just a bit of boilerplate code (cause you know, java&hellip;)</p>
-
-<p>Lets&rsquo;s go over all the actions in the drag event we should handle <strong>(remember, this listener is on the dropped view and all those actions related to this view, please don&rsquo;t confused between the dragged view and the dropped view):</strong></p>
-
-<ul>
-<li><p>ACTION_DRAG_STARTED- that&rsquo;s mean that there is some other view in the screen that is start dragging. If we want this other view will be able to be dropped on our view we should return &ldquo;true&rdquo;, if we&rsquo;ll return &ldquo;false&rdquo; all the dragging and dropping flow won&rsquo;t be relevant (and the related events won&rsquo;t be delivered).</p></li>
-<li><p>ACTION_DRAG_ENTERED- the dragged view was entered to our view area, usually we should show some indication here (like changing the background color on our case)</p></li>
-<li><p>ACTION_DRAG_LOCATION- that&rsquo;s mean that the dragging view is changing his location within our view area, not much to do here, so just ignore.</p></li>
-<li><p>ACTION_DRAG_EXITED- the dragged view was exited from our view area, again- indication should be show here.</p></li>
-<li><p>ACTION_DROP- an actual drop was committed on our view! Now&rsquo;s the time to do your logic (for our case putting the right value in the text box). Don&rsquo;t forget to reset your indication from the ACTION_DRAG_ENTERED event!</p></li>
-<li><p>ACTION_DRAG_ENDED- the drag and drop flow was ended, but not on our view ( =( ). Again, not relevant on our case so we just ignore.</p></li>
-</ul>
-
-
-<p>Pretty simple right? This is how this should look like:</p>
-
-<p><a href="https://shem8.files.wordpress.com/2015/09/draganddrop.gif"><img src="https://shem8.files.wordpress.com/2015/09/draganddrop.gif?w=180" alt="draganddrop" /></a></p>
-
-<p>You can also find the full project source code in <a href="https://github.com/shem8/AndroidDragAndDrop">my github</a></p>
-
-<p>_Credit for cover image: <a href="http://genius.com/1699408/Major-lazer-bubble-butt/I-aint-snoop-dogg-but-imma-drop-it-like-its-hot_">http://genius.com/1699408/Major-lazer-bubble-butt/I-aint-snoop-dogg-but-imma-drop-it-like-its-hot_</a></p>
 ]]></content>
   </entry>
   
