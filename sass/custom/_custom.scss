@@ -3,3 +3,12 @@ article code {
   border: none;
   padding: 3px 5px;
 }
+
+.container .mid-col .mid-col-container #content article .entry-content blockquote {
+  p {
+    margin-bottom: 0;
+  }
+  footer {
+    margin-top: 1.5em;
+  }
+}
