@@ -10,7 +10,7 @@ tags:
 - css
 - webdevelopment
 ---
-As you know- I lately left my comfort zone, closed Android Studio and dive straight into a scary, rough sea called Web Development.
+[As you know](http://shem8.github.io/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/)- I lately left my comfort zone, closed Android Studio and dive straight into a scary, rough sea called Web Development.
 An integral part of building web apps is working with CSS. For the ones that not familiar with Cascading Style Sheet- this is how web developers design their web pages, give it some life and structure, add animations and lose their sanity while doing so.
 <!-- more -->
 In this post, I'll try to describe what it takes for one who wants, for a reason I can't understand, to become a master in CSS in 5 simple steps:
@@ -59,14 +59,19 @@ In that way, you’ll able to say things like: "Oh you're still using Flexbox? I
 
 ## 5. Work on your persuasion skills.
 
-One day your designer will come to you with a crazy UX concept that you absolutely have no idea how to implement. But you're a CSS master, and masters can't admit they don't know how to do something. So what can you do? You drive him out of this.
+One day your designer will come to you with a crazy UX concept that you absolutely have no idea how to implement. But you're a CSS master, and masters can't admit they don't know how to do something.
+
+So what can you do? You drive him out of this:
 {% blockquote %}
 "Oh, we can't animate it because it will break our site accessibility."
-
+{% endblockquote %}
+{% blockquote %}
 "Floating views are just looking bad on mobile, believe me."
-
+{% endblockquote %}
+{% blockquote %}
 "Material cards? Are we still in 2015?!"
-
+{% endblockquote %}
+{% blockquote %}
 "Pffff, like Facebook?! They're putting their CSS in their JS! Those guys are crazy!!"
 {% endblockquote %}
 Continue with this until he is ok with your standard Bootstrap starter template website.
