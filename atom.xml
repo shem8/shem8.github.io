@@ -4,7 +4,7 @@
   <title><![CDATA[80/20]]></title>
   <link href="http://shem8.github.io/atom.xml" rel="self"/>
   <link href="http://shem8.github.io/"/>
-  <updated>2017-07-02T22:03:08+03:00</updated>
+  <updated>2017-08-25T17:12:26+03:00</updated>
   <id>http://shem8.github.io/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
@@ -12,6 +12,93 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How to become a master in CSS in 5 simple steps]]></title>
+    <link href="http://shem8.github.io/blog/2017/08/25/how-to-become-a-css-master/"/>
+    <updated>2017-08-25T15:52:26+03:00</updated>
+    <id>http://shem8.github.io/blog/2017/08/25/how-to-become-a-css-master</id>
+    <content type="html"><![CDATA[<p><a href="http://shem8.github.io/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/">As you know</a>- I lately left my comfort zone, closed Android Studio and dive straight into a scary, rough sea called Web Development.
+An integral part of building web apps is working with CSS. For the ones that not familiar with Cascading Style Sheet- this is how web developers design their web pages, give it some life and structure, add animations and lose their sanity while doing so.</p>
+
+<!-- more -->
+
+
+<p>In this post, I&rsquo;ll try to describe what it takes for one who wants, for a reason I can&rsquo;t understand, to become a master in CSS in 5 simple steps:</p>
+
+<h2>1. lose your intuition</h2>
+
+<p>So you just need to add one more button to the end of the form, how hard it can get, right? No, PLEASE DON&rsquo;T SAY RIGHT!</p>
+
+<p>CSS not like the right side, it will always prefer left. Because when you&rsquo;ll add <code>float: right;</code> something wrong going to happen. Some elements will change their positions; some divs will go over each other; some old versions of IE going to display your page upside down. Why? I don&rsquo;t know.</p>
+
+<p>How to solve it? You probably need to add <code>overflow:hidden</code> to the parent element (or adding dummy div to clear floating, of course). Why? Again, I don&rsquo;t know.</p>
+
+<p>This is how CSS works, you think it supposes to work on one way, but you&rsquo;re usually wrong.</p>
+
+<p><img class="center" src="http://shem8.github.io/images/posts/graphs/css.png" width="500"></p>
+
+<h2>2. Practice meditation regularly</h2>
+
+<p>To continue with the previous part- when dealing with CSS, lots of things won&rsquo;t work as expected. You can try to understand the logic behind it, but most of the time it&rsquo;s just a waste of time.</p>
+
+<p>So what I recommend- before each day you know you are going to work on styling your page, take a couple of minutes and let your body and mind relax. Meditate with this in mind: &ldquo;this going to be hard, this going to be rough, but this is just software, and I won&rsquo;t let this non-deterministic system getting on my nerves.&rdquo;</p>
+
+<p>This, combining with removing any sharp objects away from your desk, can make your life (and your team&rsquo;s life) much more peaceful.</p>
+
+<p><img class="center" src="http://shem8.github.io/images/posts/css/css1.gif" width="300"></p>
+
+<h2>3. Don’t refresh your page. Ever.</h2>
+
+<p>When working with CSS, you&rsquo;re getting used to working straight on the browser, in that way you can easily play with your elements properties and get immediate feedback.</p>
+
+<p>But while a non-experienced developer will lose all his changes when accidentally refresh the page, a CSS master will know that refresh button is forbidden. Especially not before showing the result to the product manager.</p>
+
+<p>I have a theory that that&rsquo;s how SPA was invented.</p>
+
+<p><img class="center" src="http://shem8.github.io/images/posts/css/css3.jpg" width="300"></p>
+
+<h2>4. Subscribe to some newsletters.</h2>
+
+<p>Web development is a rapid pace changing environment. Frameworks change quickly, every week there&rsquo;s a new shiny library and new concepts introduced on a weekly basis.</p>
+
+<p>The best way to be on top of new tools and ideas is to subscribe to one or more newsletters.</p>
+
+<p>In that way, you’ll able to say things like: &ldquo;Oh you&rsquo;re still using Flexbox? I just use to work with CSS grid now; it&rsquo;s the new shit” when your PR completely messed up the page layout, and you don&rsquo;t know why.</p>
+
+<p><img class="center" src="http://shem8.github.io/images/posts/css/css4.png" width="300"></p>
+
+<h2>5. Work on your persuasion skills.</h2>
+
+<p>One day your designer will come to you with a crazy UX concept that you absolutely have no idea how to implement. But you&rsquo;re a CSS master, and masters can&rsquo;t admit they don&rsquo;t know how to do something.</p>
+
+<p>So what can you do? You drive him out of this:</p>
+
+<blockquote><p>"Oh, we can't animate it because it will break our site accessibility."</p></blockquote>
+
+
+<blockquote><p>"Floating views are just looking bad on mobile, believe me."</p></blockquote>
+
+
+<blockquote><p>"Material cards? Are we still in 2015?!"</p></blockquote>
+
+
+<blockquote><p>"Pffff, like Facebook?! They're putting their CSS in their JS! Those guys are crazy!!"</p></blockquote>
+
+
+<p>Continue with this until he is ok with your standard Bootstrap starter template website.</p>
+
+<p><img class="center" src="http://shem8.github.io/images/posts/css/css2.gif" width="300"></p>
+
+<hr />
+
+<p><em>Afterword: this post is sarcastic, and I admire each one and one of you out there that can align a text properly right next to the thumbnail just like the designer meant it to be.</em></p>
+
+<hr />
+
+<p><strong>If you enjoyed this post, please hit the “recommend” button below and share this story. I’ll also love hearing your comments. Thank you!</strong></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[5 things React world can learn from Android]]></title>
@@ -2028,83 +2115,6 @@ private void init() {
 <p>And that&rsquo;s it:</p>
 
 <p><a href="https://shem8.files.wordpress.com/2015/09/output.gif"><img src="https://shem8.files.wordpress.com/2015/09/output.gif" alt="output" /></a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Effectively reading]]></title>
-    <link href="http://shem8.github.io/blog/2015/09/11/affectively-reading/"/>
-    <updated>2015-09-11T18:16:35+03:00</updated>
-    <id>http://shem8.github.io/blog/2015/09/11/affectively-reading</id>
-    <content type="html"><![CDATA[<p><em>The internet is full of great pieces of knowledge. Starting from <a href="http://www.wired.com/2014/10/cheating-video-poker">amazing stories</a> and ending with some <a href="http://www.marcandangel.com/2014/07/06/12-quiet-rituals-of-enormously-successful-humans/">tips from the pros</a>. But because now days <a href="https://shem8.wordpress.com">every shitty twitter user that have a keyboard can open a blog</a> the internet is also full of garbage and texts that not worth your time, and on the other hand you always feel that you missing something, So what can we do?</em></p>
-
-<!--more-->
-
-
-<p>In this post I&rsquo;ll share with you my experience and my reading habits that I&rsquo;ve developed recently to maximize my reading time by reading exactly what I need and without afraid I&rsquo;m loosing something out there.</p>
-
-<p><strong><em>When I refer to &ldquo;reading&rdquo; on this post I refer to texts on the internet, especially blog posts or interesting articles. I&rsquo;m not talking about books (I hope I&rsquo;ll get to it on another post) or some news content that are not relevant if you read it a month later</em></strong></p>
-
-<hr />
-
-<p>Once upon a time I&rsquo;ve consume all my content via my social networks. First- it was Facebook, my friends were sharing some interesting links and I read them immediately (If I had a minute or two). Fast enough, Facebook algorithm started prioritize media over content, and my Facebook became mix of babies, dogs and oh-look-at-me-I-am-in-a-pool-party feed.</p>
-
-<p>[caption id=&ldquo;&rdquo; align=&ldquo;alignright&rdquo; width=&ldquo;356&rdquo;]<img src="http://i2.wp.com/www.ladycarcar.vn/wp-content/uploads/internet1.jpg?resize=356%2C193" alt="" /> Source: <a href="http://www.ladycarcar.vn/mat-tu-vi-su-dung-cong-nghe/">http://www.ladycarcar.vn/mat-tu-vi-su-dung-cong-nghe/</a>[/caption]</p>
-
-<p>That&rsquo;s when I decided to move to Twitter, and that sure was a mistake. Don&rsquo;t get me wrong, Twitter is the best way out there to know what going out right NOW (I barely visiting news sites any more), it is a great platform to meet new people or to get help. But it not that good for discovering some good content, mainly because the users there prefer to keep things short and light.</p>
-
-<p>In that point I went back to the drawing board, things was not worked for me. I had hard time following blogs that was importing for me (instead of reading the last post when it was released via RSS, I visited the blog once in a while and read all the posts I&rsquo;ve missed). I didn&rsquo;t have time to read those links on Facebook and finding them later was impossible. And when I finally had time I didn&rsquo;t had any way to explore new cool content.</p>
-
-<h2>Step 1: Create your reading ritual</h2>
-
-<p>Reading demand some certain state of mind. For me, for example, reading on my smartphone didn't worked so well, because it&rsquo;s too small and also because there are so many notifications and I lost my focus easily. After trying all kinds of things it look like my (wife&rsquo;s) iPad works the best. It also works great for me because I&rsquo;m doing my reading as part of my <a href="http://stevecorona.com/morning-rituals-1-10-1000/">morning ritual</a> so I don&rsquo;t have to grab it with me elsewhere. So my reading ritual is on the morning with a cup a tea, looking at the sea from my living room window with an iPad to read.</p>
-
-<h2>Step 2: Find your platform</h2>
-
-<p>Now you need to build some mechanism for saving your reading queue. I&rsquo;m using <a href="https://getpocket.com">Pocket</a> and I really think it is the best one out there. What&rsquo;s important from this platform is:</p>
-
-<ol>
-<li><p>Easy to insert (add to the queue)</p></li>
-<li><p>Easy to pull (get the next for reading)</p></li>
-<li><p>It is also nice to have some tagging, sharing and search functionality.</p></li>
-</ol>
-
-
-<p>Pocket surly served the first 2 items: there is a <a href="https://chrome.google.com/webstore/detail/save-to-pocket/niloccemoadcdkdjlinkgdfekeahmflj?hl=en">chrome extension</a>, and android app that let you add articles quickly, and an app for almost all platforms for reading.</p>
-
-<p>Make sure that you have one and only platform and all the content you consume should be from there. Even if you saw something on Facebook, or a friend send some link on mail- add it to your reading list and read it from there, I&rsquo;ll explain why in the next step:</p>
-
-<h2>Step 3: Fill some content</h2>
-
-<p>So now we have all the infrastructure ready, how do we put something in? I will divide it to 3:</p>
-
-<ol>
-<li><p>Your direct channels- Those are the posts that you know that you don&rsquo;t wanna miss, like important blogs or interesting medium users. You want all those posts will be added automaticity to your platform.</p></li>
-<li><p>Specific aggregator/ digested list- This one is tricky. In &ldquo;The Tipping Point" Malcolm Gladwell says that on most of the times, it&rsquo;s better to ask a maven instead of learning things on yourself. If you, like me, can&rsquo;t handle all the blogs out there, not knowing all the bloggers and sites- find your maven that will send you the most important things out there.</p></li>
-<li><p>Recommendation engine- This one is the best for exploring some new stuff that not necessary fit to your main interest. This can be some algorithm that based on the crowd source or you personal taste (or better- both). That&rsquo;s why it&rsquo;s important to manage all your reading thought the same platform to give it as much information as possible for future learning.</p></li>
-</ol>
-
-
-<p>Those 3 aspects should fill some nice and variety reading list. Here is my reading list:</p>
-
-<ol>
-<li><p>As Android developer- the <a href="http://android-developers.blogspot.co.il/">Android blog</a> is really important to me and I want to know on any additional API or new features there is. I&rsquo;m also interested on every thing <a href="https://medium.com/@chethaase">Chet Haase</a> is publishing. And with <a href="https://ifttt.com/">IFTTT</a> it easily added to my pocket every time new item is publish.</p></li>
-<li><p>3 years ago I discover the wonderful <a href="http://softwareleadweekly.com/">software lead weekly</a> project, I&rsquo;m getting 1 weekly mail with the most interesting stuff out there about startup culture and leadership. And thanks to the awesome <a href="https://twitter.com/orenellenbogen">Oren Ellenbogen</a> there is a simple &lsquo;Add to pocket&rsquo; option.</p></li>
-<li><p>Pocket is doing amazing work here, and send me every week couple of articles that might interesting me (I say amazing because it&rsquo;s pretty accurate). Lately I also started using medium, and it&rsquo;s recommendation emails are nice too.</p></li>
-</ol>
-
-
-<h2>Step 4: Find your pace</h2>
-
-<p>I know lots of people that did it all but their Pocket app is just an endless list. They keep adding some stuff and never got to read half of them, soon enough they give up because they know there is no chance they gonna keep the pace. Start with small amount of articles, it&rsquo;s better to have an empty list and not a too long one that will make you give up. After you will make it an habit it will be easier to add more stuff, so you always need to iterate between step 3 and 4.</p>
-
-<p>For me- I started with reading around a few articles in the end of the week. That was build by 2 or 3 from the &ldquo;software lead weekly&rdquo; mail and maybe 2 more from the pocket mail. Step by step I increase my reading capacity and now I&rsquo;m reading 3 articles a day = 15 a week. And adding around the same amount (Android= 3, software lead weekly= 4-5, Pocket= 4-5, medium= 3-4).</p>
-
-<hr />
-
-<p>It took me couple of years but I really feel like my reading ritual helped me learn a lot of new things (about Android, tech and also on some other things that I&rsquo;ve never read about). Yes- of course, I still sometimes facing some &ldquo;What the hell I&rsquo;ve just read in the last 4 minutes&rdquo; moments, or skipping some important announcements because I don&rsquo;t have time. But you know- you can&rsquo;t always win the internet, winning 80% of the time is fine with me =)</p>
-
-<p><em>Cover photos by: <a href="http://20px.com/blog/2013/03/31/how-i-feel-when-i-put-stuff-on-the-internet/#.VfLQrZ2qqko">twenty pixels</a></em></p>
 ]]></content>
   </entry>
   
