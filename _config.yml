@@ -73,6 +73,9 @@ github_skip_forks: true
 twitter_user: shemag8
 twitter_tweet_button: true
 
+twitter:
+  username: shemag8
+
 # Google +1
 google_plus_one: false
 google_plus_one_size: medium
