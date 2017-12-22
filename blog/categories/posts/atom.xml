@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: posts | 80/20]]></title>
+  <title><![CDATA[Category: posts | Shem Magnezi Blog]]></title>
   <link href="http://shem8.github.io/blog/categories/posts/atom.xml" rel="self"/>
   <link href="http://shem8.github.io/"/>
-  <updated>2017-11-23T12:17:02+01:00</updated>
+  <updated>2017-12-22T11:44:20+02:00</updated>
   <id>http://shem8.github.io/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[10 good rules for bad App, Part 3- Product]]></title>
     <link href="http://shem8.github.io/blog/2016/05/06/10-good-rules-for-bad-app-part-3-product/"/>
-    <updated>2016-05-06T14:37:07+02:00</updated>
+    <updated>2016-05-06T15:37:07+03:00</updated>
     <id>http://shem8.github.io/blog/2016/05/06/10-good-rules-for-bad-app-part-3-product</id>
     <content type="html"><![CDATA[<p>Welcome to the third (and last) part of the tutorial of how building a bad app. After we&rsquo;ve building a bad app in the <a href="http://shem8.github.com/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical/">first part</a>, and remarkably ruin its look and feel in the <a href="http://shem8.github.com/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui/">second part</a>, we&rsquo;re now going to go over on 10 steps to easily how to kill your product:</p>
 
@@ -82,7 +82,7 @@
   <entry>
     <title type="html"><![CDATA[10 good rules for bad App, Part 2- UX\UI]]></title>
     <link href="http://shem8.github.io/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui/"/>
-    <updated>2016-04-17T18:04:28+02:00</updated>
+    <updated>2016-04-17T19:04:28+03:00</updated>
     <id>http://shem8.github.io/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui</id>
     <content type="html"><![CDATA[<p>Welcome to my second part of the tutorial of how building a bad app. After we&rsquo;ve building a bad app in the <a href="http://shem8.github.com/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical/">first part</a>, it&rsquo;s the time to call our designer to fuck it a bit more:</p>
 
@@ -152,7 +152,7 @@
   <entry>
     <title type="html"><![CDATA[10 good rules for bad App, Part 1- Technical]]></title>
     <link href="http://shem8.github.io/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical/"/>
-    <updated>2016-03-31T20:00:52+02:00</updated>
+    <updated>2016-03-31T21:00:52+03:00</updated>
     <id>http://shem8.github.io/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical</id>
     <content type="html"><![CDATA[<p>We were all been there, you got a great idea for an app, you gather some feedback and even managed to build a team and you going full power to conquer the app store. So a second before starting working on your genius <a href="https://play.google.com/store/apps/details?id=com.mobication.EggTimerPro&amp;hl=en">egg timer app</a>, it is worth taking a moment and think about how you&rsquo;re going to do it.</p>
 
@@ -239,7 +239,7 @@
   <entry>
     <title type="html"><![CDATA[Animated Vector Drawable]]></title>
     <link href="http://shem8.github.io/blog/2016/02/25/animated-vector-drawable/"/>
-    <updated>2016-02-25T20:43:46+01:00</updated>
+    <updated>2016-02-25T21:43:46+02:00</updated>
     <id>http://shem8.github.io/blog/2016/02/25/animated-vector-drawable</id>
     <content type="html"><![CDATA[<p>In API 21 the Android team released bunch of very cool things for material design, most of the things focus around the design specs like colors or transition animation, other were for the new widgets like FAB, card view or recycle view, but within all those things there were also two things that barely discussed- <a href="http://developer.android.com/reference/android/graphics/drawable/VectorDrawable.html">VectorDrawable</a> and <a href="http://developer.android.com/reference/android/graphics/drawable/AnimatedVectorDrawable.html">AnimatedVectorDrawable</a>.</p>
 
@@ -549,7 +549,7 @@
   <entry>
     <title type="html"><![CDATA[My first open source lib]]></title>
     <link href="http://shem8.github.io/blog/2016/02/12/my-first-open-source-lib/"/>
-    <updated>2016-02-12T08:30:38+01:00</updated>
+    <updated>2016-02-12T09:30:38+02:00</updated>
     <id>http://shem8.github.io/blog/2016/02/12/my-first-open-source-lib</id>
     <content type="html"><![CDATA[<p>As part of my last <a href="https://medium.com/life-learning/the-one-side-project-per-year-challenge-fa3c64a48da6#.3vp2es9hh">Friday project</a> I created a new Android app (releasing it soon!). In this project I decided to focus on 2 new things I want to learn:</p>
 

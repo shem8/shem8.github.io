@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[80/20]]></title>
+  <title><![CDATA[Shem Magnezi Blog]]></title>
   <link href="http://shem8.github.io/atom.xml" rel="self"/>
   <link href="http://shem8.github.io/"/>
-  <updated>2017-11-23T12:17:02+01:00</updated>
+  <updated>2017-12-22T11:44:20+02:00</updated>
   <id>http://shem8.github.io/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[How to become a master in CSS in 5 simple steps]]></title>
     <link href="http://shem8.github.io/blog/2017/08/25/how-to-become-a-css-master/"/>
-    <updated>2017-08-25T14:52:26+02:00</updated>
+    <updated>2017-08-25T15:52:26+03:00</updated>
     <id>http://shem8.github.io/blog/2017/08/25/how-to-become-a-css-master</id>
     <content type="html"><![CDATA[<p><a href="http://shem8.github.io/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/">As you know</a>- I lately left my comfort zone, closed Android Studio and dive straight into a scary, rough sea called Web Development.
 An integral part of building web apps is working with CSS. For the ones that not familiar with Cascading Style Sheet- this is how web developers design their web pages, give it some life and structure, add animations and lose their sanity while doing so.</p>
@@ -103,7 +103,7 @@ An integral part of building web apps is working with CSS. For the ones that not
   <entry>
     <title type="html"><![CDATA[5 things React world can learn from Android]]></title>
     <link href="http://shem8.github.io/blog/2017/07/02/5-things-react-world-can-learn-from-android/"/>
-    <updated>2017-07-02T20:52:47+02:00</updated>
+    <updated>2017-07-02T21:52:47+03:00</updated>
     <id>http://shem8.github.io/blog/2017/07/02/5-things-react-world-can-learn-from-android</id>
     <content type="html"><![CDATA[<p>In my <a href="http://shem8.github.io/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/">previous post</a>, I talked about a couple of things I notice after moving from my usual gig as an Android developer and doing some web development (especially React).</p>
 
@@ -185,7 +185,7 @@ An integral part of building web apps is working with CSS. For the ones that not
   <entry>
     <title type="html"><![CDATA[Is there Room for one more?]]></title>
     <link href="http://shem8.github.io/blog/2017/06/02/room-performance/"/>
-    <updated>2017-06-02T14:26:09+02:00</updated>
+    <updated>2017-06-02T15:26:09+03:00</updated>
     <id>http://shem8.github.io/blog/2017/06/02/room-performance</id>
     <content type="html"><![CDATA[<p>In the last Google I/O, Google announced a new <a href="https://developer.android.com/topic/libraries/architecture/index.html">architecture components</a>. One of them is Room.
 Room is an (another) ORM solution for the Android developers. Combining with some other elements Google released (like LiveData, ViewModel, and Lifecycle Listeners)- basic app flows should be much simpler.</p>
@@ -344,7 +344,7 @@ That&rsquo;s why GreenDAO and DbFlow are heavily investing in performance (<a hr
   <entry>
     <title type="html"><![CDATA[Tech life as graphs II]]></title>
     <link href="http://shem8.github.io/blog/2017/05/19/tech-life-as-graphs-2/"/>
-    <updated>2017-05-19T12:02:04+02:00</updated>
+    <updated>2017-05-19T13:02:04+03:00</updated>
     <id>http://shem8.github.io/blog/2017/05/19/tech-life-as-graphs-2</id>
     <content type="html"><![CDATA[<p><a href="http://shem8.github.com/blog/2016/06/03/life-as-graphs/">Another part</a> of me trying to visualize situations of my tech life as graphs</p>
 
@@ -420,7 +420,7 @@ That&rsquo;s why GreenDAO and DbFlow are heavily investing in performance (<a hr
   <entry>
     <title type="html"><![CDATA[5 things I learned as an Android developer after doing some Web development]]></title>
     <link href="http://shem8.github.io/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/"/>
-    <updated>2017-03-31T12:32:32+02:00</updated>
+    <updated>2017-03-31T13:32:32+03:00</updated>
     <id>http://shem8.github.io/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development</id>
     <content type="html"><![CDATA[<p>In the last couple of months, I started my new journey, leaving my Android position behind and started doing some web development. Working on those 2 platforms has many differences, I can’t say the one is better than the other, but there are many things that those 2 worlds can learn from each other.</p>
 
@@ -589,7 +589,7 @@ Do you remember trying to figure out what is going on with your database so you 
   <entry>
     <title type="html"><![CDATA[How I survived my first big conference talk]]></title>
     <link href="http://shem8.github.io/blog/2016/09/23/my-way-to-reversim/"/>
-    <updated>2016-09-23T16:32:27+02:00</updated>
+    <updated>2016-09-23T17:32:27+03:00</updated>
     <id>http://shem8.github.io/blog/2016/09/23/my-way-to-reversim</id>
     <content type="html"><![CDATA[<p><em>On 20.9 I presented at <a href="http://summit2016.reversim.com/">Reversim Summit</a> (one of the biggest conference for developers in Israel) about building Android apps. This was my first time talking in a conference at this scale. It wasn’t easy but I survived and I’m here to talk about my journey.</em></p>
 
@@ -711,7 +711,7 @@ Do you remember trying to figure out what is going on with your database so you 
   <entry>
     <title type="html"><![CDATA[Tech Life as graphs]]></title>
     <link href="http://shem8.github.io/blog/2016/06/03/life-as-graphs/"/>
-    <updated>2016-06-03T11:08:42+02:00</updated>
+    <updated>2016-06-03T12:08:42+03:00</updated>
     <id>http://shem8.github.io/blog/2016/06/03/life-as-graphs</id>
     <content type="html"><![CDATA[<p>As a geek I often imagine situations in life as a math equations and graphs (don&rsquo;t you all do it too? What&rsquo;s wrong with you people?!). In this post I&rsquo;ll try to describe some situations is the tech life as graphs:</p>
 
@@ -790,7 +790,7 @@ Do you remember trying to figure out what is going on with your database so you 
   <entry>
     <title type="html"><![CDATA[Playing with Coordinator Layout]]></title>
     <link href="http://shem8.github.io/blog/2016/05/27/playing-with-coordinator-layout/"/>
-    <updated>2016-05-27T14:02:52+02:00</updated>
+    <updated>2016-05-27T15:02:52+03:00</updated>
     <id>http://shem8.github.io/blog/2016/05/27/playing-with-coordinator-layout</id>
     <content type="html"><![CDATA[<p>Lately I needed to build some kind of overlay screen that looks like the one that shows when you open the phone when you don&rsquo;t have a lock screen. This is a simple overlay screen that should be dismissable when the user swipe it out from the lower part of the screen<!-- more -->, something like this:</p>
 
@@ -965,7 +965,7 @@ Do you remember trying to figure out what is going on with your database so you 
   <entry>
     <title type="html"><![CDATA[10 good rules for bad App, Part 3- Product]]></title>
     <link href="http://shem8.github.io/blog/2016/05/06/10-good-rules-for-bad-app-part-3-product/"/>
-    <updated>2016-05-06T14:37:07+02:00</updated>
+    <updated>2016-05-06T15:37:07+03:00</updated>
     <id>http://shem8.github.io/blog/2016/05/06/10-good-rules-for-bad-app-part-3-product</id>
     <content type="html"><![CDATA[<p>Welcome to the third (and last) part of the tutorial of how building a bad app. After we&rsquo;ve building a bad app in the <a href="http://shem8.github.com/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical/">first part</a>, and remarkably ruin its look and feel in the <a href="http://shem8.github.com/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui/">second part</a>, we&rsquo;re now going to go over on 10 steps to easily how to kill your product:</p>
 
@@ -1031,7 +1031,7 @@ Do you remember trying to figure out what is going on with your database so you 
   <entry>
     <title type="html"><![CDATA[10 good rules for bad App, Part 2- UX\UI]]></title>
     <link href="http://shem8.github.io/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui/"/>
-    <updated>2016-04-17T18:04:28+02:00</updated>
+    <updated>2016-04-17T19:04:28+03:00</updated>
     <id>http://shem8.github.io/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui</id>
     <content type="html"><![CDATA[<p>Welcome to my second part of the tutorial of how building a bad app. After we&rsquo;ve building a bad app in the <a href="http://shem8.github.com/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical/">first part</a>, it&rsquo;s the time to call our designer to fuck it a bit more:</p>
 
@@ -1101,7 +1101,7 @@ Do you remember trying to figure out what is going on with your database so you 
   <entry>
     <title type="html"><![CDATA[10 good rules for bad App, Part 1- Technical]]></title>
     <link href="http://shem8.github.io/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical/"/>
-    <updated>2016-03-31T20:00:52+02:00</updated>
+    <updated>2016-03-31T21:00:52+03:00</updated>
     <id>http://shem8.github.io/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical</id>
     <content type="html"><![CDATA[<p>We were all been there, you got a great idea for an app, you gather some feedback and even managed to build a team and you going full power to conquer the app store. So a second before starting working on your genius <a href="https://play.google.com/store/apps/details?id=com.mobication.EggTimerPro&amp;hl=en">egg timer app</a>, it is worth taking a moment and think about how you&rsquo;re going to do it.</p>
 
@@ -1188,7 +1188,7 @@ Do you remember trying to figure out what is going on with your database so you 
   <entry>
     <title type="html"><![CDATA[Animated Vector Drawable]]></title>
     <link href="http://shem8.github.io/blog/2016/02/25/animated-vector-drawable/"/>
-    <updated>2016-02-25T20:43:46+01:00</updated>
+    <updated>2016-02-25T21:43:46+02:00</updated>
     <id>http://shem8.github.io/blog/2016/02/25/animated-vector-drawable</id>
     <content type="html"><![CDATA[<p>In API 21 the Android team released bunch of very cool things for material design, most of the things focus around the design specs like colors or transition animation, other were for the new widgets like FAB, card view or recycle view, but within all those things there were also two things that barely discussed- <a href="http://developer.android.com/reference/android/graphics/drawable/VectorDrawable.html">VectorDrawable</a> and <a href="http://developer.android.com/reference/android/graphics/drawable/AnimatedVectorDrawable.html">AnimatedVectorDrawable</a>.</p>
 
@@ -1495,7 +1495,7 @@ Do you remember trying to figure out what is going on with your database so you 
   <entry>
     <title type="html"><![CDATA[My first open source lib]]></title>
     <link href="http://shem8.github.io/blog/2016/02/12/my-first-open-source-lib/"/>
-    <updated>2016-02-12T08:30:38+01:00</updated>
+    <updated>2016-02-12T09:30:38+02:00</updated>
     <id>http://shem8.github.io/blog/2016/02/12/my-first-open-source-lib</id>
     <content type="html"><![CDATA[<p>As part of my last <a href="https://medium.com/life-learning/the-one-side-project-per-year-challenge-fa3c64a48da6#.3vp2es9hh">Friday project</a> I created a new Android app (releasing it soon!). In this project I decided to focus on 2 new things I want to learn:</p>
 
@@ -1559,7 +1559,7 @@ Do you remember trying to figure out what is going on with your database so you 
   <entry>
     <title type="html"><![CDATA[Andriod dev toolbox part 2]]></title>
     <link href="http://shem8.github.io/blog/2016/01/21/andriod-dev-toolbox-part-2/"/>
-    <updated>2016-01-21T09:48:23+01:00</updated>
+    <updated>2016-01-21T10:48:23+02:00</updated>
     <id>http://shem8.github.io/blog/2016/01/21/andriod-dev-toolbox-part-2</id>
     <content type="html"><![CDATA[<p>The second part of the Android dev toolbox lecture,
 This time we’ll focus on collection of tools and resources that help you build better apps in less time.</p>
@@ -1576,7 +1576,7 @@ This time we’ll focus on collection of tools and resources that help you build
   <entry>
     <title type="html"><![CDATA[Why all your engineers should get a laptop]]></title>
     <link href="http://shem8.github.io/blog/2016/01/17/why-all-your-engineers-should-get-a-laptop/"/>
-    <updated>2016-01-17T18:20:12+01:00</updated>
+    <updated>2016-01-17T19:20:12+02:00</updated>
     <id>http://shem8.github.io/blog/2016/01/17/why-all-your-engineers-should-get-a-laptop</id>
     <content type="html"><![CDATA[<p>At the first day in <a href="http://www.myroll.com/about">MyRoll</a> I was exiting- it was my first day in a startup, I was the first employee in the company and we all were thrilled to get started the new adventure.</p>
 
@@ -1628,7 +1628,7 @@ This time we’ll focus on collection of tools and resources that help you build
   <entry>
     <title type="html"><![CDATA[Kotlin- a better Java for Android?]]></title>
     <link href="http://shem8.github.io/blog/2016/01/01/kotlin-a-better-java-for-android/"/>
-    <updated>2016-01-01T14:52:32+01:00</updated>
+    <updated>2016-01-01T15:52:32+02:00</updated>
     <id>http://shem8.github.io/blog/2016/01/01/kotlin-a-better-java-for-android</id>
     <content type="html"><![CDATA[<p>A couple of weeks ago, when going over some Android DevSummit videos, I encountered in some question about alternative language for Android during one of the <a href="https://youtu.be/-VNfWh5UkfY?list=PLWz5rJ2EKKc_Tt7q77qwyKRgytF1RzRx8&amp;t=1461">fireside chats</a> session with the Android team. It was really interesting that there was another way to develop an Android apps but unfortunately I didn&rsquo;t fully catch the name of the language (&ldquo;What what? was it Kotin? Tolkin? What he was saying???&rdquo;) so I give up.</p>
 
@@ -1803,7 +1803,7 @@ This time we’ll focus on collection of tools and resources that help you build
   <entry>
     <title type="html"><![CDATA[Android dev toolbox]]></title>
     <link href="http://shem8.github.io/blog/2015/12/31/android-dev-toolbox/"/>
-    <updated>2015-12-31T09:43:15+01:00</updated>
+    <updated>2015-12-31T10:43:15+02:00</updated>
     <id>http://shem8.github.io/blog/2015/12/31/android-dev-toolbox</id>
     <content type="html"><![CDATA[<h3>Talk I had given on AVGeeks on Dec 2015</h3>
 
@@ -1817,7 +1817,7 @@ This time we’ll focus on collection of tools and resources that help you build
   <entry>
     <title type="html"><![CDATA[Android Studio for Experts- Cheat Sheet]]></title>
     <link href="http://shem8.github.io/blog/2015/12/04/android-studio-for-experts-cheat-sheet/"/>
-    <updated>2015-12-04T11:49:30+01:00</updated>
+    <updated>2015-12-04T12:49:30+02:00</updated>
     <id>http://shem8.github.io/blog/2015/12/04/android-studio-for-experts-cheat-sheet</id>
     <content type="html"><![CDATA[<p>So last week there was the great Android Dev Summit, that in my opinion was one the greatest summit by Google, because unlike Goolge I/O or others Google big events- these event was very technical and was especially for devs, so if you didn&rsquo;t <a href="https://www.youtube.com/playlist?list=PLWz5rJ2EKKc_Tt7q77qwyKRgytF1RzRx8">watched the videos</a> already I very recommend to go over it and pick the ones interested you the most.</p>
 
@@ -1915,7 +1915,7 @@ This time we’ll focus on collection of tools and resources that help you build
   <entry>
     <title type="html"><![CDATA[Run fast, fall frequently, get up faster and go drink beer at the beach: What it's like to work at a StartUp]]></title>
     <link href="http://shem8.github.io/blog/2015/11/15/run-fast-fall-frequently-get-up-faster-and-go-drink-beer-at-the-beach-what-its-like-to-work-at-a-startup/"/>
-    <updated>2015-11-15T11:24:22+01:00</updated>
+    <updated>2015-11-15T12:24:22+02:00</updated>
     <id>http://shem8.github.io/blog/2015/11/15/run-fast-fall-frequently-get-up-faster-and-go-drink-beer-at-the-beach-what-its-like-to-work-at-a-startup</id>
     <content type="html"><![CDATA[<p><em>Over the past 3 years I&rsquo;ve been working at <a href="http://myroll.com/">MyRoll</a> (previously called Flayvr, the startup that loves you photos as much as you do). I joined right after the seed stage and I was the first employee of the company. This was my first time working at a startup and it&rsquo;s hands-down one of the best experiences I&rsquo;ve had in my not-so-long life. Lately, more and more of my friends have asked me: &ldquo;Should I join a startup, or just go corporate - something that&rsquo;s financially stable?&rdquo;.</em></p>
 
@@ -2018,7 +2018,7 @@ Yup, you&rsquo;re able to start every Thursday with yoga on the beach and swimmi
   <entry>
     <title type="html"><![CDATA[Pimp-up your splash screen]]></title>
     <link href="http://shem8.github.io/blog/2015/10/02/pimp-up-your-splash-screen/"/>
-    <updated>2015-10-02T11:03:17+02:00</updated>
+    <updated>2015-10-02T12:03:17+03:00</updated>
     <id>http://shem8.github.io/blog/2015/10/02/pimp-up-your-splash-screen</id>
     <content type="html"><![CDATA[<p>In the past, splash screen in Android was a dirty word, It was usually a bad sign to an app that was converted from iPhone. But lately- Google added <a href="https://www.google.com/design/spec/patterns/launch-screens.html">launch screens</a> to the design guidelines, and maybe they changed the name, <a href="http://www.androiduipatterns.com/2015/08/splash-screen-with-any-other-name-is.html?m=1">but the concept is still the same</a>.</p>
 
