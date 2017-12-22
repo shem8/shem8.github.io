@@ -4,6 +4,7 @@ title: "Is there Room for one more?"
 date: 2017-06-02 15:26:09 +0300
 comments: true
 categories: android
+description: In the last Google I/O, Google announced a new architecture components. One of them is Room. Room is an (another) ORM solution for the Android developers. Combining with some other elements Google released (like LiveData, ViewModel, and Lifecycle Listeners)- basic app flows should be much simpler. Indeed- Google did some nice work here. Straightforward tasks like displaying items from DB and update them was a pain, and you had to write a lot of code over and over. Now you can just use those out-of-the-box components. This will save time for developers you will write less code, and you will have fewer bugs. When examine those components, I feel most of them bringing new things to the table. But about Room- is there a need for another ORM library?
 ---
 In the last Google I/O, Google announced a new [architecture components](https://developer.android.com/topic/libraries/architecture/index.html). One of them is Room.
 Room is an (another) ORM solution for the Android developers. Combining with some other elements Google released (like LiveData, ViewModel, and Lifecycle Listeners)- basic app flows should be much simpler.
