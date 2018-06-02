@@ -3,11 +3,11 @@
 # ----------------------- #
 
 url: http://shem8.github.io
-title: 80/20
-subtitle: Startup, Coding and bear on the beach.
+title: Shem Magnezi Blog
+subtitle: Startups, Coding and bear on the beach.
 author: Shem Magnezi
 simple_search: https://www.google.com/search
-description:
+description: Startups, Coding and bear on the beach.
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
@@ -105,3 +105,11 @@ google_analytics_tracking_id: UA-78073130-1
 
 # Facebook Like
 facebook_like: true
+
+social:
+  name: Shem Magnezi
+  links:
+    - https://twitter.com/shemag8
+    - https://medium.com/@shemag8
+    - https://www.linkedin.com/in/shem-magnezi-45490424
+    - https://github.com/shem8
