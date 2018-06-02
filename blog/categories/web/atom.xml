@@ -4,7 +4,7 @@
   <title><![CDATA[Category: web | Shem Magnezi Blog]]></title>
   <link href="http://shem8.github.io/blog/categories/web/atom.xml" rel="self"/>
   <link href="http://shem8.github.io/"/>
-  <updated>2017-12-22T11:44:20+02:00</updated>
+  <updated>2018-06-02T22:35:08+02:00</updated>
   <id>http://shem8.github.io/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[How to become a master in CSS in 5 simple steps]]></title>
     <link href="http://shem8.github.io/blog/2017/08/25/how-to-become-a-css-master/"/>
-    <updated>2017-08-25T15:52:26+03:00</updated>
+    <updated>2017-08-25T14:52:26+02:00</updated>
     <id>http://shem8.github.io/blog/2017/08/25/how-to-become-a-css-master</id>
     <content type="html"><![CDATA[<p><a href="http://shem8.github.io/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/">As you know</a>- I lately left my comfort zone, closed Android Studio and dive straight into a scary, rough sea called Web Development.
 An integral part of building web apps is working with CSS. For the ones that not familiar with Cascading Style Sheet- this is how web developers design their web pages, give it some life and structure, add animations and lose their sanity while doing so.</p>

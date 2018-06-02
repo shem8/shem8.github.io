@@ -4,7 +4,7 @@
   <title><![CDATA[Category: android | Shem Magnezi Blog]]></title>
   <link href="http://shem8.github.io/blog/categories/android/atom.xml" rel="self"/>
   <link href="http://shem8.github.io/"/>
-  <updated>2017-12-22T11:44:20+02:00</updated>
+  <updated>2018-06-02T22:35:08+02:00</updated>
   <id>http://shem8.github.io/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Is there Room for one more?]]></title>
     <link href="http://shem8.github.io/blog/2017/06/02/room-performance/"/>
-    <updated>2017-06-02T15:26:09+03:00</updated>
+    <updated>2017-06-02T14:26:09+02:00</updated>
     <id>http://shem8.github.io/blog/2017/06/02/room-performance</id>
     <content type="html"><![CDATA[<p>In the last Google I/O, Google announced a new <a href="https://developer.android.com/topic/libraries/architecture/index.html">architecture components</a>. One of them is Room.
 Room is an (another) ORM solution for the Android developers. Combining with some other elements Google released (like LiveData, ViewModel, and Lifecycle Listeners)- basic app flows should be much simpler.</p>
@@ -45,7 +45,7 @@ Room is an (another) ORM solution for the Android developers. Combining with som
 <p>There are two main ways to define the mapping between your objects and the tables in Java: some DSL + code generator (like what GreenDAO is using), or using annotation (like ORMLite, DBFlow and most of the libraries). Although I&rsquo;m not a big fan of annotations, I must say the later is an easier solution.</p>
 
 <p>These why it&rsquo;s no surprise that the Android team chose to go with this approach, so simple data model looks like this:
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -79,7 +79,7 @@ Room is an (another) ORM solution for the Android developers. Combining with som
 </span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;}</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 As in any other library- you can set a custom name for the table or the columns, you can choose to index some stuff and specify relationships between models.</p>
 
 <h2>The API</h2>
@@ -157,7 +157,7 @@ That&rsquo;s why GreenDAO and DbFlow are heavily investing in performance (<a hr
   <entry>
     <title type="html"><![CDATA[Playing with Coordinator Layout]]></title>
     <link href="http://shem8.github.io/blog/2016/05/27/playing-with-coordinator-layout/"/>
-    <updated>2016-05-27T15:02:52+03:00</updated>
+    <updated>2016-05-27T14:02:52+02:00</updated>
     <id>http://shem8.github.io/blog/2016/05/27/playing-with-coordinator-layout</id>
     <content type="html"><![CDATA[<p>Lately I needed to build some kind of overlay screen that looks like the one that shows when you open the phone when you don&rsquo;t have a lock screen. This is a simple overlay screen that should be dismissable when the user swipe it out from the lower part of the screen<!-- more -->, something like this:</p>
 
@@ -171,7 +171,7 @@ That&rsquo;s why GreenDAO and DbFlow are heavily investing in performance (<a hr
 
 <p>In our case it suppose to be pretty easy, there is already a <a href="http://developer.android.com/reference/android/support/design/widget/SwipeDismissBehavior.html">swipe to dismiss behavior</a> ready to be used on the lower view, so we just need to attach it to the relevant view. First lets build our layout:</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -215,13 +215,13 @@ That&rsquo;s why GreenDAO and DbFlow are heavily investing in performance (<a hr
 </span><span class='line'><span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="nt">&lt;p&gt;</span><span class="ni">&amp;lt;</span>/android.support.design.widget.CoordinatorLayout&gt;
-</span></code></pre></td></tr></table></div></figure></p>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>As said, it’s a simple layout with 2 view- one for the content (the green one) and one for the swiping (the blue one).</p>
 
 <p>Now, lets attach the relevant behavior to the relevant view:</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -253,7 +253,7 @@ That&rsquo;s why GreenDAO and DbFlow are heavily investing in performance (<a hr
 </span><span class='line'>
 </span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;});</span>
 </span><span class='line'><span class="n">params</span><span class="o">.</span><span class="na">setBehavior</span><span class="o">(</span><span class="n">behavior</span><span class="o">);</span>
-</span></code></pre></td></tr></table></div></figure></p>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>That&rsquo;s pretty self explained- we declare a new swipe to dismiss behavior, set it&rsquo;s direction only to right, and finish the activity on dismiss. But there&rsquo;s on problem- somehow, although we declare this behavior only on the dismiss view, it working on all the view, so also the content view is swipeable as you can see here:</p>
 
@@ -261,7 +261,7 @@ That&rsquo;s why GreenDAO and DbFlow are heavily investing in performance (<a hr
 
 <p>I&rsquo;m not sure if this is by design or just a bug (after digging in the code I&rsquo;m afraid this behavior is not intended) but we can easily fix this by creating our own behavior. Of course that we not going to write this whole code from beginning, we&rsquo;ll use the <em>SwipeDismissBehavior</em> class and just fix the relevant code. I really recommend doing a little investigation and reading the Android code, that&rsquo;s way you&rsquo;re fully understand how things really works and get to read an high quality code written by the Android developers, in that case the fix is pretty easy to spot- the <em>SwipeDismissBehavior</em> handle touch events also if those touches not in the view (although there is a check in the <em>onInterceptTouchEvent</em> method and those events should be ignore) so I created a new behavior class just for this fix:</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -281,7 +281,7 @@ That&rsquo;s why GreenDAO and DbFlow are heavily investing in performance (<a hr
 </span><span class='line'>    <span class="o">}</span>
 </span><span class='line'>    <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
 </span><span class='line'><span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure></p>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>Changing the activity to use <em>SwipeDismissOnlyOnViewBehavior</em> instead of <em>SwipeDismissBehavior</em> is doing the work:</p>
 
@@ -289,7 +289,7 @@ That&rsquo;s why GreenDAO and DbFlow are heavily investing in performance (<a hr
 
 <p>Now we need to sync between the content view to the dismiss view when swiping, so we creating a new behavior just for this. Because this is really simple behavior all we need to implement are 2 functions, in which view this content view depended (<em>layoutDependsOn</em>) and what to do when the dependent view changed (<em>onDependentViewChanged</em>):</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -325,7 +325,7 @@ That&rsquo;s why GreenDAO and DbFlow are heavily investing in performance (<a hr
 </span><span class='line'>
 </span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;};</span>
 </span><span class='line'><span class="n">params</span><span class="o">.</span><span class="na">setBehavior</span><span class="o">(</span><span class="n">behavior</span><span class="o">);</span>
-</span></code></pre></td></tr></table></div></figure></p>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>And voila:</p>
 
@@ -338,7 +338,7 @@ That&rsquo;s why GreenDAO and DbFlow are heavily investing in performance (<a hr
   <entry>
     <title type="html"><![CDATA[10 good rules for bad App, Part 3- Product]]></title>
     <link href="http://shem8.github.io/blog/2016/05/06/10-good-rules-for-bad-app-part-3-product/"/>
-    <updated>2016-05-06T15:37:07+03:00</updated>
+    <updated>2016-05-06T14:37:07+02:00</updated>
     <id>http://shem8.github.io/blog/2016/05/06/10-good-rules-for-bad-app-part-3-product</id>
     <content type="html"><![CDATA[<p>Welcome to the third (and last) part of the tutorial of how building a bad app. After we&rsquo;ve building a bad app in the <a href="http://shem8.github.com/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical/">first part</a>, and remarkably ruin its look and feel in the <a href="http://shem8.github.com/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui/">second part</a>, we&rsquo;re now going to go over on 10 steps to easily how to kill your product:</p>
 
@@ -404,7 +404,7 @@ That&rsquo;s why GreenDAO and DbFlow are heavily investing in performance (<a hr
   <entry>
     <title type="html"><![CDATA[10 good rules for bad App, Part 2- UX\UI]]></title>
     <link href="http://shem8.github.io/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui/"/>
-    <updated>2016-04-17T19:04:28+03:00</updated>
+    <updated>2016-04-17T18:04:28+02:00</updated>
     <id>http://shem8.github.io/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui</id>
     <content type="html"><![CDATA[<p>Welcome to my second part of the tutorial of how building a bad app. After we&rsquo;ve building a bad app in the <a href="http://shem8.github.com/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical/">first part</a>, it&rsquo;s the time to call our designer to fuck it a bit more:</p>
 
@@ -474,7 +474,7 @@ That&rsquo;s why GreenDAO and DbFlow are heavily investing in performance (<a hr
   <entry>
     <title type="html"><![CDATA[10 good rules for bad App, Part 1- Technical]]></title>
     <link href="http://shem8.github.io/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical/"/>
-    <updated>2016-03-31T21:00:52+03:00</updated>
+    <updated>2016-03-31T20:00:52+02:00</updated>
     <id>http://shem8.github.io/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical</id>
     <content type="html"><![CDATA[<p>We were all been there, you got a great idea for an app, you gather some feedback and even managed to build a team and you going full power to conquer the app store. So a second before starting working on your genius <a href="https://play.google.com/store/apps/details?id=com.mobication.EggTimerPro&amp;hl=en">egg timer app</a>, it is worth taking a moment and think about how you&rsquo;re going to do it.</p>
 
