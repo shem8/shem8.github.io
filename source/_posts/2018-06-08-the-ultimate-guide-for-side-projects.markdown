@@ -10,7 +10,7 @@ tags:
 - sideproject
 - tips
 description: In the last ten years or so, I made myself a habit to maintain at least one side project at every given moment. Those side projects served a couple of purposes.
-image: images/posts/sideproject/pexels-photo-316465.jpeg
+image: http://shem8.github.io/images/posts/sideproject/pexels-photo-316465.jpeg
 ---
 
 In the last ten years or so, I made myself a habit to maintain at least one side project at every given moment. Those side projects served a couple of purposes:
