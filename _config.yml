@@ -113,3 +113,7 @@ social:
     - https://medium.com/@shemag8
     - https://www.linkedin.com/in/shem-magnezi-45490424
     - https://github.com/shem8
+
+defaults:
+  - values:
+      image: http://www.gravatar.com/avatar/1e0007c47fb11a12c8427a856187d48e?s=160
