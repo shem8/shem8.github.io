@@ -4,7 +4,7 @@
   <title><![CDATA[Category: life | Shem Magnezi Blog]]></title>
   <link href="http://shem8.github.io/blog/categories/life/atom.xml" rel="self"/>
   <link href="http://shem8.github.io/"/>
-  <updated>2018-06-02T22:35:08+02:00</updated>
+  <updated>2018-06-08T14:27:51+03:00</updated>
   <id>http://shem8.github.io/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
@@ -14,388 +14,430 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Tech life as graphs II]]></title>
-    <link href="http://shem8.github.io/blog/2017/05/19/tech-life-as-graphs-2/"/>
-    <updated>2017-05-19T12:02:04+02:00</updated>
-    <id>http://shem8.github.io/blog/2017/05/19/tech-life-as-graphs-2</id>
-    <content type="html"><![CDATA[<p><a href="http://shem8.github.com/blog/2016/06/03/life-as-graphs/">Another part</a> of me trying to visualize situations of my tech life as graphs</p>
-
+    <title type="html"><![CDATA[The ultimate guide for side projects]]></title>
+    <link href="http://shem8.github.io/blog/2018/06/08/the-ultimate-guide-for-side-projects/"/>
+    <updated>2018-06-08T13:28:30+03:00</updated>
+    <id>http://shem8.github.io/blog/2018/06/08/the-ultimate-guide-for-side-projects</id>
+    <content type="html"><![CDATA[In the last ten years or so, I made myself a habit to maintain at least one side project at every given moment. Those side projects served a couple of purposes:
 <!-- more -->
 
+1. Learn new things- it can be a new technology, to experience with a new field or to acquire a new capability.
+Build something- it's nice and fulfilling when you can show your product to others, or take a look at something and know you're the one that created it.
 
-<h2>Native apps</h2>
+2. Refreshing- it's a great way to get out of your comfort zone and do something different from your day to day job.
 
-<p><br>
+These points were are in order of importance to me. Personally, most of the times my primary goal was to learn something new. 
+
+There are a lot of articles about what is a side project. You can read about it [here](https://medium.freecodecamp.org/why-side-projects-are-so-damn-important-239ba37209e) or [here](https://medium.com/the-year-of-the-looking-glass/the-importance-of-side-projects-cf9f63954031).
+ 
+Here are some of my examples:
+
+- Building a 3D model of my house- back in the day I thought about applying for a job at Pixar. So to increase my chances to get there as a software engineer I decided to learn how to work with [Maya](https://www.autodesk.com/products/maya/overview).
+
+- Building a bill splitting app- as part of exploring new fields I wanted to experience with developing a user interface product. That's why I created the [BillSplitter](https://play.google.com/store/apps/details?id=org.bill.splitter) app, which later helped me get hired by a mobile startup.
+
+- Decorate my children's room- when I was young I loved drawing, but I didn't have time to do that since then. So I used the opportunity to learn how to how to draw with acrylic colors and sketch some stuff in our children's room before my older daughter came to the world (and added another one for our baby boy).
+
+- Write a blog- to practice my English I started to publish content regularly. I might have [gone viral](https://medium.com/@shemag8/when-your-story-go-viral-8a1c84ad0fdb), but my English is still not as good as I wish.
+
+Those just a few representative examples to give you a sense of what can side project looks like and what you can achieve. 
+
+Some projects can help you learn something new that relevant to your role (Android, Kotlin, Gatsby.js, etc.). Other projects can give you an option to touch aspects of your jobs that you not regularly have time to (product, marketing, design, etc.). And some projects just let you do something entirely new (write a blog, doing a talk).
+
+After years of maintaining side projects, I understand that there are some elements of useful and effective side projects. If in the past I could work 10+ hours a week on a side project, now, with two small children I have only around 4 hours to work on it.
+
+So I want to share with you some principles to get out the most with your time. So let's start:
+
+##1. Decide what you want to learn
+Before starting building something, think what you aim to achieve from this project. What do you want to learn? What do you want to practice?
+
+This should be one thing and one thing only. Sure, you might get other things along the way as well, but focus on one thing at first.
+
+Setting one **single** goal will latter help you along the project with all kind of decision you'll tackle, for example: should you write tests? If your primary goal is to practice responsive design- so not, it's not relevant.
+
+Remember- we want to get the most in the little time as possible, so we want to pay attention to what we're working on (and more precisely- what's not).
+
+##2. Choose a product that you would use
+Next, we need to decide what we want to build. There are plenty of resources out there for ideas to side projects that you can create. Go over them to get a sense of the options you have and then ignore them altogether.
+
+<blockquote><p>Your side project should be something you (theoretically) would use.</p></blockquote>
+
+It has two reasons:
+
+1. They're going to be ups and downs along the way. You will have days when you'll be extremely excited about the project (especially on start), but there will be times when you'll need to find the energy to skip this new Netflix show and fix some weird bug in your project. If you aren't related to the thing, it won't stay long.
+
+2. Most of the time you'll be alone here. No product manager or boss that tells you what to do. You'll need to figure what to do on your own, and the best way to do it is to build this thing for yourself.
+
+##3. Not too hard but not too easy
+Now when it comes to building the project, it's important to aim to the right level- that's mean not too hard for you but also not too easy. 
+
+That way you'll stay motivated along the project, and it will help you with a sense of achievement. It's called the Goldilocks Rule, and you can read more about it [here](https://jamesclear.com/goldilocks-rule).
+
+##4. Break it into a small deliverable chunks
+<blockquote><p>Before you start doing the thing- you should sit and plan.</p></blockquote>
+
+With as much as boring and tedious as it sounds, building a rough roadmap for the side project will help you later.
+
+Those should not be significant milestones; it should be very very small checkpoints that you can achieve in every "sprint" (usually a week or so). 
+
+Here is an example for one that I can think of for a simple chat web app:
+
+1. setting app the environment
+2. make one client work locally
+3. sync data with the server
+4. make the remote client work
+5. styling
+6. deploy
+
+Here is another one for a blog post:
+
+1. writing outline
+2. writing section I
+3. writing section II
+4. writing section III
+5. introduction and summary
+6. adding relevant links
+7. layout and image
+8. publish and sharing
+
+Again, it comes to serve two purposes:
+
+1. **Focus-** as said, you won't have much time here and every minute counts. You need to know exactly what you need to do and enter the zone as quickest as possible.
+
+2. **Getting in and out of context-** since it might be days or even weeks since you last worked on the side projects, it will be very hard for you to create a seamless continuing workflow. Continue from the exact point you stopped, and understand the context might take an hour or two. That's why it's better to close every session so you'll have a fresh start in the next round.
+
+##5. Make it a habit
+I learned that consistency is the name of the game, so it's more important to work on the side project for a couple of weeks than trying to squeeze it up for a 12 hours marathon and never come back.
+
+That's why it was necessary for me to make the whole thing just a habit- I know exactly what I'm doing every Friday when the clock shows 10 am: I open my mac and continue working from the last point I stopped last week.
+
+Since I'm doing the project at home, and working from home is not something that I'm doing on my day to day- I also put my self in a state of mind of working: sitting in a specific place, with a particular setup.
+
+That way I'm entering a work mode easily without really thinking what should I do now or whether this is the right time or place to work on the side project.
+
+I also try to keep that habit for as many straight weeks as possible, even for just an hour. I found it that when I'm starting to miss even one time- it's a slippery road from there to skip it for more and more weeks later. You can read more about it [here](https://jamesclear.com/stop-procrastinating-seinfeld-strategy).
+
+##6. Perfection is your enemy.
+When the times goes by it'll be easy sometimes to go down the rabbit hole because you want to change some text font or waste your time chasing a small bug- **don't let that happen!**
+
+Remember that we want to achieve as much as we can in the little time possible, so always remind yourself what you're here for and focus on the important stuff.
+
+[Done is better than perfect](https://medium.com/personal-growth/give-yourself-permission-to-screw-up-2c5f55e9b9e6), and you should keep the wheel spinning. 
+
+It'll help you with the sense of accomplishment. The worst thing that can happen to you is to wake up after 5 hours session to realize you just spent the whole day [yak shaving](https://seths.blog/2005/03/dont_shave_that/) without really making any progress.
+
+
+---
+
+
+Side projects are an excellent opportunity to acquire new skills and experience in stuff that you not usually have the chance to do on your day-to-day.
+
+As with anything new- it's probably easier to keep up on start when you're still excited, the secret is how you maintain this feeling and make this excitement lasting even on times that you feel tired.
+Hopes those tips will motivate you building great products and learn something new.
+
+
+---
+
+**If you enjoyed this post, please hit the "recommend" button below and share this story with your friends. I'll also love hearing about any other tips that you have or any cool side project that you're currently working on. Thank you!**
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Tech life as graphs II]]></title>
+    <link href="http://shem8.github.io/blog/2017/05/19/tech-life-as-graphs-2/"/>
+    <updated>2017-05-19T13:02:04+03:00</updated>
+    <id>http://shem8.github.io/blog/2017/05/19/tech-life-as-graphs-2</id>
+    <content type="html"><![CDATA[[Another part](http://shem8.github.com/blog/2016/06/03/life-as-graphs/) of me trying to visualize situations of my tech life as graphs
+<!-- more -->
+
+## Native apps
+<br>
 <img src="/images/posts/graphs2/native_apps-eq.png">
-<img src="/images/posts/graphs2/native_apps-eq2.png"></p>
+<img src="/images/posts/graphs2/native_apps-eq2.png">
 
-<p><img class="center" src="/images/posts/graphs2/native_apps.png"></p>
+<img class="center" src="/images/posts/graphs2/native_apps.png">
 
-<h2>Pair programing</h2>
+## Pair programing
+<br>
+<img src="/images/posts/graphs2/pairing.png">
 
-<p><br>
-<img src="/images/posts/graphs2/pairing.png"></p>
+## Ruby on Rails magic
+<br>
+<img src="/images/posts/graphs2/rails_magic-eq.png">
 
-<h2>Ruby on Rails magic</h2>
+<img class="center" src="/images/posts/graphs2/rails_magic.png">
 
-<p><br>
-<img src="/images/posts/graphs2/rails_magic-eq.png"></p>
+## Public speaking
+<br>
+<img src="/images/posts/graphs2/public_speaking-eq.png">
 
-<p><img class="center" src="/images/posts/graphs2/rails_magic.png"></p>
+<img class="center" src="/images/posts/graphs2/public_speaking.png">
 
-<h2>Public speaking</h2>
+## JS hype
+<br>
+<img src="/images/posts/graphs2/js-eq.png">
 
-<p><br>
-<img src="/images/posts/graphs2/public_speaking-eq.png"></p>
+<img class="center" src="/images/posts/graphs2/js.png">
 
-<p><img class="center" src="/images/posts/graphs2/public_speaking.png"></p>
+## Working hours
+<br>
+<img class="center" src="/images/posts/graphs2/working.png">
 
-<h2>JS hype</h2>
+## Pull requests
+<br>
+<img src="/images/posts/graphs2/commits-eq.png">
 
-<p><br>
-<img src="/images/posts/graphs2/js-eq.png"></p>
+<img class="center" src="/images/posts/graphs2/commits.png">
 
-<p><img class="center" src="/images/posts/graphs2/js.png"></p>
+## When watching [Wes Bos](http://wesbos.com/) JS tutorials
+<br>
+<img src="/images/posts/graphs2/web.png">
 
-<h2>Working hours</h2>
+## Emails
+<br>
+<img src="/images/posts/graphs2/email-eq.png">
 
-<p><br>
-<img class="center" src="/images/posts/graphs2/working.png"></p>
+<img class="center" src="/images/posts/graphs2/email.png">
 
-<h2>Pull requests</h2>
+***
+<br>
 
-<p><br>
-<img src="/images/posts/graphs2/commits-eq.png"></p>
+*If you liked this post click the ♡ bellow and share this story. As a writer it means the world.*
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How I survived my first big conference talk]]></title>
+    <link href="http://shem8.github.io/blog/2016/09/23/my-way-to-reversim/"/>
+    <updated>2016-09-23T17:32:27+03:00</updated>
+    <id>http://shem8.github.io/blog/2016/09/23/my-way-to-reversim</id>
+    <content type="html"><![CDATA[*On 20.9 I presented at [Reversim Summit](http://summit2016.reversim.com/) (one of the biggest conference for developers in Israel) about building Android apps. This was my first time talking in a conference at this scale. It wasn’t easy but I survived and I’m here to talk about my journey.*
+<!-- more -->
 
-<p><img class="center" src="/images/posts/graphs2/commits.png"></p>
+One day, something like 3 months ago, I stumble upon a post in one of my Facebook groups about a conference for developers going to take place in September:
+<blockquote><p>Hi all,</p><p>The Reversim Summit is probably one of the best (if not the best) independent software engineering (at large) conference in Israel, and it will be held this year at Sep. 19–20 at the Weizmann institute.</p><p>As an event 100% based on community generated content, the conference is as good as the quality of the submissions.</p><p>The call for papers is *now* open...</p></blockquote>
+This was the first time I heard about the Reversim Summit. I was familiar with the [podcast](http://www.reversim.com/) and knew it was good, so I knew the conference should worth something. So I decided to give it a try.
 
-<h2>When watching <a href="http://wesbos.com/">Wes Bos</a> JS tutorials</h2>
+## Picking the right content
+Ok, so I decided that I want to talk in the conference, but about what? One of the great tips that I’ve got (from the great [Chiu-Ki Chan](https://twitter.com/chiuki) about [how to be an Android expert](https://www.youtube.com/watch?v=PeKKzeAte30)) is to take one of your blog posts and create a talk. That’s, I thought, is a great way to give the reviewers a more compelling way instead of just 1–2 paragraphs when trying to describe what I’m going to talk about.
 
-<p><br>
-<img src="/images/posts/graphs2/web.png"></p>
+Luckily I wrote couple of technical posts, but most of them were some kind of tutorials on how to do all kind of things in Android. Also- most of them not gained too much tractions, what made me think that people won’t be too interested.
 
-<h2>Emails</h2>
+Moreover, knowing that this conference going to get lots of submissions, I knew that my talk should be different. Given that I don’t have enough reputation, and because people are interested more on technical problems in larger scale than mobile- If I will go head to head with other technical talks I’ll loose.
 
-<p><br>
-<img src="/images/posts/graphs2/email-eq.png"></p>
+So, I decided to choose my series blog posts about How to build a bad app ([part 1](/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical/), [part 2](/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui/), [part 3](/blog/2016/05/06/10-good-rules-for-bad-app-part-3-product/)). This is great because:
 
-<p><img class="center" src="/images/posts/graphs2/email.png"></p>
+1. This will cover also other aspects of mobile developing, like design and product.
+2. The talk will be about my experience and things that I’ve done. I think those are the best talks.
+3. I don't like talks which are too technical- I don’t believe that we can read too much code from slides or understand deep technical concept without actually playing with it. So this will be great for high level review with lots of small things that everyone can get.
+4. It’s light, it’s funny, it’s a lecture that is fun to deliver.
 
-<hr />
+## Call for Papers
+This is always a tricky part (although there’s couple of good resources about [how to write a good abstract for CFP](http://speaking.io/plan/writing-a-cfp/) that can help).
 
-<p><br></p>
+How do I make my abstract highlight my talk and make it unique? How do I describe what I’m talking about (how to build a bad app) without confusing the audience? How to say that it’s a bit technical but not too much? How to let others know that it’s for developers, designers and products managers just in a single paragraph?
 
-<p><em>If you liked this post click the ♡ bellow and share this story. As a writer it means the world.</em></p>
+Tried my best and got this:
+<blockquote><p>Building a decent app is easy this days, there are plenty of tutorials, videos and blog post about it. In this session I’ll try to go over some of the top mistakes that everyone of us is doing while building his app. This will cover all the aspects of building bad app- technical, UI & UX, and product. So each one of you will be able to adapt his own favorite bad pattern and ruin his app.</p></blockquote>
+
+I think it’s great because it’s clear, but still leave the reader curious. People might afraid that it’s not technical enough but they know they can get out with action items from the talk.
+
+The review started a week after, it was combined from crowd voting and team of moderators that process all requests and choose the best ones.
+
+There were around 300 propose sessions and only 30 will be approved, I was in the mobile track, were there 30 submissions and only 3 will be chosen. 10% chance, not so high as you can understand.
+
+After couple of mails and phone calls with my moderator (thanks [Adir Amsalem](https://twitter.com/amsalemadir)!), I got this email:
+
+<img src="/images/posts/reversim/screenshot.png">
+
+-> ***Shit just got real.*** <-
+
+## Warming up
+Now it’s time to do the actual work. I immediately schedule a talk in my work place as part of our bi-weekly company talking program.
+
+I decided to chose 5 rules for each list: technical, UI/UX and product. I wanted find for most of the 15 rules an  example from a real world app, aiming for big apps that everyone knows. Building a minimal slides, with the rules and a picture or two for visualisation (screenshots when possible, gifs for others) and couple of more slides for intro and background.
+
+<img src="/images/posts/reversim/slide.png">
+
+It was great for first run, but there were some problems:
+
+1. It was too long, it took me around 50 minutes and I only have 35 (plus 5 minutes for questions). **Solution- cut the rules list to 11.**
+2. The audience was able to see the rule in the slide’s title when I moved to the slide and before I started to talk about. That killed the surprise affect. **Solution- Change the order of the fade in animation, so the text will shown in the end.**
+3. Gifs were keep playing and steel the audience (and my) attention. **Solution- put a static image of the gif on top of the gif to “stop” the gif, and show in on click (great tip that I’m going to apply on all my presentation from now on).**
+
+After some tweaks, one of the mentors from the summit schedules another dry run on Wix offices. Kind of an intimate rehearsal (presenting it to him and another college) to gather final feedbacks.
+
+Again, we found things that can be improved:
+1. The intro is too long and not very clear. Solution- instead of talking about why I’m giving this lecture on 4 different slides, I’m going to tell my story on the first slide, tell about motivation on another slide, and remove the other 2.
+2. Videos on Google slides not working without internet connection. Solution- keeping a local copy of the video, and use it.
+3. The talk is finished kind of out of nowhere. Solution- add a summary slide with the list of all rules that we talked about.
+
+I also changed the theme to more cleaner one and came out with this final slides:
+
+## Show time
+September 19- the first day of the summit, register and gathering into the keynote (by the amazing Iris Shoor), entering a huge auditorium with around 500 people. Luckily (and actually with some disappointment) my session was scheduled to a much smaller room, so I didn’t need to freak out from having to talk in front of so many people.
+
+During the summit I got into some great talks (by Eyal Yavor, Lior Bar-On, Yuval Samet, Boaz Gaon and Oren Ellenbogen) and a amazing lighting talks (especially the ones by Hagai Levin and Michal Tirosh) and even a song! (by Yoni Tsafir). This is another nice benefit when you talk in a conference- you get a free ticket =)
+
+My talk was on the morning of the second day, I was a bit nervous but not too much. The Reversim team was great and everything was taken care for me. I just needed to memorize the order of the rules (because as you remember, I changed it and I don’t have the text in slide when I start talking about it) but beside of this I felt really confident.
+
+<img src="/images/posts/reversim/IDOR3385.png">
+
+Everything went very well, the hall wasn’t big so I didn’t need a microphone, what made it more natural. I also get some friends in the audience, what made me less stressed. I even nailed some jokes that I thought about right before I started.
+
+It’s all finished very quickly. It’s funny how you prepare yourself for very long time just to build a 40 minute talk. On the stage it even feel shorter.
+
+I got very good feedbacks, they said that the talk was very good and they learn one thing or two about mistakes that they didn’t thought about before.
+
+## What’s next
+Since then I gave the talk on another conference- [Droidcon Tel-Aviv](http://il.droidcon.com/2015/) and I plan to do it one or maybe two more times.
+
+I feel very comfortable talking in Hebrew, even in front of a big audience. My next milestone is to bring this kind confident to when I’m talking in English, and to give a talk in a conference abroad. I might need to prepare more than what I’m used to, but I think that I will able to do it very soon.
+
+## Conclusions
+1. Pick your talk wisely. Think what is your relative advantage and how your talk can stand out from all the others.
+2. Don’t be shy. Don’t think that you’re not interesting enough and you have nothing that others can learn from.
+4. With any rehearsal you will get you more feedback, doing it more- the better your talk and slides will be. BUT:
+3. Don’t overthink it. You’ll never get perfect. Learn where it’s good enough and stop you feel confident with what you got.
+
+<br/>
+===
+
+*Photos by: [Reversim Summit 2016 photo album](https://photos.google.com/share/AF1QipPORYX7nOWI1AsG8wE8SDrKCi3llj81FxRS1aXKfVrt1oauBI_KIZKWaAb79JoJ1w?key=OFJXdVJyZHUzckRjbUY3UXgyWmNSWHQ3R1lIR2F3)*
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Tech Life as graphs]]></title>
     <link href="http://shem8.github.io/blog/2016/06/03/life-as-graphs/"/>
-    <updated>2016-06-03T11:08:42+02:00</updated>
+    <updated>2016-06-03T12:08:42+03:00</updated>
     <id>http://shem8.github.io/blog/2016/06/03/life-as-graphs</id>
-    <content type="html"><![CDATA[<p>As a geek I often imagine situations in life as a math equations and graphs (don&rsquo;t you all do it too? What&rsquo;s wrong with you people?!). In this post I&rsquo;ll try to describe some situations is the tech life as graphs:</p>
-
+    <content type="html"><![CDATA[As a geek I often imagine situations in life as a math equations and graphs (don't you all do it too? What's wrong with you people?!). In this post I'll try to describe some situations is the tech life as graphs:
 <!-- more -->
 
 
-<h2>How excited are you when working in corporate:</h2>
+## How excited are you when working in corporate:
+<br>
+<img src="/images/posts/graphs/corporate_eq.png">
 
-<p><br>
-<img src="/images/posts/graphs/corporate_eq.png"></p>
+<img class="center" src="/images/posts/graphs/corporate.png">
 
-<p><img class="center" src="/images/posts/graphs/corporate.png"></p>
 
-<h2>How excited are you when working in startup:</h2>
+## How excited are you when working in startup:
+<br>
+<img src="/images/posts/graphs/startup_eq.png">
 
-<p><br>
-<img src="/images/posts/graphs/startup_eq.png"></p>
+<img class="center" src="/images/posts/graphs/startup.png">
 
-<p><img class="center" src="/images/posts/graphs/startup.png"></p>
 
-<h2>#Lines of code you write:</h2>
+## #Lines of code you write:
+<br>
+<img src="/images/posts/graphs/code_eq.png">
 
-<p><br>
-<img src="/images/posts/graphs/code_eq.png"></p>
+<img class="center" src="/images/posts/graphs/code.png">
 
-<p><img class="center" src="/images/posts/graphs/code.png"></p>
 
-<h2>Startup burn rate:</h2>
+## Startup burn rate:
+<br>
+<img src="/images/posts/graphs/burnrate_eq.png">
 
-<p><br>
-<img src="/images/posts/graphs/burnrate_eq.png"></p>
+<img class="center" src="/images/posts/graphs/burnrate.png">
 
-<p><img class="center" src="/images/posts/graphs/burnrate.png"></p>
 
-<h2>Do your css rules are working:</h2>
+## Do your css rules are working:
+<br>
+<img src="/images/posts/graphs/css_eq.png">
 
-<p><br>
-<img src="/images/posts/graphs/css_eq.png"></p>
+<img class="center" src="/images/posts/graphs/css.png">
 
-<p><img class="center" src="/images/posts/graphs/css.png"></p>
 
-<h2>Number of messages you get from girls- LinkedIn / Tinder</h2>
+## Number of messages you get from girls- LinkedIn / Tinder
+<br>
+<img src="/images/posts/graphs/burnrate_eq.png">
 
-<p><br>
-<img src="/images/posts/graphs/burnrate_eq.png"></p>
+<img class="center" src="/images/posts/graphs/linkedin.png">
 
-<p><img class="center" src="/images/posts/graphs/linkedin.png"></p>
 
-<h2>How much you think you know android:</h2>
+## How much you think you know android:
+<br>
+<img src="/images/posts/graphs/android_eq.png">
 
-<p><br>
-<img src="/images/posts/graphs/android_eq.png"></p>
+<img class="center" src="/images/posts/graphs/android.png">
 
-<p><img class="center" src="/images/posts/graphs/android.png"></p>
 
-<h2>How much you like your PM:</h2>
+## How much you like your PM:
+[Dirichlet function](https://en.wikipedia.org/wiki/Nowhere_continuous_function#Dirichlet_function)
 
-<p><a href="https://en.wikipedia.org/wiki/Nowhere_continuous_function#Dirichlet_function">Dirichlet function</a></p>
+<img class="center" src="/images/posts/graphs/PM.png">
 
-<p><img class="center" src="/images/posts/graphs/PM.png"></p>
+***
+<br>
+_Update: looks like people loving some of those graphs, so following couple of requests- you can now get it on shirts or stickers [here](https://teespring.com/stores/geeksshirts)._
+<br><br>
+***
+<br>
 
-<hr />
-
-<p><br>
-<em>Update: looks like people loving some of those graphs, so following couple of requests- you can now get it on shirts or stickers <a href="https://teespring.com/stores/geeksshirts">here</a>.</em>
-<br><br></p>
-
-<hr />
-
-<p><br></p>
-
-<p><em>If you enjoyed this post, please hit the “recommend” button below and share this story. I also love reading all comments. Thanks!</em></p>
+*If you enjoyed this post, please hit the “recommend” button below and share this story. I also love reading all comments. Thanks!*
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Why all your engineers should get a laptop]]></title>
     <link href="http://shem8.github.io/blog/2016/01/17/why-all-your-engineers-should-get-a-laptop/"/>
-    <updated>2016-01-17T18:20:12+01:00</updated>
+    <updated>2016-01-17T19:20:12+02:00</updated>
     <id>http://shem8.github.io/blog/2016/01/17/why-all-your-engineers-should-get-a-laptop</id>
-    <content type="html"><![CDATA[<p>At the first day in <a href="http://www.myroll.com/about">MyRoll</a> I was exiting- it was my first day in a startup, I was the first employee in the company and we all were thrilled to get started the new adventure.</p>
-
+    <content type="html"><![CDATA[At the first day in [MyRoll](http://www.myroll.com/about) I was exiting- it was my first day in a startup, I was the first employee in the company and we all were thrilled to get started the new adventure.
 <!--more-->
 
+<img class="right" src="https://shem8.files.wordpress.com/2016/01/291404_493445824002481_472952276_o.jpg?w=559" width="357" title="* 'Me and my new best friend.'" >
 
-<p><img class="right <a" src="href="https://shem8.files.wordpress.com/2016/01/291404_493445824002481_472952276_o.jpg?w=559">https://shem8.files.wordpress.com/2016/01/291404_493445824002481_472952276_o.jpg?w=559</a>" width="357" title="* &lsquo;Me and my new best friend.&rsquo;" ></p>
+But you know you don't really on board until you get your new MacBook Pro.
 
-<p>But you know you don&rsquo;t really on board until you get your new MacBook Pro.</p>
+In the past 3 years I'm pretty sure I've been seeing my Mac more than my wife. It was there when we hacked all night, on conferences and talks I gave and more.
 
-<p>In the past 3 years I&rsquo;m pretty sure I&rsquo;ve been seeing my Mac more than my wife. It was there when we hacked all night, on conferences and talks I gave and more.</p>
+A few months ago, the startup I was working for [got acquired](http://venturebeat.com/2015/11/12/avg-acquires-israeli-photo-management-startup-myroll-plans-to-integrate-the-technologies/) and I began my corporate life, as part of the move we left our old Macs behind and got the new super fast PCs. I'm really far from being a Windows fan, and I really liked the concept of working wherever you want, so I immediately raised my voice about this (some are getting laptops, but the default is PC).
 
-<p>A few months ago, the startup I was working for <a href="http://venturebeat.com/2015/11/12/avg-acquires-israeli-photo-management-startup-myroll-plans-to-integrate-the-technologies/">got acquired</a> and I began my corporate life, as part of the move we left our old Macs behind and got the new super fast PCs. I&rsquo;m really far from being a Windows fan, and I really liked the concept of working wherever you want, so I immediately raised my voice about this (some are getting laptops, but the default is PC).</p>
+I was told that I can get a laptop, but they asked me one single question- "Why? Why do you really **need** a laptop?". I didn't actually had an answer, this is just the way it is, developers are working on Mac, this is how it goes, just go to the next DroidCon close to you home and look at the audience.
 
-<p>I was told that I can get a laptop, but they asked me one single question- &ldquo;Why? Why do you really <strong>need</strong> a laptop?&rdquo;. I didn't actually had an answer, this is just the way it is, developers are working on Mac, this is how it goes, just go to the next DroidCon close to you home and look at the audience.</p>
+The only reason I had is that I might want working from home and their answer was "We don't want you to work from home- we want you to be with your family when you're home, leave work at work", they were right, my work-life balance is much better since I got here.
 
-<p>The only reason I had is that I might want working from home and their answer was &ldquo;We don&rsquo;t want you to work from home- we want you to be with your family when you&rsquo;re home, leave work at work&rdquo;, they were right, my work-life balance is much better since I got here.</p>
+So do I really need a Mac? Is it possible that this is just a useless trend that everyone following seamlessly? I thought about that in the following 3 months since I got here and came up with few points points:
 
-<p>So do I really need a Mac? Is it possible that this is just a useless trend that everyone following seamlessly? I thought about that in the following 3 months since I got here and came up with few points points:</p>
 
-<ul>
-<li><p>Hands down the most important thing here (in my opinion) is the ability to easily go and seat with your college- if it&rsquo;s for one helping each other with bug in code, or easy integration for your APIs or even show a demo for your designers. Because this is a big company and you probably working with people that are in a different room (or floor), it is sometimes reduce the feedback loop dramatic and solve a lot miscommunication.</p></li>
-<li><p>Work remotely- or at least give the option for people sometimes work from remote, read the <a href="https://blog.stackoverflow.com/2013/02/why-we-still-believe-in-working-remotely/">great post from stack overflow team</a> on why they believe its so good, in short- it helps to increase productivity, and more hiring options.</p></li>
-<li><p>You need to encourage your employees to go out there and participate in conferences, if as a member for leaning new things, or even better- show and talk about their work as a speaker. You also want it to be as easier as possible, if someone talk about new library- it&rsquo;s better try it on the project right now. If it some cool tool he or she developed- you want to show it easily, without setup it in a new computer.</p></li>
-<li><p>Hackatons are great, I really enjoy the sense of responsibility of deliver a product in 24 hours, even if it&rsquo;s just an app that block your smartphone outgoing communication when  you&rsquo;re drunk (I&rsquo;ll call it &ldquo;XGuard&rdquo;). Bringing a PC to an hackaton will just waste you an hour for setup and will make you look as noob.</p></li>
-</ul>
 
+  * Hands down the most important thing here (in my opinion) is the ability to easily go and seat with your college- if it's for one helping each other with bug in code, or easy integration for your APIs or even show a demo for your designers. Because this is a big company and you probably working with people that are in a different room (or floor), it is sometimes reduce the feedback loop dramatic and solve a lot miscommunication.
 
-<p><img class="center <a" src="href="https://shem8.files.wordpress.com/2016/01/1621854_10201968909759284_1984374607_n.jpg?w=559">https://shem8.files.wordpress.com/2016/01/1621854_10201968909759284_1984374607_n.jpg?w=559</a>" width="394" title="* &lsquo;BattleHack Tel-Aviv 2014&rsquo;" ></p>
 
-<ul>
-<li><p>Healthier and refreshing work environment- sitting next to a desk is <a href="http://www.diygenius.com/your-desk-job-is-killing-you-the-truth-about-sitting-down-infographic/">killing you</a>, go and stand in front of the window, see the amazing world outside, go work in the sun and refresh your head.</p></li>
-<li><p>As a boss, you want you workers will be familiar with the bleeding edge technologies out there, that kind of people usually will be the ones that will drive your team for a better and newer tools, so why not encourage them and give them a laptop so they will be able to learn <a href="https://shem8.wordpress.com/2016/01/01/kotlin-a-better-java-for-android/">Kotlin </a>in the late night?</p></li>
-</ul>
+  * Work remotely- or at least give the option for people sometimes work from remote, read the [great post from stack overflow team](https://blog.stackoverflow.com/2013/02/why-we-still-believe-in-working-remotely/) on why they believe its so good, in short- it helps to increase productivity, and more hiring options.
 
 
-<p>So that it, I now about to share this post with our VP of R&amp;D and hope for good =)</p>
+  * You need to encourage your employees to go out there and participate in conferences, if as a member for leaning new things, or even better- show and talk about their work as a speaker. You also want it to be as easier as possible, if someone talk about new library- it's better try it on the project right now. If it some cool tool he or she developed- you want to show it easily, without setup it in a new computer.
 
-<h3>Disclaimers:</h3>
 
-<ol>
-<li><p>In a lot of places there isn&rsquo;t really a problem to get a laptop, but the problem is the default- because 90% of the people will go with the default.</p></li>
-<li><p>When referring to Mac I intend to unix based operation system laptop, because I think that developers should be familiar with terminal and shell scripting for couple of reason (that&rsquo;s for another post). I just think that Mac is best out there&hellip;</p></li>
-</ol>
+  * Hackatons are great, I really enjoy the sense of responsibility of deliver a product in 24 hours, even if it's just an app that block your smartphone outgoing communication when  you're drunk (I'll call it "XGuard"). Bringing a PC to an hackaton will just waste you an hour for setup and will make you look as noob.
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Run fast, fall frequently, get up faster and go drink beer at the beach: What it's like to work at a StartUp]]></title>
-    <link href="http://shem8.github.io/blog/2015/11/15/run-fast-fall-frequently-get-up-faster-and-go-drink-beer-at-the-beach-what-its-like-to-work-at-a-startup/"/>
-    <updated>2015-11-15T11:24:22+01:00</updated>
-    <id>http://shem8.github.io/blog/2015/11/15/run-fast-fall-frequently-get-up-faster-and-go-drink-beer-at-the-beach-what-its-like-to-work-at-a-startup</id>
-    <content type="html"><![CDATA[<p><em>Over the past 3 years I&rsquo;ve been working at <a href="http://myroll.com/">MyRoll</a> (previously called Flayvr, the startup that loves you photos as much as you do). I joined right after the seed stage and I was the first employee of the company. This was my first time working at a startup and it&rsquo;s hands-down one of the best experiences I&rsquo;ve had in my not-so-long life. Lately, more and more of my friends have asked me: &ldquo;Should I join a startup, or just go corporate - something that&rsquo;s financially stable?&rdquo;.</em></p>
 
-<!--more-->
 
+<img class="center" src="https://shem8.files.wordpress.com/2016/01/1621854_10201968909759284_1984374607_n.jpg?w=559" width="394" title="* 'BattleHack Tel-Aviv 2014'" >
 
-<p><strong>First- I want to clear the water and say that I don&rsquo;t really have an answer for that.  It really depends on the type of person you are. However, these is my 2 cents about all the <em>*</em>GOOD<em>*</em> of working in a small startup (Don&rsquo;t worry, there&rsquo;s plenty of bad as well - coming soon):</strong></p>
 
-<h2>1. You learn fast (because you don&rsquo;t have a choice)</h2>
+  * Healthier and refreshing work environment- sitting next to a desk is [killing you](http://www.diygenius.com/your-desk-job-is-killing-you-the-truth-about-sitting-down-infographic/), go and stand in front of the window, see the amazing world outside, go work in the sun and refresh your head.
 
-<p>On my very first day at MyRoll I was given the task of writing a feature in our iOS app. It was my first time writing code for Mobile, first time working on objectiveC, first time working on a Mac, first time working with git, AND first time reading our code. There was no one-month boot camp, no onboarding powerpoints, no tutorials, and ZERO team members to pair program or review my code. Just the internet and the CTO that wrote the MVP for demo. A week later I had to add some app analytics to write to the DB so I had, in turn, to learn rails (from zero). A year later I was the one that started developing our Android app.</p>
 
-<p>Jumping on the horse and learning how to ride, time after time, over and over again, each time with a different type of horse (or ride? I lost myself in the analogy), makes you develop a real capability for learning new things (no matter what they are). You learn to predict the pitfalls, you know where things are going be more tricky and you develop some sense about what’s right and wrong in what you&rsquo;re doing.</p>
+  * As a boss, you want you workers will be familiar with the bleeding edge technologies out there, that kind of people usually will be the ones that will drive your team for a better and newer tools, so why not encourage them and give them a laptop so they will be able to learn [Kotlin ](https://shem8.wordpress.com/2016/01/01/kotlin-a-better-java-for-android/)in the late night?
 
-<h2>2. You go for the impossible, because the possible things are already there</h2>
 
-<p>Before we started working on Flayvr, people treated photos as isolated items. Our first goal was therefore  to find the context of the user&rsquo;s media and create a full meaningful story from it. So we took Ron’s, our CEO, endless photos stream and started to analyze it (I know this guy for 3 years but through his photos I also know how his trip to Barcelona in 2005 was&hellip;). We analyzed it manually and understood how 2 photos are connected to the same scene or event, we went over on different end cases and built some pretty solid algorithms to cluster his photos and videos.</p>
 
-<p>Than we asked some friends to test our algorithm on their stream. It was pretty bad&hellip; Ron had 2 kids and he literally records every second in their life - my friends, on the other hand, are party people that have tons of Whatsapp photos that are unrelated to one another. It looked like every person has his own unique stream, and it felt too complicated for a computer to just magically understand it.</p>
 
-<p>Back to the drawing board - we categorized our main users. We understood that we have different kinds of people and they are all different, but that we can easily adapt our algorithm to each one: Android or iPhone users? Are they taking a lot of photos or just getting sent 4-5 photos in Whatsapp? is she a professional photographer or a 13 years old selfie taker? etc..</p>
+So that it, I now about to share this post with our VP of R&D and hope for good =)
 
-<p>We then tweaked our algorithm (and are still making it better and better, there is no magic solution here) and actually arrived at some pretty solid results.</p>
 
-<p><strong>Why? Because he had no alternatives</strong> - it was either about delivering a good damn product or giving back our investors their money.</p>
+### Disclaimers:
 
-<h2>3. You break things. A lot!</h2>
+  1. In a lot of places there isn't really a problem to get a laptop, but the problem is the default- because 90% of the people will go with the default.
 
-<p>When moving fast you sometimes fall, just like a new baby born child. In the beginning you are going to  fall a lot, but slowly you learn how to put one leg in front of the other, you learn to keep your balance and in the end you are running smoothly.</p>
 
-<p>![<a href="http://c2.thejournal.ie/media/2013/04/falling-off-catwalk.gif">http://c2.thejournal.ie/media/2013/04/falling-off-catwalk.gif</a>]
-At first, releasing a new version was a big deal. We had a release doc with a couple of stages that you had to be checked: making sure you&rsquo;re working with the production env, testing it on a couple of devices, checking for updates and fresh install, etc&hellip; That took some time, and as we gained confidence the release cycle got shorter and we started  pushing a new version to our users 2-3 times a week (and sometimes even more).</p>
-
-<p>But even the adults fall sometimes, and we did have some bad deploys. Shit happens, you must accept that. If Facebook is uploads a new version of the app that crashes for 10% of the users right on start,  the result will be a twitter storm. Or if <a href="http://mashable.com/2015/07/01/google-photos-black-people-gorillas/">google computer vision miserably fails </a>- you will see it all over the net. But in our case we realized we have the time to fix, and users are more tolerant towards our mistake.</p>
-
-<h2>4. You aren’t afraid from failures</h2>
-
-<p>Further to my last point - because of the uncertainty and the risk- taking nature of startups, you will fail often. From time to time, you learn to live with all those failures and instead of being upset after each one you learn to embrace it. You understand that each failure makes you a bit smarter: your estimation should be done more carefully, you now know your users don&rsquo;t like the red color, etc&hellip;</p>
-
-<blockquote>“When we give ourselves permission to fail, we, at the same time, give ourselves permission to excel.”
-<br>
-<i>- Eloise Ristad</i></blockquote>
-
-
-<p>With that in mind - you think more about the process and less about the results.</p>
-
-<h2>5. You understand the power of UX, marketing, etc&hellip;</h2>
-
-<p>In my previous job I was one of 6 developers in 3 dev teams in our department. There were two outsourced designers that I never talked with, 3 product managers that I saw only during planning sessions, and a sales team, somewhere, maybe in the US or maybe one floor above, I&rsquo;m not really sure.</p>
-
-<p>As a server side programmer I never took UX too seriously. I was sure that if the feature is important enough, users are going to use it. I was sure that if we, the devs guys, are going to kick a hell good full product - users will love it. I was sure that there was some secret way that they are going to find it and magically understand how to use all features right off the bat.</p>
-
-<p>I was stupid. UX guys made our users understand our flows, product guys taught us <a href="https://shem8.wordpress.com/2015/08/24/know-what-not-to-build-droidcon-2015/">what not to build</a> and saved us tons of time, our super hero marketing guy brought us to the first place on <a href="http://www.producthunt.com/tech/gallery-doctor-2-0">producthunt</a> and let a huge crowd discover our app right on the first day on launch. A tech product is just like other product, the tech part is just a small piece of the puzzle, so don&rsquo;t feel too special.</p>
-
-<h2>6. You embrace competition</h2>
-
-<p>On the day iOS 7 was released we got many messages from friends. They were all like  "oh not cool, apple just implemented your app in the default photos app, sorry for you guys". We were a bit afraid, and at first we thought &ldquo;ok, we have no chance here&rdquo;. But it turned out to be a good move for us. First - we got some nice free <a href="http://m.blog.laptopmag.com/obsolete-ios-apps?slide=2">PR</a> during the first few days. Second, users started to understand how much this feature was important when browsing their photos and started to look for a dedicated app for that, and we indeed got more downloads over the following months.</p>
-
-<p>Same happened when Dropbox Carousel launched and with Google photos. When the big companies enter the arena you should start to worry, but you should also be flattered, because that means that there is something worth fighting about, and in today’s world - there is plenty of room for you too there.</p>
-
-<blockquote>Remember: if the Gorilla is blowing down your neck - that means you're on the right track, just run faster =)</blockquote>
-
-
-<h2>7. You forget about your comfort zone</h2>
-
-<p>Here is some very small taste of the things that I had the privilege to do over the last 3 years. All are things  that I&rsquo;ve never done before:</p>
-
-<ul>
-<li><p>I gave 2 talks on 2 different DroidCon conferences (The biggest Android conference around)</p></li>
-<li><p>I delivered tens of pitches in English as part of our startup booth in conferences</p></li>
-<li><p>I went over couple to absolute strangers in the middle of the street and asked them to play with our app, just to gather some feedback</p></li>
-<li><p>I emailed hundreds of users, closed support tickets and solved their issues</p></li>
-<li><p>I went over to the home of one of our investors and worked with her on fixing an issue she had with the app</p></li>
-<li><p>I interviewed candidates applying for the company</p></li>
-<li><p>I started writing my blog :)</p></li>
-</ul>
-
-
-<p>  ![<a href="http://cosmic-fitness.com/wp-content/uploads/2015/03/comfort-zone-300x206.jpg">http://cosmic-fitness.com/wp-content/uploads/2015/03/comfort-zone-300x206.jpg</a>]</p>
-
-<h2>8. Nobody is going tell you not to come with flip flops or that the CEO is coming tomorrow so you have to look like you’re working at 8AM</h2>
-
-<p><br>
-  ![<a href="https://shem8.files.wordpress.com/2015/10/edit.jpg?w=660">https://shem8.files.wordpress.com/2015/10/edit.jpg?w=660</a>]</p>
-
-<p><br>
-Yup, you&rsquo;re able to start every Thursday with yoga on the beach and swimming in the sea, and we actually did it.</p>
-
-<p><br></p>
-
-<hr />
-
-<p>Looks like start-up life is all fun and games , but it&rsquo;s not. It&rsquo;s more like a roller coaster. The ride will take you to some new heights but you are also going to get lots of downs and falls (and I hope I&rsquo;ll write a blog post about it soon). But for all those who want my advice about which one is better - it&rsquo;s more about what kind of person you are and what do you want to achieve. Those small companies that are moving fast are great for learning new things and gaining experience on stuff you probably wouldn&rsquo;t do in a bigger company, but it&rsquo;s also very stressful and chaotic, and you have to be ready for this ride.</p>
-
-<p>As said, I’ve been in these ride over the past 3 years, I can’t say I’ve enjoy every second of it but when looking back, I can’t imagine how far I got and how much I gained from this adventure.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Effectively reading]]></title>
-    <link href="http://shem8.github.io/blog/2015/09/11/affectively-reading/"/>
-    <updated>2015-09-11T17:16:35+02:00</updated>
-    <id>http://shem8.github.io/blog/2015/09/11/affectively-reading</id>
-    <content type="html"><![CDATA[<p><em>The internet is full of great pieces of knowledge. Starting from <a href="http://www.wired.com/2014/10/cheating-video-poker">amazing stories</a> and ending with some <a href="http://www.marcandangel.com/2014/07/06/12-quiet-rituals-of-enormously-successful-humans/">tips from the pros</a>. But because now days <a href="https://shem8.wordpress.com">every shitty twitter user that have a keyboard can open a blog</a> the internet is also full of garbage and texts that not worth your time, and on the other hand you always feel that you missing something, So what can we do?</em></p>
-
-<!--more-->
-
-
-<p>In this post I&rsquo;ll share with you my experience and my reading habits that I&rsquo;ve developed recently to maximize my reading time by reading exactly what I need and without afraid I&rsquo;m loosing something out there.</p>
-
-<p><strong><em>When I refer to &ldquo;reading&rdquo; on this post I refer to texts on the internet, especially blog posts or interesting articles. I&rsquo;m not talking about books (I hope I&rsquo;ll get to it on another post) or some news content that are not relevant if you read it a month later</em></strong></p>
-
-<hr />
-
-<p>Once upon a time I&rsquo;ve consume all my content via my social networks. First- it was Facebook, my friends were sharing some interesting links and I read them immediately (If I had a minute or two). Fast enough, Facebook algorithm started prioritize media over content, and my Facebook became mix of babies, dogs and oh-look-at-me-I-am-in-a-pool-party feed.</p>
-
-<p>[caption id=&ldquo;&rdquo; align=&ldquo;alignright&rdquo; width=&ldquo;356&rdquo;]<img src="http://i2.wp.com/www.ladycarcar.vn/wp-content/uploads/internet1.jpg?resize=356%2C193" alt="" /> Source: <a href="http://www.ladycarcar.vn/mat-tu-vi-su-dung-cong-nghe/">http://www.ladycarcar.vn/mat-tu-vi-su-dung-cong-nghe/</a>[/caption]</p>
-
-<p>That&rsquo;s when I decided to move to Twitter, and that sure was a mistake. Don&rsquo;t get me wrong, Twitter is the best way out there to know what going out right NOW (I barely visiting news sites any more), it is a great platform to meet new people or to get help. But it not that good for discovering some good content, mainly because the users there prefer to keep things short and light.</p>
-
-<p>In that point I went back to the drawing board, things was not worked for me. I had hard time following blogs that was importing for me (instead of reading the last post when it was released via RSS, I visited the blog once in a while and read all the posts I&rsquo;ve missed). I didn&rsquo;t have time to read those links on Facebook and finding them later was impossible. And when I finally had time I didn&rsquo;t had any way to explore new cool content.</p>
-
-<h2>Step 1: Create your reading ritual</h2>
-
-<p>Reading demand some certain state of mind. For me, for example, reading on my smartphone didn't worked so well, because it&rsquo;s too small and also because there are so many notifications and I lost my focus easily. After trying all kinds of things it look like my (wife&rsquo;s) iPad works the best. It also works great for me because I&rsquo;m doing my reading as part of my <a href="http://stevecorona.com/morning-rituals-1-10-1000/">morning ritual</a> so I don&rsquo;t have to grab it with me elsewhere. So my reading ritual is on the morning with a cup a tea, looking at the sea from my living room window with an iPad to read.</p>
-
-<h2>Step 2: Find your platform</h2>
-
-<p>Now you need to build some mechanism for saving your reading queue. I&rsquo;m using <a href="https://getpocket.com">Pocket</a> and I really think it is the best one out there. What&rsquo;s important from this platform is:</p>
-
-<ol>
-<li><p>Easy to insert (add to the queue)</p></li>
-<li><p>Easy to pull (get the next for reading)</p></li>
-<li><p>It is also nice to have some tagging, sharing and search functionality.</p></li>
-</ol>
-
-
-<p>Pocket surly served the first 2 items: there is a <a href="https://chrome.google.com/webstore/detail/save-to-pocket/niloccemoadcdkdjlinkgdfekeahmflj?hl=en">chrome extension</a>, and android app that let you add articles quickly, and an app for almost all platforms for reading.</p>
-
-<p>Make sure that you have one and only platform and all the content you consume should be from there. Even if you saw something on Facebook, or a friend send some link on mail- add it to your reading list and read it from there, I&rsquo;ll explain why in the next step:</p>
-
-<h2>Step 3: Fill some content</h2>
-
-<p>So now we have all the infrastructure ready, how do we put something in? I will divide it to 3:</p>
-
-<ol>
-<li><p>Your direct channels- Those are the posts that you know that you don&rsquo;t wanna miss, like important blogs or interesting medium users. You want all those posts will be added automaticity to your platform.</p></li>
-<li><p>Specific aggregator/ digested list- This one is tricky. In &ldquo;The Tipping Point" Malcolm Gladwell says that on most of the times, it&rsquo;s better to ask a maven instead of learning things on yourself. If you, like me, can&rsquo;t handle all the blogs out there, not knowing all the bloggers and sites- find your maven that will send you the most important things out there.</p></li>
-<li><p>Recommendation engine- This one is the best for exploring some new stuff that not necessary fit to your main interest. This can be some algorithm that based on the crowd source or you personal taste (or better- both). That&rsquo;s why it&rsquo;s important to manage all your reading thought the same platform to give it as much information as possible for future learning.</p></li>
-</ol>
-
-
-<p>Those 3 aspects should fill some nice and variety reading list. Here is my reading list:</p>
-
-<ol>
-<li><p>As Android developer- the <a href="http://android-developers.blogspot.co.il/">Android blog</a> is really important to me and I want to know on any additional API or new features there is. I&rsquo;m also interested on every thing <a href="https://medium.com/@chethaase">Chet Haase</a> is publishing. And with <a href="https://ifttt.com/">IFTTT</a> it easily added to my pocket every time new item is publish.</p></li>
-<li><p>3 years ago I discover the wonderful <a href="http://softwareleadweekly.com/">software lead weekly</a> project, I&rsquo;m getting 1 weekly mail with the most interesting stuff out there about startup culture and leadership. And thanks to the awesome <a href="https://twitter.com/orenellenbogen">Oren Ellenbogen</a> there is a simple &lsquo;Add to pocket&rsquo; option.</p></li>
-<li><p>Pocket is doing amazing work here, and send me every week couple of articles that might interesting me (I say amazing because it&rsquo;s pretty accurate). Lately I also started using medium, and it&rsquo;s recommendation emails are nice too.</p></li>
-</ol>
-
-
-<h2>Step 4: Find your pace</h2>
-
-<p>I know lots of people that did it all but their Pocket app is just an endless list. They keep adding some stuff and never got to read half of them, soon enough they give up because they know there is no chance they gonna keep the pace. Start with small amount of articles, it&rsquo;s better to have an empty list and not a too long one that will make you give up. After you will make it an habit it will be easier to add more stuff, so you always need to iterate between step 3 and 4.</p>
-
-<p>For me- I started with reading around a few articles in the end of the week. That was build by 2 or 3 from the &ldquo;software lead weekly&rdquo; mail and maybe 2 more from the pocket mail. Step by step I increase my reading capacity and now I&rsquo;m reading 3 articles a day = 15 a week. And adding around the same amount (Android= 3, software lead weekly= 4-5, Pocket= 4-5, medium= 3-4).</p>
-
-<hr />
-
-<p>It took me couple of years but I really feel like my reading ritual helped me learn a lot of new things (about Android, tech and also on some other things that I&rsquo;ve never read about). Yes- of course, I still sometimes facing some &ldquo;What the hell I&rsquo;ve just read in the last 4 minutes&rdquo; moments, or skipping some important announcements because I don&rsquo;t have time. But you know- you can&rsquo;t always win the internet, winning 80% of the time is fine with me =)</p>
-
-<p><em>Cover photos by: <a href="http://20px.com/blog/2013/03/31/how-i-feel-when-i-put-stuff-on-the-internet/#.VfLQrZ2qqko">twenty pixels</a></em></p>
+  2. When referring to Mac I intend to unix based operation system laptop, because I think that developers should be familiar with terminal and shell scripting for couple of reason (that's for another post). I just think that Mac is best out there...
 ]]></content>
   </entry>
   
