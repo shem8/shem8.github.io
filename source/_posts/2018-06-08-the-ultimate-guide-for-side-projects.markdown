@@ -20,6 +20,8 @@ Build something- it's nice and fulfilling when you can show your product to othe
 
 2. Refreshing- it's a great way to get out of your comfort zone and do something different from your day to day job.
 
+{% img center /images/posts/sideproject/pexels-photo-316465.jpeg Photo by Lum3n.com from Pexels %}
+
 These points were are in order of importance to me. Personally, most of the times my primary goal was to learn something new. 
 
 There are a lot of articles about what is a side project. You can read about it [here](https://medium.freecodecamp.org/why-side-projects-are-so-damn-important-239ba37209e) or [here](https://medium.com/the-year-of-the-looking-glass/the-importance-of-side-projects-cf9f63954031).
@@ -39,6 +41,9 @@ Those just a few representative examples to give you a sense of what can side pr
 Some projects can help you learn something new that relevant to your role (Android, Kotlin, Gatsby.js, etc.). Other projects can give you an option to touch aspects of your jobs that you not regularly have time to (product, marketing, design, etc.). And some projects just let you do something entirely new (write a blog, doing a talk).
 
 After years of maintaining side projects, I understand that there are some elements of useful and effective side projects. If in the past I could work 10+ hours a week on a side project, now, with two small children I have only around 4 hours to work on it.
+
+{% img center /images/posts/sideproject/pen-idea-bulb-paper.jpg %}
+
 
 So I want to share with you some principles to get out the most with your time. So let's start:
 
@@ -124,6 +129,7 @@ Remember that we want to achieve as much as we can in the little time possible, 
 
 It'll help you with the sense of accomplishment. The worst thing that can happen to you is to wake up after 5 hours session to realize you just spent the whole day [yak shaving](https://seths.blog/2005/03/dont_shave_that/) without really making any progress.
 
+{% img center /images/posts/sideproject/building-joy-planning-plans.jpg %}
 
 ---
 
