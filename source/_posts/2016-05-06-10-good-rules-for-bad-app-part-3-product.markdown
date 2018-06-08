@@ -6,12 +6,9 @@ layout: post
 link: https://shem8.wordpress.com/2016/05/06/10-good-rules-for-bad-app-part-3-product/
 slug: 10-good-rules-for-bad-app-part-3-product
 title: 10 good rules for bad App, Part 3- Product
-wordpress_id: 368
 categories:
 - android
 - humor
-post_format:
-- Aside
 tags:
 - android
 - product

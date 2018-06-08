@@ -4,6 +4,8 @@ title: "How I survived my first big conference talk"
 date: 2016-09-23 17:32:27 +0300
 comments: true
 categories:
+- life
+- publicspeaking
 ---
 
 *On 20.9 I presented at [Reversim Summit](http://summit2016.reversim.com/) (one of the biggest conference for developers in Israel) about building Android apps. This was my first time talking in a conference at this scale. It wasn’t easy but I survived and I’m here to talk about my journey.*
