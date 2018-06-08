@@ -116,4 +116,4 @@ social:
 
 defaults:
   - values:
-      image: http://www.gravatar.com/avatar/1e0007c47fb11a12c8427a856187d48e?s=160
+      image: images/shem.jpg
