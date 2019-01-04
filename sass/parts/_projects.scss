@@ -16,7 +16,9 @@
    }
    .download {
      height: 80px;
-     img {
+     .link {
+       font-size: 1.3em;
+       font-weight: bold;
         display: block;
         float: left;
         height: 100%;
@@ -41,7 +43,8 @@
      .download {
        margin-top: 10px;
        width: 100%;
-       img {
+       .link {
+         text-align: center;
          display: block;
          margin: auto;
          float: none;
