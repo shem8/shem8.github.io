@@ -4,7 +4,7 @@
   <title><![CDATA[Shem Magnezi Blog]]></title>
   <link href="http://shem8.github.io/atom.xml" rel="self"/>
   <link href="http://shem8.github.io/"/>
-  <updated>2018-06-02T22:35:08+02:00</updated>
+  <updated>2019-03-19T12:11:40+02:00</updated>
   <id>http://shem8.github.io/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
@@ -14,9 +14,163 @@
 
   
   <entry>
+    <title type="html"><![CDATA[The ultimate guide for side projects]]></title>
+    <link href="http://shem8.github.io/blog/2018/06/08/the-ultimate-guide-for-side-projects/"/>
+    <updated>2018-06-08T13:28:30+03:00</updated>
+    <id>http://shem8.github.io/blog/2018/06/08/the-ultimate-guide-for-side-projects</id>
+    <content type="html"><![CDATA[<p>In the last ten years or so, I made myself a habit to maintain at least one side project at every given moment. Those side projects served a couple of purposes:</p>
+
+<!-- more -->
+
+
+<ol>
+<li><p>Learn new things- it can be a new technology, to experience with a new field or to acquire a new capability.
+Build something- it&rsquo;s nice and fulfilling when you can show your product to others, or take a look at something and know you&rsquo;re the one that created it.</p></li>
+<li><p>Refreshing- it&rsquo;s a great way to get out of your comfort zone and do something different from your day to day job.</p></li>
+</ol>
+
+
+<p><img class="center" src="http://shem8.github.io/images/posts/sideproject/pexels-photo-316465.jpeg" title="Photo by Lum3n.com from Pexels" ></p>
+
+<p>These points were are in order of importance to me. Personally, most of the times my primary goal was to learn something new. </p>
+
+<p>There are a lot of articles about what is a side project. You can read about it <a href="https://medium.freecodecamp.org/why-side-projects-are-so-damn-important-239ba37209e">here</a> or <a href="https://medium.com/the-year-of-the-looking-glass/the-importance-of-side-projects-cf9f63954031">here</a>.
+ 
+Here are some of my examples:</p>
+
+<ul>
+<li><p>Building a 3D model of my house- back in the day I thought about applying for a job at Pixar. So to increase my chances to get there as a software engineer I decided to learn how to work with <a href="https://www.autodesk.com/products/maya/overview">Maya</a>.</p></li>
+<li><p>Building a bill splitting app- as part of exploring new fields I wanted to experience with developing a user interface product. That&rsquo;s why I created the <a href="https://play.google.com/store/apps/details?id=org.bill.splitter">BillSplitter</a> app, which later helped me get hired by a mobile startup.</p></li>
+<li><p>Decorate my children&rsquo;s room- when I was young I loved drawing, but I didn&rsquo;t have time to do that since then. So I used the opportunity to learn how to how to draw with acrylic colors and sketch some stuff in our children&rsquo;s room before my older daughter came to the world (and added another one for our baby boy).</p></li>
+<li><p>Write a blog- to practice my English I started to publish content regularly. I might have <a href="https://medium.com/@shemag8/when-your-story-go-viral-8a1c84ad0fdb">gone viral</a>, but my English is still not as good as I wish.</p></li>
+</ul>
+
+
+<p>Those just a few representative examples to give you a sense of what can side project looks like and what you can achieve. </p>
+
+<p>Some projects can help you learn something new that relevant to your role (Android, Kotlin, Gatsby.js, etc.). Other projects can give you an option to touch aspects of your jobs that you not regularly have time to (product, marketing, design, etc.). And some projects just let you do something entirely new (write a blog, doing a talk).</p>
+
+<p>After years of maintaining side projects, I understand that there are some elements of useful and effective side projects. If in the past I could work 10+ hours a week on a side project, now, with two small children I have only around 4 hours to work on it.</p>
+
+<p><img class="center" src="http://shem8.github.io/images/posts/sideproject/pen-idea-bulb-paper.jpg"></p>
+
+<p>So I want to share with you some principles to get out the most with your time. So let&rsquo;s start:</p>
+
+<h2>1. Decide what you want to learn</h2>
+
+<p>Before starting building something, think what you aim to achieve from this project. What do you want to learn? What do you want to practice?</p>
+
+<p>This should be one thing and one thing only. Sure, you might get other things along the way as well, but focus on one thing at first.</p>
+
+<p>Setting one <strong>single</strong> goal will latter help you along the project with all kind of decision you&rsquo;ll tackle, for example: should you write tests? If your primary goal is to practice responsive design- so not, it&rsquo;s not relevant.</p>
+
+<p>Remember- we want to get the most in the little time as possible, so we want to pay attention to what we&rsquo;re working on (and more precisely- what&rsquo;s not).</p>
+
+<h2>2. Choose a product that you would use</h2>
+
+<p>Next, we need to decide what we want to build. There are plenty of resources out there for ideas to side projects that you can create. Go over them to get a sense of the options you have and then ignore them altogether.</p>
+
+<blockquote><p>Your side project should be something you (theoretically) would use.</p></blockquote>
+
+
+<p>It has two reasons:</p>
+
+<ol>
+<li><p>They&rsquo;re going to be ups and downs along the way. You will have days when you&rsquo;ll be extremely excited about the project (especially on start), but there will be times when you&rsquo;ll need to find the energy to skip this new Netflix show and fix some weird bug in your project. If you aren&rsquo;t related to the thing, it won&rsquo;t stay long.</p></li>
+<li><p>Most of the time you&rsquo;ll be alone here. No product manager or boss that tells you what to do. You&rsquo;ll need to figure what to do on your own, and the best way to do it is to build this thing for yourself.</p></li>
+</ol>
+
+
+<h2>3. Not too hard but not too easy</h2>
+
+<p>Now when it comes to building the project, it&rsquo;s important to aim to the right level- that&rsquo;s mean not too hard for you but also not too easy. </p>
+
+<p>That way you&rsquo;ll stay motivated along the project, and it will help you with a sense of achievement. It&rsquo;s called the Goldilocks Rule, and you can read more about it <a href="https://jamesclear.com/goldilocks-rule">here</a>.</p>
+
+<h2>4. Break it into a small deliverable chunks</h2>
+
+<blockquote><p>Before you start doing the thing- you should sit and plan.</p></blockquote>
+
+
+<p>With as much as boring and tedious as it sounds, building a rough roadmap for the side project will help you later.</p>
+
+<p>Those should not be significant milestones; it should be very very small checkpoints that you can achieve in every &ldquo;sprint&rdquo; (usually a week or so). </p>
+
+<p>Here is an example for one that I can think of for a simple chat web app:</p>
+
+<ol>
+<li>setting app the environment</li>
+<li>make one client work locally</li>
+<li>sync data with the server</li>
+<li>make the remote client work</li>
+<li>styling</li>
+<li>deploy</li>
+</ol>
+
+
+<p>Here is another one for a blog post:</p>
+
+<ol>
+<li>writing outline</li>
+<li>writing section I</li>
+<li>writing section II</li>
+<li>writing section III</li>
+<li>introduction and summary</li>
+<li>adding relevant links</li>
+<li>layout and image</li>
+<li>publish and sharing</li>
+</ol>
+
+
+<p>Again, it comes to serve two purposes:</p>
+
+<ol>
+<li><p><strong>Focus-</strong> as said, you won&rsquo;t have much time here and every minute counts. You need to know exactly what you need to do and enter the zone as quickest as possible.</p></li>
+<li><p><strong>Getting in and out of context-</strong> since it might be days or even weeks since you last worked on the side projects, it will be very hard for you to create a seamless continuing workflow. Continue from the exact point you stopped, and understand the context might take an hour or two. That&rsquo;s why it&rsquo;s better to close every session so you&rsquo;ll have a fresh start in the next round.</p></li>
+</ol>
+
+
+<h2>5. Make it a habit</h2>
+
+<p>I learned that consistency is the name of the game, so it&rsquo;s more important to work on the side project for a couple of weeks than trying to squeeze it up for a 12 hours marathon and never come back.</p>
+
+<p>That&rsquo;s why it was necessary for me to make the whole thing just a habit- I know exactly what I&rsquo;m doing every Friday when the clock shows 10 am: I open my mac and continue working from the last point I stopped last week.</p>
+
+<p>Since I&rsquo;m doing the project at home, and working from home is not something that I&rsquo;m doing on my day to day- I also put my self in a state of mind of working: sitting in a specific place, with a particular setup.</p>
+
+<p>That way I&rsquo;m entering a work mode easily without really thinking what should I do now or whether this is the right time or place to work on the side project.</p>
+
+<p>I also try to keep that habit for as many straight weeks as possible, even for just an hour. I found it that when I&rsquo;m starting to miss even one time- it&rsquo;s a slippery road from there to skip it for more and more weeks later. You can read more about it <a href="https://jamesclear.com/stop-procrastinating-seinfeld-strategy">here</a>.</p>
+
+<h2>6. Perfection is your enemy.</h2>
+
+<p>When the times goes by it&rsquo;ll be easy sometimes to go down the rabbit hole because you want to change some text font or waste your time chasing a small bug- <strong>don&rsquo;t let that happen!</strong></p>
+
+<p>Remember that we want to achieve as much as we can in the little time possible, so always remind yourself what you&rsquo;re here for and focus on the important stuff.</p>
+
+<p><a href="https://medium.com/personal-growth/give-yourself-permission-to-screw-up-2c5f55e9b9e6">Done is better than perfect</a>, and you should keep the wheel spinning. </p>
+
+<p>It&rsquo;ll help you with the sense of accomplishment. The worst thing that can happen to you is to wake up after 5 hours session to realize you just spent the whole day <a href="https://seths.blog/2005/03/dont_shave_that/">yak shaving</a> without really making any progress.</p>
+
+<p><img class="center" src="http://shem8.github.io/images/posts/sideproject/building-joy-planning-plans.jpg"></p>
+
+<hr />
+
+<p>Side projects are an excellent opportunity to acquire new skills and experience in stuff that you not usually have the chance to do on your day-to-day.</p>
+
+<p>As with anything new- it&rsquo;s probably easier to keep up on start when you&rsquo;re still excited, the secret is how you maintain this feeling and make this excitement lasting even on times that you feel tired.
+Hopes those tips will motivate you building great products and learn something new.</p>
+
+<hr />
+
+<p><strong>If you enjoyed this post, please hit the &ldquo;recommend&rdquo; button below and share this story with your friends. I&rsquo;ll also love hearing about any other tips that you have or any cool side project that you&rsquo;re currently working on. Thank you!</strong></p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[How to become a master in CSS in 5 simple steps]]></title>
     <link href="http://shem8.github.io/blog/2017/08/25/how-to-become-a-css-master/"/>
-    <updated>2017-08-25T14:52:26+02:00</updated>
+    <updated>2017-08-25T15:52:26+03:00</updated>
     <id>http://shem8.github.io/blog/2017/08/25/how-to-become-a-css-master</id>
     <content type="html"><![CDATA[<p><a href="http://shem8.github.io/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/">As you know</a>- I lately left my comfort zone, closed Android Studio and dive straight into a scary, rough sea called Web Development.
 An integral part of building web apps is working with CSS. For the ones that not familiar with Cascading Style Sheet- this is how web developers design their web pages, give it some life and structure, add animations and lose their sanity while doing so.</p>
@@ -103,7 +257,7 @@ An integral part of building web apps is working with CSS. For the ones that not
   <entry>
     <title type="html"><![CDATA[5 things React world can learn from Android]]></title>
     <link href="http://shem8.github.io/blog/2017/07/02/5-things-react-world-can-learn-from-android/"/>
-    <updated>2017-07-02T20:52:47+02:00</updated>
+    <updated>2017-07-02T21:52:47+03:00</updated>
     <id>http://shem8.github.io/blog/2017/07/02/5-things-react-world-can-learn-from-android</id>
     <content type="html"><![CDATA[<p>In my <a href="http://shem8.github.io/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/">previous post</a>, I talked about a couple of things I notice after moving from my usual gig as an Android developer and doing some web development (especially React).</p>
 
@@ -185,7 +339,7 @@ An integral part of building web apps is working with CSS. For the ones that not
   <entry>
     <title type="html"><![CDATA[Is there Room for one more?]]></title>
     <link href="http://shem8.github.io/blog/2017/06/02/room-performance/"/>
-    <updated>2017-06-02T14:26:09+02:00</updated>
+    <updated>2017-06-02T15:26:09+03:00</updated>
     <id>http://shem8.github.io/blog/2017/06/02/room-performance</id>
     <content type="html"><![CDATA[<p>In the last Google I/O, Google announced a new <a href="https://developer.android.com/topic/libraries/architecture/index.html">architecture components</a>. One of them is Room.
 Room is an (another) ORM solution for the Android developers. Combining with some other elements Google released (like LiveData, ViewModel, and Lifecycle Listeners)- basic app flows should be much simpler.</p>
@@ -310,7 +464,7 @@ That&rsquo;s why GreenDAO and DbFlow are heavily investing in performance (<a hr
   <entry>
     <title type="html"><![CDATA[Tech life as graphs II]]></title>
     <link href="http://shem8.github.io/blog/2017/05/19/tech-life-as-graphs-2/"/>
-    <updated>2017-05-19T12:02:04+02:00</updated>
+    <updated>2017-05-19T13:02:04+03:00</updated>
     <id>http://shem8.github.io/blog/2017/05/19/tech-life-as-graphs-2</id>
     <content type="html"><![CDATA[<p><a href="http://shem8.github.com/blog/2016/06/03/life-as-graphs/">Another part</a> of me trying to visualize situations of my tech life as graphs</p>
 
@@ -386,7 +540,7 @@ That&rsquo;s why GreenDAO and DbFlow are heavily investing in performance (<a hr
   <entry>
     <title type="html"><![CDATA[5 things I learned as an Android developer after doing some Web development]]></title>
     <link href="http://shem8.github.io/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/"/>
-    <updated>2017-03-31T12:32:32+02:00</updated>
+    <updated>2017-03-31T13:32:32+03:00</updated>
     <id>http://shem8.github.io/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development</id>
     <content type="html"><![CDATA[<p>In the last couple of months, I started my new journey, leaving my Android position behind and started doing some web development. Working on those 2 platforms has many differences, I can’t say the one is better than the other, but there are many things that those 2 worlds can learn from each other.</p>
 
@@ -555,7 +709,7 @@ Do you remember trying to figure out what is going on with your database so you 
   <entry>
     <title type="html"><![CDATA[How I survived my first big conference talk]]></title>
     <link href="http://shem8.github.io/blog/2016/09/23/my-way-to-reversim/"/>
-    <updated>2016-09-23T16:32:27+02:00</updated>
+    <updated>2016-09-23T17:32:27+03:00</updated>
     <id>http://shem8.github.io/blog/2016/09/23/my-way-to-reversim</id>
     <content type="html"><![CDATA[<p><em>On 20.9 I presented at <a href="http://summit2016.reversim.com/">Reversim Summit</a> (one of the biggest conference for developers in Israel) about building Android apps. This was my first time talking in a conference at this scale. It wasn’t easy but I survived and I’m here to talk about my journey.</em></p>
 
@@ -677,7 +831,7 @@ Do you remember trying to figure out what is going on with your database so you 
   <entry>
     <title type="html"><![CDATA[Tech Life as graphs]]></title>
     <link href="http://shem8.github.io/blog/2016/06/03/life-as-graphs/"/>
-    <updated>2016-06-03T11:08:42+02:00</updated>
+    <updated>2016-06-03T12:08:42+03:00</updated>
     <id>http://shem8.github.io/blog/2016/06/03/life-as-graphs</id>
     <content type="html"><![CDATA[<p>As a geek I often imagine situations in life as a math equations and graphs (don&rsquo;t you all do it too? What&rsquo;s wrong with you people?!). In this post I&rsquo;ll try to describe some situations is the tech life as graphs:</p>
 
@@ -756,7 +910,7 @@ Do you remember trying to figure out what is going on with your database so you 
   <entry>
     <title type="html"><![CDATA[Playing with Coordinator Layout]]></title>
     <link href="http://shem8.github.io/blog/2016/05/27/playing-with-coordinator-layout/"/>
-    <updated>2016-05-27T14:02:52+02:00</updated>
+    <updated>2016-05-27T15:02:52+03:00</updated>
     <id>http://shem8.github.io/blog/2016/05/27/playing-with-coordinator-layout</id>
     <content type="html"><![CDATA[<p>Lately I needed to build some kind of overlay screen that looks like the one that shows when you open the phone when you don&rsquo;t have a lock screen. This is a simple overlay screen that should be dismissable when the user swipe it out from the lower part of the screen<!-- more -->, something like this:</p>
 
@@ -931,7 +1085,7 @@ Do you remember trying to figure out what is going on with your database so you 
   <entry>
     <title type="html"><![CDATA[10 good rules for bad App, Part 3- Product]]></title>
     <link href="http://shem8.github.io/blog/2016/05/06/10-good-rules-for-bad-app-part-3-product/"/>
-    <updated>2016-05-06T14:37:07+02:00</updated>
+    <updated>2016-05-06T15:37:07+03:00</updated>
     <id>http://shem8.github.io/blog/2016/05/06/10-good-rules-for-bad-app-part-3-product</id>
     <content type="html"><![CDATA[<p>Welcome to the third (and last) part of the tutorial of how building a bad app. After we&rsquo;ve building a bad app in the <a href="http://shem8.github.com/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical/">first part</a>, and remarkably ruin its look and feel in the <a href="http://shem8.github.com/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui/">second part</a>, we&rsquo;re now going to go over on 10 steps to easily how to kill your product:</p>
 
@@ -997,7 +1151,7 @@ Do you remember trying to figure out what is going on with your database so you 
   <entry>
     <title type="html"><![CDATA[10 good rules for bad App, Part 2- UX\UI]]></title>
     <link href="http://shem8.github.io/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui/"/>
-    <updated>2016-04-17T18:04:28+02:00</updated>
+    <updated>2016-04-17T19:04:28+03:00</updated>
     <id>http://shem8.github.io/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui</id>
     <content type="html"><![CDATA[<p>Welcome to my second part of the tutorial of how building a bad app. After we&rsquo;ve building a bad app in the <a href="http://shem8.github.com/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical/">first part</a>, it&rsquo;s the time to call our designer to fuck it a bit more:</p>
 
@@ -1067,7 +1221,7 @@ Do you remember trying to figure out what is going on with your database so you 
   <entry>
     <title type="html"><![CDATA[10 good rules for bad App, Part 1- Technical]]></title>
     <link href="http://shem8.github.io/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical/"/>
-    <updated>2016-03-31T20:00:52+02:00</updated>
+    <updated>2016-03-31T21:00:52+03:00</updated>
     <id>http://shem8.github.io/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical</id>
     <content type="html"><![CDATA[<p>We were all been there, you got a great idea for an app, you gather some feedback and even managed to build a team and you going full power to conquer the app store. So a second before starting working on your genius <a href="https://play.google.com/store/apps/details?id=com.mobication.EggTimerPro&amp;hl=en">egg timer app</a>, it is worth taking a moment and think about how you&rsquo;re going to do it.</p>
 
@@ -1154,7 +1308,7 @@ Do you remember trying to figure out what is going on with your database so you 
   <entry>
     <title type="html"><![CDATA[Animated Vector Drawable]]></title>
     <link href="http://shem8.github.io/blog/2016/02/25/animated-vector-drawable/"/>
-    <updated>2016-02-25T20:43:46+01:00</updated>
+    <updated>2016-02-25T21:43:46+02:00</updated>
     <id>http://shem8.github.io/blog/2016/02/25/animated-vector-drawable</id>
     <content type="html"><![CDATA[<p>In API 21 the Android team released bunch of very cool things for material design, most of the things focus around the design specs like colors or transition animation, other were for the new widgets like FAB, card view or recycle view, but within all those things there were also two things that barely discussed- <a href="http://developer.android.com/reference/android/graphics/drawable/VectorDrawable.html">VectorDrawable</a> and <a href="http://developer.android.com/reference/android/graphics/drawable/AnimatedVectorDrawable.html">AnimatedVectorDrawable</a>.</p>
 
@@ -1461,7 +1615,7 @@ Do you remember trying to figure out what is going on with your database so you 
   <entry>
     <title type="html"><![CDATA[My first open source lib]]></title>
     <link href="http://shem8.github.io/blog/2016/02/12/my-first-open-source-lib/"/>
-    <updated>2016-02-12T08:30:38+01:00</updated>
+    <updated>2016-02-12T09:30:38+02:00</updated>
     <id>http://shem8.github.io/blog/2016/02/12/my-first-open-source-lib</id>
     <content type="html"><![CDATA[<p>As part of my last <a href="https://medium.com/life-learning/the-one-side-project-per-year-challenge-fa3c64a48da6#.3vp2es9hh">Friday project</a> I created a new Android app (releasing it soon!). In this project I decided to focus on 2 new things I want to learn:</p>
 
@@ -1525,7 +1679,7 @@ Do you remember trying to figure out what is going on with your database so you 
   <entry>
     <title type="html"><![CDATA[Andriod dev toolbox part 2]]></title>
     <link href="http://shem8.github.io/blog/2016/01/21/andriod-dev-toolbox-part-2/"/>
-    <updated>2016-01-21T09:48:23+01:00</updated>
+    <updated>2016-01-21T10:48:23+02:00</updated>
     <id>http://shem8.github.io/blog/2016/01/21/andriod-dev-toolbox-part-2</id>
     <content type="html"><![CDATA[<p>The second part of the Android dev toolbox lecture,
 This time we’ll focus on collection of tools and resources that help you build better apps in less time.</p>
@@ -1542,7 +1696,7 @@ This time we’ll focus on collection of tools and resources that help you build
   <entry>
     <title type="html"><![CDATA[Why all your engineers should get a laptop]]></title>
     <link href="http://shem8.github.io/blog/2016/01/17/why-all-your-engineers-should-get-a-laptop/"/>
-    <updated>2016-01-17T18:20:12+01:00</updated>
+    <updated>2016-01-17T19:20:12+02:00</updated>
     <id>http://shem8.github.io/blog/2016/01/17/why-all-your-engineers-should-get-a-laptop</id>
     <content type="html"><![CDATA[<p>At the first day in <a href="http://www.myroll.com/about">MyRoll</a> I was exiting- it was my first day in a startup, I was the first employee in the company and we all were thrilled to get started the new adventure.</p>
 
@@ -1594,7 +1748,7 @@ This time we’ll focus on collection of tools and resources that help you build
   <entry>
     <title type="html"><![CDATA[Kotlin- a better Java for Android?]]></title>
     <link href="http://shem8.github.io/blog/2016/01/01/kotlin-a-better-java-for-android/"/>
-    <updated>2016-01-01T14:52:32+01:00</updated>
+    <updated>2016-01-01T15:52:32+02:00</updated>
     <id>http://shem8.github.io/blog/2016/01/01/kotlin-a-better-java-for-android</id>
     <content type="html"><![CDATA[<p>A couple of weeks ago, when going over some Android DevSummit videos, I encountered in some question about alternative language for Android during one of the <a href="https://youtu.be/-VNfWh5UkfY?list=PLWz5rJ2EKKc_Tt7q77qwyKRgytF1RzRx8&amp;t=1461">fireside chats</a> session with the Android team. It was really interesting that there was another way to develop an Android apps but unfortunately I didn&rsquo;t fully catch the name of the language (&ldquo;What what? was it Kotin? Tolkin? What he was saying???&rdquo;) so I give up.</p>
 
@@ -1727,7 +1881,7 @@ fun SharedPreferences.Editor.set(pair: Pair&lt;String, String&gt;)  = putString(
   <entry>
     <title type="html"><![CDATA[Android dev toolbox]]></title>
     <link href="http://shem8.github.io/blog/2015/12/31/android-dev-toolbox/"/>
-    <updated>2015-12-31T09:43:15+01:00</updated>
+    <updated>2015-12-31T10:43:15+02:00</updated>
     <id>http://shem8.github.io/blog/2015/12/31/android-dev-toolbox</id>
     <content type="html"><![CDATA[<h3>Talk I had given on AVGeeks on Dec 2015</h3>
 
@@ -1741,7 +1895,7 @@ fun SharedPreferences.Editor.set(pair: Pair&lt;String, String&gt;)  = putString(
   <entry>
     <title type="html"><![CDATA[Android Studio for Experts- Cheat Sheet]]></title>
     <link href="http://shem8.github.io/blog/2015/12/04/android-studio-for-experts-cheat-sheet/"/>
-    <updated>2015-12-04T11:49:30+01:00</updated>
+    <updated>2015-12-04T12:49:30+02:00</updated>
     <id>http://shem8.github.io/blog/2015/12/04/android-studio-for-experts-cheat-sheet</id>
     <content type="html"><![CDATA[<p>So last week there was the great Android Dev Summit, that in my opinion was one the greatest summit by Google, because unlike Goolge I/O or others Google big events- these event was very technical and was especially for devs, so if you didn&rsquo;t <a href="https://www.youtube.com/playlist?list=PLWz5rJ2EKKc_Tt7q77qwyKRgytF1RzRx8">watched the videos</a> already I very recommend to go over it and pick the ones interested you the most.</p>
 
@@ -1839,7 +1993,7 @@ fun SharedPreferences.Editor.set(pair: Pair&lt;String, String&gt;)  = putString(
   <entry>
     <title type="html"><![CDATA[Run fast, fall frequently, get up faster and go drink beer at the beach: What it's like to work at a StartUp]]></title>
     <link href="http://shem8.github.io/blog/2015/11/15/run-fast-fall-frequently-get-up-faster-and-go-drink-beer-at-the-beach-what-its-like-to-work-at-a-startup/"/>
-    <updated>2015-11-15T11:24:22+01:00</updated>
+    <updated>2015-11-15T12:24:22+02:00</updated>
     <id>http://shem8.github.io/blog/2015/11/15/run-fast-fall-frequently-get-up-faster-and-go-drink-beer-at-the-beach-what-its-like-to-work-at-a-startup</id>
     <content type="html"><![CDATA[<p><em>Over the past 3 years I&rsquo;ve been working at <a href="http://myroll.com/">MyRoll</a> (previously called Flayvr, the startup that loves you photos as much as you do). I joined right after the seed stage and I was the first employee of the company. This was my first time working at a startup and it&rsquo;s hands-down one of the best experiences I&rsquo;ve had in my not-so-long life. Lately, more and more of my friends have asked me: &ldquo;Should I join a startup, or just go corporate - something that&rsquo;s financially stable?&rdquo;.</em></p>
 
@@ -1870,8 +2024,9 @@ fun SharedPreferences.Editor.set(pair: Pair&lt;String, String&gt;)  = putString(
 
 <p>When moving fast you sometimes fall, just like a new baby born child. In the beginning you are going to  fall a lot, but slowly you learn how to put one leg in front of the other, you learn to keep your balance and in the end you are running smoothly.</p>
 
-<p>![<a href="http://c2.thejournal.ie/media/2013/04/falling-off-catwalk.gif">http://c2.thejournal.ie/media/2013/04/falling-off-catwalk.gif</a>]
-At first, releasing a new version was a big deal. We had a release doc with a couple of stages that you had to be checked: making sure you&rsquo;re working with the production env, testing it on a couple of devices, checking for updates and fresh install, etc&hellip; That took some time, and as we gained confidence the release cycle got shorter and we started  pushing a new version to our users 2-3 times a week (and sometimes even more).</p>
+<p><img class="center" src="http://c2.thejournal.ie/media/2013/04/falling-off-catwalk.gif" width="352" title="Pushing to production on 1AM on Friday." alt="Pushing to production on 1AM on Friday."></p>
+
+<p>At first, releasing a new version was a big deal. We had a release doc with a couple of stages that you had to be checked: making sure you&rsquo;re working with the production env, testing it on a couple of devices, checking for updates and fresh install, etc&hellip; That took some time, and as we gained confidence the release cycle got shorter and we started  pushing a new version to our users 2-3 times a week (and sometimes even more).</p>
 
 <p>But even the adults fall sometimes, and we did have some bad deploys. Shit happens, you must accept that. If Facebook is uploads a new version of the app that crashes for 10% of the users right on start,  the result will be a twitter storm. Or if <a href="http://mashable.com/2015/07/01/google-photos-black-people-gorillas/">google computer vision miserably fails </a>- you will see it all over the net. But in our case we realized we have the time to fix, and users are more tolerant towards our mistake.</p>
 
@@ -1918,12 +2073,12 @@ At first, releasing a new version was a big deal. We had a release doc with a co
 </ul>
 
 
-<p>  ![<a href="http://cosmic-fitness.com/wp-content/uploads/2015/03/comfort-zone-300x206.jpg">http://cosmic-fitness.com/wp-content/uploads/2015/03/comfort-zone-300x206.jpg</a>]</p>
+<p>  <img class="center" src="http://cosmic-fitness.com/wp-content/uploads/2015/03/comfort-zone-300x206.jpg"></p>
 
 <h2>8. Nobody is going tell you not to come with flip flops or that the CEO is coming tomorrow so you have to look like you’re working at 8AM</h2>
 
 <p><br>
-  ![<a href="https://shem8.files.wordpress.com/2015/10/edit.jpg?w=660">https://shem8.files.wordpress.com/2015/10/edit.jpg?w=660</a>]</p>
+<img class="center" src="https://shem8.files.wordpress.com/2015/10/edit.jpg?w=660"></p>
 
 <p><br>
 Yup, you&rsquo;re able to start every Thursday with yoga on the beach and swimming in the sea, and we actually did it.</p>
@@ -1935,109 +2090,6 @@ Yup, you&rsquo;re able to start every Thursday with yoga on the beach and swimmi
 <p>Looks like start-up life is all fun and games , but it&rsquo;s not. It&rsquo;s more like a roller coaster. The ride will take you to some new heights but you are also going to get lots of downs and falls (and I hope I&rsquo;ll write a blog post about it soon). But for all those who want my advice about which one is better - it&rsquo;s more about what kind of person you are and what do you want to achieve. Those small companies that are moving fast are great for learning new things and gaining experience on stuff you probably wouldn&rsquo;t do in a bigger company, but it&rsquo;s also very stressful and chaotic, and you have to be ready for this ride.</p>
 
 <p>As said, I’ve been in these ride over the past 3 years, I can’t say I’ve enjoy every second of it but when looking back, I can’t imagine how far I got and how much I gained from this adventure.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Pimp-up your splash screen]]></title>
-    <link href="http://shem8.github.io/blog/2015/10/02/pimp-up-your-splash-screen/"/>
-    <updated>2015-10-02T11:03:17+02:00</updated>
-    <id>http://shem8.github.io/blog/2015/10/02/pimp-up-your-splash-screen</id>
-    <content type="html"><![CDATA[<p>In the past, splash screen in Android was a dirty word, It was usually a bad sign to an app that was converted from iPhone. But lately- Google added <a href="https://www.google.com/design/spec/patterns/launch-screens.html">launch screens</a> to the design guidelines, and maybe they changed the name, <a href="http://www.androiduipatterns.com/2015/08/splash-screen-with-any-other-name-is.html?m=1">but the concept is still the same</a>.</p>
-
-<!--more-->
-
-
-<p>Splash screen- Good or Bad debate aside, in <a href="https://play.google.com/store/apps/details?id=shem.getit&amp;hl=en">Ripples</a> I decided to go with the Google guidelines and do my own splash screen, but no just a simple one with the app logo, I wanted to do something different.</p>
-
-<p>A couple of words about Ripples to the ones who don&rsquo;t know- It&rsquo;s a very simple app that all about little circles that slowly reveals and getting bigger. So what I thought is revealing the Ripples logo in the splash screen with some ripples animations in some masking-like way:</p>
-
-<p><a href="https://shem8.files.wordpress.com/2015/09/crop.gif"><img src="https://shem8.files.wordpress.com/2015/09/crop.gif" alt="crop" /></a>The easiest way to do it is just taking this gif and put it in the splash screen, but I&rsquo;m not gonna do it because:</p>
-
-<ol>
-<li><p>It&rsquo;ll make this blog post to a pretty short and pointless</p></li>
-<li><p>It will add a lot of resources to the app and make it bigger with no reason</p></li>
-<li><p>We won&rsquo;t learn anything new</p></li>
-</ol>
-
-
-<p>So how we gonna do it? With some basic and easy Android drawing methods!</p>
-
-<p>First lets build the splash view with the image, It&rsquo;s a simple view that just load the bitmap and give the view the same size as the bitmap, pay attention that we not displaying anything yet:</p>
-
-<p>[code language=&ldquo;java&rdquo;]
-public class SplashView extends View {
-    private Bitmap bitmap;</p>
-
-<pre><code>public SplashView(Context context) {
-    super(context);
-    init();
-}
-
-private void init() {
-    bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.logo);
-}
-
-@Override
-protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-    int w = MeasureSpec.makeMeasureSpec(bitmap.getWidth(), MeasureSpec.EXACTLY);
-    int h = MeasureSpec.makeMeasureSpec(bitmap.getHeight(), MeasureSpec.EXACTLY);
-    super.onMeasure(w, h);
-}
-</code></pre>
-
-<p>}
-[/code]</p>
-
-<p>Now lets start drawing our graphic- We'll draw some masking over the logo bitmap:</p>
-
-<p>[code language=&ldquo;java&rdquo;]
-@Override
-protected void onDraw(Canvas canvas) {
-    float d = 1 / 0.4f;
-    float v = sizeAnimator.getAnimatedFraction();</p>
-
-<pre><code>Path path = new Path();
-float rad = 0.56f * bitmap.getHeight();
-path.addCircle((int)(0.08 * bitmap.getWidth()), (int)(0.32 * bitmap.getHeight()), rad * Math.min(d * v, 1), Path.Direction.CW);
-path.addCircle((int)(0.2 * bitmap.getWidth()), (int)(0.47 * bitmap.getHeight()), rad * Math.min(d * (v - 0.1f), 1), Path.Direction.CW);
-path.addCircle((int)(0.33 * bitmap.getWidth()), (int)(0.49 * bitmap.getHeight()), rad * Math.min(d * (v - 0.2f), 1), Path.Direction.CW);
-path.addCircle((int)(0.5 * bitmap.getWidth()), (int)(0.49 * bitmap.getHeight()), rad * Math.min(d * (v - 0.3f), 1), Path.Direction.CW);
-path.addCircle((int)(0.63 * bitmap.getWidth()), (int)(0.35 * bitmap.getHeight()), rad * Math.min(d * (v - 0.4f), 1), Path.Direction.CW);
-path.addCircle((int)(0.76 * bitmap.getWidth()), (int)(0.49 * bitmap.getHeight()), rad * Math.min(d * (v - 0.5f), 1), Path.Direction.CW);
-path.addCircle((int)(0.93 * bitmap.getWidth()), (int)(0.49 * bitmap.getHeight()), rad * Math.min(d * (v - 0.6f), 1), Path.Direction.CW);
-canvas.clipPath(path);
-canvas.drawBitmap(bitmap, 0, 0, null);
-</code></pre>
-
-<p>}
-[/code]</p>
-
-<p>Please ignore the constants value all over the place, those are parameter that I&rsquo;ve played with (things that you can&rsquo;t do if you chose to implement it with gif!) while making the animation. The important things are how we creating a new path (that built from circles) and clipping the canvas to this path so this what will gonna be visible eventually. After setting to mask for the canvas we just need to draw the bitmap.</p>
-
-<p>Now we just need to put the animation:</p>
-
-<p>[code language=&ldquo;java&rdquo;]
-private void init() {
-    &hellip;
-    sizeAnimator = ValueAnimator.ofFloat(0, 0.8f);
-    sizeAnimator.setDuration(2500);
-    sizeAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-        @Override
-        public void onAnimationUpdate(ValueAnimator animation) {
-            invalidate();
-        }
-    });
-}</p>
-
-<p>public void start() {
-    sizeAnimator.start();
-}
-[/code]</p>
-
-<p>And that&rsquo;s it:</p>
-
-<p><a href="https://shem8.files.wordpress.com/2015/09/output.gif"><img src="https://shem8.files.wordpress.com/2015/09/output.gif" alt="output" /></a></p>
 ]]></content>
   </entry>
   
