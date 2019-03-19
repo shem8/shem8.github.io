@@ -26,53 +26,26 @@
 	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 	<link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<!-- Begin Jekyll SEO tag v2.5.3 -->
-<title>Animated Vector Drawable - Shem Magnezi Blog</title>
+	<!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Animated Vector Drawable | Shem Magnezi Blog</title>
+<meta name="generator" content="Jekyll v3.7.3" />
 <meta property="og:title" content="Animated Vector Drawable" />
+<meta name="author" content="smagnezi8" />
+<meta property="og:locale" content="en_US" />
 <meta name="description" content="In API 21 the Android team released bunch of very cool things for material design, most of the things focus around the design specs like colors or transition animation, other were for the new widgets like FAB, card view or recycle view, but within all those things there were also two things that barely discussed- VectorDrawable and AnimatedVectorDrawable." />
-<meta property='og:description' content="In API 21 the Android team released bunch of very cool things for material design, most of the things focus around the design specs like colors or transition animation, other were for the new widgets like FAB, card view or recycle view, but within all those things there were also two things that barely discussed- VectorDrawable and AnimatedVectorDrawable." />
+<meta property="og:description" content="In API 21 the Android team released bunch of very cool things for material design, most of the things focus around the design specs like colors or transition animation, other were for the new widgets like FAB, card view or recycle view, but within all those things there were also two things that barely discussed- VectorDrawable and AnimatedVectorDrawable." />
 <link rel="canonical" href="http://shem8.github.io/blog/2016/02/25/animated-vector-drawable/" />
-<meta property='og:url' content='http://shem8.github.io/blog/2016/02/25/animated-vector-drawable/' />
+<meta property="og:url" content="http://shem8.github.io/blog/2016/02/25/animated-vector-drawable/" />
 <meta property="og:site_name" content="Shem Magnezi Blog" />
-<script type="application/ld+json">
-    {
-      "@context" : "http://schema.org",
-      "@type" : "WebSite",
-      "name" : "Shem Magnezi Blog",
-      "url" : "http://shem8.github.io"
-    }
-  </script>
-<meta property="og:image" content="http://shem8.github.io/http://shem8.github.io/images/shem.jpg" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2016-02-25T21:43:46+02:00" />
-<link rel="next" href="http://shem8.github.io/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical/" title="10 good rules for bad App, Part 1- Technical" />
-<link rel="prev" href="http://shem8.github.io/blog/2016/02/12/my-first-open-source-lib/" title="My first open source lib" />
-<script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "NewsArticle",
-      "headline": "Animated Vector Drawable",
-      "image": "http://shem8.github.io/images/shem.jpg",
-      "datePublished": "2016-02-25T21:43:46+02:00",
-      "description": "In API 21 the Android team released bunch of very cool things for material design, most of the things focus around the design specs like colors or transition animation, other were for the new widgets like FAB, card view or recycle view, but within all those things there were also two things that barely discussed- VectorDrawable and AnimatedVectorDrawable."
-    }
-  </script>
+<meta property="article:published_time" content="2016-02-25T20:43:46+01:00" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@shemag8" />
-<meta name="twitter:title" content="Animated Vector Drawable - Shem Magnezi Blog" />
-<meta name="twitter:description" content="In API 21 the Android team released bunch of very cool things for material design, most of the things focus around the design specs like colors or transition animation, other were for the new widgets like FAB, card view or recycle view, but within all those things there were also two things that barely discussed- VectorDrawable and AnimatedVectorDrawable." />
-<meta name="twitter:image" content="http://shem8.github.io/images/shem.jpg" />
 <meta name="twitter:creator" content="@smagnezi8" />
 <script type="application/ld+json">
-    {
-      "@context" : "http://schema.org",
-      "@type" : "person",
-      "name" : "Shem Magnezi",
-      "url" : "http://shem8.github.io",
-      "sameAs" : ["https://twitter.com/shemag8","https://medium.com/@shemag8","https://www.linkedin.com/in/shem-magnezi-45490424","https://github.com/shem8"]
-    }
-  </script>
+{"author":{"@type":"Person","name":"smagnezi8"},"description":"In API 21 the Android team released bunch of very cool things for material design, most of the things focus around the design specs like colors or transition animation, other were for the new widgets like FAB, card view or recycle view, but within all those things there were also two things that barely discussed- VectorDrawable and AnimatedVectorDrawable.","dateModified":"2016-02-25T20:43:46+01:00","datePublished":"2016-02-25T20:43:46+01:00","headline":"Animated Vector Drawable","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://shem8.github.io/blog/2016/02/25/animated-vector-drawable/"},"url":"http://shem8.github.io/blog/2016/02/25/animated-vector-drawable/","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
+
 
   
 	<script type="text/javascript">
@@ -114,6 +87,12 @@
     <li><a href="/blog/archives">Archives</a></li>
 </ul>
 
+
+<section class="aboutme">
+  <p>
+    Startups, Coding and bear on the beach.
+  </p>
+</section>
 </nav>
 <nav id="sub-nav">
 	<div class="social">
@@ -217,7 +196,7 @@
 
 <p>First we need to create the shapes for the search icon:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -279,14 +258,14 @@
 </span><span class='line'>        <span class="na">android:trimPathStart=</span><span class="s">&quot;0.4&quot;</span>
 </span><span class='line'>        <span class="na">android:trimPathEnd=</span><span class="s">&quot;1&quot;</span> <span class="nt">/&gt;</span>
 </span><span class='line'><span class="nt">&lt;/vector&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 
 <p>The syntax for creating SVG paths is not that complicated and you can learn about it <a href="https://www.w3.org/TR/SVG/paths.html">here</a>, Android Studio is also very handy here because you can see a preview and also import existent material app icons and see their paths as described <a href="http://developer.android.com/tools/help/vector-asset-studio.html">here</a>.</p>
 
 <p>Now lets create the animation, we&rsquo;ll focus on the animation from the search icon to cancel, the opposite is pretty the same just with reverse values. We going to create 3 different animations:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -328,12 +307,12 @@
 </span><span class='line'>        <span class="na">android:valueTo=</span><span class="s">&quot;0&quot;</span> <span class="nt">/&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="nt">&lt;/set&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 
 
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -367,12 +346,12 @@
 </span><span class='line'>        <span class="na">android:duration=</span><span class="s">&quot;600&quot;</span> <span class="nt">/&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="nt">&lt;/set&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 
 
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -406,12 +385,12 @@
 </span><span class='line'>        <span class="na">android:duration=</span><span class="s">&quot;450&quot;</span> <span class="nt">/&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="nt">&lt;/set&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 
 <p>The animations are pretty basics and what we&rsquo;re doing here is just changing the start or the end of the path. Now we need to bring all animation together:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -445,7 +424,7 @@
 </span><span class='line'>        <span class="na">android:animation=</span><span class="s">&quot;@animator/circle2_to_cancel&quot;</span> <span class="nt">/&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="nt">&lt;/animated-vector&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 
 <p>And now you can easily use the  search_to_cancel drawable in code, just don&rsquo;t forget to call <strong>start()</strong>:</p>
@@ -508,7 +487,7 @@
 
 </div>
 			</div>
-			<footer id="footer" class="inner">Copyright &copy; 2019
+			<footer id="footer" class="inner">Copyright &copy; 2018
 
     Shem Magnezi
 
