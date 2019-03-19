@@ -4,6 +4,8 @@ title: "5 things React world can learn from Android"
 date: 2017-07-02 21:52:47 +0300
 comments: true
 categories:
+- android
+- web
 ---
 In my [previous post](http://shem8.github.io/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/), I talked about a couple of things I notice after moving from my usual gig as an Android developer and doing some web development (especially React).
 

@@ -6,9 +6,8 @@ layout: post
 link: https://shem8.wordpress.com/2015/12/31/android-dev-toolbox/
 slug: android-dev-toolbox
 title: Android dev toolbox
-wordpress_id: 469
-post_format:
-- Aside
+categories:
+- android
 ---
 
 ### Talk I had given on AVGeeks on Dec 2015

@@ -6,6 +6,7 @@ comments: true
 author: smagnezi8
 categories:
 - life
+- humor
 tags:
 - life
 - humor

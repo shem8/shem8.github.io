@@ -6,11 +6,9 @@ layout: post
 link: https://shem8.wordpress.com/2016/01/01/kotlin-a-better-java-for-android/
 slug: kotlin-a-better-java-for-android
 title: Kotlin- a better Java for Android?
-wordpress_id: 402
 categories:
 - android
-post_format:
-- Aside
+- kotlin
 tags:
 - android
 - androiddev

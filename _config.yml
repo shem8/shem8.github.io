@@ -7,7 +7,7 @@ title: Shem Magnezi Blog
 subtitle: Startups, Coding and bear on the beach.
 author: Shem Magnezi
 simple_search: https://www.google.com/search
-description: Startups, Coding and bear on the beach.
+description:
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
@@ -113,3 +113,7 @@ social:
     - https://medium.com/@shemag8
     - https://www.linkedin.com/in/shem-magnezi-45490424
     - https://github.com/shem8
+
+defaults:
+  - values:
+      image: http://shem8.github.io/images/shem.jpg

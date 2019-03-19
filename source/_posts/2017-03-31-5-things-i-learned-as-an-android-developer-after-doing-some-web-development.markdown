@@ -4,6 +4,8 @@ title: "5 things I learned as an Android developer after doing some Web developm
 date: 2017-03-31 13:32:32 +0300
 comments: true
 categories:
+- android
+- web
 ---
 In the last couple of months, I started my new journey, leaving my Android position behind and started doing some web development. Working on those 2 platforms has many differences, I can’t say the one is better than the other, but there are many things that those 2 worlds can learn from each other.
 <!-- more -->
