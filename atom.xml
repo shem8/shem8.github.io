@@ -4,7 +4,7 @@
   <title><![CDATA[Shem Magnezi Blog]]></title>
   <link href="http://shem8.github.io/atom.xml" rel="self"/>
   <link href="http://shem8.github.io/"/>
-  <updated>2019-05-10T17:18:29+03:00</updated>
+  <updated>2019-05-10T17:39:25+03:00</updated>
   <id>http://shem8.github.io/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
@@ -85,7 +85,7 @@
 
 <p>Google Translate is great because it’s available on all platforms — whether I’m writing a document on my desktop, reading an email on my Android phone or reading an article on my iPad. It also has a simple UI and useful features like the word’s full definition, frequency of each translation, synonyms and listening.</p>
 
-<p>What if I could use Google to build an <a href="https://en.wikipedia.org/wiki/Anki_%28software%29">Anki</a> app that would use [<a href="https://en.wikipedia.org/wiki/Spaced_repetition">https://en.wikipedia.org/wiki/Spaced_repetition</a>] to help me learn and memorize the words I constantly forget. It could also help me enrich my vocabulary by suggesting new words related to what I usually use.</p>
+<p>What if I could use Google to build an <a href="https://en.wikipedia.org/wiki/Anki_%28software%29">Anki</a> app that would use <a href="https://en.wikipedia.org/wiki/Spaced_repetition">spaced repetition</a> to help me learn and memorize the words I constantly forget. It could also help me enrich my vocabulary by suggesting new words related to what I usually use.</p>
 
 <h4>Why can’t I do it?</h4>
 
