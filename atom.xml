@@ -4,11 +4,7 @@
   <title><![CDATA[Shem Magnezi Blog]]></title>
   <link href="http://shem8.github.io/atom.xml" rel="self"/>
   <link href="http://shem8.github.io/"/>
-<<<<<<< .merge_file_3FKYPe
-  <updated>2019-05-10T17:15:58+03:00</updated>
-=======
-  <updated>2019-03-19T12:29:27+02:00</updated>
->>>>>>> .merge_file_GKkx7M
+  <updated>2019-05-10T17:18:29+03:00</updated>
   <id>http://shem8.github.io/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
@@ -2153,7 +2149,6 @@ public class MyActivity : Activity() {
 fun Fragment.userError(msg: String?) {
     Snackbar.make(view, msg, Snackbar.LENGTH_LONG).show()
 }
-<<<<<<< .merge_file_3FKYPe
 
 fun SharedPreferences.edit(func:SharedPreferences.Editor. () -&amp;amp;amp;amp;gt; Unit) {
     val editor = edit()
@@ -2161,15 +2156,6 @@ fun SharedPreferences.edit(func:SharedPreferences.Editor. () -&amp;amp;amp;amp;g
     editor.apply()
 }
 
-=======
-
-fun SharedPreferences.edit(func:SharedPreferences.Editor. () -&amp;amp;amp;amp;gt; Unit) {
-    val editor = edit()
-    editor.func()
-    editor.apply()
-}
-
->>>>>>> .merge_file_GKkx7M
 fun SharedPreferences.Editor.set(pair: Pair&lt;String, String&gt;)  = putString(pair.first, pair.second)
 </code></pre>
 
