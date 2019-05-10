@@ -4,7 +4,7 @@
   <title><![CDATA[Shem Magnezi Blog]]></title>
   <link href="http://shem8.github.io/atom.xml" rel="self"/>
   <link href="http://shem8.github.io/"/>
-  <updated>2019-01-04T18:02:15+02:00</updated>
+  <updated>2019-05-10T17:15:58+03:00</updated>
   <id>http://shem8.github.io/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
@@ -12,6 +12,299 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Three great startups I could build if Google would give me access to their data.]]></title>
+    <link href="http://shem8.github.io/blog/2019/05/03/three-great-startups-i-could-build-if-google-would-give-me-access-to-their-data/"/>
+    <updated>2019-05-03T17:06:12+03:00</updated>
+    <id>http://shem8.github.io/blog/2019/05/03/three-great-startups-i-could-build-if-google-would-give-me-access-to-their-data</id>
+    <content type="html"><![CDATA[<p><em>(It’s actually my data. Just saying.)</em></p>
+
+<!-- more -->
+
+
+<p>I love Google; I use their products every day. Besides the search engine, I love Google Photos, I have an Android phone, and I use Gmail (RIP Inbox), Maps, Docs, Slides, Sheets, and many more.</p>
+
+<p>On the other hand, I’m an engineer, and I love building products, especially ones that make my life easier. That’s why I created an <a href="https://play.google.com/store/apps/details?id=org.bill.splitter">app to split the bill</a> between friends when sitting in a restaurant, or a <a href="https://expense.shem.dev/">web app to track my expenses</a>. In the past couple of years, I had many ideas about cool features that I could use in all those products I’m using. I could wait for the relevant product managers to build those features in the corresponding products, but you know what it’s like with Google’s product managers:</p>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Google interviewer: what do you do when a product—<br>PM candidate: SHUT IT DOWN<br>GI: THAT IS CORRECT SOMEONE MAKE A JOB OFFER TO THIS MAN</p>&mdash; Florent Crivello (@Altimor) <a href="https://twitter.com/Altimor/status/1113641671353192449?ref_src=twsrc%5Etfw">April 4, 2019</a></blockquote>
+
+
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p>So basically I was alone here, and I needed (and also wanted) to build those tools by myself.</p>
+
+<p>But building a new product is hard. Not because you need to write the code from scratch — that’s usually the easy part. It’s hard because you need to find a user base, to teach them how to use your product, to build the right interface and make sure they won’t leave. That’s why it’s easier to write your thoughts on Medium and not open your own blog, or open a Facebook page for your business instead of maintaining a dedicated website with chat and notifications and all.</p>
+
+<p>In my example, as an engineer who wants to build stuff, the equivalent for that is using other product’s data and user interface. For example, instead of using a dedicated app to back up my good photos — I use <a href="https://ifttt.com/">IFTTT</a> to upload every photo that I post to Instagram directly to Dropbox.</p>
+
+<p>As mentioned before, because I’m using many Google products in my day-to-day life, I thought I could leverage those apps to build some helpful products (for me) based on them.</p>
+
+<p>Here’s a partial list of ideas I had lately and after some research, I understood pretty quickly that it’ll be hard to do with the current options I have in hand.</p>
+
+<p><em>A note: All these product names are WIP. I’m better at engineering than I’m at marketing.</em></p>
+
+<h2>1. Commute Optimizer</h2>
+
+<p>As someone who spends almost 2 hours commuting each day, this is a big aspect of my life that I would love to optimize. You might not know it, but if you have the Google Maps app on your phone, <a href="https://www.apnews.com/828aefab64d4411bac257a07c1af0ecb">it tracks every step you make during the day</a>, whether you drive to work or go to your supermarket on the next block to buy some milk.</p>
+
+<p>You can like it or not, but this is the price you pay for using Google Maps (or Google in general). I for one, feel that it’s a reasonable price to pay, given the tremendous help I get from those apps and how much more comfortable my life is with Google.</p>
+
+<p>So putting privacy concerns aside, the data is there, and <a href="https://www.google.com/maps/timeline">you can see it</a>. But what can you do with it (aside from getting tailor-made ads)?</p>
+
+<p>What if I could take all this data, process it, see some patterns and understand what is the best time for me to leave home to catch the bus to work or when to leave home when there’s less traffic? The Google Maps app already has a couple of years of data and running a simple algorithm (that also learns and gets feedback) and can give me some good insights.</p>
+
+<h4>Why can’t I do it?</h4>
+
+<p>So the idea is pretty simple, right? The only problem is the data isn’t easily accessible. There’s no API for your timeline and the only way to get it is to <a href="https://takeout.google.com/settings/takeout/custom/location_history?pli=1">download a huge JSON file</a>. This is definitely not the optimal way for a third party app to pull this data, and also the data won’t update, so the app isn’t able to improve.</p>
+
+<p>Moreover, the data Google exports for you is the raw locations. Right — the raw data gives you more options to do whatever you want, but Google already does the calculations and gives you great insights about when you walked and when you started driving —if Google gave you <strong>this</strong> kind of data, this would be a much easier way to work with the data!</p>
+
+<h2>2. “On This Day” Wallpaper</h2>
+
+<p>I already talked about Google Photos and how much I love it. As someone who worked for a couple of years on a gallery app, I admire the people in Google that are working on this product. They are doing a fantastic job both on the product side and on the technical side, plus — the UI is slick, elegant and straightforward.</p>
+
+<p>That’s why ALL my photos are in Google Photos (and on a physical hard drive, just in case). Same for my wife.</p>
+
+<p>So how cool would it be if every day, I could have different wallpaper, remind me something great from the past? I could get a photo of my wife and I and our two children (or a subset of this group) that was taken on the same day a couple of years ago and have a nice small moment every day. The app would change the wallpaper every day (or a couple of times a day if there are a couple of photos).</p>
+
+<h4>Why can’t I do it?</h4>
+
+<p>This idea actually came to me when Google announced the new Photos API a few months ago. I immediately started building an app and playing with the API to see what I can do.</p>
+
+<p>The plan was to get all the different people shown in your library’s photos, just like Google Photos has when you start searching, then let you pick a couple of people that you want to get their photos. From there I would run every day and select the pictures with those people on specific dates.</p>
+
+<p>Sounds relatively simple right?</p>
+
+<p>That was until I figured out the API might give you some interface to <a href="https://developers.google.com/photos/library/reference/rest/v1/mediaItems/search#ContentCategory">query photos with people</a> but doesn&rsquo;t give you an option to play with the actual people that are in the picture (that’s the difference between <a href="https://en.wikipedia.org/wiki/Face_detection">face detection</a> and <a href="https://en.wikipedia.org/wiki/Facial_recognition_system">face recognition</a>). On top of that, the team even said that they <a href="https://issuetracker.google.com/issues/80089805">wouldn’t support it</a> in the future.</p>
+
+<h2>3. Words practice</h2>
+
+<p>As you probably notice d— English is not my native language. Therefore I’m using Google Translate a lot when I’m reading and don’t understand a specific word or when I’m writing and don’t know what is the right word is.</p>
+
+<p>Google Translate is great because it’s available on all platforms — whether I’m writing a document on my desktop, reading an email on my Android phone or reading an article on my iPad. It also has a simple UI and useful features like the word’s full definition, frequency of each translation, synonyms and listening.</p>
+
+<p>What if I could use Google to build an <a href="https://en.wikipedia.org/wiki/Anki_%28software%29">Anki</a> app that would use [<a href="https://en.wikipedia.org/wiki/Spaced_repetition">https://en.wikipedia.org/wiki/Spaced_repetition</a>] to help me learn and memorize the words I constantly forget. It could also help me enrich my vocabulary by suggesting new words related to what I usually use.</p>
+
+<h4>Why can’t I do it?</h4>
+
+<p>The only API Google provides here is to translate words. This is great, but this is not what I’m looking for. I’m looking to get my own data and usage on the app. There’s an <a href="https://support.google.com/translate/answer/6142479">“history”</a> option in the web version, but it’s only valid for the specific session and not accessible via any API call. Another solution is to use the <a href="https://support.google.com/translate/answer/6142480">“phrasebook”</a> feature and export it, but this means I need to manually star every translation and manually export my phrasebook every couple of weeks, a very tedious process that I wish to automate.</p>
+
+<p>Yes, there’s always the option to write a translator app on my own, Google helps me with the API, but again — I’ll need to build and maintain(!) a multiplatform app with all the important features I described above.</p>
+
+<p>This is not a rant
+I’m not blaming Google for anything here. This is their product, they invested tons of man-years, brain cycles and money to come up with those amazing products and I understand why they don’t want other people to easily use the company’s massive work for their own good. But at the same time, I think this is a great opportunity for them to grow and attract new users. Maybe this wallpaper thing will encourage more people to put all their photos in Google, or if this words app existed — I would use Google Translate and only Google Translate.</p>
+
+<p>I also understand those product managers that want to keep the options open and maybe add those features on Google products in the future, and thus not open APIs to other developers. It&rsquo;s much better than the alternative — to pull a Twitter on other developers and deprecate APIs out of nowhere, but I genuinely think those features are so small and not really in the core of the business, so I can’t see why it would even get near those products.</p>
+
+<p>These are not billion dollar company ideas; if there were — I wouldn&rsquo;t put them here out in the open. And for me — the best case here is that Google would just add it somehow, but since I don’t see this happening, I would love to see them offer some options on top of what they already have. It doesn’t need to be specified in the ways I described above, but generally — shift the state of mind and think:</p>
+
+<blockquote><p>“we’re building great products, how can the community can leverage it?”</p></blockquote>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Thank you 2018]]></title>
+    <link href="http://shem8.github.io/blog/2019/01/04/thank-you-2018/"/>
+    <updated>2019-01-04T15:53:24+02:00</updated>
+    <id>http://shem8.github.io/blog/2019/01/04/thank-you-2018</id>
+    <content type="html"><![CDATA[<p><em>You have been good to me.</em></p>
+
+<!-- more -->
+
+
+<p>The dear year of 2018 — You’ve gone by fast, maybe too fast. A moment before saying goodbye I wanted to thank you for the lessons you gave me.</p>
+
+<h2>1. Focus</h2>
+
+<p>Starting from the most important lesson, the one that probably made this post being a list of only four items and not a dozen. Having two children, with significant challenges at work- I <em>had</em> to separate the important stuff from the noise. Two books mainly inspired me here (one old and one new): <a href="https://www.goodreads.com/book/show/368593.The_4_Hour_Workweek">The 4-Hour Workweek</a> and <a href="https://www.goodreads.com/book/show/38900866-it-doesn-t-have-to-be-crazy-at-work">It Doesn’t Have to Be Crazy at Work</a>.</p>
+
+<p>I removed tons of distractions from my day to day (more about that later). First, I reduced the emails and other not urgent communications channels to strictly twice a day, 30 min each, and disabled notifications for all of them. Surprisingly enough- it’s working, and the world didn’t fall.</p>
+
+<p>I also expanded an experiment I started the year before, and every evening I put my phone on flight mode until the next morning and putting it back on only when I’m going out of my house.</p>
+
+<p>When I’m in a situation- I’m fully present: when I’m with my kids, I found it’s better to be there less time but with 100% of my attention. When at work I split it into two mindsets: (1) in the zone, writing, deeply thinking with my self, and (2) being there for others, tackling difficult problems, giving guidance. Today’s workspace is trying to provide one solution to both, and I don’t think it’s possible. Lucky enough- I’m working in such environment that has the answers for both- open spaces for collaboration and dedicates quite zones for isolation. So either I sit (or stand actually) in my place without earphones, putting my radar on and helping others, or blocking a dedicated time in the calendar and go work from another room or even a different building.</p>
+
+<p>I learned (and still learning) how to put my attention on the right things and reduce the context switches to a minimum. It is an art that will boost your productivity. The secret is to do the same with less, and than add a bit to it</p>
+
+<h2>2. Strengthen my weaknesses</h2>
+
+<p>Until last year I focus on sharping the things I felt I was good at but not enough. When developed on Android, I dig deeper and explore new things like Kotlin at the time or how to do advanced animations. Same for public speaking- I push on talking on more events, sharpen my communication skills and get better on how to speak in front of an audience.</p>
+
+<p>As I improved, I realized I was reaching my limit. My other weaker capabilities were holding me back, blocking my way in improving my stronger skills. There were two main areas I felt lagging behind: English and Web development.</p>
+
+<p>Starting from the latter- as a full-stack developer that did lots of backend and mobile, I felt I was still missing the basics of web development, primarily as someone that most of the day working on React apps in my day to day and didn’t work with JS a lot during my career. So I started reading more and more blog posts about JS and React (sorry, I still <a href="http://shem8.github.io/blog/2017/08/25/how-to-become-a-css-master/">can’t handle CSS</a> and signed for newsletters (one that I highly recommend is <a href="https://react.statuscode.com/">React status</a>). I also did what I usually do when I want to learn a new thing and <a href="http://shem8.github.io/blog/2018/06/08/the-ultimate-guide-for-side-projects/">build a side project</a>- a web application to help me and my wife track and monitor our expenses.</p>
+
+<p>As for my English skills- as I imagine you already noticed, English is not my native language, and it’s not natural for me to express myself in writing or by speaking. So besides reading more books in English, I decided to double down on it and took two courses (that my amazing work completely covered): Talera for writing and speaking and <a href="https://theaccentsway.com/">The Accent Way</a> to improve my accent. I’m also using this blog for practicing my writing skills, so thank you for participating in my experiment =).</p>
+
+<p>Sometimes you need to stop or even go a couple of steps back to gain some velocity for the future.</p>
+
+<h2>3. Sometimes you need to come back to your comfort zone</h2>
+
+<p>I’m a big believer in trying new things and push your limits, and I already wrote that I think the magic happens <a href="http://shem8.github.io/blog/2015/11/15/run-fast-fall-frequently-get-up-faster-and-go-drink-beer-at-the-beach-what-its-like-to-work-at-a-startup/">outside of the comfort zone</a>. But staying there too long might be exhausted. I learned it the hard way because this year I started talking in conferences abroad.</p>
+
+<p>It actually started at the end of 2017, but in 2018 I took the leap and talked in big conferences in Europe, not in my native language. It began on <a href="https://devfest.sk/">Devfest Kosice</a> in Slovakia, then on <a href="https://www.adc.de/kongress/">ADC Festival</a> in Hamburg and lastly on <a href="https://brainbar.com/">BrainBar conference</a> in Budapest. Although I had experience in talking in front of big audiences, this was different. The combination of speaking in English, traveling for a couple of days alone, and standing on the stage without any familiar face in the crowd- was very hard for me. Very hard. So hard that I started to enjoy it less and less.</p>
+
+<p>After the last talk, I felt overwhelmed and needed to take a break and breathe. So I took some time off and didn’t submit any talks for the rest of the year. Almost eight months have passed, and I’ve started to miss speaking in confs. Soon I might be ready to submit new talks, and hopefully, I’ll return talking and enjoying it again.</p>
+
+<p>Being outside of the comfort zone will take plenty of energy and might be a stressful situation, just remember to come back and fill your battery before going back.</p>
+
+<h2>4. Be conscious about the content I consume</h2>
+
+<p>As said before, I started to be more aware to how I’m using my time. I already heavily use <a href="https://getpocket.com/">Pocket</a> in the past couple of years, but this year I started listening to podcasts too (a partial list: <a href="https://www.stuffyoushouldknow.com/podcasts">Stuff You Should Know</a>, <a href="https://www.npr.org/podcasts/510289/planet-money">Planet Money</a>, <a href="https://99percentinvisible.org/">99% Invisible</a>, <a href="https://www.gimletmedia.com/reply-all">Replay All</a>, and in Hebrew: <a href="http://extend.libsyn.com/">Extend</a>, <a href="https://www.kan.org.il/podcast/program.aspx/?progid=7">Hayot Kiss</a>, <a href="https://mayeshbeze.simplecast.fm/">Ma Yesh Beze</a> and <a href="http://notarbut.co/">No Tarbut</a>). Also, after too much time, I moved to Kindle from physical books, and that made me read much more.</p>
+
+<p>But more important, I got rid of useless habits that took my attention too easily: I removed the Facebook app from my phone and slowly decreased the times I visit the social network, to the point that I open it only once a week. I stopped visiting websites to read the news or watch commercial TV. Instead, I only watch on-demand shows and get the news from small talk with other people.</p>
+
+<p>Our world is full of data, noise, and content. Almost all of it is not worth your time. The most precious resource you have is your time and your attention, don’t give it for free. Treat your mind as your body and don’t feed it with junk food.</p>
+
+<h1>A look forward</h1>
+
+<p>I want to use my time more wisely; I want to do the same with less and get more time to explore new things; I want to get excited again when seeing the crowd from the stage side; I want to push the right limits.</p>
+
+<p><strong>2019, we can do it.</strong></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[30 lessons for my 30th birthday, learned from my (many) mistakes.]]></title>
+    <link href="http://shem8.github.io/blog/2018/10/12/30-lessons-for-my-30th-birthday-learned-from-my-many-mistakes/"/>
+    <updated>2018-10-12T16:40:05+03:00</updated>
+    <id>http://shem8.github.io/blog/2018/10/12/30-lessons-for-my-30th-birthday-learned-from-my-many-mistakes</id>
+    <content type="html"><![CDATA[<p>Last month was my 30th birthday. I’m not an emotional guy that loves to celebrate his birthday, and I don’t think there is something unique in this day. For me, it’s just 10950 days since I was born, nothing special.</p>
+
+<!-- more -->
+
+
+<p>Anyway, since many of my friends think (and most of the people in the world apparently) it’s an important date, I thought it might be worth to take a moment and observe what I’ve learned in the past not-so-long-but-also-not-so-short period, just a reminder for me to not repeat the hundreds of mistakes I did.</p>
+
+<p><em>*this list is not on any order, it was random and shown by the order that it came in my mind in the last couple of weeks.</em></p>
+
+<h3>#1: Don’t listen to stupid lists on the internet</h3>
+
+<p>“10 things every successful people knows”, “5 habits for helping you become a millionaire”, “30 pieces of advice from a pretty normal guy”. Everyone thinks he figured life out, that’s probably not the case because everyone has their way of doing things. Getting inspiration from other people is great- but try to find what exactly works for you, it’s probably not the same for others.</p>
+
+<h3>#2: Read, but for real.</h3>
+
+<p>People nowadays barely read more than two paragraphs. This is the point where most people’s (from the ones that even started) eyes will start itching, and they will lose it. Don’t be like this, there are few articles worth reading, but if you find something interesting- take the time and read it slowly. Give the author the respect he deserves.</p>
+
+<h3>#3: Your immediate family is the most important thing you have in life</h3>
+
+<p>Those are the ones you are waking up with every morning and go to sleep near them every night. Those will (hopefully) be with you during all your life no matter what you’ll do or where you’ll be. For good and bad.</p>
+
+<h3>#4: Fight to preserve connections, but not too much</h3>
+
+<p>There are close people that your relationship with them might have a bad impact on your life or mental health, or it’s simply taking too much energy from your side, and you’re not getting anything back. Drop it, it probably not worth it.</p>
+
+<h3>#5: Learning is an ongoing effort</h3>
+
+<p>You don’t finish your learning phase in high school or college; learning is not just a phase in life, it happens all the time. Furthermore, those places need to prepare you for the actual learning in real life. Learn how to learn, this is how you’ll hack life for the long run.</p>
+
+<h3>#6: If you aren’t going forward- you’re going backward</h3>
+
+<p>We live in times where everything is going at such a fast pace. Things that you learned in your Bachelor degree are probably already outdated. Did you learn how to do a certain thing two years ago? There’s probably a better way to do it now. Keep on going.</p>
+
+<h3>#7: The magic happens outside your comfort zone</h3>
+
+<p>Get out, try things, push yourself, push others, this is less scary than you imagine. There’re lots of stuff that you can’t experience in your comfort zone or will just take too much time to learn.</p>
+
+<h3>#8: To feel the ground, go down</h3>
+
+<p>The one who sits in the front desk knows much more of the other people about what happens in the day-to-day. Do you want to know if people in your company are stating to burn out? Ask the cleaners- they’re the ones in the office at 8 am or 8 pm.</p>
+
+<h3>#9: Go say “hi” to the new guy</h3>
+
+<p>Remember when you’re the new guy? That was pretty scary. So go and ask the one that eats alone at his table if he or she wants to join you, they will remember it.</p>
+
+<h3>#10: People hate awkward silence</h3>
+
+<p>If you pause enough time during a conversation, the other side will start talking. People LOVE talking, especially about themselves.</p>
+
+<h3>#11: One on one is the best way to get to know people</h3>
+
+<p>I didn’t yet find one person that I sat with him alone that I hate him afterward. Talk with people enough time, ask him questions, get interested and I bet you’ll find something interesting about him that you can learn from.</p>
+
+<h3>#12: Consistency is the key to improvement</h3>
+
+<p>The only way to get better in order of magnitude is by improving by little every day for a long time. Jerry Seinfeld had a great method to write better jokes- he wrote one joke every single day. It doesn’t matter how funny the joke was- as long he came up with a new one every day, no matter what happened that day. After doing it for enough time, all he had in mind is <a href="https://jamesclear.com/stop-procrastinating-seinfeld-strategy">“Your only job is to not break the chain.”</a></p>
+
+<h3>#13: It won’t be as bad as you imagine (neither as good)</h3>
+
+<p>The worst thing you can think about a particular situation (moving to another city, talking in front of an audience, getting fired), will probably won’t be that hard in reality. The same thing also for the best case. So calm down.</p>
+
+<h3>#14: When hard times come- people looking for God</h3>
+
+<p>Or something similar to God, or something they consider as God. The French philosopher Pascal’s Wager argued that a rational person should live as though God exists and seek to believe in God, it also has some comfort.</p>
+
+<h3>#15: A favor is worth much more than a couple of bucks</h3>
+
+<p>Try to do things for others without any material incentive, just help them. When money is involved, and you’ll need their help in the future- they will be able to ask some amount of money depends on how much money they paid, but favors are like comparing apples to oranges, and people will be more generous in this case.</p>
+
+<h3>#16: Guided imagery is real</h3>
+
+<p>When facing a hard problem — stop and take a moment to plan how exactly you’re going to solve it. Imagine you actually address the thing, step by step and how you’re going to overcome any obstacles along the way. Only then start.</p>
+
+<h3>#17: Be polite</h3>
+
+<p>Say “Thank you” and “Welcome,” smile, be kind, even if the other side not cooperate. In most cases, it only needs the right word to make a challenging situation to be a pleasant one.</p>
+
+<h3>#18: Hard things just look easy</h3>
+
+<p>When you see someone nailing it on the stage, feeling light, that seems like he was born to do it, and they’re giving a 30 minute performance so naturally — this is just because they practice the hell out of it for at least 100 hours and could not eat anything since breakfast because they’re so stressed.</p>
+
+<h3>#19: Stop wasting time watching TV</h3>
+
+<p>There’s plenty of great content out there; TV is 99% shit that aims for the least common ground and acts as a filler for commercials.</p>
+
+<h3>#20: Facebook does not reflect real life</h3>
+
+<p>For 99% of the people in 99% of the time- life is just dull moments, daydreaming, staring at the air and nothing to write about. Facebook feed is a collection of all the best moments of some people (and a ton of ads in between). So you can stop the feeling of “everyone doing some pretty cool things all the time, while I’m sitting in my pajamas doing my best becoming a couch potato.”</p>
+
+<h3>#21: Put down the camera</h3>
+
+<p>You can’t capture magic moments in life with the camera (ok, some people can, but 99% can’t), so please stop wasting time on these precious moments for taking dozens of pictures you’ll never watch. Take a snapshot in memory; it will look much better.</p>
+
+<h3>#22: Learn how to express yourself</h3>
+
+<p>A language is a fantastic tool; it’s like plasticine that you, the writer, can shape. You can excite or hurt the readers just by picking the right words. It can be played like music that can make your eyes run fast to follow the words to see what’s going to happen at the end of the sentence. Or to slow down, taking the time to understand. The ability to describe a situation and to make the reader actually feel the words is a powerful skill. Read, learn new words, practice writing.</p>
+
+<h3>#23: Learn by doing</h3>
+
+<p>At the end of the day, this is the only way to acquire a new skill; you can’t avoid this.</p>
+
+<h3>#24: Surround yourself with the right people</h3>
+
+<p><a href="https://www.businessinsider.com/tim-ferriss-average-of-five-people-2017-1">You are the average of the five people you most associate with.</a> Putting yourself in situations where you’re the smartest one in the room might make you feel great, but it won’t take you anywhere. Analyze what you should get better at and find the right people that will take you there.</p>
+
+<h3>#25: Find mentors (and keep them close)</h3>
+
+<p>Mentors are like gold in a world where you want to keep getting forward. Find great mentors and don’t even think about letting them go until you learn from them everything you need.</p>
+
+<h3>#26: Step 0 for improvement: measure</h3>
+
+<p>You can’t trust a gut feeling. When it comes to growth — numbers are the keys. By measuring you’ll know what the low hanging fruits (and there probably are) and how to make quick wins. A before and after graph/ image/ sheet is what will motivate you along the way.</p>
+
+<h3>#27: No one is perfect</h3>
+
+<p>My aunt used to say that there is a toilet in every house. Everyone has aspects that are not as good as you think. Every couple has some hard times, and every child has its own problems. Stop thinking that the grass is always greener on the other side of the fence, not even on this family that upload a story from Thailand just now.</p>
+
+<h3>#28: You deserve it</h3>
+
+<p>A second after you’ll get promoted, at the moment you’re going into the stage, at the exact point that you’ll be in the top of your life- a little voice inside of you will wake up and say that you’re not that good and everyone is going to find out that you’re just an imposter. Shut it down and ignore, everyone is facing this impostor syndrome, you got here because of you, and you well deserved to be here.</p>
+
+<h3>#29: No one cares that much about you</h3>
+
+<p>Not in a sense that if you’ll die no one will cry, but in the small things- if you use one word or another, how you dressed up, if there was a typo in this email you just sent or what you said in the middle of the conversation. You think everyone won’t ever forget the mistake that you did. Calm down- no one really paid attention.</p>
+
+<h3>#30: Get bored</h3>
+
+<p>Getting bored is something people afraid of. Don’t be scared, deal with it. Feel comfortable with the boredom, welcome the void into your brain and let your mind wonder sporadically. You’re right- it’s much easier to run away and watch another stupid video on the internet instead of worrying about your student loan, but only when you are daydreaming you actually getting into the deepness of things.</p>
+
+<hr />
+
+<p>That’s it for now until I’ll be 31, and hopefully will make enough mistakes to learn a new lesson.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[The ultimate guide for side projects]]></title>
@@ -367,42 +660,27 @@ Room is an (another) ORM solution for the Android developers. Combining with som
 
 <p>There are two main ways to define the mapping between your objects and the tables in Java: some DSL + code generator (like what GreenDAO is using), or using annotation (like ORMLite, DBFlow and most of the libraries). Although I&rsquo;m not a big fan of annotations, I must say the later is an easier solution.</p>
 
-<p>These why it&rsquo;s no surprise that the Android team chose to go with this approach, so simple data model looks like this:</p>
+<p>These why it&rsquo;s no surprise that the Android team chose to go with this approach, so simple data model looks like this:
+```java
+@Entity
+public class User {
+    @PrimaryKey
+    private int uid;</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="nd">@Entity</span>
-</span><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">User</span> <span class="o">{</span>
-</span><span class='line'>    <span class="nd">@PrimaryKey</span>
-</span><span class='line'>    <span class="kd">private</span> <span class="kt">int</span> <span class="n">uid</span><span class="o">;</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="nd">@ColumnInfo</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;first_name&quot;</span><span class="o">)</span>
-</span><span class='line'>    <span class="kd">private</span> <span class="n">String</span> <span class="n">firstName</span><span class="o">;</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="nd">@ColumnInfo</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;last_name&quot;</span><span class="o">)</span>
-</span><span class='line'>    <span class="kd">private</span> <span class="n">String</span> <span class="n">lastName</span><span class="o">;</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c1">// Getters and setters are ignored for brevity,</span>
-</span><span class='line'>    <span class="c1">// but they&#39;re required for Room to work.</span>
-</span><span class='line'>    <span class="c1">// (So please go and switch to Kotlin)</span>
-</span><span class='line'><span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
+<pre><code>@ColumnInfo(name = "first_name")
+private String firstName;
 
+@ColumnInfo(name = "last_name")
+private String lastName;
 
-<p>As in any other library- you can set a custom name for the table or the columns, you can choose to index some stuff and specify relationships between models.</p>
+// Getters and setters are ignored for brevity,
+// but they're required for Room to work.
+// (So please go and switch to Kotlin)
+</code></pre>
+
+<p>}
+```
+As in any other library- you can set a custom name for the table or the columns, you can choose to index some stuff and specify relationships between models.</p>
 
 <h2>The API</h2>
 
@@ -410,50 +688,31 @@ Room is an (another) ORM solution for the Android developers. Combining with som
 
 <p>BUT while most of the ORM libraries using some in-code query builder, Room doing something nice and let you declare your queries in slick SQL formatting.</p>
 
-<p>For example, here is how you&rsquo;ll do a simple query for specific users in each one of the platforms:</p>
+<p>For example, here is how you&rsquo;ll do a simple query for specific users in each one of the platforms:
+```java
+    //Room:
+    @Query(&ldquo;SELECT * FROM user WHERE age > :minAge&rdquo;)
+    public User[] loadAllUsersOlderThan(int minAge);</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="c1">//Room:</span>
-</span><span class='line'><span class="nd">@Query</span><span class="o">(</span><span class="s">&quot;SELECT * FROM user WHERE age &gt; :minAge&quot;</span><span class="o">)</span>
-</span><span class='line'><span class="kd">public</span> <span class="n">User</span><span class="o">[]</span> <span class="nf">loadAllUsersOlderThan</span><span class="o">(</span><span class="kt">int</span> <span class="n">minAge</span><span class="o">);</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1">//DbFlow:</span>
-</span><span class='line'><span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span> <span class="n">users</span> <span class="o">=</span> <span class="n">SQLite</span><span class="o">.</span><span class="na">select</span><span class="o">()</span>
-</span><span class='line'>                         <span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="n">User</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
-</span><span class='line'>                         <span class="o">.</span><span class="na">where</span><span class="o">(</span><span class="n">User_Table</span><span class="o">.</span><span class="na">age</span><span class="o">.</span><span class="na">greaterThan</span><span class="o">(</span><span class="n">minAge</span><span class="o">)</span>
-</span><span class='line'>                         <span class="o">.</span><span class="na">queryList</span><span class="o">();</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1">//ORMLite:</span>
-</span><span class='line'><span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span> <span class="n">users</span> <span class="o">=</span> <span class="n">userDao</span><span class="o">.</span><span class="na">queryBuilder</span><span class="o">()</span>
-</span><span class='line'>                          <span class="o">.</span><span class="na">where</span><span class="o">()</span>
-</span><span class='line'>                          <span class="o">.</span><span class="na">gt</span><span class="o">(</span><span class="s">&quot;age&quot;</span><span class="o">,</span> <span class="n">minAge</span><span class="o">)</span>
-</span><span class='line'>                          <span class="o">.</span><span class="na">query</span><span class="o">();</span>
-</span><span class='line'><span class="c1">//GreenDAO:</span>
-</span><span class='line'><span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span> <span class="n">users</span> <span class="o">=</span> <span class="n">userDao</span><span class="o">.</span><span class="na">queryBuilder</span><span class="o">()</span>
-</span><span class='line'>                          <span class="o">.</span><span class="na">where</span><span class="o">(</span><span class="n">Properties</span><span class="o">.</span><span class="na">Age</span><span class="o">.</span><span class="na">gt</span><span class="o">(</span><span class="n">minAge</span><span class="o">))</span>
-</span><span class='line'>                          <span class="o">.</span><span class="na">list</span><span class="o">();</span>
-</span></code></pre></td></tr></table></div></figure>
+<pre><code>//DbFlow:
+List&lt;User&gt; users = SQLite.select()
+                         .from(User.class)
+                         .where(User_Table.age.greaterThan(minAge)
+                         .queryList();
 
+//ORMLite:
+List&lt;User&gt; users = userDao.queryBuilder()
+                          .where()
+                          .gt("age", minAge)
+                          .query();
+//GreenDAO:
+List&lt;User&gt; users = userDao.queryBuilder()
+                          .where(Properties.Age.gt(minAge))
+                          .list();
+</code></pre>
 
-<p>On the one hand- it&rsquo;s cleaner and most of us familiar with SQL syntax, but on the contrary, you&rsquo;re losing some of the power of your object mapping (no autocomplete, and you need to remember the object&rsquo;s table).</p>
+<p>```
+On the one hand- it&rsquo;s cleaner and most of us familiar with SQL syntax, but on the contrary, you&rsquo;re losing some of the power of your object mapping (no autocomplete, and you need to remember the object&rsquo;s table).</p>
 
 <h2>Performance</h2>
 
@@ -958,7 +1217,7 @@ Do you remember trying to figure out what is going on with your database so you 
 
 <p>In our case it suppose to be pretty easy, there is already a <a href="http://developer.android.com/reference/android/support/design/widget/SwipeDismissBehavior.html">swipe to dismiss behavior</a> ready to be used on the lower view, so we just need to attach it to the relevant view. First lets build our layout:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -1000,14 +1259,14 @@ Do you remember trying to figure out what is going on with your database so you 
 </span><span class='line'>        <span class="na">android:background=</span><span class="s">&quot;#3bb0ff&quot;</span><span class="nt">/&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="nt">&lt;/android.support.design.widget.CoordinatorLayout&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 
 <p>As said, it’s a simple layout with 2 view- one for the content (the green one) and one for the swiping (the blue one).</p>
 
 <p>Now, lets attach the relevant behavior to the relevant view:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -1035,7 +1294,7 @@ Do you remember trying to figure out what is going on with your database so you 
 </span><span class='line'>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDragStateChanged</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">)</span> <span class="o">{}</span>
 </span><span class='line'><span class="o">});</span>
 </span><span class='line'><span class="n">params</span><span class="o">.</span><span class="na">setBehavior</span><span class="o">(</span><span class="n">behavior</span><span class="o">);</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 
 <p>That&rsquo;s pretty self explained- we declare a new swipe to dismiss behavior, set it&rsquo;s direction only to right, and finish the activity on dismiss. But there&rsquo;s on problem- somehow, although we declare this behavior only on the dismiss view, it working on all the view, so also the content view is swipeable as you can see here:</p>
@@ -1044,7 +1303,7 @@ Do you remember trying to figure out what is going on with your database so you 
 
 <p>I&rsquo;m not sure if this is by design or just a bug (after digging in the code I&rsquo;m afraid this behavior is not intended) but we can easily fix this by creating our own behavior. Of course that we not going to write this whole code from beginning, we&rsquo;ll use the <em>SwipeDismissBehavior</em> class and just fix the relevant code. I really recommend doing a little investigation and reading the Android code, that&rsquo;s way you&rsquo;re fully understand how things really works and get to read an high quality code written by the Android developers, in that case the fix is pretty easy to spot- the <em>SwipeDismissBehavior</em> handle touch events also if those touches not in the view (although there is a check in the <em>onInterceptTouchEvent</em> method and those events should be ignore) so I created a new behavior class just for this fix:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -1064,7 +1323,7 @@ Do you remember trying to figure out what is going on with your database so you 
 </span><span class='line'>    <span class="o">}</span>
 </span><span class='line'>    <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
 </span><span class='line'><span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 
 <p>Changing the activity to use <em>SwipeDismissOnlyOnViewBehavior</em> instead of <em>SwipeDismissBehavior</em> is doing the work:</p>
@@ -1073,7 +1332,7 @@ Do you remember trying to figure out what is going on with your database so you 
 
 <p>Now we need to sync between the content view to the dismiss view when swiping, so we creating a new behavior just for this. Because this is really simple behavior all we need to implement are 2 functions, in which view this content view depended (<em>layoutDependsOn</em>) and what to do when the dependent view changed (<em>onDependentViewChanged</em>):</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -1105,7 +1364,7 @@ Do you remember trying to figure out what is going on with your database so you 
 </span><span class='line'>    <span class="o">}</span>
 </span><span class='line'><span class="o">};</span>
 </span><span class='line'><span class="n">params</span><span class="o">.</span><span class="na">setBehavior</span><span class="o">(</span><span class="n">behavior</span><span class="o">);</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 
 <p>And voila:</p>
@@ -1391,7 +1650,7 @@ Do you remember trying to figure out what is going on with your database so you 
 
 <p>First we need to create the shapes for the search icon:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -1453,14 +1712,14 @@ Do you remember trying to figure out what is going on with your database so you 
 </span><span class='line'>        <span class="na">android:trimPathStart=</span><span class="s">&quot;0.4&quot;</span>
 </span><span class='line'>        <span class="na">android:trimPathEnd=</span><span class="s">&quot;1&quot;</span> <span class="nt">/&gt;</span>
 </span><span class='line'><span class="nt">&lt;/vector&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 
 <p>The syntax for creating SVG paths is not that complicated and you can learn about it <a href="https://www.w3.org/TR/SVG/paths.html">here</a>, Android Studio is also very handy here because you can see a preview and also import existent material app icons and see their paths as described <a href="http://developer.android.com/tools/help/vector-asset-studio.html">here</a>.</p>
 
 <p>Now lets create the animation, we&rsquo;ll focus on the animation from the search icon to cancel, the opposite is pretty the same just with reverse values. We going to create 3 different animations:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -1502,12 +1761,12 @@ Do you remember trying to figure out what is going on with your database so you 
 </span><span class='line'>        <span class="na">android:valueTo=</span><span class="s">&quot;0&quot;</span> <span class="nt">/&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="nt">&lt;/set&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 
 
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -1541,12 +1800,12 @@ Do you remember trying to figure out what is going on with your database so you 
 </span><span class='line'>        <span class="na">android:duration=</span><span class="s">&quot;600&quot;</span> <span class="nt">/&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="nt">&lt;/set&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 
 
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -1580,12 +1839,12 @@ Do you remember trying to figure out what is going on with your database so you 
 </span><span class='line'>        <span class="na">android:duration=</span><span class="s">&quot;450&quot;</span> <span class="nt">/&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="nt">&lt;/set&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 
 <p>The animations are pretty basics and what we&rsquo;re doing here is just changing the start or the end of the path. Now we need to bring all animation together:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -1619,7 +1878,7 @@ Do you remember trying to figure out what is going on with your database so you 
 </span><span class='line'>        <span class="na">android:animation=</span><span class="s">&quot;@animator/circle2_to_cancel&quot;</span> <span class="nt">/&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="nt">&lt;/animated-vector&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 
 <p>And now you can easily use the  search_to_cancel drawable in code, just don&rsquo;t forget to call <strong>start()</strong>:</p>
@@ -1836,68 +2095,44 @@ This time we’ll focus on collection of tools and resources that help you build
 
 <p><a href="https://kotlinlang.org/docs/tutorials/android-plugin.html">The Android Extensions plugin</a> allows us to get rid from all the <em>findViewById</em> boilerplate code without having to add any extra code or shipping any additional runtime:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='kotlin'><span class='line'><span class="c1">// Using R.layout.activity_main from the main source set</span>
-</span><span class='line'><span class="k">import</span> <span class="nn">kotlinx.android.synthetic.main.activity_main.*</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">public</span> <span class="k">class</span> <span class="nc">MyActivity</span> <span class="p">:</span> <span class="n">Activity</span><span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="n">Bundle</span><span class="p">?)</span> <span class="p">{</span>
-</span><span class='line'>        <span class="k">super</span><span class="p">.</span><span class="n">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
-</span><span class='line'>        <span class="n">setContentView</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="n">layout</span><span class="p">.</span><span class="n">activity_main</span><span class="p">)</span>
-</span><span class='line'>        <span class="n">textView</span><span class="p">.</span><span class="n">setText</span><span class="p">(</span><span class="s">&quot;Hello, world!&quot;</span><span class="p">)</span> <span class="c1">// Instead of findView(R.id.textView) as TextView</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
+<pre><code class="kotlin">// Using R.layout.activity_main from the main source set
+import kotlinx.android.synthetic.main.activity_main.*
 
+public class MyActivity : Activity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        textView.setText("Hello, world!") // Instead of findView(R.id.textView) as TextView
+    }
+}
+</code></pre>
 
 <h3>Code shrinking</h3>
 
 <p>Code in Java:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">view</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
-</span><span class='line'>    <span class="nd">@Override</span>
-</span><span class='line'>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>        <span class="c1">//click handling</span>
-</span><span class='line'>    <span class="o">}</span>
-</span><span class='line'><span class="o">});</span>
-</span></code></pre></td></tr></table></div></figure>
-
+<pre><code class="java">view.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        //click handling
+    }
+});
+</code></pre>
 
 <p>Comes to:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='kotlin'><span class='line'><span class="n">view</span><span class="p">.</span><span class="n">setOnClickListener</span><span class="p">({</span><span class="c1">//click handling})</span>
-</span></code></pre></td></tr></table></div></figure>
-
+<pre><code class="kotlin">view.setOnClickListener({//click handling})
+</code></pre>
 
 <p>And:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="k">if</span> <span class="o">(</span><span class="n">s</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">?</span> <span class="n">s</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">:</span> <span class="mi">0</span>
-</span></code></pre></td></tr></table></div></figure>
-
+<pre><code class="java">if (s != null) ? s.length() : 0
+</code></pre>
 
 <p>Comes to:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='kotlin'><span class='line'><span class="n">s</span><span class="o">?.</span><span class="n">length</span> <span class="o">?:</span> <span class="p">-</span><span class="m">1</span>
-</span></code></pre></td></tr></table></div></figure>
-
+<pre><code class="kotlin">s?.length ?: -1
+</code></pre>
 
 <p>Isn&rsquo;t it wonderful?</p>
 
@@ -1905,42 +2140,24 @@ This time we’ll focus on collection of tools and resources that help you build
 
 <p>Here is the real power of the language in my opinion, we can easily add utility function to our components from outside and use them seamlessly in our classes, here are some examples that I&rsquo;ve used in my extension class:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-</pre></td><td class='code'><pre><code class='kotlin'><span class='line'><span class="k">fun</span> <span class="nf">AppCompatActivity</span><span class="p">.</span><span class="n">navigate</span><span class="p">(</span><span class="n">frag</span><span class="p">:</span> <span class="n">Fragment</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>    <span class="k">val</span> <span class="py">fragmentTransaction</span> <span class="p">=</span>  <span class="n">supportFragmentManager</span><span class="p">.</span><span class="n">beginTransaction</span><span class="p">()</span>
-</span><span class='line'>    <span class="n">fragmentTransaction</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="n">content</span><span class="p">.</span><span class="n">id</span><span class="p">,</span> <span class="n">frag</span><span class="p">);</span>
-</span><span class='line'>    <span class="n">fragmentTransaction</span><span class="p">.</span><span class="n">commit</span><span class="p">();</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">fun</span> <span class="nf">Fragment</span><span class="p">.</span><span class="n">userError</span><span class="p">(</span><span class="n">msg</span><span class="p">:</span> <span class="n">String</span><span class="p">?)</span> <span class="p">{</span>
-</span><span class='line'>    <span class="n">Snackbar</span><span class="p">.</span><span class="n">make</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">Snackbar</span><span class="p">.</span><span class="n">LENGTH_LONG</span><span class="p">).</span><span class="n">show</span><span class="p">()</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">fun</span> <span class="nf">SharedPreferences</span><span class="p">.</span><span class="n">edit</span><span class="p">(</span><span class="n">func</span><span class="p">:</span><span class="n">SharedPreferences</span><span class="p">.</span><span class="n">Editor</span><span class="p">.</span> <span class="p">()</span> <span class="p">-&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">amp</span><span class="p">;</span><span class="n">amp</span><span class="p">;</span><span class="n">gt</span><span class="p">;</span> <span class="n">Unit</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>    <span class="k">val</span> <span class="py">editor</span> <span class="p">=</span> <span class="n">edit</span><span class="p">()</span>
-</span><span class='line'>    <span class="n">editor</span><span class="p">.</span><span class="n">func</span><span class="p">()</span>
-</span><span class='line'>    <span class="n">editor</span><span class="p">.</span><span class="n">apply</span><span class="p">()</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">fun</span> <span class="nf">SharedPreferences</span><span class="p">.</span><span class="n">Editor</span><span class="p">.</span><span class="k">set</span><span class="p">(</span><span class="n">pair</span><span class="p">:</span> <span class="n">Pair</span><span class="p">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">String</span><span class="p">&gt;)</span>  <span class="p">=</span> <span class="n">putString</span><span class="p">(</span><span class="n">pair</span><span class="p">.</span><span class="n">first</span><span class="p">,</span> <span class="n">pair</span><span class="p">.</span><span class="n">second</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure>
+<pre><code class="kotlin">fun AppCompatActivity.navigate(frag: Fragment) {
+    val fragmentTransaction =  supportFragmentManager.beginTransaction()
+    fragmentTransaction.replace(content.id, frag);
+    fragmentTransaction.commit();
+}
 
+fun Fragment.userError(msg: String?) {
+    Snackbar.make(view, msg, Snackbar.LENGTH_LONG).show()
+}
+
+fun SharedPreferences.edit(func:SharedPreferences.Editor. () -&amp;amp;amp;amp;gt; Unit) {
+    val editor = edit()
+    editor.func()
+    editor.apply()
+}
+
+fun SharedPreferences.Editor.set(pair: Pair&lt;String, String&gt;)  = putString(pair.first, pair.second)
+</code></pre>
 
 <p>There are also some libraries out there that add you many more extentions like: <a href="https://github.com/pawegio/KAndroid">KAndroid</a> and <a href="https://github.com/yoavst/androidKotlin">androidKotlin</a>, or even examples from others Android devs like <a href="https://speakerdeck.com/jakewharton/android-development-with-kotlin-androidkw-number-001">Jake Wharton</a>.</p>
 
@@ -1951,221 +2168,6 @@ This time we’ll focus on collection of tools and resources that help you build
 <p>Kotlin is some experiment from JetBrains to bring the latest design patterns paradigms to Java, Android and JS platforms that was quickly take Android community attention (and even inside Google).</p>
 
 <p>As you can see it look pretty good for start, it can save much redundant code and speed up development, and it will be interesting what will be next moves from Google and JetBrains and if it gonna get to the mainstream.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Android dev toolbox]]></title>
-    <link href="http://shem8.github.io/blog/2015/12/31/android-dev-toolbox/"/>
-    <updated>2015-12-31T10:43:15+02:00</updated>
-    <id>http://shem8.github.io/blog/2015/12/31/android-dev-toolbox</id>
-    <content type="html"><![CDATA[<h3>Talk I had given on AVGeeks on Dec 2015</h3>
-
-<!--more-->
-
-
-<p>[slideshare id=56571722&amp;doc=ywkq4qkcquknibuy5m3z-signature-2aa1ca40ff95bae825c5e98e9729691dc3307919cae0747b22cec4906e70d2df-poli-151231083934]</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Android Studio for Experts- Cheat Sheet]]></title>
-    <link href="http://shem8.github.io/blog/2015/12/04/android-studio-for-experts-cheat-sheet/"/>
-    <updated>2015-12-04T12:49:30+02:00</updated>
-    <id>http://shem8.github.io/blog/2015/12/04/android-studio-for-experts-cheat-sheet</id>
-    <content type="html"><![CDATA[<p>So last week there was the great Android Dev Summit, that in my opinion was one the greatest summit by Google, because unlike Goolge I/O or others Google big events- these event was very technical and was especially for devs, so if you didn&rsquo;t <a href="https://www.youtube.com/playlist?list=PLWz5rJ2EKKc_Tt7q77qwyKRgytF1RzRx8">watched the videos</a> already I very recommend to go over it and pick the ones interested you the most.</p>
-
-<!--more-->
-
-
-<p>One of the useful talks there was about some tricks and new cool things that you can do with Android studio (some of them old and some of them new and experimental), It&rsquo;s a bit long and cover a lot of things- so I decided to summarize it so I can go over it from time to time, I also add so time indication to each subject covered so you can just skip to this specific part.</p>
-
-<p><a href="https://www.youtube.com/watch?v=Y2GC6P5hPeA">https://www.youtube.com/watch?v=Y2GC6P5hPeA</a></p>
-
-<h2>Editor tricks by Tor Norbye [0:30-19:50]:</h2>
-
-<ul>
-<li><p>Use Tab (instead of Enter) to auto complete</p></li>
-<li><p>Ctrl+Shift+Space for smarted auto complete (or twice to even smarter)</p></li>
-<li><p>Intention actions (Alt+Enter) for context actions like: creating constructor, add fields, auto cast etc&hellip;</p></li>
-<li><p>Builtin templates:</p>
-
-<ul>
-<li><p>lists- &ldquo;fori&rdquo; or &ldquo;list.fori&rdquo;</p></li>
-<li><p>Log- logi, logm (for logging method), logr (for log return), logt (for tag)</p></li>
-</ul>
-</li>
-<li><p>Auto filter when start typing in every actions list</p></li>
-<li><p>tools:showIn for show you layout preview withing the parent layout</p></li>
-<li><p>tools namespace are ignored while build, so use them for preview (like src for ImageView or listItem for GridView)</p></li>
-<li><p>Add shrinkResources=true with MinifyEnabled to strip out unused resources.</p>
-
-<ul>
-<li>tools:strictMode, tools:keep, tools:discrad for customize it.</li>
-</ul>
-</li>
-<li><p>Ctrl+Shift+A for finding action by name</p></li>
-</ul>
-
-
-<h2>Debugger tricks by Siva Velusamy [20:00-29:30]:</h2>
-
-<ul>
-<li><p>&ldquo;Analyze stacktrace&rdquo; command for analyzing traces that came out of android studio (even scramble traces with Proguard)</p></li>
-<li><p>&ldquo;View as&rdquo; for resources references while debugging.</p></li>
-<li><p>An option for debug printing in each break point, even without stopping in this breakpoint (click on the break point -> more -> log evaluate expression).</p></li>
-</ul>
-
-
-<h2>Gradle integration by Alex Ruiz [29:35-37:20]:</h2>
-
-<ul>
-<li><p>Android studio has an option to create a module from jar/ aar library</p></li>
-<li><p>Switch build variant while working with the &ldquo;Build Variants&rdquo; view.</p></li>
-<li><p>On Android Studio 2.0- Enable all artifcats together (so things like refactoring will work also for you Android tests and your unit tests) from settings: Build, Execution, Deployment -> Experimental -> Enable all test artifacts.</p></li>
-</ul>
-
-
-<h2>Test code by Michal Bendwoski [37:20-41:40]:</h2>
-
-<ul>
-<li><p>Alt+Enter on your class-> create Android Test on this class.</p></li>
-<li><p>Ctrl+N (Generate command) to create test method.</p></li>
-<li><p>Intention action for moving some code to setUp method.</p></li>
-<li><p>Ctrl+Shift+T to navigate between Test and Test Subject (+ you can add new test case from there).</p></li>
-</ul>
-
-
-<h2>C++ Support by Kathryn Shih [41:40-51:20]:</h2>
-
-<ul>
-<li><p>Doxygen is now supported so F1 is working also for C++ code.</p></li>
-<li><p>Enable native debugging (from Run->Edit configurations) so you will be able to debug your native code too.</p>
-
-<ul>
-<li>But that make the compilation / linking time longer, so be aware.</li>
-</ul>
-</li>
-<li><p>On Android Studio 2.0- Awesome <a href="https://sites.google.com/a/android.com/tools/tech-docs/gpu-profiler">GPU debugging</a> option.</p></li>
-</ul>
-
-
-<h2>Performance tools by Esteban de la Canal [51:20-1:08:55]:</h2>
-
-<ul>
-<li><p>New network monitor- x axis is the request time, y is the request speed, the area of the graph is the request size.</p></li>
-<li><p>In the allocator tracker- you can switch to &ldquo;Group by allocator&rdquo; view so the allocation will be grouped by package name, that way you can easily find your classes that response to allocations.</p></li>
-<li><p>When opening a heap dump you have some builtin tasks for memory leak analyzing, one of them is Leaked activities- very useful!</p></li>
-<li><p>GPU monitor (Experimental) is disabled by default because it might affect other monitors. It's much like the on device GPU monitor.</p></li>
-</ul>
-
-
-<hr />
-
-<p>That&rsquo;s it, the talk covers some more things that not included here, I tried to put the ones I think I would use the most, feel free to comment and add if you thing I forgot something.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Run fast, fall frequently, get up faster and go drink beer at the beach: What it's like to work at a StartUp]]></title>
-    <link href="http://shem8.github.io/blog/2015/11/15/run-fast-fall-frequently-get-up-faster-and-go-drink-beer-at-the-beach-what-its-like-to-work-at-a-startup/"/>
-    <updated>2015-11-15T12:24:22+02:00</updated>
-    <id>http://shem8.github.io/blog/2015/11/15/run-fast-fall-frequently-get-up-faster-and-go-drink-beer-at-the-beach-what-its-like-to-work-at-a-startup</id>
-    <content type="html"><![CDATA[<p><em>Over the past 3 years I&rsquo;ve been working at <a href="http://myroll.com/">MyRoll</a> (previously called Flayvr, the startup that loves you photos as much as you do). I joined right after the seed stage and I was the first employee of the company. This was my first time working at a startup and it&rsquo;s hands-down one of the best experiences I&rsquo;ve had in my not-so-long life. Lately, more and more of my friends have asked me: &ldquo;Should I join a startup, or just go corporate - something that&rsquo;s financially stable?&rdquo;.</em></p>
-
-<!--more-->
-
-
-<p><strong>First- I want to clear the water and say that I don&rsquo;t really have an answer for that.  It really depends on the type of person you are. However, these is my 2 cents about all the <em>*</em>GOOD<em>*</em> of working in a small startup (Don&rsquo;t worry, there&rsquo;s plenty of bad as well - coming soon):</strong></p>
-
-<h2>1. You learn fast (because you don&rsquo;t have a choice)</h2>
-
-<p>On my very first day at MyRoll I was given the task of writing a feature in our iOS app. It was my first time writing code for Mobile, first time working on objectiveC, first time working on a Mac, first time working with git, AND first time reading our code. There was no one-month boot camp, no onboarding powerpoints, no tutorials, and ZERO team members to pair program or review my code. Just the internet and the CTO that wrote the MVP for demo. A week later I had to add some app analytics to write to the DB so I had, in turn, to learn rails (from zero). A year later I was the one that started developing our Android app.</p>
-
-<p>Jumping on the horse and learning how to ride, time after time, over and over again, each time with a different type of horse (or ride? I lost myself in the analogy), makes you develop a real capability for learning new things (no matter what they are). You learn to predict the pitfalls, you know where things are going be more tricky and you develop some sense about what’s right and wrong in what you&rsquo;re doing.</p>
-
-<h2>2. You go for the impossible, because the possible things are already there</h2>
-
-<p>Before we started working on Flayvr, people treated photos as isolated items. Our first goal was therefore  to find the context of the user&rsquo;s media and create a full meaningful story from it. So we took Ron’s, our CEO, endless photos stream and started to analyze it (I know this guy for 3 years but through his photos I also know how his trip to Barcelona in 2005 was&hellip;). We analyzed it manually and understood how 2 photos are connected to the same scene or event, we went over on different end cases and built some pretty solid algorithms to cluster his photos and videos.</p>
-
-<p>Than we asked some friends to test our algorithm on their stream. It was pretty bad&hellip; Ron had 2 kids and he literally records every second in their life - my friends, on the other hand, are party people that have tons of Whatsapp photos that are unrelated to one another. It looked like every person has his own unique stream, and it felt too complicated for a computer to just magically understand it.</p>
-
-<p>Back to the drawing board - we categorized our main users. We understood that we have different kinds of people and they are all different, but that we can easily adapt our algorithm to each one: Android or iPhone users? Are they taking a lot of photos or just getting sent 4-5 photos in Whatsapp? is she a professional photographer or a 13 years old selfie taker? etc..</p>
-
-<p>We then tweaked our algorithm (and are still making it better and better, there is no magic solution here) and actually arrived at some pretty solid results.</p>
-
-<p><strong>Why? Because he had no alternatives</strong> - it was either about delivering a good damn product or giving back our investors their money.</p>
-
-<h2>3. You break things. A lot!</h2>
-
-<p>When moving fast you sometimes fall, just like a new baby born child. In the beginning you are going to  fall a lot, but slowly you learn how to put one leg in front of the other, you learn to keep your balance and in the end you are running smoothly.</p>
-
-<p><img class="center" src="http://c2.thejournal.ie/media/2013/04/falling-off-catwalk.gif" width="352" title="Pushing to production on 1AM on Friday." alt="Pushing to production on 1AM on Friday."></p>
-
-<p>At first, releasing a new version was a big deal. We had a release doc with a couple of stages that you had to be checked: making sure you&rsquo;re working with the production env, testing it on a couple of devices, checking for updates and fresh install, etc&hellip; That took some time, and as we gained confidence the release cycle got shorter and we started  pushing a new version to our users 2-3 times a week (and sometimes even more).</p>
-
-<p>But even the adults fall sometimes, and we did have some bad deploys. Shit happens, you must accept that. If Facebook is uploads a new version of the app that crashes for 10% of the users right on start,  the result will be a twitter storm. Or if <a href="http://mashable.com/2015/07/01/google-photos-black-people-gorillas/">google computer vision miserably fails </a>- you will see it all over the net. But in our case we realized we have the time to fix, and users are more tolerant towards our mistake.</p>
-
-<h2>4. You aren’t afraid from failures</h2>
-
-<p>Further to my last point - because of the uncertainty and the risk- taking nature of startups, you will fail often. From time to time, you learn to live with all those failures and instead of being upset after each one you learn to embrace it. You understand that each failure makes you a bit smarter: your estimation should be done more carefully, you now know your users don&rsquo;t like the red color, etc&hellip;</p>
-
-<blockquote>“When we give ourselves permission to fail, we, at the same time, give ourselves permission to excel.”
-<br>
-<i>- Eloise Ristad</i></blockquote>
-
-
-<p>With that in mind - you think more about the process and less about the results.</p>
-
-<h2>5. You understand the power of UX, marketing, etc&hellip;</h2>
-
-<p>In my previous job I was one of 6 developers in 3 dev teams in our department. There were two outsourced designers that I never talked with, 3 product managers that I saw only during planning sessions, and a sales team, somewhere, maybe in the US or maybe one floor above, I&rsquo;m not really sure.</p>
-
-<p>As a server side programmer I never took UX too seriously. I was sure that if the feature is important enough, users are going to use it. I was sure that if we, the devs guys, are going to kick a hell good full product - users will love it. I was sure that there was some secret way that they are going to find it and magically understand how to use all features right off the bat.</p>
-
-<p>I was stupid. UX guys made our users understand our flows, product guys taught us <a href="https://shem8.wordpress.com/2015/08/24/know-what-not-to-build-droidcon-2015/">what not to build</a> and saved us tons of time, our super hero marketing guy brought us to the first place on <a href="http://www.producthunt.com/tech/gallery-doctor-2-0">producthunt</a> and let a huge crowd discover our app right on the first day on launch. A tech product is just like other product, the tech part is just a small piece of the puzzle, so don&rsquo;t feel too special.</p>
-
-<h2>6. You embrace competition</h2>
-
-<p>On the day iOS 7 was released we got many messages from friends. They were all like  "oh not cool, apple just implemented your app in the default photos app, sorry for you guys". We were a bit afraid, and at first we thought &ldquo;ok, we have no chance here&rdquo;. But it turned out to be a good move for us. First - we got some nice free <a href="http://m.blog.laptopmag.com/obsolete-ios-apps?slide=2">PR</a> during the first few days. Second, users started to understand how much this feature was important when browsing their photos and started to look for a dedicated app for that, and we indeed got more downloads over the following months.</p>
-
-<p>Same happened when Dropbox Carousel launched and with Google photos. When the big companies enter the arena you should start to worry, but you should also be flattered, because that means that there is something worth fighting about, and in today’s world - there is plenty of room for you too there.</p>
-
-<blockquote>Remember: if the Gorilla is blowing down your neck - that means you're on the right track, just run faster =)</blockquote>
-
-
-<h2>7. You forget about your comfort zone</h2>
-
-<p>Here is some very small taste of the things that I had the privilege to do over the last 3 years. All are things  that I&rsquo;ve never done before:</p>
-
-<ul>
-<li><p>I gave 2 talks on 2 different DroidCon conferences (The biggest Android conference around)</p></li>
-<li><p>I delivered tens of pitches in English as part of our startup booth in conferences</p></li>
-<li><p>I went over couple to absolute strangers in the middle of the street and asked them to play with our app, just to gather some feedback</p></li>
-<li><p>I emailed hundreds of users, closed support tickets and solved their issues</p></li>
-<li><p>I went over to the home of one of our investors and worked with her on fixing an issue she had with the app</p></li>
-<li><p>I interviewed candidates applying for the company</p></li>
-<li><p>I started writing my blog :)</p></li>
-</ul>
-
-
-<p>  <img class="center" src="http://cosmic-fitness.com/wp-content/uploads/2015/03/comfort-zone-300x206.jpg"></p>
-
-<h2>8. Nobody is going tell you not to come with flip flops or that the CEO is coming tomorrow so you have to look like you’re working at 8AM</h2>
-
-<p><br>
-<img class="center" src="https://shem8.files.wordpress.com/2015/10/edit.jpg?w=660"></p>
-
-<p><br>
-Yup, you&rsquo;re able to start every Thursday with yoga on the beach and swimming in the sea, and we actually did it.</p>
-
-<p><br></p>
-
-<hr />
-
-<p>Looks like start-up life is all fun and games , but it&rsquo;s not. It&rsquo;s more like a roller coaster. The ride will take you to some new heights but you are also going to get lots of downs and falls (and I hope I&rsquo;ll write a blog post about it soon). But for all those who want my advice about which one is better - it&rsquo;s more about what kind of person you are and what do you want to achieve. Those small companies that are moving fast are great for learning new things and gaining experience on stuff you probably wouldn&rsquo;t do in a bigger company, but it&rsquo;s also very stressful and chaotic, and you have to be ready for this ride.</p>
-
-<p>As said, I’ve been in these ride over the past 3 years, I can’t say I’ve enjoy every second of it but when looking back, I can’t imagine how far I got and how much I gained from this adventure.</p>
 ]]></content>
   </entry>
   

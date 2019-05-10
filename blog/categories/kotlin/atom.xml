@@ -4,7 +4,7 @@
   <title><![CDATA[Category: kotlin | Shem Magnezi Blog]]></title>
   <link href="http://shem8.github.io/blog/categories/kotlin/atom.xml" rel="self"/>
   <link href="http://shem8.github.io/"/>
-  <updated>2019-01-04T18:02:15+02:00</updated>
+  <updated>2019-05-10T17:15:58+03:00</updated>
   <id>http://shem8.github.io/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
@@ -88,7 +88,7 @@ Now we're able to see how we can use the language for faster development:
 
 [The Android Extensions plugin](https://kotlinlang.org/docs/tutorials/android-plugin.html) allows us to get rid from all the _findViewById_ boilerplate code without having to add any extra code or shipping any additional runtime:
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -108,7 +108,7 @@ Now we're able to see how we can use the language for faster development:
 </span><span class='line'>        <span class="n">textView</span><span class="p">.</span><span class="n">setText</span><span class="p">(</span><span class="s">&quot;Hello, world!&quot;</span><span class="p">)</span> <span class="c1">// Instead of findView(R.id.textView) as TextView</span>
 </span><span class='line'>    <span class="p">}</span>
 </span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 
 ### Code shrinking
@@ -116,7 +116,7 @@ Now we're able to see how we can use the language for faster development:
 
 Code in Java:
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -128,23 +128,23 @@ Code in Java:
 </span><span class='line'>        <span class="c1">//click handling</span>
 </span><span class='line'>    <span class="o">}</span>
 </span><span class='line'><span class="o">});</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 Comes to:
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='kotlin'><span class='line'><span class="n">view</span><span class="p">.</span><span class="n">setOnClickListener</span><span class="p">({</span><span class="c1">//click handling})</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 And:
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='java'><span class='line'><span class="k">if</span> <span class="o">(</span><span class="n">s</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">?</span> <span class="n">s</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">:</span> <span class="mi">0</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 Comes to:
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='kotlin'><span class='line'><span class="n">s</span><span class="o">?.</span><span class="n">length</span> <span class="o">?:</span> <span class="p">-</span><span class="m">1</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 Isn't it wonderful?
 
@@ -154,7 +154,7 @@ Isn't it wonderful?
 
 Here is the real power of the language in my opinion, we can easily add utility function to our components from outside and use them seamlessly in our classes, here are some examples that I've used in my extension class:
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -188,7 +188,7 @@ Here is the real power of the language in my opinion, we can easily add utility 
 </span><span class='line'><span class="p">}</span>
 </span><span class='line'>
 </span><span class='line'><span class="k">fun</span> <span class="nf">SharedPreferences</span><span class="p">.</span><span class="n">Editor</span><span class="p">.</span><span class="k">set</span><span class="p">(</span><span class="n">pair</span><span class="p">:</span> <span class="n">Pair</span><span class="p">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">String</span><span class="p">&gt;)</span>  <span class="p">=</span> <span class="n">putString</span><span class="p">(</span><span class="n">pair</span><span class="p">.</span><span class="n">first</span><span class="p">,</span> <span class="n">pair</span><span class="p">.</span><span class="n">second</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 There are also some libraries out there that add you many more extentions like: [KAndroid](https://github.com/pawegio/KAndroid) and [androidKotlin](https://github.com/yoavst/androidKotlin), or even examples from others Android devs like [Jake Wharton](https://speakerdeck.com/jakewharton/android-development-with-kotlin-androidkw-number-001).
 

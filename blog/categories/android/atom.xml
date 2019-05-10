@@ -4,7 +4,7 @@
   <title><![CDATA[Category: android | Shem Magnezi Blog]]></title>
   <link href="http://shem8.github.io/blog/categories/android/atom.xml" rel="self"/>
   <link href="http://shem8.github.io/"/>
-  <updated>2019-01-04T18:02:15+02:00</updated>
+  <updated>2019-05-10T17:15:58+03:00</updated>
   <id>http://shem8.github.io/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
@@ -114,7 +114,7 @@ Soon enough we got a couple of 3rd libraries to handle it, just look on [Android
 There are two main ways to define the mapping between your objects and the tables in Java: some DSL + code generator (like what GreenDAO is using), or using annotation (like ORMLite, DBFlow and most of the libraries). Although I'm not a big fan of annotations, I must say the later is an easier solution.
 
 These why it's no surprise that the Android team chose to go with this approach, so simple data model looks like this:
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -144,7 +144,7 @@ These why it's no surprise that the Android team chose to go with this approach,
 </span><span class='line'>    <span class="c1">// but they&#39;re required for Room to work.</span>
 </span><span class='line'>    <span class="c1">// (So please go and switch to Kotlin)</span>
 </span><span class='line'><span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 As in any other library- you can set a custom name for the table or the columns, you can choose to index some stuff and specify relationships between models.
 
 ## The API
@@ -153,7 +153,7 @@ To interact with the data models, we use DAO- data access object. So nothing new
 BUT while most of the ORM libraries using some in-code query builder, Room doing something nice and let you declare your queries in slick SQL formatting.
 
 For example, here is how you'll do a simple query for specific users in each one of the platforms:
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -191,7 +191,7 @@ For example, here is how you'll do a simple query for specific users in each one
 </span><span class='line'><span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span> <span class="n">users</span> <span class="o">=</span> <span class="n">userDao</span><span class="o">.</span><span class="na">queryBuilder</span><span class="o">()</span>
 </span><span class='line'>                          <span class="o">.</span><span class="na">where</span><span class="o">(</span><span class="n">Properties</span><span class="o">.</span><span class="na">Age</span><span class="o">.</span><span class="na">gt</span><span class="o">(</span><span class="n">minAge</span><span class="o">))</span>
 </span><span class='line'>                          <span class="o">.</span><span class="na">list</span><span class="o">();</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 On the one hand- it's cleaner and most of us familiar with SQL syntax, but on the contrary, you're losing some of the power of your object mapping (no autocomplete, and you need to remember the object's table).
 
 ## Performance
@@ -409,7 +409,7 @@ So it turns out that _CordinatorLayout_ is pretty powerful, it let you easily d
 
 In our case it suppose to be pretty easy, there is already a [swipe to dismiss behavior](http://developer.android.com/reference/android/support/design/widget/SwipeDismissBehavior.html) ready to be used on the lower view, so we just need to attach it to the relevant view. First lets build our layout:
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -451,13 +451,13 @@ In our case it suppose to be pretty easy, there is already a [swipe to dismiss 
 </span><span class='line'>        <span class="na">android:background=</span><span class="s">&quot;#3bb0ff&quot;</span><span class="nt">/&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="nt">&lt;/android.support.design.widget.CoordinatorLayout&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 As said, it’s a simple layout with 2 view- one for the content (the green one) and one for the swiping (the blue one).
 
 Now, lets attach the relevant behavior to the relevant view:
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -485,7 +485,7 @@ Now, lets attach the relevant behavior to the relevant view:
 </span><span class='line'>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDragStateChanged</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">)</span> <span class="o">{}</span>
 </span><span class='line'><span class="o">});</span>
 </span><span class='line'><span class="n">params</span><span class="o">.</span><span class="na">setBehavior</span><span class="o">(</span><span class="n">behavior</span><span class="o">);</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 That's pretty self explained- we declare a new swipe to dismiss behavior, set it's direction only to right, and finish the activity on dismiss. But there's on problem- somehow, although we declare this behavior only on the dismiss view, it working on all the view, so also the content view is swipeable as you can see here:
 
@@ -493,7 +493,7 @@ That's pretty self explained- we declare a new swipe to dismiss behavior, set it
 
 I'm not sure if this is by design or just a bug (after digging in the code I'm afraid this behavior is not intended) but we can easily fix this by creating our own behavior. Of course that we not going to write this whole code from beginning, we'll use the _SwipeDismissBehavior_ class and just fix the relevant code. I really recommend doing a little investigation and reading the Android code, that's way you're fully understand how things really works and get to read an high quality code written by the Android developers, in that case the fix is pretty easy to spot- the _SwipeDismissBehavior_ handle touch events also if those touches not in the view (although there is a check in the _onInterceptTouchEvent_ method and those events should be ignore) so I created a new behavior class just for this fix:
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -513,7 +513,7 @@ I'm not sure if this is by design or just a bug (after digging in the code I'm a
 </span><span class='line'>    <span class="o">}</span>
 </span><span class='line'>    <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
 </span><span class='line'><span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 Changing the activity to use _SwipeDismissOnlyOnViewBehavior_ instead of _SwipeDismissBehavior_ is doing the work:
 
@@ -521,7 +521,7 @@ Changing the activity to use _SwipeDismissOnlyOnViewBehavior_ instead of _Swip
 
 Now we need to sync between the content view to the dismiss view when swiping, so we creating a new behavior just for this. Because this is really simple behavior all we need to implement are 2 functions, in which view this content view depended (_layoutDependsOn_) and what to do when the dependent view changed (_onDependentViewChanged_):
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -553,7 +553,7 @@ Now we need to sync between the content view to the dismiss view when swiping, s
 </span><span class='line'>    <span class="o">}</span>
 </span><span class='line'><span class="o">};</span>
 </span><span class='line'><span class="n">params</span><span class="o">.</span><span class="na">setBehavior</span><span class="o">(</span><span class="n">behavior</span><span class="o">);</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 And voila:
 
