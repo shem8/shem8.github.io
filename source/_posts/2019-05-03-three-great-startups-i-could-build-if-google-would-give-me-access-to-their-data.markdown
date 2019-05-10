@@ -65,7 +65,7 @@ As you probably notice d— English is not my native language. Therefore I’m u
 
 Google Translate is great because it’s available on all platforms — whether I’m writing a document on my desktop, reading an email on my Android phone or reading an article on my iPad. It also has a simple UI and useful features like the word’s full definition, frequency of each translation, synonyms and listening.
 
-What if I could use Google to build an [Anki](https://en.wikipedia.org/wiki/Anki_%28software%29) app that would use [https://en.wikipedia.org/wiki/Spaced_repetition] to help me learn and memorize the words I constantly forget. It could also help me enrich my vocabulary by suggesting new words related to what I usually use.
+What if I could use Google to build an [Anki](https://en.wikipedia.org/wiki/Anki_%28software%29) app that would use [spaced repetition](https://en.wikipedia.org/wiki/Spaced_repetition) to help me learn and memorize the words I constantly forget. It could also help me enrich my vocabulary by suggesting new words related to what I usually use.
 
 
 #### Why can’t I do it?
