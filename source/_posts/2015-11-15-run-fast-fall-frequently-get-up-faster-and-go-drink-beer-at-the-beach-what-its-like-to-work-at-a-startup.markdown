@@ -3,10 +3,7 @@ author: smagnezi8
 comments: true
 date: 2015-11-15 10:24:22+00:00
 layout: post
-link: https://shem8.wordpress.com/2015/11/15/run-fast-fall-frequently-get-up-faster-and-go-drink-beer-at-the-beach-what-its-like-to-work-at-a-startup/
-slug: run-fast-fall-frequently-get-up-faster-and-go-drink-beer-at-the-beach-what-its-like-to-work-at-a-startup
-title: 'Run fast, fall frequently, get up faster and go drink beer at the beach: What
-  it''s like to work at a StartUp'
+title: "Run fast, fall frequently, get up faster and go drink beer at the beach: What it''s like to work at a StartUp"
 wordpress_id: 9
 categories:
 - life

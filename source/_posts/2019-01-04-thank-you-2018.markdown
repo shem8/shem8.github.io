@@ -1,0 +1,55 @@
+---
+layout: post
+title: "Thank you 2018"
+date: 2019-01-04 16:53:24 +0300
+comments: true
+categories:
+---
+_You have been good to me._
+<!-- more -->
+
+The dear year of 2018 — You’ve gone by fast, maybe too fast. A moment before saying goodbye I wanted to thank you for the lessons you gave me.
+
+## 1. Focus
+Starting from the most important lesson, the one that probably made this post being a list of only four items and not a dozen. Having two children, with significant challenges at work- I _had_ to separate the important stuff from the noise. Two books mainly inspired me here (one old and one new): [The 4-Hour Workweek](https://www.goodreads.com/book/show/368593.The_4_Hour_Workweek) and [It Doesn’t Have to Be Crazy at Work](https://www.goodreads.com/book/show/38900866-it-doesn-t-have-to-be-crazy-at-work).
+
+I removed tons of distractions from my day to day (more about that later). First, I reduced the emails and other not urgent communications channels to strictly twice a day, 30 min each, and disabled notifications for all of them. Surprisingly enough- it’s working, and the world didn’t fall.
+
+I also expanded an experiment I started the year before, and every evening I put my phone on flight mode until the next morning and putting it back on only when I’m going out of my house.
+
+When I’m in a situation- I’m fully present: when I’m with my kids, I found it’s better to be there less time but with 100% of my attention. When at work I split it into two mindsets: (1) in the zone, writing, deeply thinking with my self, and (2) being there for others, tackling difficult problems, giving guidance. Today’s workspace is trying to provide one solution to both, and I don’t think it’s possible. Lucky enough- I’m working in such environment that has the answers for both- open spaces for collaboration and dedicates quite zones for isolation. So either I sit (or stand actually) in my place without earphones, putting my radar on and helping others, or blocking a dedicated time in the calendar and go work from another room or even a different building.
+
+I learned (and still learning) how to put my attention on the right things and reduce the context switches to a minimum. It is an art that will boost your productivity. The secret is to do the same with less, and than add a bit to it
+
+## 2. Strengthen my weaknesses
+Until last year I focus on sharping the things I felt I was good at but not enough. When developed on Android, I dig deeper and explore new things like Kotlin at the time or how to do advanced animations. Same for public speaking- I push on talking on more events, sharpen my communication skills and get better on how to speak in front of an audience.
+
+As I improved, I realized I was reaching my limit. My other weaker capabilities were holding me back, blocking my way in improving my stronger skills. There were two main areas I felt lagging behind: English and Web development.
+
+Starting from the latter- as a full-stack developer that did lots of backend and mobile, I felt I was still missing the basics of web development, primarily as someone that most of the day working on React apps in my day to day and didn’t work with JS a lot during my career. So I started reading more and more blog posts about JS and React (sorry, I still [can’t handle CSS]({% post_url 2017-08-25-how-to-become-a-css-master %}) and signed for newsletters (one that I highly recommend is [React status](https://react.statuscode.com/)). I also did what I usually do when I want to learn a new thing and [build a side project]({% post_url 2018-06-08-the-ultimate-guide-for-side-projects %})- a web application to help me and my wife track and monitor our expenses.
+
+As for my English skills- as I imagine you already noticed, English is not my native language, and it’s not natural for me to express myself in writing or by speaking. So besides reading more books in English, I decided to double down on it and took two courses (that my amazing work completely covered): Talera for writing and speaking and [The Accent Way](https://theaccentsway.com/) to improve my accent. I’m also using this blog for practicing my writing skills, so thank you for participating in my experiment =).
+
+Sometimes you need to stop or even go a couple of steps back to gain some velocity for the future.
+
+## 3. Sometimes you need to come back to your comfort zone
+I’m a big believer in trying new things and push your limits, and I already wrote that I think the magic happens [outside of the comfort zone]({% post_url 2015-11-15-run-fast-fall-frequently-get-up-faster-and-go-drink-beer-at-the-beach-what-its-like-to-work-at-a-startup %}). But staying there too long might be exhausted. I learned it the hard way because this year I started talking in conferences abroad.
+
+It actually started at the end of 2017, but in 2018 I took the leap and talked in big conferences in Europe, not in my native language. It began on [Devfest Kosice](https://devfest.sk/) in Slovakia, then on [ADC Festival](https://www.adc.de/kongress/) in Hamburg and lastly on [BrainBar conference](https://brainbar.com/) in Budapest. Although I had experience in talking in front of big audiences, this was different. The combination of speaking in English, traveling for a couple of days alone, and standing on the stage without any familiar face in the crowd- was very hard for me. Very hard. So hard that I started to enjoy it less and less.
+
+After the last talk, I felt overwhelmed and needed to take a break and breathe. So I took some time off and didn’t submit any talks for the rest of the year. Almost eight months have passed, and I’ve started to miss speaking in confs. Soon I might be ready to submit new talks, and hopefully, I’ll return talking and enjoying it again.
+
+Being outside of the comfort zone will take plenty of energy and might be a stressful situation, just remember to come back and fill your battery before going back.
+
+## 4. Be conscious about the content I consume
+As said before, I started to be more aware to how I’m using my time. I already heavily use [Pocket](https://getpocket.com/) in the past couple of years, but this year I started listening to podcasts too (a partial list: [Stuff You Should Know](https://www.stuffyoushouldknow.com/podcasts), [Planet Money](https://www.npr.org/podcasts/510289/planet-money), [99% Invisible](https://99percentinvisible.org/), [Replay All](https://www.gimletmedia.com/reply-all), and in Hebrew: [Extend](http://extend.libsyn.com/), [Hayot Kiss](https://www.kan.org.il/podcast/program.aspx/?progid=7), [Ma Yesh Beze](https://mayeshbeze.simplecast.fm/) and [No Tarbut](http://notarbut.co/)). Also, after too much time, I moved to Kindle from physical books, and that made me read much more.
+
+But more important, I got rid of useless habits that took my attention too easily: I removed the Facebook app from my phone and slowly decreased the times I visit the social network, to the point that I open it only once a week. I stopped visiting websites to read the news or watch commercial TV. Instead, I only watch on-demand shows and get the news from small talk with other people.
+
+Our world is full of data, noise, and content. Almost all of it is not worth your time. The most precious resource you have is your time and your attention, don’t give it for free. Treat your mind as your body and don’t feed it with junk food.
+
+
+# A look forward
+I want to use my time more wisely; I want to do the same with less and get more time to explore new things; I want to get excited again when seeing the crowd from the stage side; I want to push the right limits.
+
+__2019, we can do it.__
