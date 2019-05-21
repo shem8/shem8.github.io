@@ -104,7 +104,7 @@ medium_user: shemag8
 google_analytics_tracking_id: UA-78073130-1
 
 # Facebook Like
-facebook_like: true
+facebook_like: false
 
 social:
   name: Shem Magnezi
