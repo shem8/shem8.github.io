@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: android | Shem Magnezi Blog]]></title>
-  <link href="http://shem8.github.io/blog/categories/android/atom.xml" rel="self"/>
-  <link href="http://shem8.github.io/"/>
-  <updated>2019-05-18T15:33:01+03:00</updated>
-  <id>http://shem8.github.io/</id>
+  <link href="https://blog.shem.dev/blog/categories/android/atom.xml" rel="self"/>
+  <link href="https://blog.shem.dev/"/>
+  <updated>2019-05-23T19:26:50+03:00</updated>
+  <id>https://blog.shem.dev/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
     <email><![CDATA[smagnezi8@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[5 things React world can learn from Android]]></title>
-    <link href="http://shem8.github.io/blog/2017/07/02/5-things-react-world-can-learn-from-android/"/>
+    <link href="https://blog.shem.dev/blog/2017/07/02/5-things-react-world-can-learn-from-android/"/>
     <updated>2017-07-02T21:52:47+03:00</updated>
-    <id>http://shem8.github.io/blog/2017/07/02/5-things-react-world-can-learn-from-android</id>
+    <id>https://blog.shem.dev/blog/2017/07/02/5-things-react-world-can-learn-from-android</id>
     <content type="html"><![CDATA[In my [previous post](http://shem8.github.io/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/), I talked about a couple of things I notice after moving from my usual gig as an Android developer and doing some web development (especially React).
 
 As promised, after naming some things that Android can learn from the web development world, I will now focus on the other side- what can web developers can borrow from the Android world.
@@ -90,9 +90,9 @@ If you enjoyed this post, please hit the “recommend” button below and share 
   
   <entry>
     <title type="html"><![CDATA[Is there Room for one more?]]></title>
-    <link href="http://shem8.github.io/blog/2017/06/02/room-performance/"/>
+    <link href="https://blog.shem.dev/blog/2017/06/02/room-performance/"/>
     <updated>2017-06-02T15:26:09+03:00</updated>
-    <id>http://shem8.github.io/blog/2017/06/02/room-performance</id>
+    <id>https://blog.shem.dev/blog/2017/06/02/room-performance</id>
     <content type="html"><![CDATA[In the last Google I/O, Google announced a new [architecture components](https://developer.android.com/topic/libraries/architecture/index.html). One of them is Room.
 Room is an (another) ORM solution for the Android developers. Combining with some other elements Google released (like LiveData, ViewModel, and Lifecycle Listeners)- basic app flows should be much simpler.
 <!-- more -->
@@ -233,9 +233,9 @@ _[PerfTestRoom-batch.tsv](/files/posts/room/PerfTestRoom-batch.tsv)_<br>
   
   <entry>
     <title type="html"><![CDATA[5 things I learned as an Android developer after doing some Web development]]></title>
-    <link href="http://shem8.github.io/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/"/>
+    <link href="https://blog.shem.dev/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/"/>
     <updated>2017-03-31T13:32:32+03:00</updated>
-    <id>http://shem8.github.io/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development</id>
+    <id>https://blog.shem.dev/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development</id>
     <content type="html"><![CDATA[In the last couple of months, I started my new journey, leaving my Android position behind and started doing some web development. Working on those 2 platforms has many differences, I can’t say the one is better than the other, but there are many things that those 2 worlds can learn from each other.
 <!-- more -->
 In this post, I’ll focus on the things that I saw while working on our front-end React app. Things that I learned about Android and the way that we’re building apps.
@@ -394,9 +394,9 @@ As for what web development can take from Android development- in the next post 
   
   <entry>
     <title type="html"><![CDATA[Playing with Coordinator Layout]]></title>
-    <link href="http://shem8.github.io/blog/2016/05/27/playing-with-coordinator-layout/"/>
+    <link href="https://blog.shem.dev/blog/2016/05/27/playing-with-coordinator-layout/"/>
     <updated>2016-05-27T15:02:52+03:00</updated>
-    <id>http://shem8.github.io/blog/2016/05/27/playing-with-coordinator-layout</id>
+    <id>https://blog.shem.dev/blog/2016/05/27/playing-with-coordinator-layout</id>
     <content type="html"><![CDATA[Lately I needed to build some kind of overlay screen that looks like the one that shows when you open the phone when you don't have a lock screen. This is a simple overlay screen that should be dismissable when the user swipe it out from the lower part of the screen<!-- more -->, something like this:
 
 <img class="center" src="/images/posts/get-feature-packed-iphone-like-lock-screen-for-your-galaxy-s6-other-android-device-w654.jpg" width="211" title="*" >
@@ -565,9 +565,9 @@ And voila:
   
   <entry>
     <title type="html"><![CDATA[10 good rules for bad App, Part 3- Product]]></title>
-    <link href="http://shem8.github.io/blog/2016/05/06/10-good-rules-for-bad-app-part-3-product/"/>
+    <link href="https://blog.shem.dev/blog/2016/05/06/10-good-rules-for-bad-app-part-3-product/"/>
     <updated>2016-05-06T15:37:07+03:00</updated>
-    <id>http://shem8.github.io/blog/2016/05/06/10-good-rules-for-bad-app-part-3-product</id>
+    <id>https://blog.shem.dev/blog/2016/05/06/10-good-rules-for-bad-app-part-3-product</id>
     <content type="html"><![CDATA[Welcome to the third (and last) part of the tutorial of how building a bad app. After we've building a bad app in the [first part](http://shem8.github.com/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical/), and remarkably ruin its look and feel in the [second part](http://shem8.github.com/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui/), we're now going to go over on 10 steps to easily how to kill your product:
 <!--more-->
 
