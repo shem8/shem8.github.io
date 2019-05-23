@@ -4,7 +4,7 @@
   <title><![CDATA[Category: web | Shem Magnezi Blog]]></title>
   <link href="https://blog.shem.dev/blog/categories/web/atom.xml" rel="self"/>
   <link href="https://blog.shem.dev/"/>
-  <updated>2019-05-23T19:34:06+03:00</updated>
+  <updated>2019-05-23T19:50:49+03:00</updated>
   <id>https://blog.shem.dev/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
@@ -18,7 +18,7 @@
     <link href="https://blog.shem.dev/blog/2017/08/25/how-to-become-a-css-master/"/>
     <updated>2017-08-25T15:52:26+03:00</updated>
     <id>https://blog.shem.dev/blog/2017/08/25/how-to-become-a-css-master</id>
-    <content type="html"><![CDATA[[As you know](http://shem8.github.io/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/)- I lately left my comfort zone, closed Android Studio and dive straight into a scary, rough sea called Web Development.
+    <content type="html"><![CDATA[[As you know](https://blog.shem.dev/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/)- I lately left my comfort zone, closed Android Studio and dive straight into a scary, rough sea called Web Development.
 An integral part of building web apps is working with CSS. For the ones that not familiar with Cascading Style Sheet- this is how web developers design their web pages, give it some life and structure, add animations and lose their sanity while doing so.
 <!-- more -->
 In this post, I'll try to describe what it takes for one who wants, for a reason I can't understand, to become a master in CSS in 5 simple steps:
@@ -93,7 +93,7 @@ Continue with this until he is ok with your standard Bootstrap starter template 
     <link href="https://blog.shem.dev/blog/2017/07/02/5-things-react-world-can-learn-from-android/"/>
     <updated>2017-07-02T21:52:47+03:00</updated>
     <id>https://blog.shem.dev/blog/2017/07/02/5-things-react-world-can-learn-from-android</id>
-    <content type="html"><![CDATA[In my [previous post](http://shem8.github.io/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/), I talked about a couple of things I notice after moving from my usual gig as an Android developer and doing some web development (especially React).
+    <content type="html"><![CDATA[In my [previous post](https://blog.shem.dev/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/), I talked about a couple of things I notice after moving from my usual gig as an Android developer and doing some web development (especially React).
 
 As promised, after naming some things that Android can learn from the web development world, I will now focus on the other side- what can web developers can borrow from the Android world.
 <!-- more -->
