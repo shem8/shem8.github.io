@@ -10,7 +10,7 @@ tags:
 - css
 - webdevelopment
 ---
-[As you know](http://shem8.github.io/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/)- I lately left my comfort zone, closed Android Studio and dive straight into a scary, rough sea called Web Development.
+[As you know](https://blog.shem.dev/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/)- I lately left my comfort zone, closed Android Studio and dive straight into a scary, rough sea called Web Development.
 An integral part of building web apps is working with CSS. For the ones that not familiar with Cascading Style Sheet- this is how web developers design their web pages, give it some life and structure, add animations and lose their sanity while doing so.
 <!-- more -->
 In this post, I'll try to describe what it takes for one who wants, for a reason I can't understand, to become a master in CSS in 5 simple steps:

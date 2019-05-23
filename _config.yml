@@ -116,4 +116,4 @@ social:
 
 defaults:
   - values:
-      image: http://shem8.github.io/images/shem.jpg
+      image: https://blog.shem.dev/images/shem.jpg
