@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: kotlin | Shem Magnezi Blog]]></title>
-  <link href="http://blog.shem.dev/blog/categories/kotlin/atom.xml" rel="self"/>
-  <link href="http://blog.shem.dev/"/>
-  <updated>2019-10-04T10:13:08+03:00</updated>
-  <id>http://blog.shem.dev/</id>
+  <link href="https://blog.shem.dev/blog/categories/kotlin/atom.xml" rel="self"/>
+  <link href="https://blog.shem.dev/"/>
+  <updated>2019-10-23T12:05:46+03:00</updated>
+  <id>https://blog.shem.dev/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
     <email><![CDATA[smagnezi8@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Kotlin- a better Java for Android?]]></title>
-    <link href="http://blog.shem.dev/blog/2016/01/01/kotlin-a-better-java-for-android/"/>
+    <link href="https://blog.shem.dev/blog/2016/01/01/kotlin-a-better-java-for-android/"/>
     <updated>2016-01-01T15:52:32+02:00</updated>
-    <id>http://blog.shem.dev/blog/2016/01/01/kotlin-a-better-java-for-android</id>
+    <id>https://blog.shem.dev/blog/2016/01/01/kotlin-a-better-java-for-android</id>
     <content type="html"><![CDATA[A couple of weeks ago, when going over some Android DevSummit videos, I encountered in some question about alternative language for Android during one of the [fireside chats](https://youtu.be/-VNfWh5UkfY?list=PLWz5rJ2EKKc_Tt7q77qwyKRgytF1RzRx8&t=1461) session with the Android team. It was really interesting that there was another way to develop an Android apps but unfortunately I didn't fully catch the name of the language ("What what? was it Kotin? Tolkin? What he was saying???") so I give up.
 <!--more-->
 

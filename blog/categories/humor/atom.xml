@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: humor | Shem Magnezi Blog]]></title>
-  <link href="http://blog.shem.dev/blog/categories/humor/atom.xml" rel="self"/>
-  <link href="http://blog.shem.dev/"/>
-  <updated>2019-10-04T10:13:08+03:00</updated>
-  <id>http://blog.shem.dev/</id>
+  <link href="https://blog.shem.dev/blog/categories/humor/atom.xml" rel="self"/>
+  <link href="https://blog.shem.dev/"/>
+  <updated>2019-10-23T12:05:46+03:00</updated>
+  <id>https://blog.shem.dev/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
     <email><![CDATA[smagnezi8@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Tech Life as graphs]]></title>
-    <link href="http://blog.shem.dev/blog/2016/06/03/life-as-graphs/"/>
+    <link href="https://blog.shem.dev/blog/2016/06/03/life-as-graphs/"/>
     <updated>2016-06-03T12:08:42+03:00</updated>
-    <id>http://blog.shem.dev/blog/2016/06/03/life-as-graphs</id>
+    <id>https://blog.shem.dev/blog/2016/06/03/life-as-graphs</id>
     <content type="html"><![CDATA[As a geek I often imagine situations in life as a math equations and graphs (don't you all do it too? What's wrong with you people?!). In this post I'll try to describe some situations is the tech life as graphs:
 <!-- more -->
 
@@ -89,9 +89,9 @@ _Update: looks like people loving some of those graphs, so following couple of r
   
   <entry>
     <title type="html"><![CDATA[10 good rules for bad App, Part 3- Product]]></title>
-    <link href="http://blog.shem.dev/blog/2016/05/06/10-good-rules-for-bad-app-part-3-product/"/>
+    <link href="https://blog.shem.dev/blog/2016/05/06/10-good-rules-for-bad-app-part-3-product/"/>
     <updated>2016-05-06T15:37:07+03:00</updated>
-    <id>http://blog.shem.dev/blog/2016/05/06/10-good-rules-for-bad-app-part-3-product</id>
+    <id>https://blog.shem.dev/blog/2016/05/06/10-good-rules-for-bad-app-part-3-product</id>
     <content type="html"><![CDATA[Welcome to the third (and last) part of the tutorial of how building a bad app. After we've building a bad app in the [first part](http://shem8.github.com/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical/), and remarkably ruin its look and feel in the [second part](http://shem8.github.com/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui/), we're now going to go over on 10 steps to easily how to kill your product:
 <!--more-->
 
@@ -173,9 +173,9 @@ As always- got some more suggestions for ways to make your app worse? Would lov
   
   <entry>
     <title type="html"><![CDATA[10 good rules for bad App, Part 2- UX\UI]]></title>
-    <link href="http://blog.shem.dev/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui/"/>
+    <link href="https://blog.shem.dev/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui/"/>
     <updated>2016-04-17T19:04:28+03:00</updated>
-    <id>http://blog.shem.dev/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui</id>
+    <id>https://blog.shem.dev/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui</id>
     <content type="html"><![CDATA[Welcome to my second part of the tutorial of how building a bad app. After we've building a bad app in the [first part](http://shem8.github.com/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical/), it's the time to call our designer to fuck it a bit more:
 <!--more-->
 
@@ -257,9 +257,9 @@ Because you just saves time, so lets waste it.
   
   <entry>
     <title type="html"><![CDATA[10 good rules for bad App, Part 1- Technical]]></title>
-    <link href="http://blog.shem.dev/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical/"/>
+    <link href="https://blog.shem.dev/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical/"/>
     <updated>2016-03-31T21:00:52+03:00</updated>
-    <id>http://blog.shem.dev/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical</id>
+    <id>https://blog.shem.dev/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical</id>
     <content type="html"><![CDATA[We were all been there, you got a great idea for an app, you gather some feedback and even managed to build a team and you going full power to conquer the app store. So a second before starting working on your genius [egg timer app](https://play.google.com/store/apps/details?id=com.mobication.EggTimerPro&hl=en), it is worth taking a moment and think about how you're going to do it.
 <!--more-->
 

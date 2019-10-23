@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: web | Shem Magnezi Blog]]></title>
-  <link href="http://blog.shem.dev/blog/categories/web/atom.xml" rel="self"/>
-  <link href="http://blog.shem.dev/"/>
-  <updated>2019-10-04T10:13:08+03:00</updated>
-  <id>http://blog.shem.dev/</id>
+  <link href="https://blog.shem.dev/blog/categories/web/atom.xml" rel="self"/>
+  <link href="https://blog.shem.dev/"/>
+  <updated>2019-10-23T12:05:46+03:00</updated>
+  <id>https://blog.shem.dev/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
     <email><![CDATA[smagnezi8@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[How to become a master in CSS in 5 simple steps]]></title>
-    <link href="http://blog.shem.dev/blog/2017/08/25/how-to-become-a-css-master/"/>
+    <link href="https://blog.shem.dev/blog/2017/08/25/how-to-become-a-css-master/"/>
     <updated>2017-08-25T15:52:26+03:00</updated>
-    <id>http://blog.shem.dev/blog/2017/08/25/how-to-become-a-css-master</id>
+    <id>https://blog.shem.dev/blog/2017/08/25/how-to-become-a-css-master</id>
     <content type="html"><![CDATA[[As you know](https://blog.shem.dev/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/)- I lately left my comfort zone, closed Android Studio and dive straight into a scary, rough sea called Web Development.
 An integral part of building web apps is working with CSS. For the ones that not familiar with Cascading Style Sheet- this is how web developers design their web pages, give it some life and structure, add animations and lose their sanity while doing so.
 <!-- more -->
@@ -90,9 +90,9 @@ Continue with this until he is ok with your standard Bootstrap starter template 
   
   <entry>
     <title type="html"><![CDATA[5 things React world can learn from Android]]></title>
-    <link href="http://blog.shem.dev/blog/2017/07/02/5-things-react-world-can-learn-from-android/"/>
+    <link href="https://blog.shem.dev/blog/2017/07/02/5-things-react-world-can-learn-from-android/"/>
     <updated>2017-07-02T21:52:47+03:00</updated>
-    <id>http://blog.shem.dev/blog/2017/07/02/5-things-react-world-can-learn-from-android</id>
+    <id>https://blog.shem.dev/blog/2017/07/02/5-things-react-world-can-learn-from-android</id>
     <content type="html"><![CDATA[In my [previous post](https://blog.shem.dev/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/), I talked about a couple of things I notice after moving from my usual gig as an Android developer and doing some web development (especially React).
 
 As promised, after naming some things that Android can learn from the web development world, I will now focus on the other side- what can web developers can borrow from the Android world.
@@ -165,9 +165,9 @@ If you enjoyed this post, please hit the “recommend” button below and share 
   
   <entry>
     <title type="html"><![CDATA[5 things I learned as an Android developer after doing some Web development]]></title>
-    <link href="http://blog.shem.dev/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/"/>
+    <link href="https://blog.shem.dev/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/"/>
     <updated>2017-03-31T13:32:32+03:00</updated>
-    <id>http://blog.shem.dev/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development</id>
+    <id>https://blog.shem.dev/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development</id>
     <content type="html"><![CDATA[In the last couple of months, I started my new journey, leaving my Android position behind and started doing some web development. Working on those 2 platforms has many differences, I can’t say the one is better than the other, but there are many things that those 2 worlds can learn from each other.
 <!-- more -->
 In this post, I’ll focus on the things that I saw while working on our front-end React app. Things that I learned about Android and the way that we’re building apps.
