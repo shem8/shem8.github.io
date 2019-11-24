@@ -4,7 +4,7 @@
   <title><![CDATA[Shem Magnezi Blog]]></title>
   <link href="https://blog.shem.dev/atom.xml" rel="self"/>
   <link href="https://blog.shem.dev/"/>
-  <updated>2019-10-23T12:29:03+03:00</updated>
+  <updated>2019-11-24T19:01:43+02:00</updated>
   <id>https://blog.shem.dev/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
@@ -1238,7 +1238,7 @@ Do you remember trying to figure out what is going on with your database so you 
 <span class='line-number'>19</span>
 <span class='line-number'>20</span>
 <span class='line-number'>21</span>
-</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;android.support.design.widget.CoordinatorLayout</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span></span><span class="nt">&lt;android.support.design.widget.CoordinatorLayout</span>
 </span><span class='line'>    <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
 </span><span class='line'>    <span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
 </span><span class='line'>    <span class="na">android:layout_height=</span><span class="s">&quot;match_parent&quot;</span><span class="nt">&gt;</span>
@@ -1280,7 +1280,7 @@ Do you remember trying to figure out what is going on with your database so you 
 <span class='line-number'>12</span>
 <span class='line-number'>13</span>
 <span class='line-number'>14</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">View</span> <span class="n">dismiss</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">dismiss</span><span class="o">);</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span></span><span class="n">View</span> <span class="n">dismiss</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">dismiss</span><span class="o">);</span>
 </span><span class='line'><span class="n">CoordinatorLayout</span><span class="o">.</span><span class="na">LayoutParams</span> <span class="n">params</span> <span class="o">=</span> <span class="o">(</span><span class="n">CoordinatorLayout</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">)</span> <span class="n">dismiss</span><span class="o">.</span><span class="na">getLayoutParams</span><span class="o">();</span>
 </span><span class='line'><span class="n">SwipeDismissBehavior</span><span class="o">&lt;</span><span class="n">View</span><span class="o">&gt;</span> <span class="n">behavior</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SwipeDismissBehavior</span><span class="o">&lt;&gt;();</span>
 </span><span class='line'><span class="n">behavior</span><span class="o">.</span><span class="na">setSwipeDirection</span><span class="o">(</span><span class="n">SwipeDismissBehavior</span><span class="o">.</span><span class="na">SWIPE_DIRECTION_START_TO_END</span><span class="o">);</span>
@@ -1313,7 +1313,7 @@ Do you remember trying to figure out what is going on with your database so you 
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
 <span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="cm">/**</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span></span><span class="cm">/**</span>
 </span><span class='line'><span class="cm"> * Handle only touches on this current view</span>
 </span><span class='line'><span class="cm"> */</span>
 </span><span class='line'><span class="nd">@Override</span>
@@ -1348,7 +1348,7 @@ Do you remember trying to figure out what is going on with your database so you 
 <span class='line-number'>14</span>
 <span class='line-number'>15</span>
 <span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="o">=</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span></span><span class="o">=</span>
 </span><span class='line'><span class="n">CoordinatorLayout</span><span class="o">.</span><span class="na">LayoutParams</span> <span class="n">params</span> <span class="o">=</span> <span class="o">(</span><span class="n">CoordinatorLayout</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">)</span> <span class="n">container</span><span class="o">.</span><span class="na">getLayoutParams</span><span class="o">();</span>
 </span><span class='line'><span class="kd">final</span> <span class="n">CoordinatorLayout</span><span class="o">.</span><span class="na">Behavior</span><span class="o">&lt;</span><span class="n">View</span><span class="o">&gt;</span> <span class="n">behavior</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CoordinatorLayout</span><span class="o">.</span><span class="na">Behavior</span><span class="o">&lt;</span><span class="n">View</span><span class="o">&gt;()</span> <span class="o">{</span>
 </span><span class='line'>    <span class="nd">@Override</span>
@@ -1681,7 +1681,7 @@ Do you remember trying to figure out what is going on with your database so you 
 <span class='line-number'>29</span>
 <span class='line-number'>30</span>
 <span class='line-number'>31</span>
-</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 </span><span class='line'><span class="nt">&lt;vector</span> <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
 </span><span class='line'>    <span class="na">android:width=</span><span class="s">&quot;24dp&quot;</span>
 </span><span class='line'>    <span class="na">android:height=</span><span class="s">&quot;24dp&quot;</span>
@@ -1740,7 +1740,7 @@ Do you remember trying to figure out what is going on with your database so you 
 <span class='line-number'>19</span>
 <span class='line-number'>20</span>
 <span class='line-number'>21</span>
-</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;set</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span></span><span class="nt">&lt;set</span>
 </span><span class='line'><span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
 </span><span class='line'><span class="na">android:ordering=</span><span class="s">&quot;sequentially&quot;</span><span class="nt">&gt;</span>
 </span><span class='line'>
@@ -1783,7 +1783,7 @@ Do you remember trying to figure out what is going on with your database so you 
 <span class='line-number'>15</span>
 <span class='line-number'>16</span>
 <span class='line-number'>17</span>
-</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;set</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span></span><span class="nt">&lt;set</span>
 </span><span class='line'>    <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
 </span><span class='line'>    <span class="na">android:ordering=</span><span class="s">&quot;together&quot;</span><span class="nt">&gt;</span>
 </span><span class='line'>
@@ -1822,7 +1822,7 @@ Do you remember trying to figure out what is going on with your database so you 
 <span class='line-number'>15</span>
 <span class='line-number'>16</span>
 <span class='line-number'>17</span>
-</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;set</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span></span><span class="nt">&lt;set</span>
 </span><span class='line'>    <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
 </span><span class='line'>    <span class="na">android:ordering=</span><span class="s">&quot;together&quot;</span><span class="nt">&gt;</span>
 </span><span class='line'>
@@ -1861,7 +1861,7 @@ Do you remember trying to figure out what is going on with your database so you 
 <span class='line-number'>15</span>
 <span class='line-number'>16</span>
 <span class='line-number'>17</span>
-</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;animated-vector</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span></span><span class="nt">&lt;animated-vector</span>
 </span><span class='line'>    <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
 </span><span class='line'>    <span class="na">android:drawable=</span><span class="s">&quot;@drawable/searchback_search&quot;</span><span class="nt">&gt;</span>
 </span><span class='line'>

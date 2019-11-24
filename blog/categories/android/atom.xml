@@ -4,7 +4,7 @@
   <title><![CDATA[Category: android | Shem Magnezi Blog]]></title>
   <link href="https://blog.shem.dev/blog/categories/android/atom.xml" rel="self"/>
   <link href="https://blog.shem.dev/"/>
-  <updated>2019-10-23T12:29:03+03:00</updated>
+  <updated>2019-11-24T19:01:43+02:00</updated>
   <id>https://blog.shem.dev/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
@@ -129,7 +129,7 @@ These why it's no surprise that the Android team chose to go with this approach,
 <span class='line-number'>13</span>
 <span class='line-number'>14</span>
 <span class='line-number'>15</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="nd">@Entity</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span></span><span class="nd">@Entity</span>
 </span><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">User</span> <span class="o">{</span>
 </span><span class='line'>    <span class="nd">@PrimaryKey</span>
 </span><span class='line'>    <span class="kd">private</span> <span class="kt">int</span> <span class="n">uid</span><span class="o">;</span>
@@ -172,7 +172,7 @@ For example, here is how you'll do a simple query for specific users in each one
 <span class='line-number'>17</span>
 <span class='line-number'>18</span>
 <span class='line-number'>19</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="c1">//Room:</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span></span><span class="c1">//Room:</span>
 </span><span class='line'><span class="nd">@Query</span><span class="o">(</span><span class="s">&quot;SELECT * FROM user WHERE age &gt; :minAge&quot;</span><span class="o">)</span>
 </span><span class='line'><span class="kd">public</span> <span class="n">User</span><span class="o">[]</span> <span class="nf">loadAllUsersOlderThan</span><span class="o">(</span><span class="kt">int</span> <span class="n">minAge</span><span class="o">);</span>
 </span><span class='line'>
@@ -430,7 +430,7 @@ In our case it suppose to be pretty easy, there is already a [swipe to dismiss 
 <span class='line-number'>19</span>
 <span class='line-number'>20</span>
 <span class='line-number'>21</span>
-</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;android.support.design.widget.CoordinatorLayout</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span></span><span class="nt">&lt;android.support.design.widget.CoordinatorLayout</span>
 </span><span class='line'>    <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
 </span><span class='line'>    <span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
 </span><span class='line'>    <span class="na">android:layout_height=</span><span class="s">&quot;match_parent&quot;</span><span class="nt">&gt;</span>
@@ -471,7 +471,7 @@ Now, lets attach the relevant behavior to the relevant view:
 <span class='line-number'>12</span>
 <span class='line-number'>13</span>
 <span class='line-number'>14</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">View</span> <span class="n">dismiss</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">dismiss</span><span class="o">);</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span></span><span class="n">View</span> <span class="n">dismiss</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">dismiss</span><span class="o">);</span>
 </span><span class='line'><span class="n">CoordinatorLayout</span><span class="o">.</span><span class="na">LayoutParams</span> <span class="n">params</span> <span class="o">=</span> <span class="o">(</span><span class="n">CoordinatorLayout</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">)</span> <span class="n">dismiss</span><span class="o">.</span><span class="na">getLayoutParams</span><span class="o">();</span>
 </span><span class='line'><span class="n">SwipeDismissBehavior</span><span class="o">&lt;</span><span class="n">View</span><span class="o">&gt;</span> <span class="n">behavior</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SwipeDismissBehavior</span><span class="o">&lt;&gt;();</span>
 </span><span class='line'><span class="n">behavior</span><span class="o">.</span><span class="na">setSwipeDirection</span><span class="o">(</span><span class="n">SwipeDismissBehavior</span><span class="o">.</span><span class="na">SWIPE_DIRECTION_START_TO_END</span><span class="o">);</span>
@@ -503,7 +503,7 @@ I'm not sure if this is by design or just a bug (after digging in the code I'm a
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
 <span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="cm">/**</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span></span><span class="cm">/**</span>
 </span><span class='line'><span class="cm"> * Handle only touches on this current view</span>
 </span><span class='line'><span class="cm"> */</span>
 </span><span class='line'><span class="nd">@Override</span>
@@ -537,7 +537,7 @@ Now we need to sync between the content view to the dismiss view when swiping, s
 <span class='line-number'>14</span>
 <span class='line-number'>15</span>
 <span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="o">=</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span></span><span class="o">=</span>
 </span><span class='line'><span class="n">CoordinatorLayout</span><span class="o">.</span><span class="na">LayoutParams</span> <span class="n">params</span> <span class="o">=</span> <span class="o">(</span><span class="n">CoordinatorLayout</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">)</span> <span class="n">container</span><span class="o">.</span><span class="na">getLayoutParams</span><span class="o">();</span>
 </span><span class='line'><span class="kd">final</span> <span class="n">CoordinatorLayout</span><span class="o">.</span><span class="na">Behavior</span><span class="o">&lt;</span><span class="n">View</span><span class="o">&gt;</span> <span class="n">behavior</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CoordinatorLayout</span><span class="o">.</span><span class="na">Behavior</span><span class="o">&lt;</span><span class="n">View</span><span class="o">&gt;()</span> <span class="o">{</span>
 </span><span class='line'>    <span class="nd">@Override</span>
