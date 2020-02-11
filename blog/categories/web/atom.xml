@@ -4,7 +4,7 @@
   <title><![CDATA[Category: web | Shem Magnezi Blog]]></title>
   <link href="https://blog.shem.dev/blog/categories/web/atom.xml" rel="self"/>
   <link href="https://blog.shem.dev/"/>
-  <updated>2019-11-24T19:01:43+02:00</updated>
+  <updated>2020-02-11T03:36:42-08:00</updated>
   <id>https://blog.shem.dev/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[How to become a master in CSS in 5 simple steps]]></title>
     <link href="https://blog.shem.dev/blog/2017/08/25/how-to-become-a-css-master/"/>
-    <updated>2017-08-25T15:52:26+03:00</updated>
+    <updated>2017-08-25T05:52:26-07:00</updated>
     <id>https://blog.shem.dev/blog/2017/08/25/how-to-become-a-css-master</id>
     <content type="html"><![CDATA[[As you know](https://blog.shem.dev/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/)- I lately left my comfort zone, closed Android Studio and dive straight into a scary, rough sea called Web Development.
 An integral part of building web apps is working with CSS. For the ones that not familiar with Cascading Style Sheet- this is how web developers design their web pages, give it some life and structure, add animations and lose their sanity while doing so.
@@ -91,7 +91,7 @@ Continue with this until he is ok with your standard Bootstrap starter template 
   <entry>
     <title type="html"><![CDATA[5 things React world can learn from Android]]></title>
     <link href="https://blog.shem.dev/blog/2017/07/02/5-things-react-world-can-learn-from-android/"/>
-    <updated>2017-07-02T21:52:47+03:00</updated>
+    <updated>2017-07-02T11:52:47-07:00</updated>
     <id>https://blog.shem.dev/blog/2017/07/02/5-things-react-world-can-learn-from-android</id>
     <content type="html"><![CDATA[In my [previous post](https://blog.shem.dev/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/), I talked about a couple of things I notice after moving from my usual gig as an Android developer and doing some web development (especially React).
 
@@ -166,7 +166,7 @@ If you enjoyed this post, please hit the “recommend” button below and share 
   <entry>
     <title type="html"><![CDATA[5 things I learned as an Android developer after doing some Web development]]></title>
     <link href="https://blog.shem.dev/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/"/>
-    <updated>2017-03-31T13:32:32+03:00</updated>
+    <updated>2017-03-31T03:32:32-07:00</updated>
     <id>https://blog.shem.dev/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development</id>
     <content type="html"><![CDATA[In the last couple of months, I started my new journey, leaving my Android position behind and started doing some web development. Working on those 2 platforms has many differences, I can’t say the one is better than the other, but there are many things that those 2 worlds can learn from each other.
 <!-- more -->
