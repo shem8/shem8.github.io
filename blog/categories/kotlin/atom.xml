@@ -4,7 +4,7 @@
   <title><![CDATA[Category: kotlin | Shem Magnezi Blog]]></title>
   <link href="https://blog.shem.dev/blog/categories/kotlin/atom.xml" rel="self"/>
   <link href="https://blog.shem.dev/"/>
-  <updated>2020-02-13T05:03:25-08:00</updated>
+  <updated>2020-05-27T11:25:56+03:00</updated>
   <id>https://blog.shem.dev/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Kotlin- a better Java for Android?]]></title>
     <link href="https://blog.shem.dev/blog/2016/01/01/kotlin-a-better-java-for-android/"/>
-    <updated>2016-01-01T05:52:32-08:00</updated>
+    <updated>2016-01-01T15:52:32+02:00</updated>
     <id>https://blog.shem.dev/blog/2016/01/01/kotlin-a-better-java-for-android</id>
     <content type="html"><![CDATA[A couple of weeks ago, when going over some Android DevSummit videos, I encountered in some question about alternative language for Android during one of the [fireside chats](https://youtu.be/-VNfWh5UkfY?list=PLWz5rJ2EKKc_Tt7q77qwyKRgytF1RzRx8&t=1461) session with the Android team. It was really interesting that there was another way to develop an Android apps but unfortunately I didn't fully catch the name of the language ("What what? was it Kotin? Tolkin? What he was saying???") so I give up.
 <!--more-->
@@ -98,7 +98,7 @@ Now we're able to see how we can use the language for faster development:
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
 <span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='kotlin'><span class='line'><span class="c1">// Using R.layout.activity_main from the main source set</span>
+</pre></td><td class='code'><pre><code class='kotlin'><span class='line'><span></span><span class="c1">// Using R.layout.activity_main from the main source set</span>
 </span><span class='line'><span class="k">import</span> <span class="nn">kotlinx.android.synthetic.main.activity_main.*</span>
 </span><span class='line'>
 </span><span class='line'><span class="k">public</span> <span class="k">class</span> <span class="nc">MyActivity</span> <span class="p">:</span> <span class="n">Activity</span><span class="p">()</span> <span class="p">{</span>
@@ -122,7 +122,7 @@ Code in Java:
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">view</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span></span><span class="n">view</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
 </span><span class='line'>    <span class="nd">@Override</span>
 </span><span class='line'>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
 </span><span class='line'>        <span class="c1">//click handling</span>
@@ -133,17 +133,17 @@ Code in Java:
 Comes to:
 
 <div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='kotlin'><span class='line'><span class="n">view</span><span class="p">.</span><span class="n">setOnClickListener</span><span class="p">({</span><span class="c1">//click handling})</span>
+</pre></td><td class='code'><pre><code class='kotlin'><span class='line'><span></span><span class="n">view</span><span class="p">.</span><span class="n">setOnClickListener</span><span class="p">({</span><span class="c1">//click handling})</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 And:
 
 <div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="k">if</span> <span class="o">(</span><span class="n">s</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">?</span> <span class="n">s</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">:</span> <span class="mi">0</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span></span><span class="k">if</span> <span class="o">(</span><span class="n">s</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">?</span> <span class="n">s</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">:</span> <span class="mi">0</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 Comes to:
 
 <div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='kotlin'><span class='line'><span class="n">s</span><span class="o">?.</span><span class="n">length</span> <span class="o">?:</span> <span class="p">-</span><span class="m">1</span>
+</pre></td><td class='code'><pre><code class='kotlin'><span class='line'><span></span><span class="n">s</span><span class="o">?.</span><span class="n">length</span> <span class="o">?:</span> <span class="p">-</span><span class="m">1</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
 Isn't it wonderful?
@@ -171,7 +171,7 @@ Here is the real power of the language in my opinion, we can easily add utility 
 <span class='line-number'>15</span>
 <span class='line-number'>16</span>
 <span class='line-number'>17</span>
-</pre></td><td class='code'><pre><code class='kotlin'><span class='line'><span class="k">fun</span> <span class="nf">AppCompatActivity</span><span class="p">.</span><span class="n">navigate</span><span class="p">(</span><span class="n">frag</span><span class="p">:</span> <span class="n">Fragment</span><span class="p">)</span> <span class="p">{</span>
+</pre></td><td class='code'><pre><code class='kotlin'><span class='line'><span></span><span class="k">fun</span> <span class="nf">AppCompatActivity</span><span class="p">.</span><span class="n">navigate</span><span class="p">(</span><span class="n">frag</span><span class="p">:</span> <span class="n">Fragment</span><span class="p">)</span> <span class="p">{</span>
 </span><span class='line'>    <span class="k">val</span> <span class="py">fragmentTransaction</span> <span class="p">=</span>  <span class="n">supportFragmentManager</span><span class="p">.</span><span class="n">beginTransaction</span><span class="p">()</span>
 </span><span class='line'>    <span class="n">fragmentTransaction</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="n">content</span><span class="p">.</span><span class="n">id</span><span class="p">,</span> <span class="n">frag</span><span class="p">);</span>
 </span><span class='line'>    <span class="n">fragmentTransaction</span><span class="p">.</span><span class="n">commit</span><span class="p">();</span>

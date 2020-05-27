@@ -4,7 +4,7 @@
   <title><![CDATA[Category: android | Shem Magnezi Blog]]></title>
   <link href="https://blog.shem.dev/blog/categories/android/atom.xml" rel="self"/>
   <link href="https://blog.shem.dev/"/>
-  <updated>2020-02-13T05:03:25-08:00</updated>
+  <updated>2020-05-27T11:25:56+03:00</updated>
   <id>https://blog.shem.dev/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[5 things React world can learn from Android]]></title>
     <link href="https://blog.shem.dev/blog/2017/07/02/5-things-react-world-can-learn-from-android/"/>
-    <updated>2017-07-02T11:52:47-07:00</updated>
+    <updated>2017-07-02T21:52:47+03:00</updated>
     <id>https://blog.shem.dev/blog/2017/07/02/5-things-react-world-can-learn-from-android</id>
     <content type="html"><![CDATA[In my [previous post](https://blog.shem.dev/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/), I talked about a couple of things I notice after moving from my usual gig as an Android developer and doing some web development (especially React).
 
@@ -91,7 +91,7 @@ If you enjoyed this post, please hit the “recommend” button below and share 
   <entry>
     <title type="html"><![CDATA[Is there Room for one more?]]></title>
     <link href="https://blog.shem.dev/blog/2017/06/02/room-performance/"/>
-    <updated>2017-06-02T05:26:09-07:00</updated>
+    <updated>2017-06-02T15:26:09+03:00</updated>
     <id>https://blog.shem.dev/blog/2017/06/02/room-performance</id>
     <content type="html"><![CDATA[In the last Google I/O, Google announced a new [architecture components](https://developer.android.com/topic/libraries/architecture/index.html). One of them is Room.
 Room is an (another) ORM solution for the Android developers. Combining with some other elements Google released (like LiveData, ViewModel, and Lifecycle Listeners)- basic app flows should be much simpler.
@@ -129,7 +129,7 @@ These why it's no surprise that the Android team chose to go with this approach,
 <span class='line-number'>13</span>
 <span class='line-number'>14</span>
 <span class='line-number'>15</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="nd">@Entity</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span></span><span class="nd">@Entity</span>
 </span><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">User</span> <span class="o">{</span>
 </span><span class='line'>    <span class="nd">@PrimaryKey</span>
 </span><span class='line'>    <span class="kd">private</span> <span class="kt">int</span> <span class="n">uid</span><span class="o">;</span>
@@ -172,7 +172,7 @@ For example, here is how you'll do a simple query for specific users in each one
 <span class='line-number'>17</span>
 <span class='line-number'>18</span>
 <span class='line-number'>19</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="c1">//Room:</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span></span><span class="c1">//Room:</span>
 </span><span class='line'><span class="nd">@Query</span><span class="o">(</span><span class="s">&quot;SELECT * FROM user WHERE age &gt; :minAge&quot;</span><span class="o">)</span>
 </span><span class='line'><span class="kd">public</span> <span class="n">User</span><span class="o">[]</span> <span class="nf">loadAllUsersOlderThan</span><span class="o">(</span><span class="kt">int</span> <span class="n">minAge</span><span class="o">);</span>
 </span><span class='line'>
@@ -234,7 +234,7 @@ _[PerfTestRoom-batch.tsv](/files/posts/room/PerfTestRoom-batch.tsv)_<br>
   <entry>
     <title type="html"><![CDATA[5 things I learned as an Android developer after doing some Web development]]></title>
     <link href="https://blog.shem.dev/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/"/>
-    <updated>2017-03-31T03:32:32-07:00</updated>
+    <updated>2017-03-31T13:32:32+03:00</updated>
     <id>https://blog.shem.dev/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development</id>
     <content type="html"><![CDATA[In the last couple of months, I started my new journey, leaving my Android position behind and started doing some web development. Working on those 2 platforms has many differences, I can’t say the one is better than the other, but there are many things that those 2 worlds can learn from each other.
 <!-- more -->
@@ -395,7 +395,7 @@ As for what web development can take from Android development- in the next post 
   <entry>
     <title type="html"><![CDATA[Playing with Coordinator Layout]]></title>
     <link href="https://blog.shem.dev/blog/2016/05/27/playing-with-coordinator-layout/"/>
-    <updated>2016-05-27T05:02:52-07:00</updated>
+    <updated>2016-05-27T15:02:52+03:00</updated>
     <id>https://blog.shem.dev/blog/2016/05/27/playing-with-coordinator-layout</id>
     <content type="html"><![CDATA[Lately I needed to build some kind of overlay screen that looks like the one that shows when you open the phone when you don't have a lock screen. This is a simple overlay screen that should be dismissable when the user swipe it out from the lower part of the screen<!-- more -->, something like this:
 
@@ -430,7 +430,7 @@ In our case it suppose to be pretty easy, there is already a [swipe to dismiss 
 <span class='line-number'>19</span>
 <span class='line-number'>20</span>
 <span class='line-number'>21</span>
-</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="nt">&lt;android.support.design.widget.CoordinatorLayout</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span></span><span class="nt">&lt;android.support.design.widget.CoordinatorLayout</span>
 </span><span class='line'>    <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
 </span><span class='line'>    <span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
 </span><span class='line'>    <span class="na">android:layout_height=</span><span class="s">&quot;match_parent&quot;</span><span class="nt">&gt;</span>
@@ -471,7 +471,7 @@ Now, lets attach the relevant behavior to the relevant view:
 <span class='line-number'>12</span>
 <span class='line-number'>13</span>
 <span class='line-number'>14</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">View</span> <span class="n">dismiss</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">dismiss</span><span class="o">);</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span></span><span class="n">View</span> <span class="n">dismiss</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">dismiss</span><span class="o">);</span>
 </span><span class='line'><span class="n">CoordinatorLayout</span><span class="o">.</span><span class="na">LayoutParams</span> <span class="n">params</span> <span class="o">=</span> <span class="o">(</span><span class="n">CoordinatorLayout</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">)</span> <span class="n">dismiss</span><span class="o">.</span><span class="na">getLayoutParams</span><span class="o">();</span>
 </span><span class='line'><span class="n">SwipeDismissBehavior</span><span class="o">&lt;</span><span class="n">View</span><span class="o">&gt;</span> <span class="n">behavior</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SwipeDismissBehavior</span><span class="o">&lt;&gt;();</span>
 </span><span class='line'><span class="n">behavior</span><span class="o">.</span><span class="na">setSwipeDirection</span><span class="o">(</span><span class="n">SwipeDismissBehavior</span><span class="o">.</span><span class="na">SWIPE_DIRECTION_START_TO_END</span><span class="o">);</span>
@@ -503,7 +503,7 @@ I'm not sure if this is by design or just a bug (after digging in the code I'm a
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
 <span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="cm">/**</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span></span><span class="cm">/**</span>
 </span><span class='line'><span class="cm"> * Handle only touches on this current view</span>
 </span><span class='line'><span class="cm"> */</span>
 </span><span class='line'><span class="nd">@Override</span>
@@ -537,7 +537,7 @@ Now we need to sync between the content view to the dismiss view when swiping, s
 <span class='line-number'>14</span>
 <span class='line-number'>15</span>
 <span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="o">=</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span></span><span class="o">=</span>
 </span><span class='line'><span class="n">CoordinatorLayout</span><span class="o">.</span><span class="na">LayoutParams</span> <span class="n">params</span> <span class="o">=</span> <span class="o">(</span><span class="n">CoordinatorLayout</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">)</span> <span class="n">container</span><span class="o">.</span><span class="na">getLayoutParams</span><span class="o">();</span>
 </span><span class='line'><span class="kd">final</span> <span class="n">CoordinatorLayout</span><span class="o">.</span><span class="na">Behavior</span><span class="o">&lt;</span><span class="n">View</span><span class="o">&gt;</span> <span class="n">behavior</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CoordinatorLayout</span><span class="o">.</span><span class="na">Behavior</span><span class="o">&lt;</span><span class="n">View</span><span class="o">&gt;()</span> <span class="o">{</span>
 </span><span class='line'>    <span class="nd">@Override</span>
@@ -566,7 +566,7 @@ And voila:
   <entry>
     <title type="html"><![CDATA[10 good rules for bad App, Part 3- Product]]></title>
     <link href="https://blog.shem.dev/blog/2016/05/06/10-good-rules-for-bad-app-part-3-product/"/>
-    <updated>2016-05-06T05:37:07-07:00</updated>
+    <updated>2016-05-06T15:37:07+03:00</updated>
     <id>https://blog.shem.dev/blog/2016/05/06/10-good-rules-for-bad-app-part-3-product</id>
     <content type="html"><![CDATA[Welcome to the third (and last) part of the tutorial of how building a bad app. After we've building a bad app in the [first part](http://shem8.github.com/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical/), and remarkably ruin its look and feel in the [second part](http://shem8.github.com/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui/), we're now going to go over on 10 steps to easily how to kill your product:
 <!--more-->
