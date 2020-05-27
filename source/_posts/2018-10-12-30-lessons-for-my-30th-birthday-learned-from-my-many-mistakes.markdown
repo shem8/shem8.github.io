@@ -4,6 +4,10 @@ title: "30 lessons for my 30th birthday, learned from my (many) mistakes."
 date: 2018-10-12 16:40:05 +0300
 comments: true
 categories:
+  - life
+tags:
+  - life
+  - tips
 ---
 Last month was my 30th birthday. I’m not an emotional guy that loves to celebrate his birthday, and I don’t think there is something unique in this day. For me, it’s just 10950 days since I was born, nothing special.
 <!-- more -->

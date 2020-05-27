@@ -4,6 +4,10 @@ title: "Three great startups I could build if Google would give me access to the
 date: 2019-05-03 17:06:12 +0300
 comments: true
 categories:
+  - life
+tags:
+  - life
+  - tips
 ---
 _(It’s actually my data. Just saying.)_
 <!-- more -->

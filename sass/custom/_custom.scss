@@ -4,11 +4,31 @@ article code {
   padding: 3px 5px;
 }
 
-.container .mid-col .mid-col-container #content article .entry-content blockquote {
+article .entry-content {
+  blockquote {
+    p:last-child {
+      margin-bottom: 0 !important;
+    }
+    footer {
+      margin-top: 1.5em;
+    }
+  }
+
   p {
-    margin-bottom: 0;
+    margin-top: 1em;
   }
-  footer {
-    margin-top: 1.5em;
+
+  h4 {
+    margin-top: 2em;
   }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  flex: 1;
+  width: 0;
 }

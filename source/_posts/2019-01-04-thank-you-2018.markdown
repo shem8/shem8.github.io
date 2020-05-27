@@ -4,6 +4,10 @@ title: "Thank you 2018"
 date: 2019-01-04 16:53:24 +0300
 comments: true
 categories:
+  - life
+tags:
+  - life
+  - tips
 ---
 _You have been good to me._
 <!-- more -->
