@@ -404,3 +404,10 @@ task :list do
   puts "Tasks: #{(Rake::Task.tasks - [Rake::Task[:list]]).join(', ')}"
   puts "(type rake -T for more detail)\n\n"
 end
+
+desc "fix the deploy foldet"
+task :deploy_fix do
+  cd "#{deploy_dir}" do
+    Bundler.with_clean_env { system "git reset --hard origin/master" }
+  end
+end
