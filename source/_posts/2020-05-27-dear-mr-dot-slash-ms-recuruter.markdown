@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Dear Mr./Ms. Recuruter"
+title: "Dear Mr./Ms. Recruiter"
 date: 2020-05-27 10:17:04 +0300
 comments: true
 categories:
@@ -77,7 +77,7 @@ There are times you approach candidates after bad news or crisis in their workpl
 
 I know you're aiming to reach as many candidates as possible, and if you'll need to research each one of them it won't end. But I think that investing a couple of minutes before sending a message can actually save you time. By sending a more tailor-made request that will speak better to the person - the engagement will just be higher.
 
-Even if you don't have time to do a small research about each candidate, there're general things that people care about when they're thinking about their career. [For example](https://hired.com/state-of-software-engineers#coding) the #1 reason most software engineers chose their career is "new challenges and continuous learning" beating "earning potential". Their #1 goal in the next 10 years: continue building cool things. Focus on those things and how these correlate with your company.
+Even if you don't have time to do a small research about each candidate, there are general things that people care about when they're thinking about their career. [For example](https://hired.com/state-of-software-engineers#coding) the #1 reason most software engineers chose their career is "new challenges and continuous learning" beating "earning potential". Their #1 goal in the next 10 years: continue building cool things. Focus on those things and how these correlate with your company.
 
 #### Know what the company is looking
 
