@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 group :development do
   gem 'rake', '~> 10.0'
-  gem 'jekyll'
+  gem 'jekyll', '~> 3.0'
   gem 'octopress-hooks', '~> 2.2'
   gem 'octopress-date-format', '~> 3.0.3'
   gem 'jekyll-sitemap'
@@ -26,3 +26,5 @@ group :jekyll_plugins do
   gem 'jekyll-paginate'
   gem 'jekyll-gist'
 end
+
+gem "webrick", "~> 1.8"

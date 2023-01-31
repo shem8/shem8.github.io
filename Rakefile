@@ -252,20 +252,20 @@ desc "deploy public directory to github pages"
 multitask :push do
   puts "## Deploying branch to Github Pages "
   puts "## Pulling any updates from Github Pages "
-  cd "#{deploy_dir}" do 
+  FileUtils.cd "#{deploy_dir}" do 
     Bundler.with_clean_env { system "git pull" }
   end
-  (Dir["#{deploy_dir}/*"]).each { |f| rm_rf(f) }
+  (Dir["#{deploy_dir}/*"]).each { |f| FileUtils.rm_rf(f) }
   Rake::Task[:copydot].invoke(public_dir, deploy_dir)
   puts "\n## Copying #{public_dir} to #{deploy_dir}"
-  cp_r "#{public_dir}/.", deploy_dir
-  cd "#{deploy_dir}" do
+  FileUtils.cp_r "#{public_dir}/.", deploy_dir
+  FileUtils.cd "#{deploy_dir}" do
     system "git add -A"
     message = "Site updated at #{Time.now.utc}"
     puts "\n## Committing: #{message}"
     system "git commit -m \"#{message}\""
     puts "\n## Pushing generated #{deploy_dir} website"
-    Bundler.with_clean_env { system "git push origin #{deploy_branch}" }
+    Bundler.with_clean_env { system "git push origin #{deploy_branch} -f" }
     puts "\n## Github Pages deploy complete"
   end
 end
@@ -347,9 +347,11 @@ task :setup_github_pages, :repo do |t, args|
   File.open('_config.yml', 'w') do |f|
     f.write jekyll_config
   end
-  rm_rf deploy_dir
-  mkdir deploy_dir
-  cd "#{deploy_dir}" do
+  puts "#{Dir.entries(".")}, #{FileUtils.pwd()}"
+
+  FileUtils.rm_rf deploy_dir
+  FileUtils.mkdir deploy_dir
+  FileUtils.cd "#{deploy_dir}" do
     system "git init"
     system 'echo "My Octopress Page is coming soon &hellip;" > index.html'
     system "git add ."
