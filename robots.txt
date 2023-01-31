@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://blog.shem.dev/sitemap.xml 
