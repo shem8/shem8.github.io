@@ -1,7 +1,11 @@
 ## Shem
 
+Setup:
+- `rvm use 2.7`
+- `bundle install`
+
 Change stuff in source
-`rake preview` to see your changes
+`rake preview` to see your changes (you might need to use `bundle exec`)
 `./deploy` to apply your changes
 
 ## Octopress 3.0
