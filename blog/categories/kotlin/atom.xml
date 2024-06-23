@@ -4,7 +4,7 @@
   <title><![CDATA[Category: kotlin | Shem Magnezi Blog]]></title>
   <link href="http://blog.shem.dev/blog/categories/kotlin/atom.xml" rel="self"/>
   <link href="http://blog.shem.dev/"/>
-  <updated>2023-01-31T11:17:06+00:00</updated>
+  <updated>2024-06-23T09:36:29+00:00</updated>
   <id>http://blog.shem.dev/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
@@ -99,14 +99,14 @@ Now we're able to see how we can use the language for faster development:
 <span class='line-number'>9</span>
 <span class='line-number'>10</span>
 </pre></td><td class='code'><pre><code class='kotlin'><span class='line'><span></span><span class="c1">// Using R.layout.activity_main from the main source set</span>
-</span><span class='line'><span class="k">import</span> <span class="nn">kotlinx.android.synthetic.main.activity_main.*</span>
+</span><span class='line'><span class="k">import</span><span class="w"> </span><span class="nn">kotlinx.android.synthetic.main.activity_main.*</span>
 </span><span class='line'>
-</span><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyActivity</span> <span class="p">:</span> <span class="n">Activity</span><span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>    <span class="kd">override</span> <span class="kd">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="n">Bundle?)</span> <span class="p">{</span>
-</span><span class='line'>        <span class="k">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
-</span><span class='line'>        <span class="n">setContentView</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">activity_main</span><span class="p">)</span>
-</span><span class='line'>        <span class="n">textView</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="s">&quot;Hello, world!&quot;</span><span class="p">)</span> <span class="c1">// Instead of findView(R.id.textView) as TextView</span>
-</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">MyActivity</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Activity</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span class='line'><span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span><span class="w"> </span><span class="n">Bundle?)</span><span class="w"> </span><span class="p">{</span>
+</span><span class='line'><span class="w">        </span><span class="k">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
+</span><span class='line'><span class="w">        </span><span class="n">setContentView</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">activity_main</span><span class="p">)</span>
+</span><span class='line'><span class="w">        </span><span class="n">textView</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="s">&quot;Hello, world!&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">// Instead of findView(R.id.textView) as TextView</span>
+</span><span class='line'><span class="w">    </span><span class="p">}</span>
 </span><span class='line'><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
@@ -122,11 +122,11 @@ Code in Java:
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span></span><span class="n">view</span><span class="p">.</span><span class="na">setOnClickListener</span><span class="p">(</span><span class="k">new</span> <span class="n">View</span><span class="p">.</span><span class="na">OnClickListener</span><span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>    <span class="nd">@Override</span>
-</span><span class='line'>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="p">(</span><span class="n">View</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>        <span class="c1">//click handling</span>
-</span><span class='line'>    <span class="p">}</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span></span><span class="n">view</span><span class="p">.</span><span class="na">setOnClickListener</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">View</span><span class="p">.</span><span class="na">OnClickListener</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span class='line'><span class="w">    </span><span class="nd">@Override</span>
+</span><span class='line'><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onClick</span><span class="p">(</span><span class="n">View</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class='line'><span class="w">        </span><span class="c1">//click handling</span>
+</span><span class='line'><span class="w">    </span><span class="p">}</span>
 </span><span class='line'><span class="p">});</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
@@ -138,12 +138,12 @@ Comes to:
 And:
 
 <div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span></span><span class="k">if</span> <span class="p">(</span><span class="n">s</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="o">?</span> <span class="n">s</span><span class="p">.</span><span class="na">length</span><span class="p">()</span> <span class="p">:</span> <span class="mi">0</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">s</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 Comes to:
 
 <div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='kotlin'><span class='line'><span></span><span class="n">s</span><span class="o">?.</span><span class="na">length</span> <span class="o">?:</span> <span class="o">-</span><span class="m">1</span>
+</pre></td><td class='code'><pre><code class='kotlin'><span class='line'><span></span><span class="n">s</span><span class="o">?.</span><span class="na">length</span><span class="w"> </span><span class="o">?:</span><span class="w"> </span><span class="o">-</span><span class="m">1</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
 Isn't it wonderful?
@@ -171,23 +171,23 @@ Here is the real power of the language in my opinion, we can easily add utility 
 <span class='line-number'>15</span>
 <span class='line-number'>16</span>
 <span class='line-number'>17</span>
-</pre></td><td class='code'><pre><code class='kotlin'><span class='line'><span></span><span class="kd">fun</span> <span class="n">AppCompatActivity</span><span class="p">.</span><span class="nf">navigate</span><span class="p">(</span><span class="n">frag</span><span class="p">:</span> <span class="n">Fragment</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>    <span class="kd">val</span> <span class="nv">fragmentTransaction</span> <span class="o">=</span>  <span class="n">supportFragmentManager</span><span class="p">.</span><span class="na">beginTransaction</span><span class="p">()</span>
-</span><span class='line'>    <span class="n">fragmentTransaction</span><span class="p">.</span><span class="na">replace</span><span class="p">(</span><span class="n">content</span><span class="p">.</span><span class="na">id</span><span class="p">,</span> <span class="n">frag</span><span class="p">);</span>
-</span><span class='line'>    <span class="n">fragmentTransaction</span><span class="p">.</span><span class="na">commit</span><span class="p">();</span>
+</pre></td><td class='code'><pre><code class='kotlin'><span class='line'><span></span><span class="kd">fun</span><span class="w"> </span><span class="n">AppCompatActivity</span><span class="p">.</span><span class="nf">navigate</span><span class="p">(</span><span class="n">frag</span><span class="p">:</span><span class="w"> </span><span class="n">Fragment</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class='line'><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">fragmentTransaction</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="n">supportFragmentManager</span><span class="p">.</span><span class="na">beginTransaction</span><span class="p">()</span>
+</span><span class='line'><span class="w">    </span><span class="n">fragmentTransaction</span><span class="p">.</span><span class="na">replace</span><span class="p">(</span><span class="n">content</span><span class="p">.</span><span class="na">id</span><span class="p">,</span><span class="w"> </span><span class="n">frag</span><span class="p">);</span>
+</span><span class='line'><span class="w">    </span><span class="n">fragmentTransaction</span><span class="p">.</span><span class="na">commit</span><span class="p">();</span>
 </span><span class='line'><span class="p">}</span>
 </span><span class='line'>
-</span><span class='line'><span class="kd">fun</span> <span class="n">Fragment</span><span class="p">.</span><span class="nf">userError</span><span class="p">(</span><span class="n">msg</span><span class="p">:</span> <span class="kt">String?</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>    <span class="n">Snackbar</span><span class="p">.</span><span class="na">make</span><span class="p">(</span><span class="n">view</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">Snackbar</span><span class="p">.</span><span class="na">LENGTH_LONG</span><span class="p">).</span><span class="na">show</span><span class="p">()</span>
+</span><span class='line'><span class="kd">fun</span><span class="w"> </span><span class="n">Fragment</span><span class="p">.</span><span class="nf">userError</span><span class="p">(</span><span class="n">msg</span><span class="p">:</span><span class="w"> </span><span class="kt">String?</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class='line'><span class="w">    </span><span class="n">Snackbar</span><span class="p">.</span><span class="na">make</span><span class="p">(</span><span class="n">view</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="p">,</span><span class="w"> </span><span class="n">Snackbar</span><span class="p">.</span><span class="na">LENGTH_LONG</span><span class="p">).</span><span class="na">show</span><span class="p">()</span>
 </span><span class='line'><span class="p">}</span>
 </span><span class='line'>
-</span><span class='line'><span class="kd">fun</span> <span class="n">SharedPreferences</span><span class="p">.</span><span class="nf">edit</span><span class="p">(</span><span class="n">func</span><span class="p">:</span><span class="n">SharedPreferences</span><span class="p">.</span><span class="na">Editor</span><span class="p">.</span> <span class="p">()</span> <span class="o">-&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">amp</span><span class="p">;</span><span class="n">amp</span><span class="p">;</span><span class="n">gt</span><span class="p">;</span> <span class="kt">Unit</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>    <span class="kd">val</span> <span class="nv">editor</span> <span class="o">=</span> <span class="n">edit</span><span class="p">()</span>
-</span><span class='line'>    <span class="n">editor</span><span class="p">.</span><span class="na">func</span><span class="p">()</span>
-</span><span class='line'>    <span class="n">editor</span><span class="p">.</span><span class="na">apply</span><span class="p">()</span>
+</span><span class='line'><span class="kd">fun</span><span class="w"> </span><span class="n">SharedPreferences</span><span class="p">.</span><span class="nf">edit</span><span class="p">(</span><span class="n">func</span><span class="p">:</span><span class="n">SharedPreferences</span><span class="p">.</span><span class="na">Editor</span><span class="p">.</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">amp</span><span class="p">;</span><span class="n">amp</span><span class="p">;</span><span class="n">gt</span><span class="p">;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class='line'><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">editor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">edit</span><span class="p">()</span>
+</span><span class='line'><span class="w">    </span><span class="n">editor</span><span class="p">.</span><span class="na">func</span><span class="p">()</span>
+</span><span class='line'><span class="w">    </span><span class="n">editor</span><span class="p">.</span><span class="na">apply</span><span class="p">()</span>
 </span><span class='line'><span class="p">}</span>
 </span><span class='line'>
-</span><span class='line'><span class="kd">fun</span> <span class="n">SharedPreferences</span><span class="p">.</span><span class="nf">Editor</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">pair</span><span class="p">:</span> <span class="n">Pair</span><span class="o">&lt;</span><span class="kt">String</span><span class="p">,</span> <span class="kt">String</span><span class="o">&gt;</span><span class="p">)</span>  <span class="o">=</span> <span class="n">putString</span><span class="p">(</span><span class="n">pair</span><span class="p">.</span><span class="na">first</span><span class="p">,</span> <span class="n">pair</span><span class="p">.</span><span class="na">second</span><span class="p">)</span>
+</span><span class='line'><span class="kd">fun</span><span class="w"> </span><span class="n">SharedPreferences</span><span class="p">.</span><span class="nf">Editor</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">pair</span><span class="p">:</span><span class="w"> </span><span class="n">Pair</span><span class="o">&lt;</span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="o">&gt;</span><span class="p">)</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">putString</span><span class="p">(</span><span class="n">pair</span><span class="p">.</span><span class="na">first</span><span class="p">,</span><span class="w"> </span><span class="n">pair</span><span class="p">.</span><span class="na">second</span><span class="p">)</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
 There are also some libraries out there that add you many more extentions like: [KAndroid](https://github.com/pawegio/KAndroid) and [androidKotlin](https://github.com/yoavst/androidKotlin), or even examples from others Android devs like [Jake Wharton](https://speakerdeck.com/jakewharton/android-development-with-kotlin-androidkw-number-001).

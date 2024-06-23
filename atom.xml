@@ -4,7 +4,7 @@
   <title><![CDATA[Shem Magnezi Blog]]></title>
   <link href="http://blog.shem.dev/atom.xml" rel="self"/>
   <link href="http://blog.shem.dev/"/>
-  <updated>2023-01-31T11:17:06+00:00</updated>
+  <updated>2024-06-23T09:36:29+00:00</updated>
   <id>http://blog.shem.dev/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
@@ -1464,24 +1464,24 @@ Do you remember trying to figure out what is going on with your database so you 
 <span class='line-number'>20</span>
 <span class='line-number'>21</span>
 </pre></td><td class='code'><pre><code class='xml'><span class='line'><span></span><span class="nt">&lt;android.support.design.widget.CoordinatorLayout</span>
-</span><span class='line'>    <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
-</span><span class='line'>    <span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
-</span><span class='line'>    <span class="na">android:layout_height=</span><span class="s">&quot;match_parent&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'><span class="w">    </span><span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+</span><span class='line'><span class="w">    </span><span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
+</span><span class='line'><span class="w">    </span><span class="na">android:layout_height=</span><span class="s">&quot;match_parent&quot;</span><span class="nt">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>    <span class="nt">&lt;FrameLayout</span> <span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
-</span><span class='line'>         <span class="na">android:layout_height=</span><span class="s">&quot;match_parent&quot;</span>
-</span><span class='line'>         <span class="na">android:id=</span><span class="s">&quot;@+id/container&quot;</span>
-</span><span class='line'>         <span class="na">android:background=</span><span class="s">&quot;#06ff87&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'><span class="w">    </span><span class="nt">&lt;FrameLayout</span><span class="w"> </span><span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
+</span><span class='line'><span class="w">         </span><span class="na">android:layout_height=</span><span class="s">&quot;match_parent&quot;</span>
+</span><span class='line'><span class="w">         </span><span class="na">android:id=</span><span class="s">&quot;@+id/container&quot;</span>
+</span><span class='line'><span class="w">         </span><span class="na">android:background=</span><span class="s">&quot;#06ff87&quot;</span><span class="nt">/&gt;</span>
 </span><span class='line'>
-</span><span class='line'>    <span class="nt">&lt;TextView</span>
-</span><span class='line'>        <span class="na">android:id=</span><span class="s">&quot;@+id/dismiss&quot;</span>
-</span><span class='line'>        <span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
-</span><span class='line'>        <span class="na">android:layout_height=</span><span class="s">&quot;wrap_content&quot;</span>
-</span><span class='line'>        <span class="na">android:text=</span><span class="s">&quot;&gt; Swipe to dismiss &gt; &gt; &gt;&quot;</span>
-</span><span class='line'>        <span class="na">android:padding=</span><span class="s">&quot;30dp&quot;</span>
-</span><span class='line'>        <span class="na">android:gravity=</span><span class="s">&quot;center&quot;</span>
-</span><span class='line'>        <span class="na">android:layout_gravity=</span><span class="s">&quot;center_horizontal|bottom&quot;</span>
-</span><span class='line'>        <span class="na">android:background=</span><span class="s">&quot;#3bb0ff&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'><span class="w">    </span><span class="nt">&lt;TextView</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:id=</span><span class="s">&quot;@+id/dismiss&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:layout_height=</span><span class="s">&quot;wrap_content&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:text=</span><span class="s">&quot;&gt; Swipe to dismiss &gt; &gt; &gt;&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:padding=</span><span class="s">&quot;30dp&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:gravity=</span><span class="s">&quot;center&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:layout_gravity=</span><span class="s">&quot;center_horizontal|bottom&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:background=</span><span class="s">&quot;#3bb0ff&quot;</span><span class="nt">/&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="nt">&lt;/android.support.design.widget.CoordinatorLayout&gt;</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
@@ -1505,18 +1505,18 @@ Do you remember trying to figure out what is going on with your database so you 
 <span class='line-number'>12</span>
 <span class='line-number'>13</span>
 <span class='line-number'>14</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span></span><span class="n">View</span> <span class="n">dismiss</span> <span class="o">=</span> <span class="n">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">dismiss</span><span class="p">);</span>
-</span><span class='line'><span class="n">CoordinatorLayout</span><span class="p">.</span><span class="na">LayoutParams</span> <span class="n">params</span> <span class="o">=</span> <span class="p">(</span><span class="n">CoordinatorLayout</span><span class="p">.</span><span class="na">LayoutParams</span><span class="p">)</span> <span class="n">dismiss</span><span class="p">.</span><span class="na">getLayoutParams</span><span class="p">();</span>
-</span><span class='line'><span class="n">SwipeDismissBehavior</span><span class="o">&lt;</span><span class="n">View</span><span class="o">&gt;</span> <span class="n">behavior</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SwipeDismissBehavior</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span></span><span class="n">View</span><span class="w"> </span><span class="n">dismiss</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">dismiss</span><span class="p">);</span>
+</span><span class='line'><span class="n">CoordinatorLayout</span><span class="p">.</span><span class="na">LayoutParams</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">CoordinatorLayout</span><span class="p">.</span><span class="na">LayoutParams</span><span class="p">)</span><span class="w"> </span><span class="n">dismiss</span><span class="p">.</span><span class="na">getLayoutParams</span><span class="p">();</span>
+</span><span class='line'><span class="n">SwipeDismissBehavior</span><span class="o">&lt;</span><span class="n">View</span><span class="o">&gt;</span><span class="w"> </span><span class="n">behavior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SwipeDismissBehavior</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 </span><span class='line'><span class="n">behavior</span><span class="p">.</span><span class="na">setSwipeDirection</span><span class="p">(</span><span class="n">SwipeDismissBehavior</span><span class="p">.</span><span class="na">SWIPE_DIRECTION_START_TO_END</span><span class="p">);</span>
-</span><span class='line'><span class="n">behavior</span><span class="p">.</span><span class="na">setListener</span><span class="p">(</span><span class="k">new</span> <span class="n">SwipeDismissBehavior</span><span class="p">.</span><span class="na">OnDismissListener</span><span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>    <span class="nd">@Override</span>
-</span><span class='line'>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDismiss</span><span class="p">(</span><span class="kd">final</span> <span class="n">View</span> <span class="n">view</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>        <span class="n">finish</span><span class="p">();</span>
-</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="n">behavior</span><span class="p">.</span><span class="na">setListener</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">SwipeDismissBehavior</span><span class="p">.</span><span class="na">OnDismissListener</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span class='line'><span class="w">    </span><span class="nd">@Override</span>
+</span><span class='line'><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onDismiss</span><span class="p">(</span><span class="kd">final</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="n">view</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class='line'><span class="w">        </span><span class="n">finish</span><span class="p">();</span>
+</span><span class='line'><span class="w">    </span><span class="p">}</span>
 </span><span class='line'>
-</span><span class='line'>    <span class="nd">@Override</span>
-</span><span class='line'>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDragStateChanged</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span> <span class="p">{}</span>
+</span><span class='line'><span class="w">    </span><span class="nd">@Override</span>
+</span><span class='line'><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onDragStateChanged</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
 </span><span class='line'><span class="p">});</span>
 </span><span class='line'><span class="n">params</span><span class="p">.</span><span class="na">setBehavior</span><span class="p">(</span><span class="n">behavior</span><span class="p">);</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
@@ -1542,11 +1542,11 @@ Do you remember trying to figure out what is going on with your database so you 
 </span><span class='line'><span class="cm"> * Handle only touches on this current view</span>
 </span><span class='line'><span class="cm"> */</span>
 </span><span class='line'><span class="nd">@Override</span>
-</span><span class='line'><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onTouchEvent</span><span class="p">(</span><span class="n">CoordinatorLayout</span> <span class="n">parent</span><span class="p">,</span> <span class="n">V</span> <span class="n">child</span><span class="p">,</span> <span class="n">MotionEvent</span> <span class="n">event</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="n">parent</span><span class="p">.</span><span class="na">isPointInChildBounds</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n">event</span><span class="p">.</span><span class="na">getX</span><span class="p">(),</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n">event</span><span class="p">.</span><span class="na">getY</span><span class="p">()))</span> <span class="p">{</span>
-</span><span class='line'>        <span class="k">return</span> <span class="kd">super</span><span class="p">.</span><span class="na">onTouchEvent</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span> <span class="n">child</span><span class="p">,</span> <span class="n">event</span><span class="p">);</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+</span><span class='line'><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">onTouchEvent</span><span class="p">(</span><span class="n">CoordinatorLayout</span><span class="w"> </span><span class="n">parent</span><span class="p">,</span><span class="w"> </span><span class="n">V</span><span class="w"> </span><span class="n">child</span><span class="p">,</span><span class="w"> </span><span class="n">MotionEvent</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class='line'><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">parent</span><span class="p">.</span><span class="na">isPointInChildBounds</span><span class="p">(</span><span class="n">child</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="n">event</span><span class="p">.</span><span class="na">getX</span><span class="p">(),</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="n">event</span><span class="p">.</span><span class="na">getY</span><span class="p">()))</span><span class="w"> </span><span class="p">{</span>
+</span><span class='line'><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kd">super</span><span class="p">.</span><span class="na">onTouchEvent</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span><span class="w"> </span><span class="n">child</span><span class="p">,</span><span class="w"> </span><span class="n">event</span><span class="p">);</span>
+</span><span class='line'><span class="w">    </span><span class="p">}</span>
+</span><span class='line'><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
 </span><span class='line'><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
@@ -1574,19 +1574,19 @@ Do you remember trying to figure out what is going on with your database so you 
 <span class='line-number'>15</span>
 <span class='line-number'>16</span>
 </pre></td><td class='code'><pre><code class='java'><span class='line'><span></span><span class="o">=</span>
-</span><span class='line'><span class="n">CoordinatorLayout</span><span class="p">.</span><span class="na">LayoutParams</span> <span class="n">params</span> <span class="o">=</span> <span class="p">(</span><span class="n">CoordinatorLayout</span><span class="p">.</span><span class="na">LayoutParams</span><span class="p">)</span> <span class="n">container</span><span class="p">.</span><span class="na">getLayoutParams</span><span class="p">();</span>
-</span><span class='line'><span class="kd">final</span> <span class="n">CoordinatorLayout</span><span class="p">.</span><span class="na">Behavior</span><span class="o">&lt;</span><span class="n">View</span><span class="o">&gt;</span> <span class="n">behavior</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CoordinatorLayout</span><span class="p">.</span><span class="na">Behavior</span><span class="o">&lt;</span><span class="n">View</span><span class="o">&gt;</span><span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>    <span class="nd">@Override</span>
-</span><span class='line'>    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">layoutDependsOn</span><span class="p">(</span><span class="n">CoordinatorLayout</span> <span class="n">parent</span><span class="p">,</span> <span class="n">View</span> <span class="n">child</span><span class="p">,</span> <span class="n">View</span> <span class="n">dependency</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>        <span class="k">return</span> <span class="n">dependency</span><span class="p">.</span><span class="na">getId</span><span class="p">()</span> <span class="o">==</span> <span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">dismiss</span><span class="p">;</span>
-</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="n">CoordinatorLayout</span><span class="p">.</span><span class="na">LayoutParams</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">CoordinatorLayout</span><span class="p">.</span><span class="na">LayoutParams</span><span class="p">)</span><span class="w"> </span><span class="n">container</span><span class="p">.</span><span class="na">getLayoutParams</span><span class="p">();</span>
+</span><span class='line'><span class="kd">final</span><span class="w"> </span><span class="n">CoordinatorLayout</span><span class="p">.</span><span class="na">Behavior</span><span class="o">&lt;</span><span class="n">View</span><span class="o">&gt;</span><span class="w"> </span><span class="n">behavior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CoordinatorLayout</span><span class="p">.</span><span class="na">Behavior</span><span class="o">&lt;</span><span class="n">View</span><span class="o">&gt;</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span class='line'><span class="w">    </span><span class="nd">@Override</span>
+</span><span class='line'><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">layoutDependsOn</span><span class="p">(</span><span class="n">CoordinatorLayout</span><span class="w"> </span><span class="n">parent</span><span class="p">,</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="n">child</span><span class="p">,</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="n">dependency</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class='line'><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">dependency</span><span class="p">.</span><span class="na">getId</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">dismiss</span><span class="p">;</span>
+</span><span class='line'><span class="w">    </span><span class="p">}</span>
 </span><span class='line'>
-</span><span class='line'>    <span class="nd">@Override</span>
-</span><span class='line'>    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onDependentViewChanged</span><span class="p">(</span><span class="n">CoordinatorLayout</span> <span class="n">parent</span><span class="p">,</span> <span class="n">View</span> <span class="n">child</span><span class="p">,</span> <span class="n">View</span> <span class="n">dependency</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>        <span class="n">child</span><span class="p">.</span><span class="na">setX</span><span class="p">(</span><span class="n">dependency</span><span class="p">.</span><span class="na">getX</span><span class="p">());</span>
-</span><span class='line'>        <span class="n">child</span><span class="p">.</span><span class="na">setAlpha</span><span class="p">(</span><span class="n">dependency</span><span class="p">.</span><span class="na">getAlpha</span><span class="p">());</span>
-</span><span class='line'>        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="w">    </span><span class="nd">@Override</span>
+</span><span class='line'><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">onDependentViewChanged</span><span class="p">(</span><span class="n">CoordinatorLayout</span><span class="w"> </span><span class="n">parent</span><span class="p">,</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="n">child</span><span class="p">,</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="n">dependency</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class='line'><span class="w">        </span><span class="n">child</span><span class="p">.</span><span class="na">setX</span><span class="p">(</span><span class="n">dependency</span><span class="p">.</span><span class="na">getX</span><span class="p">());</span>
+</span><span class='line'><span class="w">        </span><span class="n">child</span><span class="p">.</span><span class="na">setAlpha</span><span class="p">(</span><span class="n">dependency</span><span class="p">.</span><span class="na">getAlpha</span><span class="p">());</span>
+</span><span class='line'><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+</span><span class='line'><span class="w">    </span><span class="p">}</span>
 </span><span class='line'><span class="p">};</span>
 </span><span class='line'><span class="n">params</span><span class="p">.</span><span class="na">setBehavior</span><span class="p">(</span><span class="n">behavior</span><span class="p">);</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
@@ -1907,35 +1907,35 @@ Do you remember trying to figure out what is going on with your database so you 
 <span class='line-number'>30</span>
 <span class='line-number'>31</span>
 </pre></td><td class='code'><pre><code class='xml'><span class='line'><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
-</span><span class='line'><span class="nt">&lt;vector</span> <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
-</span><span class='line'>    <span class="na">android:width=</span><span class="s">&quot;24dp&quot;</span>
-</span><span class='line'>    <span class="na">android:height=</span><span class="s">&quot;24dp&quot;</span>
-</span><span class='line'>    <span class="na">android:viewportWidth=</span><span class="s">&quot;24&quot;</span>
-</span><span class='line'>    <span class="na">android:viewportHeight=</span><span class="s">&quot;24&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'><span class="nt">&lt;vector</span><span class="w"> </span><span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+</span><span class='line'><span class="w">    </span><span class="na">android:width=</span><span class="s">&quot;24dp&quot;</span>
+</span><span class='line'><span class="w">    </span><span class="na">android:height=</span><span class="s">&quot;24dp&quot;</span>
+</span><span class='line'><span class="w">    </span><span class="na">android:viewportWidth=</span><span class="s">&quot;24&quot;</span>
+</span><span class='line'><span class="w">    </span><span class="na">android:viewportHeight=</span><span class="s">&quot;24&quot;</span><span class="nt">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>    <span class="nt">&lt;path</span>
-</span><span class='line'>        <span class="na">android:name=</span><span class="s">&quot;line&quot;</span>
-</span><span class='line'>        <span class="na">android:pathData=</span><span class="s">&quot;M5.705,5.705 L18.295,18.295&quot;</span>
-</span><span class='line'>        <span class="na">android:strokeWidth=</span><span class="s">&quot;2&quot;</span>
-</span><span class='line'>        <span class="na">android:strokeColor=</span><span class="s">&quot;#000000&quot;</span>
-</span><span class='line'>        <span class="na">android:trimPathStart=</span><span class="s">&quot;0.45&quot;</span>
-</span><span class='line'>        <span class="na">android:trimPathEnd=</span><span class="s">&quot;1&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'><span class="w">    </span><span class="nt">&lt;path</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:name=</span><span class="s">&quot;line&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:pathData=</span><span class="s">&quot;M5.705,5.705 L18.295,18.295&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:strokeWidth=</span><span class="s">&quot;2&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:strokeColor=</span><span class="s">&quot;#000000&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:trimPathStart=</span><span class="s">&quot;0.45&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:trimPathEnd=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span><span class='line'>
-</span><span class='line'>    <span class="nt">&lt;path</span>
-</span><span class='line'>        <span class="na">android:name=</span><span class="s">&quot;circle1&quot;</span>
-</span><span class='line'>        <span class="na">android:pathData=</span><span class="s">&quot;M5.705,5.705 A 4 4 0 1 1 12,12 L5.705,18.295&quot;</span>
-</span><span class='line'>        <span class="na">android:strokeWidth=</span><span class="s">&quot;2&quot;</span>
-</span><span class='line'>        <span class="na">android:strokeColor=</span><span class="s">&quot;#000000&quot;</span>
-</span><span class='line'>        <span class="na">android:trimPathStart=</span><span class="s">&quot;0&quot;</span>
-</span><span class='line'>        <span class="na">android:trimPathEnd=</span><span class="s">&quot;0.6&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'><span class="w">    </span><span class="nt">&lt;path</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:name=</span><span class="s">&quot;circle1&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:pathData=</span><span class="s">&quot;M5.705,5.705 A 4 4 0 1 1 12,12 L5.705,18.295&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:strokeWidth=</span><span class="s">&quot;2&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:strokeColor=</span><span class="s">&quot;#000000&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:trimPathStart=</span><span class="s">&quot;0&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:trimPathEnd=</span><span class="s">&quot;0.6&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span><span class='line'>
-</span><span class='line'>    <span class="nt">&lt;path</span>
-</span><span class='line'>        <span class="na">android:name=</span><span class="s">&quot;circle2&quot;</span>
-</span><span class='line'>        <span class="na">android:pathData=</span><span class="s">&quot;M18.295,5.705 L12,12 A 4 4 0 1 1 5.705,5.705&quot;</span>
-</span><span class='line'>        <span class="na">android:strokeWidth=</span><span class="s">&quot;2&quot;</span>
-</span><span class='line'>        <span class="na">android:strokeColor=</span><span class="s">&quot;#000000&quot;</span>
-</span><span class='line'>        <span class="na">android:trimPathStart=</span><span class="s">&quot;0.4&quot;</span>
-</span><span class='line'>        <span class="na">android:trimPathEnd=</span><span class="s">&quot;1&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'><span class="w">    </span><span class="nt">&lt;path</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:name=</span><span class="s">&quot;circle2&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:pathData=</span><span class="s">&quot;M18.295,5.705 L12,12 A 4 4 0 1 1 5.705,5.705&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:strokeWidth=</span><span class="s">&quot;2&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:strokeColor=</span><span class="s">&quot;#000000&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:trimPathStart=</span><span class="s">&quot;0.4&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:trimPathEnd=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span><span class='line'><span class="nt">&lt;/vector&gt;</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
@@ -1969,60 +1969,21 @@ Do you remember trying to figure out what is going on with your database so you 
 </span><span class='line'><span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
 </span><span class='line'><span class="na">android:ordering=</span><span class="s">&quot;sequentially&quot;</span><span class="nt">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>    <span class="c">&lt;!-- first we need to immediately reset state --&gt;</span>
-</span><span class='line'>    <span class="nt">&lt;objectAnimator</span>
-</span><span class='line'>        <span class="na">android:duration=</span><span class="s">&quot;0&quot;</span>
-</span><span class='line'>        <span class="na">android:propertyName=</span><span class="s">&quot;trimPathStart&quot;</span>
-</span><span class='line'>        <span class="na">android:valueFrom=</span><span class="s">&quot;0.45&quot;</span>
-</span><span class='line'>        <span class="na">android:valueTo=</span><span class="s">&quot;0.45&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'><span class="w">    </span><span class="cm">&lt;!-- first we need to immediately reset state --&gt;</span>
+</span><span class='line'><span class="w">    </span><span class="nt">&lt;objectAnimator</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:duration=</span><span class="s">&quot;0&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:propertyName=</span><span class="s">&quot;trimPathStart&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:valueFrom=</span><span class="s">&quot;0.45&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:valueTo=</span><span class="s">&quot;0.45&quot;</span><span class="nt">/&gt;</span>
 </span><span class='line'>
-</span><span class='line'>    <span class="c">&lt;!-- then run the animation after a delay --&gt;</span>
-</span><span class='line'>    <span class="nt">&lt;objectAnimator</span>
-</span><span class='line'>        <span class="na">android:propertyName=</span><span class="s">&quot;trimPathStart&quot;</span>
-</span><span class='line'>        <span class="na">android:duration=</span><span class="s">&quot;300&quot;</span>
-</span><span class='line'>        <span class="na">android:startOffset=</span><span class="s">&quot;250&quot;</span>
-</span><span class='line'>        <span class="na">android:interpolator=</span><span class="s">&quot;@android:interpolator/fast_out_slow_in&quot;</span>
-</span><span class='line'>        <span class="na">android:valueFrom=</span><span class="s">&quot;0.45&quot;</span>
-</span><span class='line'>        <span class="na">android:valueTo=</span><span class="s">&quot;0&quot;</span> <span class="nt">/&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;/set&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-
-
-
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-</pre></td><td class='code'><pre><code class='xml'><span class='line'><span></span><span class="nt">&lt;set</span>
-</span><span class='line'>    <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
-</span><span class='line'>    <span class="na">android:ordering=</span><span class="s">&quot;together&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="nt">&lt;objectAnimator</span>
-</span><span class='line'>        <span class="na">android:propertyName=</span><span class="s">&quot;trimPathStart&quot;</span>
-</span><span class='line'>        <span class="na">android:valueFrom=</span><span class="s">&quot;0&quot;</span>
-</span><span class='line'>        <span class="na">android:valueTo=</span><span class="s">&quot;0.6&quot;</span>
-</span><span class='line'>        <span class="na">android:duration=</span><span class="s">&quot;450&quot;</span> <span class="nt">/&gt;</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="nt">&lt;objectAnimator</span>
-</span><span class='line'>        <span class="na">android:propertyName=</span><span class="s">&quot;trimPathEnd&quot;</span>
-</span><span class='line'>        <span class="na">android:valueFrom=</span><span class="s">&quot;0.6&quot;</span>
-</span><span class='line'>        <span class="na">android:valueTo=</span><span class="s">&quot;1&quot;</span>
-</span><span class='line'>        <span class="na">android:duration=</span><span class="s">&quot;600&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'><span class="w">    </span><span class="cm">&lt;!-- then run the animation after a delay --&gt;</span>
+</span><span class='line'><span class="w">    </span><span class="nt">&lt;objectAnimator</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:propertyName=</span><span class="s">&quot;trimPathStart&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:duration=</span><span class="s">&quot;300&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:startOffset=</span><span class="s">&quot;250&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:interpolator=</span><span class="s">&quot;@android:interpolator/fast_out_slow_in&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:valueFrom=</span><span class="s">&quot;0.45&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:valueTo=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="nt">&lt;/set&gt;</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
@@ -2048,20 +2009,59 @@ Do you remember trying to figure out what is going on with your database so you 
 <span class='line-number'>16</span>
 <span class='line-number'>17</span>
 </pre></td><td class='code'><pre><code class='xml'><span class='line'><span></span><span class="nt">&lt;set</span>
-</span><span class='line'>    <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
-</span><span class='line'>    <span class="na">android:ordering=</span><span class="s">&quot;together&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'><span class="w">    </span><span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+</span><span class='line'><span class="w">    </span><span class="na">android:ordering=</span><span class="s">&quot;together&quot;</span><span class="nt">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>    <span class="nt">&lt;objectAnimator</span>
-</span><span class='line'>        <span class="na">android:propertyName=</span><span class="s">&quot;trimPathStart&quot;</span>
-</span><span class='line'>        <span class="na">android:valueFrom=</span><span class="s">&quot;0.4&quot;</span>
-</span><span class='line'>        <span class="na">android:valueTo=</span><span class="s">&quot;0&quot;</span>
-</span><span class='line'>        <span class="na">android:duration=</span><span class="s">&quot;600&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'><span class="w">    </span><span class="nt">&lt;objectAnimator</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:propertyName=</span><span class="s">&quot;trimPathStart&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:valueFrom=</span><span class="s">&quot;0&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:valueTo=</span><span class="s">&quot;0.6&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:duration=</span><span class="s">&quot;450&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span><span class='line'>
-</span><span class='line'>    <span class="nt">&lt;objectAnimator</span>
-</span><span class='line'>        <span class="na">android:propertyName=</span><span class="s">&quot;trimPathEnd&quot;</span>
-</span><span class='line'>        <span class="na">android:valueFrom=</span><span class="s">&quot;1&quot;</span>
-</span><span class='line'>        <span class="na">android:valueTo=</span><span class="s">&quot;0.4&quot;</span>
-</span><span class='line'>        <span class="na">android:duration=</span><span class="s">&quot;450&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'><span class="w">    </span><span class="nt">&lt;objectAnimator</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:propertyName=</span><span class="s">&quot;trimPathEnd&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:valueFrom=</span><span class="s">&quot;0.6&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:valueTo=</span><span class="s">&quot;1&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:duration=</span><span class="s">&quot;600&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;/set&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span></span><span class="nt">&lt;set</span>
+</span><span class='line'><span class="w">    </span><span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+</span><span class='line'><span class="w">    </span><span class="na">android:ordering=</span><span class="s">&quot;together&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="w">    </span><span class="nt">&lt;objectAnimator</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:propertyName=</span><span class="s">&quot;trimPathStart&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:valueFrom=</span><span class="s">&quot;0.4&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:valueTo=</span><span class="s">&quot;0&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:duration=</span><span class="s">&quot;600&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="w">    </span><span class="nt">&lt;objectAnimator</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:propertyName=</span><span class="s">&quot;trimPathEnd&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:valueFrom=</span><span class="s">&quot;1&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:valueTo=</span><span class="s">&quot;0.4&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:duration=</span><span class="s">&quot;450&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="nt">&lt;/set&gt;</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
@@ -2087,20 +2087,20 @@ Do you remember trying to figure out what is going on with your database so you 
 <span class='line-number'>16</span>
 <span class='line-number'>17</span>
 </pre></td><td class='code'><pre><code class='xml'><span class='line'><span></span><span class="nt">&lt;animated-vector</span>
-</span><span class='line'>    <span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
-</span><span class='line'>    <span class="na">android:drawable=</span><span class="s">&quot;@drawable/searchback_search&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'><span class="w">    </span><span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+</span><span class='line'><span class="w">    </span><span class="na">android:drawable=</span><span class="s">&quot;@drawable/searchback_search&quot;</span><span class="nt">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>    <span class="nt">&lt;target</span>
-</span><span class='line'>        <span class="na">android:name=</span><span class="s">&quot;line&quot;</span>
-</span><span class='line'>        <span class="na">android:animation=</span><span class="s">&quot;@animator/line_to_cancel&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'><span class="w">    </span><span class="nt">&lt;target</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:name=</span><span class="s">&quot;line&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:animation=</span><span class="s">&quot;@animator/line_to_cancel&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span><span class='line'>
-</span><span class='line'>    <span class="nt">&lt;target</span>
-</span><span class='line'>        <span class="na">android:name=</span><span class="s">&quot;circle1&quot;</span>
-</span><span class='line'>        <span class="na">android:animation=</span><span class="s">&quot;@animator/circle1_to_cancel&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'><span class="w">    </span><span class="nt">&lt;target</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:name=</span><span class="s">&quot;circle1&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:animation=</span><span class="s">&quot;@animator/circle1_to_cancel&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span><span class='line'>
-</span><span class='line'>    <span class="nt">&lt;target</span>
-</span><span class='line'>        <span class="na">android:name=</span><span class="s">&quot;circle2&quot;</span>
-</span><span class='line'>        <span class="na">android:animation=</span><span class="s">&quot;@animator/circle2_to_cancel&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'><span class="w">    </span><span class="nt">&lt;target</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:name=</span><span class="s">&quot;circle2&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:animation=</span><span class="s">&quot;@animator/circle2_to_cancel&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="nt">&lt;/animated-vector&gt;</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
