@@ -8,6 +8,10 @@ Change stuff in source
 `rake preview` to see your changes (you might need to use `bundle exec`)
 `./deploy` to apply your changes
 
+If deploy doesn't work:
+- `bundle exec rake setup_github_pages` with `git@github.com:shem8/shem8.github.io.git` to set up github pages
+- make sure that _deploy is on `master` branch, if not try this: `git remote set-url origin https://github.com/shem8/shem8.github.io.git`
+
 ## Octopress 3.0
 
 Note: Octopress 3.0 is in development at https://github.com/octopress/octopress
