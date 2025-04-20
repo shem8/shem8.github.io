@@ -21,6 +21,11 @@ subscribe_email:
 # RSS feeds can list your email address if you like
 email: smagnezi8@gmail.com
 
+# Configurations
+lang: en-US
+i18n_dir: languages
+language: en
+
 # ----------------------- #
 #    Jekyll & Plugins     #
 # ----------------------- #

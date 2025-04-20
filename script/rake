@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+ENV['RUBYOPT'] = "-r#{File.expand_path('../patch_ruby.rb', __FILE__)}"
+
+exec "bundle", "exec", "rake", *ARGV
