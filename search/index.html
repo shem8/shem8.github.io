@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Search</title>
+</head>
+
+<body>
+    <script async src="https://cse.google.com/cse.js?cx=c2f57b8991a184d75"></script>
+    <div class="gcse-search"></div>
+    <script>
+        // Parse URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const searchQuery = urlParams.get('q');
+
+        // Wait for Google Custom Search to load and initialize
+        function initializeSearch() {
+            if (searchQuery) {
+                const searchInput = document.querySelector('input.gsc-input');
+                const searchButton = document.querySelector('.gsc-search-button');
+
+                if (searchInput && searchButton) {
+                    searchInput.value = searchQuery;
+                    searchButton.click();
+                } else {
+                    // If elements aren't ready yet, try again in a moment
+                    setTimeout(initializeSearch, 100);
+                }
+            }
+        }
+
+        // Start checking once the page loads
+        window.addEventListener('load', initializeSearch);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: web | Shem Magnezi Blog]]></title>
+  <link href="http://blog.shem.dev/blog/categories/web/atom.xml" rel="self"/>
+  <link href="http://blog.shem.dev/"/>
+  <updated>2025-04-20T10:58:27+00:00</updated>
+  <id>http://blog.shem.dev/</id>
+  <author>
+    <name><![CDATA[Shem Magnezi]]></name>
+    <email><![CDATA[smagnezi8@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[How to become a master in CSS in 5 simple steps]]></title>
+    <link href="http://blog.shem.dev/blog/2017/08/25/how-to-become-a-css-master/"/>
+    <updated>2017-08-25T12:52:26+00:00</updated>
+    <id>http://blog.shem.dev/blog/2017/08/25/how-to-become-a-css-master</id>
+    <content type="html"><![CDATA[[As you know](https://blog.shem.dev/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/)- I lately left my comfort zone, closed Android Studio and dive straight into a scary, rough sea called Web Development.
+An integral part of building web apps is working with CSS. For the ones that not familiar with Cascading Style Sheet- this is how web developers design their web pages, give it some life and structure, add animations and lose their sanity while doing so.
+<!-- more -->
+In this post, I'll try to describe what it takes for one who wants, for a reason I can't understand, to become a master in CSS in 5 simple steps:
+
+## 1. lose your intuition
+
+So you just need to add one more button to the end of the form, how hard it can get, right? No, PLEASE DON'T SAY RIGHT!
+
+CSS not like the right side, it will always prefer left. Because when you'll add `float: right;` something wrong going to happen. Some elements will change their positions; some divs will go over each other; some old versions of IE going to display your page upside down. Why? I don't know.
+
+How to solve it? You probably need to add `overflow:hidden` to the parent element (or adding dummy div to clear floating, of course). Why? Again, I don't know.
+
+This is how CSS works, you think it supposes to work on one way, but you're usually wrong.
+
+<img class="center" src="/images/posts/graphs/css.png" width="500">
+
+## 2. Practice meditation regularly
+
+To continue with the previous part- when dealing with CSS, lots of things won't work as expected. You can try to understand the logic behind it, but most of the time it's just a waste of time.
+
+So what I recommend- before each day you know you are going to work on styling your page, take a couple of minutes and let your body and mind relax. Meditate with this in mind: "this going to be hard, this going to be rough, but this is just software, and I won't let this non-deterministic system getting on my nerves."
+
+This, combining with removing any sharp objects away from your desk, can make your life (and your team's life) much more peaceful.
+
+<img class="center" src="/images/posts/css/css1.gif" width="300">
+
+## 3. Don’t refresh your page. Ever.
+
+When working with CSS, you're getting used to working straight on the browser, in that way you can easily play with your elements properties and get immediate feedback.
+
+But while a non-experienced developer will lose all his changes when accidentally refresh the page, a CSS master will know that refresh button is forbidden. Especially not before showing the result to the product manager.
+
+I have a theory that that's how SPA was invented.
+
+<img class="center" src="/images/posts/css/css3.jpg" width="300">
+
+## 4. Subscribe to some newsletters.
+
+Web development is a rapid pace changing environment. Frameworks change quickly, every week there's a new shiny library and new concepts introduced on a weekly basis.
+
+The best way to be on top of new tools and ideas is to subscribe to one or more newsletters.
+
+In that way, you’ll able to say things like: "Oh you're still using Flexbox? I just use to work with CSS grid now; it's the new shit” when your PR completely messed up the page layout, and you don't know why.
+
+<img class="center" src="/images/posts/css/css4.png" width="300">
+
+## 5. Work on your persuasion skills.
+
+One day your designer will come to you with a crazy UX concept that you absolutely have no idea how to implement. But you're a CSS master, and masters can't admit they don't know how to do something.
+
+So what can you do? You drive him out of this:
+<blockquote><p>"Oh, we can't animate it because it will break our site accessibility."</p></blockquote>
+<blockquote><p>"Floating views are just looking bad on mobile, believe me."</p></blockquote>
+<blockquote><p>"Material cards? Are we still in 2015?!"</p></blockquote>
+<blockquote><p>"Pffff, like Facebook?! They're putting their CSS in their JS! Those guys are crazy!!"</p></blockquote>
+Continue with this until he is ok with your standard Bootstrap starter template website.
+
+<img class="center" src="/images/posts/css/css2.gif" width="300">
+
+---
+
+*Afterword: this post is sarcastic, and I admire each one and one of you out there that can align a text properly right next to the thumbnail just like the designer meant it to be.*
+
+---
+
+**If you enjoyed this post, please hit the “recommend” button below and share this story. I’ll also love hearing your comments. Thank you!**
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[5 things React world can learn from Android]]></title>
+    <link href="http://blog.shem.dev/blog/2017/07/02/5-things-react-world-can-learn-from-android/"/>
+    <updated>2017-07-02T18:52:47+00:00</updated>
+    <id>http://blog.shem.dev/blog/2017/07/02/5-things-react-world-can-learn-from-android</id>
+    <content type="html"><![CDATA[In my [previous post](https://blog.shem.dev/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/), I talked about a couple of things I notice after moving from my usual gig as an Android developer and doing some web development (especially React).
+
+As promised, after naming some things that Android can learn from the web development world, I will now focus on the other side- what can web developers can borrow from the Android world.
+<!-- more -->
+
+So lets start *(Putting my helmet on)*:
+
+## 1. A decent IDE
+Oh yes, I'm touching a nerve right off the bat. But sorry, there is no way around it.
+
+**Web developers have no decent IDE, and they should use one.**
+
+We have excellent text editors, but it's not the same.
+
+Why the hell should I write my imports manually? How can I refactor my code peacefully when I'm not sure I renamed ALL the instances of my method? Why can't I navigate easily in my source code?
+
+As a one that came from a world with a great IDEs (Java with Eclipse and IntlliJ), this is the thing that bothers me the most when I develop.
+
+Google took it to the next level, and they have a team that is working just on the developer tools for Android. I do not say we have to use a dedicated IDE like Android Studio, but at least give me something decent to work with.
+
+## 2. Stop with those fucking to-do list apps
+No really, WTF!? How many to-do list apps a man needs? Why is everyone writing the same thing over and over?
+
+Yeah, we got it- you write your tasks, and it saves on Redux, and you can finish some tasks and then can see the ongoing ones and the ones that you finish. I swear I saw things kind of apps like 5 different times while learning React.
+
+What about going to the next level- see how to sync data with the server, putting more than one type of data, handling user input, loading or any other edge case.
+
+Google builds real apps and releases the source code. For example- [Plaid app](https://github.com/nickbutcher/plaid) that focus on design and animation, or [Muzei app](https://github.com/nickbutcher/plaid) for working with images, or even the [official Google I/O app](https://github.com/google/iosched).
+
+Those are real apps with real users and real use cases. It is interesting how experienced developers handle apps with more than a couple of hundreds of lines of code.
+
+## 3. Community Experts
+[Google Developers Experts (GDEs)](https://developers.google.com/experts/about) are a global network of experienced developers (and others) actively supporting developers, startups and companies changing the world through web and mobile applications.
+
+That's mean that Google is encouraging (and also compensating) individuals to help and educate the community about Android.
+
+Think about yourself- what if you have a question, or something don't work, or need some kind of advice. Whom do you ask (or where)?
+
+Helping the community working with the platform is an integral part of developing a new platform, and I feel that Facebook can do better here.
+
+## 4. Talk about more than just code.
+React is relatively straightforward. You can easily get an app up and running in a few hours. However, a real app is more than just a couple of screens and components- it is much more than that. It is deal with bizarre user inputs and handling connections errors. It is making the user understand the flow and making actions easy and intuitive.
+
+I would love some bits of advice from the Facebook team about lessons learned after building React apps for such a long time and for so many users and use cases.
+
+Just like Google sharing things like [material design](https://developer.android.com/design/index.html) guidelines, I would love to hear more about best practices when coming to build my single page app.
+
+## 5. Work on architecture components (or adapt community solutions as best practices)
+So we have the basic stuff, the bare bones of the app and soon enough we're going to write to high order components to handle the more high-level stuff.
+
+And those components will probably move with us (as a shared lib or worse- as a copy & paste) to our next project.
+
+And we're not alone- so I assume others are written this code on their own projects.
+
+Because I'm not the only one that needs to write a component that handles the state when my component's data is currently loading. And I'm probably not the only one that sometimes wants to sync some values between the store and the local storage. Or animate components.
+
+In Android, it's known that Retrofit is the library for HTTP calls, Google even uses it in their [official examples](https://developer.android.com/topic/libraries/architecture/guide.html#fetching_data). For other things, they came up with their own solutions like [architecture compoennts](https://developer.android.com/topic/libraries/architecture/index.html).
+
+In react there is [React router](https://github.com/reacttraining/react-router), that is widely used. But beside of this- I'm not really aware of this kind of things.
+
+---
+
+I really like the web development world, and I feel that the community is much more involved (and bigger to be honest). But I feel this is the place where one should get up and lead the developers to more organized and structured environment.
+
+---
+
+If you enjoyed this post, please hit the “recommend” button below and share this story. I’ll also love hearing your comments. Thanks!
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[5 things I learned as an Android developer after doing some Web development]]></title>
+    <link href="http://blog.shem.dev/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/"/>
+    <updated>2017-03-31T10:32:32+00:00</updated>
+    <id>http://blog.shem.dev/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development</id>
+    <content type="html"><![CDATA[In the last couple of months, I started my new journey, leaving my Android position behind and started doing some web development. Working on those 2 platforms has many differences, I can’t say the one is better than the other, but there are many things that those 2 worlds can learn from each other.
+<!-- more -->
+In this post, I’ll focus on the things that I saw while working on our front-end React app. Things that I learned about Android and the way that we’re building apps.
+
+## 1. We write too much code
+
+Creating a custom view, even the simplest one, will probably going to take 1 too long View subclass. This class should contain a couple of constructors, getters/ setters, reading and parsing attributes and inflate an XML, and that’s without even mentioning the layout file. While on react you should only implement the render method (and maybe also CSS/SCSS file for customizations).
+
+For example, here is a simple user info widget, written in Android and React:
+
+<div><script src='https://gist.github.com/e6e3f36ce7df9a4c3a2306377708c883.js'></script>
+<noscript><pre><code>public class UserCardView extends FrameLayout {
+
+    private TextView userNameView;
+    private TextView userInfoView;
+    private ImageView userImageView;
+
+    public UserCardView(Context context) {
+        this(context, null);
+    }
+
+    public UserCardView(Context context, AttributeSet attrs) {
+        this(context, attrs, 0);
+    }
+
+    public UserCardView(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        init(context, attrs);
+    }
+
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    public UserCardView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        super(context, attrs, defStyleAttr, defStyleRes);
+        init(context, attrs);
+    }
+
+    private void init(Context context, AttributeSet attrs) {
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        inflater.inflate(R.layout.user_card_layout, this, true);
+
+        TypedArray a = context.getTheme().obtainStyledAttributes(
+                attrs,
+                R.styleable.DefaultUserCardView,
+                0, 0);
+
+        userNameView = (TextView) findViewById(R.id.user_name;
+        userInfoView = (TextView) findViewById(R.id.user_info;
+        userImageView = (ImageView) findViewById(R.id.user_avatar);
+
+        try {
+            boolean withAvatar = a.getBoolean(R.styleable.DefaultUserCardView_withAvatar, true);
+            userImageView.setVisibility(withAvatar ? View.VISIBLE : View.GONE);
+        } finally {
+            a.recycle();
+        }
+    }
+
+    public void setUser(User user) {
+        userNameView.setText(user.getName());
+        userInfoView.setText(user.getInfo());
+        userImageView.setImageResource(user.getAvatar());
+    }
+}</code></pre></noscript></div>
+
+<div><script src='https://gist.github.com/35aa8f80662f6f0f03d044cd6d9dedc4.js'></script>
+<noscript><pre><code>const UserCard = ({ user, withAvatar }) =&gt; {
+  return (
+    &lt;div&gt;
+      { withAvatar &amp;&amp; &lt;img src={user.avatarUrl}/&gt; }
+      &lt;span&gt;
+        {user.name}
+      &lt;/span&gt;
+      &lt;span&gt;
+        {user.info}
+      &lt;/span&gt;
+    &lt;/div&gt;
+  );
+};
+
+UserCard.propTypes = {
+  user: ProductShape.isRequired,
+  withAvatar: PropTypes.bool
+};</code></pre></noscript></div>
+
+
+I don’t event talk about things like JSON parsing, network calls or saving state.
+
+This is mainly because of the use of language like Java on Android vs JavaScript. You can eliminate some of the boilerplate if you’re using Kotlin, or use [Data Binding](https://developer.android.com/topic/libraries/data-binding/index.html) to get more done in the layout file but still.
+
+## 2. The development feedback cycle is too long
+How long it takes to see code changes on the device (virtual or physical) in Android studio? If you change small things like text or color, Google says it should take only a couple of seconds (when Instant run is enabled), most of the time it will take a couple dozen of seconds, and it even can get to a minute or two. Also- changes will be effected only when you click “Run”.
+
+How long it take with React when using Webpack (a module bundler, or a “complier” if you want)? Immediately. Like second or two. And that’s happening right when you save the file. Changed the wrong element? Boom! you see it right away.
+
+Don’t think that 5 or 10 seconds are really that different? When developing- every second count (and soon enough all those seconds will accumulate). Especially when those changes are shown passively (when the file is saved) and to actively (when you run the app). I really recommend you to see this [talk](https://vimeo.com/36579366) and see how it can affect your development (warning: the speaker will blow your mind).
+
+## 3. Using Flux architecture
+[Flux](http://facebook.github.io/flux/) is the application architecture that Facebook uses for building client-side web applications. It complements React’s composable view components by utilizing a unidirectional data flow. It’s more of a pattern rather than a formal framework, and when combining React Router with Redux we can get some pretty close data flow to Flux pattern.
+
+Flux making writing client side much cleaner and easier to debug and predict. Although there are some [examples](https://github.com/lgvalle/android-flux-todo-app) and [libraries](https://github.com/frostymarvelous/Fluxxan) for Android it’s still not widely used.
+On Android apps we’re still passing data around in all kind of ways (intents, DB, message bus, etc…), keeping it mutable that every component can change it and by this- making our life really hard.
+
+## 4. Separate the content from how it looks
+When building a page on Android I must also build its layout. I need to arrange the the page and it’s component and somehow put them together in the view. Even if I just want to focus on behavior- I must somehow play with Linear Layouts, Scroll Layouts and things like that.
+
+Then when I need to design the view I again need to return to the layout file and add all the magic. However, when I need to add animations- I’ll need to put it in the code.
+The View class and the View layout are not that separate, it’s hard to focus only on the behavior without handling the look and feel. In Android, it’s too coupled.
+
+But with React- you can extract all the UI-related code to the stylesheet file. for example, if I wanted to create a simple widget that changes the view state by clicking- I would do something like that ([JSFddle](https://jsfiddle.net/reactjs/69z2wepo/)):
+
+<div><script src='https://gist.github.com/d120440fe48defa1b7cbfe1edc59b943.js'></script>
+<noscript><pre><code>var Toggle = React.createClass({
+  getInitialState: function() {
+    return {
+      condition: false
+    }
+  },
+  handleClick: function() {
+    this.setState({
+      condition: !this.state.condition
+    });
+  },
+  render: function() {
+    return (
+      &lt;div&gt;
+        &lt;div onClick={this.handleClick}&gt; Click Me &lt;/div&gt;
+        &lt;div className={this.state.condition ? &quot;enabled&quot; : &quot;disabled&quot;}&gt; Hello World &lt;/div&gt;
+      &lt;/div&gt;
+    );
+  }
+});</code></pre></noscript></div>
+
+
+
+
+And in the SCSS file, I would decide what does a disabled item looks like (hidden? gray out? I don’t care right now).
+But if I wanted to do it in Android I would need to change it in the View class (or it’s parent, or in the OnClick listener).
+
+## 5. We can get better developer tools
+Do you remember the last time you select “Debug” in Android studio (I bet it was probably by mistake)? Do you remember those 1–2 minutes you waited until the app opened and the debugger was connected? Or that you attach the debugger to a running app and suddenly everything was slow as hell?
+
+Do you remember that time there was a weird spacing between your views and you had to turn on some flags in the developer options settings and hope you’ll understand each view bounds from some random rectangles on the screen?
+Do you remember trying to figure out what is going on with your database so you had to dump the database and pull it from the device?
+
+Do you remember that you wanted to try out some things in your view on the device but needed to change the code and re-run it every time?
+
+Chrome (and Firefox) developer tools make debugging and playing with your app so much easier that it is not fair. You can change views on the fly, inspect your elements easily and run some code in the console whenever you want.
+
+---
+
+Web development is really nice (and much harder that I thought it will be actually), but I still have a much warmer place in my heart for Android. Although it’s no fair to compare the two (Android need to work on remote devices or on emulators, it’s much “younger” than the web) I think that the two communities can learn one from each other.
+
+As for what web development can take from Android development- in the next post (hopefully).
+]]></content>
+  </entry>
+  
+</feed>

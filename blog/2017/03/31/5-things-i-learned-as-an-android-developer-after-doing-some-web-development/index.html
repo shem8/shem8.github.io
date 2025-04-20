@@ -1,0 +1,394 @@
+
+<!DOCTYPE HTML>
+
+<html lang="en-US">
+
+<head>
+	<meta charset="utf-8">
+	<title>5 things I learned as an Android developer after doing some Web development - Shem Magnezi Blog</title>
+	<meta name="author" content="Shem Magnezi">
+
+	
+	<meta name="description" content="5 Things I Learned as an Android Developer After Doing Some Web Development In the last couple of months, I started my new journey, leaving my &hellip;">
+	
+
+	<!-- Google AdSense -->
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5508892730714185" crossorigin="anonymous"></script>
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="Shem Magnezi Blog" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://blog.shem.dev/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<link href='https://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>5 things I learned as an Android developer after doing some Web development | Shem Magnezi Blog</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="5 things I learned as an Android developer after doing some Web development" />
+<meta name="author" content="Shem Magnezi" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="In the last couple of months, I started my new journey, leaving my Android position behind and started doing some web development. Working on those 2 platforms has many differences, I can’t say the one is better than the other, but there are many things that those 2 worlds can learn from each other. In this post, I’ll focus on the things that I saw while working on our front-end React app. Things that I learned about Android and the way that we’re building apps. 1. We write too much code Creating a custom view, even the simplest one, will probably going to take 1 too long View subclass. This class should contain a couple of constructors, getters/ setters, reading and parsing attributes and inflate an XML, and that’s without even mentioning the layout file. While on react you should only implement the render method (and maybe also CSS/SCSS file for customizations). For example, here is a simple user info widget, written in Android and React: public class UserCardView extends FrameLayout { private TextView userNameView; private TextView userInfoView; private ImageView userImageView; public UserCardView(Context context) { this(context, null); } public UserCardView(Context context, AttributeSet attrs) { this(context, attrs, 0); } public UserCardView(Context context, AttributeSet attrs, int defStyleAttr) { super(context, attrs, defStyleAttr); init(context, attrs); } @TargetApi(Build.VERSION_CODES.LOLLIPOP) public UserCardView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) { super(context, attrs, defStyleAttr, defStyleRes); init(context, attrs); } private void init(Context context, AttributeSet attrs) { LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE); inflater.inflate(R.layout.user_card_layout, this, true); TypedArray a = context.getTheme().obtainStyledAttributes( attrs, R.styleable.DefaultUserCardView, 0, 0); userNameView = (TextView) findViewById(R.id.user_name; userInfoView = (TextView) findViewById(R.id.user_info; userImageView = (ImageView) findViewById(R.id.user_avatar); try { boolean withAvatar = a.getBoolean(R.styleable.DefaultUserCardView_withAvatar, true); userImageView.setVisibility(withAvatar ? View.VISIBLE : View.GONE); } finally { a.recycle(); } } public void setUser(User user) { userNameView.setText(user.getName()); userInfoView.setText(user.getInfo()); userImageView.setImageResource(user.getAvatar()); } } const UserCard = ({ user, withAvatar }) =&gt; { return ( &lt;div&gt; { withAvatar &amp;&amp; &lt;img src={user.avatarUrl}/&gt; } &lt;span&gt; {user.name} &lt;/span&gt; &lt;span&gt; {user.info} &lt;/span&gt; &lt;/div&gt; ); }; UserCard.propTypes = { user: ProductShape.isRequired, withAvatar: PropTypes.bool }; I don’t event talk about things like JSON parsing, network calls or saving state. This is mainly because of the use of language like Java on Android vs JavaScript. You can eliminate some of the boilerplate if you’re using Kotlin, or use Data Binding to get more done in the layout file but still. 2. The development feedback cycle is too long How long it takes to see code changes on the device (virtual or physical) in Android studio? If you change small things like text or color, Google says it should take only a couple of seconds (when Instant run is enabled), most of the time it will take a couple dozen of seconds, and it even can get to a minute or two. Also- changes will be effected only when you click “Run”. How long it take with React when using Webpack (a module bundler, or a “complier” if you want)? Immediately. Like second or two. And that’s happening right when you save the file. Changed the wrong element? Boom! you see it right away. Don’t think that 5 or 10 seconds are really that different? When developing- every second count (and soon enough all those seconds will accumulate). Especially when those changes are shown passively (when the file is saved) and to actively (when you run the app). I really recommend you to see this talk and see how it can affect your development (warning: the speaker will blow your mind). 3. Using Flux architecture Flux is the application architecture that Facebook uses for building client-side web applications. It complements React’s composable view components by utilizing a unidirectional data flow. It’s more of a pattern rather than a formal framework, and when combining React Router with Redux we can get some pretty close data flow to Flux pattern. Flux making writing client side much cleaner and easier to debug and predict. Although there are some examples and libraries for Android it’s still not widely used. On Android apps we’re still passing data around in all kind of ways (intents, DB, message bus, etc…), keeping it mutable that every component can change it and by this- making our life really hard. 4. Separate the content from how it looks When building a page on Android I must also build its layout. I need to arrange the the page and it’s component and somehow put them together in the view. Even if I just want to focus on behavior- I must somehow play with Linear Layouts, Scroll Layouts and things like that. Then when I need to design the view I again need to return to the layout file and add all the magic. However, when I need to add animations- I’ll need to put it in the code. The View class and the View layout are not that separate, it’s hard to focus only on the behavior without handling the look and feel. In Android, it’s too coupled. But with React- you can extract all the UI-related code to the stylesheet file. for example, if I wanted to create a simple widget that changes the view state by clicking- I would do something like that (JSFddle): var Toggle = React.createClass({ getInitialState: function() { return { condition: false } }, handleClick: function() { this.setState({ condition: !this.state.condition }); }, render: function() { return ( &lt;div&gt; &lt;div onClick={this.handleClick}&gt; Click Me &lt;/div&gt; &lt;div className={this.state.condition ? &quot;enabled&quot; : &quot;disabled&quot;}&gt; Hello World &lt;/div&gt; &lt;/div&gt; ); } }); And in the SCSS file, I would decide what does a disabled item looks like (hidden? gray out? I don’t care right now). But if I wanted to do it in Android I would need to change it in the View class (or it’s parent, or in the OnClick listener). 5. We can get better developer tools Do you remember the last time you select “Debug” in Android studio (I bet it was probably by mistake)? Do you remember those 1–2 minutes you waited until the app opened and the debugger was connected? Or that you attach the debugger to a running app and suddenly everything was slow as hell? Do you remember that time there was a weird spacing between your views and you had to turn on some flags in the developer options settings and hope you’ll understand each view bounds from some random rectangles on the screen? Do you remember trying to figure out what is going on with your database so you had to dump the database and pull it from the device? Do you remember that you wanted to try out some things in your view on the device but needed to change the code and re-run it every time? Chrome (and Firefox) developer tools make debugging and playing with your app so much easier that it is not fair. You can change views on the fly, inspect your elements easily and run some code in the console whenever you want. Web development is really nice (and much harder that I thought it will be actually), but I still have a much warmer place in my heart for Android. Although it’s no fair to compare the two (Android need to work on remote devices or on emulators, it’s much “younger” than the web) I think that the two communities can learn one from each other. As for what web development can take from Android development- in the next post (hopefully)." />
+<meta property="og:description" content="In the last couple of months, I started my new journey, leaving my Android position behind and started doing some web development. Working on those 2 platforms has many differences, I can’t say the one is better than the other, but there are many things that those 2 worlds can learn from each other. In this post, I’ll focus on the things that I saw while working on our front-end React app. Things that I learned about Android and the way that we’re building apps. 1. We write too much code Creating a custom view, even the simplest one, will probably going to take 1 too long View subclass. This class should contain a couple of constructors, getters/ setters, reading and parsing attributes and inflate an XML, and that’s without even mentioning the layout file. While on react you should only implement the render method (and maybe also CSS/SCSS file for customizations). For example, here is a simple user info widget, written in Android and React: public class UserCardView extends FrameLayout { private TextView userNameView; private TextView userInfoView; private ImageView userImageView; public UserCardView(Context context) { this(context, null); } public UserCardView(Context context, AttributeSet attrs) { this(context, attrs, 0); } public UserCardView(Context context, AttributeSet attrs, int defStyleAttr) { super(context, attrs, defStyleAttr); init(context, attrs); } @TargetApi(Build.VERSION_CODES.LOLLIPOP) public UserCardView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) { super(context, attrs, defStyleAttr, defStyleRes); init(context, attrs); } private void init(Context context, AttributeSet attrs) { LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE); inflater.inflate(R.layout.user_card_layout, this, true); TypedArray a = context.getTheme().obtainStyledAttributes( attrs, R.styleable.DefaultUserCardView, 0, 0); userNameView = (TextView) findViewById(R.id.user_name; userInfoView = (TextView) findViewById(R.id.user_info; userImageView = (ImageView) findViewById(R.id.user_avatar); try { boolean withAvatar = a.getBoolean(R.styleable.DefaultUserCardView_withAvatar, true); userImageView.setVisibility(withAvatar ? View.VISIBLE : View.GONE); } finally { a.recycle(); } } public void setUser(User user) { userNameView.setText(user.getName()); userInfoView.setText(user.getInfo()); userImageView.setImageResource(user.getAvatar()); } } const UserCard = ({ user, withAvatar }) =&gt; { return ( &lt;div&gt; { withAvatar &amp;&amp; &lt;img src={user.avatarUrl}/&gt; } &lt;span&gt; {user.name} &lt;/span&gt; &lt;span&gt; {user.info} &lt;/span&gt; &lt;/div&gt; ); }; UserCard.propTypes = { user: ProductShape.isRequired, withAvatar: PropTypes.bool }; I don’t event talk about things like JSON parsing, network calls or saving state. This is mainly because of the use of language like Java on Android vs JavaScript. You can eliminate some of the boilerplate if you’re using Kotlin, or use Data Binding to get more done in the layout file but still. 2. The development feedback cycle is too long How long it takes to see code changes on the device (virtual or physical) in Android studio? If you change small things like text or color, Google says it should take only a couple of seconds (when Instant run is enabled), most of the time it will take a couple dozen of seconds, and it even can get to a minute or two. Also- changes will be effected only when you click “Run”. How long it take with React when using Webpack (a module bundler, or a “complier” if you want)? Immediately. Like second or two. And that’s happening right when you save the file. Changed the wrong element? Boom! you see it right away. Don’t think that 5 or 10 seconds are really that different? When developing- every second count (and soon enough all those seconds will accumulate). Especially when those changes are shown passively (when the file is saved) and to actively (when you run the app). I really recommend you to see this talk and see how it can affect your development (warning: the speaker will blow your mind). 3. Using Flux architecture Flux is the application architecture that Facebook uses for building client-side web applications. It complements React’s composable view components by utilizing a unidirectional data flow. It’s more of a pattern rather than a formal framework, and when combining React Router with Redux we can get some pretty close data flow to Flux pattern. Flux making writing client side much cleaner and easier to debug and predict. Although there are some examples and libraries for Android it’s still not widely used. On Android apps we’re still passing data around in all kind of ways (intents, DB, message bus, etc…), keeping it mutable that every component can change it and by this- making our life really hard. 4. Separate the content from how it looks When building a page on Android I must also build its layout. I need to arrange the the page and it’s component and somehow put them together in the view. Even if I just want to focus on behavior- I must somehow play with Linear Layouts, Scroll Layouts and things like that. Then when I need to design the view I again need to return to the layout file and add all the magic. However, when I need to add animations- I’ll need to put it in the code. The View class and the View layout are not that separate, it’s hard to focus only on the behavior without handling the look and feel. In Android, it’s too coupled. But with React- you can extract all the UI-related code to the stylesheet file. for example, if I wanted to create a simple widget that changes the view state by clicking- I would do something like that (JSFddle): var Toggle = React.createClass({ getInitialState: function() { return { condition: false } }, handleClick: function() { this.setState({ condition: !this.state.condition }); }, render: function() { return ( &lt;div&gt; &lt;div onClick={this.handleClick}&gt; Click Me &lt;/div&gt; &lt;div className={this.state.condition ? &quot;enabled&quot; : &quot;disabled&quot;}&gt; Hello World &lt;/div&gt; &lt;/div&gt; ); } }); And in the SCSS file, I would decide what does a disabled item looks like (hidden? gray out? I don’t care right now). But if I wanted to do it in Android I would need to change it in the View class (or it’s parent, or in the OnClick listener). 5. We can get better developer tools Do you remember the last time you select “Debug” in Android studio (I bet it was probably by mistake)? Do you remember those 1–2 minutes you waited until the app opened and the debugger was connected? Or that you attach the debugger to a running app and suddenly everything was slow as hell? Do you remember that time there was a weird spacing between your views and you had to turn on some flags in the developer options settings and hope you’ll understand each view bounds from some random rectangles on the screen? Do you remember trying to figure out what is going on with your database so you had to dump the database and pull it from the device? Do you remember that you wanted to try out some things in your view on the device but needed to change the code and re-run it every time? Chrome (and Firefox) developer tools make debugging and playing with your app so much easier that it is not fair. You can change views on the fly, inspect your elements easily and run some code in the console whenever you want. Web development is really nice (and much harder that I thought it will be actually), but I still have a much warmer place in my heart for Android. Although it’s no fair to compare the two (Android need to work on remote devices or on emulators, it’s much “younger” than the web) I think that the two communities can learn one from each other. As for what web development can take from Android development- in the next post (hopefully)." />
+<link rel="canonical" href="http://blog.shem.dev/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/" />
+<meta property="og:url" content="http://blog.shem.dev/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/" />
+<meta property="og:site_name" content="Shem Magnezi Blog" />
+<meta property="og:image" content="https://blog.shem.dev/images/shem.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-03-31T10:32:32+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://blog.shem.dev/images/shem.jpg" />
+<meta property="twitter:title" content="5 things I learned as an Android developer after doing some Web development" />
+<meta name="twitter:site" content="@shemag8" />
+<meta name="twitter:creator" content="@Shem Magnezi" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Shem Magnezi"},"dateModified":"2017-03-31T10:32:32+00:00","datePublished":"2017-03-31T10:32:32+00:00","description":"In the last couple of months, I started my new journey, leaving my Android position behind and started doing some web development. Working on those 2 platforms has many differences, I can’t say the one is better than the other, but there are many things that those 2 worlds can learn from each other. In this post, I’ll focus on the things that I saw while working on our front-end React app. Things that I learned about Android and the way that we’re building apps. 1. We write too much code Creating a custom view, even the simplest one, will probably going to take 1 too long View subclass. This class should contain a couple of constructors, getters/ setters, reading and parsing attributes and inflate an XML, and that’s without even mentioning the layout file. While on react you should only implement the render method (and maybe also CSS/SCSS file for customizations). For example, here is a simple user info widget, written in Android and React: public class UserCardView extends FrameLayout { private TextView userNameView; private TextView userInfoView; private ImageView userImageView; public UserCardView(Context context) { this(context, null); } public UserCardView(Context context, AttributeSet attrs) { this(context, attrs, 0); } public UserCardView(Context context, AttributeSet attrs, int defStyleAttr) { super(context, attrs, defStyleAttr); init(context, attrs); } @TargetApi(Build.VERSION_CODES.LOLLIPOP) public UserCardView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) { super(context, attrs, defStyleAttr, defStyleRes); init(context, attrs); } private void init(Context context, AttributeSet attrs) { LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE); inflater.inflate(R.layout.user_card_layout, this, true); TypedArray a = context.getTheme().obtainStyledAttributes( attrs, R.styleable.DefaultUserCardView, 0, 0); userNameView = (TextView) findViewById(R.id.user_name; userInfoView = (TextView) findViewById(R.id.user_info; userImageView = (ImageView) findViewById(R.id.user_avatar); try { boolean withAvatar = a.getBoolean(R.styleable.DefaultUserCardView_withAvatar, true); userImageView.setVisibility(withAvatar ? View.VISIBLE : View.GONE); } finally { a.recycle(); } } public void setUser(User user) { userNameView.setText(user.getName()); userInfoView.setText(user.getInfo()); userImageView.setImageResource(user.getAvatar()); } } const UserCard = ({ user, withAvatar }) =&gt; { return ( &lt;div&gt; { withAvatar &amp;&amp; &lt;img src={user.avatarUrl}/&gt; } &lt;span&gt; {user.name} &lt;/span&gt; &lt;span&gt; {user.info} &lt;/span&gt; &lt;/div&gt; ); }; UserCard.propTypes = { user: ProductShape.isRequired, withAvatar: PropTypes.bool }; I don’t event talk about things like JSON parsing, network calls or saving state. This is mainly because of the use of language like Java on Android vs JavaScript. You can eliminate some of the boilerplate if you’re using Kotlin, or use Data Binding to get more done in the layout file but still. 2. The development feedback cycle is too long How long it takes to see code changes on the device (virtual or physical) in Android studio? If you change small things like text or color, Google says it should take only a couple of seconds (when Instant run is enabled), most of the time it will take a couple dozen of seconds, and it even can get to a minute or two. Also- changes will be effected only when you click “Run”. How long it take with React when using Webpack (a module bundler, or a “complier” if you want)? Immediately. Like second or two. And that’s happening right when you save the file. Changed the wrong element? Boom! you see it right away. Don’t think that 5 or 10 seconds are really that different? When developing- every second count (and soon enough all those seconds will accumulate). Especially when those changes are shown passively (when the file is saved) and to actively (when you run the app). I really recommend you to see this talk and see how it can affect your development (warning: the speaker will blow your mind). 3. Using Flux architecture Flux is the application architecture that Facebook uses for building client-side web applications. It complements React’s composable view components by utilizing a unidirectional data flow. It’s more of a pattern rather than a formal framework, and when combining React Router with Redux we can get some pretty close data flow to Flux pattern. Flux making writing client side much cleaner and easier to debug and predict. Although there are some examples and libraries for Android it’s still not widely used. On Android apps we’re still passing data around in all kind of ways (intents, DB, message bus, etc…), keeping it mutable that every component can change it and by this- making our life really hard. 4. Separate the content from how it looks When building a page on Android I must also build its layout. I need to arrange the the page and it’s component and somehow put them together in the view. Even if I just want to focus on behavior- I must somehow play with Linear Layouts, Scroll Layouts and things like that. Then when I need to design the view I again need to return to the layout file and add all the magic. However, when I need to add animations- I’ll need to put it in the code. The View class and the View layout are not that separate, it’s hard to focus only on the behavior without handling the look and feel. In Android, it’s too coupled. But with React- you can extract all the UI-related code to the stylesheet file. for example, if I wanted to create a simple widget that changes the view state by clicking- I would do something like that (JSFddle): var Toggle = React.createClass({ getInitialState: function() { return { condition: false } }, handleClick: function() { this.setState({ condition: !this.state.condition }); }, render: function() { return ( &lt;div&gt; &lt;div onClick={this.handleClick}&gt; Click Me &lt;/div&gt; &lt;div className={this.state.condition ? &quot;enabled&quot; : &quot;disabled&quot;}&gt; Hello World &lt;/div&gt; &lt;/div&gt; ); } }); And in the SCSS file, I would decide what does a disabled item looks like (hidden? gray out? I don’t care right now). But if I wanted to do it in Android I would need to change it in the View class (or it’s parent, or in the OnClick listener). 5. We can get better developer tools Do you remember the last time you select “Debug” in Android studio (I bet it was probably by mistake)? Do you remember those 1–2 minutes you waited until the app opened and the debugger was connected? Or that you attach the debugger to a running app and suddenly everything was slow as hell? Do you remember that time there was a weird spacing between your views and you had to turn on some flags in the developer options settings and hope you’ll understand each view bounds from some random rectangles on the screen? Do you remember trying to figure out what is going on with your database so you had to dump the database and pull it from the device? Do you remember that you wanted to try out some things in your view on the device but needed to change the code and re-run it every time? Chrome (and Firefox) developer tools make debugging and playing with your app so much easier that it is not fair. You can change views on the fly, inspect your elements easily and run some code in the console whenever you want. Web development is really nice (and much harder that I thought it will be actually), but I still have a much warmer place in my heart for Android. Although it’s no fair to compare the two (Android need to work on remote devices or on emulators, it’s much “younger” than the web) I think that the two communities can learn one from each other. As for what web development can take from Android development- in the next post (hopefully).","headline":"5 things I learned as an Android developer after doing some Web development","image":"https://blog.shem.dev/images/shem.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://blog.shem.dev/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/"},"url":"http://blog.shem.dev/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-78073130-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("smagnezi8@gmail.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+		});
+	</script>
+	
+</div>
+
+<nav id="main-nav"><ul class="main">
+    <li><a href="/">Blog</a></li>
+    <li><a href="/talks">Talks</a></li>
+    <li><a href="/projects">Side Projects</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+			<a class="email" href="mailto:smagnezi8@gmail.com" title="Email">Email</a>
+		
+		
+		
+    	
+			<a class="medium" href="https://medium.com/@shemag8" title="Medium">Medium</a>
+		
+		
+			<a class="github" href="https://github.com/shem8" title="GitHub">GitHub</a>
+		
+		
+			<a class="twitter" href="http://twitter.com/shemag8" title="Twitter">Twitter</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+    	
+    	
+			<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+
+	<div id="ad">
+		<!-- side-responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5508892730714185"
+     data-ad-slot="7901214956"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">5 Things I Learned as an Android Developer After Doing Some Web Development</h1>
+	<div class="entry-content" itemprop="articleBody"><p>In the last couple of months, I started my new journey, leaving my Android position behind and started doing some web development. Working on those 2 platforms has many differences, I can’t say the one is better than the other, but there are many things that those 2 worlds can learn from each other.</p>
+
+<!-- more -->
+
+
+<p>In this post, I’ll focus on the things that I saw while working on our front-end React app. Things that I learned about Android and the way that we’re building apps.</p>
+
+<h2>1. We write too much code</h2>
+
+<p>Creating a custom view, even the simplest one, will probably going to take 1 too long View subclass. This class should contain a couple of constructors, getters/ setters, reading and parsing attributes and inflate an XML, and that’s without even mentioning the layout file. While on react you should only implement the render method (and maybe also CSS/SCSS file for customizations).</p>
+
+<p>For example, here is a simple user info widget, written in Android and React:</p>
+
+<div><script src='https://gist.github.com/e6e3f36ce7df9a4c3a2306377708c883.js'></script>
+<noscript><pre><code>public class UserCardView extends FrameLayout {
+
+    private TextView userNameView;
+    private TextView userInfoView;
+    private ImageView userImageView;
+
+    public UserCardView(Context context) {
+        this(context, null);
+    }
+
+    public UserCardView(Context context, AttributeSet attrs) {
+        this(context, attrs, 0);
+    }
+
+    public UserCardView(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        init(context, attrs);
+    }
+
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    public UserCardView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        super(context, attrs, defStyleAttr, defStyleRes);
+        init(context, attrs);
+    }
+
+    private void init(Context context, AttributeSet attrs) {
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        inflater.inflate(R.layout.user_card_layout, this, true);
+
+        TypedArray a = context.getTheme().obtainStyledAttributes(
+                attrs,
+                R.styleable.DefaultUserCardView,
+                0, 0);
+
+        userNameView = (TextView) findViewById(R.id.user_name;
+        userInfoView = (TextView) findViewById(R.id.user_info;
+        userImageView = (ImageView) findViewById(R.id.user_avatar);
+
+        try {
+            boolean withAvatar = a.getBoolean(R.styleable.DefaultUserCardView_withAvatar, true);
+            userImageView.setVisibility(withAvatar ? View.VISIBLE : View.GONE);
+        } finally {
+            a.recycle();
+        }
+    }
+
+    public void setUser(User user) {
+        userNameView.setText(user.getName());
+        userInfoView.setText(user.getInfo());
+        userImageView.setImageResource(user.getAvatar());
+    }
+}</code></pre></noscript></div>
+
+
+
+
+<div><script src='https://gist.github.com/35aa8f80662f6f0f03d044cd6d9dedc4.js'></script>
+<noscript><pre><code>const UserCard = ({ user, withAvatar }) =&gt; {
+  return (
+    &lt;div&gt;
+      { withAvatar &amp;&amp; &lt;img src={user.avatarUrl}/&gt; }
+      &lt;span&gt;
+        {user.name}
+      &lt;/span&gt;
+      &lt;span&gt;
+        {user.info}
+      &lt;/span&gt;
+    &lt;/div&gt;
+  );
+};
+
+UserCard.propTypes = {
+  user: ProductShape.isRequired,
+  withAvatar: PropTypes.bool
+};</code></pre></noscript></div>
+
+
+<p>I don’t event talk about things like JSON parsing, network calls or saving state.</p>
+
+<p>This is mainly because of the use of language like Java on Android vs JavaScript. You can eliminate some of the boilerplate if you’re using Kotlin, or use <a href="https://developer.android.com/topic/libraries/data-binding/index.html">Data Binding</a> to get more done in the layout file but still.</p>
+
+<h2>2. The development feedback cycle is too long</h2>
+
+<p>How long it takes to see code changes on the device (virtual or physical) in Android studio? If you change small things like text or color, Google says it should take only a couple of seconds (when Instant run is enabled), most of the time it will take a couple dozen of seconds, and it even can get to a minute or two. Also- changes will be effected only when you click “Run”.</p>
+
+<p>How long it take with React when using Webpack (a module bundler, or a “complier” if you want)? Immediately. Like second or two. And that’s happening right when you save the file. Changed the wrong element? Boom! you see it right away.</p>
+
+<p>Don’t think that 5 or 10 seconds are really that different? When developing- every second count (and soon enough all those seconds will accumulate). Especially when those changes are shown passively (when the file is saved) and to actively (when you run the app). I really recommend you to see this <a href="https://vimeo.com/36579366">talk</a> and see how it can affect your development (warning: the speaker will blow your mind).</p>
+
+<h2>3. Using Flux architecture</h2>
+
+<p><a href="http://facebook.github.io/flux/">Flux</a> is the application architecture that Facebook uses for building client-side web applications. It complements React’s composable view components by utilizing a unidirectional data flow. It’s more of a pattern rather than a formal framework, and when combining React Router with Redux we can get some pretty close data flow to Flux pattern.</p>
+
+<p>Flux making writing client side much cleaner and easier to debug and predict. Although there are some <a href="https://github.com/lgvalle/android-flux-todo-app">examples</a> and <a href="https://github.com/frostymarvelous/Fluxxan">libraries</a> for Android it’s still not widely used.
+On Android apps we’re still passing data around in all kind of ways (intents, DB, message bus, etc…), keeping it mutable that every component can change it and by this- making our life really hard.</p>
+
+<h2>4. Separate the content from how it looks</h2>
+
+<p>When building a page on Android I must also build its layout. I need to arrange the the page and it’s component and somehow put them together in the view. Even if I just want to focus on behavior- I must somehow play with Linear Layouts, Scroll Layouts and things like that.</p>
+
+<p>Then when I need to design the view I again need to return to the layout file and add all the magic. However, when I need to add animations- I’ll need to put it in the code.
+The View class and the View layout are not that separate, it’s hard to focus only on the behavior without handling the look and feel. In Android, it’s too coupled.</p>
+
+<p>But with React- you can extract all the UI-related code to the stylesheet file. for example, if I wanted to create a simple widget that changes the view state by clicking- I would do something like that (<a href="https://jsfiddle.net/reactjs/69z2wepo/">JSFddle</a>):</p>
+
+<div><script src='https://gist.github.com/d120440fe48defa1b7cbfe1edc59b943.js'></script>
+<noscript><pre><code>var Toggle = React.createClass({
+  getInitialState: function() {
+    return {
+      condition: false
+    }
+  },
+  handleClick: function() {
+    this.setState({
+      condition: !this.state.condition
+    });
+  },
+  render: function() {
+    return (
+      &lt;div&gt;
+        &lt;div onClick={this.handleClick}&gt; Click Me &lt;/div&gt;
+        &lt;div className={this.state.condition ? &quot;enabled&quot; : &quot;disabled&quot;}&gt; Hello World &lt;/div&gt;
+      &lt;/div&gt;
+    );
+  }
+});</code></pre></noscript></div>
+
+
+<p>And in the SCSS file, I would decide what does a disabled item looks like (hidden? gray out? I don’t care right now).
+But if I wanted to do it in Android I would need to change it in the View class (or it’s parent, or in the OnClick listener).</p>
+
+<h2>5. We can get better developer tools</h2>
+
+<p>Do you remember the last time you select “Debug” in Android studio (I bet it was probably by mistake)? Do you remember those 1–2 minutes you waited until the app opened and the debugger was connected? Or that you attach the debugger to a running app and suddenly everything was slow as hell?</p>
+
+<p>Do you remember that time there was a weird spacing between your views and you had to turn on some flags in the developer options settings and hope you’ll understand each view bounds from some random rectangles on the screen?
+Do you remember trying to figure out what is going on with your database so you had to dump the database and pull it from the device?</p>
+
+<p>Do you remember that you wanted to try out some things in your view on the device but needed to change the code and re-run it every time?</p>
+
+<p>Chrome (and Firefox) developer tools make debugging and playing with your app so much easier that it is not fair. You can change views on the fly, inspect your elements easily and run some code in the console whenever you want.</p>
+
+<hr />
+
+<p>Web development is really nice (and much harder that I thought it will be actually), but I still have a much warmer place in my heart for Android. Although it’s no fair to compare the two (Android need to work on remote devices or on emulators, it’s much “younger” than the web) I think that the two communities can learn one from each other.</p>
+
+<p>As for what web development can take from Android development- in the next post (hopefully).</p>
+</div>
+
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="https://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+<!-- Post ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5508892730714185"
+     data-ad-slot="8917228557"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+<section id="comment">
+    <h1 class="title">Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+</div>
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2025
+
+    Shem Magnezi
+
+
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
+		</div>
+	</div>
+	
+
+<script type="text/javascript">
+      var disqus_shortname = 'shemblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.shem.dev/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/';
+        var disqus_url = 'http://blog.shem.dev/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'https://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+</body>
+</html>

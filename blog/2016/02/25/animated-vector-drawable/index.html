@@ -1,0 +1,532 @@
+
+<!DOCTYPE HTML>
+
+<html lang="en-US">
+
+<head>
+	<meta charset="utf-8">
+	<title>Animated Vector Drawable - Shem Magnezi Blog</title>
+	<meta name="author" content="Shem Magnezi">
+
+	
+	<meta name="description" content="Animated Vector Drawable In API 21 the Android team released bunch of very cool things for material design, most of the things focus around the &hellip;">
+	
+
+	<!-- Google AdSense -->
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5508892730714185" crossorigin="anonymous"></script>
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="Shem Magnezi Blog" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://blog.shem.dev/blog/2016/02/25/animated-vector-drawable/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<link href='https://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Animated Vector Drawable | Shem Magnezi Blog</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Animated Vector Drawable" />
+<meta name="author" content="smagnezi8" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="In API 21 the Android team released bunch of very cool things for material design, most of the things focus around the design specs like colors or transition animation, other were for the new widgets like FAB, card view or recycle view, but within all those things there were also two things that barely discussed- VectorDrawable and AnimatedVectorDrawable." />
+<meta property="og:description" content="In API 21 the Android team released bunch of very cool things for material design, most of the things focus around the design specs like colors or transition animation, other were for the new widgets like FAB, card view or recycle view, but within all those things there were also two things that barely discussed- VectorDrawable and AnimatedVectorDrawable." />
+<link rel="canonical" href="http://blog.shem.dev/blog/2016/02/25/animated-vector-drawable/" />
+<meta property="og:url" content="http://blog.shem.dev/blog/2016/02/25/animated-vector-drawable/" />
+<meta property="og:site_name" content="Shem Magnezi Blog" />
+<meta property="og:image" content="https://blog.shem.dev/images/shem.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-02-25T19:43:46+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://blog.shem.dev/images/shem.jpg" />
+<meta property="twitter:title" content="Animated Vector Drawable" />
+<meta name="twitter:site" content="@shemag8" />
+<meta name="twitter:creator" content="@smagnezi8" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"smagnezi8"},"dateModified":"2016-02-25T19:43:46+00:00","datePublished":"2016-02-25T19:43:46+00:00","description":"In API 21 the Android team released bunch of very cool things for material design, most of the things focus around the design specs like colors or transition animation, other were for the new widgets like FAB, card view or recycle view, but within all those things there were also two things that barely discussed- VectorDrawable and AnimatedVectorDrawable.","headline":"Animated Vector Drawable","image":"https://blog.shem.dev/images/shem.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://blog.shem.dev/blog/2016/02/25/animated-vector-drawable/"},"url":"http://blog.shem.dev/blog/2016/02/25/animated-vector-drawable/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-78073130-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("smagnezi8@gmail.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+		});
+	</script>
+	
+</div>
+
+<nav id="main-nav"><ul class="main">
+    <li><a href="/">Blog</a></li>
+    <li><a href="/talks">Talks</a></li>
+    <li><a href="/projects">Side Projects</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+			<a class="email" href="mailto:smagnezi8@gmail.com" title="Email">Email</a>
+		
+		
+		
+    	
+			<a class="medium" href="https://medium.com/@shemag8" title="Medium">Medium</a>
+		
+		
+			<a class="github" href="https://github.com/shem8" title="GitHub">GitHub</a>
+		
+		
+			<a class="twitter" href="http://twitter.com/shemag8" title="Twitter">Twitter</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+    	
+    	
+			<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+
+	<div id="ad">
+		<!-- side-responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5508892730714185"
+     data-ad-slot="7901214956"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">Animated Vector Drawable</h1>
+	<div class="entry-content" itemprop="articleBody"><p>In API 21 the Android team released bunch of very cool things for material design, most of the things focus around the design specs like colors or transition animation, other were for the new widgets like FAB, card view or recycle view, but within all those things there were also two things that barely discussed- <a href="http://developer.android.com/reference/android/graphics/drawable/VectorDrawable.html">VectorDrawable</a> and <a href="http://developer.android.com/reference/android/graphics/drawable/AnimatedVectorDrawable.html">AnimatedVectorDrawable</a>.</p>
+
+<!--more-->
+
+
+<p><em>Edit: looks like those classes became so popular that the Android team decided to add them to the <a href="http://android-developers.blogspot.co.il/2016/02/android-support-library-232.html">latest support library</a>, yay!</em></p>
+
+<h2>Android resources</h2>
+
+<p>In Android, recourses took lots of space in the final APK, tools like Proguard or loading modules dynamically helped the developers very much decreasing their app size, but when it came to assets, we were very limited. You had to choose between create asset for each density or paying with cpu time and let android doing the resizing and risk by not perfect asset.</p>
+
+<p>I saw couple of apps that choose to download their assets from the internet but that&rsquo;s might be problematic for first run (intro) or cases you don&rsquo;t have a connection.</p>
+
+<p>That&rsquo;s why I was so happy hearing about the new VectorDrawable introduced in API 21, that was let us the ability to create vector shapes and scale them easily for all screen sizes. This was really great for icons or small buttons.</p>
+
+<p>Of course, developers were able to do it before with a custom view and just draw the icon them self with Path, but the VectorDrawable save us the unnecessary view and it also use the SVG Path syntax that it much easier and much more popular. Moreover- Android Studio were able to show you a vector drawable preview, what that make it much more connivance!</p>
+
+<h2>Animations</h2>
+
+<p>Animations were a pain too. You basically had 3 options:</p>
+
+<ol>
+<li><p>For a simple animations (like scaling, fading or moving) using the build-in view property animation, that was the case for 90% of the time.</p></li>
+<li><p>If you had more complex animation on complex view you could create a custom animation, but for this you had to write lots of code</p></li>
+<li><p>Use AnimationDrawable and put drawable for each frame.</p></li>
+</ol>
+
+
+<p>So again- for not trivial cases, you had to choose between writing lots of code or putting lots of assets.</p>
+
+<p>That&rsquo;s when AnimatedVectorDrawable introduced and let developers use basic animations with their VectorDrawables with few lines of code and much lower space.</p>
+
+<h2>Live example</h2>
+
+<p>Let&rsquo;s start- assume we have some search component and we want to move to and from search state. So we need to animate between search icon and cancel icon:</p>
+
+<p><img src="https://shem8.files.wordpress.com/2016/02/search_icon.png" width="150" height="150">
+<img src="https://shem8.files.wordpress.com/2016/02/cancel_icon.png" width="150" height="150"></p>
+
+<p>And the animation between those 2 icons (Added guides and slow motion to better understand the transition):</p>
+
+<p><img class="center" src="https://shem8.files.wordpress.com/2016/02/gif.gif"></p>
+
+<p>As you can see we actually have 3 shapes that moves: 2 half circles that moves to lines (green and blue) and the line of the magnifying glass that just getting bigger and reaching to the end.</p>
+
+<p>First we need to create the shapes for the search icon:</p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+</span><span class='line'><span class="nt">&lt;vector</span><span class="w"> </span><span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+</span><span class='line'><span class="w">    </span><span class="na">android:width=</span><span class="s">&quot;24dp&quot;</span>
+</span><span class='line'><span class="w">    </span><span class="na">android:height=</span><span class="s">&quot;24dp&quot;</span>
+</span><span class='line'><span class="w">    </span><span class="na">android:viewportWidth=</span><span class="s">&quot;24&quot;</span>
+</span><span class='line'><span class="w">    </span><span class="na">android:viewportHeight=</span><span class="s">&quot;24&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="w">    </span><span class="nt">&lt;path</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:name=</span><span class="s">&quot;line&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:pathData=</span><span class="s">&quot;M5.705,5.705 L18.295,18.295&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:strokeWidth=</span><span class="s">&quot;2&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:strokeColor=</span><span class="s">&quot;#000000&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:trimPathStart=</span><span class="s">&quot;0.45&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:trimPathEnd=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="w">    </span><span class="nt">&lt;path</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:name=</span><span class="s">&quot;circle1&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:pathData=</span><span class="s">&quot;M5.705,5.705 A 4 4 0 1 1 12,12 L5.705,18.295&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:strokeWidth=</span><span class="s">&quot;2&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:strokeColor=</span><span class="s">&quot;#000000&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:trimPathStart=</span><span class="s">&quot;0&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:trimPathEnd=</span><span class="s">&quot;0.6&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="w">    </span><span class="nt">&lt;path</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:name=</span><span class="s">&quot;circle2&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:pathData=</span><span class="s">&quot;M18.295,5.705 L12,12 A 4 4 0 1 1 5.705,5.705&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:strokeWidth=</span><span class="s">&quot;2&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:strokeColor=</span><span class="s">&quot;#000000&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:trimPathStart=</span><span class="s">&quot;0.4&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:trimPathEnd=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span class='line'><span class="nt">&lt;/vector&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>The syntax for creating SVG paths is not that complicated and you can learn about it <a href="https://www.w3.org/TR/SVG/paths.html">here</a>, Android Studio is also very handy here because you can see a preview and also import existent material app icons and see their paths as described <a href="http://developer.android.com/tools/help/vector-asset-studio.html">here</a>.</p>
+
+<p>Now lets create the animation, we&rsquo;ll focus on the animation from the search icon to cancel, the opposite is pretty the same just with reverse values. We going to create 3 different animations:</p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span></span><span class="nt">&lt;set</span>
+</span><span class='line'><span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+</span><span class='line'><span class="na">android:ordering=</span><span class="s">&quot;sequentially&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="w">    </span><span class="cm">&lt;!-- first we need to immediately reset state --&gt;</span>
+</span><span class='line'><span class="w">    </span><span class="nt">&lt;objectAnimator</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:duration=</span><span class="s">&quot;0&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:propertyName=</span><span class="s">&quot;trimPathStart&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:valueFrom=</span><span class="s">&quot;0.45&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:valueTo=</span><span class="s">&quot;0.45&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="w">    </span><span class="cm">&lt;!-- then run the animation after a delay --&gt;</span>
+</span><span class='line'><span class="w">    </span><span class="nt">&lt;objectAnimator</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:propertyName=</span><span class="s">&quot;trimPathStart&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:duration=</span><span class="s">&quot;300&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:startOffset=</span><span class="s">&quot;250&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:interpolator=</span><span class="s">&quot;@android:interpolator/fast_out_slow_in&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:valueFrom=</span><span class="s">&quot;0.45&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:valueTo=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;/set&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span></span><span class="nt">&lt;set</span>
+</span><span class='line'><span class="w">    </span><span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+</span><span class='line'><span class="w">    </span><span class="na">android:ordering=</span><span class="s">&quot;together&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="w">    </span><span class="nt">&lt;objectAnimator</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:propertyName=</span><span class="s">&quot;trimPathStart&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:valueFrom=</span><span class="s">&quot;0&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:valueTo=</span><span class="s">&quot;0.6&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:duration=</span><span class="s">&quot;450&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="w">    </span><span class="nt">&lt;objectAnimator</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:propertyName=</span><span class="s">&quot;trimPathEnd&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:valueFrom=</span><span class="s">&quot;0.6&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:valueTo=</span><span class="s">&quot;1&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:duration=</span><span class="s">&quot;600&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;/set&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span></span><span class="nt">&lt;set</span>
+</span><span class='line'><span class="w">    </span><span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+</span><span class='line'><span class="w">    </span><span class="na">android:ordering=</span><span class="s">&quot;together&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="w">    </span><span class="nt">&lt;objectAnimator</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:propertyName=</span><span class="s">&quot;trimPathStart&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:valueFrom=</span><span class="s">&quot;0.4&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:valueTo=</span><span class="s">&quot;0&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:duration=</span><span class="s">&quot;600&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="w">    </span><span class="nt">&lt;objectAnimator</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:propertyName=</span><span class="s">&quot;trimPathEnd&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:valueFrom=</span><span class="s">&quot;1&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:valueTo=</span><span class="s">&quot;0.4&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:duration=</span><span class="s">&quot;450&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;/set&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>The animations are pretty basics and what we&rsquo;re doing here is just changing the start or the end of the path. Now we need to bring all animation together:</p>
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span></span><span class="nt">&lt;animated-vector</span>
+</span><span class='line'><span class="w">    </span><span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+</span><span class='line'><span class="w">    </span><span class="na">android:drawable=</span><span class="s">&quot;@drawable/searchback_search&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="w">    </span><span class="nt">&lt;target</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:name=</span><span class="s">&quot;line&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:animation=</span><span class="s">&quot;@animator/line_to_cancel&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="w">    </span><span class="nt">&lt;target</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:name=</span><span class="s">&quot;circle1&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:animation=</span><span class="s">&quot;@animator/circle1_to_cancel&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="w">    </span><span class="nt">&lt;target</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:name=</span><span class="s">&quot;circle2&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:animation=</span><span class="s">&quot;@animator/circle2_to_cancel&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;/animated-vector&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+
+<p>And now you can easily use the  search_to_cancel drawable in code, just don&rsquo;t forget to call <strong>start()</strong>:</p>
+
+<p><img class="center" src="https://shem8.files.wordpress.com/2016/02/final.gif"></p>
+
+<p>A few notes regarding to this process:</p>
+
+<ol>
+<li><p>Without <a href="//twitter.com/crafty">Nick Butcher</a> and his great resources (like the <a href="https://github.com/nickbutcher/plaid">plaid</a> app) I wouldn&rsquo;t know anything about AnimatedVectorDrawable, so a lot of credit from this blog post should go to him.</p></li>
+<li><p>Most of the paths are not that easy to build and you&rsquo;ll need to play with this pretty much, you can use tools like Photoshop to export SVG data, but still, some manually work be will here.</p></li>
+<li><p>The preview in Android Studio for the drawables is a bit buggy (especially around trimmed paths) so you need to test some things on device sometimes.</p></li>
+<li><p>From what I saw- on the first times the animation can stuck, so it better to set the final asset state after some delay to make sure the icon looks good in the end of the animation.</p></li>
+</ol>
+
+
+<p>That&rsquo;s for this time, hopes this will help you in the next time you want to build a great UX. =)
+<br>
+<br></p>
+
+<hr />
+
+<p><strong>Liked this post? Please share it with your friends!</strong></p>
+</div>
+
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="https://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+<!-- Post ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5508892730714185"
+     data-ad-slot="8917228557"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+<section id="comment">
+    <h1 class="title">Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+</div>
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2025
+
+    Shem Magnezi
+
+
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
+		</div>
+	</div>
+	
+
+<script type="text/javascript">
+      var disqus_shortname = 'shemblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.shem.dev/blog/2016/02/25/animated-vector-drawable/';
+        var disqus_url = 'http://blog.shem.dev/blog/2016/02/25/animated-vector-drawable/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'https://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+</body>
+</html>

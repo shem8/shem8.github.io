@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: android | Shem Magnezi Blog]]></title>
+  <link href="http://blog.shem.dev/blog/categories/android/atom.xml" rel="self"/>
+  <link href="http://blog.shem.dev/"/>
+  <updated>2025-04-20T10:58:27+00:00</updated>
+  <id>http://blog.shem.dev/</id>
+  <author>
+    <name><![CDATA[Shem Magnezi]]></name>
+    <email><![CDATA[smagnezi8@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[5 things React world can learn from Android]]></title>
+    <link href="http://blog.shem.dev/blog/2017/07/02/5-things-react-world-can-learn-from-android/"/>
+    <updated>2017-07-02T18:52:47+00:00</updated>
+    <id>http://blog.shem.dev/blog/2017/07/02/5-things-react-world-can-learn-from-android</id>
+    <content type="html"><![CDATA[In my [previous post](https://blog.shem.dev/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/), I talked about a couple of things I notice after moving from my usual gig as an Android developer and doing some web development (especially React).
+
+As promised, after naming some things that Android can learn from the web development world, I will now focus on the other side- what can web developers can borrow from the Android world.
+<!-- more -->
+
+So lets start *(Putting my helmet on)*:
+
+## 1. A decent IDE
+Oh yes, I'm touching a nerve right off the bat. But sorry, there is no way around it.
+
+**Web developers have no decent IDE, and they should use one.**
+
+We have excellent text editors, but it's not the same.
+
+Why the hell should I write my imports manually? How can I refactor my code peacefully when I'm not sure I renamed ALL the instances of my method? Why can't I navigate easily in my source code?
+
+As a one that came from a world with a great IDEs (Java with Eclipse and IntlliJ), this is the thing that bothers me the most when I develop.
+
+Google took it to the next level, and they have a team that is working just on the developer tools for Android. I do not say we have to use a dedicated IDE like Android Studio, but at least give me something decent to work with.
+
+## 2. Stop with those fucking to-do list apps
+No really, WTF!? How many to-do list apps a man needs? Why is everyone writing the same thing over and over?
+
+Yeah, we got it- you write your tasks, and it saves on Redux, and you can finish some tasks and then can see the ongoing ones and the ones that you finish. I swear I saw things kind of apps like 5 different times while learning React.
+
+What about going to the next level- see how to sync data with the server, putting more than one type of data, handling user input, loading or any other edge case.
+
+Google builds real apps and releases the source code. For example- [Plaid app](https://github.com/nickbutcher/plaid) that focus on design and animation, or [Muzei app](https://github.com/nickbutcher/plaid) for working with images, or even the [official Google I/O app](https://github.com/google/iosched).
+
+Those are real apps with real users and real use cases. It is interesting how experienced developers handle apps with more than a couple of hundreds of lines of code.
+
+## 3. Community Experts
+[Google Developers Experts (GDEs)](https://developers.google.com/experts/about) are a global network of experienced developers (and others) actively supporting developers, startups and companies changing the world through web and mobile applications.
+
+That's mean that Google is encouraging (and also compensating) individuals to help and educate the community about Android.
+
+Think about yourself- what if you have a question, or something don't work, or need some kind of advice. Whom do you ask (or where)?
+
+Helping the community working with the platform is an integral part of developing a new platform, and I feel that Facebook can do better here.
+
+## 4. Talk about more than just code.
+React is relatively straightforward. You can easily get an app up and running in a few hours. However, a real app is more than just a couple of screens and components- it is much more than that. It is deal with bizarre user inputs and handling connections errors. It is making the user understand the flow and making actions easy and intuitive.
+
+I would love some bits of advice from the Facebook team about lessons learned after building React apps for such a long time and for so many users and use cases.
+
+Just like Google sharing things like [material design](https://developer.android.com/design/index.html) guidelines, I would love to hear more about best practices when coming to build my single page app.
+
+## 5. Work on architecture components (or adapt community solutions as best practices)
+So we have the basic stuff, the bare bones of the app and soon enough we're going to write to high order components to handle the more high-level stuff.
+
+And those components will probably move with us (as a shared lib or worse- as a copy & paste) to our next project.
+
+And we're not alone- so I assume others are written this code on their own projects.
+
+Because I'm not the only one that needs to write a component that handles the state when my component's data is currently loading. And I'm probably not the only one that sometimes wants to sync some values between the store and the local storage. Or animate components.
+
+In Android, it's known that Retrofit is the library for HTTP calls, Google even uses it in their [official examples](https://developer.android.com/topic/libraries/architecture/guide.html#fetching_data). For other things, they came up with their own solutions like [architecture compoennts](https://developer.android.com/topic/libraries/architecture/index.html).
+
+In react there is [React router](https://github.com/reacttraining/react-router), that is widely used. But beside of this- I'm not really aware of this kind of things.
+
+---
+
+I really like the web development world, and I feel that the community is much more involved (and bigger to be honest). But I feel this is the place where one should get up and lead the developers to more organized and structured environment.
+
+---
+
+If you enjoyed this post, please hit the “recommend” button below and share this story. I’ll also love hearing your comments. Thanks!
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Is there Room for one more?]]></title>
+    <link href="http://blog.shem.dev/blog/2017/06/02/room-performance/"/>
+    <updated>2017-06-02T12:26:09+00:00</updated>
+    <id>http://blog.shem.dev/blog/2017/06/02/room-performance</id>
+    <content type="html"><![CDATA[In the last Google I/O, Google announced a new [architecture components](https://developer.android.com/topic/libraries/architecture/index.html). One of them is Room.
+Room is an (another) ORM solution for the Android developers. Combining with some other elements Google released (like LiveData, ViewModel, and Lifecycle Listeners)- basic app flows should be much simpler.
+<!-- more -->
+Indeed- Google did some nice work here. Straightforward tasks like displaying items from DB and update them was a pain, and you had to write a lot of code over and over. [Now you can just use those out-of-the-box components](https://medium.com/proandroiddev/clean-easy-new-how-to-architect-your-app-part-1-e439668a523d). This will save time for developers: you will write less code, and you will have fewer bugs.
+
+When examine those components, I feel most of them bringing new things to the table. But about [Room](https://developer.android.com/topic/libraries/architecture/room.html)- is there a need for another ORM library?
+
+## ORM?
+Let's start from the beginning. For the ones that not familiar with, ORM stands for "Object Relational Mapping". That's a prettier way to let the developers works with persistent objects instead or tables rows.
+
+That's mean that if I want to save all my users data in a database- I will work with the User object and the ORM layer will handle all the persistency stuff for me. Fun.
+
+## Current solutions
+This concept is not new, developers used that technique for a long time, and it was natural that Android developers will need this kind of thing too.
+
+Soon enough we got a couple of 3rd libraries to handle it, just look on [AndroidArsenal page](https://android-arsenal.com/tag/69) and understand we're getting into crowded space here. The most popular ones are probably [ORMLite](http://ormlite.com/), [GreenDAO](http://greenrobot.org/greendao/) and [DbFlow](https://github.com/Raizlabs/DBFlow).
+
+## Creating a Model
+There are two main ways to define the mapping between your objects and the tables in Java: some DSL + code generator (like what GreenDAO is using), or using annotation (like ORMLite, DBFlow and most of the libraries). Although I'm not a big fan of annotations, I must say the later is an easier solution.
+
+These why it's no surprise that the Android team chose to go with this approach, so simple data model looks like this:
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span></span><span class="nd">@Entity</span>
+</span><span class='line'><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">User</span><span class="w"> </span><span class="p">{</span>
+</span><span class='line'><span class="w">    </span><span class="nd">@PrimaryKey</span>
+</span><span class='line'><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">uid</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="w">    </span><span class="nd">@ColumnInfo</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;first_name&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">firstName</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="w">    </span><span class="nd">@ColumnInfo</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;last_name&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">lastName</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="w">    </span><span class="c1">// Getters and setters are ignored for brevity,</span>
+</span><span class='line'><span class="w">    </span><span class="c1">// but they&#39;re required for Room to work.</span>
+</span><span class='line'><span class="w">    </span><span class="c1">// (So please go and switch to Kotlin)</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+As in any other library- you can set a custom name for the table or the columns, you can choose to index some stuff and specify relationships between models.
+
+## The API
+To interact with the data models, we use DAO- data access object. So nothing new from Google here also. For each model, we need to declare a DAO with CRUD operations. Every library covers the main functionality and offers kind of the same sets of features.
+
+BUT while most of the ORM libraries using some in-code query builder, Room doing something nice and let you declare your queries in slick SQL formatting.
+
+For example, here is how you'll do a simple query for specific users in each one of the platforms:
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span></span><span class="c1">//Room:</span>
+</span><span class='line'><span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;SELECT * FROM user WHERE age &gt; :minAge&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="kd">public</span><span class="w"> </span><span class="n">User</span><span class="o">[]</span><span class="w"> </span><span class="nf">loadAllUsersOlderThan</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">minAge</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">//DbFlow:</span>
+</span><span class='line'><span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SQLite</span><span class="p">.</span><span class="na">select</span><span class="p">()</span>
+</span><span class='line'><span class="w">                         </span><span class="p">.</span><span class="na">from</span><span class="p">(</span><span class="n">User</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+</span><span class='line'><span class="w">                         </span><span class="p">.</span><span class="na">where</span><span class="p">(</span><span class="n">User_Table</span><span class="p">.</span><span class="na">age</span><span class="p">.</span><span class="na">greaterThan</span><span class="p">(</span><span class="n">minAge</span><span class="p">)</span>
+</span><span class='line'><span class="w">                         </span><span class="p">.</span><span class="na">queryList</span><span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">//ORMLite:</span>
+</span><span class='line'><span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">userDao</span><span class="p">.</span><span class="na">queryBuilder</span><span class="p">()</span>
+</span><span class='line'><span class="w">                          </span><span class="p">.</span><span class="na">where</span><span class="p">()</span>
+</span><span class='line'><span class="w">                          </span><span class="p">.</span><span class="na">gt</span><span class="p">(</span><span class="s">&quot;age&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">minAge</span><span class="p">)</span>
+</span><span class='line'><span class="w">                          </span><span class="p">.</span><span class="na">query</span><span class="p">();</span>
+</span><span class='line'><span class="c1">//GreenDAO:</span>
+</span><span class='line'><span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">userDao</span><span class="p">.</span><span class="na">queryBuilder</span><span class="p">()</span>
+</span><span class='line'><span class="w">                          </span><span class="p">.</span><span class="na">where</span><span class="p">(</span><span class="n">Properties</span><span class="p">.</span><span class="na">Age</span><span class="p">.</span><span class="na">gt</span><span class="p">(</span><span class="n">minAge</span><span class="p">))</span>
+</span><span class='line'><span class="w">                          </span><span class="p">.</span><span class="na">list</span><span class="p">();</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+On the one hand- it's cleaner and most of us familiar with SQL syntax, but on the contrary, you're losing some of the power of your object mapping (no autocomplete, and you need to remember the object's table).
+
+## Performance
+Reading and writing to the database is an expensive IO operation. If you're working with lots of entities in your app, it might be a bottleneck.
+That's why GreenDAO and DbFlow are heavily investing in performance ([it might even get ugly some times](https://github.com/Raizlabs/AndroidDatabaseLibraryComparison/issues/16)).
+
+I decided to check how Room performs in relation to the others, so I take the GreenDAO benchmark (I looked on [Raizlabs benchmark](https://github.com/Raizlabs/AndroidDatabaseLibraryComparison) too, but I felt it's too biased), and added Room. You can see the source code [here](https://github.com/greenrobot/android-database-performance/pull/19).
+
+I compared the results to the libraries discussed in the post. I ran all tests on an emulator and took the average of each library results (I'll attach the full results of each library, so you'll able to take a closer look).
+
+<img class="center" src="/images/posts/room/chart_1.png">
+<img class="center" src="/images/posts/room/chart_2.png">
+<img class="center" src="/images/posts/room/chart_3.png">
+<img class="center" src="/images/posts/room/chart_4.png">
+
+It is a simple, fast setup benchmark, and I didn't analyze the results too much. From first looking at the results- you can see that Room has no advantage in any aspect of performance over the other libs. While making small operations one by one- ORMLite has it's own advantages, when moving the bigger scales- DBFlow and GreenDAO obviously win (because the caching they use).
+
+## Summary
+Google did a fantastic job by taking a step forward to help developers architect their apps better. The last components that Google introduced are right in place and should help each one of us write better code in less time.
+
+BUT, choosing to deliver _another_ ORM solution, with no added value (unless I'm missing something here), is something that I do not understand. I would expect that the team will take an existing solution that works, or even just recommend one ([like what they are doing with Retrofit](https://developer.android.com/topic/libraries/architecture/guide.html#fetching_data)).
+
+---
+
+*If you liked this post click the ♡ bellow and share this story. As a writer it means the world.*
+
+---
+_Full reports:_<br>
+_[PerfTestDbFlow-1by1.tsv](/files/posts/room/PerfTestDbFlow-1by1.tsv)_<br>
+_[PerfTestDbFlow-batch.tsv](/files/posts/room/PerfTestDbFlow-batch.tsv)_<br>
+_[PerfTestNotNull-1by1.tsv (GreenDAO)](/files/posts/room/PerfTestNotNull-1by1.tsv)_<br>
+_[PerfTestNotNull-batch.tsv (GreenDAO)](/files/posts/room/PerfTestNotNull-batch.tsv)_<br>
+_[PerfTestOrmLite-1by1.tsv](/files/posts/room/PerfTestOrmLite-1by1.tsv)_<br>
+_[PerfTestOrmLite-batch.tsv](/files/posts/room/PerfTestOrmLite-batch.tsv)_<br>
+_[PerfTestRoom-1by1.tsv](/files/posts/room/PerfTestRoom-1by1.tsv)_<br>
+_[PerfTestRoom-batch.tsv](/files/posts/room/PerfTestRoom-batch.tsv)_<br>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[5 things I learned as an Android developer after doing some Web development]]></title>
+    <link href="http://blog.shem.dev/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/"/>
+    <updated>2017-03-31T10:32:32+00:00</updated>
+    <id>http://blog.shem.dev/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development</id>
+    <content type="html"><![CDATA[In the last couple of months, I started my new journey, leaving my Android position behind and started doing some web development. Working on those 2 platforms has many differences, I can’t say the one is better than the other, but there are many things that those 2 worlds can learn from each other.
+<!-- more -->
+In this post, I’ll focus on the things that I saw while working on our front-end React app. Things that I learned about Android and the way that we’re building apps.
+
+## 1. We write too much code
+
+Creating a custom view, even the simplest one, will probably going to take 1 too long View subclass. This class should contain a couple of constructors, getters/ setters, reading and parsing attributes and inflate an XML, and that’s without even mentioning the layout file. While on react you should only implement the render method (and maybe also CSS/SCSS file for customizations).
+
+For example, here is a simple user info widget, written in Android and React:
+
+<div><script src='https://gist.github.com/e6e3f36ce7df9a4c3a2306377708c883.js'></script>
+<noscript><pre><code>public class UserCardView extends FrameLayout {
+
+    private TextView userNameView;
+    private TextView userInfoView;
+    private ImageView userImageView;
+
+    public UserCardView(Context context) {
+        this(context, null);
+    }
+
+    public UserCardView(Context context, AttributeSet attrs) {
+        this(context, attrs, 0);
+    }
+
+    public UserCardView(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        init(context, attrs);
+    }
+
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    public UserCardView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        super(context, attrs, defStyleAttr, defStyleRes);
+        init(context, attrs);
+    }
+
+    private void init(Context context, AttributeSet attrs) {
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        inflater.inflate(R.layout.user_card_layout, this, true);
+
+        TypedArray a = context.getTheme().obtainStyledAttributes(
+                attrs,
+                R.styleable.DefaultUserCardView,
+                0, 0);
+
+        userNameView = (TextView) findViewById(R.id.user_name;
+        userInfoView = (TextView) findViewById(R.id.user_info;
+        userImageView = (ImageView) findViewById(R.id.user_avatar);
+
+        try {
+            boolean withAvatar = a.getBoolean(R.styleable.DefaultUserCardView_withAvatar, true);
+            userImageView.setVisibility(withAvatar ? View.VISIBLE : View.GONE);
+        } finally {
+            a.recycle();
+        }
+    }
+
+    public void setUser(User user) {
+        userNameView.setText(user.getName());
+        userInfoView.setText(user.getInfo());
+        userImageView.setImageResource(user.getAvatar());
+    }
+}</code></pre></noscript></div>
+
+<div><script src='https://gist.github.com/35aa8f80662f6f0f03d044cd6d9dedc4.js'></script>
+<noscript><pre><code>const UserCard = ({ user, withAvatar }) =&gt; {
+  return (
+    &lt;div&gt;
+      { withAvatar &amp;&amp; &lt;img src={user.avatarUrl}/&gt; }
+      &lt;span&gt;
+        {user.name}
+      &lt;/span&gt;
+      &lt;span&gt;
+        {user.info}
+      &lt;/span&gt;
+    &lt;/div&gt;
+  );
+};
+
+UserCard.propTypes = {
+  user: ProductShape.isRequired,
+  withAvatar: PropTypes.bool
+};</code></pre></noscript></div>
+
+
+I don’t event talk about things like JSON parsing, network calls or saving state.
+
+This is mainly because of the use of language like Java on Android vs JavaScript. You can eliminate some of the boilerplate if you’re using Kotlin, or use [Data Binding](https://developer.android.com/topic/libraries/data-binding/index.html) to get more done in the layout file but still.
+
+## 2. The development feedback cycle is too long
+How long it takes to see code changes on the device (virtual or physical) in Android studio? If you change small things like text or color, Google says it should take only a couple of seconds (when Instant run is enabled), most of the time it will take a couple dozen of seconds, and it even can get to a minute or two. Also- changes will be effected only when you click “Run”.
+
+How long it take with React when using Webpack (a module bundler, or a “complier” if you want)? Immediately. Like second or two. And that’s happening right when you save the file. Changed the wrong element? Boom! you see it right away.
+
+Don’t think that 5 or 10 seconds are really that different? When developing- every second count (and soon enough all those seconds will accumulate). Especially when those changes are shown passively (when the file is saved) and to actively (when you run the app). I really recommend you to see this [talk](https://vimeo.com/36579366) and see how it can affect your development (warning: the speaker will blow your mind).
+
+## 3. Using Flux architecture
+[Flux](http://facebook.github.io/flux/) is the application architecture that Facebook uses for building client-side web applications. It complements React’s composable view components by utilizing a unidirectional data flow. It’s more of a pattern rather than a formal framework, and when combining React Router with Redux we can get some pretty close data flow to Flux pattern.
+
+Flux making writing client side much cleaner and easier to debug and predict. Although there are some [examples](https://github.com/lgvalle/android-flux-todo-app) and [libraries](https://github.com/frostymarvelous/Fluxxan) for Android it’s still not widely used.
+On Android apps we’re still passing data around in all kind of ways (intents, DB, message bus, etc…), keeping it mutable that every component can change it and by this- making our life really hard.
+
+## 4. Separate the content from how it looks
+When building a page on Android I must also build its layout. I need to arrange the the page and it’s component and somehow put them together in the view. Even if I just want to focus on behavior- I must somehow play with Linear Layouts, Scroll Layouts and things like that.
+
+Then when I need to design the view I again need to return to the layout file and add all the magic. However, when I need to add animations- I’ll need to put it in the code.
+The View class and the View layout are not that separate, it’s hard to focus only on the behavior without handling the look and feel. In Android, it’s too coupled.
+
+But with React- you can extract all the UI-related code to the stylesheet file. for example, if I wanted to create a simple widget that changes the view state by clicking- I would do something like that ([JSFddle](https://jsfiddle.net/reactjs/69z2wepo/)):
+
+<div><script src='https://gist.github.com/d120440fe48defa1b7cbfe1edc59b943.js'></script>
+<noscript><pre><code>var Toggle = React.createClass({
+  getInitialState: function() {
+    return {
+      condition: false
+    }
+  },
+  handleClick: function() {
+    this.setState({
+      condition: !this.state.condition
+    });
+  },
+  render: function() {
+    return (
+      &lt;div&gt;
+        &lt;div onClick={this.handleClick}&gt; Click Me &lt;/div&gt;
+        &lt;div className={this.state.condition ? &quot;enabled&quot; : &quot;disabled&quot;}&gt; Hello World &lt;/div&gt;
+      &lt;/div&gt;
+    );
+  }
+});</code></pre></noscript></div>
+
+
+
+
+And in the SCSS file, I would decide what does a disabled item looks like (hidden? gray out? I don’t care right now).
+But if I wanted to do it in Android I would need to change it in the View class (or it’s parent, or in the OnClick listener).
+
+## 5. We can get better developer tools
+Do you remember the last time you select “Debug” in Android studio (I bet it was probably by mistake)? Do you remember those 1–2 minutes you waited until the app opened and the debugger was connected? Or that you attach the debugger to a running app and suddenly everything was slow as hell?
+
+Do you remember that time there was a weird spacing between your views and you had to turn on some flags in the developer options settings and hope you’ll understand each view bounds from some random rectangles on the screen?
+Do you remember trying to figure out what is going on with your database so you had to dump the database and pull it from the device?
+
+Do you remember that you wanted to try out some things in your view on the device but needed to change the code and re-run it every time?
+
+Chrome (and Firefox) developer tools make debugging and playing with your app so much easier that it is not fair. You can change views on the fly, inspect your elements easily and run some code in the console whenever you want.
+
+---
+
+Web development is really nice (and much harder that I thought it will be actually), but I still have a much warmer place in my heart for Android. Although it’s no fair to compare the two (Android need to work on remote devices or on emulators, it’s much “younger” than the web) I think that the two communities can learn one from each other.
+
+As for what web development can take from Android development- in the next post (hopefully).
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Playing with Coordinator Layout]]></title>
+    <link href="http://blog.shem.dev/blog/2016/05/27/playing-with-coordinator-layout/"/>
+    <updated>2016-05-27T12:02:52+00:00</updated>
+    <id>http://blog.shem.dev/blog/2016/05/27/playing-with-coordinator-layout</id>
+    <content type="html"><![CDATA[Lately I needed to build some kind of overlay screen that looks like the one that shows when you open the phone when you don't have a lock screen. This is a simple overlay screen that should be dismissable when the user swipe it out from the lower part of the screen<!-- more -->, something like this:
+
+<img class="center" src="/images/posts/get-feature-packed-iphone-like-lock-screen-for-your-galaxy-s6-other-android-device-w654.jpg" width="211" title="*" >
+
+When coming to implement it, I thought about building a _LinearLayout_ with 2 views- the content view and the swipe view, than put some touch listener on the swipe view and implement swiping mechanism, than syncing both view to act the same. But when I thought about it more and more I decided that it's too much work. Searching this kind of code or library out there always bring me to _RecycleView_ swipe to dismiss items, and in one of those search results I saw how to implement this swipe to dismiss item in _RecycleView_ with _CoordinatorLayout_, so I decided to give it a chance.
+
+_[CoordinatorLayout](http://developer.android.com/reference/android/support/design/widget/CoordinatorLayout.html)_ is a really great addition in the design support library. Most of you probably already used it with a [floating action buttons](https://guides.codepath.com/android/floating-action-buttons) or [snackbars](http://www.androidhive.info/2015/09/android-material-design-snackbar-example/) but if you like me- you just put it there, assuming views will move properly, without really diving into how the layout is syncing between them.
+
+So it turns out that _CordinatorLayout_ is pretty powerful, it let you easily define interactions on child views and even between them, those interactions are called [behaviors](http://developer.android.com/reference/android/support/design/widget/CoordinatorLayout.Behavior.html) so that each child can behave differently according to things that are happening in the layout. You can do a really cool things with those behaviors, here is one example for a [great blog post](http://saulmm.github.io/mastering-coordinator) that I stumble upon my searches about coordinate layout usages.
+
+In our case it suppose to be pretty easy, there is already a [swipe to dismiss behavior](http://developer.android.com/reference/android/support/design/widget/SwipeDismissBehavior.html) ready to be used on the lower view, so we just need to attach it to the relevant view. First lets build our layout:
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span></span><span class="nt">&lt;android.support.design.widget.CoordinatorLayout</span>
+</span><span class='line'><span class="w">    </span><span class="na">xmlns:android=</span><span class="s">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+</span><span class='line'><span class="w">    </span><span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
+</span><span class='line'><span class="w">    </span><span class="na">android:layout_height=</span><span class="s">&quot;match_parent&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="w">    </span><span class="nt">&lt;FrameLayout</span><span class="w"> </span><span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
+</span><span class='line'><span class="w">         </span><span class="na">android:layout_height=</span><span class="s">&quot;match_parent&quot;</span>
+</span><span class='line'><span class="w">         </span><span class="na">android:id=</span><span class="s">&quot;@+id/container&quot;</span>
+</span><span class='line'><span class="w">         </span><span class="na">android:background=</span><span class="s">&quot;#06ff87&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="w">    </span><span class="nt">&lt;TextView</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:id=</span><span class="s">&quot;@+id/dismiss&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:layout_width=</span><span class="s">&quot;match_parent&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:layout_height=</span><span class="s">&quot;wrap_content&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:text=</span><span class="s">&quot;&gt; Swipe to dismiss &gt; &gt; &gt;&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:padding=</span><span class="s">&quot;30dp&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:gravity=</span><span class="s">&quot;center&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:layout_gravity=</span><span class="s">&quot;center_horizontal|bottom&quot;</span>
+</span><span class='line'><span class="w">        </span><span class="na">android:background=</span><span class="s">&quot;#3bb0ff&quot;</span><span class="nt">/&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;/android.support.design.widget.CoordinatorLayout&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+As said, it’s a simple layout with 2 view- one for the content (the green one) and one for the swiping (the blue one).
+
+Now, lets attach the relevant behavior to the relevant view:
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span></span><span class="n">View</span><span class="w"> </span><span class="n">dismiss</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">findViewById</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">dismiss</span><span class="p">);</span>
+</span><span class='line'><span class="n">CoordinatorLayout</span><span class="p">.</span><span class="na">LayoutParams</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">CoordinatorLayout</span><span class="p">.</span><span class="na">LayoutParams</span><span class="p">)</span><span class="w"> </span><span class="n">dismiss</span><span class="p">.</span><span class="na">getLayoutParams</span><span class="p">();</span>
+</span><span class='line'><span class="n">SwipeDismissBehavior</span><span class="o">&lt;</span><span class="n">View</span><span class="o">&gt;</span><span class="w"> </span><span class="n">behavior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SwipeDismissBehavior</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+</span><span class='line'><span class="n">behavior</span><span class="p">.</span><span class="na">setSwipeDirection</span><span class="p">(</span><span class="n">SwipeDismissBehavior</span><span class="p">.</span><span class="na">SWIPE_DIRECTION_START_TO_END</span><span class="p">);</span>
+</span><span class='line'><span class="n">behavior</span><span class="p">.</span><span class="na">setListener</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">SwipeDismissBehavior</span><span class="p">.</span><span class="na">OnDismissListener</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span class='line'><span class="w">    </span><span class="nd">@Override</span>
+</span><span class='line'><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onDismiss</span><span class="p">(</span><span class="kd">final</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="n">view</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class='line'><span class="w">        </span><span class="n">finish</span><span class="p">();</span>
+</span><span class='line'><span class="w">    </span><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="w">    </span><span class="nd">@Override</span>
+</span><span class='line'><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onDragStateChanged</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+</span><span class='line'><span class="p">});</span>
+</span><span class='line'><span class="n">params</span><span class="p">.</span><span class="na">setBehavior</span><span class="p">(</span><span class="n">behavior</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+That's pretty self explained- we declare a new swipe to dismiss behavior, set it's direction only to right, and finish the activity on dismiss. But there's on problem- somehow, although we declare this behavior only on the dismiss view, it working on all the view, so also the content view is swipeable as you can see here:
+
+<img class="center" src="/images/posts/ezgif-4244700794.gif" width="280" height="498">
+
+I'm not sure if this is by design or just a bug (after digging in the code I'm afraid this behavior is not intended) but we can easily fix this by creating our own behavior. Of course that we not going to write this whole code from beginning, we'll use the _SwipeDismissBehavior_ class and just fix the relevant code. I really recommend doing a little investigation and reading the Android code, that's way you're fully understand how things really works and get to read an high quality code written by the Android developers, in that case the fix is pretty easy to spot- the _SwipeDismissBehavior_ handle touch events also if those touches not in the view (although there is a check in the _onInterceptTouchEvent_ method and those events should be ignore) so I created a new behavior class just for this fix:
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span></span><span class="cm">/**</span>
+</span><span class='line'><span class="cm"> * Handle only touches on this current view</span>
+</span><span class='line'><span class="cm"> */</span>
+</span><span class='line'><span class="nd">@Override</span>
+</span><span class='line'><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">onTouchEvent</span><span class="p">(</span><span class="n">CoordinatorLayout</span><span class="w"> </span><span class="n">parent</span><span class="p">,</span><span class="w"> </span><span class="n">V</span><span class="w"> </span><span class="n">child</span><span class="p">,</span><span class="w"> </span><span class="n">MotionEvent</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class='line'><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">parent</span><span class="p">.</span><span class="na">isPointInChildBounds</span><span class="p">(</span><span class="n">child</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="n">event</span><span class="p">.</span><span class="na">getX</span><span class="p">(),</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="n">event</span><span class="p">.</span><span class="na">getY</span><span class="p">()))</span><span class="w"> </span><span class="p">{</span>
+</span><span class='line'><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kd">super</span><span class="p">.</span><span class="na">onTouchEvent</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span><span class="w"> </span><span class="n">child</span><span class="p">,</span><span class="w"> </span><span class="n">event</span><span class="p">);</span>
+</span><span class='line'><span class="w">    </span><span class="p">}</span>
+</span><span class='line'><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+Changing the activity to use _SwipeDismissOnlyOnViewBehavior_ instead of _SwipeDismissBehavior_ is doing the work:
+
+<img class="center" src="/images/posts/ezgif-2527994552.gif" width="280" height="498">
+
+Now we need to sync between the content view to the dismiss view when swiping, so we creating a new behavior just for this. Because this is really simple behavior all we need to implement are 2 functions, in which view this content view depended (_layoutDependsOn_) and what to do when the dependent view changed (_onDependentViewChanged_):
+
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span></span><span class="o">=</span>
+</span><span class='line'><span class="n">CoordinatorLayout</span><span class="p">.</span><span class="na">LayoutParams</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">CoordinatorLayout</span><span class="p">.</span><span class="na">LayoutParams</span><span class="p">)</span><span class="w"> </span><span class="n">container</span><span class="p">.</span><span class="na">getLayoutParams</span><span class="p">();</span>
+</span><span class='line'><span class="kd">final</span><span class="w"> </span><span class="n">CoordinatorLayout</span><span class="p">.</span><span class="na">Behavior</span><span class="o">&lt;</span><span class="n">View</span><span class="o">&gt;</span><span class="w"> </span><span class="n">behavior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CoordinatorLayout</span><span class="p">.</span><span class="na">Behavior</span><span class="o">&lt;</span><span class="n">View</span><span class="o">&gt;</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span class='line'><span class="w">    </span><span class="nd">@Override</span>
+</span><span class='line'><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">layoutDependsOn</span><span class="p">(</span><span class="n">CoordinatorLayout</span><span class="w"> </span><span class="n">parent</span><span class="p">,</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="n">child</span><span class="p">,</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="n">dependency</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class='line'><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">dependency</span><span class="p">.</span><span class="na">getId</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">dismiss</span><span class="p">;</span>
+</span><span class='line'><span class="w">    </span><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="w">    </span><span class="nd">@Override</span>
+</span><span class='line'><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">onDependentViewChanged</span><span class="p">(</span><span class="n">CoordinatorLayout</span><span class="w"> </span><span class="n">parent</span><span class="p">,</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="n">child</span><span class="p">,</span><span class="w"> </span><span class="n">View</span><span class="w"> </span><span class="n">dependency</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span class='line'><span class="w">        </span><span class="n">child</span><span class="p">.</span><span class="na">setX</span><span class="p">(</span><span class="n">dependency</span><span class="p">.</span><span class="na">getX</span><span class="p">());</span>
+</span><span class='line'><span class="w">        </span><span class="n">child</span><span class="p">.</span><span class="na">setAlpha</span><span class="p">(</span><span class="n">dependency</span><span class="p">.</span><span class="na">getAlpha</span><span class="p">());</span>
+</span><span class='line'><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+</span><span class='line'><span class="w">    </span><span class="p">}</span>
+</span><span class='line'><span class="p">};</span>
+</span><span class='line'><span class="n">params</span><span class="p">.</span><span class="na">setBehavior</span><span class="p">(</span><span class="n">behavior</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+And voila:
+
+<img class="center" src="/images/posts/ezgif-2484339332.gif" width="280" height="498">
+
+[<img class="center" src="https://media.giphy.com/media/xT77XRp55yPwHkd5Nm/giphy.gif" width="480" height="270">](http://giphy.com/gifs/honda-honda-valueofx-civicx-xT77XRp55yPwHkd5Nm)
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[10 good rules for bad App, Part 3- Product]]></title>
+    <link href="http://blog.shem.dev/blog/2016/05/06/10-good-rules-for-bad-app-part-3-product/"/>
+    <updated>2016-05-06T12:37:07+00:00</updated>
+    <id>http://blog.shem.dev/blog/2016/05/06/10-good-rules-for-bad-app-part-3-product</id>
+    <content type="html"><![CDATA[Welcome to the third (and last) part of the tutorial of how building a bad app. After we've building a bad app in the [first part](http://shem8.github.com/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical/), and remarkably ruin its look and feel in the [second part](http://shem8.github.com/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui/), we're now going to go over on 10 steps to easily how to kill your product:
+<!--more-->
+
+## #1: Add as many features as possible
+
+
+The first and my favorite- fill your backlog with everything you can think of that every one of your users might use in any time of the future. Fill your app with tons of functionalities (and let the poor designer figure it out how to squeeze it all to a single screen), because as we all know- the more options your users will have, the more freedom they will have to do things with your app ([not](https://www.ted.com/talks/barry_schwartz_on_the_paradox_of_choice?language=en)).
+
+
+## #2: Listen to every single feedback and implement it
+
+
+Worrying that you implemented all your 492 items from your backlog and the ideas are about to run out? Go over all the store reviews, search some feedbacks in twitter and check all the posts in your beta group. Users are very demanding creatures and probably will keep whining about all those features that your app absolutely garbage without, yes even if it isn't the core of the app or they can do it easily with other apps.
+
+
+<img class="center" src="https://shem8.files.wordpress.com/2016/05/13oxx4.jpg" width="504" title="True story" alt="True story">
+
+
+## #3: Trust you instincts, no A/B testing or data analysing
+
+
+Because you are the PM and you know what your users want, and this should CTA button should absolutely be green. Or red. Whatever.
+
+**Bonus points: **change your opinion regularly and randomly.
+
+
+## #4: Add all possible login platforms
+
+
+Everyone using Facebook, so it kind of a must, also adding Twitter and Instagram- to make thinks more viral, and Google of course, and Flicker and Yahoo just in case, and you must also put the plain email and password for those who live in Mars or something.
+
+
+## #5: Support the oldest android version
+
+
+Because why not? you're not the one the writing the code. And every user count! also those 0.8% of the users that still using 2.2, although those devices are so weak that your 42MB app probably can't even run on them.
+
+
+## #6: Don't translate your app
+
+
+Because you targeting only for US and you're ok of not growing, and no one else will use it.
+
+**Bonus points: **if you do decide to translate your app- use a low pricing translate service so your translation will look really funny for non English users.
+
+
+## #7: Treat all your users the same
+
+
+In addition to the previous one- all my users understand English and prefer paying with PayPal, and they love to take a lot of pictures and they have Gmail account and they understand that green is positive and red in negative. Basically all your users are you.
+
+
+## #8: Keep asking your users to rate your app
+
+
+Reviews are crucial to your app listing and you **MUST** make your users leave a good ratings and review for your app in the store. Try to do anything to make them do so- prompting a "rate us" widget in the app every time they are doing something (also after failed actions), send them a weekly email with a rating request, hell- even put it after intro, before they even used the app, everything goes.
+
+
+## #9: Use cheap campaigns to buy users
+
+
+Users drive more users, before app start to be viral it should start with some core users, so what if those are not a real users and they actually do nothing, the numbers are growing and eventually this will catch.
+
+
+## #10: Put lots of ads
+
+
+Last but not least, your app should make some money (I think), you can think of adding a value that users will find it useful and will want to pay for it, but it's too complicate. Ads is the easiest way to make money in the apps world (and to piss of your users).
+
+<img class="center" src="https://shem8.files.wordpress.com/2016/05/19285pti64teljpg.jpg" width="800" title="* 'Source: gizmodo.com 'Source: gizmodo.com" >
+
+***
+
+That's it, by now you should be ably to easily assemble a one hell of an App that will quickly burry in the big cemetery of the apps.
+
+As always- got some more suggestions for ways to make your app worse? Would love to hear your thoughts in the comments!
+]]></content>
+  </entry>
+  
+</feed>

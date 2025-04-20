@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: humor | Shem Magnezi Blog]]></title>
+  <link href="http://blog.shem.dev/blog/categories/humor/atom.xml" rel="self"/>
+  <link href="http://blog.shem.dev/"/>
+  <updated>2025-04-20T10:58:27+00:00</updated>
+  <id>http://blog.shem.dev/</id>
+  <author>
+    <name><![CDATA[Shem Magnezi]]></name>
+    <email><![CDATA[smagnezi8@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Tech Life as graphs]]></title>
+    <link href="http://blog.shem.dev/blog/2016/06/03/life-as-graphs/"/>
+    <updated>2016-06-03T09:08:42+00:00</updated>
+    <id>http://blog.shem.dev/blog/2016/06/03/life-as-graphs</id>
+    <content type="html"><![CDATA[As a geek I often imagine situations in life as a math equations and graphs (don't you all do it too? What's wrong with you people?!). In this post I'll try to describe some situations is the tech life as graphs:
+<!-- more -->
+
+
+## How excited are you when working in corporate:
+<br>
+<img src="/images/posts/graphs/corporate_eq.png">
+
+<img class="center" src="/images/posts/graphs/corporate.png">
+
+
+## How excited are you when working in startup:
+<br>
+<img src="/images/posts/graphs/startup_eq.png">
+
+<img class="center" src="/images/posts/graphs/startup.png">
+
+
+## #Lines of code you write:
+<br>
+<img src="/images/posts/graphs/code_eq.png">
+
+<img class="center" src="/images/posts/graphs/code.png">
+
+
+## Startup burn rate:
+<br>
+<img src="/images/posts/graphs/burnrate_eq.png">
+
+<img class="center" src="/images/posts/graphs/burnrate.png">
+
+
+## Do your css rules are working:
+<br>
+<img src="/images/posts/graphs/css_eq.png">
+
+<img class="center" src="/images/posts/graphs/css.png">
+
+
+## Number of messages you get from girls- LinkedIn / Tinder
+<br>
+<img src="/images/posts/graphs/burnrate_eq.png">
+
+<img class="center" src="/images/posts/graphs/linkedin.png">
+
+
+## How much you think you know android:
+<br>
+<img src="/images/posts/graphs/android_eq.png">
+
+<img class="center" src="/images/posts/graphs/android.png">
+
+
+## How much you like your PM:
+[Dirichlet function](https://en.wikipedia.org/wiki/Nowhere_continuous_function#Dirichlet_function)
+
+<img class="center" src="/images/posts/graphs/PM.png">
+
+***
+<br>
+_Update: looks like people loving some of those graphs, so following couple of requests- you can now get it on shirts or stickers [here](https://teespring.com/stores/geeksshirts)._
+<br><br>
+***
+<br>
+
+*If you enjoyed this post, please hit the “recommend” button below and share this story. I also love reading all comments. Thanks!*
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[10 good rules for bad App, Part 3- Product]]></title>
+    <link href="http://blog.shem.dev/blog/2016/05/06/10-good-rules-for-bad-app-part-3-product/"/>
+    <updated>2016-05-06T12:37:07+00:00</updated>
+    <id>http://blog.shem.dev/blog/2016/05/06/10-good-rules-for-bad-app-part-3-product</id>
+    <content type="html"><![CDATA[Welcome to the third (and last) part of the tutorial of how building a bad app. After we've building a bad app in the [first part](http://shem8.github.com/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical/), and remarkably ruin its look and feel in the [second part](http://shem8.github.com/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui/), we're now going to go over on 10 steps to easily how to kill your product:
+<!--more-->
+
+## #1: Add as many features as possible
+
+
+The first and my favorite- fill your backlog with everything you can think of that every one of your users might use in any time of the future. Fill your app with tons of functionalities (and let the poor designer figure it out how to squeeze it all to a single screen), because as we all know- the more options your users will have, the more freedom they will have to do things with your app ([not](https://www.ted.com/talks/barry_schwartz_on_the_paradox_of_choice?language=en)).
+
+
+## #2: Listen to every single feedback and implement it
+
+
+Worrying that you implemented all your 492 items from your backlog and the ideas are about to run out? Go over all the store reviews, search some feedbacks in twitter and check all the posts in your beta group. Users are very demanding creatures and probably will keep whining about all those features that your app absolutely garbage without, yes even if it isn't the core of the app or they can do it easily with other apps.
+
+
+<img class="center" src="https://shem8.files.wordpress.com/2016/05/13oxx4.jpg" width="504" title="True story" alt="True story">
+
+
+## #3: Trust you instincts, no A/B testing or data analysing
+
+
+Because you are the PM and you know what your users want, and this should CTA button should absolutely be green. Or red. Whatever.
+
+**Bonus points: **change your opinion regularly and randomly.
+
+
+## #4: Add all possible login platforms
+
+
+Everyone using Facebook, so it kind of a must, also adding Twitter and Instagram- to make thinks more viral, and Google of course, and Flicker and Yahoo just in case, and you must also put the plain email and password for those who live in Mars or something.
+
+
+## #5: Support the oldest android version
+
+
+Because why not? you're not the one the writing the code. And every user count! also those 0.8% of the users that still using 2.2, although those devices are so weak that your 42MB app probably can't even run on them.
+
+
+## #6: Don't translate your app
+
+
+Because you targeting only for US and you're ok of not growing, and no one else will use it.
+
+**Bonus points: **if you do decide to translate your app- use a low pricing translate service so your translation will look really funny for non English users.
+
+
+## #7: Treat all your users the same
+
+
+In addition to the previous one- all my users understand English and prefer paying with PayPal, and they love to take a lot of pictures and they have Gmail account and they understand that green is positive and red in negative. Basically all your users are you.
+
+
+## #8: Keep asking your users to rate your app
+
+
+Reviews are crucial to your app listing and you **MUST** make your users leave a good ratings and review for your app in the store. Try to do anything to make them do so- prompting a "rate us" widget in the app every time they are doing something (also after failed actions), send them a weekly email with a rating request, hell- even put it after intro, before they even used the app, everything goes.
+
+
+## #9: Use cheap campaigns to buy users
+
+
+Users drive more users, before app start to be viral it should start with some core users, so what if those are not a real users and they actually do nothing, the numbers are growing and eventually this will catch.
+
+
+## #10: Put lots of ads
+
+
+Last but not least, your app should make some money (I think), you can think of adding a value that users will find it useful and will want to pay for it, but it's too complicate. Ads is the easiest way to make money in the apps world (and to piss of your users).
+
+<img class="center" src="https://shem8.files.wordpress.com/2016/05/19285pti64teljpg.jpg" width="800" title="* 'Source: gizmodo.com 'Source: gizmodo.com" >
+
+***
+
+That's it, by now you should be ably to easily assemble a one hell of an App that will quickly burry in the big cemetery of the apps.
+
+As always- got some more suggestions for ways to make your app worse? Would love to hear your thoughts in the comments!
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[10 good rules for bad App, Part 2- UX\UI]]></title>
+    <link href="http://blog.shem.dev/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui/"/>
+    <updated>2016-04-17T16:04:28+00:00</updated>
+    <id>http://blog.shem.dev/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui</id>
+    <content type="html"><![CDATA[Welcome to my second part of the tutorial of how building a bad app. After we've building a bad app in the [first part](http://shem8.github.com/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical/), it's the time to call our designer to fuck it a bit more:
+<!--more-->
+
+
+## #1: Ignore material design guidelines
+
+
+Google, one of the greatest companies in the world, put lots of efforts creating material design, they probably do a long user research and gather feedback from many expert, but hey- you are the one with the bachelor of industrial design, so you probably know better.
+
+
+## #2: Invent your own navigation pattern
+
+
+If Facebook can do it so can you, also- if your app will be so good Google might [give up](http://www.theverge.com/2016/3/15/11236152/material-design-update-bottom-navigation-bar) and adapt it.
+
+
+## #3: Create a mysterious app icon
+
+That's really helpful when users need to quickly find your app from 40 apps icons grid.
+
+<img class="center" src="https://shem8.files.wordpress.com/2016/04/yo-app-icon.png" width="131" title=", of course." alt="App that let you send ">
+
+
+## #4: Use your own ideas for icons
+
+
+Now I'm talking about in app icons. I understand- you don't fully pleased with the Android default share icon, you're also didn't find anything suits to your needs between hundreds of [material design icons](https://design.google.com/icons/) so why not creating a full icon pack from your own?
+
+**Bonus points:** don't even bother to add title to your menu items, so that users will able to get a textual hint.
+
+
+## #5: Create intro, overlay explanations AND hints
+
+
+Because users are stupid (mostly true) and they always read your explanation (no chance ever)
+
+**Bonus points:** do a step-by-step tutorial with no option to skip.
+
+
+## #6: Don't support integration with other apps within your app
+
+
+[Android has a great mechanism](http://developer.android.com/training/basics/intents/index.html) to interact actions between apps, but that's not too good for your app because that means users are going to leave your app. When users leave your app, that means less cash from ads. Less cash means you MIGHT have to find a real job.
+
+
+## #7: Don't support integration with other apps into your app
+
+
+In addition to previous point- respect other apps and don't still they users please.
+
+**Bonus points:** If you ended up supporting your app to filter intents from other apps- ignore context and just open the main screen and not the relevant page.
+
+
+## #8: Put animations everywhere
+
+A [splash screen animation](https://shem8.wordpress.com/2015/10/02/pimp-up-your-splash-screen/) is nice, even [Google](https://www.google.com/design/spec/animation/meaningful-transitions.html) recommend adding animation while moving between screens, and the more the merrier
+
+<img class="center" src="https://shem8.files.wordpress.com/2016/04/giphy.gif" width="448" title="Is it too much" alt="Is it too much">
+
+
+## #9: Use gifs instead of drawing things in code or animation drawable
+
+Yes, I know, [animation drawable](https://shem8.wordpress.com/2016/02/25/animated-vector-drawable/) might saves you a couple of MB, but your time is much more important!
+
+
+## #10: Create resources for all resolutions
+
+Because you just saves time, so lets waste it.
+
+<br><br>
+
+***
+
+*Next time we going to talk about how to make things a little bit worse by the product guys so stay tuned.*
+
+**Got some more suggestions for ways to make your look and feel worse? Would love to hear your thoughts in the comments!**
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[10 good rules for bad App, Part 1- Technical]]></title>
+    <link href="http://blog.shem.dev/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical/"/>
+    <updated>2016-03-31T18:00:52+00:00</updated>
+    <id>http://blog.shem.dev/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical</id>
+    <content type="html"><![CDATA[We were all been there, you got a great idea for an app, you gather some feedback and even managed to build a team and you going full power to conquer the app store. So a second before starting working on your genius [egg timer app](https://play.google.com/store/apps/details?id=com.mobication.EggTimerPro&hl=en), it is worth taking a moment and think about how you're going to do it.
+<!--more-->
+
+Following the hilarious post by Chet Haase about [10 good rules for bad API](https://medium.com/pointer-io/this-article-is-exclusive-to-pointer-a-reading-club-for-developers-9b03f3df060c), I decided to put together my list about how to build a bad app. but a few notes first:
+
+  * There are so many bad apps out there, each one is bad in it own way so it's really hard to set only 10. I tried to do my best for taking the top bad patterns, but I trust you to keep fucking it up much more than what I'm talking about here.
+
+
+  * The beauty of the apps world that you can go wrong in many aspects of the product, that makes enough room for each team member to ruin your business, that is why I divided this blog post into 3 parts- technically, UI/UX and product.
+
+
+  * Even good apps can adopt one or two bad things to their app, so it's not all or nothing.
+
+
+  * Those bad habits are bad habits right now, because Google already proved that they can change that any time (like [bottom navigation](https://www.google.com/design/spec/components/bottom-navigation.html) is a thing now? WTF?!)
+
+
+  * Who am I to say about apps if they are doing a bad things or not? That's because I've done most of the things here and then realised how bad it is, that's why.
+
+
+  * The list not sorted by priority, because it's hard to compare what buried your app in the store listing.
+
+
+  * I'm not [Chet Haase](https://medium.com/@chethaase) so this post can't be half good or funny as his, so sorry for that.
+
+<br>
+
+*Enough said, lets start with the list:*
+
+
+## #1: Ask as many permission as possible
+
+
+You know what your app worth, don't let minor things like user privacy get down your way. The user is begging for this crucial analytics sending on boot, so go and ask that BOOT_COMPLETED permission! If you need to share this wonderful url to your user's friends- pull the fucking contact list from his phone, and while you doing so why not sending it to your server and spam them all? Remember- data is power, and other's data is money!
+
+**Bonus point:** when implement Android M permissions, don't let the user do anything until he or she accept your permission, even if he accepted some, don't let him win!
+
+
+## #2: Lock UI thread while loading
+
+
+Hey dude, we're loading, we'll really appreciate if you let us do our thing and don't interrupt us with some stupid ui events, just sit quietly and wait us to finish processing all this 3.4M config xml file ok?!
+
+<img class="center" src="https://shem8.files.wordpress.com/2016/03/loading_time.jpg" width="400" title="*" >
+
+
+## #3: Retry endlessly
+
+
+Yes we're still waiting for this config file, it's your fault for living in this shitty connectivity area, don't blame us for sucking all you data plan and battery alright?!
+
+
+## #4: Don't save activity or fragment state
+
+
+You snooze you lose, you rotated the screen? Boom- your form was lost. This is the best way to teach your users never leave your app, even if them just got a phone call.
+
+
+## #5: Use setExact + RTC_WAKEUP for for your AlarmManager
+
+
+Alarm manager is get tool by Android to execute code in some time in the future. The thing is timing is everything and the Alarm Manager has some options for firing the code smartly and rescheduling it depending on phone state, battery, network or other tasks that can piggy bag. But you probably don't need those fancy features, there's nothing like putting your "Please update our app" notification waking you app 6AM.
+
+**Bonus points:** combine setExact + RTC_WAKEUP to the same time for all your users for your network request to your servers for taking your load balancer to the edge.
+
+
+## #6: Use Application context everywhere
+
+
+Because why not? Save your application context as a static member in your Application class on _onStart_ and use it everywhere- so easy, so simple, so not modular, make it horribly when you want to debug theming errors and make your tests a nightmare. Win Win!
+
+
+## #7: Put errors strings technical as possible
+
+
+That's make it much easier when something goes wrong on the users side, so they'll just forward you the message. That's also make your app a developer-friendly so people like me can easily understand that they missing a certificate to the https connection and that's why the app keep crashing when sharing a photo.
+
+
+## #8: Implement all by yourself
+
+
+Android has a very strict limit of 65k methods limit, after importing google play and support libraries that's barely leaves you with room for 3rd libraries. Anyway, how hard is it to handle Json parsing? you don't really need this Gson library. It's also a great opportunity for your junior dev to practice his poor implementation of string pattern matching from his [job interview](https://twitter.com/holman/status/681922317958524928).
+
+
+## #9: Premature optimization
+
+
+Great, you just implemented the sorting by yourself, probably with bucket sort, because you know the data going to be evenly distributed, probably, you think so... You also saw [the talk by Romain Guy and Chet Haase](https://www.parleys.com/tutorial/part-1-android-performance-workshop) (him again?) and switched all you enums with constants ints and use objects pull everywhere even if this just one time function because who know what can happen.
+
+You know what they say- Premature optimization is the root of all evil, but a greater [women also said](http://www.goodreads.com/quotes/30725-there-is-no-good-and-evil-there-is-only-power): "There is no good and evil, there is only power and those too weak to seek it." and I hope you see the power on N when implementing those graph algorithms.
+
+<img class="center" src="https://shem8.files.wordpress.com/2016/03/the_general_problem.png" width="550" title="*" >
+
+
+## #10: Extract everything to static Util class
+
+
+Move it all- Android specific functionality, networking calls, permissions checks, input checking, not-object-oriented-never-going-to-be-able-to-test code it all goes here.
+
+**Bonus points:** have a Util and Utils classes, because one is not enough and confusing is a plus!
+
+<br><br>
+***
+
+*That's all until the next time when we're going to talk a bit about UI and UX, Got some more suggestions for ways to make your code worse? Would love to hear your thoughts in the comments!*
+]]></content>
+  </entry>
+  
+</feed>
