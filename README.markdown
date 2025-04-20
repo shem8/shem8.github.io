@@ -1,7 +1,7 @@
 ## Shem
 
 Setup:
-- `rvm use 2.7`
+- `rvm use 3.3.4`
 - `bundle install`
 
 Change stuff in source
