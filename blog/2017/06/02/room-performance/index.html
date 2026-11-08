@@ -1,251 +1,82 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Is there Room for one more? | Shem Magnezi</title><meta name="description" content="In the last Google I/O, Google announced a new architecture components. One of them is Room. Room is an (another) ORM solution for the Android developers. Combining with some other elements Google released (like LiveData, ViewModel, and Lifecycle Listeners)- basic app flows should be much simpler. Indeed- Google did some nice work here. Straightforward tasks like displaying items from DB and update them was a pain, and you had to write a lot of code over and over. Now you can just use those out-of-the-box components. This will save time for developers you will write less code, and you will have fewer bugs. When examine those components, I feel most of them bringing new things to the table. But about Room- is there a need for another ORM library?"><meta name="author" content="Shem Magnezi"><link rel="canonical" href="https://blog.shem.dev/blog/2017/06/02/room-performance/"><link rel="alternate" type="application/atom+xml" title="Shem Magnezi" href="/atom.xml"><link rel="icon" href="/favicon.png"><meta name="theme-color" content="#081b5c"><meta property="og:title" content="Is there Room for one more?"><meta property="og:description" content="In the last Google I/O, Google announced a new architecture components. One of them is Room. Room is an (another) ORM solution for the Android developers. Combining with some other elements Google released (like LiveData, ViewModel, and Lifecycle Listeners)- basic app flows should be much simpler. Indeed- Google did some nice work here. Straightforward tasks like displaying items from DB and update them was a pain, and you had to write a lot of code over and over. Now you can just use those out-of-the-box components. This will save time for developers you will write less code, and you will have fewer bugs. When examine those components, I feel most of them bringing new things to the table. But about Room- is there a need for another ORM library?"><meta property="og:url" content="https://blog.shem.dev/blog/2017/06/02/room-performance/"><meta property="og:site_name" content="Shem Magnezi"><meta property="og:image" content="https://blog.shem.dev/images/shem.jpg"><meta property="og:type" content="article"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@shemag8"><meta name="twitter:creator" content="@shemag8"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Shem Magnezi","url":"https://blog.shem.dev/","jobTitle":"Senior Staff Software Engineer","worksFor":{"@type":"Organization","name":"Lemonade"},"sameAs":["https://x.com/shemag8","https://medium.com/@shemag8","https://www.linkedin.com/in/shem-magnezi-45490424","https://github.com/shem8"]}</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-0MGEHLR533"></script><script>(function(){const GA = "G-0MGEHLR533";
 
-<!DOCTYPE HTML>
-
-<html lang="en-US">
-
-<head>
-	<meta charset="utf-8">
-	<meta name="author" content="Shem Magnezi">
-
-	<!-- Google AdSense -->
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5508892730714185" crossorigin="anonymous"></script>
-
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<link href="/atom.xml" rel="alternate" title="Shem Magnezi Blog" type="application/atom+xml">
-	<link href="/favicon.png" rel="shortcut icon">
-	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
-	<link href='https://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<!-- Begin Jekyll SEO tag v2.9.1 -->
-<title>Is there Room for one more? | Shem Magnezi Blog</title>
-<meta name="generator" content="Jekyll v3.9.5" />
-<meta property="og:title" content="Is there Room for one more?" />
-<meta name="author" content="Shem Magnezi" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="In the last Google I/O, Google announced a new architecture components. One of them is Room. Room is an (another) ORM solution for the Android developers. Combining with some other elements Google released (like LiveData, ViewModel, and Lifecycle Listeners)- basic app flows should be much simpler. Indeed- Google did some nice work here. Straightforward tasks like displaying items from DB and update them was a pain, and you had to write a lot of code over and over. Now you can just use those out-of-the-box components. This will save time for developers you will write less code, and you will…" />
-<meta name="twitter:description" property="og:description" content="In the last Google I/O, Google announced a new architecture components. One of them is Room. Room is an (another) ORM solution for the Android developers. Combining with some other elements Google released (like LiveData, ViewModel, and Lifecycle Listeners)- basic app flows should be much simpler. Indeed- Google did some nice work here. Straightforward tasks like displaying items from DB and update them was a pain, and you had to write a lot of code over and over. Now you can just use those out-of-the-box components. This will save time for developers you will write less code, and you will…" />
-<link rel="canonical" href="https://blog.shem.dev/blog/2017/06/02/room-performance/" />
-<meta property="og:url" content="https://blog.shem.dev/blog/2017/06/02/room-performance/" />
-<meta property="og:site_name" content="Shem Magnezi Blog" />
-<meta property="og:image" content="https://blog.shem.dev/images/shem.jpg" />
-<meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-06-02T15:26:09+03:00" />
-<meta property="article:modified_time" content="2017-06-02T15:26:09+03:00" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://blog.shem.dev/images/shem.jpg" />
-<meta name="twitter:title" content="Is there Room for one more?" />
-<meta name="twitter:site" content="@shemag8" />
-<meta name="twitter:creator" content="@shemag8" />
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Shem Magnezi"},"dateModified":"2017-06-02T15:26:09+03:00","datePublished":"2017-06-02T15:26:09+03:00","description":"In the last Google I/O, Google announced a new architecture components. One of them is Room. Room is an (another) ORM solution for the Android developers. Combining with some other elements Google released (like LiveData, ViewModel, and Lifecycle Listeners)- basic app flows should be much simpler. Indeed- Google did some nice work here. Straightforward tasks like displaying items from DB and update them was a pain, and you had to write a lot of code over and over. Now you can just use those out-of-the-box components. This will save time for developers you will write less code, and you will…","headline":"Is there Room for one more?","image":"https://blog.shem.dev/images/shem.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.shem.dev/blog/2017/06/02/room-performance/"},"url":"https://blog.shem.dev/blog/2017/06/02/room-performance/"}</script>
-<!-- End Jekyll SEO tag -->
-
-
-  
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-0MGEHLR533"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-		gtag('config', 'G-0MGEHLR533');
-	</script>
-
-
-</head>
-
-
-<body>
-	<div class="container">
-		<div class="left-col">
-			<div class="intrude-less">
-			<header id="header" class="inner"><div class="profilepic">
-	
-	<script src="/javascripts/md5.js"></script>
-	<script type="text/javascript">
-		$(function(){
-			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("smagnezi8@gmail.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
-		});
-	</script>
-	
-</div>
-
-<nav id="main-nav"><ul class="main">
-    <li><a href="/">Blog</a></li>
-    <li><a href="/talks">Talks</a></li>
-    <li><a href="/projects">Side Projects</a></li>
-    <li><a href="/press">Press</a></li>
-    <li><a href="/about">About</a></li>
-    <li><a href="/blog/archives">Archives</a></li>
-</ul>
-
-</nav>
-<nav id="sub-nav">
-	<div class="social">
-		
-			<a class="email" href="mailto:smagnezi8@gmail.com" title="Email">Email</a>
-		
-		
-		
-    	
-			<a class="medium" href="https://medium.com/@shemag8" title="Medium">Medium</a>
-		
-		
-			<a class="github" href="https://github.com/shem8" title="GitHub">GitHub</a>
-		
-		
-			<a class="twitter" href="http://twitter.com/shemag8" title="Twitter">Twitter</a>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-    	
-    	
-			<a class="rss" href="/atom.xml" title="RSS">RSS</a>
-		
-	</div>
-
-	<div id="ad">
-		<!-- side-responsive -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-5508892730714185"
-     data-ad-slot="7901214956"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-	</div>
-</nav>
-</header>				
-			</div>
-		</div>	
-		<div class="mid-col">
-			
-				
-			
-			<div class="mid-col-container">
-				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-	<h1 class="title" itemprop="name">Is There Room for One More?</h1>
-	<div class="entry-content" itemprop="articleBody"><p>In the last Google I/O, Google announced a new <a href="https://developer.android.com/topic/libraries/architecture/index.html">architecture components</a>. One of them is Room.
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', GA);
+    })();</script><style>@media (prefers-reduced-motion: no-preference) { @view-transition { navigation: auto; } }</style><script>
+      // The opening sequence plays once per visit, not on every return to the home page.
+      try { if (!sessionStorage.getItem('intro') && !matchMedia('(prefers-reduced-motion: reduce)').matches) { document.documentElement.classList.add('intro'); sessionStorage.setItem('intro', '1'); } } catch (e) {}
+    </script><link rel="stylesheet" href="/_astro/Base.QfMzEV8F.css"></head><body><a class="skip" href="#main">Skip to content</a><header class="site-head"><div class="wrap"><a class="mark" href="/">Shem Magnezi</a><nav class="site-nav" aria-label="Main"><a href="/blog/archives/" aria-current="page">Writing</a><a href="/talks/">Talks</a><a href="/projects/">Side projects</a><a href="/career/">Career</a><a href="/press/">Press</a><a href="/about/">About</a></nav></div></header><main id="main"><div class="read-progress" aria-hidden="true"></div><article><header class="post-head on-night"><div class="wrap"><p class="post-meta"><time datetime="2017-06-02T12:26:09.000Z">2 June 2017</time>, <a href="/blog/categories/android/">Android</a></p><h1 style="view-transition-name:t-2017-06-02-room-performance">Is there Room for one more?</h1></div></header><div class="wrap"><div class="article"><p>In the last Google I/O, Google announced a new <a href="https://developer.android.com/topic/libraries/architecture/index.html">architecture components</a>. One of them is Room.
 Room is an (another) ORM solution for the Android developers. Combining with some other elements Google released (like LiveData, ViewModel, and Lifecycle Listeners)- basic app flows should be much simpler.</p>
-
 <!-- more -->
-
-
 <p>Indeed- Google did some nice work here. Straightforward tasks like displaying items from DB and update them was a pain, and you had to write a lot of code over and over. <a href="https://medium.com/proandroiddev/clean-easy-new-how-to-architect-your-app-part-1-e439668a523d">Now you can just use those out-of-the-box components</a>. This will save time for developers: you will write less code, and you will have fewer bugs.</p>
-
 <p>When examine those components, I feel most of them bringing new things to the table. But about <a href="https://developer.android.com/topic/libraries/architecture/room.html">Room</a>- is there a need for another ORM library?</p>
-
-<h2>ORM?</h2>
-
-<p>Let&rsquo;s start from the beginning. For the ones that not familiar with, ORM stands for &ldquo;Object Relational Mapping&rdquo;. That&rsquo;s a prettier way to let the developers works with persistent objects instead or tables rows.</p>
-
-<p>That&rsquo;s mean that if I want to save all my users data in a database- I will work with the User object and the ORM layer will handle all the persistency stuff for me. Fun.</p>
-
-<h2>Current solutions</h2>
-
+<h2 id="orm">ORM?</h2>
+<p>Let’s start from the beginning. For the ones that not familiar with, ORM stands for “Object Relational Mapping”. That’s a prettier way to let the developers works with persistent objects instead or tables rows.</p>
+<p>That’s mean that if I want to save all my users data in a database- I will work with the User object and the ORM layer will handle all the persistency stuff for me. Fun.</p>
+<h2 id="current-solutions">Current solutions</h2>
 <p>This concept is not new, developers used that technique for a long time, and it was natural that Android developers will need this kind of thing too.</p>
-
-<p>Soon enough we got a couple of 3rd libraries to handle it, just look on <a href="https://web.archive.org/web/20250209211313/https://www.android-arsenal.com/tag/69">AndroidArsenal page</a> and understand we&rsquo;re getting into crowded space here. The most popular ones are probably <a href="http://ormlite.com/">ORMLite</a>, <a href="http://greenrobot.org/greendao/">GreenDAO</a> and <a href="https://github.com/Raizlabs/DBFlow">DbFlow</a>.</p>
-
-<h2>Creating a Model</h2>
-
-<p>There are two main ways to define the mapping between your objects and the tables in Java: some DSL + code generator (like what GreenDAO is using), or using annotation (like ORMLite, DBFlow and most of the libraries). Although I&rsquo;m not a big fan of annotations, I must say the later is an easier solution.</p>
-
-<p>These why it&rsquo;s no surprise that the Android team chose to go with this approach, so simple data model looks like this:
-```java
-@Entity
-public class User {
-    @PrimaryKey
-    private int uid;</p>
-
-<pre><code>@ColumnInfo(name = "first_name")
-private String firstName;
-
-@ColumnInfo(name = "last_name")
-private String lastName;
-
-// Getters and setters are ignored for brevity,
-// but they're required for Room to work.
-// (So please go and switch to Kotlin)
-</code></pre>
-
-<p>}
-```
-As in any other library- you can set a custom name for the table or the columns, you can choose to index some stuff and specify relationships between models.</p>
-
-<h2>The API</h2>
-
+<p>Soon enough we got a couple of 3rd libraries to handle it, just look on <a href="https://web.archive.org/web/20250209211313/https://www.android-arsenal.com/tag/69">AndroidArsenal page</a> and understand we’re getting into crowded space here. The most popular ones are probably <a href="http://ormlite.com/">ORMLite</a>, <a href="http://greenrobot.org/greendao/">GreenDAO</a> and <a href="https://github.com/Raizlabs/DBFlow">DbFlow</a>.</p>
+<h2 id="creating-a-model">Creating a Model</h2>
+<p>There are two main ways to define the mapping between your objects and the tables in Java: some DSL + code generator (like what GreenDAO is using), or using annotation (like ORMLite, DBFlow and most of the libraries). Although I’m not a big fan of annotations, I must say the later is an easier solution.</p>
+<p>These why it’s no surprise that the Android team chose to go with this approach, so simple data model looks like this:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#24292E">@</span><span style="color:#D73A49">Entity</span></span>
+<span class="line"><span style="color:#D73A49">public</span><span style="color:#D73A49"> class</span><span style="color:#6F42C1"> User</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">    @</span><span style="color:#D73A49">PrimaryKey</span></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#D73A49"> int</span><span style="color:#24292E"> uid;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    @</span><span style="color:#D73A49">ColumnInfo</span><span style="color:#24292E">(</span><span style="color:#005CC5">name</span><span style="color:#D73A49"> =</span><span style="color:#032F62"> "first_name"</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#24292E"> String firstName;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    @</span><span style="color:#D73A49">ColumnInfo</span><span style="color:#24292E">(</span><span style="color:#005CC5">name</span><span style="color:#D73A49"> =</span><span style="color:#032F62"> "last_name"</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#D73A49">    private</span><span style="color:#24292E"> String lastName;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    // Getters and setters are ignored for brevity,</span></span>
+<span class="line"><span style="color:#6A737D">    // but they're required for Room to work.</span></span>
+<span class="line"><span style="color:#6A737D">    // (So please go and switch to Kotlin)</span></span>
+<span class="line"><span style="color:#24292E">}</span></span></code></pre>
+<p>As in any other library- you can set a custom name for the table or the columns, you can choose to index some stuff and specify relationships between models.</p>
+<h2 id="the-api">The API</h2>
 <p>To interact with the data models, we use DAO- data access object. So nothing new from Google here also. For each model, we need to declare a DAO with CRUD operations. Every library covers the main functionality and offers kind of the same sets of features.</p>
-
 <p>BUT while most of the ORM libraries using some in-code query builder, Room doing something nice and let you declare your queries in slick SQL formatting.</p>
-
-<p>For example, here is how you&rsquo;ll do a simple query for specific users in each one of the platforms:
-```java
-    //Room:
-    @Query(&ldquo;SELECT * FROM user WHERE age > :minAge&rdquo;)
-    public User[] loadAllUsersOlderThan(int minAge);</p>
-
-<pre><code>//DbFlow:
-List&lt;User&gt; users = SQLite.select()
-                         .from(User.class)
-                         .where(User_Table.age.greaterThan(minAge)
-                         .queryList();
-
-//ORMLite:
-List&lt;User&gt; users = userDao.queryBuilder()
-                          .where()
-                          .gt("age", minAge)
-                          .query();
-//GreenDAO:
-List&lt;User&gt; users = userDao.queryBuilder()
-                          .where(Properties.Age.gt(minAge))
-                          .list();
-</code></pre>
-
-<p>```
-On the one hand- it&rsquo;s cleaner and most of us familiar with SQL syntax, but on the contrary, you&rsquo;re losing some of the power of your object mapping (no autocomplete, and you need to remember the object&rsquo;s table).</p>
-
-<h2>Performance</h2>
-
-<p>Reading and writing to the database is an expensive IO operation. If you&rsquo;re working with lots of entities in your app, it might be a bottleneck.
-That&rsquo;s why GreenDAO and DbFlow are heavily investing in performance (<a href="https://github.com/Raizlabs/AndroidDatabaseLibraryComparison/issues/16">it might even get ugly some times</a>).</p>
-
-<p>I decided to check how Room performs in relation to the others, so I take the GreenDAO benchmark (I looked on <a href="https://github.com/Raizlabs/AndroidDatabaseLibraryComparison">Raizlabs benchmark</a> too, but I felt it&rsquo;s too biased), and added Room. You can see the source code <a href="https://github.com/greenrobot/android-database-performance/pull/19">here</a>.</p>
-
-<p>I compared the results to the libraries discussed in the post. I ran all tests on an emulator and took the average of each library results (I&rsquo;ll attach the full results of each library, so you&rsquo;ll able to take a closer look).</p>
-
-<p><img class="center" src="/images/posts/room/chart_1.png">
-<img class="center" src="/images/posts/room/chart_2.png">
-<img class="center" src="/images/posts/room/chart_3.png">
-<img class="center" src="/images/posts/room/chart_4.png"></p>
-
-<p>It is a simple, fast setup benchmark, and I didn&rsquo;t analyze the results too much. From first looking at the results- you can see that Room has no advantage in any aspect of performance over the other libs. While making small operations one by one- ORMLite has it&rsquo;s own advantages, when moving the bigger scales- DBFlow and GreenDAO obviously win (because the caching they use).</p>
-
-<h2>Summary</h2>
-
+<p>For example, here is how you’ll do a simple query for specific users in each one of the platforms:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="java"><code><span class="line"><span style="color:#6A737D">    //Room:</span></span>
+<span class="line"><span style="color:#24292E">    @</span><span style="color:#D73A49">Query</span><span style="color:#24292E">(</span><span style="color:#032F62">"SELECT * FROM user WHERE age &gt; :minAge"</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#D73A49">    public</span><span style="color:#D73A49"> User</span><span style="color:#24292E">[] </span><span style="color:#6F42C1">loadAllUsersOlderThan</span><span style="color:#24292E">(</span><span style="color:#D73A49">int</span><span style="color:#24292E"> minAge);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    //DbFlow:</span></span>
+<span class="line"><span style="color:#24292E">    List&lt;</span><span style="color:#D73A49">User</span><span style="color:#24292E">&gt; users </span><span style="color:#D73A49">=</span><span style="color:#24292E"> SQLite.</span><span style="color:#6F42C1">select</span><span style="color:#24292E">()</span></span>
+<span class="line"><span style="color:#24292E">                             .</span><span style="color:#6F42C1">from</span><span style="color:#24292E">(User.class)</span></span>
+<span class="line"><span style="color:#24292E">                             .</span><span style="color:#6F42C1">where</span><span style="color:#24292E">(User_Table.age.</span><span style="color:#6F42C1">greaterThan</span><span style="color:#24292E">(minAge)</span></span>
+<span class="line"><span style="color:#24292E">                             .</span><span style="color:#6F42C1">queryList</span><span style="color:#24292E">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    //ORMLite:</span></span>
+<span class="line"><span style="color:#24292E">    List&lt;</span><span style="color:#D73A49">User</span><span style="color:#24292E">&gt; users </span><span style="color:#D73A49">=</span><span style="color:#24292E"> userDao.</span><span style="color:#6F42C1">queryBuilder</span><span style="color:#24292E">()</span></span>
+<span class="line"><span style="color:#24292E">                              .</span><span style="color:#6F42C1">where</span><span style="color:#24292E">()</span></span>
+<span class="line"><span style="color:#24292E">                              .</span><span style="color:#6F42C1">gt</span><span style="color:#24292E">(</span><span style="color:#032F62">"age"</span><span style="color:#24292E">, minAge)</span></span>
+<span class="line"><span style="color:#24292E">                              .</span><span style="color:#6F42C1">query</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#6A737D">    //GreenDAO:</span></span>
+<span class="line"><span style="color:#24292E">    List&lt;</span><span style="color:#D73A49">User</span><span style="color:#24292E">&gt; users </span><span style="color:#D73A49">=</span><span style="color:#24292E"> userDao.</span><span style="color:#6F42C1">queryBuilder</span><span style="color:#24292E">()</span></span>
+<span class="line"><span style="color:#24292E">                              .</span><span style="color:#6F42C1">where</span><span style="color:#24292E">(Properties.Age.</span><span style="color:#6F42C1">gt</span><span style="color:#24292E">(minAge))</span></span>
+<span class="line"><span style="color:#24292E">                              .</span><span style="color:#6F42C1">list</span><span style="color:#24292E">();</span></span></code></pre>
+<p>On the one hand- it’s cleaner and most of us familiar with SQL syntax, but on the contrary, you’re losing some of the power of your object mapping (no autocomplete, and you need to remember the object’s table).</p>
+<h2 id="performance">Performance</h2>
+<p>Reading and writing to the database is an expensive IO operation. If you’re working with lots of entities in your app, it might be a bottleneck.
+That’s why GreenDAO and DbFlow are heavily investing in performance (<a href="https://github.com/Raizlabs/AndroidDatabaseLibraryComparison/issues/16">it might even get ugly some times</a>).</p>
+<p>I decided to check how Room performs in relation to the others, so I take the GreenDAO benchmark (I looked on <a href="https://github.com/Raizlabs/AndroidDatabaseLibraryComparison">Raizlabs benchmark</a> too, but I felt it’s too biased), and added Room. You can see the source code <a href="https://github.com/greenrobot/android-database-performance/pull/19">here</a>.</p>
+<p>I compared the results to the libraries discussed in the post. I ran all tests on an emulator and took the average of each library results (I’ll attach the full results of each library, so you’ll able to take a closer look).</p>
+<p><img src="/images/posts/room/chart_1.png" alt="">
+<img src="/images/posts/room/chart_2.png" alt="">
+<img src="/images/posts/room/chart_3.png" alt="">
+<img src="/images/posts/room/chart_4.png" alt=""></p>
+<p>It is a simple, fast setup benchmark, and I didn’t analyze the results too much. From first looking at the results- you can see that Room has no advantage in any aspect of performance over the other libs. While making small operations one by one- ORMLite has it’s own advantages, when moving the bigger scales- DBFlow and GreenDAO obviously win (because the caching they use).</p>
+<h2 id="summary">Summary</h2>
 <p>Google did a fantastic job by taking a step forward to help developers architect their apps better. The last components that Google introduced are right in place and should help each one of us write better code in less time.</p>
-
-<p>BUT, choosing to deliver <em>another</em> ORM solution, with no added value (unless I&rsquo;m missing something here), is something that I do not understand. I would expect that the team will take an existing solution that works, or even just recommend one (<a href="https://developer.android.com/topic/libraries/architecture/guide.html#fetching_data">like what they are doing with Retrofit</a>).</p>
-
-<hr />
-
+<p>BUT, choosing to deliver <em>another</em> ORM solution, with no added value (unless I’m missing something here), is something that I do not understand. I would expect that the team will take an existing solution that works, or even just recommend one (<a href="https://developer.android.com/topic/libraries/architecture/guide.html#fetching_data">like what they are doing with Retrofit</a>).</p>
+<hr>
 <p><em>If you liked this post click the ♡ bellow and share this story. As a writer it means the world.</em></p>
-
-<hr />
-
+<hr>
 <p><em>Full reports:</em><br>
 <em><a href="/files/posts/room/PerfTestDbFlow-1by1.tsv">PerfTestDbFlow-1by1.tsv</a></em><br>
 <em><a href="/files/posts/room/PerfTestDbFlow-batch.tsv">PerfTestDbFlow-batch.tsv</a></em><br>
@@ -255,65 +86,13 @@ That&rsquo;s why GreenDAO and DbFlow are heavily investing in performance (<a hr
 <em><a href="/files/posts/room/PerfTestOrmLite-batch.tsv">PerfTestOrmLite-batch.tsv</a></em><br>
 <em><a href="/files/posts/room/PerfTestRoom-1by1.tsv">PerfTestRoom-1by1.tsv</a></em><br>
 <em><a href="/files/posts/room/PerfTestRoom-batch.tsv">PerfTestRoom-batch.tsv</a></em><br></p>
-</div>
+</div></div></article><div class="wrap"><nav class="neighbors" aria-label="More posts"><div><a href="/blog/2017/05/19/tech-life-as-graphs-2/"><small>Older</small>Tech life as graphs II</a></div><div class="newer"><a href="/blog/2017/07/02/5-things-react-world-can-learn-from-android/"><small>Newer</small>5 things React world can learn from Android</a></div></nav><section class="comments" aria-label="Comments"><div id="disqus_thread"></div><script>(function(){const threadUrl = "http://blog.shem.dev/blog/2017/06/02/room-performance/";
 
-</article>
-
-	
-
-<!-- Post ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-5508892730714185"
-     data-ad-slot="8917228557"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-
-<section id="comment">
-    <h1 class="title">Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-</section>
-
-</div>
-			</div>
-			<footer id="footer" class="inner">Copyright &copy; 2026
-
-    Shem Magnezi
-
-
-Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
-		</div>
-	</div>
-	
-
-<script type="text/javascript">
-      var disqus_shortname = 'shemblog';
-      
-        
-        // var disqus_developer = 1;
-        var disqus_identifier = 'https://blog.shem.dev/blog/2017/06/02/room-performance/';
-        var disqus_url = 'https://blog.shem.dev/blog/2017/06/02/room-performance/';
-        var disqus_script = 'embed.js';
-      
-    (function () {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'https://' + disqus_shortname + '.disqus.com/' + disqus_script;
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    }());
-</script>
-
-
-
-
-
-
-
-
-
-
-</body>
-</html>
+    window.disqus_config = function () { this.page.url = threadUrl; this.page.identifier = threadUrl; };
+    var slot = document.getElementById('disqus_thread');
+    var load = function () { var s = document.createElement('script'); s.src = 'https://shemblog.disqus.com/embed.js'; s.async = true; s.setAttribute('data-timestamp', +new Date()); document.body.appendChild(s); };
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (e) { if (e[0].isIntersecting) { io.disconnect(); load(); } }, { rootMargin: '400px' });
+      io.observe(slot);
+    } else { load(); }
+  })();</script></section></div></main><footer class="site-foot"><div class="wrap"><span>Shem Magnezi, Tel Aviv</span><nav aria-label="Elsewhere"><a href="https://github.com/shem8">GitHub</a><a href="https://www.linkedin.com/in/shem-magnezi-45490424">LinkedIn</a><a href="https://x.com/shemag8">X</a><a href="https://medium.com/@shemag8">Medium</a><a href="/atom.xml">RSS</a></nav></div></footer><script type="module">var e=matchMedia(`(prefers-reduced-motion: reduce)`).matches,t=matchMedia(`(hover: hover) and (pointer: fine)`).matches;!e&&t&&document.querySelectorAll(`[data-tilt]`).forEach(e=>{e.addEventListener(`pointermove`,t=>{let n=e.getBoundingClientRect(),r=(t.clientX-n.left)/n.width,i=(t.clientY-n.top)/n.height;e.style.setProperty(`--rx`,`${(.5-i)*7}deg`),e.style.setProperty(`--ry`,`${(r-.5)*5}deg`),e.style.setProperty(`--sx`,`${r*100}%`),e.style.setProperty(`--shine`,`1`)}),e.addEventListener(`pointerleave`,()=>{e.style.setProperty(`--rx`,`0deg`),e.style.setProperty(`--ry`,`0deg`),e.style.setProperty(`--shine`,`0`)})}),!e&&`IntersectionObserver`in window&&document.querySelectorAll(`[data-reveal]`).forEach(e=>{if(e.getBoundingClientRect().top<innerHeight*.8)return;e.classList.add(`ready`);let t=new IntersectionObserver(n=>{n[0].isIntersecting&&(t.disconnect(),e.classList.add(`in`),setTimeout(()=>e.classList.add(`done`),1800))},{threshold:.3});t.observe(e)});</script></body></html>

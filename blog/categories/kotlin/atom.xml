@@ -1,207 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-
-  <title><![CDATA[Category: kotlin | Shem Magnezi Blog]]></title>
-  <link href="https://blog.shem.dev/blog/categories/kotlin/atom.xml" rel="self"/>
-  <link href="https://blog.shem.dev/"/>
-  <updated>2026-11-08T13:43:22+02:00</updated>
-  <id>https://blog.shem.dev/</id>
-  <author>
-    <name><![CDATA[Shem Magnezi]]></name>
-    <email><![CDATA[smagnezi8@gmail.com]]></email>
-  </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
-
-  
-  <entry>
-    <title type="html"><![CDATA[Kotlin- a better Java for Android?]]></title>
-    <link href="https://blog.shem.dev/blog/2016/01/01/kotlin-a-better-java-for-android/"/>
-    <updated>2016-01-01T15:52:32+02:00</updated>
-    <id>https://blog.shem.dev/blog/2016/01/01/kotlin-a-better-java-for-android</id>
-    <content type="html"><![CDATA[A couple of weeks ago, when going over some Android DevSummit videos, I encountered in some question about alternative language for Android during one of the [fireside chats](https://youtu.be/-VNfWh5UkfY?list=PLWz5rJ2EKKc_Tt7q77qwyKRgytF1RzRx8&t=1461) session with the Android team. It was really interesting that there was another way to develop an Android apps but unfortunately I didn't fully catch the name of the language ("What what? was it Kotin? Tolkin? What he was saying???") so I give up.
-<!--more-->
-
-Next, I stumble upon [this twitter conversation](https://twitter.com/donnfelker/status/675020357158477825) and finally found Kotlin.
-
-
-## What's wrong with Java?
-
-
-Nothing special, really. Yes, ruby python and JS are really sexy with all those duck typing and lambdas and much less boilerplate code, but Java has really good IDE's that saves you a lot of time and don't bother you with all those declarations.
-
-Moreover, Oracle is trying to keeping up the pace and add some cool things like lambda expressions, but still- Java is a bit "heavy" and fall in the small things (like arrays and lists, NPE, iterations, Generics and more...).
-
-
-## So what's wrong with Java on Android?
-
-
-OK, that's a different question. First- Java 8 (and even some things from Java 7) [not supported on Android platform](https://www.reddit.com/r/androiddev/comments/22mh0r/does_android_have_any_plans_for_java_8/) (yet, there was some changes in the last week and [Google announce that the next version of Android will be targeting OpnJDK](http://venturebeat.com/2015/12/29/google-confirms-next-android-version-wont-use-oracles-proprietary-java-apis/)). So it still sucks to handle with stream, dates and we can't use things like lambdas or switch on strings.
-
-Second- Android considered as front end platform and as frond end developer I would like the code will be as lightweight as possible. That's mean things like:
-
-
-
-
-  * Easily add helper methods to all kinds of types (and not using static utils classes everywhere).
-
-
-  * Lambda/ function pointers/ on the fly code execution.
-
-
-  * Easily run things in background and async task, without the [callback hell.](http://stackoverflow.com/questions/29341582/how-to-avoid-callback-hell-in-java)
-
-
-  * I would be glad to extends from my own classes by most of the time I must extends from Android classes (or other 3rd libraries) what make the code reuse and abstraction a bit hard.
-
-
-
-
-# Kotlin to the rescue
-
-
-<blockquote><p>Statically typed programming language for the JVM, Android and the browser</p><footer><strong>Kotlin official site</strong> <cite><a href='http://kotlinlang.org'>kotlinlang.org/&hellip;</a></cite></footer></blockquote>
-
-
-JetBrains, the company behind Kotlin, understand the potential of Android build system and integrated the language compiled byte code straight into the Android gradle mechanism.
-
-Unlike other JVM languages, like Clojure or Scala, JetBrains understand the power of JVM-like platforms and made some specific adaptation for those. That's mean that Kotlin can be compile even to JavaScript!
-
-
-## Language basics
-
-
-I won't go over the language syntax, there is a very good documentation in the [Kotlin site](https://kotlinlang.org/docs/reference/). I would just say that for Java devs among you it suppose to be pretty straight forward, and for you who familiar with C# it should be even easier.
-
-
-## Starting with android
-
-
-So lets start by creating an Android project. JetBrains are also the creator of InteliJ, the editor Android Studio based on, so it easily integrated for working also with Kotlin, you just need to install the [Kotlin plugin](http://blog.jetbrains.com/kotlin/2013/08/working-with-kotlin-in-android-studio/).
-
-Creating a new Android app with Kotlin it just like a regular app, follow [this instructions](https://kotlinlang.org/docs/tutorials/kotlin-android.html) and make the first "Hello World" app. You might still gonna need to do some changes in code (like changing from _savedInstanceState: Bundle_ to _savedInstanceState: Bundle?_ for null safety) but it suppose to compile quickly.
-
-Now we're able to see how we can use the language for faster development:
-
-
-### Kotlin Android Extensions
-
-
-[The Android Extensions plugin](https://kotlinlang.org/docs/tutorials/android-plugin.html) allows us to get rid from all the _findViewById_ boilerplate code without having to add any extra code or shipping any additional runtime:
-
-<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='kotlin'><span class='line'><span></span><span class="c1">// Using R.layout.activity_main from the main source set</span>
-</span><span class='line'><span class="k">import</span><span class="w"> </span><span class="nn">kotlinx.android.synthetic.main.activity_main.*</span>
-</span><span class='line'>
-</span><span class='line'><span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">MyActivity</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Activity</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span class='line'><span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span><span class="w"> </span><span class="n">Bundle?)</span><span class="w"> </span><span class="p">{</span>
-</span><span class='line'><span class="w">        </span><span class="k">super</span><span class="p">.</span><span class="na">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
-</span><span class='line'><span class="w">        </span><span class="n">setContentView</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">layout</span><span class="p">.</span><span class="na">activity_main</span><span class="p">)</span>
-</span><span class='line'><span class="w">        </span><span class="n">textView</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="s">&quot;Hello, world!&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">// Instead of findView(R.id.textView) as TextView</span>
-</span><span class='line'><span class="w">    </span><span class="p">}</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-
-### Code shrinking
-
-
-Code in Java:
-
-<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span></span><span class="n">view</span><span class="p">.</span><span class="na">setOnClickListener</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">View</span><span class="p">.</span><span class="na">OnClickListener</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span class='line'><span class="w">    </span><span class="nd">@Override</span>
-</span><span class='line'><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onClick</span><span class="p">(</span><span class="n">View</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span class='line'><span class="w">        </span><span class="c1">//click handling</span>
-</span><span class='line'><span class="w">    </span><span class="p">}</span>
-</span><span class='line'><span class="p">});</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-Comes to:
-
-<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='kotlin'><span class='line'><span></span><span class="n">view</span><span class="p">.</span><span class="na">setOnClickListener</span><span class="p">({</span><span class="c1">//click handling})</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-And:
-
-<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">s</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="na">length</span><span class="p">()</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-Comes to:
-
-<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='kotlin'><span class='line'><span></span><span class="n">s</span><span class="o">?.</span><span class="na">length</span><span class="w"> </span><span class="o">?:</span><span class="w"> </span><span class="o">-</span><span class="m">1</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-Isn't it wonderful?
-
-
-### Extensions methods
-
-
-Here is the real power of the language in my opinion, we can easily add utility function to our components from outside and use them seamlessly in our classes, here are some examples that I've used in my extension class:
-
-<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-</pre></td><td class='code'><pre><code class='kotlin'><span class='line'><span></span><span class="kd">fun</span><span class="w"> </span><span class="n">AppCompatActivity</span><span class="p">.</span><span class="nf">navigate</span><span class="p">(</span><span class="n">frag</span><span class="p">:</span><span class="w"> </span><span class="n">Fragment</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span class='line'><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">fragmentTransaction</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="n">supportFragmentManager</span><span class="p">.</span><span class="na">beginTransaction</span><span class="p">()</span>
-</span><span class='line'><span class="w">    </span><span class="n">fragmentTransaction</span><span class="p">.</span><span class="na">replace</span><span class="p">(</span><span class="n">content</span><span class="p">.</span><span class="na">id</span><span class="p">,</span><span class="w"> </span><span class="n">frag</span><span class="p">);</span>
-</span><span class='line'><span class="w">    </span><span class="n">fragmentTransaction</span><span class="p">.</span><span class="na">commit</span><span class="p">();</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="kd">fun</span><span class="w"> </span><span class="n">Fragment</span><span class="p">.</span><span class="nf">userError</span><span class="p">(</span><span class="n">msg</span><span class="p">:</span><span class="w"> </span><span class="kt">String?</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span class='line'><span class="w">    </span><span class="n">Snackbar</span><span class="p">.</span><span class="na">make</span><span class="p">(</span><span class="n">view</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="p">,</span><span class="w"> </span><span class="n">Snackbar</span><span class="p">.</span><span class="na">LENGTH_LONG</span><span class="p">).</span><span class="na">show</span><span class="p">()</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="kd">fun</span><span class="w"> </span><span class="n">SharedPreferences</span><span class="p">.</span><span class="nf">edit</span><span class="p">(</span><span class="n">func</span><span class="p">:</span><span class="n">SharedPreferences</span><span class="p">.</span><span class="na">Editor</span><span class="p">.</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">amp</span><span class="p">;</span><span class="n">amp</span><span class="p">;</span><span class="n">gt</span><span class="p">;</span><span class="w"> </span><span class="kt">Unit</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span class='line'><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">editor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">edit</span><span class="p">()</span>
-</span><span class='line'><span class="w">    </span><span class="n">editor</span><span class="p">.</span><span class="na">func</span><span class="p">()</span>
-</span><span class='line'><span class="w">    </span><span class="n">editor</span><span class="p">.</span><span class="na">apply</span><span class="p">()</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="kd">fun</span><span class="w"> </span><span class="n">SharedPreferences</span><span class="p">.</span><span class="nf">Editor</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">pair</span><span class="p">:</span><span class="w"> </span><span class="n">Pair</span><span class="o">&lt;</span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="kt">String</span><span class="o">&gt;</span><span class="p">)</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">putString</span><span class="p">(</span><span class="n">pair</span><span class="p">.</span><span class="na">first</span><span class="p">,</span><span class="w"> </span><span class="n">pair</span><span class="p">.</span><span class="na">second</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-There are also some libraries out there that add you many more extentions like: [KAndroid](https://github.com/pawegio/KAndroid) and [androidKotlin](https://github.com/yoavst/androidKotlin), or even examples from others Android devs like [Jake Wharton](https://speakerdeck.com/jakewharton/android-development-with-kotlin-androidkw-number-001).
-
-
-## Last words
-
-
-Java in general, and Android in particular, has not so few problems, and although Oracle and Google adding features and trying to keep up the pace- it's too slow and too heavy handed.
-
-Kotlin is some experiment from JetBrains to bring the latest design patterns paradigms to Java, Android and JS platforms that was quickly take Android community attention (and even inside Google).
-
-As you can see it look pretty good for start, it can save much redundant code and speed up development, and it will be interesting what will be next moves from Google and JetBrains and if it gonna get to the mainstream.
-]]></content>
-  </entry>
-  
-</feed>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Shem Magnezi: Kotlin</title><link href="https://blog.shem.dev/blog/categories/kotlin/atom.xml" rel="self"/><link href="https://blog.shem.dev/"/><updated>2016-01-01T13:52:32.000Z</updated><id>https://blog.shem.dev/</id><author><name>Shem Magnezi</name></author><entry><title type="html">Kotlin- a better Java for Android?</title><link href="https://blog.shem.dev/blog/2016/01/01/kotlin-a-better-java-for-android/"/><updated>2016-01-01T13:52:32.000Z</updated><id>https://blog.shem.dev/blog/2016/01/01/kotlin-a-better-java-for-android/</id><content type="html">&lt;p&gt;A couple of weeks ago, when going over some Android DevSummit videos, I encountered in some question about alternative language for Android during one of the &lt;a href="https://youtu.be/-VNfWh5UkfY?list=PLWz5rJ2EKKc_Tt7q77qwyKRgytF1RzRx8&amp;amp;t=1461"&gt;fireside chats&lt;/a&gt; session with the Android team. It was really interesting that there was another way to develop an Android apps but unfortunately I didn’t fully catch the name of the language (“What what? was it Kotin? Tolkin? What he was saying???”) so I give up.&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;Next, I stumble upon &lt;a href="https://twitter.com/donnfelker/status/675020357158477825"&gt;this twitter conversation&lt;/a&gt; and finally found Kotlin.&lt;/p&gt;
+&lt;h2 id="whats-wrong-with-java"&gt;What’s wrong with Java?&lt;/h2&gt;
+&lt;p&gt;Nothing special, really. Yes, ruby python and JS are really sexy with all those duck typing and lambdas and much less boilerplate code, but Java has really good IDE’s that saves you a lot of time and don’t bother you with all those declarations.&lt;/p&gt;
+&lt;p&gt;Moreover, Oracle is trying to keeping up the pace and add some cool things like lambda expressions, but still- Java is a bit “heavy” and fall in the small things (like arrays and lists, NPE, iterations, Generics and more…).&lt;/p&gt;
+&lt;h2 id="so-whats-wrong-with-java-on-android"&gt;So what’s wrong with Java on Android?&lt;/h2&gt;
+&lt;p&gt;OK, that’s a different question. First- Java 8 (and even some things from Java 7) &lt;a href="https://www.reddit.com/r/androiddev/comments/22mh0r/does_android_have_any_plans_for_java_8/"&gt;not supported on Android platform&lt;/a&gt; (yet, there was some changes in the last week and &lt;a href="http://venturebeat.com/2015/12/29/google-confirms-next-android-version-wont-use-oracles-proprietary-java-apis/"&gt;Google announce that the next version of Android will be targeting OpnJDK&lt;/a&gt;). So it still sucks to handle with stream, dates and we can’t use things like lambdas or switch on strings.&lt;/p&gt;
+&lt;p&gt;Second- Android considered as front end platform and as frond end developer I would like the code will be as lightweight as possible. That’s mean things like:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Easily add helper methods to all kinds of types (and not using static utils classes everywhere).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Lambda/ function pointers/ on the fly code execution.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Easily run things in background and async task, without the &lt;a href="http://stackoverflow.com/questions/29341582/how-to-avoid-callback-hell-in-java"&gt;callback hell.&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;I would be glad to extends from my own classes by most of the time I must extends from Android classes (or other 3rd libraries) what make the code reuse and abstraction a bit hard.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="kotlin-to-the-rescue"&gt;Kotlin to the rescue&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Statically typed programming language for the JVM, Android and the browser&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://kotlinlang.org"&gt;Kotlin official site&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;JetBrains, the company behind Kotlin, understand the potential of Android build system and integrated the language compiled byte code straight into the Android gradle mechanism.&lt;/p&gt;
+&lt;p&gt;Unlike other JVM languages, like Clojure or Scala, JetBrains understand the power of JVM-like platforms and made some specific adaptation for those. That’s mean that Kotlin can be compile even to JavaScript!&lt;/p&gt;
+&lt;h2 id="language-basics"&gt;Language basics&lt;/h2&gt;
+&lt;p&gt;I won’t go over the language syntax, there is a very good documentation in the &lt;a href="https://kotlinlang.org/docs/reference/"&gt;Kotlin site&lt;/a&gt;. I would just say that for Java devs among you it suppose to be pretty straight forward, and for you who familiar with C# it should be even easier.&lt;/p&gt;
+&lt;h2 id="starting-with-android"&gt;Starting with android&lt;/h2&gt;
+&lt;p&gt;So lets start by creating an Android project. JetBrains are also the creator of InteliJ, the editor Android Studio based on, so it easily integrated for working also with Kotlin, you just need to install the &lt;a href="http://blog.jetbrains.com/kotlin/2013/08/working-with-kotlin-in-android-studio/"&gt;Kotlin plugin&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Creating a new Android app with Kotlin it just like a regular app, follow &lt;a href="https://kotlinlang.org/docs/tutorials/kotlin-android.html"&gt;this instructions&lt;/a&gt; and make the first “Hello World” app. You might still gonna need to do some changes in code (like changing from &lt;em&gt;savedInstanceState: Bundle&lt;/em&gt; to &lt;em&gt;savedInstanceState: Bundle?&lt;/em&gt; for null safety) but it suppose to compile quickly.&lt;/p&gt;
+&lt;p&gt;Now we’re able to see how we can use the language for faster development:&lt;/p&gt;
+&lt;h3 id="kotlin-android-extensions"&gt;Kotlin Android Extensions&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://kotlinlang.org/docs/tutorials/android-plugin.html"&gt;The Android Extensions plugin&lt;/a&gt; allows us to get rid from all the &lt;em&gt;findViewById&lt;/em&gt; boilerplate code without having to add any extra code or shipping any additional runtime:&lt;/p&gt;
+&lt;pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="kotlin"&gt;&lt;code&gt;&lt;span class="line"&gt;&lt;span style="color:#6A737D"&gt;// Using R.layout.activity_main from the main source set&lt;/span&gt;&lt;/span&gt;
+&lt;span class="line"&gt;&lt;span style="color:#D73A49"&gt;import&lt;/span&gt;&lt;span style="color:#6F42C1"&gt; kotlinx.android.synthetic.main.activity_main.&lt;/span&gt;&lt;span style="color:#005CC5"&gt;*&lt;/span&gt;&lt;/span&gt;
+&lt;span class="line"&gt;&lt;/span&gt;
+&lt;span class="line"&gt;&lt;span style="color:#D73A49"&gt;public&lt;/span&gt;&lt;span style="color:#D73A49"&gt; class&lt;/span&gt;&lt;span style="color:#6F42C1"&gt; MyActivity&lt;/span&gt;&lt;span style="color:#24292E"&gt; : &lt;/span&gt;&lt;span style="color:#6F42C1"&gt;Activity&lt;/span&gt;&lt;span style="color:#24292E"&gt;() {&lt;/span&gt;&lt;/span&gt;
+&lt;span class="line"&gt;&lt;span style="color:#D73A49"&gt;    override&lt;/span&gt;&lt;span style="color:#D73A49"&gt; fun&lt;/span&gt;&lt;span style="color:#6F42C1"&gt; onCreate&lt;/span&gt;&lt;span style="color:#24292E"&gt;(savedInstanceState: &lt;/span&gt;&lt;span style="color:#6F42C1"&gt;Bundle&lt;/span&gt;&lt;span style="color:#24292E"&gt;?) {&lt;/span&gt;&lt;/span&gt;
+&lt;span class="line"&gt;&lt;span style="color:#005CC5"&gt;        super&lt;/span&gt;&lt;span style="color:#24292E"&gt;.&lt;/span&gt;&lt;span style="color:#6F42C1"&gt;onCreate&lt;/span&gt;&lt;span style="color:#24292E"&gt;(savedInstanceState)&lt;/span&gt;&lt;/span&gt;
+&lt;span class="line"&gt;&lt;span style="color:#6F42C1"&gt;        setContentView&lt;/span&gt;&lt;span style="color:#24292E"&gt;(R.layout.activity_main)&lt;/span&gt;&lt;/span&gt;
+&lt;span class="line"&gt;&lt;span style="color:#24292E"&gt;        textView.&lt;/span&gt;&lt;span style="color:#6F42C1"&gt;setText&lt;/span&gt;&lt;span style="color:#24292E"&gt;(&lt;/span&gt;&lt;span style="color:#032F62"&gt;"Hello, world!"&lt;/span&gt;&lt;span style="color:#24292E"&gt;) &lt;/span&gt;&lt;span style="color:#6A737D"&gt;// Instead of findView(R.id.textView) as TextView&lt;/span&gt;&lt;/span&gt;
+&lt;span class="line"&gt;&lt;span style="color:#24292E"&gt;    }&lt;/span&gt;&lt;/span&gt;
+&lt;span class="line"&gt;&lt;span style="color:#24292E"&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id="code-shrinking"&gt;Code shrinking&lt;/h3&gt;
+&lt;p&gt;Code in Java:&lt;/p&gt;
+&lt;pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="java"&gt;&lt;code&gt;&lt;span class="line"&gt;&lt;span style="color:#24292E"&gt;view.&lt;/span&gt;&lt;span style="color:#6F42C1"&gt;setOnClickListener&lt;/span&gt;&lt;span style="color:#24292E"&gt;(&lt;/span&gt;&lt;span style="color:#D73A49"&gt;new&lt;/span&gt;&lt;span style="color:#24292E"&gt; View.&lt;/span&gt;&lt;span style="color:#6F42C1"&gt;OnClickListener&lt;/span&gt;&lt;span style="color:#24292E"&gt;() {&lt;/span&gt;&lt;/span&gt;
+&lt;span class="line"&gt;&lt;span style="color:#24292E"&gt;    @&lt;/span&gt;&lt;span style="color:#D73A49"&gt;Override&lt;/span&gt;&lt;/span&gt;
+&lt;span class="line"&gt;&lt;span style="color:#D73A49"&gt;    public&lt;/span&gt;&lt;span style="color:#D73A49"&gt; void&lt;/span&gt;&lt;span style="color:#6F42C1"&gt; onClick&lt;/span&gt;&lt;span style="color:#24292E"&gt;(View v) {&lt;/span&gt;&lt;/span&gt;
+&lt;span class="line"&gt;&lt;span style="color:#6A737D"&gt;        //click handling&lt;/span&gt;&lt;/span&gt;
+&lt;span class="line"&gt;&lt;span style="color:#24292E"&gt;    }&lt;/span&gt;&lt;/span&gt;
+&lt;span class="line"&gt;&lt;span style="color:#24292E"&gt;});&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Comes to:&lt;/p&gt;
+&lt;pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="kotlin"&gt;&lt;code&gt;&lt;span class="line"&gt;&lt;span style="color:#24292E"&gt;view.&lt;/span&gt;&lt;span style="color:#6F42C1"&gt;setOnClickListener&lt;/span&gt;&lt;span style="color:#24292E"&gt;({&lt;/span&gt;&lt;span style="color:#6A737D"&gt;//click handling})&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And:&lt;/p&gt;
+&lt;pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="java"&gt;&lt;code&gt;&lt;span class="line"&gt;&lt;span style="color:#D73A49"&gt;if&lt;/span&gt;&lt;span style="color:#24292E"&gt; (s &lt;/span&gt;&lt;span style="color:#D73A49"&gt;!=&lt;/span&gt;&lt;span style="color:#005CC5"&gt; null&lt;/span&gt;&lt;span style="color:#24292E"&gt;) &lt;/span&gt;&lt;span style="color:#D73A49"&gt;?&lt;/span&gt;&lt;span style="color:#24292E"&gt; s.&lt;/span&gt;&lt;span style="color:#6F42C1"&gt;length&lt;/span&gt;&lt;span style="color:#24292E"&gt;() &lt;/span&gt;&lt;span style="color:#D73A49"&gt;:&lt;/span&gt;&lt;span style="color:#005CC5"&gt; 0&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Comes to:&lt;/p&gt;
+&lt;pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="kotlin"&gt;&lt;code&gt;&lt;span class="line"&gt;&lt;span style="color:#24292E"&gt;s?.length ?: &lt;/span&gt;&lt;span style="color:#D73A49"&gt;-&lt;/span&gt;&lt;span style="color:#005CC5"&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Isn’t it wonderful?&lt;/p&gt;
+&lt;h3 id="extensions-methods"&gt;Extensions methods&lt;/h3&gt;
+&lt;p&gt;Here is the real power of the language in my opinion, we can easily add utility function to our components from outside and use them seamlessly in our classes, here are some examples that I’ve used in my extension class:&lt;/p&gt;
+&lt;pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="kotlin"&gt;&lt;code&gt;&lt;span class="line"&gt;&lt;span style="color:#D73A49"&gt;fun&lt;/span&gt;&lt;span style="color:#6F42C1"&gt; AppCompatActivity&lt;/span&gt;&lt;span style="color:#24292E"&gt;.&lt;/span&gt;&lt;span style="color:#6F42C1"&gt;navigate&lt;/span&gt;&lt;span style="color:#24292E"&gt;(frag: &lt;/span&gt;&lt;span style="color:#6F42C1"&gt;Fragment&lt;/span&gt;&lt;span style="color:#24292E"&gt;) {&lt;/span&gt;&lt;/span&gt;
+&lt;span class="line"&gt;&lt;span style="color:#D73A49"&gt;    val&lt;/span&gt;&lt;span style="color:#24292E"&gt; fragmentTransaction &lt;/span&gt;&lt;span style="color:#D73A49"&gt;=&lt;/span&gt;&lt;span style="color:#24292E"&gt;  supportFragmentManager.&lt;/span&gt;&lt;span style="color:#6F42C1"&gt;beginTransaction&lt;/span&gt;&lt;span style="color:#24292E"&gt;()&lt;/span&gt;&lt;/span&gt;
+&lt;span class="line"&gt;&lt;span style="color:#24292E"&gt;    fragmentTransaction.&lt;/span&gt;&lt;span style="color:#6F42C1"&gt;replace&lt;/span&gt;&lt;span style="color:#24292E"&gt;(content.id, frag);&lt;/span&gt;&lt;/span&gt;
+&lt;span class="line"&gt;&lt;span style="color:#24292E"&gt;    fragmentTransaction.&lt;/span&gt;&lt;span style="color:#6F42C1"&gt;commit&lt;/span&gt;&lt;span style="color:#24292E"&gt;();&lt;/span&gt;&lt;/span&gt;
+&lt;span class="line"&gt;&lt;span style="color:#24292E"&gt;}&lt;/span&gt;&lt;/span&gt;
+&lt;span class="line"&gt;&lt;/span&gt;
+&lt;span class="line"&gt;&lt;span style="color:#D73A49"&gt;fun&lt;/span&gt;&lt;span style="color:#6F42C1"&gt; Fragment&lt;/span&gt;&lt;span style="color:#24292E"&gt;.&lt;/span&gt;&lt;span style="color:#6F42C1"&gt;userError&lt;/span&gt;&lt;span style="color:#24292E"&gt;(msg: &lt;/span&gt;&lt;span style="color:#6F42C1"&gt;String&lt;/span&gt;&lt;span style="color:#24292E"&gt;?) {&lt;/span&gt;&lt;/span&gt;
+&lt;span class="line"&gt;&lt;span style="color:#24292E"&gt;    Snackbar.&lt;/span&gt;&lt;span style="color:#6F42C1"&gt;make&lt;/span&gt;&lt;span style="color:#24292E"&gt;(view, msg, Snackbar.LENGTH_LONG).&lt;/span&gt;&lt;span style="color:#6F42C1"&gt;show&lt;/span&gt;&lt;span style="color:#24292E"&gt;()&lt;/span&gt;&lt;/span&gt;
+&lt;span class="line"&gt;&lt;span style="color:#24292E"&gt;}&lt;/span&gt;&lt;/span&gt;
+&lt;span class="line"&gt;&lt;/span&gt;
+&lt;span class="line"&gt;&lt;span style="color:#D73A49"&gt;fun&lt;/span&gt;&lt;span style="color:#6F42C1"&gt; SharedPreferences&lt;/span&gt;&lt;span style="color:#24292E"&gt;.&lt;/span&gt;&lt;span style="color:#6F42C1"&gt;edit&lt;/span&gt;&lt;span style="color:#24292E"&gt;(func:&lt;/span&gt;&lt;span style="color:#6F42C1"&gt;SharedPreferences&lt;/span&gt;&lt;span style="color:#24292E"&gt;.Editor. () &lt;/span&gt;&lt;span style="color:#D73A49"&gt;-&lt;/span&gt;&lt;span style="color:#24292E"&gt;&amp;amp;amp;amp;amp;gt; Unit) {&lt;/span&gt;&lt;/span&gt;
+&lt;span class="line"&gt;&lt;span style="color:#D73A49"&gt;    val&lt;/span&gt;&lt;span style="color:#24292E"&gt; editor &lt;/span&gt;&lt;span style="color:#D73A49"&gt;=&lt;/span&gt;&lt;span style="color:#6F42C1"&gt; edit&lt;/span&gt;&lt;span style="color:#24292E"&gt;()&lt;/span&gt;&lt;/span&gt;
+&lt;span class="line"&gt;&lt;span style="color:#24292E"&gt;    editor.&lt;/span&gt;&lt;span style="color:#6F42C1"&gt;func&lt;/span&gt;&lt;span style="color:#24292E"&gt;()&lt;/span&gt;&lt;/span&gt;
+&lt;span class="line"&gt;&lt;span style="color:#24292E"&gt;    editor.&lt;/span&gt;&lt;span style="color:#6F42C1"&gt;apply&lt;/span&gt;&lt;span style="color:#24292E"&gt;()&lt;/span&gt;&lt;/span&gt;
+&lt;span class="line"&gt;&lt;span style="color:#24292E"&gt;}&lt;/span&gt;&lt;/span&gt;
+&lt;span class="line"&gt;&lt;/span&gt;
+&lt;span class="line"&gt;&lt;span style="color:#D73A49"&gt;fun&lt;/span&gt;&lt;span style="color:#6F42C1"&gt; SharedPreferences&lt;/span&gt;&lt;span style="color:#24292E"&gt;.&lt;/span&gt;&lt;span style="color:#6F42C1"&gt;Editor&lt;/span&gt;&lt;span style="color:#24292E"&gt;.&lt;/span&gt;&lt;span style="color:#6F42C1"&gt;set&lt;/span&gt;&lt;span style="color:#24292E"&gt;(pair: &lt;/span&gt;&lt;span style="color:#6F42C1"&gt;Pair&lt;/span&gt;&lt;span style="color:#24292E"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color:#6F42C1"&gt;String&lt;/span&gt;&lt;span style="color:#24292E"&gt;, &lt;/span&gt;&lt;span style="color:#6F42C1"&gt;String&lt;/span&gt;&lt;span style="color:#24292E"&gt;&amp;gt;)  &lt;/span&gt;&lt;span style="color:#D73A49"&gt;=&lt;/span&gt;&lt;span style="color:#6F42C1"&gt; putString&lt;/span&gt;&lt;span style="color:#24292E"&gt;(pair.first, pair.second)&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;There are also some libraries out there that add you many more extentions like: &lt;a href="https://github.com/pawegio/KAndroid"&gt;KAndroid&lt;/a&gt; and &lt;a href="https://github.com/yoavst/androidKotlin"&gt;androidKotlin&lt;/a&gt;, or even examples from others Android devs like &lt;a href="https://speakerdeck.com/jakewharton/android-development-with-kotlin-androidkw-number-001"&gt;Jake Wharton&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="last-words"&gt;Last words&lt;/h2&gt;
+&lt;p&gt;Java in general, and Android in particular, has not so few problems, and although Oracle and Google adding features and trying to keep up the pace- it’s too slow and too heavy handed.&lt;/p&gt;
+&lt;p&gt;Kotlin is some experiment from JetBrains to bring the latest design patterns paradigms to Java, Android and JS platforms that was quickly take Android community attention (and even inside Google).&lt;/p&gt;
+&lt;p&gt;As you can see it look pretty good for start, it can save much redundant code and speed up development, and it will be interesting what will be next moves from Google and JetBrains and if it gonna get to the mainstream.&lt;/p&gt;
+</content></entry></feed>

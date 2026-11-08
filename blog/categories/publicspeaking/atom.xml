@@ -1,220 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-
-  <title><![CDATA[Category: publicspeaking | Shem Magnezi Blog]]></title>
-  <link href="https://blog.shem.dev/blog/categories/publicspeaking/atom.xml" rel="self"/>
-  <link href="https://blog.shem.dev/"/>
-  <updated>2026-11-08T13:43:22+02:00</updated>
-  <id>https://blog.shem.dev/</id>
-  <author>
-    <name><![CDATA[Shem Magnezi]]></name>
-    <email><![CDATA[smagnezi8@gmail.com]]></email>
-  </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
-
-  
-  <entry>
-    <title type="html"><![CDATA[You plan to have this talk? How about no.]]></title>
-    <link href="https://blog.shem.dev/blog/2017/03/03/you-plan-to-have-this-talk-how-about-no/"/>
-    <updated>2017-03-03T12:00:00+02:00</updated>
-    <id>https://blog.shem.dev/blog/2017/03/03/you-plan-to-have-this-talk-how-about-no</id>
-    <content type="html"><![CDATA[A year ago I attended a tech conference. The agenda was promising and I was excited about the talks and the content. It was a very technical and seems to be a kind of "hands-on" conference, so I expected to learn a lot of great things and to become a better developer.
-
-<!-- more -->
-
-![](/images/posts/you-plan-to-have-this-talk-how-about-no/1.png)
-
-Unfortunately, when one of my colleagues asked me in the following day how was it, I couldn’t say that I gained too much from the conference. The talks were wonderful, but looking back- I couldn’t really learn too much and I couldn’t figure out how it can affect me or my work.
-
-In this post I’ll try to group the bad talks that I’ve seen, and go over them:
-
-### Intro talks
-
-Those are the most common talks and probably the easiest ones to give. It basically goes like this:
-
-1. Here is a new X
-1. This is why it’s awesome
-1. Now let me show you how you’re using it in an example project.
-
-The 3rd part is basically slides on slides of code (or configurations) on how to do the basic stuff. Google did around zillion talks like this in the last Google.IO about Firebase.
-
-#### Why I don’t think it’s effective:
-
-This is not how you learn to code. You can read all [The C Programming Language](https://en.wikipedia.org/wiki/The_C_Programming_Language) but it won’t be effective if you won’t write a single line of code by yourself. You need to be stuck, to tackled by some problems and understand how to solve them, this phase is crucial and you can’t just skip it.
-
-I also think that putting code in slides is not that practical. There is also a great episode about it in the Toast podcast about [No Code on Slides](http://toast.show/series1/no-code-on-slides.html).
-
-#### How to make it effective:
-
-Most of the time this talks will be great as blog posts. This will also help your audience quickly copy the relevant blocks and try it by themselves (The number of times I copied a code from slides… Oh dear…).
-
-You need an offline copy of this guide. You can’t expect people will start hacking during your talk or remember what you said when they finally decide to try this thing out.
-
-And no- the slides are not enough.
-
-Another solution is to quickly go over the basic stuff and jump to the cool stuff that this thing can do. This might be dangerous- be aware that if it’s too complicated. People might get lost and you won’t be able to do the basic stuff fast enough or they just won’t get the advanced stuff.
-
-Google did it great when they [build 3 chat apps simultaneity](https://www.youtube.com/watch?v=xAsvwy1-oxE) showing how easy to do it with Firebase.
-
-You can combine the two and build a talk upon your blog post like I did with my [Kotlin talk](https://www.youtube.com/watch?v=m-BZ9ac7oSA). It was based on my [blog post](/blog/2016/01/01/kotlin-a-better-java-for-android/) but focus more on the cool things that cannot be achieved in Java.
-
-### Super advanced things
-
-One time I was in a talk about problems in [Hardware Acceleration](https://developer.android.com/guide/topics/graphics/hardware-accel.html) on Android. I remember getting out of this talk and taught "Wow, I thought I know everything in Android but I didn’t understand a word in the last hour". The only thing I took from this talk is to remember that the first thing I need to do, when I encounter a weird problem when displaying complicated view- is to email this guy.
-
-#### Why I don’t think it’s effective:
-
-The talk could be summed up in "Hi, my name is …, I’m fucking know everything about Hardware Acceleration. If you happen to have a question about it- you can call me". It could save me 59 minutes.
-
-#### How to make it effective:
-
-If you have any tips or things that you learn on the hard way that no one knows- I’ll be happy if you’ll share them with me.
-
-Remember- this is probably a cutting edge subject, that probably relevant to a very few. Try to make it as little specific as possible. You and I probably not going to run into the same problems. I would prefer to listen to tips and tools on how to approach this super advanced thing.
-
-### How we did things on our company
-
-Sharing the story about how we’re doing X inside our company. Or how we decided to change Z to Y.
-
-#### Why I don’t think it’s effective:
-
-The origin of those talks is probably right, it meant to be a story. But there’s a different between a story about some girl in NY, to a story about John who lives in an unknown town in a place you’ll never visit.
-
-I was in a lot of talks where unless you were in the exact situation like the presenter (or the company) you can’t really adapt the moral from the story.
-
-#### How to make it effective:
-
-Focus more on the conclusions, the things that you learned during the journey, the turns that you took, the stuff that you might be needed to do differently.
-
-I’m less interested in what you did exactly because it’s probably was good for you and might not be the same for me.
-
-Make it more generic by explaining more about why did you do some things instead of how you did it. I don’t learn a lot from you choosing X over Y, it will be great if you tell my the pro’s and con’s of each and I’ll be able to choose myself.
-
-### Promotional talks
-
-Let me know if this intro sounds familiar:
-
-> Hi, we’re X and we want to show you a great something that we have for you.
-
-#### Why I don’t think it’s effective:
-
-Because it’s not a talk, it’s a selling peach. I came to this talk looking at you as a teacher and you see me as a customer. I wasn’t ready. I hate ads. And now I hate you.
-
-#### How to make it effective:
-
-If it’s your company conference (or you’re some kind of sponsor), it’s fine (in some levels). There are no free meals, and if you got a free pizza and beer don’t be surprised someone is trying to get something back.
-
-Don’t hide it, be clear in the description of this talk, don’t let me disappoint and realize I was wrong 5 minutes into to talk.
-
-### Don’t get me wrong
-
-I really in favor of public speaking and think that there are great talks out there. I don’t want to discourage people (like someone really listen to me or something…). I just want you to bring a better content to a bigger audience.
-
-Actually, it’s just selfish post because I don’t want to be disappointed again in another conference =)
-
-_Originally published on [Medium](https://medium.com/bullshit-ist/you-plan-to-have-this-talk-how-about-no-bd7317f30f43)._
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[How I survived my first big conference talk]]></title>
-    <link href="https://blog.shem.dev/blog/2016/09/23/my-way-to-reversim/"/>
-    <updated>2016-09-23T17:32:27+03:00</updated>
-    <id>https://blog.shem.dev/blog/2016/09/23/my-way-to-reversim</id>
-    <content type="html"><![CDATA[*On 20.9 I presented at [Reversim Summit](http://summit2016.reversim.com/) (one of the biggest conference for developers in Israel) about building Android apps. This was my first time talking in a conference at this scale. It wasn’t easy but I survived and I’m here to talk about my journey.*
-<!-- more -->
-
-One day, something like 3 months ago, I stumble upon a post in one of my Facebook groups about a conference for developers going to take place in September:
-<blockquote><p>Hi all,</p><p>The Reversim Summit is probably one of the best (if not the best) independent software engineering (at large) conference in Israel, and it will be held this year at Sep. 19–20 at the Weizmann institute.</p><p>As an event 100% based on community generated content, the conference is as good as the quality of the submissions.</p><p>The call for papers is *now* open...</p></blockquote>
-This was the first time I heard about the Reversim Summit. I was familiar with the [podcast](http://www.reversim.com/) and knew it was good, so I knew the conference should worth something. So I decided to give it a try.
-
-## Picking the right content
-Ok, so I decided that I want to talk in the conference, but about what? One of the great tips that I’ve got (from the great [Chiu-Ki Chan](https://twitter.com/chiuki) about [how to be an Android expert](https://www.youtube.com/watch?v=PeKKzeAte30)) is to take one of your blog posts and create a talk. That’s, I thought, is a great way to give the reviewers a more compelling way instead of just 1–2 paragraphs when trying to describe what I’m going to talk about.
-
-Luckily I wrote couple of technical posts, but most of them were some kind of tutorials on how to do all kind of things in Android. Also- most of them not gained too much tractions, what made me think that people won’t be too interested.
-
-Moreover, knowing that this conference going to get lots of submissions, I knew that my talk should be different. Given that I don’t have enough reputation, and because people are interested more on technical problems in larger scale than mobile- If I will go head to head with other technical talks I’ll loose.
-
-So, I decided to choose my series blog posts about How to build a bad app ([part 1](/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical/), [part 2](/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui/), [part 3](/blog/2016/05/06/10-good-rules-for-bad-app-part-3-product/)). This is great because:
-
-1. This will cover also other aspects of mobile developing, like design and product.
-2. The talk will be about my experience and things that I’ve done. I think those are the best talks.
-3. I don't like talks which are too technical- I don’t believe that we can read too much code from slides or understand deep technical concept without actually playing with it. So this will be great for high level review with lots of small things that everyone can get.
-4. It’s light, it’s funny, it’s a lecture that is fun to deliver.
-
-## Call for Papers
-This is always a tricky part (although there’s couple of good resources about [how to write a good abstract for CFP](http://speaking.io/plan/writing-a-cfp/) that can help).
-
-How do I make my abstract highlight my talk and make it unique? How do I describe what I’m talking about (how to build a bad app) without confusing the audience? How to say that it’s a bit technical but not too much? How to let others know that it’s for developers, designers and products managers just in a single paragraph?
-
-Tried my best and got this:
-<blockquote><p>Building a decent app is easy this days, there are plenty of tutorials, videos and blog post about it. In this session I’ll try to go over some of the top mistakes that everyone of us is doing while building his app. This will cover all the aspects of building bad app- technical, UI & UX, and product. So each one of you will be able to adapt his own favorite bad pattern and ruin his app.</p></blockquote>
-
-I think it’s great because it’s clear, but still leave the reader curious. People might afraid that it’s not technical enough but they know they can get out with action items from the talk.
-
-The review started a week after, it was combined from crowd voting and team of moderators that process all requests and choose the best ones.
-
-There were around 300 propose sessions and only 30 will be approved, I was in the mobile track, were there 30 submissions and only 3 will be chosen. 10% chance, not so high as you can understand.
-
-After couple of mails and phone calls with my moderator (thanks [Adir Amsalem](https://twitter.com/amsalemadir)!), I got this email:
-
-<img src="/images/posts/reversim/screenshot.png">
-
--> ***Shit just got real.*** <-
-
-## Warming up
-Now it’s time to do the actual work. I immediately schedule a talk in my work place as part of our bi-weekly company talking program.
-
-I decided to chose 5 rules for each list: technical, UI/UX and product. I wanted find for most of the 15 rules an  example from a real world app, aiming for big apps that everyone knows. Building a minimal slides, with the rules and a picture or two for visualisation (screenshots when possible, gifs for others) and couple of more slides for intro and background.
-
-<img src="/images/posts/reversim/slide.png">
-
-It was great for first run, but there were some problems:
-
-1. It was too long, it took me around 50 minutes and I only have 35 (plus 5 minutes for questions). **Solution- cut the rules list to 11.**
-2. The audience was able to see the rule in the slide’s title when I moved to the slide and before I started to talk about. That killed the surprise affect. **Solution- Change the order of the fade in animation, so the text will shown in the end.**
-3. Gifs were keep playing and steel the audience (and my) attention. **Solution- put a static image of the gif on top of the gif to “stop” the gif, and show in on click (great tip that I’m going to apply on all my presentation from now on).**
-
-After some tweaks, one of the mentors from the summit schedules another dry run on Wix offices. Kind of an intimate rehearsal (presenting it to him and another college) to gather final feedbacks.
-
-Again, we found things that can be improved:
-1. The intro is too long and not very clear. Solution- instead of talking about why I’m giving this lecture on 4 different slides, I’m going to tell my story on the first slide, tell about motivation on another slide, and remove the other 2.
-2. Videos on Google slides not working without internet connection. Solution- keeping a local copy of the video, and use it.
-3. The talk is finished kind of out of nowhere. Solution- add a summary slide with the list of all rules that we talked about.
-
-I also changed the theme to more cleaner one and came out with this final slides:
-
-## Show time
-September 19- the first day of the summit, register and gathering into the keynote (by the amazing Iris Shoor), entering a huge auditorium with around 500 people. Luckily (and actually with some disappointment) my session was scheduled to a much smaller room, so I didn’t need to freak out from having to talk in front of so many people.
-
-During the summit I got into some great talks (by Eyal Yavor, Lior Bar-On, Yuval Samet, Boaz Gaon and Oren Ellenbogen) and a amazing lighting talks (especially the ones by Hagai Levin and Michal Tirosh) and even a song! (by Yoni Tsafir). This is another nice benefit when you talk in a conference- you get a free ticket =)
-
-My talk was on the morning of the second day, I was a bit nervous but not too much. The Reversim team was great and everything was taken care for me. I just needed to memorize the order of the rules (because as you remember, I changed it and I don’t have the text in slide when I start talking about it) but beside of this I felt really confident.
-
-<img src="/images/posts/reversim/IDOR3385.png">
-
-Everything went very well, the hall wasn’t big so I didn’t need a microphone, what made it more natural. I also get some friends in the audience, what made me less stressed. I even nailed some jokes that I thought about right before I started.
-
-It’s all finished very quickly. It’s funny how you prepare yourself for very long time just to build a 40 minute talk. On the stage it even feel shorter.
-
-I got very good feedbacks, they said that the talk was very good and they learn one thing or two about mistakes that they didn’t thought about before.
-
-## What’s next
-Since then I gave the talk on another conference- [Droidcon Tel-Aviv](https://web.archive.org/web/20180228203308/http://il.droidcon.com:80/2015/) and I plan to do it one or maybe two more times.
-
-I feel very comfortable talking in Hebrew, even in front of a big audience. My next milestone is to bring this kind confident to when I’m talking in English, and to give a talk in a conference abroad. I might need to prepare more than what I’m used to, but I think that I will able to do it very soon.
-
-## Conclusions
-1. Pick your talk wisely. Think what is your relative advantage and how your talk can stand out from all the others.
-2. Don’t be shy. Don’t think that you’re not interesting enough and you have nothing that others can learn from.
-4. With any rehearsal you will get you more feedback, doing it more- the better your talk and slides will be. BUT:
-3. Don’t overthink it. You’ll never get perfect. Learn where it’s good enough and stop you feel confident with what you got.
-
-<br/>
-===
-
-*Photos by: [Reversim Summit 2016 photo album](https://photos.google.com/share/AF1QipPORYX7nOWI1AsG8wE8SDrKCi3llj81FxRS1aXKfVrt1oauBI_KIZKWaAb79JoJ1w?key=OFJXdVJyZHUzckRjbUY3UXgyWmNSWHQ3R1lIR2F3)*
-]]></content>
-  </entry>
-  
-</feed>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Shem Magnezi: Public speaking</title><link href="https://blog.shem.dev/blog/categories/publicspeaking/atom.xml" rel="self"/><link href="https://blog.shem.dev/"/><updated>2017-03-03T10:00:00.000Z</updated><id>https://blog.shem.dev/</id><author><name>Shem Magnezi</name></author><entry><title type="html">You plan to have this talk? How about no.</title><link href="https://blog.shem.dev/blog/2017/03/03/you-plan-to-have-this-talk-how-about-no/"/><updated>2017-03-03T10:00:00.000Z</updated><id>https://blog.shem.dev/blog/2017/03/03/you-plan-to-have-this-talk-how-about-no/</id><content type="html">&lt;p&gt;A year ago I attended a tech conference. The agenda was promising and I was excited about the talks and the content. It was a very technical and seems to be a kind of “hands-on” conference, so I expected to learn a lot of great things and to become a better developer.&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;&lt;img src="https://blog.shem.dev/images/posts/you-plan-to-have-this-talk-how-about-no/1.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;Unfortunately, when one of my colleagues asked me in the following day how was it, I couldn’t say that I gained too much from the conference. The talks were wonderful, but looking back- I couldn’t really learn too much and I couldn’t figure out how it can affect me or my work.&lt;/p&gt;
+&lt;p&gt;In this post I’ll try to group the bad talks that I’ve seen, and go over them:&lt;/p&gt;
+&lt;h3 id="intro-talks"&gt;Intro talks&lt;/h3&gt;
+&lt;p&gt;Those are the most common talks and probably the easiest ones to give. It basically goes like this:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Here is a new X&lt;/li&gt;
+&lt;li&gt;This is why it’s awesome&lt;/li&gt;
+&lt;li&gt;Now let me show you how you’re using it in an example project.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The 3rd part is basically slides on slides of code (or configurations) on how to do the basic stuff. Google did around zillion talks like this in the last Google.IO about Firebase.&lt;/p&gt;
+&lt;h4 id="why-i-dont-think-its-effective"&gt;Why I don’t think it’s effective:&lt;/h4&gt;
+&lt;p&gt;This is not how you learn to code. You can read all &lt;a href="https://en.wikipedia.org/wiki/The_C_Programming_Language"&gt;The C Programming Language&lt;/a&gt; but it won’t be effective if you won’t write a single line of code by yourself. You need to be stuck, to tackled by some problems and understand how to solve them, this phase is crucial and you can’t just skip it.&lt;/p&gt;
+&lt;p&gt;I also think that putting code in slides is not that practical. There is also a great episode about it in the Toast podcast about &lt;a href="http://toast.show/series1/no-code-on-slides.html"&gt;No Code on Slides&lt;/a&gt;.&lt;/p&gt;
+&lt;h4 id="how-to-make-it-effective"&gt;How to make it effective:&lt;/h4&gt;
+&lt;p&gt;Most of the time this talks will be great as blog posts. This will also help your audience quickly copy the relevant blocks and try it by themselves (The number of times I copied a code from slides… Oh dear…).&lt;/p&gt;
+&lt;p&gt;You need an offline copy of this guide. You can’t expect people will start hacking during your talk or remember what you said when they finally decide to try this thing out.&lt;/p&gt;
+&lt;p&gt;And no- the slides are not enough.&lt;/p&gt;
+&lt;p&gt;Another solution is to quickly go over the basic stuff and jump to the cool stuff that this thing can do. This might be dangerous- be aware that if it’s too complicated. People might get lost and you won’t be able to do the basic stuff fast enough or they just won’t get the advanced stuff.&lt;/p&gt;
+&lt;p&gt;Google did it great when they &lt;a href="https://www.youtube.com/watch?v=xAsvwy1-oxE"&gt;build 3 chat apps simultaneity&lt;/a&gt; showing how easy to do it with Firebase.&lt;/p&gt;
+&lt;p&gt;You can combine the two and build a talk upon your blog post like I did with my &lt;a href="https://www.youtube.com/watch?v=m-BZ9ac7oSA"&gt;Kotlin talk&lt;/a&gt;. It was based on my &lt;a href="https://blog.shem.dev/blog/2016/01/01/kotlin-a-better-java-for-android/"&gt;blog post&lt;/a&gt; but focus more on the cool things that cannot be achieved in Java.&lt;/p&gt;
+&lt;h3 id="super-advanced-things"&gt;Super advanced things&lt;/h3&gt;
+&lt;p&gt;One time I was in a talk about problems in &lt;a href="https://developer.android.com/guide/topics/graphics/hardware-accel.html"&gt;Hardware Acceleration&lt;/a&gt; on Android. I remember getting out of this talk and taught “Wow, I thought I know everything in Android but I didn’t understand a word in the last hour”. The only thing I took from this talk is to remember that the first thing I need to do, when I encounter a weird problem when displaying complicated view- is to email this guy.&lt;/p&gt;
+&lt;h4 id="why-i-dont-think-its-effective-1"&gt;Why I don’t think it’s effective:&lt;/h4&gt;
+&lt;p&gt;The talk could be summed up in “Hi, my name is …, I’m fucking know everything about Hardware Acceleration. If you happen to have a question about it- you can call me”. It could save me 59 minutes.&lt;/p&gt;
+&lt;h4 id="how-to-make-it-effective-1"&gt;How to make it effective:&lt;/h4&gt;
+&lt;p&gt;If you have any tips or things that you learn on the hard way that no one knows- I’ll be happy if you’ll share them with me.&lt;/p&gt;
+&lt;p&gt;Remember- this is probably a cutting edge subject, that probably relevant to a very few. Try to make it as little specific as possible. You and I probably not going to run into the same problems. I would prefer to listen to tips and tools on how to approach this super advanced thing.&lt;/p&gt;
+&lt;h3 id="how-we-did-things-on-our-company"&gt;How we did things on our company&lt;/h3&gt;
+&lt;p&gt;Sharing the story about how we’re doing X inside our company. Or how we decided to change Z to Y.&lt;/p&gt;
+&lt;h4 id="why-i-dont-think-its-effective-2"&gt;Why I don’t think it’s effective:&lt;/h4&gt;
+&lt;p&gt;The origin of those talks is probably right, it meant to be a story. But there’s a different between a story about some girl in NY, to a story about John who lives in an unknown town in a place you’ll never visit.&lt;/p&gt;
+&lt;p&gt;I was in a lot of talks where unless you were in the exact situation like the presenter (or the company) you can’t really adapt the moral from the story.&lt;/p&gt;
+&lt;h4 id="how-to-make-it-effective-2"&gt;How to make it effective:&lt;/h4&gt;
+&lt;p&gt;Focus more on the conclusions, the things that you learned during the journey, the turns that you took, the stuff that you might be needed to do differently.&lt;/p&gt;
+&lt;p&gt;I’m less interested in what you did exactly because it’s probably was good for you and might not be the same for me.&lt;/p&gt;
+&lt;p&gt;Make it more generic by explaining more about why did you do some things instead of how you did it. I don’t learn a lot from you choosing X over Y, it will be great if you tell my the pro’s and con’s of each and I’ll be able to choose myself.&lt;/p&gt;
+&lt;h3 id="promotional-talks"&gt;Promotional talks&lt;/h3&gt;
+&lt;p&gt;Let me know if this intro sounds familiar:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Hi, we’re X and we want to show you a great something that we have for you.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id="why-i-dont-think-its-effective-3"&gt;Why I don’t think it’s effective:&lt;/h4&gt;
+&lt;p&gt;Because it’s not a talk, it’s a selling peach. I came to this talk looking at you as a teacher and you see me as a customer. I wasn’t ready. I hate ads. And now I hate you.&lt;/p&gt;
+&lt;h4 id="how-to-make-it-effective-3"&gt;How to make it effective:&lt;/h4&gt;
+&lt;p&gt;If it’s your company conference (or you’re some kind of sponsor), it’s fine (in some levels). There are no free meals, and if you got a free pizza and beer don’t be surprised someone is trying to get something back.&lt;/p&gt;
+&lt;p&gt;Don’t hide it, be clear in the description of this talk, don’t let me disappoint and realize I was wrong 5 minutes into to talk.&lt;/p&gt;
+&lt;h3 id="dont-get-me-wrong"&gt;Don’t get me wrong&lt;/h3&gt;
+&lt;p&gt;I really in favor of public speaking and think that there are great talks out there. I don’t want to discourage people (like someone really listen to me or something…). I just want you to bring a better content to a bigger audience.&lt;/p&gt;
+&lt;p&gt;Actually, it’s just selfish post because I don’t want to be disappointed again in another conference =)&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Originally published on &lt;a href="https://medium.com/bullshit-ist/you-plan-to-have-this-talk-how-about-no-bd7317f30f43"&gt;Medium&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+</content></entry><entry><title type="html">How I survived my first big conference talk</title><link href="https://blog.shem.dev/blog/2016/09/23/my-way-to-reversim/"/><updated>2016-09-23T14:32:27.000Z</updated><id>https://blog.shem.dev/blog/2016/09/23/my-way-to-reversim/</id><content type="html">&lt;p&gt;&lt;em&gt;On 20.9 I presented at &lt;a href="http://summit2016.reversim.com/"&gt;Reversim Summit&lt;/a&gt; (one of the biggest conference for developers in Israel) about building Android apps. This was my first time talking in a conference at this scale. It wasn’t easy but I survived and I’m here to talk about my journey.&lt;/em&gt;&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;One day, something like 3 months ago, I stumble upon a post in one of my Facebook groups about a conference for developers going to take place in September:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Hi all,&lt;/p&gt;
+&lt;p&gt;The Reversim Summit is probably one of the best (if not the best) independent software engineering (at large) conference in Israel, and it will be held this year at Sep. 19–20 at the Weizmann institute.&lt;/p&gt;
+&lt;p&gt;As an event 100% based on community generated content, the conference is as good as the quality of the submissions.&lt;/p&gt;
+&lt;p&gt;The call for papers is &lt;em&gt;now&lt;/em&gt; open…&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This was the first time I heard about the Reversim Summit. I was familiar with the &lt;a href="http://www.reversim.com/"&gt;podcast&lt;/a&gt; and knew it was good, so I knew the conference should worth something. So I decided to give it a try.&lt;/p&gt;
+&lt;h2 id="picking-the-rightcontent"&gt;Picking the right content&lt;/h2&gt;
+&lt;p&gt;Ok, so I decided that I want to talk in the conference, but about what? One of the great tips that I’ve got (from the great &lt;a href="https://twitter.com/chiuki"&gt;Chiu-Ki Chan&lt;/a&gt; about &lt;a href="https://www.youtube.com/watch?v=PeKKzeAte30"&gt;how to be an Android expert&lt;/a&gt;) is to take one of your blog posts and create a talk. That’s, I thought, is a great way to give the reviewers a more compelling way instead of just 1–2 paragraphs when trying to describe what I’m going to talk about.&lt;/p&gt;
+&lt;p&gt;Luckily I wrote couple of technical posts, but most of them were some kind of tutorials on how to do all kind of things in Android. Also- most of them not gained too much tractions, what made me think that people won’t be too interested.&lt;/p&gt;
+&lt;p&gt;Moreover, knowing that this conference going to get lots of submissions, I knew that my talk should be different. Given that I don’t have enough reputation, and because people are interested more on technical problems in larger scale than mobile- If I will go head to head with other technical talks I’ll loose.&lt;/p&gt;
+&lt;p&gt;So, I decided to choose my series blog posts about How to build a bad app (&lt;a href="https://blog.shem.dev/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical/"&gt;part 1&lt;/a&gt;, &lt;a href="https://blog.shem.dev/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui/"&gt;part 2&lt;/a&gt;, &lt;a href="https://blog.shem.dev/blog/2016/05/06/10-good-rules-for-bad-app-part-3-product/"&gt;part 3&lt;/a&gt;). This is great because:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;This will cover also other aspects of mobile developing, like design and product.&lt;/li&gt;
+&lt;li&gt;The talk will be about my experience and things that I’ve done. I think those are the best talks.&lt;/li&gt;
+&lt;li&gt;I don’t like talks which are too technical- I don’t believe that we can read too much code from slides or understand deep technical concept without actually playing with it. So this will be great for high level review with lots of small things that everyone can get.&lt;/li&gt;
+&lt;li&gt;It’s light, it’s funny, it’s a lecture that is fun to deliver.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="call-forpapers"&gt;Call for Papers&lt;/h2&gt;
+&lt;p&gt;This is always a tricky part (although there’s couple of good resources about &lt;a href="http://speaking.io/plan/writing-a-cfp/"&gt;how to write a good abstract for CFP&lt;/a&gt; that can help).&lt;/p&gt;
+&lt;p&gt;How do I make my abstract highlight my talk and make it unique? How do I describe what I’m talking about (how to build a bad app) without confusing the audience? How to say that it’s a bit technical but not too much? How to let others know that it’s for developers, designers and products managers just in a single paragraph?&lt;/p&gt;
+&lt;p&gt;Tried my best and got this:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Building a decent app is easy this days, there are plenty of tutorials, videos and blog post about it. In this session I’ll try to go over some of the top mistakes that everyone of us is doing while building his app. This will cover all the aspects of building bad app- technical, UI &amp;amp; UX, and product. So each one of you will be able to adapt his own favorite bad pattern and ruin his app.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I think it’s great because it’s clear, but still leave the reader curious. People might afraid that it’s not technical enough but they know they can get out with action items from the talk.&lt;/p&gt;
+&lt;p&gt;The review started a week after, it was combined from crowd voting and team of moderators that process all requests and choose the best ones.&lt;/p&gt;
+&lt;p&gt;There were around 300 propose sessions and only 30 will be approved, I was in the mobile track, were there 30 submissions and only 3 will be chosen. 10% chance, not so high as you can understand.&lt;/p&gt;
+&lt;p&gt;After couple of mails and phone calls with my moderator (thanks &lt;a href="https://twitter.com/amsalemadir"&gt;Adir Amsalem&lt;/a&gt;!), I got this email:&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.shem.dev/images/posts/reversim/screenshot.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;-&amp;gt; &lt;em&gt;&lt;strong&gt;Shit just got real.&lt;/strong&gt;&lt;/em&gt; &amp;lt;-&lt;/p&gt;
+&lt;h2 id="warmingup"&gt;Warming up&lt;/h2&gt;
+&lt;p&gt;Now it’s time to do the actual work. I immediately schedule a talk in my work place as part of our bi-weekly company talking program.&lt;/p&gt;
+&lt;p&gt;I decided to chose 5 rules for each list: technical, UI/UX and product. I wanted find for most of the 15 rules an  example from a real world app, aiming for big apps that everyone knows. Building a minimal slides, with the rules and a picture or two for visualisation (screenshots when possible, gifs for others) and couple of more slides for intro and background.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.shem.dev/images/posts/reversim/slide.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;It was great for first run, but there were some problems:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;It was too long, it took me around 50 minutes and I only have 35 (plus 5 minutes for questions). &lt;strong&gt;Solution- cut the rules list to 11.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;The audience was able to see the rule in the slide’s title when I moved to the slide and before I started to talk about. That killed the surprise affect. &lt;strong&gt;Solution- Change the order of the fade in animation, so the text will shown in the end.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Gifs were keep playing and steel the audience (and my) attention. &lt;strong&gt;Solution- put a static image of the gif on top of the gif to “stop” the gif, and show in on click (great tip that I’m going to apply on all my presentation from now on).&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;After some tweaks, one of the mentors from the summit schedules another dry run on Wix offices. Kind of an intimate rehearsal (presenting it to him and another college) to gather final feedbacks.&lt;/p&gt;
+&lt;p&gt;Again, we found things that can be improved:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The intro is too long and not very clear. Solution- instead of talking about why I’m giving this lecture on 4 different slides, I’m going to tell my story on the first slide, tell about motivation on another slide, and remove the other 2.&lt;/li&gt;
+&lt;li&gt;Videos on Google slides not working without internet connection. Solution- keeping a local copy of the video, and use it.&lt;/li&gt;
+&lt;li&gt;The talk is finished kind of out of nowhere. Solution- add a summary slide with the list of all rules that we talked about.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I also changed the theme to more cleaner one and came out with this final slides:&lt;/p&gt;
+&lt;h2 id="showtime"&gt;Show time&lt;/h2&gt;
+&lt;p&gt;September 19- the first day of the summit, register and gathering into the keynote (by the amazing Iris Shoor), entering a huge auditorium with around 500 people. Luckily (and actually with some disappointment) my session was scheduled to a much smaller room, so I didn’t need to freak out from having to talk in front of so many people.&lt;/p&gt;
+&lt;p&gt;During the summit I got into some great talks (by Eyal Yavor, Lior Bar-On, Yuval Samet, Boaz Gaon and Oren Ellenbogen) and a amazing lighting talks (especially the ones by Hagai Levin and Michal Tirosh) and even a song! (by Yoni Tsafir). This is another nice benefit when you talk in a conference- you get a free ticket =)&lt;/p&gt;
+&lt;p&gt;My talk was on the morning of the second day, I was a bit nervous but not too much. The Reversim team was great and everything was taken care for me. I just needed to memorize the order of the rules (because as you remember, I changed it and I don’t have the text in slide when I start talking about it) but beside of this I felt really confident.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://blog.shem.dev/images/posts/reversim/IDOR3385.png" alt=""&gt;&lt;/p&gt;
+&lt;p&gt;Everything went very well, the hall wasn’t big so I didn’t need a microphone, what made it more natural. I also get some friends in the audience, what made me less stressed. I even nailed some jokes that I thought about right before I started.&lt;/p&gt;
+&lt;p&gt;It’s all finished very quickly. It’s funny how you prepare yourself for very long time just to build a 40 minute talk. On the stage it even feel shorter.&lt;/p&gt;
+&lt;p&gt;I got very good feedbacks, they said that the talk was very good and they learn one thing or two about mistakes that they didn’t thought about before.&lt;/p&gt;
+&lt;h2 id="whatsnext"&gt;What’s next&lt;/h2&gt;
+&lt;p&gt;Since then I gave the talk on another conference- &lt;a href="https://web.archive.org/web/20180228203308/http://il.droidcon.com:80/2015/"&gt;Droidcon Tel-Aviv&lt;/a&gt; and I plan to do it one or maybe two more times.&lt;/p&gt;
+&lt;p&gt;I feel very comfortable talking in Hebrew, even in front of a big audience. My next milestone is to bring this kind confident to when I’m talking in English, and to give a talk in a conference abroad. I might need to prepare more than what I’m used to, but I think that I will able to do it very soon.&lt;/p&gt;
+&lt;h2 id="conclusions"&gt;Conclusions&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Pick your talk wisely. Think what is your relative advantage and how your talk can stand out from all the others.&lt;/li&gt;
+&lt;li&gt;Don’t be shy. Don’t think that you’re not interesting enough and you have nothing that others can learn from.&lt;/li&gt;
+&lt;li&gt;With any rehearsal you will get you more feedback, doing it more- the better your talk and slides will be. BUT:&lt;/li&gt;
+&lt;li&gt;Don’t overthink it. You’ll never get perfect. Learn where it’s good enough and stop you feel confident with what you got.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br/&gt;
+&lt;p&gt;===&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Photos by: &lt;a href="https://photos.google.com/share/AF1QipPORYX7nOWI1AsG8wE8SDrKCi3llj81FxRS1aXKfVrt1oauBI_KIZKWaAb79JoJ1w?key=OFJXdVJyZHUzckRjbUY3UXgyWmNSWHQ3R1lIR2F3"&gt;Reversim Summit 2016 photo album&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+</content></entry></feed>
