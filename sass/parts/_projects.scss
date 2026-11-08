@@ -61,10 +61,40 @@
  }
 
 
-.prose {
-  h2 { margin: 10px 0 16px; }
-  h3 { margin: 26px 0 6px; }
-  p { margin-bottom: 10px; }
-  ul { margin: 8px 0 12px; padding-left: 20px; }
-  li { margin-bottom: 4px; }
+#content .prose {
+  h3 { margin: 30px 0 8px; font-size: 1.8em; }
+  p { margin-bottom: 10px; font-size: 1.4em; }
+  ul { margin: 8px 0 14px; padding-left: 22px; list-style: disc; }
+  li { margin-bottom: 6px; font-size: 1.4em; }
+}
+
+#content .project-list {
+  h2 { margin: 40px 0 8px; font-size: 2.2em; font-weight: 300; }
+  .intro { margin-bottom: 14px; font-size: 1.4em; line-height: 1.5; }
+  .project-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 28px;
+    padding: 24px 0;
+    border-top: 1px solid #eee;
+  }
+  .project-card img {
+    flex: 0 0 240px;
+    width: 240px;
+    height: 150px;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #e6e6e6;
+    border-radius: 6px;
+    box-shadow: none;
+  }
+  .card-body { flex: 1; min-width: 0; }
+  .card-body h3 { margin: 0 0 8px; font-size: 1.9em; font-weight: 400; line-height: 1.2; }
+  .card-body p { margin: 0 0 10px; font-size: 1.4em; font-weight: 300; line-height: 1.5; }
+  .card-link { font-size: 1.4em; font-weight: 400; }
+  .card-link.muted { color: #888; }
+  @media screen and (max-width: 600px) {
+    .project-card { display: block; }
+    .project-card img { width: 100%; height: auto; margin-bottom: 14px; }
+  }
 }
