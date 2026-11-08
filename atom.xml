@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Shem Magnezi</title><link href="https://blog.shem.dev/atom.xml" rel="self"/><link href="https://blog.shem.dev/"/><updated>2026-08-16T00:00:00.000Z</updated><id>https://blog.shem.dev/</id><author><name>Shem Magnezi</name></author><entry><title type="html">Two months across America, planned with AI</title><link href="https://blog.shem.dev/blog/2026/08/16/two-months-across-america-planned-with-ai/"/><updated>2026-08-16T00:00:00.000Z</updated><id>https://blog.shem.dev/blog/2026/08/16/two-months-across-america-planned-with-ai/</id><content type="html">&lt;p&gt;&lt;em&gt;Five anchors, one very long conversation, and an 80-page book.&lt;/em&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Shem Magnezi</title><link href="https://blog.shem.dev/atom.xml" rel="self"/><link href="https://blog.shem.dev/"/><updated>2026-08-16T00:00:00.000Z</updated><id>https://blog.shem.dev/</id><author><name>Shem Magnezi</name></author><entry><title type="html">Two months across America, planned with AI</title><link href="https://blog.shem.dev/blog/2026/08/16/two-months-across-america-planned-with-ai/"/><updated>2026-08-16T00:00:00.000Z</updated><id>https://blog.shem.dev/blog/2026/08/16/two-months-across-america-planned-with-ai/</id><content type="html">&lt;p&gt;&lt;em&gt;Five anchors, a route, the reservations, the price drops and an 80-page book.&lt;/em&gt;&lt;/p&gt;
 &lt;!-- more --&gt;
-&lt;p&gt;This summer we took a two-month family trip across the US, built around the World Cup. Most of it was planned by AI, and I have to say it was an amazing experience. If I’d had to plan it myself, I wouldn’t even know where to start.&lt;/p&gt;
-&lt;h2 id="i-only-gave-it-anchors"&gt;I only gave it anchors&lt;/h2&gt;
+&lt;p&gt;This summer we took a two-month family trip across the US, built around the World Cup. AI handled most of the planning, and I have to say it was an amazing experience. If I’d had to plan it myself, I wouldn’t even know where to start.&lt;/p&gt;
+&lt;p&gt;It also went far beyond suggesting a few places to visit. Here’s what it actually did.&lt;/p&gt;
+&lt;h2 id="it-built-the-route"&gt;It built the route&lt;/h2&gt;
 &lt;p&gt;I didn’t hand it an itinerary to polish. I gave it five fixed points:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Start in New York (to visit family, and the flights are more convenient).&lt;/li&gt;
@@ -12,12 +13,19 @@
 &lt;li&gt;St. Louis (to visit family).&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;That’s it. From there it started asking questions, making suggestions and building a route.&lt;/p&gt;
-&lt;h2 id="it-found-what-i-wouldnt-have"&gt;It found what I wouldn’t have&lt;/h2&gt;
 &lt;p&gt;The best example is Hershey, Pennsylvania, a place I’d never have thought of going through. Lucky the AI suggested it: a town built entirely around the chocolate factory, with an amusement park and a huge water park, in an area surrounded by Amish communities.&lt;/p&gt;
+&lt;h2 id="it-planned-the-days"&gt;It planned the days&lt;/h2&gt;
+&lt;p&gt;Once we had a route, it suggested a plan for each day and where to stay. It also reserved tables at restaurants.&lt;/p&gt;
+&lt;h2 id="it-handled-the-boring-parts"&gt;It handled the boring parts&lt;/h2&gt;
+&lt;p&gt;This is the part I’d have hated most. AI helped me with the car rental, the insurance, the tolls and fees and everything around them.&lt;/p&gt;
+&lt;p&gt;It also monitored prices. When a price dropped, it got me a better deal.&lt;/p&gt;
+&lt;h2 id="it-helped-with-the-hard-parts-too"&gt;It helped with the hard parts too&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;The parks.&lt;/strong&gt; Orlando was going to cost a lot of money and time, and I had no energy for planning it. So that’s how &lt;a href="https://blog.shem.dev/blog/2026/01/11/i-gave-my-side-project-a-ceo/"&gt;Park Autopilot&lt;/a&gt; started.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The World Cup.&lt;/strong&gt; AI also helped me get tickets from FIFA, which turned into &lt;a href="https://blog.shem.dev/blog/2026/06/11/i-accidentally-tracked-the-world-cup-ticket-market/"&gt;its own story&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id="it-stayed-with-us-on-the-road"&gt;It stayed with us on the road&lt;/h2&gt;
-&lt;p&gt;The planning didn’t end when we left. As a rule, every route also came with a story from ChatGPT. In St. Louis, a city I’d never heard of (I couldn’t even have pointed to Missouri on a map), we spent a few days touring and learning the history and culture with the chat.&lt;/p&gt;
-&lt;h2 id="we-printed-the-plan"&gt;We printed the plan&lt;/h2&gt;
-&lt;p&gt;I said the whole trip was planned with AI, so in honor of the trip we even printed an 80-page book covering the entire route: what to do, anecdotes and so on.&lt;/p&gt;
+&lt;p&gt;The help didn’t end when we left. As a rule, every route also came with a story from ChatGPT. In St. Louis, a city I’d never heard of (I couldn’t even have pointed to Missouri on a map), we spent a few days touring and learning the history and culture with the chat.&lt;/p&gt;
+&lt;h2 id="it-created-the-book"&gt;It created the book&lt;/h2&gt;
+&lt;p&gt;AI created a whole 80-page book covering the entire route: what to do, anecdotes and so on. And we printed it.&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://blog.shem.dev/images/posts/us-trip/book-savannah.jpg" alt="A page from the trip book about Savannah, with an illustrated map of the city"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://blog.shem.dev/images/posts/us-trip/book-orlando.jpg" alt="A page from the trip book with an illustrated map of Orlando"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="https://blog.shem.dev/images/posts/us-trip/book-vegas.jpg" alt="A page from the trip book about Las Vegas, with an illustrated map of the Strip"&gt;&lt;/p&gt;
