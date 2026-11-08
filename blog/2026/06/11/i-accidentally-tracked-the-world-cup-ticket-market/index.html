@@ -7,7 +7,7 @@
     })();</script><style>@media (prefers-reduced-motion: no-preference) { @view-transition { navigation: auto; } }</style><script>
       // The opening sequence plays once per visit, not on every return to the home page.
       try { if (!sessionStorage.getItem('intro') && !matchMedia('(prefers-reduced-motion: reduce)').matches) { document.documentElement.classList.add('intro'); sessionStorage.setItem('intro', '1'); } } catch (e) {}
-    </script><link rel="stylesheet" href="/_astro/Base.QfMzEV8F.css"></head><body><a class="skip" href="#main">Skip to content</a><header class="site-head"><div class="wrap"><a class="mark" href="/">Shem Magnezi</a><nav class="site-nav" aria-label="Main"><a href="/blog/archives/" aria-current="page">Writing</a><a href="/talks/">Talks</a><a href="/projects/">Side projects</a><a href="/career/">Career</a><a href="/press/">Press</a><a href="/about/">About</a></nav></div></header><main id="main"><div class="read-progress" aria-hidden="true"></div><article><header class="post-head on-night"><div class="wrap"><p class="post-meta"><time datetime="2026-06-11T00:00:00.000Z">11 June 2026</time>, <a href="/blog/categories/ai/">AI</a></p><h1 style="view-transition-name:t-2026-06-11-i-accidentally-tracked-the-world-cup-ticket-market">I accidentally tracked the World Cup ticket market</h1></div></header><div class="wrap"><div class="article"><p><em>I just wanted two tickets for my son. Like every side project, it got out of control.</em></p>
+    </script><link rel="stylesheet" href="/_astro/Base.tsRWkqk3.css"></head><body><a class="skip" href="#main">Skip to content</a><header class="site-head"><div class="wrap"><a class="mark" href="/">Shem Magnezi</a><nav class="site-nav" aria-label="Main"><a href="/blog/archives/" aria-current="page">Writing</a><a href="/talks/">Talks</a><a href="/projects/">Side projects</a><a href="/career/">Career</a><a href="/press/">Press</a><a href="/about/">About</a></nav></div></header><main id="main"><div class="read-progress" aria-hidden="true"></div><article><header class="post-head on-night"><div class="wrap"><p class="post-meta"><time datetime="2026-06-11T00:00:00.000Z">11 June 2026</time>, <a href="/blog/categories/ai/">AI</a></p><h1 style="view-transition-name:t-2026-06-11-i-accidentally-tracked-the-world-cup-ticket-market">I accidentally tracked the World Cup ticket market</h1></div></header><div class="wrap"><div class="article"><p><em>I just wanted two tickets for my son. Like every side project, it got out of control.</em></p>
 <!-- more -->
 <p>A year ago we decided to take the kids to the World Cup. I thought the hard part would be flights and hotels. Wrong. What started as an attempt to get a few tickets for the family turned into a super fun, super nerdy project.</p>
 <p>If you haven’t been through this, you’d assume you just go to the site and buy a ticket. That’s not how it works. FIFA sells tickets through lotteries, different sales rounds and an official secondary market. In some cases you don’t even know who’s playing in the match you’re buying.</p>
@@ -23,6 +23,7 @@
 <h2 id="what-the-data-shows">What the data shows</h2>
 <p>These are the prices as of June 11, 2026.</p>
 <p><strong>There are no cheap matches.</strong> Austria against Jordan starts at around $115, Jordan against Algeria at around $119, and Cape Verde against Saudi Arabia at around $138. And those are just the cheapest tickets. Want a reasonable seat, or to sit together? Now you’re talking about $300-400.</p>
+<p><img src="/images/posts/world-cup-tickets/austria-jordan.jpg" alt="Price and inventory charts for Austria vs Jordan, starting at $115"></p>
 <p><strong>Big matches aren’t just a bit more expensive.</strong></p>
 <table>
 <thead>
@@ -71,9 +72,13 @@
 </tbody>
 </table>
 <p>All of that is for group stage games. We haven’t even reached the decisive rounds.</p>
+<p><img src="/images/posts/world-cup-tickets/colombia-portugal.jpg" alt="Price and inventory charts for Colombia vs Portugal in Miami, starting at $2,530"></p>
 <p><strong>And the final?</strong> The cheapest ticket currently stands at around $9,085. The median is getting close to $20,000. Yes, for one football match.</p>
 <p><img src="/images/posts/world-cup-tickets/final.jpg" alt="Price and inventory charts for the final, with a cheapest ticket of $9,085"></p>
+<p><img src="/images/posts/world-cup-tickets/final-seats.jpg" alt="The cheapest pairs of seats for the final, from about $14,000 each"></p>
 <p><strong>The funniest part</strong> was seeing what people try to sell. I saw a ticket to Netherlands against Sweden at $10.9 million, Paraguay against Australia at $5.1 million, round of 16 tickets at almost $8 million, and a ticket to the final at $11.5 million.</p>
+<p><img src="/images/posts/world-cup-tickets/listing-10m.jpg" alt="A ticket listed at 10,925,000 USD on the marketplace"></p>
+<p><img src="/images/posts/world-cup-tickets/listing-5m.jpg" alt="Another ticket listed at 5,175,000 USD"></p>
 <p><strong>And the best story? Haiti against Scotland.</strong> I’d have sworn it would be a $100 match when I saw the draw. It turns out Scottish fans, who waited decades for a World Cup, organized like an invasion force. They took over a town near Boston, rented a fleet of buses, and private groups popped up just to connect buyers and sellers and get around FIFA’s commission.</p>
 <p>On top of that, Boston has a large Haitian community that went just as crazy. And suddenly you can see it in the numbers: inventory cut from around 2,100 tickets to fewer than 700. Today the cheapest entry costs around $552, and a regular seat around $850.</p>
 <p><img src="/images/posts/world-cup-tickets/haiti-scotland.jpg" alt="Charts for Haiti vs Scotland in Boston, with inventory dropping sharply over 30 days"></p>

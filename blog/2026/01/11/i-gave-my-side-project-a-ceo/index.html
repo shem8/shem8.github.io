@@ -7,15 +7,17 @@
     })();</script><style>@media (prefers-reduced-motion: no-preference) { @view-transition { navigation: auto; } }</style><script>
       // The opening sequence plays once per visit, not on every return to the home page.
       try { if (!sessionStorage.getItem('intro') && !matchMedia('(prefers-reduced-motion: reduce)').matches) { document.documentElement.classList.add('intro'); sessionStorage.setItem('intro', '1'); } } catch (e) {}
-    </script><link rel="stylesheet" href="/_astro/Base.QfMzEV8F.css"></head><body><a class="skip" href="#main">Skip to content</a><header class="site-head"><div class="wrap"><a class="mark" href="/">Shem Magnezi</a><nav class="site-nav" aria-label="Main"><a href="/blog/archives/" aria-current="page">Writing</a><a href="/talks/">Talks</a><a href="/projects/">Side projects</a><a href="/career/">Career</a><a href="/press/">Press</a><a href="/about/">About</a></nav></div></header><main id="main"><div class="read-progress" aria-hidden="true"></div><article><header class="post-head on-night"><div class="wrap"><p class="post-meta"><time datetime="2026-01-11T00:00:00.000Z">11 January 2026</time>, <a href="/blog/categories/ai/">AI</a></p><h1 style="view-transition-name:t-2026-01-11-i-gave-my-side-project-a-ceo">I gave my side project a CEO</h1></div></header><div class="wrap"><div class="article"><p><em>From a messy idea to a live product in a week, for about 10 hours of my time.</em></p>
+    </script><link rel="stylesheet" href="/_astro/Base.tsRWkqk3.css"></head><body><a class="skip" href="#main">Skip to content</a><header class="site-head"><div class="wrap"><a class="mark" href="/">Shem Magnezi</a><nav class="site-nav" aria-label="Main"><a href="/blog/archives/" aria-current="page">Writing</a><a href="/talks/">Talks</a><a href="/projects/">Side projects</a><a href="/career/">Career</a><a href="/press/">Press</a><a href="/about/">About</a></nav></div></header><main id="main"><div class="read-progress" aria-hidden="true"></div><article><header class="post-head on-night"><div class="wrap"><p class="post-meta"><time datetime="2026-01-11T00:00:00.000Z">11 January 2026</time>, <a href="/blog/categories/ai/">AI</a></p><h1 style="view-transition-name:t-2026-01-11-i-gave-my-side-project-a-ceo">I gave my side project a CEO</h1></div></header><div class="wrap"><div class="article"><p><em>From a messy idea to a live product in a week, for about 10 hours of my time.</em></p>
 <!-- more -->
 <p>A couple of weeks ago I had an idea, thanks to the endless digging I was doing for our family trip to the US. I realized I was about to pour a lot of money and time into our days in Orlando, and I really had no energy for it. So on Sunday morning I threw a few disorganized lines into ChatGPT’s research mode.</p>
+<p><img src="/images/posts/agent-startup/prompt.png" alt="The first messy prompt to ChatGPT about a theme park app, and its follow-up questions"></p>
 <p>Once we understood there might be something interesting here, I asked it for a detailed product spec. The plan was to hand that to Claude Code. But first, I put together a team.</p>
 <h2 id="hiring-the-team">Hiring the team</h2>
 <p>I created a sub-agent for every function in the organization. I made some of them with Claude and took others from <a href="https://github.com/VoltAgent/awesome-claude-code-subagents">this list</a>.</p>
 <p><img src="/images/posts/agent-startup/agents.png" alt="The agents folder: CEO, product manager, project manager, tech lead, backend and frontend developers, designer, QA, DevOps and more"></p>
 <p>If you haven’t used them, a sub-agent in Claude is an agent with its own context and abilities that doesn’t pollute the global context too much. More importantly, it can work in the background, so a single task can have the server code and the frontend code written in parallel.</p>
-<p>Then I gave the CEO the 15-page research PDF from ChatGPT and the product spec, and asked for a roadmap with everything we’d need. My conversation with the CEO focused on what I wanted to achieve: a small project that tests whether there’s a business here and doesn’t cost me money.</p>
+<p>Then I gave the CEO the 15-page research PDF from ChatGPT and the product spec, and asked for a roadmap with everything we’d need.</p>
+<p><img src="/images/posts/agent-startup/research.jpg" alt="The ChatGPT research PDF, an opportunity analysis for a theme park planning app"> My conversation with the CEO focused on what I wanted to achieve: a small project that tests whether there’s a business here and doesn’t cost me money.</p>
 <p>Very quickly the CEO produced a task board split into phases. Two things are important to understand here:</p>
 <ol>
 <li>My only interface was the Claude Code CLI. I had no idea (and didn’t care) what files it was creating or what the code looked like.</li>
@@ -30,9 +32,12 @@
 <p>The tasks lived in a markdown file the CEO had created and kept updating, so I asked for a visualization on top of it. That’s how a simple JS dashboard was born.</p>
 <p><img src="/images/posts/agent-startup/dashboard.jpg" alt="The Park Autopilot project dashboard, with phases and a task board"></p>
 <p>This is where it got a bit complicated, because everyone updated the file differently and kept breaking the dashboard. So I asked the project manager to take ownership: everything goes through them, they keep the file to a schema, and it stops breaking every other day. I even threatened to fire them.</p>
+<p><img src="/images/posts/agent-startup/project-manager.jpg" alt="The project manager agent file, with the workflow every agent has to follow"></p>
 <h2 id="what-its-like-to-be-a-product-manager">What it’s like to be a product manager</h2>
 <p>Back to the project itself. I started from a problem I actually had, and it was a pleasure not to be bothered with the tactical level. Is there an API for this? Will it take forever? How do we pull it? How do we show it in real time?</p>
+<p><img src="/images/posts/agent-startup/preferences.jpg" alt="The app asking about thrill tolerance, pace and walking tolerance"></p>
 <p>I didn’t go into any of that. Let it break its own head on those. I suddenly understood how much fun it is to be a product manager.</p>
+<p><img src="/images/posts/agent-startup/day-plan.jpg" alt="A generated day plan with a map of the park and a list of rides"></p>
 <p><img src="/images/posts/agent-startup/app.jpg" alt="The app showing a Magic Kingdom map with the next recommended ride"></p>
 <p>Behind the scenes it really did find and solve all of those problems. Then it had to be released, which is usually where I’d step in and help with the setup. But again, I had no energy or desire for that.</p>
 <p>So I let go completely. I told it which services I already pay for, and to find the rest by itself. It made all the decisions about services on its own (think how much money there is in that market). It opened accounts for what it needed, I connected a Cloudflare MCP, gave it the API keys it asked for, and it wired and configured everything.</p>
@@ -45,6 +50,7 @@
 <li>It wrote an entire blog for SEO, images included.</li>
 <li>Growth hacking with Claude in Chrome.</li>
 </ol>
+<p><img src="/images/posts/agent-startup/blog.jpg" alt="The Park Autopilot blog the agents wrote, with images for each post"></p>
 <p>It even mapped influencers, created a coupon code for each one and wrote them a personal email based on the content they publish. Across the whole site, on the home page and in every touchpoint outside it, it decided on the angle and the content. I only told it the goal.</p>
 <p>The nice part is that during the build I got two really big pieces of feedback from friends:</p>
 <ol>
