@@ -40,6 +40,7 @@ To preview the site as if it were another date: `SITE_NOW=2027-01-10 npm run dev
 
 ## Other things to know
 
+- `public/.nojekyll` must stay. Without it, GitHub Pages skips the `_astro` folder and the site loses its styles.
 - A post with `draft: true` shows in `npm run dev` but is left out of the published site.
 - A post with `url:` and `source:` links to another site instead of having its own page.
 - Old posts keep their original address through `path`. New posts get `/blog/YYYY/MM/DD/slug/` from the file name. Disqus threads are keyed to `http://blog.shem.dev` plus that path, so don't change it on a published post.
