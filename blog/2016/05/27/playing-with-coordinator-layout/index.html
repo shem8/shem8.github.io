@@ -5,12 +5,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Playing with Coordinator Layout - Shem Magnezi Blog</title>
 	<meta name="author" content="Shem Magnezi">
-
-	
-	<meta name="description" content="Playing With Coordinator Layout Lately I needed to build some kind of overlay screen that looks like the one that shows when you open the phone when &hellip;">
-	
 
 	<!-- Google AdSense -->
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5508892730714185" crossorigin="anonymous"></script>
@@ -21,49 +16,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link href="/atom.xml" rel="alternate" title="Shem Magnezi Blog" type="application/atom+xml">
-	
-	<link rel="canonical" href="http://blog.shem.dev/blog/2016/05/27/playing-with-coordinator-layout/">
 	<link href="/favicon.png" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
-	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 	<link href='https://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<!-- Begin Jekyll SEO tag v2.8.0 -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<!-- Begin Jekyll SEO tag v2.9.1 -->
 <title>Playing with Coordinator Layout | Shem Magnezi Blog</title>
 <meta name="generator" content="Jekyll v3.9.5" />
 <meta property="og:title" content="Playing with Coordinator Layout" />
 <meta name="author" content="smagnezi8" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Lately I needed to build some kind of overlay screen that looks like the one that shows when you open the phone when you don&rsquo;t have a lock screen. This is a simple overlay screen that should be dismissable when the user swipe it out from the lower part of the screen, something like this: When coming to implement it, I thought about building a LinearLayout with 2 views- the content view and the swipe view, than put some touch listener on the swipe view and implement swiping mechanism, than syncing both view to act the same. But when I thought about it more and more I decided that it&rsquo;s too much work. Searching this kind of code or library out there always bring me to RecycleView swipe to dismiss items, and in one of those search results I saw how to implement this swipe to dismiss item in RecycleView with CoordinatorLayout, so I decided to give it a chance. CoordinatorLayout is a really great addition in the design support library. Most of you probably already used it with a floating action buttons or snackbars but if you like me- you just put it there, assuming views will move properly, without really diving into how the layout is syncing between them. So it turns out that CordinatorLayout is pretty powerful, it let you easily define interactions on child views and even between them, those interactions are called behaviors so that each child can behave differently according to things that are happening in the layout. You can do a really cool things with those behaviors, here is one example for a great blog post that I stumble upon my searches about coordinate layout usages. In our case it suppose to be pretty easy, there is already a swipe to dismiss behavior ready to be used on the lower view, so we just need to attach it to the relevant view. First lets build our layout: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 &lt;android.support.design.widget.CoordinatorLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;match_parent&quot;&gt; &lt;FrameLayout android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;match_parent&quot; android:id=&quot;@+id/container&quot; android:background=&quot;#06ff87&quot;/&gt; &lt;TextView android:id=&quot;@+id/dismiss&quot; android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot; android:text=&quot;&gt; Swipe to dismiss &gt; &gt; &gt;&quot; android:padding=&quot;30dp&quot; android:gravity=&quot;center&quot; android:layout_gravity=&quot;center_horizontal|bottom&quot; android:background=&quot;#3bb0ff&quot;/&gt; &lt;/android.support.design.widget.CoordinatorLayout&gt; As said, it’s a simple layout with 2 view- one for the content (the green one) and one for the swiping (the blue one). Now, lets attach the relevant behavior to the relevant view: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 View dismiss = findViewById(R.id.dismiss); CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) dismiss.getLayoutParams(); SwipeDismissBehavior&lt;View&gt; behavior = new SwipeDismissBehavior&lt;&gt;(); behavior.setSwipeDirection(SwipeDismissBehavior.SWIPE_DIRECTION_START_TO_END); behavior.setListener(new SwipeDismissBehavior.OnDismissListener() { @Override public void onDismiss(final View view) { finish(); } @Override public void onDragStateChanged(int i) {} }); params.setBehavior(behavior); That&rsquo;s pretty self explained- we declare a new swipe to dismiss behavior, set it&rsquo;s direction only to right, and finish the activity on dismiss. But there&rsquo;s on problem- somehow, although we declare this behavior only on the dismiss view, it working on all the view, so also the content view is swipeable as you can see here: I&rsquo;m not sure if this is by design or just a bug (after digging in the code I&rsquo;m afraid this behavior is not intended) but we can easily fix this by creating our own behavior. Of course that we not going to write this whole code from beginning, we&rsquo;ll use the SwipeDismissBehavior class and just fix the relevant code. I really recommend doing a little investigation and reading the Android code, that&rsquo;s way you&rsquo;re fully understand how things really works and get to read an high quality code written by the Android developers, in that case the fix is pretty easy to spot- the SwipeDismissBehavior handle touch events also if those touches not in the view (although there is a check in the onInterceptTouchEvent method and those events should be ignore) so I created a new behavior class just for this fix: 1 2 3 4 5 6 7 8 9 10 /** * Handle only touches on this current view */ @Override public boolean onTouchEvent(CoordinatorLayout parent, V child, MotionEvent event) { if (parent.isPointInChildBounds(child, (int) event.getX(), (int) event.getY())) { return super.onTouchEvent(parent, child, event); } return false; } Changing the activity to use SwipeDismissOnlyOnViewBehavior instead of SwipeDismissBehavior is doing the work: Now we need to sync between the content view to the dismiss view when swiping, so we creating a new behavior just for this. Because this is really simple behavior all we need to implement are 2 functions, in which view this content view depended (layoutDependsOn) and what to do when the dependent view changed (onDependentViewChanged): 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 = CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) container.getLayoutParams(); final CoordinatorLayout.Behavior&lt;View&gt; behavior = new CoordinatorLayout.Behavior&lt;View&gt;() { @Override public boolean layoutDependsOn(CoordinatorLayout parent, View child, View dependency) { return dependency.getId() == R.id.dismiss; } @Override public boolean onDependentViewChanged(CoordinatorLayout parent, View child, View dependency) { child.setX(dependency.getX()); child.setAlpha(dependency.getAlpha()); return true; } }; params.setBehavior(behavior); And voila:" />
-<meta property="og:description" content="Lately I needed to build some kind of overlay screen that looks like the one that shows when you open the phone when you don&rsquo;t have a lock screen. This is a simple overlay screen that should be dismissable when the user swipe it out from the lower part of the screen, something like this: When coming to implement it, I thought about building a LinearLayout with 2 views- the content view and the swipe view, than put some touch listener on the swipe view and implement swiping mechanism, than syncing both view to act the same. But when I thought about it more and more I decided that it&rsquo;s too much work. Searching this kind of code or library out there always bring me to RecycleView swipe to dismiss items, and in one of those search results I saw how to implement this swipe to dismiss item in RecycleView with CoordinatorLayout, so I decided to give it a chance. CoordinatorLayout is a really great addition in the design support library. Most of you probably already used it with a floating action buttons or snackbars but if you like me- you just put it there, assuming views will move properly, without really diving into how the layout is syncing between them. So it turns out that CordinatorLayout is pretty powerful, it let you easily define interactions on child views and even between them, those interactions are called behaviors so that each child can behave differently according to things that are happening in the layout. You can do a really cool things with those behaviors, here is one example for a great blog post that I stumble upon my searches about coordinate layout usages. In our case it suppose to be pretty easy, there is already a swipe to dismiss behavior ready to be used on the lower view, so we just need to attach it to the relevant view. First lets build our layout: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 &lt;android.support.design.widget.CoordinatorLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;match_parent&quot;&gt; &lt;FrameLayout android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;match_parent&quot; android:id=&quot;@+id/container&quot; android:background=&quot;#06ff87&quot;/&gt; &lt;TextView android:id=&quot;@+id/dismiss&quot; android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot; android:text=&quot;&gt; Swipe to dismiss &gt; &gt; &gt;&quot; android:padding=&quot;30dp&quot; android:gravity=&quot;center&quot; android:layout_gravity=&quot;center_horizontal|bottom&quot; android:background=&quot;#3bb0ff&quot;/&gt; &lt;/android.support.design.widget.CoordinatorLayout&gt; As said, it’s a simple layout with 2 view- one for the content (the green one) and one for the swiping (the blue one). Now, lets attach the relevant behavior to the relevant view: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 View dismiss = findViewById(R.id.dismiss); CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) dismiss.getLayoutParams(); SwipeDismissBehavior&lt;View&gt; behavior = new SwipeDismissBehavior&lt;&gt;(); behavior.setSwipeDirection(SwipeDismissBehavior.SWIPE_DIRECTION_START_TO_END); behavior.setListener(new SwipeDismissBehavior.OnDismissListener() { @Override public void onDismiss(final View view) { finish(); } @Override public void onDragStateChanged(int i) {} }); params.setBehavior(behavior); That&rsquo;s pretty self explained- we declare a new swipe to dismiss behavior, set it&rsquo;s direction only to right, and finish the activity on dismiss. But there&rsquo;s on problem- somehow, although we declare this behavior only on the dismiss view, it working on all the view, so also the content view is swipeable as you can see here: I&rsquo;m not sure if this is by design or just a bug (after digging in the code I&rsquo;m afraid this behavior is not intended) but we can easily fix this by creating our own behavior. Of course that we not going to write this whole code from beginning, we&rsquo;ll use the SwipeDismissBehavior class and just fix the relevant code. I really recommend doing a little investigation and reading the Android code, that&rsquo;s way you&rsquo;re fully understand how things really works and get to read an high quality code written by the Android developers, in that case the fix is pretty easy to spot- the SwipeDismissBehavior handle touch events also if those touches not in the view (although there is a check in the onInterceptTouchEvent method and those events should be ignore) so I created a new behavior class just for this fix: 1 2 3 4 5 6 7 8 9 10 /** * Handle only touches on this current view */ @Override public boolean onTouchEvent(CoordinatorLayout parent, V child, MotionEvent event) { if (parent.isPointInChildBounds(child, (int) event.getX(), (int) event.getY())) { return super.onTouchEvent(parent, child, event); } return false; } Changing the activity to use SwipeDismissOnlyOnViewBehavior instead of SwipeDismissBehavior is doing the work: Now we need to sync between the content view to the dismiss view when swiping, so we creating a new behavior just for this. Because this is really simple behavior all we need to implement are 2 functions, in which view this content view depended (layoutDependsOn) and what to do when the dependent view changed (onDependentViewChanged): 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 = CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) container.getLayoutParams(); final CoordinatorLayout.Behavior&lt;View&gt; behavior = new CoordinatorLayout.Behavior&lt;View&gt;() { @Override public boolean layoutDependsOn(CoordinatorLayout parent, View child, View dependency) { return dependency.getId() == R.id.dismiss; } @Override public boolean onDependentViewChanged(CoordinatorLayout parent, View child, View dependency) { child.setX(dependency.getX()); child.setAlpha(dependency.getAlpha()); return true; } }; params.setBehavior(behavior); And voila:" />
-<link rel="canonical" href="http://blog.shem.dev/blog/2016/05/27/playing-with-coordinator-layout/" />
-<meta property="og:url" content="http://blog.shem.dev/blog/2016/05/27/playing-with-coordinator-layout/" />
+<meta name="description" content="Lately I needed to build some kind of overlay screen that looks like the one that shows when you open the phone when you don&rsquo;t have a lock screen. This is a simple overlay screen that should be dismissable when the user swipe it out from the lower part of the screen, something like this: When coming to implement it, I thought about building a LinearLayout with 2 views- the content view and the swipe view, than put some touch listener on the swipe view and implement swiping mechanism, than syncing both view to act the same. But when I thought…" />
+<meta name="twitter:description" property="og:description" content="Lately I needed to build some kind of overlay screen that looks like the one that shows when you open the phone when you don&rsquo;t have a lock screen. This is a simple overlay screen that should be dismissable when the user swipe it out from the lower part of the screen, something like this: When coming to implement it, I thought about building a LinearLayout with 2 views- the content view and the swipe view, than put some touch listener on the swipe view and implement swiping mechanism, than syncing both view to act the same. But when I thought…" />
+<link rel="canonical" href="https://blog.shem.dev/blog/2016/05/27/playing-with-coordinator-layout/" />
+<meta property="og:url" content="https://blog.shem.dev/blog/2016/05/27/playing-with-coordinator-layout/" />
 <meta property="og:site_name" content="Shem Magnezi Blog" />
 <meta property="og:image" content="https://blog.shem.dev/images/shem.jpg" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2016-05-27T12:02:52+00:00" />
+<meta property="article:published_time" content="2016-05-27T15:02:52+03:00" />
+<meta property="article:modified_time" content="2016-05-27T15:02:52+03:00" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="https://blog.shem.dev/images/shem.jpg" />
-<meta property="twitter:title" content="Playing with Coordinator Layout" />
+<meta name="twitter:image" content="https://blog.shem.dev/images/shem.jpg" />
+<meta name="twitter:title" content="Playing with Coordinator Layout" />
 <meta name="twitter:site" content="@shemag8" />
 <meta name="twitter:creator" content="@smagnezi8" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"smagnezi8"},"dateModified":"2016-05-27T12:02:52+00:00","datePublished":"2016-05-27T12:02:52+00:00","description":"Lately I needed to build some kind of overlay screen that looks like the one that shows when you open the phone when you don&rsquo;t have a lock screen. This is a simple overlay screen that should be dismissable when the user swipe it out from the lower part of the screen, something like this: When coming to implement it, I thought about building a LinearLayout with 2 views- the content view and the swipe view, than put some touch listener on the swipe view and implement swiping mechanism, than syncing both view to act the same. But when I thought about it more and more I decided that it&rsquo;s too much work. Searching this kind of code or library out there always bring me to RecycleView swipe to dismiss items, and in one of those search results I saw how to implement this swipe to dismiss item in RecycleView with CoordinatorLayout, so I decided to give it a chance. CoordinatorLayout is a really great addition in the design support library. Most of you probably already used it with a floating action buttons or snackbars but if you like me- you just put it there, assuming views will move properly, without really diving into how the layout is syncing between them. So it turns out that CordinatorLayout is pretty powerful, it let you easily define interactions on child views and even between them, those interactions are called behaviors so that each child can behave differently according to things that are happening in the layout. You can do a really cool things with those behaviors, here is one example for a great blog post that I stumble upon my searches about coordinate layout usages. In our case it suppose to be pretty easy, there is already a swipe to dismiss behavior ready to be used on the lower view, so we just need to attach it to the relevant view. First lets build our layout: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 &lt;android.support.design.widget.CoordinatorLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;match_parent&quot;&gt; &lt;FrameLayout android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;match_parent&quot; android:id=&quot;@+id/container&quot; android:background=&quot;#06ff87&quot;/&gt; &lt;TextView android:id=&quot;@+id/dismiss&quot; android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;wrap_content&quot; android:text=&quot;&gt; Swipe to dismiss &gt; &gt; &gt;&quot; android:padding=&quot;30dp&quot; android:gravity=&quot;center&quot; android:layout_gravity=&quot;center_horizontal|bottom&quot; android:background=&quot;#3bb0ff&quot;/&gt; &lt;/android.support.design.widget.CoordinatorLayout&gt; As said, it’s a simple layout with 2 view- one for the content (the green one) and one for the swiping (the blue one). Now, lets attach the relevant behavior to the relevant view: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 View dismiss = findViewById(R.id.dismiss); CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) dismiss.getLayoutParams(); SwipeDismissBehavior&lt;View&gt; behavior = new SwipeDismissBehavior&lt;&gt;(); behavior.setSwipeDirection(SwipeDismissBehavior.SWIPE_DIRECTION_START_TO_END); behavior.setListener(new SwipeDismissBehavior.OnDismissListener() { @Override public void onDismiss(final View view) { finish(); } @Override public void onDragStateChanged(int i) {} }); params.setBehavior(behavior); That&rsquo;s pretty self explained- we declare a new swipe to dismiss behavior, set it&rsquo;s direction only to right, and finish the activity on dismiss. But there&rsquo;s on problem- somehow, although we declare this behavior only on the dismiss view, it working on all the view, so also the content view is swipeable as you can see here: I&rsquo;m not sure if this is by design or just a bug (after digging in the code I&rsquo;m afraid this behavior is not intended) but we can easily fix this by creating our own behavior. Of course that we not going to write this whole code from beginning, we&rsquo;ll use the SwipeDismissBehavior class and just fix the relevant code. I really recommend doing a little investigation and reading the Android code, that&rsquo;s way you&rsquo;re fully understand how things really works and get to read an high quality code written by the Android developers, in that case the fix is pretty easy to spot- the SwipeDismissBehavior handle touch events also if those touches not in the view (although there is a check in the onInterceptTouchEvent method and those events should be ignore) so I created a new behavior class just for this fix: 1 2 3 4 5 6 7 8 9 10 /** * Handle only touches on this current view */ @Override public boolean onTouchEvent(CoordinatorLayout parent, V child, MotionEvent event) { if (parent.isPointInChildBounds(child, (int) event.getX(), (int) event.getY())) { return super.onTouchEvent(parent, child, event); } return false; } Changing the activity to use SwipeDismissOnlyOnViewBehavior instead of SwipeDismissBehavior is doing the work: Now we need to sync between the content view to the dismiss view when swiping, so we creating a new behavior just for this. Because this is really simple behavior all we need to implement are 2 functions, in which view this content view depended (layoutDependsOn) and what to do when the dependent view changed (onDependentViewChanged): 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 = CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) container.getLayoutParams(); final CoordinatorLayout.Behavior&lt;View&gt; behavior = new CoordinatorLayout.Behavior&lt;View&gt;() { @Override public boolean layoutDependsOn(CoordinatorLayout parent, View child, View dependency) { return dependency.getId() == R.id.dismiss; } @Override public boolean onDependentViewChanged(CoordinatorLayout parent, View child, View dependency) { child.setX(dependency.getX()); child.setAlpha(dependency.getAlpha()); return true; } }; params.setBehavior(behavior); And voila:","headline":"Playing with Coordinator Layout","image":"https://blog.shem.dev/images/shem.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://blog.shem.dev/blog/2016/05/27/playing-with-coordinator-layout/"},"url":"http://blog.shem.dev/blog/2016/05/27/playing-with-coordinator-layout/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"smagnezi8"},"dateModified":"2016-05-27T15:02:52+03:00","datePublished":"2016-05-27T15:02:52+03:00","description":"Lately I needed to build some kind of overlay screen that looks like the one that shows when you open the phone when you don\u0026rsquo;t have a lock screen. This is a simple overlay screen that should be dismissable when the user swipe it out from the lower part of the screen, something like this: When coming to implement it, I thought about building a LinearLayout with 2 views- the content view and the swipe view, than put some touch listener on the swipe view and implement swiping mechanism, than syncing both view to act the same. But when I thought…","headline":"Playing with Coordinator Layout","image":"https://blog.shem.dev/images/shem.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.shem.dev/blog/2016/05/27/playing-with-coordinator-layout/"},"url":"https://blog.shem.dev/blog/2016/05/27/playing-with-coordinator-layout/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
   
-	<script type="text/javascript">
-		var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', 'UA-78073130-1']);
-		_gaq.push(['_trackPageview']);
-
-		(function() {
-			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		})();
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-0MGEHLR533"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-0MGEHLR533');
 	</script>
 
 
@@ -89,6 +78,7 @@
     <li><a href="/">Blog</a></li>
     <li><a href="/talks">Talks</a></li>
     <li><a href="/projects">Side Projects</a></li>
+    <li><a href="/press">Press</a></li>
     <li><a href="/about">About</a></li>
     <li><a href="/blog/archives">Archives</a></li>
 </ul>
@@ -154,7 +144,7 @@
 
 <p>When coming to implement it, I thought about building a <em>LinearLayout</em> with 2 views- the content view and the swipe view, than put some touch listener on the swipe view and implement swiping mechanism, than syncing both view to act the same. But when I thought about it more and more I decided that it&rsquo;s too much work. Searching this kind of code or library out there always bring me to <em>RecycleView</em> swipe to dismiss items, and in one of those search results I saw how to implement this swipe to dismiss item in <em>RecycleView</em> with <em>CoordinatorLayout</em>, so I decided to give it a chance.</p>
 
-<p><em><a href="http://developer.android.com/reference/android/support/design/widget/CoordinatorLayout.html">CoordinatorLayout</a></em> is a really great addition in the design support library. Most of you probably already used it with a <a href="https://guides.codepath.com/android/floating-action-buttons">floating action buttons</a> or <a href="http://www.androidhive.info/2015/09/android-material-design-snackbar-example/">snackbars</a> but if you like me- you just put it there, assuming views will move properly, without really diving into how the layout is syncing between them.</p>
+<p><em><a href="http://developer.android.com/reference/android/support/design/widget/CoordinatorLayout.html">CoordinatorLayout</a></em> is a really great addition in the design support library. Most of you probably already used it with a <a href="https://web.archive.org/web/20251215061704/https://guides.codepath.com/android/floating-action-buttons">floating action buttons</a> or <a href="http://www.androidhive.info/2015/09/android-material-design-snackbar-example/">snackbars</a> but if you like me- you just put it there, assuming views will move properly, without really diving into how the layout is syncing between them.</p>
 
 <p>So it turns out that <em>CordinatorLayout</em> is pretty powerful, it let you easily define interactions on child views and even between them, those interactions are called <a href="http://developer.android.com/reference/android/support/design/widget/CoordinatorLayout.Behavior.html">behaviors</a> so that each child can behave differently according to things that are happening in the layout. You can do a really cool things with those behaviors, here is one example for a <a href="http://saulmm.github.io/mastering-coordinator">great blog post</a> that I stumble upon my searches about coordinate layout usages.</p>
 
@@ -314,23 +304,12 @@
 
 <p><img class="center" src="/images/posts/ezgif-2484339332.gif" width="280" height="498"></p>
 
-<p><a href="http://giphy.com/gifs/honda-honda-valueofx-civicx-xT77XRp55yPwHkd5Nm"><img class="center" src="https://media.giphy.com/media/xT77XRp55yPwHkd5Nm/giphy.gif" width="480" height="270"></a></p>
+<p><a href="https://web.archive.org/web/20170429125400/https://giphy.com/gifs/honda-honda-valueofx-civicx-xT77XRp55yPwHkd5Nm"><img class="center" src="https://media.giphy.com/media/xT77XRp55yPwHkd5Nm/giphy.gif" width="480" height="270"></a></p>
 </div>
 
 </article>
 
-	<div class="share">
-	<div class="addthis_toolbox addthis_default_style ">
 	
-	
-	<a class="addthis_button_tweet"></a>
-	
-	
-	<a class="addthis_counter addthis_pill_style"></a>
-	</div>
-  <script type="text/javascript" src="https://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
-</div>
-
 
 <!-- Post ad -->
 <ins class="adsbygoogle"
@@ -351,7 +330,7 @@
 
 </div>
 			</div>
-			<footer id="footer" class="inner">Copyright &copy; 2025
+			<footer id="footer" class="inner">Copyright &copy; 2026
 
     Shem Magnezi
 
@@ -366,8 +345,8 @@ Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Sha
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://blog.shem.dev/blog/2016/05/27/playing-with-coordinator-layout/';
-        var disqus_url = 'http://blog.shem.dev/blog/2016/05/27/playing-with-coordinator-layout/';
+        var disqus_identifier = 'https://blog.shem.dev/blog/2016/05/27/playing-with-coordinator-layout/';
+        var disqus_url = 'https://blog.shem.dev/blog/2016/05/27/playing-with-coordinator-layout/';
         var disqus_script = 'embed.js';
       
     (function () {
@@ -382,16 +361,6 @@ Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Sha
 
 
 
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
 
 
 

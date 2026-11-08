@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: life | Shem Magnezi Blog]]></title>
-  <link href="http://blog.shem.dev/blog/categories/life/atom.xml" rel="self"/>
-  <link href="http://blog.shem.dev/"/>
-  <updated>2025-04-20T10:58:27+00:00</updated>
-  <id>http://blog.shem.dev/</id>
+  <link href="https://blog.shem.dev/blog/categories/life/atom.xml" rel="self"/>
+  <link href="https://blog.shem.dev/"/>
+  <updated>2026-11-08T12:57:35+02:00</updated>
+  <id>https://blog.shem.dev/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
     <email><![CDATA[smagnezi8@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Uncertainty in the Workplace.]]></title>
-    <link href="http://blog.shem.dev/blog/2020/06/09/uncertainty-in-the-workplace/"/>
-    <updated>2020-06-09T14:31:39+00:00</updated>
-    <id>http://blog.shem.dev/blog/2020/06/09/uncertainty-in-the-workplace</id>
+    <link href="https://blog.shem.dev/blog/2020/06/09/uncertainty-in-the-workplace/"/>
+    <updated>2020-06-09T17:31:39+03:00</updated>
+    <id>https://blog.shem.dev/blog/2020/06/09/uncertainty-in-the-workplace</id>
     <content type="html"><![CDATA[_It's here, let's embrace it._
 
 <!-- more -->
@@ -104,9 +104,9 @@ And remember - it's hard. Most of the people don't handle these kinds of eve
   
   <entry>
     <title type="html"><![CDATA[Dear Mr./Ms. Recruiter]]></title>
-    <link href="http://blog.shem.dev/blog/2020/05/27/dear-mr-dot-slash-ms-recuruter/"/>
-    <updated>2020-05-27T07:17:04+00:00</updated>
-    <id>http://blog.shem.dev/blog/2020/05/27/dear-mr-dot-slash-ms-recuruter</id>
+    <link href="https://blog.shem.dev/blog/2020/05/27/dear-mr-dot-slash-ms-recuruter/"/>
+    <updated>2020-05-27T10:17:04+03:00</updated>
+    <id>https://blog.shem.dev/blog/2020/05/27/dear-mr-dot-slash-ms-recuruter</id>
     <content type="html"><![CDATA[_Hope you are doing well these days._
 
 <!-- more -->
@@ -227,9 +227,9 @@ _If you liked this post, I'd love to tell you more. Would you like to schedule a
   
   <entry>
     <title type="html"><![CDATA[Three great startups I could build if Google would give me access to their data.]]></title>
-    <link href="http://blog.shem.dev/blog/2019/05/03/three-great-startups-i-could-build-if-google-would-give-me-access-to-their-data/"/>
-    <updated>2019-05-03T14:06:12+00:00</updated>
-    <id>http://blog.shem.dev/blog/2019/05/03/three-great-startups-i-could-build-if-google-would-give-me-access-to-their-data</id>
+    <link href="https://blog.shem.dev/blog/2019/05/03/three-great-startups-i-could-build-if-google-would-give-me-access-to-their-data/"/>
+    <updated>2019-05-03T17:06:12+03:00</updated>
+    <id>https://blog.shem.dev/blog/2019/05/03/three-great-startups-i-could-build-if-google-would-give-me-access-to-their-data</id>
     <content type="html"><![CDATA[_(It’s actually my data. Just saying.)_
 <!-- more -->
 
@@ -295,7 +295,7 @@ What if I could use Google to build an [Anki](https://en.wikipedia.org/wiki/Anki
 
 #### Why can’t I do it?
 
-The only API Google provides here is to translate words. This is great, but this is not what I’m looking for. I’m looking to get my own data and usage on the app. There’s an [“history”](https://support.google.com/translate/answer/6142479) option in the web version, but it’s only valid for the specific session and not accessible via any API call. Another solution is to use the [“phrasebook”](https://support.google.com/translate/answer/6142480) feature and export it, but this means I need to manually star every translation and manually export my phrasebook every couple of weeks, a very tedious process that I wish to automate.
+The only API Google provides here is to translate words. This is great, but this is not what I’m looking for. I’m looking to get my own data and usage on the app. There’s an [“history”](https://web.archive.org/web/20220423223352/https://support.google.com/translate/answer/6142479) option in the web version, but it’s only valid for the specific session and not accessible via any API call. Another solution is to use the [“phrasebook”](https://support.google.com/translate/answer/6142480) feature and export it, but this means I need to manually star every translation and manually export my phrasebook every couple of weeks, a very tedious process that I wish to automate.
 
 Yes, there’s always the option to write a translator app on my own, Google helps me with the API, but again — I’ll need to build and maintain(!) a multiplatform app with all the important features I described above.
 
@@ -312,9 +312,9 @@ These are not billion dollar company ideas; if there were — I wouldn't put
   
   <entry>
     <title type="html"><![CDATA[Thank you 2018]]></title>
-    <link href="http://blog.shem.dev/blog/2019/01/04/thank-you-2018/"/>
-    <updated>2019-01-04T13:53:24+00:00</updated>
-    <id>http://blog.shem.dev/blog/2019/01/04/thank-you-2018</id>
+    <link href="https://blog.shem.dev/blog/2019/01/04/thank-you-2018/"/>
+    <updated>2019-01-04T15:53:24+02:00</updated>
+    <id>https://blog.shem.dev/blog/2019/01/04/thank-you-2018</id>
     <content type="html"><![CDATA[_You have been good to me._
 <!-- more -->
 
@@ -345,14 +345,14 @@ Sometimes you need to stop or even go a couple of steps back to gain some veloci
 ## 3. Sometimes you need to come back to your comfort zone
 I’m a big believer in trying new things and push your limits, and I already wrote that I think the magic happens [outside of the comfort zone](/blog/2015/11/15/run-fast-fall-frequently-get-up-faster-and-go-drink-beer-at-the-beach-what-its-like-to-work-at-a-startup/). But staying there too long might be exhausted. I learned it the hard way because this year I started talking in conferences abroad.
 
-It actually started at the end of 2017, but in 2018 I took the leap and talked in big conferences in Europe, not in my native language. It began on [Devfest Kosice](https://devfest.sk/) in Slovakia, then on [ADC Festival](https://www.adc.de/kongress/) in Hamburg and lastly on [BrainBar conference](https://brainbar.com/) in Budapest. Although I had experience in talking in front of big audiences, this was different. The combination of speaking in English, traveling for a couple of days alone, and standing on the stage without any familiar face in the crowd- was very hard for me. Very hard. So hard that I started to enjoy it less and less.
+It actually started at the end of 2017, but in 2018 I took the leap and talked in big conferences in Europe, not in my native language. It began on [Devfest Kosice](https://web.archive.org/web/20240424212049/http://devfest.sk/) in Slovakia, then on [ADC Festival](https://www.adc.de/kongress/) in Hamburg and lastly on [BrainBar conference](https://brainbar.com/) in Budapest. Although I had experience in talking in front of big audiences, this was different. The combination of speaking in English, traveling for a couple of days alone, and standing on the stage without any familiar face in the crowd- was very hard for me. Very hard. So hard that I started to enjoy it less and less.
 
 After the last talk, I felt overwhelmed and needed to take a break and breathe. So I took some time off and didn’t submit any talks for the rest of the year. Almost eight months have passed, and I’ve started to miss speaking in confs. Soon I might be ready to submit new talks, and hopefully, I’ll return talking and enjoying it again.
 
 Being outside of the comfort zone will take plenty of energy and might be a stressful situation, just remember to come back and fill your battery before going back.
 
 ## 4. Be conscious about the content I consume
-As said before, I started to be more aware to how I’m using my time. I already heavily use [Pocket](https://getpocket.com/) in the past couple of years, but this year I started listening to podcasts too (a partial list: [Stuff You Should Know](https://www.stuffyoushouldknow.com/podcasts), [Planet Money](https://www.npr.org/podcasts/510289/planet-money), [99% Invisible](https://99percentinvisible.org/), [Replay All](https://www.gimletmedia.com/reply-all), and in Hebrew: [Extend](http://extend.libsyn.com/), [Hayot Kiss](https://www.kan.org.il/podcast/program.aspx/?progid=7), [Ma Yesh Beze](https://mayeshbeze.simplecast.fm/) and [No Tarbut](http://notarbut.co/)). Also, after too much time, I moved to Kindle from physical books, and that made me read much more.
+As said before, I started to be more aware to how I’m using my time. I already heavily use [Pocket](https://getpocket.com/) in the past couple of years, but this year I started listening to podcasts too (a partial list: [Stuff You Should Know](https://web.archive.org/web/20260210075858/https://www.stuffyoushouldknow.com/podcasts/), [Planet Money](https://www.npr.org/podcasts/510289/planet-money), [99% Invisible](https://99percentinvisible.org/), [Replay All](https://web.archive.org/web/20190416005314/https://www.gimletmedia.com/reply-all/), and in Hebrew: [Extend](https://web.archive.org/web/20200127071048/http://extend.libsyn.com:80/), [Hayot Kiss](https://www.kan.org.il/podcast/program.aspx/?progid=7), [Ma Yesh Beze](https://mayeshbeze.simplecast.fm/) and [No Tarbut](http://notarbut.co/)). Also, after too much time, I moved to Kindle from physical books, and that made me read much more.
 
 But more important, I got rid of useless habits that took my attention too easily: I removed the Facebook app from my phone and slowly decreased the times I visit the social network, to the point that I open it only once a week. I stopped visiting websites to read the news or watch commercial TV. Instead, I only watch on-demand shows and get the news from small talk with other people.
 
@@ -368,9 +368,9 @@ __2019, we can do it.__
   
   <entry>
     <title type="html"><![CDATA[30 lessons for my 30th birthday, learned from my (many) mistakes.]]></title>
-    <link href="http://blog.shem.dev/blog/2018/10/12/30-lessons-for-my-30th-birthday-learned-from-my-many-mistakes/"/>
-    <updated>2018-10-12T13:40:05+00:00</updated>
-    <id>http://blog.shem.dev/blog/2018/10/12/30-lessons-for-my-30th-birthday-learned-from-my-many-mistakes</id>
+    <link href="https://blog.shem.dev/blog/2018/10/12/30-lessons-for-my-30th-birthday-learned-from-my-many-mistakes/"/>
+    <updated>2018-10-12T16:40:05+03:00</updated>
+    <id>https://blog.shem.dev/blog/2018/10/12/30-lessons-for-my-30th-birthday-learned-from-my-many-mistakes</id>
     <content type="html"><![CDATA[Last month was my 30th birthday. I’m not an emotional guy that loves to celebrate his birthday, and I don’t think there is something unique in this day. For me, it’s just 10950 days since I was born, nothing special.
 <!-- more -->
 

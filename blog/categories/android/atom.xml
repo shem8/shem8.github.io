@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: android | Shem Magnezi Blog]]></title>
-  <link href="http://blog.shem.dev/blog/categories/android/atom.xml" rel="self"/>
-  <link href="http://blog.shem.dev/"/>
-  <updated>2025-04-20T10:58:27+00:00</updated>
-  <id>http://blog.shem.dev/</id>
+  <link href="https://blog.shem.dev/blog/categories/android/atom.xml" rel="self"/>
+  <link href="https://blog.shem.dev/"/>
+  <updated>2026-11-08T12:57:35+02:00</updated>
+  <id>https://blog.shem.dev/</id>
   <author>
     <name><![CDATA[Shem Magnezi]]></name>
     <email><![CDATA[smagnezi8@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[5 things React world can learn from Android]]></title>
-    <link href="http://blog.shem.dev/blog/2017/07/02/5-things-react-world-can-learn-from-android/"/>
-    <updated>2017-07-02T18:52:47+00:00</updated>
-    <id>http://blog.shem.dev/blog/2017/07/02/5-things-react-world-can-learn-from-android</id>
+    <link href="https://blog.shem.dev/blog/2017/07/02/5-things-react-world-can-learn-from-android/"/>
+    <updated>2017-07-02T21:52:47+03:00</updated>
+    <id>https://blog.shem.dev/blog/2017/07/02/5-things-react-world-can-learn-from-android</id>
     <content type="html"><![CDATA[In my [previous post](https://blog.shem.dev/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/), I talked about a couple of things I notice after moving from my usual gig as an Android developer and doing some web development (especially React).
 
 As promised, after naming some things that Android can learn from the web development world, I will now focus on the other side- what can web developers can borrow from the Android world.
@@ -90,9 +90,9 @@ If you enjoyed this post, please hit the “recommend” button below and share 
   
   <entry>
     <title type="html"><![CDATA[Is there Room for one more?]]></title>
-    <link href="http://blog.shem.dev/blog/2017/06/02/room-performance/"/>
-    <updated>2017-06-02T12:26:09+00:00</updated>
-    <id>http://blog.shem.dev/blog/2017/06/02/room-performance</id>
+    <link href="https://blog.shem.dev/blog/2017/06/02/room-performance/"/>
+    <updated>2017-06-02T15:26:09+03:00</updated>
+    <id>https://blog.shem.dev/blog/2017/06/02/room-performance</id>
     <content type="html"><![CDATA[In the last Google I/O, Google announced a new [architecture components](https://developer.android.com/topic/libraries/architecture/index.html). One of them is Room.
 Room is an (another) ORM solution for the Android developers. Combining with some other elements Google released (like LiveData, ViewModel, and Lifecycle Listeners)- basic app flows should be much simpler.
 <!-- more -->
@@ -108,7 +108,7 @@ That's mean that if I want to save all my users data in a database- I will work 
 ## Current solutions
 This concept is not new, developers used that technique for a long time, and it was natural that Android developers will need this kind of thing too.
 
-Soon enough we got a couple of 3rd libraries to handle it, just look on [AndroidArsenal page](https://android-arsenal.com/tag/69) and understand we're getting into crowded space here. The most popular ones are probably [ORMLite](http://ormlite.com/), [GreenDAO](http://greenrobot.org/greendao/) and [DbFlow](https://github.com/Raizlabs/DBFlow).
+Soon enough we got a couple of 3rd libraries to handle it, just look on [AndroidArsenal page](https://web.archive.org/web/20250209211313/https://www.android-arsenal.com/tag/69) and understand we're getting into crowded space here. The most popular ones are probably [ORMLite](http://ormlite.com/), [GreenDAO](http://greenrobot.org/greendao/) and [DbFlow](https://github.com/Raizlabs/DBFlow).
 
 ## Creating a Model
 There are two main ways to define the mapping between your objects and the tables in Java: some DSL + code generator (like what GreenDAO is using), or using annotation (like ORMLite, DBFlow and most of the libraries). Although I'm not a big fan of annotations, I must say the later is an easier solution.
@@ -233,9 +233,9 @@ _[PerfTestRoom-batch.tsv](/files/posts/room/PerfTestRoom-batch.tsv)_<br>
   
   <entry>
     <title type="html"><![CDATA[5 things I learned as an Android developer after doing some Web development]]></title>
-    <link href="http://blog.shem.dev/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/"/>
-    <updated>2017-03-31T10:32:32+00:00</updated>
-    <id>http://blog.shem.dev/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development</id>
+    <link href="https://blog.shem.dev/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development/"/>
+    <updated>2017-03-31T13:32:32+03:00</updated>
+    <id>https://blog.shem.dev/blog/2017/03/31/5-things-i-learned-as-an-android-developer-after-doing-some-web-development</id>
     <content type="html"><![CDATA[In the last couple of months, I started my new journey, leaving my Android position behind and started doing some web development. Working on those 2 platforms has many differences, I can’t say the one is better than the other, but there are many things that those 2 worlds can learn from each other.
 <!-- more -->
 In this post, I’ll focus on the things that I saw while working on our front-end React app. Things that I learned about Android and the way that we’re building apps.
@@ -333,7 +333,7 @@ How long it take with React when using Webpack (a module bundler, or a “compli
 Don’t think that 5 or 10 seconds are really that different? When developing- every second count (and soon enough all those seconds will accumulate). Especially when those changes are shown passively (when the file is saved) and to actively (when you run the app). I really recommend you to see this [talk](https://vimeo.com/36579366) and see how it can affect your development (warning: the speaker will blow your mind).
 
 ## 3. Using Flux architecture
-[Flux](http://facebook.github.io/flux/) is the application architecture that Facebook uses for building client-side web applications. It complements React’s composable view components by utilizing a unidirectional data flow. It’s more of a pattern rather than a formal framework, and when combining React Router with Redux we can get some pretty close data flow to Flux pattern.
+[Flux](https://web.archive.org/web/20230314202715/http://facebook.github.io/flux/) is the application architecture that Facebook uses for building client-side web applications. It complements React’s composable view components by utilizing a unidirectional data flow. It’s more of a pattern rather than a formal framework, and when combining React Router with Redux we can get some pretty close data flow to Flux pattern.
 
 Flux making writing client side much cleaner and easier to debug and predict. Although there are some [examples](https://github.com/lgvalle/android-flux-todo-app) and [libraries](https://github.com/frostymarvelous/Fluxxan) for Android it’s still not widely used.
 On Android apps we’re still passing data around in all kind of ways (intents, DB, message bus, etc…), keeping it mutable that every component can change it and by this- making our life really hard.
@@ -394,16 +394,16 @@ As for what web development can take from Android development- in the next post 
   
   <entry>
     <title type="html"><![CDATA[Playing with Coordinator Layout]]></title>
-    <link href="http://blog.shem.dev/blog/2016/05/27/playing-with-coordinator-layout/"/>
-    <updated>2016-05-27T12:02:52+00:00</updated>
-    <id>http://blog.shem.dev/blog/2016/05/27/playing-with-coordinator-layout</id>
+    <link href="https://blog.shem.dev/blog/2016/05/27/playing-with-coordinator-layout/"/>
+    <updated>2016-05-27T15:02:52+03:00</updated>
+    <id>https://blog.shem.dev/blog/2016/05/27/playing-with-coordinator-layout</id>
     <content type="html"><![CDATA[Lately I needed to build some kind of overlay screen that looks like the one that shows when you open the phone when you don't have a lock screen. This is a simple overlay screen that should be dismissable when the user swipe it out from the lower part of the screen<!-- more -->, something like this:
 
 <img class="center" src="/images/posts/get-feature-packed-iphone-like-lock-screen-for-your-galaxy-s6-other-android-device-w654.jpg" width="211" title="*" >
 
 When coming to implement it, I thought about building a _LinearLayout_ with 2 views- the content view and the swipe view, than put some touch listener on the swipe view and implement swiping mechanism, than syncing both view to act the same. But when I thought about it more and more I decided that it's too much work. Searching this kind of code or library out there always bring me to _RecycleView_ swipe to dismiss items, and in one of those search results I saw how to implement this swipe to dismiss item in _RecycleView_ with _CoordinatorLayout_, so I decided to give it a chance.
 
-_[CoordinatorLayout](http://developer.android.com/reference/android/support/design/widget/CoordinatorLayout.html)_ is a really great addition in the design support library. Most of you probably already used it with a [floating action buttons](https://guides.codepath.com/android/floating-action-buttons) or [snackbars](http://www.androidhive.info/2015/09/android-material-design-snackbar-example/) but if you like me- you just put it there, assuming views will move properly, without really diving into how the layout is syncing between them.
+_[CoordinatorLayout](http://developer.android.com/reference/android/support/design/widget/CoordinatorLayout.html)_ is a really great addition in the design support library. Most of you probably already used it with a [floating action buttons](https://web.archive.org/web/20251215061704/https://guides.codepath.com/android/floating-action-buttons) or [snackbars](http://www.androidhive.info/2015/09/android-material-design-snackbar-example/) but if you like me- you just put it there, assuming views will move properly, without really diving into how the layout is syncing between them.
 
 So it turns out that _CordinatorLayout_ is pretty powerful, it let you easily define interactions on child views and even between them, those interactions are called [behaviors](http://developer.android.com/reference/android/support/design/widget/CoordinatorLayout.Behavior.html) so that each child can behave differently according to things that are happening in the layout. You can do a really cool things with those behaviors, here is one example for a [great blog post](http://saulmm.github.io/mastering-coordinator) that I stumble upon my searches about coordinate layout usages.
 
@@ -559,16 +559,16 @@ And voila:
 
 <img class="center" src="/images/posts/ezgif-2484339332.gif" width="280" height="498">
 
-[<img class="center" src="https://media.giphy.com/media/xT77XRp55yPwHkd5Nm/giphy.gif" width="480" height="270">](http://giphy.com/gifs/honda-honda-valueofx-civicx-xT77XRp55yPwHkd5Nm)
+[<img class="center" src="https://media.giphy.com/media/xT77XRp55yPwHkd5Nm/giphy.gif" width="480" height="270">](https://web.archive.org/web/20170429125400/https://giphy.com/gifs/honda-honda-valueofx-civicx-xT77XRp55yPwHkd5Nm)
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[10 good rules for bad App, Part 3- Product]]></title>
-    <link href="http://blog.shem.dev/blog/2016/05/06/10-good-rules-for-bad-app-part-3-product/"/>
-    <updated>2016-05-06T12:37:07+00:00</updated>
-    <id>http://blog.shem.dev/blog/2016/05/06/10-good-rules-for-bad-app-part-3-product</id>
-    <content type="html"><![CDATA[Welcome to the third (and last) part of the tutorial of how building a bad app. After we've building a bad app in the [first part](http://shem8.github.com/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical/), and remarkably ruin its look and feel in the [second part](http://shem8.github.com/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui/), we're now going to go over on 10 steps to easily how to kill your product:
+    <link href="https://blog.shem.dev/blog/2016/05/06/10-good-rules-for-bad-app-part-3-product/"/>
+    <updated>2016-05-06T15:37:07+03:00</updated>
+    <id>https://blog.shem.dev/blog/2016/05/06/10-good-rules-for-bad-app-part-3-product</id>
+    <content type="html"><![CDATA[Welcome to the third (and last) part of the tutorial of how building a bad app. After we've building a bad app in the [first part](/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical/), and remarkably ruin its look and feel in the [second part](/blog/2016/04/17/10-good-rules-for-bad-app-part-2-uxui/), we're now going to go over on 10 steps to easily how to kill your product:
 <!--more-->
 
 ## #1: Add as many features as possible
