@@ -4,7 +4,7 @@ date: "2026-08-16"
 categories: ["ai"]
 ---
 
-_Five anchors, a route, the reservations, the price drops and an 80-page book._
+_Five anchors, every booking, the price drops and an 80-page book._
 
 <!-- more -->
 
@@ -28,13 +28,31 @@ The best example is Hershey, Pennsylvania, a place I'd never have thought of goi
 
 ## It planned the days
 
-Once we had a route, it suggested a plan for each day and where to stay. It also reserved tables at restaurants.
+Once we had a route, it suggested a plan for each day and where to stay.
+
+## It made the bookings
+
+Every hotel, every flight and every restaurant was handled and booked by AI.
+
+That includes the small questions you'd normally leave for later. It wrote to a restaurant in Brooklyn to ask if we could also reserve the bar upstairs after dinner (no, but there's a waiting list you join when you arrive), and what "open until 10pm" really meant (10pm is the last reservation, and they stay open until the last party finishes).
 
 ## It handled the boring parts
 
 This is the part I'd have hated most. AI helped me with the car rental, the insurance, the tolls and fees and everything around them.
 
-It also monitored prices. When a price dropped, it got me a better deal.
+## It kept hunting for better prices
+
+Booking wasn't the end of it. AI kept monitoring prices, and when one dropped, it got me a better deal.
+
+Here's one real example, five nights at a hotel in Brooklyn, with the same room type and the same dates:
+
+| When | Where | Total |
+|---|---|---|
+| May 14 | First booking | $1,536.79 |
+| May 25 | Rebooked after a drop | $1,509.25 |
+| June 3 | Moved to another booking site | $1,408.28 |
+
+That's $128.51 off one stay, without me having to check anything. On June 3 the old booking was cancelled for free and the new one was confirmed a minute apart.
 
 ## It helped with the hard parts too
 
