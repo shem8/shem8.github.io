@@ -1,0 +1,14 @@
+---
+import type { Row } from '../lib/posts';
+const { rows, showYear = false, lead = false } = Astro.props as { rows: Row[]; showYear?: boolean; lead?: boolean };
+---
+{rows.map((r, i) => (
+  <a class:list={['entry', { 'entry-lead': lead && i === 0 }]} href={r.href} data-row>
+    <div class="entry-text">
+      <h3 style={r.external ? undefined : `view-transition-name:t-${r.id}`}>{r.title}</h3>
+      {r.excerpt && <p>{r.excerpt}</p>}
+      {r.external && <p class="entry-source">On {r.source}</p>}
+    </div>
+    {showYear && <time datetime={r.date.toISOString()}>{r.date.getUTCFullYear()}</time>}
+  </a>
+))}

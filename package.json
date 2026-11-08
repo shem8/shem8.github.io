@@ -1,0 +1,17 @@
+{
+  "name": "blog-shem-dev",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "deploy": "sh scripts/deploy.sh",
+    "new": "node scripts/new.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/source-serif-4": "^5.3.1",
+    "@fontsource/sofia-sans-extra-condensed": "^5.3.0",
+    "astro": "^7.4.1"
+  }
+}

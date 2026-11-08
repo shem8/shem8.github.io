@@ -1,0 +1,19 @@
+---
+// Only exists while a talk is coming up. If the date passes before the next deploy,
+// the small script removes it so the site never advertises something that already happened.
+import { nextTalk, ticketDay, ticketMonth, until, venue } from '../lib/talks';
+const t = await nextTalk();
+---
+{t && (
+  <div class="wrap ticket-slot" data-until={until(t)}>
+    <script is:inline>(function (s) { if (Date.now() > new Date(s.dataset.until).getTime()) s.remove(); })(document.currentScript.parentElement);</script>
+    <a class="ticket" href={`/talks/#${t.id}`} data-tilt>
+      <span class="ticket-stub"><b>{ticketDay(t)}</b><span>{ticketMonth(t)}</span></span>
+      <span class="ticket-main">
+        <small>Next talk</small>
+        <strong>{t.data.title}</strong>
+        <em>{venue(t)}</em>
+      </span>
+    </a>
+  </div>
+)}

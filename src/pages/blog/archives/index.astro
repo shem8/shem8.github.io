@@ -1,0 +1,10 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Archive from '../../../components/Archive.astro';
+import { allRows } from '../../../lib/posts';
+const rows = await allRows();
+---
+<Base title="Writing" description="Everything Shem Magnezi has written about engineering, careers, Android, the web and startups.">
+  <div class="page-head on-night"><div class="wrap"><h1>Writing</h1><p>Essays on engineering, careers, Android, the web and startups.</p></div></div>
+  <Archive rows={rows} all={rows} />
+</Base>

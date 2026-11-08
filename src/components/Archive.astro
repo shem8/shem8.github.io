@@ -1,0 +1,47 @@
+---
+import { categoryLabel, type Row } from '../lib/posts';
+import PostList from './PostList.astro';
+const { rows, all, current } = Astro.props as { rows: Row[]; all: Row[]; current?: string };
+const cats = [...new Set(all.flatMap((r) => r.categories))].sort();
+---
+<div class="wrap">
+  <div class="archive-tools">
+    <nav class="filters" aria-label="Topics">
+      <a href="/blog/archives/" aria-current={current ? undefined : 'page'}>Everything</a>
+      {cats.map((c) => <a href={`/blog/categories/${c}/`} aria-current={current === c ? 'page' : undefined}>{categoryLabel(c)}</a>)}
+    </nav>
+    <label class="find"><span class="sr">Search all posts</span><input type="search" placeholder="Search posts" data-find autocomplete="off" /></label>
+  </div>
+  <div class="archive-list"><PostList rows={rows} showYear /></div>
+  <p class="find-none" data-find-none role="status" hidden>No posts match that search. Try a different word.</p>
+</div>
+<script>
+  const input = document.querySelector<HTMLInputElement>('[data-find]')!;
+  const rows = [...document.querySelectorAll<HTMLAnchorElement>('[data-row]')];
+  const none = document.querySelector<HTMLElement>('[data-find-none]')!;
+  let index: Record<string, string> | null = null;
+
+  const apply = () => {
+    const terms = input.value.toLowerCase().split(/\s+/).filter(Boolean);
+    const update = () => {
+      let shown = 0;
+      for (const r of rows) {
+        const hay = `${r.textContent} ${index?.[r.getAttribute('href')!] ?? ''}`.toLowerCase();
+        r.hidden = !terms.every((t) => hay.includes(t));
+        if (!r.hidden) shown++;
+      }
+      none.hidden = shown > 0;
+    };
+    const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (document.startViewTransition && !calm) document.startViewTransition(update);
+    else update();
+  };
+  let timer = 0;
+  input.addEventListener('input', () => { clearTimeout(timer); timer = window.setTimeout(apply, 140); });
+  // The full text is only downloaded by people who actually search.
+  input.addEventListener('focus', async () => {
+    if (index) return;
+    index = await (await fetch('/search-index.json')).json();
+    if (input.value) apply();
+  }, { once: true });
+</script>

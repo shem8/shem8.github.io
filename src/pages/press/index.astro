@@ -1,0 +1,36 @@
+---
+import Base from '../../layouts/Base.astro';
+import { allPress, type PressItem } from '../../lib/press';
+const press = await allPress();
+const group = (g: PressItem['data']['group']) => press.filter((p) => p.data.group === g);
+const year = (p: PressItem) => p.data.date?.slice(0, 4);
+const appearances = group('appearances');
+const wilco = group('wilco');
+const startup = group('startup-world');
+const sideProjects = group('side-projects');
+---
+<Base title="Press" description="Press coverage, podcasts, interviews and panels featuring Shem Magnezi.">
+  <div class="page-head on-night"><div class="wrap"><h1>Press</h1><p>Podcasts, interviews, panels and coverage of things I’ve built.</p></div></div>
+  <div class="wrap">
+    <section class="press-group">
+      <h2>Podcasts, interviews and panels</h2>
+      <ul>{appearances.map((p) => <li><a href={p.data.url} target="_blank" rel="noopener">{p.data.title}</a><span class="press-src">{p.data.source}</span><span class="press-year">{year(p)}</span></li>)}</ul>
+    </section>
+    <section class="press-group">
+      <h2>Side projects</h2>
+      <ul>{sideProjects.map((p) => <li><a href={p.data.url} target="_blank" rel="noopener"><bdi>{p.data.title}</bdi></a><span class="press-src">{p.data.source}</span><span class="press-year">{year(p)}</span></li>)}</ul>
+      <p class="press-note">Coverage of <a href="/projects/#kickoff">Kickoff, my World Cup 2026 ticket data project</a>, in WIRED and The Times.</p>
+      <img src="/images/projects/kickoff-the-times.jpg" alt="The Times headline: The shrewd fans’ guide to surviving the World Cup rip-off" loading="lazy" />
+    </section>
+    <section class="press-group">
+      <h2>Wilco</h2>
+      <p>Coverage of the company I co-founded and led as CTO.</p>
+      <ul>{wilco.map((p) => <li><a href={p.data.url} target="_blank" rel="noopener">{p.data.title}</a><span class="press-src">{p.data.source}</span><span class="press-year">{year(p)}</span></li>)}</ul>
+    </section>
+    <section class="press-group">
+      <h2>“Fuck You Startup World”</h2>
+      <p>Follow-ups to <a href="/blog/2016/10/11/fuck-you-startup-world/">my 2016 post</a>. More on how that went in <a href="/blog/2016/12/23/when-your-story-goes-viral/">When your story goes viral</a>.</p>
+      <ul>{startup.map((p) => <li><a href={p.data.url} target="_blank" rel="noopener">{p.data.title}</a><span class="press-src">{p.data.source}</span><span class="press-year">{year(p)}</span></li>)}</ul>
+    </section>
+  </div>
+</Base>

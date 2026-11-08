@@ -1,0 +1,14 @@
+---
+import Base from '../../../../layouts/Base.astro';
+import Archive from '../../../../components/Archive.astro';
+import { allRows, categoryLabel } from '../../../../lib/posts';
+export async function getStaticPaths() {
+  const rows = await allRows();
+  return [...new Set(rows.flatMap((r) => r.categories))].map((cat) => ({ params: { cat }, props: { rows, cat } }));
+}
+const { rows, cat } = Astro.props;
+---
+<Base title={`${categoryLabel(cat)} writing`}>
+  <div class="page-head on-night"><div class="wrap"><h1>{categoryLabel(cat)}</h1></div></div>
+  <Archive rows={rows.filter((r) => r.categories.includes(cat))} all={rows} current={cat} />
+</Base>

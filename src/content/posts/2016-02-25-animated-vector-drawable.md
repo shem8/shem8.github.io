@@ -1,0 +1,223 @@
+---
+title: "Animated Vector Drawable"
+date: "2016-02-25 19:43:46+00:00"
+path: "/blog/2016/02/25/animated-vector-drawable/"
+categories: ["android"]
+---
+
+In API 21 the Android team released bunch of very cool things for material design, most of the things focus around the design specs like colors or transition animation, other were for the new widgets like FAB, card view or recycle view, but within all those things there were also two things that barely discussed- [VectorDrawable](http://developer.android.com/reference/android/graphics/drawable/VectorDrawable.html) and [AnimatedVectorDrawable](http://developer.android.com/reference/android/graphics/drawable/AnimatedVectorDrawable.html).
+<!--more-->
+
+_Edit: looks like those classes became so popular that the Android team decided to add them to the [latest support library](http://android-developers.blogspot.co.il/2016/02/android-support-library-232.html), yay!_
+
+
+## Android resources
+
+
+In Android, recourses took lots of space in the final APK, tools like Proguard or loading modules dynamically helped the developers very much decreasing their app size, but when it came to assets, we were very limited. You had to choose between create asset for each density or paying with cpu time and let android doing the resizing and risk by not perfect asset.
+
+I saw couple of apps that choose to download their assets from the internet but that's might be problematic for first run (intro) or cases you don't have a connection.
+
+That's why I was so happy hearing about the new VectorDrawable introduced in API 21, that was let us the ability to create vector shapes and scale them easily for all screen sizes. This was really great for icons or small buttons.
+
+Of course, developers were able to do it before with a custom view and just draw the icon them self with Path, but the VectorDrawable save us the unnecessary view and it also use the SVG Path syntax that it much easier and much more popular. Moreover- Android Studio were able to show you a vector drawable preview, what that make it much more connivance!
+
+
+## Animations
+
+
+Animations were a pain too. You basically had 3 options:
+
+
+
+
+  1. For a simple animations (like scaling, fading or moving) using the build-in view property animation, that was the case for 90% of the time.
+
+
+  2. If you had more complex animation on complex view you could create a custom animation, but for this you had to write lots of code
+
+
+  3. Use AnimationDrawable and put drawable for each frame.
+
+
+So again- for not trivial cases, you had to choose between writing lots of code or putting lots of assets.
+
+That's when AnimatedVectorDrawable introduced and let developers use basic animations with their VectorDrawables with few lines of code and much lower space.
+
+
+## Live example
+
+
+Let's start- assume we have some search component and we want to move to and from search state. So we need to animate between search icon and cancel icon:
+
+<img src="/images/wp/2016-02-search_icon.png" alt="" width="150" height="150" loading="lazy">
+<img src="/images/wp/2016-02-cancel_icon.png" alt="" width="150" height="150" loading="lazy">
+
+And the animation between those 2 icons (Added guides and slow motion to better understand the transition):
+
+![](/images/wp/2016-02-gif.gif)
+
+As you can see we actually have 3 shapes that moves: 2 half circles that moves to lines (green and blue) and the line of the magnifying glass that just getting bigger and reaching to the end.
+
+First we need to create the shapes for the search icon:
+
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <path
+        android:name="line"
+        android:pathData="M5.705,5.705 L18.295,18.295"
+        android:strokeWidth="2"
+        android:strokeColor="#000000"
+        android:trimPathStart="0.45"
+        android:trimPathEnd="1" />
+
+    <path
+        android:name="circle1"
+        android:pathData="M5.705,5.705 A 4 4 0 1 1 12,12 L5.705,18.295"
+        android:strokeWidth="2"
+        android:strokeColor="#000000"
+        android:trimPathStart="0"
+        android:trimPathEnd="0.6" />
+
+    <path
+        android:name="circle2"
+        android:pathData="M18.295,5.705 L12,12 A 4 4 0 1 1 5.705,5.705"
+        android:strokeWidth="2"
+        android:strokeColor="#000000"
+        android:trimPathStart="0.4"
+        android:trimPathEnd="1" />
+</vector>
+```
+
+
+The syntax for creating SVG paths is not that complicated and you can learn about it [here](https://www.w3.org/TR/SVG/paths.html), Android Studio is also very handy here because you can see a preview and also import existent material app icons and see their paths as described [here](http://developer.android.com/tools/help/vector-asset-studio.html).
+
+Now lets create the animation, we'll focus on the animation from the search icon to cancel, the opposite is pretty the same just with reverse values. We going to create 3 different animations:
+
+
+```xml
+<set
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:ordering="sequentially">
+
+    <!-- first we need to immediately reset state -->
+    <objectAnimator
+        android:duration="0"
+        android:propertyName="trimPathStart"
+        android:valueFrom="0.45"
+        android:valueTo="0.45"/>
+
+    <!-- then run the animation after a delay -->
+    <objectAnimator
+        android:propertyName="trimPathStart"
+        android:duration="300"
+        android:startOffset="250"
+        android:interpolator="@android:interpolator/fast_out_slow_in"
+        android:valueFrom="0.45"
+        android:valueTo="0" />
+
+</set>
+```
+
+
+
+```xml
+<set
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:ordering="together">
+
+    <objectAnimator
+        android:propertyName="trimPathStart"
+        android:valueFrom="0"
+        android:valueTo="0.6"
+        android:duration="450" />
+
+    <objectAnimator
+        android:propertyName="trimPathEnd"
+        android:valueFrom="0.6"
+        android:valueTo="1"
+        android:duration="600" />
+
+</set>
+```
+
+
+
+```xml
+<set
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:ordering="together">
+
+    <objectAnimator
+        android:propertyName="trimPathStart"
+        android:valueFrom="0.4"
+        android:valueTo="0"
+        android:duration="600" />
+
+    <objectAnimator
+        android:propertyName="trimPathEnd"
+        android:valueFrom="1"
+        android:valueTo="0.4"
+        android:duration="450" />
+
+</set>
+```
+
+
+The animations are pretty basics and what we're doing here is just changing the start or the end of the path. Now we need to bring all animation together:
+
+
+```xml
+<animated-vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/searchback_search">
+
+    <target
+        android:name="line"
+        android:animation="@animator/line_to_cancel" />
+
+    <target
+        android:name="circle1"
+        android:animation="@animator/circle1_to_cancel" />
+
+    <target
+        android:name="circle2"
+        android:animation="@animator/circle2_to_cancel" />
+
+</animated-vector>
+```
+
+
+And now you can easily use the  search_to_cancel drawable in code, just don't forget to call **start()**:
+
+![](/images/wp/2016-02-final.gif)
+
+A few notes regarding to this process:
+
+  1. Without [Nick Butcher](//twitter.com/crafty) and his great resources (like the [plaid](https://github.com/nickbutcher/plaid) app) I wouldn't know anything about AnimatedVectorDrawable, so a lot of credit from this blog post should go to him.
+
+
+  2. Most of the paths are not that easy to build and you'll need to play with this pretty much, you can use tools like Photoshop to export SVG data, but still, some manually work be will here.
+
+
+  3. The preview in Android Studio for the drawables is a bit buggy (especially around trimmed paths) so you need to test some things on device sometimes.
+
+
+  4. From what I saw- on the first times the animation can stuck, so it better to set the final asset state after some delay to make sure the icon looks good in the end of the animation.
+
+
+That's for this time, hopes this will help you in the next time you want to build a great UX. =)
+<br>
+
+<br>
+
+***
+
+**Liked this post? Please share it with your friends!**

@@ -1,0 +1,28 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+const items = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+const rendered = await Promise.all(items.map(async (p) => ({ p, Content: (await render(p)).Content })));
+---
+<Base title="Side projects" description="Side projects by Shem Magnezi: products, tools and earlier apps.">
+  <div class="page-head on-night"><div class="wrap"><h1>Side projects</h1></div></div>
+  <div class="wrap">
+    <div class="prose-width page-copy">
+      <p>I’ve been building things on the side for as long as I’ve been writing code. It started with hacking stuff together in high school, and I never really stopped. Whatever my day job was, there was always another idea I couldn’t get out of my head, and another late night when I finally sat down to build it.</p>
+      <p>Some of these projects found real users, some were made just for me and my family, and plenty never went anywhere. I love them all anyway. Side projects are where I get to try things I’d never try at work, learn from my own mistakes, and own everything from the first line of code to the first customer. I even wrote <a href="/blog/2018/06/08/the-ultimate-guide-for-side-projects/">a whole guide about it</a>.</p>
+      <p>It’s the best way I know to keep learning, and it’s still the most fun I have with a computer. There’s always another one on the way.</p>
+    </div>
+    <div class="cards">
+      {rendered.map(({ p, Content }, i) => (
+        <article class="card" id={p.id}>
+          <img src={p.data.image} alt={`${p.data.title} screenshot`} loading={i < 6 ? 'eager' : 'lazy'} width="640" height="400" style={`view-transition-name:p-${p.id}`} />
+          <div>
+            <h2>{p.data.title}</h2>
+            <Content />
+            {p.data.link && <a href={p.data.link}>Visit site</a>}
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</Base>

@@ -1,0 +1,97 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Ticket from '../components/Ticket.astro';
+import PostList from '../components/PostList.astro';
+import { allRows, frontRows, plain } from '../lib/posts';
+import { allTalks, frontTalks, venue } from '../lib/talks';
+import { frontPress, outlets } from '../lib/press';
+import stops from '../data/career-highlights.json';
+
+const rows = await frontRows(5);
+const rowCount = (await allRows()).length;
+const fixtures = await frontTalks(5);
+const talkCount = (await allTalks()).length;
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+const firstSentence = (s: string) => plain(s).split(/(?<=[.!?])\s/)[0];
+const pressItems = await frontPress();
+const names = await outlets();
+---
+<Base>
+  <div class="hero on-night" data-hero>
+    <canvas class="fx" data-net aria-hidden="true"></canvas>
+    
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <h1 aria-label="Shem Magnezi"><span class="line" aria-hidden="true"><span>Shem</span></span> <span class="line" aria-hidden="true"><span>Magnezi</span></span></h1>
+        <p>Software engineer with more than 20 years of experience and a passion for solving problems with technology. I work heavily with AI, helping teams adopt it and building tools, products and agents. I’m also a startup co-founder, mentor, writer and public speaker.</p>
+      </div>
+      <div class="portrait slices" role="img" aria-label="Shem Magnezi on stage with a microphone">
+        <div class="photo"></div>
+      </div>
+    </div>
+  </div>
+  <Ticket />
+
+  <div class="wrap">
+    <section class="block" aria-labelledby="career">
+      <div class="block-head"><h2 id="career">Career</h2><a href="/career/">Full career</a></div>
+      <div class="climb" data-reveal>
+        <p class="climb-lead">From first employee to co-founder and CTO, with two exits along the way.</p>
+        {stops.map((c, i) => (
+          <a class="stop" href={c.href} style={`--i:${i}`}>
+            <strong>{c.company}</strong>
+            <span>{c.role}</span>
+            {c.exit && <em>{c.exit}</em>}
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <div class="front">
+      <section class="block" aria-labelledby="writing">
+        <div class="block-head"><h2 id="writing">Writing</h2><a href="/blog/archives/">All {rowCount} posts</a></div>
+        <PostList rows={rows} lead />
+      </section>
+      <section class="block" aria-labelledby="talks">
+        <div class="block-head"><h2 id="talks">Talks</h2><a href="/talks/">All {talkCount} talks</a></div>
+        {fixtures.map((t) => (
+          <a class="fixture" href={`/talks/#${t.id}`}>
+            <div><h3>{t.data.title}</h3><span class="venue">{venue(t)}</span></div>
+          </a>
+        ))}
+      </section>
+    </div>
+  </div>
+
+  <section class="showcase on-night" aria-labelledby="projects">
+    <div class="wrap">
+      <div class="block-head"><h2 id="projects">Side projects</h2><a href="/projects/">All {projects.length} projects</a></div>
+      <div class="tiles">
+        {projects.slice(0, 5).map((p, i) => (
+          <a class:list={['tile', { 'tile-wide': i < 2 }]} href={`/projects/#${p.id}`}>
+            <span class="tile-img"><img src={p.data.image} alt="" width="640" height="400" loading="lazy" style={`view-transition-name:p-${p.id}`} /></span>
+            <h3>{p.data.title}</h3>
+            <p>{firstSentence(p.body ?? '')}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <section class="block" aria-labelledby="press">
+      <div class="block-head"><h2 id="press">Press</h2><a href="/press/">All press</a></div>
+      <div class="press-picks">
+        {pressItems.map((p) => (
+          <a class="fixture" href={p.data.url} target="_blank" rel="noopener">
+            <div><h3><bdi>{p.data.title}</bdi></h3><span class="venue">{p.data.outlet}</span></div>
+          </a>
+        ))}
+      </div>
+      <p class="outlets">Also featured in {names.filter((n) => !pressItems.some((p) => p.data.outlet === n)).join(', ')}.</p>
+    </section>
+  </div>
+  <script>import '../scripts/hero-background';</script>
+  <script>import '../scripts/photo-dots';</script>
+</Base>

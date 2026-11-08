@@ -1,0 +1,48 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { allJobs } from '../../lib/career';
+const jobs = await Promise.all((await allJobs()).map(async (j) => ({ j, Content: (await render(j)).Content })));
+const skills: [string, string][] = [
+  ['AI', 'AI adoption across teams and departments, building AI tools, products and agents'],
+  ['Languages', 'JavaScript and TypeScript, Java, Ruby, Kotlin, Python, C#'],
+  ['Server-side', 'Node.js, Rails, Spring'],
+  ['Web', 'React, Redux, Apollo'],
+  ['Mobile', 'Android, iOS, React Native'],
+  ['Data', 'MySQL, Postgres, Solr, MongoDB'],
+  ['Infrastructure', 'AWS, Heroku, RabbitMQ, Algolia'],
+];
+---
+<Base title="Career" description="The career of Shem Magnezi: Lemonade, Wilco (co-founder and CTO, acquired by Lemonade), Meta, WeWork, AVG and MyRoll (first employee, acquired by AVG).">
+  <div class="page-head on-night"><div class="wrap"><h1>Career</h1></div></div>
+  <div class="wrap cv">
+    <div>
+      <p class="cv-summary">Software engineer, mentor, writer and international speaker with more than 20 years of experience across startups and public companies, from first employee to co-founder and CTO. I work heavily with AI: helping teams adopt it, accelerating the work of every department, and building tools, products and agents with it. I help people understand both the business context and the underlying architecture. A generalist at heart who just loves solving users’ problems.</p>
+      <h2>Experience</h2>
+      {jobs.map(({ j, Content }) => (
+        <article class="cv-job" id={j.id}>
+          <div class="cv-dates">{j.data.dates}</div>
+          <div>
+            <h3>{j.data.company}{j.data.exit && <span class="cv-exit">{j.data.exit}</span>}</h3>
+            <p class="cv-role">{j.data.role}</p>
+            <div class="cv-body"><Content /></div>
+          </div>
+        </article>
+      ))}
+    </div>
+    <aside class="cv-side">
+      <h2>Skills</h2>
+      <dl>{skills.map(([k, v]) => <Fragment><dt>{k}</dt><dd>{v}</dd></Fragment>)}</dl>
+      <h2>Education</h2>
+      <p>B.Sc. Computer Science, Magna Cum Laude<br />The Open University of Israel, 2012</p>
+      <h2>Also</h2>
+      <ul>
+        <li><a href="/talks/">Conference talks</a></li>
+        <li><a href="/blog/archives/">Writing</a></li>
+        <li><a href="/projects/">Side projects</a></li>
+        <li><a href="/press/">Press</a></li>
+        <li><a href="https://www.linkedin.com/in/shem-magnezi-45490424">LinkedIn</a></li>
+      </ul>
+    </aside>
+  </div>
+</Base>

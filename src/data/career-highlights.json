@@ -1,0 +1,24 @@
+[
+  {
+    "company": "MyRoll",
+    "role": "First employee",
+    "exit": "Acquired by AVG",
+    "href": "/career/#myroll"
+  },
+  {
+    "company": "Meta and WeWork",
+    "role": "Senior engineer",
+    "href": "/career/#meta"
+  },
+  {
+    "company": "Wilco",
+    "role": "Co-founder and CTO",
+    "exit": "Acquired by Lemonade",
+    "href": "/career/#wilco"
+  },
+  {
+    "company": "Lemonade",
+    "role": "Senior Staff Software Engineer",
+    "href": "/career/#lemonade"
+  }
+]

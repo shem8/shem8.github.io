@@ -1,0 +1,84 @@
+---
+import '../styles/global.css';
+
+interface Props { title?: string; description?: string; path?: string; image?: string; type?: string; }
+const { title, description = 'Shem Magnezi is a Senior Staff Software Engineer who works heavily with AI, and writes and talks about software engineering, careers, startups and side projects.', image = '/images/shem.jpg', type = 'website' } = Astro.props;
+const fullTitle = title ? `${title} | Shem Magnezi` : 'Shem Magnezi';
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const img = new URL(image, Astro.site).href;
+const here = Astro.url.pathname;
+const nav = [
+  ['/blog/archives/', 'Writing'],
+  ['/talks/', 'Talks'],
+  ['/projects/', 'Side projects'],
+  ['/career/', 'Career'],
+  ['/press/', 'Press'],
+  ['/about/', 'About'],
+];
+const GA = 'G-0MGEHLR533';
+const person = {
+  '@context': 'https://schema.org', '@type': 'Person', name: 'Shem Magnezi', url: 'https://blog.shem.dev/', jobTitle: 'Senior Staff Software Engineer', worksFor: { '@type': 'Organization', name: 'Lemonade' },
+  sameAs: ['https://x.com/shemag8', 'https://medium.com/@shemag8', 'https://www.linkedin.com/in/shem-magnezi-45490424', 'https://github.com/shem8'],
+};
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Shem Magnezi" />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" type="application/atom+xml" title="Shem Magnezi" href="/atom.xml" />
+    <link rel="icon" href="/favicon.png" />
+    <meta name="theme-color" content="#081b5c" />
+    <meta property="og:title" content={title ?? 'Shem Magnezi'} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="Shem Magnezi" />
+    <meta property="og:image" content={img} />
+    <meta property="og:type" content={type} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@shemag8" />
+    <meta name="twitter:creator" content="@shemag8" />
+    <script type="application/ld+json" set:html={JSON.stringify(person)} />
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA}`}></script>
+    <script is:inline define:vars={{ GA }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', GA);
+    </script>
+    <style is:inline>@media (prefers-reduced-motion: no-preference) { @view-transition { navigation: auto; } }</style>
+    <script is:inline>
+      // The opening sequence plays once per visit, not on every return to the home page.
+      try { if (!sessionStorage.getItem('intro') && !matchMedia('(prefers-reduced-motion: reduce)').matches) { document.documentElement.classList.add('intro'); sessionStorage.setItem('intro', '1'); } } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-head">
+      <div class="wrap">
+        <a class="mark" href="/">Shem Magnezi</a>
+        <nav class="site-nav" aria-label="Main">
+          {nav.map(([href, label]) => <a href={href} aria-current={here.startsWith(href) || (href === '/blog/archives/' && here.startsWith('/blog/')) ? 'page' : undefined}>{label}</a>)}
+        </nav>
+      </div>
+    </header>
+    <main id="main"><slot /></main>
+    <footer class="site-foot">
+      <div class="wrap">
+        <span>Shem Magnezi, Tel Aviv</span>
+        <nav aria-label="Elsewhere">
+          <a href="https://github.com/shem8">GitHub</a>
+          <a href="https://www.linkedin.com/in/shem-magnezi-45490424">LinkedIn</a>
+          <a href="https://x.com/shemag8">X</a>
+          <a href="https://medium.com/@shemag8">Medium</a>
+          <a href="/atom.xml">RSS</a>
+        </nav>
+      </div>
+    </footer>
+    <script>import '../scripts/motion';</script>
+  </body>
+</html>

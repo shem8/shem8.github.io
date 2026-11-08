@@ -1,0 +1,39 @@
+---
+import { render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Comments from '../components/Comments.astro';
+import { allPosts, categoryLabel, excerpt, formatDate } from '../lib/posts';
+
+export async function getStaticPaths() {
+  const posts = await allPosts();
+  return posts.map((post, i) => ({
+    params: { post: post.data.path.replace(/^\/|\/$/g, '') },
+    props: { post, newer: posts[i - 1], older: posts[i + 1] },
+  }));
+}
+const { post, newer, older } = Astro.props;
+const { Content } = await render(post);
+const { title, date, categories, description, path } = post.data;
+---
+<Base title={title} description={description || excerpt(post, 155)} type="article">
+  <div class="read-progress" aria-hidden="true"></div>
+  <article>
+    <header class="post-head on-night">
+      
+      <div class="wrap">
+        <p class="post-meta">
+          <time datetime={date.toISOString()}>{formatDate(date, { day: 'numeric', month: 'long', year: 'numeric' })}</time>{categories.map((c) => <Fragment>, <a href={`/blog/categories/${c}/`}>{categoryLabel(c)}</a></Fragment>)}
+        </p>
+        <h1 style={`view-transition-name:t-${post.id}`}>{title}</h1>
+      </div>
+    </header>
+    <div class="wrap"><div class="article"><Content /></div></div>
+  </article>
+  <div class="wrap">
+    <nav class="neighbors" aria-label="More posts">
+      <div>{older && <a href={older.data.path}><small>Older</small>{older.data.title}</a>}</div>
+      <div class="newer">{newer && <a href={newer.data.path}><small>Newer</small>{newer.data.title}</a>}</div>
+    </nav>
+    <Comments path={path} />
+  </div>
+</Base>

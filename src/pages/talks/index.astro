@@ -1,0 +1,49 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Ticket from '../../components/Ticket.astro';
+import { allTalks, embedUrl, talkLabel, venue, type Talk } from '../../lib/talks';
+const talks = await allTalks();
+const rendered = await Promise.all(talks.map(async (t) => ({ t, Content: (await render(t)).Content })));
+const years = [...new Set(talks.map((t) => t.data.date.slice(0, 4)))];
+const media = (t: Talk) => t.data.video ? { type: 'video', url: embedUrl(t.data.video), label: `Video of ${t.data.title}` } : t.data.slides ? { type: 'slides', url: t.data.slides, label: `Slides for ${t.data.title}` } : null;
+---
+<Base title="Talks" description="Conference talks by Shem Magnezi, with videos and slides.">
+  <div class="page-head on-night"><div class="wrap"><h1>Talks</h1><p>Every talk I’ve given, with video and slides where I have them.</p></div></div>
+  <Ticket />
+  <div class="wrap">
+    {years.map((y) => (
+      <section class="year">
+        <h2>{y}</h2>
+        <div>
+          {rendered.filter(({ t }) => t.data.date.startsWith(y)).map(({ t, Content }) => {
+            const m = media(t);
+            return (
+              <details class="talk" id={t.id}>
+                <summary>
+                  <span class="talk-plus" aria-hidden="true"></span>
+                  <div><h3>{t.data.title}</h3><span class="venue">{[talkLabel(t), venue(t)].filter(Boolean).join(', ')}</span></div>
+                </summary>
+                <div class:list={['talk-body', { solo: !m }]}>
+                  {m && <div class:list={['talk-media', m.type]}><iframe src={m.url} title={m.label} loading="lazy" allowfullscreen></iframe></div>}
+                  <div class="talk-info"><Content /></div>
+                </div>
+              </details>
+            );
+          })}
+        </div>
+      </section>
+    ))}
+  </div>
+  <script is:inline>
+    (function () {
+      document.querySelectorAll('.talk-info a[href^="http"]').forEach(function (a) { a.target = '_blank'; a.rel = 'noopener'; });
+      function openFromHash() {
+        var el = location.hash && document.getElementById(location.hash.slice(1));
+        if (el && el.tagName === 'DETAILS') { el.open = true; el.scrollIntoView(); }
+      }
+      openFromHash();
+      addEventListener('hashchange', openFromHash);
+    })();
+  </script>
+</Base>
