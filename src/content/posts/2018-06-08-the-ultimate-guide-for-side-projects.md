@@ -2,7 +2,7 @@
 title: "The ultimate guide for side projects"
 date: "2018-06-08 13:28:30 +0300"
 path: "/blog/2018/06/08/the-ultimate-guide-for-side-projects/"
-pinned: 3
+pinned: 5
 categories: ["life"]
 description: "In the last ten years or so, I made myself a habit to maintain at least one side project at every given moment. Those side projects served a couple of purposes."
 ---

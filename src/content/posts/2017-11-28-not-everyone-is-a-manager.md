@@ -2,7 +2,7 @@
 title: "Not everyone is a manager"
 date: "2017-11-28 12:15:27 +0000"
 path: "/blog/2017/11/28/not-everyone-is-a-manager/"
-pinned: 4
+pinned: 6
 categories: ["life"]
 ---
 

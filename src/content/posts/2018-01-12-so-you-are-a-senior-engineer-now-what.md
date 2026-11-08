@@ -2,7 +2,7 @@
 title: "So you are a Senior Engineer. Now what?"
 date: "2018-01-12 13:01:01 +0000"
 path: "/blog/2018/01/12/so-you-are-a-senior-engineer-now-what/"
-pinned: 1
+pinned: 3
 categories: ["life"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Tech Life as graphs"
 date: "2016-06-03 12:08:42 +0300"
 path: "/blog/2016/06/03/life-as-graphs/"
-pinned: 5
+pinned: 7
 categories: ["life", "humor"]
 ---
 

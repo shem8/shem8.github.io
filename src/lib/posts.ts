@@ -5,7 +5,7 @@ export type Post = CollectionEntry<'posts'> & { data: { path: string } };
 /** One row in a list of writing: a post here, or a piece on another site. */
 export interface Row { id: string; title: string; href: string; excerpt?: string; date: Date; source?: string; categories: string[]; external: boolean; pinned?: number; }
 
-const YEAR = 365 * 24 * 3600 * 1000;
+const NEW_POST_DAYS = 60;
 export const buildTime = process.env.SITE_NOW ? new Date(process.env.SITE_NOW).getTime() : Date.now();
 
 const published = async () => (await getCollection('posts')).filter((p) => import.meta.env.DEV || !p.data.draft);
@@ -33,10 +33,10 @@ export async function allRows(): Promise<Row[]> {
   return [...here, ...away].sort((a, b) => b.date.getTime() - a.date.getTime());
 }
 
-/** Home page: anything from the last year comes first, then pinned posts. Never goes stale. */
+/** Home page: anything from the last 60 days comes first, then pinned posts. Never goes stale. */
 export async function frontRows(count = 5): Promise<Row[]> {
   const rows = await allRows();
-  const fresh = rows.filter((r) => buildTime - r.date.getTime() < YEAR);
+  const fresh = rows.filter((r) => buildTime - r.date.getTime() < NEW_POST_DAYS * 24 * 3600 * 1000);
   const pinned = rows.filter((r) => r.pinned && !fresh.includes(r)).sort((a, b) => a.pinned! - b.pinned!);
   return [...fresh, ...pinned].slice(0, count);
 }
@@ -64,7 +64,7 @@ export const formatDate = (d: Date, opts: Intl.DateTimeFormatOptions = { month: 
   d.toLocaleDateString('en-GB', { timeZone: 'UTC', ...opts });
 
 export const categoryLabel = (c: string) =>
-  ({ android: 'Android', humor: 'Humor', kotlin: 'Kotlin', life: 'Life', publicspeaking: 'Public speaking', web: 'Web' } as Record<string, string>)[c] ?? c;
+  ({ ai: 'AI', android: 'Android', startups: 'Startups', humor: 'Humor', kotlin: 'Kotlin', life: 'Life', publicspeaking: 'Public speaking', web: 'Web' } as Record<string, string>)[c] ?? c;
 
 /** Absolute URLs, because feed readers have no base path. */
 export const absolutize = (html: string, site: string) =>

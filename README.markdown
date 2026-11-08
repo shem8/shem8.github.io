@@ -31,7 +31,8 @@ To change something that exists, edit its file:
 
 The home page should look right even when nothing is new.
 
-- **Posts and talks:** anything from the last year comes first, then items with `pinned: 1`, `pinned: 2` and so on. Dates aren't shown.
+- **Posts:** anything from the last 60 days comes first, then posts with `pinned: 1`, `pinned: 2` and so on. Dates aren't shown.
+- **Talks:** anything from the last year comes first, then talks with `pinned`, in the same way.
 - **Yellow ticket:** appears by itself when a talk has a future date in `YYYY-MM-DD` form, and disappears the day after, even without a deploy.
 - **Side projects:** the first five by `order`.
 - **Press:** items with `pinned`, then every other `outlet` as a line of names.

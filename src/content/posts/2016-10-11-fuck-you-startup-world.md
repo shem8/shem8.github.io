@@ -2,7 +2,7 @@
 title: "Fuck You Startup World"
 date: "2016-10-11 12:00:00 +0300"
 path: "/blog/2016/10/11/fuck-you-startup-world/"
-pinned: 2
+pinned: 4
 categories: ["life"]
 ---
 
