@@ -37,6 +37,8 @@ These are the prices as of June 11, 2026.
 
 **There are no cheap matches.** Austria against Jordan starts at around $115, Jordan against Algeria at around $119, and Cape Verde against Saudi Arabia at around $138. And those are just the cheapest tickets. Want a reasonable seat, or to sit together? Now you're talking about $300-400.
 
+![Price and inventory charts for Austria vs Jordan, starting at $115](/images/posts/world-cup-tickets/austria-jordan.jpg)
+
 **Big matches aren't just a bit more expensive.**
 
 | Match | Cheapest | Median |
@@ -51,11 +53,19 @@ These are the prices as of June 11, 2026.
 
 All of that is for group stage games. We haven't even reached the decisive rounds.
 
+![Price and inventory charts for Colombia vs Portugal in Miami, starting at $2,530](/images/posts/world-cup-tickets/colombia-portugal.jpg)
+
 **And the final?** The cheapest ticket currently stands at around $9,085. The median is getting close to $20,000. Yes, for one football match.
 
 ![Price and inventory charts for the final, with a cheapest ticket of $9,085](/images/posts/world-cup-tickets/final.jpg)
 
+![The cheapest pairs of seats for the final, from about $14,000 each](/images/posts/world-cup-tickets/final-seats.jpg)
+
 **The funniest part** was seeing what people try to sell. I saw a ticket to Netherlands against Sweden at $10.9 million, Paraguay against Australia at $5.1 million, round of 16 tickets at almost $8 million, and a ticket to the final at $11.5 million.
+
+![A ticket listed at 10,925,000 USD on the marketplace](/images/posts/world-cup-tickets/listing-10m.jpg)
+
+![Another ticket listed at 5,175,000 USD](/images/posts/world-cup-tickets/listing-5m.jpg)
 
 **And the best story? Haiti against Scotland.** I'd have sworn it would be a $100 match when I saw the draw. It turns out Scottish fans, who waited decades for a World Cup, organized like an invasion force. They took over a town near Boston, rented a fleet of buses, and private groups popped up just to connect buyers and sellers and get around FIFA's commission.
 

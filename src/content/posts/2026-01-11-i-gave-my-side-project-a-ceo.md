@@ -11,6 +11,8 @@ _From a messy idea to a live product in a week, for about 10 hours of my time._
 
 A couple of weeks ago I had an idea, thanks to the endless digging I was doing for our family trip to the US. I realized I was about to pour a lot of money and time into our days in Orlando, and I really had no energy for it. So on Sunday morning I threw a few disorganized lines into ChatGPT's research mode.
 
+![The first messy prompt to ChatGPT about a theme park app, and its follow-up questions](/images/posts/agent-startup/prompt.png)
+
 Once we understood there might be something interesting here, I asked it for a detailed product spec. The plan was to hand that to Claude Code. But first, I put together a team.
 
 ## Hiring the team
@@ -21,7 +23,9 @@ I created a sub-agent for every function in the organization. I made some of the
 
 If you haven't used them, a sub-agent in Claude is an agent with its own context and abilities that doesn't pollute the global context too much. More importantly, it can work in the background, so a single task can have the server code and the frontend code written in parallel.
 
-Then I gave the CEO the 15-page research PDF from ChatGPT and the product spec, and asked for a roadmap with everything we'd need. My conversation with the CEO focused on what I wanted to achieve: a small project that tests whether there's a business here and doesn't cost me money.
+Then I gave the CEO the 15-page research PDF from ChatGPT and the product spec, and asked for a roadmap with everything we'd need.
+
+![The ChatGPT research PDF, an opportunity analysis for a theme park planning app](/images/posts/agent-startup/research.jpg) My conversation with the CEO focused on what I wanted to achieve: a small project that tests whether there's a business here and doesn't cost me money.
 
 Very quickly the CEO produced a task board split into phases. Two things are important to understand here:
 
@@ -46,11 +50,17 @@ The tasks lived in a markdown file the CEO had created and kept updating, so I a
 
 This is where it got a bit complicated, because everyone updated the file differently and kept breaking the dashboard. So I asked the project manager to take ownership: everything goes through them, they keep the file to a schema, and it stops breaking every other day. I even threatened to fire them.
 
+![The project manager agent file, with the workflow every agent has to follow](/images/posts/agent-startup/project-manager.jpg)
+
 ## What it's like to be a product manager
 
 Back to the project itself. I started from a problem I actually had, and it was a pleasure not to be bothered with the tactical level. Is there an API for this? Will it take forever? How do we pull it? How do we show it in real time?
 
+![The app asking about thrill tolerance, pace and walking tolerance](/images/posts/agent-startup/preferences.jpg)
+
 I didn't go into any of that. Let it break its own head on those. I suddenly understood how much fun it is to be a product manager.
+
+![A generated day plan with a map of the park and a list of rides](/images/posts/agent-startup/day-plan.jpg)
 
 ![The app showing a Magic Kingdom map with the next recommended ride](/images/posts/agent-startup/app.jpg)
 
@@ -71,6 +81,8 @@ It told me which domain to buy, and we had a site. Now we needed traffic, so it 
 1. It suggested what to write on Reddit. Reddit blocks bots, and very quickly it blocked me too.
 2. It wrote an entire blog for SEO, images included.
 3. Growth hacking with Claude in Chrome.
+
+![The Park Autopilot blog the agents wrote, with images for each post](/images/posts/agent-startup/blog.jpg)
 
 It even mapped influencers, created a coupon code for each one and wrote them a personal email based on the content they publish. Across the whole site, on the home page and in every touchpoint outside it, it decided on the angle and the content. I only told it the goal.
 

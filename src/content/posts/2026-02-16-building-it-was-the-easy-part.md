@@ -27,6 +27,8 @@ After the usual things (mostly SEO), this is what we tried:
 
 All of it automated. The ideas were all its own, after my approval. Most of them yield nothing, of course, but marketing is about big numbers and time.
 
+![The Park Autopilot blog the agents wrote, with images for each post](/images/posts/agent-startup/blog.jpg)
+
 And to be clear, I also had one Claude session reaching out to people on Instagram while another went through user feedback and fixed things. Don't do this. They'll probably block your account at some point.
 
 In the end this isn't magic. It's very, very hard to bring in users and rise above the noise. There are no big shortcuts here, and if you don't have the financial backing to pour piles of money into ads, you'll have to work hard, for a long time.

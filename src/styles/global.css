@@ -255,7 +255,7 @@ details.talk[open] .talk-plus { transform: rotate(135deg); }
 .article h2 { font-size: 2.6rem; }
 .article h3 { font-size: 2.2rem; }
 .article h4, .article h5, .article h6 { font-size: 1.8rem; }
-.article img { display: block; height: auto; margin: 1.6em auto; border-radius: 2px; }
+.article img { display: block; height: auto; max-height: 85vh; margin: 1.6em auto; border-radius: 2px; }
 .article p > img:only-child { margin: 1.6em auto; }
 .article blockquote { margin: 1.5em 0; padding: 2px 0 2px 22px; border-left: 4px solid var(--yellow); font-style: italic; }
 .article pre { padding: 16px 18px; overflow-x: auto; background: var(--mist) !important; font-size: 0.86rem; line-height: 1.5; border-radius: 2px; }

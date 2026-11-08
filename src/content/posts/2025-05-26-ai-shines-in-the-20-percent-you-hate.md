@@ -30,6 +30,8 @@ I think that's exactly where AI shines: in the 20% you hate, or wouldn't bother 
 
 The project is at [helps-hub.com](https://helps-hub.com/).
 
+![HelpsHub, personal AI experts on WhatsApp](/images/projects/helpshub.jpg)
+
 **Update:** the honest outcome is few users. The lesson was that I built the whole thing before anyone asked for it. [Getting people to care is its own project](/blog/2026/02/16/building-it-was-the-easy-part/).
 
 _This post started as a [LinkedIn post](https://www.linkedin.com/posts/shem-magnezi_your-personal-ai-experts-on-whatsapp-activity-7332670431692255232-2GAb)._
