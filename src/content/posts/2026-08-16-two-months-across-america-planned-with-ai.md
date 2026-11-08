@@ -4,13 +4,15 @@ date: "2026-08-16"
 categories: ["ai"]
 ---
 
-_Five anchors, one very long conversation, and an 80-page book._
+_Five anchors, a route, the reservations, the price drops and an 80-page book._
 
 <!-- more -->
 
-This summer we took a two-month family trip across the US, built around the World Cup. Most of it was planned by AI, and I have to say it was an amazing experience. If I'd had to plan it myself, I wouldn't even know where to start.
+This summer we took a two-month family trip across the US, built around the World Cup. AI handled most of the planning, and I have to say it was an amazing experience. If I'd had to plan it myself, I wouldn't even know where to start.
 
-## I only gave it anchors
+It also went far beyond suggesting a few places to visit. Here's what it actually did.
+
+## It built the route
 
 I didn't hand it an itinerary to polish. I gave it five fixed points:
 
@@ -22,17 +24,31 @@ I didn't hand it an itinerary to polish. I gave it five fixed points:
 
 That's it. From there it started asking questions, making suggestions and building a route.
 
-## It found what I wouldn't have
-
 The best example is Hershey, Pennsylvania, a place I'd never have thought of going through. Lucky the AI suggested it: a town built entirely around the chocolate factory, with an amusement park and a huge water park, in an area surrounded by Amish communities.
+
+## It planned the days
+
+Once we had a route, it suggested a plan for each day and where to stay. It also reserved tables at restaurants.
+
+## It handled the boring parts
+
+This is the part I'd have hated most. AI helped me with the car rental, the insurance, the tolls and fees and everything around them.
+
+It also monitored prices. When a price dropped, it got me a better deal.
+
+## It helped with the hard parts too
+
+**The parks.** Orlando was going to cost a lot of money and time, and I had no energy for planning it. So that's how [Park Autopilot](/blog/2026/01/11/i-gave-my-side-project-a-ceo/) started.
+
+**The World Cup.** AI also helped me get tickets from FIFA, which turned into [its own story](/blog/2026/06/11/i-accidentally-tracked-the-world-cup-ticket-market/).
 
 ## It stayed with us on the road
 
-The planning didn't end when we left. As a rule, every route also came with a story from ChatGPT. In St. Louis, a city I'd never heard of (I couldn't even have pointed to Missouri on a map), we spent a few days touring and learning the history and culture with the chat.
+The help didn't end when we left. As a rule, every route also came with a story from ChatGPT. In St. Louis, a city I'd never heard of (I couldn't even have pointed to Missouri on a map), we spent a few days touring and learning the history and culture with the chat.
 
-## We printed the plan
+## It created the book
 
-I said the whole trip was planned with AI, so in honor of the trip we even printed an 80-page book covering the entire route: what to do, anecdotes and so on.
+AI created a whole 80-page book covering the entire route: what to do, anecdotes and so on. And we printed it.
 
 ![A page from the trip book about Savannah, with an illustrated map of the city](/images/posts/us-trip/book-savannah.jpg)
 
