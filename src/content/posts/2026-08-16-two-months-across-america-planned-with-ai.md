@@ -54,6 +54,10 @@ Here's one real example, five nights at a hotel in Brooklyn, with the same room 
 
 That's $128.51 off one stay, without me having to check anything. On June 3 the old booking was cancelled for free and the new one was confirmed a minute apart.
 
+It did the same with flights. Our flight from St. Louis to Las Vegas, for the four of us, went from $735.92 to $499.92 when it rebooked the same flight at the lower price. That's another $236.
+
+Those two bookings alone saved $364.51.
+
 ## It helped with the hard parts too
 
 **The parks.** Orlando was going to cost a lot of money and time, and I had no energy for planning it. So that's how [Park Autopilot](/blog/2026/01/11/i-gave-my-side-project-a-ceo/) started.
