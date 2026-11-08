@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" role="img" aria-label="Two axes: market size from small to huge, difficulty from easy to hard, forming four quadrants">
+<rect width="800" height="560" fill="#fff"/>
+<g stroke="#111" stroke-width="5" stroke-linecap="round" fill="none"><path d="M60 280H740M722 266l18 14-18 14"/><path d="M400 520V40M386 58l14-18 14 18"/></g>
+<g font-family="system-ui,sans-serif" font-size="22" fill="#111"><text x="420" y="50">Hard</text><text x="420" y="520">Easy</text><text x="60" y="318">Small market</text><text x="740" y="318" text-anchor="end">Huge market</text></g>
+<g font-family="system-ui,sans-serif" font-size="30" font-weight="700" fill="#111" text-anchor="middle"><text x="580" y="150">Quadrant 1</text><text x="220" y="150">Quadrant 2</text><text x="220" y="425">Quadrant 3</text><text x="580" y="425">Quadrant 4</text></g>
+</svg>

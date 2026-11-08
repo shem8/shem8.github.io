@@ -1,0 +1,69 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>I gave my side project a CEO | Shem Magnezi</title><meta name="description" content="From a messy idea to a live product in a week, for about 10 hours of my time."><meta name="author" content="Shem Magnezi"><link rel="canonical" href="https://blog.shem.dev/blog/2026/01/11/i-gave-my-side-project-a-ceo/"><link rel="alternate" type="application/atom+xml" title="Shem Magnezi" href="/atom.xml"><link rel="icon" href="/favicon.png"><meta name="theme-color" content="#081b5c"><meta property="og:title" content="I gave my side project a CEO"><meta property="og:description" content="From a messy idea to a live product in a week, for about 10 hours of my time."><meta property="og:url" content="https://blog.shem.dev/blog/2026/01/11/i-gave-my-side-project-a-ceo/"><meta property="og:site_name" content="Shem Magnezi"><meta property="og:image" content="https://blog.shem.dev/images/shem.jpg"><meta property="og:type" content="article"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@shemag8"><meta name="twitter:creator" content="@shemag8"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Shem Magnezi","url":"https://blog.shem.dev/","jobTitle":"Senior Staff Software Engineer","worksFor":{"@type":"Organization","name":"Lemonade"},"sameAs":["https://x.com/shemag8","https://medium.com/@shemag8","https://www.linkedin.com/in/shem-magnezi-45490424","https://github.com/shem8"]}</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-0MGEHLR533"></script><script>(function(){const GA = "G-0MGEHLR533";
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', GA);
+    })();</script><style>@media (prefers-reduced-motion: no-preference) { @view-transition { navigation: auto; } }</style><script>
+      // The opening sequence plays once per visit, not on every return to the home page.
+      try { if (!sessionStorage.getItem('intro') && !matchMedia('(prefers-reduced-motion: reduce)').matches) { document.documentElement.classList.add('intro'); sessionStorage.setItem('intro', '1'); } } catch (e) {}
+    </script><link rel="stylesheet" href="/_astro/Base.QfMzEV8F.css"></head><body><a class="skip" href="#main">Skip to content</a><header class="site-head"><div class="wrap"><a class="mark" href="/">Shem Magnezi</a><nav class="site-nav" aria-label="Main"><a href="/blog/archives/" aria-current="page">Writing</a><a href="/talks/">Talks</a><a href="/projects/">Side projects</a><a href="/career/">Career</a><a href="/press/">Press</a><a href="/about/">About</a></nav></div></header><main id="main"><div class="read-progress" aria-hidden="true"></div><article><header class="post-head on-night"><div class="wrap"><p class="post-meta"><time datetime="2026-01-11T00:00:00.000Z">11 January 2026</time>, <a href="/blog/categories/ai/">AI</a></p><h1 style="view-transition-name:t-2026-01-11-i-gave-my-side-project-a-ceo">I gave my side project a CEO</h1></div></header><div class="wrap"><div class="article"><p><em>From a messy idea to a live product in a week, for about 10 hours of my time.</em></p>
+<!-- more -->
+<p>A couple of weeks ago I had an idea, thanks to the endless digging I was doing for our family trip to the US. I realized I was about to pour a lot of money and time into our days in Orlando, and I really had no energy for it. So on Sunday morning I threw a few disorganized lines into ChatGPT’s research mode.</p>
+<p>Once we understood there might be something interesting here, I asked it for a detailed product spec. The plan was to hand that to Claude Code. But first, I put together a team.</p>
+<h2 id="hiring-the-team">Hiring the team</h2>
+<p>I created a sub-agent for every function in the organization. I made some of them with Claude and took others from <a href="https://github.com/VoltAgent/awesome-claude-code-subagents">this list</a>.</p>
+<p><img src="/images/posts/agent-startup/agents.png" alt="The agents folder: CEO, product manager, project manager, tech lead, backend and frontend developers, designer, QA, DevOps and more"></p>
+<p>If you haven’t used them, a sub-agent in Claude is an agent with its own context and abilities that doesn’t pollute the global context too much. More importantly, it can work in the background, so a single task can have the server code and the frontend code written in parallel.</p>
+<p>Then I gave the CEO the 15-page research PDF from ChatGPT and the product spec, and asked for a roadmap with everything we’d need. My conversation with the CEO focused on what I wanted to achieve: a small project that tests whether there’s a business here and doesn’t cost me money.</p>
+<p>Very quickly the CEO produced a task board split into phases. Two things are important to understand here:</p>
+<ol>
+<li>My only interface was the Claude Code CLI. I had no idea (and didn’t care) what files it was creating or what the code looked like.</li>
+<li>The code was only a small part of the work. There were a lot of tasks around the written content, the design language and how to market the thing.</li>
+</ol>
+<h2 id="letting-them-run">Letting them run</h2>
+<p>From there it was just running. There are tasks, get to work.</p>
+<p>It was still slow, though. It worked on one task at a time, even when it split that task between sub-agents. So I simply opened about five Claude Codes running in parallel and tried to keep them from stepping on each other. If they did, I didn’t care. Let them figure it out.</p>
+<p>What mattered most to me was not having to deal with it, because I have things to do. So I told them every task had to go through deep validation, and I wanted them to run for as long as possible while I was away from the computer. Some Claude Code sessions ran across several tasks for a few hours.</p>
+<h2 id="management-problems">Management problems</h2>
+<p>Pretty soon I had no idea what was going on. I just wanted to know where we stood. Had we shipped already and were we making millions, or were we still in design?</p>
+<p>The tasks lived in a markdown file the CEO had created and kept updating, so I asked for a visualization on top of it. That’s how a simple JS dashboard was born.</p>
+<p><img src="/images/posts/agent-startup/dashboard.jpg" alt="The Park Autopilot project dashboard, with phases and a task board"></p>
+<p>This is where it got a bit complicated, because everyone updated the file differently and kept breaking the dashboard. So I asked the project manager to take ownership: everything goes through them, they keep the file to a schema, and it stops breaking every other day. I even threatened to fire them.</p>
+<h2 id="what-its-like-to-be-a-product-manager">What it’s like to be a product manager</h2>
+<p>Back to the project itself. I started from a problem I actually had, and it was a pleasure not to be bothered with the tactical level. Is there an API for this? Will it take forever? How do we pull it? How do we show it in real time?</p>
+<p>I didn’t go into any of that. Let it break its own head on those. I suddenly understood how much fun it is to be a product manager.</p>
+<p><img src="/images/posts/agent-startup/app.jpg" alt="The app showing a Magic Kingdom map with the next recommended ride"></p>
+<p>Behind the scenes it really did find and solve all of those problems. Then it had to be released, which is usually where I’d step in and help with the setup. But again, I had no energy or desire for that.</p>
+<p>So I let go completely. I told it which services I already pay for, and to find the rest by itself. It made all the decisions about services on its own (think how much money there is in that market). It opened accounts for what it needed, I connected a Cloudflare MCP, gave it the API keys it asked for, and it wired and configured everything.</p>
+<p>This would be very scary in a company’s production environment, but I’m on a side project, working with:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>claude --dangerously-skip-permissions --chrome</span></span></code></pre>
+<h2 id="getting-traffic">Getting traffic</h2>
+<p>It told me which domain to buy, and we had a site. Now we needed traffic, so it mapped out what to do:</p>
+<ol>
+<li>It suggested what to write on Reddit. Reddit blocks bots, and very quickly it blocked me too.</li>
+<li>It wrote an entire blog for SEO, images included.</li>
+<li>Growth hacking with Claude in Chrome.</li>
+</ol>
+<p>It even mapped influencers, created a coupon code for each one and wrote them a personal email based on the content they publish. Across the whole site, on the home page and in every touchpoint outside it, it decided on the angle and the content. I only told it the goal.</p>
+<p>The nice part is that during the build I got two really big pieces of feedback from friends:</p>
+<ol>
+<li>Make the site super specific to one park instead of something generic.</li>
+<li>Make the experience experiential rather than analytical, with a story and effects.</li>
+</ol>
+<p>I copied the feedback as is and started discussing it with the CEO. These were big changes, and it broke them down.</p>
+<h2 id="the-bottom-line">The bottom line</h2>
+<p>From idea to production, everything included, in a week. My own net time on it was maybe 10 hours, here and there.</p>
+<p>From what I peeked at, this is a technologically complicated project. It would probably have taken me a few months to build by myself, which is crazy.</p>
+<p>If you want to try it or have feedback, it’s at <a href="https://parkautopilot.com">parkautopilot.com</a>.</p>
+<p><em>This post started as a <a href="https://x.com/shemag8/status/2010285784621101340">thread on X</a>.</em></p>
+</div></div></article><div class="wrap"><nav class="neighbors" aria-label="More posts"><div><a href="/blog/2025/11/20/it-doesnt-matter/"><small>Older</small>It doesn&#39;t matter</a></div><div class="newer"><a href="/blog/2026/02/16/building-it-was-the-easy-part/"><small>Newer</small>Building it was the easy part</a></div></nav><section class="comments" aria-label="Comments"><div id="disqus_thread"></div><script>(function(){const threadUrl = "http://blog.shem.dev/blog/2026/01/11/i-gave-my-side-project-a-ceo/";
+
+    window.disqus_config = function () { this.page.url = threadUrl; this.page.identifier = threadUrl; };
+    var slot = document.getElementById('disqus_thread');
+    var load = function () { var s = document.createElement('script'); s.src = 'https://shemblog.disqus.com/embed.js'; s.async = true; s.setAttribute('data-timestamp', +new Date()); document.body.appendChild(s); };
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (e) { if (e[0].isIntersecting) { io.disconnect(); load(); } }, { rootMargin: '400px' });
+      io.observe(slot);
+    } else { load(); }
+  })();</script></section></div></main><footer class="site-foot"><div class="wrap"><span>Shem Magnezi, Tel Aviv</span><nav aria-label="Elsewhere"><a href="https://github.com/shem8">GitHub</a><a href="https://www.linkedin.com/in/shem-magnezi-45490424">LinkedIn</a><a href="https://x.com/shemag8">X</a><a href="https://medium.com/@shemag8">Medium</a><a href="/atom.xml">RSS</a></nav></div></footer><script type="module">var e=matchMedia(`(prefers-reduced-motion: reduce)`).matches,t=matchMedia(`(hover: hover) and (pointer: fine)`).matches;!e&&t&&document.querySelectorAll(`[data-tilt]`).forEach(e=>{e.addEventListener(`pointermove`,t=>{let n=e.getBoundingClientRect(),r=(t.clientX-n.left)/n.width,i=(t.clientY-n.top)/n.height;e.style.setProperty(`--rx`,`${(.5-i)*7}deg`),e.style.setProperty(`--ry`,`${(r-.5)*5}deg`),e.style.setProperty(`--sx`,`${r*100}%`),e.style.setProperty(`--shine`,`1`)}),e.addEventListener(`pointerleave`,()=>{e.style.setProperty(`--rx`,`0deg`),e.style.setProperty(`--ry`,`0deg`),e.style.setProperty(`--shine`,`0`)})}),!e&&`IntersectionObserver`in window&&document.querySelectorAll(`[data-reveal]`).forEach(e=>{if(e.getBoundingClientRect().top<innerHeight*.8)return;e.classList.add(`ready`);let t=new IntersectionObserver(n=>{n[0].isIntersecting&&(t.disconnect(),e.classList.add(`in`),setTimeout(()=>e.classList.add(`done`),1800))},{threshold:.3});t.observe(e)});</script></body></html>
