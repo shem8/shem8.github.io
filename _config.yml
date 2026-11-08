@@ -2,7 +2,7 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://blog.shem.dev
+url: https://blog.shem.dev
 title: Shem Magnezi Blog
 subtitle: Startups, Coding and bear on the beach.
 author: Shem Magnezi
@@ -76,7 +76,7 @@ github_skip_forks: true
 
 # Twitter
 twitter_user: shemag8
-twitter_tweet_button: true
+twitter_tweet_button: false
 
 twitter:
   username: shemag8
@@ -106,7 +106,7 @@ disqus_show_comment_count: true
 medium_user: shemag8
 
 # Google Analytics
-google_analytics_tracking_id: UA-78073130-1
+google_analytics_tracking_id: G-0MGEHLR533
 
 # Facebook Like
 facebook_like: false

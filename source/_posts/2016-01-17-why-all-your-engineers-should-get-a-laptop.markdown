@@ -19,7 +19,7 @@ tags:
 - startup
 ---
 
-At the first day in [MyRoll](http://www.myroll.com/about) I was exiting- it was my first day in a startup, I was the first employee in the company and we all were thrilled to get started the new adventure.
+At the first day in [MyRoll](https://web.archive.org/web/20180129072815/http://www.myroll.com:80/about) I was exiting- it was my first day in a startup, I was the first employee in the company and we all were thrilled to get started the new adventure.
 <!--more-->
 
 {% img right https://shem8.files.wordpress.com/2016/01/291404_493445824002481_472952276_o.jpg?w=559 357 * 'Me and my new best friend.' %}
@@ -57,7 +57,7 @@ So do I really need a Mac? Is it possible that this is just a useless trend that
   * Healthier and refreshing work environment- sitting next to a desk is [killing you](http://www.diygenius.com/your-desk-job-is-killing-you-the-truth-about-sitting-down-infographic/), go and stand in front of the window, see the amazing world outside, go work in the sun and refresh your head.
 
 
-  * As a boss, you want you workers will be familiar with the bleeding edge technologies out there, that kind of people usually will be the ones that will drive your team for a better and newer tools, so why not encourage them and give them a laptop so they will be able to learn [Kotlin ](https://shem8.wordpress.com/2016/01/01/kotlin-a-better-java-for-android/)in the late night?
+  * As a boss, you want you workers will be familiar with the bleeding edge technologies out there, that kind of people usually will be the ones that will drive your team for a better and newer tools, so why not encourage them and give them a laptop so they will be able to learn [Kotlin ](/blog/2016/01/01/kotlin-a-better-java-for-android/)in the late night?
 
 
 

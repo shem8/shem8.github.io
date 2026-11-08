@@ -11,7 +11,7 @@ tags:
 - humor
 ---
 
-[Another part](http://shem8.github.com/blog/2016/06/03/life-as-graphs/) of me trying to visualize situations of my tech life as graphs
+[Another part](/blog/2016/06/03/life-as-graphs/) of me trying to visualize situations of my tech life as graphs
 <!-- more -->
 
 ## Native apps

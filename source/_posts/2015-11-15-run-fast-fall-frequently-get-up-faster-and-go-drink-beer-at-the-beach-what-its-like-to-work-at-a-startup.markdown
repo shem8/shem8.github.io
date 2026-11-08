@@ -75,7 +75,7 @@ In my previous job I was one of 6 developers in 3 dev teams in our department. T
 
 As a server side programmer I never took UX too seriously. I was sure that if the feature is important enough, users are going to use it. I was sure that if we, the devs guys, are going to kick a hell good full product - users will love it. I was sure that there was some secret way that they are going to find it and magically understand how to use all features right off the bat.
 
-I was stupid. UX guys made our users understand our flows, product guys taught us [what not to build](https://shem8.wordpress.com/2015/08/24/know-what-not-to-build-droidcon-2015/) and saved us tons of time, our super hero marketing guy brought us to the first place on [producthunt](http://www.producthunt.com/tech/gallery-doctor-2-0) and let a huge crowd discover our app right on the first day on launch. A tech product is just like other product, the tech part is just a small piece of the puzzle, so don't feel too special.
+I was stupid. UX guys made our users understand our flows, product guys taught us [what not to build](/blog/2015/08/24/know-what-not-to-build-droidcon-2015/) and saved us tons of time, our super hero marketing guy brought us to the first place on [producthunt](http://www.producthunt.com/tech/gallery-doctor-2-0) and let a huge crowd discover our app right on the first day on launch. A tech product is just like other product, the tech part is just a small piece of the puzzle, so don't feel too special.
 
 
 ## 6. You embrace competition
@@ -122,7 +122,6 @@ Here is some very small taste of the things that I had the privilege to do over 
 
 
 
-  {% img center http://cosmic-fitness.com/wp-content/uploads/2015/03/comfort-zone-300x206.jpg %}
 
 ## 8. Nobody is going tell you not to come with flip flops or that the CEO is coming tomorrow so you have to look like you’re working at 8AM
 

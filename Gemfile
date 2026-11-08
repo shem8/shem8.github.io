@@ -18,6 +18,7 @@ group :development do
   gem 'bigdecimal'       # Required for Ruby 3.4 compatibility
   gem 'csv'             # Required for Ruby 3.4 compatibility
   gem 'faraday-retry'   # Required for GitHub integration
+  gem 'json', '< 3'     # json 3 breaks Compass (screen.css silently fails to compile)
 end
 
 gem 'sinatra', '~> 3.0'

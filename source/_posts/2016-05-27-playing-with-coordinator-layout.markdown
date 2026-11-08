@@ -18,7 +18,7 @@ Lately I needed to build some kind of overlay screen that looks like the one tha
 
 When coming to implement it, I thought about building a _LinearLayout_ with 2 views- the content view and the swipe view, than put some touch listener on the swipe view and implement swiping mechanism, than syncing both view to act the same. But when I thought about it more and more I decided that it's too much work. Searching this kind of code or library out there always bring me to _RecycleView_ swipe to dismiss items, and in one of those search results I saw how to implement this swipe to dismiss item in _RecycleView_ with _CoordinatorLayout_, so I decided to give it a chance.
 
-_[CoordinatorLayout](http://developer.android.com/reference/android/support/design/widget/CoordinatorLayout.html)_ is a really great addition in the design support library. Most of you probably already used it with a [floating action buttons](https://guides.codepath.com/android/floating-action-buttons) or [snackbars](http://www.androidhive.info/2015/09/android-material-design-snackbar-example/) but if you like me- you just put it there, assuming views will move properly, without really diving into how the layout is syncing between them.
+_[CoordinatorLayout](http://developer.android.com/reference/android/support/design/widget/CoordinatorLayout.html)_ is a really great addition in the design support library. Most of you probably already used it with a [floating action buttons](https://web.archive.org/web/20251215061704/https://guides.codepath.com/android/floating-action-buttons) or [snackbars](http://www.androidhive.info/2015/09/android-material-design-snackbar-example/) but if you like me- you just put it there, assuming views will move properly, without really diving into how the layout is syncing between them.
 
 So it turns out that _CordinatorLayout_ is pretty powerful, it let you easily define interactions on child views and even between them, those interactions are called [behaviors](http://developer.android.com/reference/android/support/design/widget/CoordinatorLayout.Behavior.html) so that each child can behave differently according to things that are happening in the layout. You can do a really cool things with those behaviors, here is one example for a [great blog post](http://saulmm.github.io/mastering-coordinator) that I stumble upon my searches about coordinate layout usages.
 
@@ -116,4 +116,4 @@ And voila:
 
 {% img center /images/posts/ezgif-2484339332.gif 280 498 %}
 
-[{% img center https://media.giphy.com/media/xT77XRp55yPwHkd5Nm/giphy.gif 480 270 %}](http://giphy.com/gifs/honda-honda-valueofx-civicx-xT77XRp55yPwHkd5Nm)
+[{% img center https://media.giphy.com/media/xT77XRp55yPwHkd5Nm/giphy.gif 480 270 %}](https://web.archive.org/web/20170429125400/https://giphy.com/gifs/honda-honda-valueofx-civicx-xT77XRp55yPwHkd5Nm)

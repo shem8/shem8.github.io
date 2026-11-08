@@ -74,7 +74,7 @@ What if I could use Google to build an [Anki](https://en.wikipedia.org/wiki/Anki
 
 #### Why can’t I do it?
 
-The only API Google provides here is to translate words. This is great, but this is not what I’m looking for. I’m looking to get my own data and usage on the app. There’s an [“history”](https://support.google.com/translate/answer/6142479) option in the web version, but it’s only valid for the specific session and not accessible via any API call. Another solution is to use the [“phrasebook”](https://support.google.com/translate/answer/6142480) feature and export it, but this means I need to manually star every translation and manually export my phrasebook every couple of weeks, a very tedious process that I wish to automate.
+The only API Google provides here is to translate words. This is great, but this is not what I’m looking for. I’m looking to get my own data and usage on the app. There’s an [“history”](https://web.archive.org/web/20220423223352/https://support.google.com/translate/answer/6142479) option in the web version, but it’s only valid for the specific session and not accessible via any API call. Another solution is to use the [“phrasebook”](https://support.google.com/translate/answer/6142480) feature and export it, but this means I need to manually star every translation and manually export my phrasebook every couple of weeks, a very tedious process that I wish to automate.
 
 Yes, there’s always the option to write a translator app on my own, Google helps me with the API, but again — I’ll need to build and maintain(!) a multiplatform app with all the important features I described above.
 

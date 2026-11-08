@@ -33,8 +33,6 @@ In this post I'll share with you my experience and my reading habits that I've d
 
 Once upon a time I've consume all my content via my social networks. First- it was Facebook, my friends were sharing some interesting links and I read them immediately (If I had a minute or two). Fast enough, Facebook algorithm started prioritize media over content, and my Facebook became mix of babies, dogs and oh-look-at-me-I-am-in-a-pool-party feed.
 
-[caption id="" align="alignright" width="356"]![](http://i2.wp.com/www.ladycarcar.vn/wp-content/uploads/internet1.jpg?resize=356%2C193) Source: http://www.ladycarcar.vn/mat-tu-vi-su-dung-cong-nghe/[/caption]
-
 That's when I decided to move to Twitter, and that sure was a mistake. Don't get me wrong, Twitter is the best way out there to know what going out right NOW (I barely visiting news sites any more), it is a great platform to meet new people or to get help. But it not that good for discovering some good content, mainly because the users there prefer to keep things short and light.
 
 In that point I went back to the drawing board, things was not worked for me. I had hard time following blogs that was importing for me (instead of reading the last post when it was released via RSS, I visited the blog once in a while and read all the posts I've missed). I didn't have time to read those links on Facebook and finding them later was impossible. And when I finally had time I didn't had any way to explore new cool content.

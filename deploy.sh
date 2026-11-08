@@ -1,3 +1,5 @@
-bundle exec rake generate
-bundle exec rake deploy
+#!/bin/sh
+set -e
 
+./script/rake generate
+./script/rake deploy

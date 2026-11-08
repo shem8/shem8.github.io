@@ -19,7 +19,7 @@ tags:
 - tips
 ---
 
-We were all been there, you got a great idea for an app, you gather some feedback and even managed to build a team and you going full power to conquer the app store. So a second before starting working on your genius [egg timer app](https://play.google.com/store/apps/details?id=com.mobication.EggTimerPro&hl=en), it is worth taking a moment and think about how you're going to do it.
+We were all been there, you got a great idea for an app, you gather some feedback and even managed to build a team and you going full power to conquer the app store. So a second before starting working on your genius [egg timer app](https://web.archive.org/web/20241211105655/https://play.google.com/store/apps/details?id=com.mobication.EggTimerPro&hl=en), it is worth taking a moment and think about how you're going to do it.
 <!--more-->
 
 Following the hilarious post by Chet Haase about [10 good rules for bad API](https://medium.com/pointer-io/this-article-is-exclusive-to-pointer-a-reading-club-for-developers-9b03f3df060c), I decided to put together my list about how to build a bad app. but a few notes first:
@@ -106,7 +106,7 @@ Android has a very strict limit of 65k methods limit, after importing google p
 ## #9: Premature optimization
 
 
-Great, you just implemented the sorting by yourself, probably with bucket sort, because you know the data going to be evenly distributed, probably, you think so... You also saw [the talk by Romain Guy and Chet Haase](https://www.parleys.com/tutorial/part-1-android-performance-workshop) (him again?) and switched all you enums with constants ints and use objects pull everywhere even if this just one time function because who know what can happen.
+Great, you just implemented the sorting by yourself, probably with bucket sort, because you know the data going to be evenly distributed, probably, you think so... You also saw [the talk by Romain Guy and Chet Haase](https://web.archive.org/web/20160430205651/https://www.parleys.com/tutorial/part-1-android-performance-workshop) (him again?) and switched all you enums with constants ints and use objects pull everywhere even if this just one time function because who know what can happen.
 
 You know what they say- Premature optimization is the root of all evil, but a greater [women also said](http://www.goodreads.com/quotes/30725-there-is-no-good-and-evil-there-is-only-power): "There is no good and evil, there is only power and those too weak to seek it." and I hope you see the power on N when implementing those graph algorithms.
 

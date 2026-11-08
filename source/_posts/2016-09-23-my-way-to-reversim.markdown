@@ -97,7 +97,7 @@ It’s all finished very quickly. It’s funny how you prepare yourself for very
 I got very good feedbacks, they said that the talk was very good and they learn one thing or two about mistakes that they didn’t thought about before.
 
 ## What’s next
-Since then I gave the talk on another conference- [Droidcon Tel-Aviv](http://il.droidcon.com/2015/) and I plan to do it one or maybe two more times.
+Since then I gave the talk on another conference- [Droidcon Tel-Aviv](https://web.archive.org/web/20180228203308/http://il.droidcon.com:80/2015/) and I plan to do it one or maybe two more times.
 
 I feel very comfortable talking in Hebrew, even in front of a big audience. My next milestone is to bring this kind confident to when I’m talking in English, and to give a talk in a conference abroad. I might need to prepare more than what I’m used to, but I think that I will able to do it very soon.
 

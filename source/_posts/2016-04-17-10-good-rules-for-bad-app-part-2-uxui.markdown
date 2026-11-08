@@ -20,7 +20,7 @@ tags:
 - ux
 ---
 
-Welcome to my second part of the tutorial of how building a bad app. After we've building a bad app in the [first part](http://shem8.github.com/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical/), it's the time to call our designer to fuck it a bit more:
+Welcome to my second part of the tutorial of how building a bad app. After we've building a bad app in the [first part](/blog/2016/03/31/10-good-rules-for-bad-app-part-1-technical/), it's the time to call our designer to fuck it a bit more:
 <!--more-->
 
 
@@ -75,14 +75,14 @@ In addition to previous point- respect other apps and don't still they users ple
 
 ## #8: Put animations everywhere
 
-A [splash screen animation](https://shem8.wordpress.com/2015/10/02/pimp-up-your-splash-screen/) is nice, even [Google](https://www.google.com/design/spec/animation/meaningful-transitions.html) recommend adding animation while moving between screens, and the more the merrier
+A [splash screen animation](/blog/2015/10/02/pimp-up-your-splash-screen/) is nice, even [Google](https://web.archive.org/web/20160501051235/http://www.google.com:80/design/spec/animation/meaningful-transitions.html) recommend adding animation while moving between screens, and the more the merrier
 
 {% img center https://shem8.files.wordpress.com/2016/04/giphy.gif 448 * 'Is it too much' 'Is it too much' %}
 
 
 ## #9: Use gifs instead of drawing things in code or animation drawable
 
-Yes, I know, [animation drawable](https://shem8.wordpress.com/2016/02/25/animated-vector-drawable/) might saves you a couple of MB, but your time is much more important!
+Yes, I know, [animation drawable](/blog/2016/02/25/animated-vector-drawable/) might saves you a couple of MB, but your time is much more important!
 
 
 ## #10: Create resources for all resolutions

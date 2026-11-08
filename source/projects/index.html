@@ -1,6 +1,101 @@
 ---
 layout: default
+title: Side Projects
+description: "Side projects by Shem Magnezi: products, personal tools and the agent setup that runs them, built on nights and weekends with AI agents."
 ---
+<article class="page prose">
+  <h1 class="title">Side Projects</h1>
+  <p>20+ side projects in two years, built on nights and weekends next to a full-time job, mostly with AI agents. Building is the easy part now. Operating, distribution and attention are the hard parts. Money is a bonus, not the plan.</p>
+  <p>I talk about this in two of my <a href="/talks">talks</a>: “I Have a Full-Time Job. My Side Projects Don’t” and “A Platform Team of One, With AI”.</p>
+</article>
+
+<article class="page prose" id="products">
+  <h2>Products</h2>
+  <section>
+    <h3><a href="https://fifa-kickoff.pages.dev" target="_blank">Kickoff</a></h3>
+    <p>A fan’s home for World Cup 2026 resale-ticket data, tracking resale prices for every match. It’s a Chrome extension: fans browse FIFA’s resale site as usual and each browser sends back what it sees. There is no central scraper, so nothing gets blocked.</p>
+    <ul>
+      <li>104 matches covered, 8.1M seat changes tracked, $0 spent on scraping.</li>
+      <li>Market-update posts in r/WorldCup2026Tickets reached 455K views across three posts and brought almost 1,000 users.</li>
+      <li>Covered by WIRED and The Times.</li>
+    </ul>
+    <p><img src="/images/projects/kickoff-the-times.jpg" alt="The Times headline: The shrewd fans’ guide to surviving the World Cup rip-off" style="max-width:100%;width:560px;border:1px solid #ddd"></p>
+  </section>
+  <section>
+    <h3><a href="https://cherishmotion.com" target="_blank">Cherish Motion</a></h3>
+    <p>Turns old family photos into moving-memory videos: colorized and brought to life. The landing page came first, with the product behind it. AI-generated ads found a market I would never have guessed: Spanish speakers. It got real orders and real revenue, and a TikTok ad took off one Friday night and the site went down while I slept.</p>
+    <p>It runs on a custom back office: one screen per order (select images, edit, animate, create video), usable from a phone.</p>
+  </section>
+  <section>
+    <h3><a href="https://parkautopilot.com" target="_blank">Park Autopilot</a></h3>
+    <p>A theme park planning app for families, with real-time “what to do next” recommendations and a $4.99 day pass. It was built in about 10 hours by a team of AI agents (CEO, PM, devs, QA, marketer), supervised and approved by me through MissionControl. An agent drafts the blog posts every week and opens a PR for review.</p>
+    <p>Distribution was the real experiment, at about $1,000 total:</p>
+    <ul>
+      <li>Reddit (banned).</li>
+      <li>60 Disney bloggers and influencers (1 free trial, 0 paying).</li>
+      <li>45+ SEO blog posts, Pinterest and Show HN.</li>
+      <li>Offline ads in Orlando: airport screens were rejected; taxi back-seat tablets cost $500 for 20,000 views.</li>
+    </ul>
+  </section>
+  <section>
+    <h3>Sports Copilot</h3>
+    <p>A phone placed behind the kicker detects each kick and where it hit the goal, with an Accuracy Challenge scored by zone. The models worked on paper but failed on a real pitch, so I built my own goal-labeling studio and filmed real kicks with real kids to make it work.</p>
+    <p><img src="/images/projects/sports-copilot-accuracy-challenge.jpg" alt="Sports Copilot Accuracy Challenge screen, with instructions and scoring by goal zone" style="max-width:100%;width:240px;border:1px solid #ddd"></p>
+  </section>
+  <section>
+    <h3><a href="https://helps-hub.com/" target="_blank">HelpsHub</a></h3>
+    <p>Personal AI experts on WhatsApp for fitness, nutrition and finance, with agents like Ariel (nutrition), Ben (training coach) and Mia (travel agent). Built with a Twilio number, Meta’s WhatsApp business review, a waiting list and checkout.</p>
+    <p>The honest outcome: few users. The lesson was “I built the whole thing before anyone asked for it.”</p>
+  </section>
+  <section>
+    <h3>Launch Gate</h3>
+    <p>A $19 launch-readiness kit, fully automated, built entirely by my agent Instinct during a 30-hour offline challenge on Yom Kippur. The brief: think of 50 ideas, pick the 3 most likely to make money within 24 hours, and start from a $10 budget.</p>
+    <p>The same run produced CSV Preflight ($19, Shopify CSV repair) and Resume Gap Brief ($12, resume vs. job description).</p>
+    <p>The outcome: ~190 outreach emails, ~330 DEV comments, 5 articles, and developers credited Launch Gate publicly. No confirmed sales.</p>
+  </section>
+  <section>
+    <h3><a href="https://www.1percentgrowth.app" target="_blank">OnePercent</a></h3>
+    <p>A professional growth mentor, one percent at a time. First built by hand in 2020, then rebuilt with AI agents in 2026. The same basic problems remained: SEO, hosting, A/B tests.</p>
+  </section>
+</article>
+
+<article class="page prose" id="personal">
+  <h2>Built for myself</h2>
+  <p>Small, personal, used for real. I’m the first user.</p>
+  <ul>
+    <li><strong>Personal trainer:</strong> a daily workout app with streaks and academy points, built for one real user, my son.</li>
+    <li><strong>Real Madrid seats:</strong> a seat-finding tool for four adjacent seats. It got the tickets.</li>
+    <li><strong>US road trip helpers</strong> (summer 2026): an illustrated, printable family trip booklet, a US hotels monitor and a US content map.</li>
+    <li><strong>Telegram to Google Drive:</strong> a helper bot.</li>
+    <li><strong>Electricity-plan calculator</strong></li>
+    <li><strong>Leveraged property investment calculator:</strong> models equity recycling and compounding leverage.</li>
+    <li><strong>Project dashboard</strong></li>
+    <li><strong>Roblox parkour-building game:</strong> built in Roblox Studio with Luau, entirely from the Command Bar.</li>
+  </ul>
+</article>
+
+<article class="page prose" id="agents">
+  <h2>Agent infrastructure</h2>
+  <ul>
+    <li><strong>Instinct:</strong> my personal agent, which I talk to over WhatsApp. It does research and even whole products (Launch Gate). Built on cc-bridge.</li>
+    <li><strong>MissionControl:</strong> a board where I watch my agent team and review and approve their work, by channel.</li>
+    <li><strong>Scheduled agent jobs:</strong> recurring content, reports and checks. They open drafts or PRs and never ship on their own.</li>
+    <li><strong>An old Mac at home:</strong> always on; agents, jobs and bots run there.</li>
+  </ul>
+  <h3>Stack</h3>
+  <ul>
+    <li><strong>Claude Code</strong> (~$100/mo): almost everything, from code and ops to copy and back office</li>
+    <li><strong>Cloudflare</strong> ($5/mo): workers, database, storage, queues, cron</li>
+    <li><strong>Polar</strong> ($0 + fee per sale): payments, no company setup</li>
+    <li><strong>Resend:</strong> email</li>
+    <li><strong>Replicate</strong> (pay per run): video and image models</li>
+  </ul>
+</article>
+
+<article class="page prose" id="earlier">
+  <h2>Earlier apps</h2>
+</article>
+
 <article class="page">
     <div class="project">
       <h4 class="title">ToyBox</h4>
@@ -10,11 +105,8 @@ layout: default
       </div>
 
       <div class="download">
-        <a href='https://play.google.com/store/apps/details?id=com.toyz&utm_source=blog'>
-          <img class='link' alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/>
-        </a>
-     <a href="https://apps.apple.com/il/app/toy-box-find-toys-nearby/id1493408213?mt=8" style="display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.apple.com/en-us/badge-lrg.svg?releaseDate=2020-02-08&kind=iossoftware&bubble=ios_apps) no-repeat;width:230px;height:100px;background-size: 188px 80px;"></a> 
-	</div>
+        <span class="link">No longer available on the stores</span>
+      </div>
     </div>
 </article>
 
@@ -27,7 +119,7 @@ layout: default
       </div>
 
       <div class="download">
-        <a href='https://shem-expenses.herokuapp.com' class='link'>
+        <a href='https://expense.shem.dev' class='link'>
           Try it for free
         </a>
       </div>
@@ -55,13 +147,11 @@ layout: default
       <h4 class="title">Gifted</h4>
       <img class="icon" src="https://lh3.googleusercontent.com/TO3sS9xrCCzFIIn2_WRuxgBkK2AmCTKjVtPj3WXy0KyVI1EHGGD03R8EiZe3N7_gv5g=w300-rw"/>
        <div class="info">
-           An Android app written in Kotlin that let you say what you want with a singe GIF!
+           An Android app written in Kotlin that let you say what you want with a single GIF!
       </div>
 
       <div class="download">
-        <a href='https://play.google.com/store/apps/details?id=shem.com.kal&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
-          <img class='link' alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/>
-        </a>
+        <span class="link">No longer available on the stores</span>
       </div>
     </div>
 </article>
@@ -75,9 +165,7 @@ layout: default
       </div>
 
       <div class="download">
-        <a href='https://play.google.com/store/apps/details?id=shem.getit&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
-          <img class='link' alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/>
-        </a>
+        <span class="link">No longer available on the stores</span>
       </div>
     </div>
 </article>
@@ -88,15 +176,13 @@ layout: default
       <h4 class="title">Grouper</h4>
       <img class="icon" src="https://lh3.googleusercontent.com/UGEcv7nemIzB9Dzivd2dL325cfdjhDc4LowxK6WGHd6tLC90EciXQKXnDxq4x3UP4T4=w300-rw"/>
        <div class="info">
-           An example app for building apps with <a href="https://firebase.google.com" target="blank">Firebase</a> that easily split number of people to random groups.
+           An example app for building apps with <a href="https://firebase.google.com" target="_blank">Firebase</a> that easily split number of people to random groups.
            <br><br>
-           The source code can be found <a href="https://github.com/shem8/grouper" target="blank">here</a>
+           The source code can be found <a href="https://github.com/shem8/grouper" target="_blank">here</a>
       </div>
 
       <div class="download">
-        <a href='https://play.google.com/store/apps/details?id=grouper.shemmagnezi.com.grouper&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
-          <img class='link' alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/>
-        </a>
+        <span class="link">No longer available on the stores</span>
       </div>
     </div>
 </article>

@@ -2,12 +2,14 @@
 
 Setup:
 
-- `rvm use 3.3.4`
+- Use Ruby 3.1.0 (see `.ruby-version`; `chruby` and `rvm` both pick it up)
 - `bundle install`
 
+Work on the `source` branch. `master` only holds the generated site.
+
 Change stuff in source
-`./script/rake preview` to see your changes (you might need to use `bundle exec`)
-`./deploy` to apply your changes
+`./script/rake generate` to build into `public/`, `./script/rake preview` to see your changes
+`./deploy.sh` to apply your changes (this force-pushes the generated site to `master`)
 
 If deploy doesn't work:
 

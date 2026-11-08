@@ -18,7 +18,7 @@ tags:
 - slides
 ---
 
-### Talk I had given on [Droidcon 2014](http://il.droidcon.com/2014/agenda/)
+### Talk I had given on [Droidcon 2014](https://web.archive.org/web/20170423015211/http://il.droidcon.com:80/2014/agenda/)
 <!--more-->
 
 

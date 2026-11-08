@@ -263,4 +263,4 @@ Now we need to get the right color to set when moving from color to color, for t
 
 ![step3](https://shem8.files.wordpress.com/2015/07/step35.gif)
 
-That's it, look like we have some nice looking indicator, in the [next post](https://shem8.wordpress.com/2015/08/06/custom-view-part-2/) we'll add some sub views with tab titles, so stay tuned =)
+That's it, look like we have some nice looking indicator, in the [next post](/blog/2015/08/06/custom-view-part-2/) we'll add some sub views with tab titles, so stay tuned =)

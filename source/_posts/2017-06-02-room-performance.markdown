@@ -21,7 +21,7 @@ That's mean that if I want to save all my users data in a database- I will work 
 ## Current solutions
 This concept is not new, developers used that technique for a long time, and it was natural that Android developers will need this kind of thing too.
 
-Soon enough we got a couple of 3rd libraries to handle it, just look on [AndroidArsenal page](https://android-arsenal.com/tag/69) and understand we're getting into crowded space here. The most popular ones are probably [ORMLite](http://ormlite.com/), [GreenDAO](http://greenrobot.org/greendao/) and [DbFlow](https://github.com/Raizlabs/DBFlow).
+Soon enough we got a couple of 3rd libraries to handle it, just look on [AndroidArsenal page](https://web.archive.org/web/20250209211313/https://www.android-arsenal.com/tag/69) and understand we're getting into crowded space here. The most popular ones are probably [ORMLite](http://ormlite.com/), [GreenDAO](http://greenrobot.org/greendao/) and [DbFlow](https://github.com/Raizlabs/DBFlow).
 
 ## Creating a Model
 There are two main ways to define the mapping between your objects and the tables in Java: some DSL + code generator (like what GreenDAO is using), or using annotation (like ORMLite, DBFlow and most of the libraries). Although I'm not a big fan of annotations, I must say the later is an easier solution.

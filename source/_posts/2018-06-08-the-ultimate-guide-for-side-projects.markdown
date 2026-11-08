@@ -126,7 +126,7 @@ When the times goes by it'll be easy sometimes to go down the rabbit hole becaus
 
 Remember that we want to achieve as much as we can in the little time possible, so always remind yourself what you're here for and focus on the important stuff.
 
-[Done is better than perfect](https://medium.com/personal-growth/give-yourself-permission-to-screw-up-2c5f55e9b9e6), and you should keep the wheel spinning. 
+[Done is better than perfect](https://web.archive.org/web/20201111171120/https://medium.com/personal-growth/give-yourself-permission-to-screw-up-2c5f55e9b9e6), and you should keep the wheel spinning. 
 
 It'll help you with the sense of accomplishment. The worst thing that can happen to you is to wake up after 5 hours session to realize you just spent the whole day [yak shaving](https://seths.blog/2005/03/dont_shave_that/) without really making any progress.
 

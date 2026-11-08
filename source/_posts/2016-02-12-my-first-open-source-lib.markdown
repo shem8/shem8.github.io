@@ -24,7 +24,7 @@ As part of my last [Friday project](https://medium.com/life-learning/the-one-si
 
 
 
-  1. How to write Android apps with [Kotlin](https://shem8.wordpress.com/2016/01/01/kotlin-a-better-java-for-android/)
+  1. How to write Android apps with [Kotlin](/blog/2016/01/01/kotlin-a-better-java-for-android/)
 
 
   2. Create an awesome UI and animations

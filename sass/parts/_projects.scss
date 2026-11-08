@@ -59,3 +59,12 @@
     content: "";
     display: block;
  }
+
+
+.prose {
+  h2 { margin: 10px 0 16px; }
+  h3 { margin: 26px 0 6px; }
+  p { margin-bottom: 10px; }
+  ul { margin: 8px 0 12px; padding-left: 20px; }
+  li { margin-bottom: 4px; }
+}

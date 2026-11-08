@@ -18,7 +18,7 @@ tags:
 - guides
 ---
 
-##### _In [part 1](https://shem8.wordpress.com/2015/07/31/custom-view-part-1/) we learned how to build a simple custom view that's integrate nicely with our pager view and show some indication about the current page, in this post we'll take the view to the next level and add some subviews for page headers_
+##### _In [part 1](/blog/2015/07/31/custom-view-part-1/) we learned how to build a simple custom view that's integrate nicely with our pager view and show some indication about the current page, in this post we'll take the view to the next level and add some subviews for page headers_
 <!--more-->
 
 * * *
