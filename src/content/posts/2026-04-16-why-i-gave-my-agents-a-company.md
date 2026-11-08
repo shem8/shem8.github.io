@@ -26,9 +26,11 @@ What does that mean? A team needs a mix of people who each understand something 
 
 My idea is to copy the functioning companies and teams I've worked in, and bring that into the world of agents.
 
-![The agent board: channels on the left, a task board in the middle, and an activity feed on the right](/images/posts/agent-company/board.jpg)
+![MissionControl: channels on the left, a task board in the middle, and an activity feed on the right](/images/posts/agent-company/board.jpg)
 
 ## What I built
+
+I call it [MissionControl](/projects/#missioncontrol) (the screenshot above shows it under the name AgentBoard). It has six parts.
 
 **A team.** Different personas, but also different tools. The developers are Claude Code processes (one shot). QA uses Google's local models, because QA burns through tokens. Marketing is OpenAI connected to a Chrome MCP. Each one is built differently, with its own direction and tools.
 

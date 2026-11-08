@@ -1,6 +1,6 @@
 ---
 title: "The Mysterious Journey of Becoming a Senior Engineer"
-date: "2021-01"
+date: "2021-12-27"
 event: "Reversim Summit"
 location: "Israel"
 video: "https://www.youtube.com/embed/s2g9Kz6-Vq4"
