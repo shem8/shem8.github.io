@@ -14,8 +14,10 @@ export async function getStaticPaths() {
 const { post, newer, older } = Astro.props;
 const { Content } = await render(post);
 const { title, date, categories, description, path } = post.data;
+// The post's first photo represents it in search results and link previews. Animations and drawings can't be used for that.
+const image = post.body?.match(/!\[[^\]]*\]\((\/[^)\s]+\.(?:jpe?g|png|webp))\)/i)?.[1];
 ---
-<Base title={title} description={description || excerpt(post, 155)} type="article">
+<Base title={title} description={description || excerpt(post, 155)} type="article" image={image} published={date}>
   <div class="read-progress" aria-hidden="true"></div>
   <article>
     <header class="post-head on-night">

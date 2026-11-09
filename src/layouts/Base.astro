@@ -1,9 +1,9 @@
 ---
 import '../styles/global.css';
 
-interface Props { title?: string; description?: string; path?: string; image?: string; type?: string; }
-const { title, description = 'Shem Magnezi is a Senior Staff Software Engineer who works heavily with AI, and writes and talks about software engineering, careers, startups and side projects.', image = '/images/shem.jpg', type = 'website' } = Astro.props;
-const fullTitle = title ? `${title} | Shem Magnezi` : 'Shem Magnezi';
+interface Props { title?: string; description?: string; path?: string; image?: string; type?: string; published?: Date; }
+const { title, description = 'Shem Magnezi is a Senior Staff Software Engineer who works heavily with AI, and writes and talks about software engineering, careers, startups and side projects.', image = '/images/shem.jpg', type = 'website', published } = Astro.props;
+const fullTitle = title ? `${title} | Shem Magnezi` : 'Shem Magnezi | Senior Staff Software Engineer';
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const img = new URL(image, Astro.site).href;
 const here = Astro.url.pathname;
@@ -16,9 +16,20 @@ const nav = [
   ['/about/', 'About'],
 ];
 const GA = 'G-0MGEHLR533';
-const person = {
-  '@context': 'https://schema.org', '@type': 'Person', name: 'Shem Magnezi', url: 'https://blog.shem.dev/', jobTitle: 'Senior Staff Software Engineer', worksFor: { '@type': 'Organization', name: 'Lemonade' },
-  sameAs: ['https://x.com/shemag8', 'https://medium.com/@shemag8', 'https://www.linkedin.com/in/shem-magnezi-45490424', 'https://github.com/shem8'],
+// Tells search engines who the site is about, that the profiles elsewhere are the same person, and who wrote each post.
+const home = new URL('/', Astro.site).href;
+const personId = `${home}#person`;
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person', '@id': personId, name: 'Shem Magnezi', url: home, image: new URL('/images/shem.jpg', Astro.site).href, jobTitle: 'Senior Staff Software Engineer', worksFor: { '@type': 'Organization', name: 'Lemonade' },
+      sameAs: ['https://www.linkedin.com/in/shem-magnezi-45490424', 'https://x.com/shemag8', 'https://github.com/shem8', 'https://medium.com/@shemag8', 'https://sessionize.com/shem-magnezi', 'https://gitnation.com/person/shem_magnezi', 'https://www.wearedevelopers.com/@shem-magnezi'],
+    },
+    { '@type': 'WebSite', '@id': `${home}#website`, url: home, name: 'Shem Magnezi', publisher: { '@id': personId } },
+    ...(here === '/' || here === '/about/' ? [{ '@type': 'ProfilePage', url: canonical, name: fullTitle, mainEntity: { '@id': personId } }] : []),
+    ...(published ? [{ '@type': 'BlogPosting', headline: title, url: canonical, mainEntityOfPage: canonical, datePublished: published.toISOString(), description, image: img, author: { '@id': personId } }] : []),
+  ],
 };
 ---
 <!doctype html>
@@ -42,7 +53,7 @@ const person = {
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@shemag8" />
     <meta name="twitter:creator" content="@shemag8" />
-    <script type="application/ld+json" set:html={JSON.stringify(person)} />
+    <script type="application/ld+json" set:html={JSON.stringify(schema).replace(/</g, '\\u003c')} />
     <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA}`}></script>
     <script is:inline define:vars={{ GA }}>
       window.dataLayer = window.dataLayer || [];
@@ -71,10 +82,10 @@ const person = {
       <div class="wrap">
         <span>Shem Magnezi, Tel Aviv</span>
         <nav aria-label="Elsewhere">
-          <a href="https://github.com/shem8">GitHub</a>
-          <a href="https://www.linkedin.com/in/shem-magnezi-45490424">LinkedIn</a>
-          <a href="https://x.com/shemag8">X</a>
-          <a href="https://medium.com/@shemag8">Medium</a>
+          <a rel="me" href="https://github.com/shem8">GitHub</a>
+          <a rel="me" href="https://www.linkedin.com/in/shem-magnezi-45490424">LinkedIn</a>
+          <a rel="me" href="https://x.com/shemag8">X</a>
+          <a rel="me" href="https://medium.com/@shemag8">Medium</a>
           <a href="/atom.xml">RSS</a>
         </nav>
       </div>
